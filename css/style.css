@@ -3,12 +3,7 @@
 /*--------------------------------------------------------------
 # Variables
 --------------------------------------------------------------*/
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/*  Created on : 07.02.2017, 23:36:56 Author     : Wiese
+/*  Created on : 07.02.2017, 23:36:56 Author     : xwolf
 */
 /*--------------------------------------------------------------
 # Mixins
@@ -30,14 +25,24 @@ CSS Font File Roboto
 @font-face { font-family: 'roboto'; src: url("../fonts/roboto/Roboto-Italic-webfont.eot"); src: url("../fonts/roboto/Roboto-Italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto/Roboto-Italic-webfont.woff") format("woff"), url("../fonts/roboto/Roboto-Italic-webfont.ttf") format("truetype"), url("../fonts/roboto/Roboto-Italic-webfont.svg#robotoitalic") format("svg"); font-weight: normal; font-style: italic; }
 @font-face { font-family: 'roboto'; src: url("../fonts/roboto/Roboto-Regular-webfont.eot"); src: url("../fonts/roboto/Roboto-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto/Roboto-Regular-webfont.woff") format("woff"), url("../fonts/roboto/Roboto-Regular-webfont.ttf") format("truetype"), url("../fonts/roboto/Roboto-Regular-webfont.svg#robotoregular") format("svg"); font-weight: normal; font-style: normal; }
 @font-face { font-family: 'roboto-light'; src: url("../fonts/roboto/Roboto-Light-webfont.eot"); src: url("../fonts/roboto/Roboto-Light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto/Roboto-Light-webfont.woff") format("woff"), url("../fonts/roboto/Roboto-Light-webfont.ttf") format("truetype"), url("../fonts/roboto/Roboto-Light-webfont.svg#robotolight") format("svg"); font-weight: normal; font-style: normal; }
+/*
+* CSS Font File Dejaweb
+*    DejaWeb 
+*    by AnatoleType
+*/
+@font-face { font-family: 'DejaWeb'; src: url("../fonts/dejaweb/DejaWeb-Bold.ttf"); src: url("../fonts/dejaweb/DejaWeb-Bold.ttf") format("truetype"); font-weight: bold; font-style: normal; }
+@font-face { font-family: 'DejaWeb'; src: url("../fonts/dejaweb/DejaWeb-BoldItalic.ttf"); src: url("../fonts/dejaweb/DejaWeb-BoldItalic.ttf") format("truetype"); font-weight: bold; font-style: italic; }
+@font-face { font-family: 'DejaWeb'; src: url("../fonts/dejaweb/DejaWeb-Italic.ttf"); src: url("../fonts/dejaweb/DejaWeb-Italic.ttf") format("truetype"); font-weight: normal; font-style: italic; }
+@font-face { font-family: 'DejaWeb'; src: url("../fonts/dejaweb/DejaWeb.ttf"); src: url("../fonts/dejaweb/DejaWeb.ttf") format("truetype"); font-weight: normal; font-style: normal; }
 /*--------------------------------------------------------------
 # Structure
 --------------------------------------------------------------*/
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
 /*  Created on : 07.02.2017, 23:36:04 Author     : Wiese
 */
-body { font-family: "roboto", sans-serif; }
+body { font-family: "roboto", "DejaWeb", sans-serif; }
+
+/*  Headlines Created on : 09.02.2017, 21:07:12 Author     : xwolf
+*/
+/*  Ueberschriften
+*/
+h1, h2, h3, h4, h5 { font-familiy: "roboto", "DejaWeb", sans-serif; }

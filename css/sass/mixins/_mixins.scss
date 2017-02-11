@@ -126,3 +126,12 @@ Mixins  for borders and gradients
 @mixin clearfix-after() {
 	clear: both;
 }
+
+
+@function px2rem($font-size, $base-font-size: 16) {
+	@return $font-size / $base-font-size + rem;
+}
+@mixin px2rem($font-size, $base-font-size: 16) {
+  font-size: $font-size + px; // für den IE8
+  font-size: px2rem($font-size, $base-font-size);
+}

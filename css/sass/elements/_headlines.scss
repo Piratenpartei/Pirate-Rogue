@@ -6,3 +6,24 @@
 h1, h2, h3, h4, h5 {
     font-familiy: $font-family-headlines;
 }
+
+h1 {
+   .entry-content & {
+        border-bottom: 7px;
+        border-color: $color-main;
+        border-style:  solid;
+        text-transform: uppercase;
+        margin-bottom: 50px;
+        display: table-cell;
+        padding-bottom: 1px;
+  
+        & + * {
+          margin-top: 20px;  
+        }
+    }
+    .entry-content &::after {
+        content: " ";
+        display: table-cell;
+        width: 100%;
+    }
+}

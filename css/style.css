@@ -41,8 +41,16 @@ CSS Font File Roboto
 */
 body { font-family: "roboto", "DejaWeb", sans-serif; }
 
-/*  Headlines Created on : 09.02.2017, 21:07:12 Author     : xwolf
+/*  Elements Created on : 09.02.2017, 21:07:12 Author     : xwolf
 */
 /*  Ueberschriften
 */
 h1, h2, h3, h4, h5 { font-familiy: "roboto", "DejaWeb", sans-serif; }
+
+.entry-content h1 { border-bottom: 7px; border-color: #ff8800; border-style: solid; text-transform: uppercase; margin-bottom: 50px; display: table-cell; padding-bottom: 1px; }
+.entry-content h1 + * { margin-top: 20px; }
+.entry-content h1::after { content: " "; display: table-cell; width: 100%; }
+
+/*  Divider
+*/
+@media screen and (min-width: 550px) { hr { display: block; border: 0px; height: 56px; margin: 3px 0; color: #ff8800; background-image: url("../img/trenner-04-50.png"); background-image: url("../img/trenner-01-50.png"); background-position: center center; background-repeat: no-repeat; } }

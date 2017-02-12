@@ -8,7 +8,11 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-   .entry-content & {
+    .single-post .entry-header &.entry-title,
+    .entry-header &.entry-title,
+    .page &.entry-title,
+    article &,
+    .entry-content & {
         border-bottom: 7px;
         border-color: $color-main;
         border-style:  solid;
@@ -21,9 +25,17 @@ h1 {
           margin-top: 20px;  
         }
     }
+    .single-post .entry-header &::after.entry-title,
+    .entry-header &::after.entry-title,
+    .page &::after.entry-title,
+    article &::after,
     .entry-content &::after {
         content: " ";
         display: table-cell;
         width: 100%;
     }
 }
+
+
+
+

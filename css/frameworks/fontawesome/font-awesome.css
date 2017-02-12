@@ -1,47 +1,11 @@
 @charset "UTF-8";
-/* Main SCSS Mix file
-*/
-/*--------------------------------------------------------------
-# Variables
---------------------------------------------------------------*/
-/*  Created on : 07.02.2017, 23:36:56 Author     : xwolf
-*/
-/*--------------------------------------------------------------
-# Mixins
---------------------------------------------------------------*/
-/*
-Mixins  for borders and gradients
-*/
-/*--------------------------------------------------------------
-# Fonts
---------------------------------------------------------------*/
-/*
-* Active Fonts in Theme
-*/
-/*
-CSS Font File Roboto
-*/
-@font-face { font-family: 'roboto'; src: url("../fonts/roboto/Roboto-Bold-webfont.eot"); src: url("../fonts/roboto/Roboto-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto/Roboto-Bold-webfont.woff") format("woff"), url("../fonts/roboto/Roboto-Bold-webfont.ttf") format("truetype"), url("../fonts/roboto/Roboto-Bold-webfont.svg#robotobold") format("svg"); font-weight: bold; font-style: normal; }
-@font-face { font-family: 'roboto'; src: url("../fonts/roboto/Roboto-BoldItalic-webfont.eot"); src: url("../fonts/roboto/Roboto-BoldItalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto/Roboto-BoldItalic-webfont.woff") format("woff"), url("../fonts/roboto/Roboto-BoldItalic-webfont.ttf") format("truetype"), url("../fonts/roboto/Roboto-BoldItalic-webfont.svg#robotobold_italic") format("svg"); font-weight: bold; font-style: italic; }
-@font-face { font-family: 'roboto'; src: url("../fonts/roboto/Roboto-Italic-webfont.eot"); src: url("../fonts/roboto/Roboto-Italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto/Roboto-Italic-webfont.woff") format("woff"), url("../fonts/roboto/Roboto-Italic-webfont.ttf") format("truetype"), url("../fonts/roboto/Roboto-Italic-webfont.svg#robotoitalic") format("svg"); font-weight: normal; font-style: italic; }
-@font-face { font-family: 'roboto'; src: url("../fonts/roboto/Roboto-Regular-webfont.eot"); src: url("../fonts/roboto/Roboto-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto/Roboto-Regular-webfont.woff") format("woff"), url("../fonts/roboto/Roboto-Regular-webfont.ttf") format("truetype"), url("../fonts/roboto/Roboto-Regular-webfont.svg#robotoregular") format("svg"); font-weight: normal; font-style: normal; }
-@font-face { font-family: 'roboto-light'; src: url("../fonts/roboto/Roboto-Light-webfont.eot"); src: url("../fonts/roboto/Roboto-Light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto/Roboto-Light-webfont.woff") format("woff"), url("../fonts/roboto/Roboto-Light-webfont.ttf") format("truetype"), url("../fonts/roboto/Roboto-Light-webfont.svg#robotolight") format("svg"); font-weight: normal; font-style: normal; }
-/*
-* CSS Font File Dejaweb
-*    DejaWeb 
-*    by AnatoleType
-*/
-@font-face { font-family: 'DejaWeb'; src: url("../fonts/dejaweb/DejaWeb-Bold.ttf"); src: url("../fonts/dejaweb/DejaWeb-Bold.ttf") format("truetype"); font-weight: bold; font-style: normal; }
-@font-face { font-family: 'DejaWeb'; src: url("../fonts/dejaweb/DejaWeb-BoldItalic.ttf"); src: url("../fonts/dejaweb/DejaWeb-BoldItalic.ttf") format("truetype"); font-weight: bold; font-style: italic; }
-@font-face { font-family: 'DejaWeb'; src: url("../fonts/dejaweb/DejaWeb-Italic.ttf"); src: url("../fonts/dejaweb/DejaWeb-Italic.ttf") format("truetype"); font-weight: normal; font-style: italic; }
-@font-face { font-family: 'DejaWeb'; src: url("../fonts/dejaweb/DejaWeb.ttf"); src: url("../fonts/dejaweb/DejaWeb.ttf") format("truetype"); font-weight: normal; font-style: normal; }
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
 /* FONT PATH -------------------------- */
-@font-face { font-family: 'FontAwesome'; src: url("../fonts/fontawesome/fontawesome-webfont.eot?v=4.7.0"); src: url("../fonts/fontawesome/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("../fonts/fontawesome/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("../fonts/fontawesome/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("../fonts/fontawesome/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("../fonts/fontawesome/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg"); font-weight: normal; font-style: normal; }
-.fa, .social-nav ul li a::before { display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+@font-face { font-family: 'FontAwesome'; src: url("../fonts/fontawesome-webfont.eot?v=4.7.0"); src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("../fonts/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg"); font-weight: normal; font-style: normal; }
+.fa { display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 /* makes the font 33% larger relative to the icon container */
 .fa-lg { font-size: 1.33333em; line-height: 0.75em; vertical-align: -15%; }
@@ -68,16 +32,16 @@ CSS Font File Roboto
 
 .fa-pull-right { float: right; }
 
-.fa.fa-pull-left, .social-nav ul li a.fa-pull-left::before { margin-right: .3em; }
-.fa.fa-pull-right, .social-nav ul li a.fa-pull-right::before { margin-left: .3em; }
+.fa.fa-pull-left { margin-right: .3em; }
+.fa.fa-pull-right { margin-left: .3em; }
 
 /* Deprecated as of 4.4.0 */
 .pull-right { float: right; }
 
 .pull-left { float: left; }
 
-.fa.pull-left, .social-nav ul li a.pull-left::before { margin-right: .3em; }
-.fa.pull-right, .social-nav ul li a.pull-right::before { margin-left: .3em; }
+.fa.pull-left { margin-right: .3em; }
+.fa.pull-right { margin-left: .3em; }
 
 .fa-spin { -webkit-animation: fa-spin 2s infinite linear; animation: fa-spin 2s infinite linear; }
 
@@ -116,7 +80,7 @@ CSS Font File Roboto
 
 .fa-search:before { content: ""; }
 
-.fa-envelope-o:before, .social-nav ul li a[href*="mailto"]::before:before { content: ""; }
+.fa-envelope-o:before { content: ""; }
 
 .fa-heart:before { content: ""; }
 
@@ -384,7 +348,7 @@ CSS Font File Roboto
 
 .fa-trophy:before { content: ""; }
 
-.fa-github-square:before, .social-nav ul li a[href*="github.com"]::before:before { content: ""; }
+.fa-github-square:before { content: ""; }
 
 .fa-upload:before { content: ""; }
 
@@ -398,9 +362,9 @@ CSS Font File Roboto
 
 .fa-phone-square:before { content: ""; }
 
-.fa-twitter:before, .social-nav ul li a[href*="twitter.com"]::before:before { content: ""; }
+.fa-twitter:before { content: ""; }
 
-.fa-facebook-f:before, .fa-facebook:before, .social-nav ul li a[href*="facebook.com"]::before:before { content: ""; }
+.fa-facebook-f:before, .fa-facebook:before { content: ""; }
 
 .fa-github:before { content: ""; }
 
@@ -408,7 +372,7 @@ CSS Font File Roboto
 
 .fa-credit-card:before { content: ""; }
 
-.fa-feed:before, .fa-rss:before, .social-nav ul li a[href*="feed"]::before:before { content: ""; }
+.fa-feed:before, .fa-rss:before { content: ""; }
 
 .fa-hdd-o:before { content: ""; }
 
@@ -480,11 +444,11 @@ CSS Font File Roboto
 
 .fa-truck:before { content: ""; }
 
-.fa-pinterest:before, .social-nav ul li a[href*="pinterest.com"]::before:before { content: ""; }
+.fa-pinterest:before { content: ""; }
 
 .fa-pinterest-square:before { content: ""; }
 
-.fa-google-plus-square:before, .social-nav ul li a[href*="plus.google.com"]::before:before { content: ""; }
+.fa-google-plus-square:before { content: ""; }
 
 .fa-google-plus:before { content: ""; }
 
@@ -508,7 +472,7 @@ CSS Font File Roboto
 
 .fa-envelope:before { content: ""; }
 
-.fa-linkedin:before, .social-nav ul li a[href*="linkedin.com"]::before:before { content: ""; }
+.fa-linkedin:before { content: ""; }
 
 .fa-rotate-left:before, .fa-undo:before { content: ""; }
 
@@ -754,7 +718,7 @@ CSS Font File Roboto
 
 .fa-thumbs-down:before { content: ""; }
 
-.fa-youtube-square:before, .social-nav ul li a[href*="youtube.com"]::before:before { content: ""; }
+.fa-youtube-square:before { content: ""; }
 
 .fa-youtube:before { content: ""; }
 
@@ -768,9 +732,9 @@ CSS Font File Roboto
 
 .fa-stack-overflow:before { content: ""; }
 
-.fa-instagram:before, .social-nav ul li a[href*="instagram.com"]::before:before { content: ""; }
+.fa-instagram:before { content: ""; }
 
-.fa-flickr:before, .social-nav ul li a[href*="flickr.com"]::before:before { content: ""; }
+.fa-flickr:before { content: ""; }
 
 .fa-adn:before { content: ""; }
 
@@ -780,7 +744,7 @@ CSS Font File Roboto
 
 .fa-tumblr:before { content: ""; }
 
-.fa-tumblr-square:before, .social-nav ul li a[href*="tumblr.com"]::before:before { content: ""; }
+.fa-tumblr-square:before { content: ""; }
 
 .fa-long-arrow-down:before { content: ""; }
 
@@ -800,7 +764,7 @@ CSS Font File Roboto
 
 .fa-dribbble:before { content: ""; }
 
-.fa-skype:before, .social-nav ul li a[href*="skype.com"]::before:before, .social-nav ul li a[href*="skype:"]::before:before { content: ""; }
+.fa-skype:before { content: ""; }
 
 .fa-foursquare:before { content: ""; }
 
@@ -852,7 +816,7 @@ CSS Font File Roboto
 
 .fa-envelope-square:before { content: ""; }
 
-.fa-wordpress:before, .social-nav ul li a[href*="wordpress.org"]::before:before, .social-nav ul li a[href*="wordpress.com"]::before:before { content: ""; }
+.fa-wordpress:before { content: ""; }
 
 .fa-openid:before { content: ""; }
 
@@ -864,13 +828,13 @@ CSS Font File Roboto
 
 .fa-google:before { content: ""; }
 
-.fa-reddit:before, .social-nav ul li a[href*="reddit.com"]::before:before { content: ""; }
+.fa-reddit:before { content: ""; }
 
 .fa-reddit-square:before { content: ""; }
 
 .fa-stumbleupon-circle:before { content: ""; }
 
-.fa-stumbleupon:before, .social-nav ul li a[href*="stumbleupon.com"]::before:before { content: ""; }
+.fa-stumbleupon:before { content: ""; }
 
 .fa-delicious:before { content: ""; }
 
@@ -916,7 +880,7 @@ CSS Font File Roboto
 
 .fa-tree:before { content: ""; }
 
-.fa-spotify:before, .social-nav ul li a[href*="spotify.com"]::before:before { content: ""; }
+.fa-spotify:before { content: ""; }
 
 .fa-deviantart:before { content: ""; }
 
@@ -1274,7 +1238,7 @@ CSS Font File Roboto
 
 .fa-houzz:before { content: ""; }
 
-.fa-vimeo:before, .social-nav ul li a[href*="vimeo.com"]::before:before { content: ""; }
+.fa-vimeo:before { content: ""; }
 
 .fa-black-tie:before { content: ""; }
 
@@ -1463,40 +1427,3 @@ CSS Font File Roboto
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
 
 .sr-only-focusable:active, .sr-only-focusable:focus { position: static; width: auto; height: auto; margin: 0; overflow: visible; clip: auto; }
-
-/*--------------------------------------------------------------
-# Structure
---------------------------------------------------------------*/
-/*  Structure of website Created on : 07.02.2017, 23:36:04 Author     : Wiese
-*/
-/* Molecular and organism structures
-*/
-body { font-family: "roboto", "DejaWeb", sans-serif; }
-
-/*
-Post and Page Styling
-*/
-.single-post .hentry .entry-meta, .single-attachment .entry-meta { border-top: none !important; }
-
-.page-template-default #primary .hentry, .page-fullwidth #primary .hentry, .page-template-no-sidebar #primary .hentry, .error404 #primary .page { border-top: none; }
-
-article header { margin-bottom: 20px; }
-
-/*  Elements Created on : 09.02.2017, 21:07:12 Author     : xwolf
-*/
-/*  Ueberschriften
-*/
-h1, h2, h3, h4, h5 { font-familiy: "roboto", "DejaWeb", sans-serif; }
-
-.single-post .entry-header h1.entry-title, .entry-header h1.entry-title, .page h1.entry-title, article h1, .entry-content h1 { border-bottom: 7px; border-color: #ff8800; border-style: solid; text-transform: uppercase; margin-bottom: 50px; display: table-cell; padding-bottom: 1px; }
-.single-post .entry-header h1.entry-title + *, .entry-header h1.entry-title + *, .page h1.entry-title + *, article h1 + *, .entry-content h1 + * { margin-top: 20px; }
-.single-post .entry-header h1::after.entry-title, .entry-header h1::after.entry-title, .page h1::after.entry-title, article h1::after, .entry-content h1::after { content: " "; display: table-cell; width: 100%; }
-
-/*  Divider
-*/
-@media screen and (min-width: 550px) { hr { display: block; border: 0px; height: 56px; margin: 3px 0; color: #ff8800; background-image: url("../img/trenner-04-50.png"); background-image: url("../img/trenner-01-50.png"); background-position: center center; background-repeat: no-repeat; } }
-
-/* Social Media Icons
-*/
-.social-nav ul { display: inline-block; margin: 0; padding: 0; }
-.social-nav ul li { border-bottom: medium none; display: inline-block; margin: 0 -2px; }

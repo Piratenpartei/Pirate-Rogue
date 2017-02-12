@@ -1,0 +1,21 @@
+/*
+Post and Page Styling
+*/
+
+.single-post .hentry .entry-meta, 
+.single-attachment .entry-meta {
+    border-top: none !important;
+}
+
+.page-template-default #primary .hentry,
+.page-fullwidth #primary .hentry, 
+.page-template-no-sidebar #primary .hentry,
+.error404 #primary .page {
+    border-top: none;
+}
+
+article {
+    header {
+        margin-bottom: 20px;
+    }
+}

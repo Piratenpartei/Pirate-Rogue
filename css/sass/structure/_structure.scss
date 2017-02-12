@@ -1,8 +1,9 @@
 /* 
+    Structure of website
     Created on : 07.02.2017, 23:36:04
     Author     : Wiese
 */
 
-body {
-    font-family: $font-family-sans-serif;
-}
+
+@import "body";
+@import "entries";

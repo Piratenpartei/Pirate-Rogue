@@ -1,0 +1,75 @@
+/*
+    Social Media Icons
+*/
+.social-nav ul {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  li {
+    border-bottom: medium none;
+    display: inline-block;
+    margin: 0 -2px;
+    a {
+      &::before {
+         @extend .fa;
+      }
+
+      &[href*="facebook.com"]::before {
+        @extend .fa-facebook;
+      }
+      &[href*="flickr.com"]::before {
+          @extend .fa-flickr;
+      }
+      &[href*="plus.google.com"]::before {
+         @extend .fa-google-plus-square;
+      }
+      &[href*="github.com"]::before {
+        @extend .fa-github-square;
+      }
+      &[href*="instagram.com"]::before {
+        @extend .fa-instagram;
+      }
+      &[href*="linkedin.com"]::before {
+         @extend .fa-linkedin;
+      }
+      &[href*="pinterest.com"]::before {
+        @extend .fa-pinterest;
+      }
+      &[href*="reddit.com"]::before {
+          @extend .fa-reddit;
+      }
+     
+      &[href*="skype.com"]::before, &[href*="skype:"]::before {
+        @extend .fa-skype;
+      }
+      &[href*="stumbleupon.com"]::before {
+       @extend .fa-stumbleupon;
+      }
+      &[href*="tumblr.com"]::before {
+        @extend .fa-tumblr-square;
+      }
+      &[href*="twitter.com"]::before {
+        @extend .fa-twitter;
+      }
+      &[href*="vimeo.com"]::before {
+        @extend .fa-vimeo;
+      }
+      &[href*="youtube.com"]::before {
+        @extend .fa-youtube-square;
+      }
+      &[href*="spotify.com"]::before {
+         @extend .fa-spotify;
+      }
+      &[href*="wordpress.org"]::before, &[href*="wordpress.com"]::before {
+        @extend .fa-wordpress;
+      }
+      &[href*="feed"]::before {
+        @extend .fa-rss;
+      }
+      &[href*="mailto"]::before {
+         @extend .fa-envelope-o;
+      }
+    }
+  }
+}
+

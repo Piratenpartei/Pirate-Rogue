@@ -152,52 +152,6 @@ body.blog.headerimg-on.header-fullscreen {
 	padding-top: 0;
 }
 
-/* --- Serif Styles --- */
-h1.site-title,
-p.site-title,
-.entry-summary,
-.widget,
-.title-footer,
-.entry-header p.intro,
-.entry-content,
-.entry-content p,
-.entry-content table,
-.entry-content dl,
-.entry-content ul,
-.entry-content ol,
-p.section-about-text,
-p.text-big,
-p.text-small {
-	font-family: 'Noticia Text', serif;
-}
-#secondary h2.widget-title,
-#sidebar-page h2.widget-title,
-.entry-content blockquote p,
-.entry-content p span.uppercase,
-.section-about-column-two  .social-nav ul li a,
-.section-about-column-one p cite,
-.widget_mc4wp_form_widget input[type="email"],
-.widget_mc4wp_form_widget input[type="submit"],
-.jetpack_subscription_widget #subscribe-email input[type="email"],
-.jetpack_subscription_widget #subscribe-submit input[type="submit"],
-.contact-form input[type="submit"],
-input,
-textarea,
-.site-content div.wpcf7 input,
-.site-content div.wpcf7 textarea,
-.site-content div.wpcf7 p,
-a.standard-btn,
-div.sharedaddy h3.sd-title,
-.widget h2.widget-title,
-.entry-content h1,
-.entry-content h2,
-.entry-content h3,
-.entry-content  h4,
-.entry-content  h5,
-.big-instagram-wrap .clear,
-.single-product .entry-summary h1 {
-	font-family: 'Kanit', sans-serif;
-}
 
 /* --- Font Sizes --- */
 h1.site-title,
@@ -1779,6 +1733,7 @@ p.site-description {
 .section-about-column-two {
 	padding-top: 60px;
 }
+/*
 .section-about-column-two  .social-nav ul {
 	display: block;
 	border-top: 1px solid #1a1a1a;
@@ -1808,7 +1763,7 @@ p.site-description {
 	font-size: 24px;
 	width: 28px;
 }
-
+*/
 /* --- Front Section - Columns --- */
 #front-section-twocolumn .type-post:last-of-type,
 #front-section-threecolumn .type-post:last-of-type {
@@ -2834,72 +2789,7 @@ a.rsswidget {
 /*-----------------------------------------------------------------------------------*/
 /*	13.0 Social Icon Menu
 /*-----------------------------------------------------------------------------------*/
-.social-nav ul {
-	display: inline-block;
-	margin: 0;
-	padding: 0;
-}
-.social-nav ul li {
-	display: inline-block;
-	margin: 0 -2px;
-	border-bottom: none;
-}
-.social-nav ul li a::before {
-	text-align: center;
-	height: 30px;
-}
-.social-nav ul li a {
-	display: block;
-	margin: 0;
-	padding: 7px 0 0 0;
-/*	font: normal 19px/1 'Genericons';  */
-	text-align: center;
-	width: 30px;
-	height: 30px;
-	overflow: hidden;
-}
-.social-nav ul li a:before {
-	display: inline-block;
-	-webkit-font-smoothing: antialiased;
-	vertical-align: top;
-	visibility: visible;
-}
-.social-nav ul li a::before {
-/*	font: normal 19px/1 'Genericons';  */
-	padding: 0;
-	text-align: left;
-	width: 23px;
-	overflow: hidden;
-}
-/*
-.social-nav ul li a::before { content: '\f408';}
-.social-nav ul li a[href*="codepen.io"]::before {content: '\f216';}
-.social-nav ul li a[href*="digg.com"]::before {content: '\f221';}
-.social-nav ul li a[href*="dropbox.com"]::before {content: '\f225';}
-.social-nav ul li a[href*="facebook.com"]::before {content: '\f204';}
-.social-nav ul li a[href*="flickr.com"]::before {content: '\f211';}
-.social-nav ul li a[href*="plus.google.com"]::before {content: '\f218';}
-.social-nav ul li a[href*="github.com"]::before {content: '\f200';}
-.social-nav ul li a[href*="instagram.com"]::before {content: '\f215';}
-.social-nav ul li a[href*="linkedin.com"]::before {content: '\f208';}
-.social-nav ul li a[href*="pinterest.com"]::before {content: '\f210';}
-.social-nav ul li a[href*="path.com"]::before {content: '\f219';}
-.social-nav ul li a[href*="dribbble.com"]::before {content: '\f201';}
-.social-nav ul li a[href*="polldaddy.com"]::before {content: '\f217';}
-.social-nav ul li a[href*="getpocket.com"]::before {content: '\f224';}
-.social-nav ul li a[href*="reddit.com"]::before {content: '\f222';}
-.social-nav ul li a[href*="foursquare.com"]::before {content: '\f226';}
-.social-nav ul li a[href*="skype.com"]::before, .social-nav ul li a[href*="skype:"]::before {content: '\f220';}
-.social-nav ul li a[href*="stumbleupon.com"]::before {content: '\f223';}
-.social-nav ul li a[href*="tumblr.com"]::before {content: '\f214';}
-.social-nav ul li a[href*="twitter.com"]::before {content: '\f202';}
-.social-nav ul li a[href*="vimeo.com"]::before {content: '\f212';}
-.social-nav ul li a[href*="youtube.com"]::before {content: '\f213';}
-.social-nav ul li a[href*="spotify.com"]::before {content: '\f515';}
-.social-nav ul li a[href*="wordpress.org"]::before, .social-nav ul li a[href*="wordpress.com"]::before  {content: '\f205';}
-.social-nav ul li a[href*="feed"]::before {content: '\f413';}
-.social-nav ul li a[href*="mailto"]::before {content: '\f410';}
-*/
+
 
 /*-----------------------------------------------------------------------------------*/
 /*	14.0 Footer
@@ -4640,27 +4530,7 @@ a.standard-btn.black-btn {background: #000;}
 		height: 158px;
 	}
 
-	/* --- Social Nav Header --- */
-	.header-social {
-		display: block;
-		position: absolute;
-		right: 0;
-		top: 40px;
-		height: 59px;
-	}
-	.header-social ul li a {
-		font: normal 22px/1 'Genericons';
-		padding: 0;
-		width: 45px;
-		height: 59px;
-	}
-	.header-social ul li a::before {
-		font: normal 22px/1 'Genericons';
-		text-align: center;
-		width: 45px;
-		height: 59px;
-		padding-top: 20px;
-	}
+	
 
 	/* --- Search Desktop --- */
 	#masthead {
@@ -4905,13 +4775,9 @@ a.standard-btn.black-btn {background: #000;}
 		left: 69px;
 		width: 59px;
 	}
-	#header-social-sticky {
-		top: 0;
-		right: 20px;
-	}
+
 	.header-stick #overlay-open-sticky,
-	.header-stick #search-open-sticky,
-	.header-stick #header-social-sticky {
+	.header-stick #search-open-sticky {
 		top: 0;
 		z-index: 9999;
 	}

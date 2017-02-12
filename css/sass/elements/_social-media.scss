@@ -1,6 +1,7 @@
 /*
     Social Media Icons
 */
+
 .social-nav ul {
   display: inline-block;
   margin: 0;
@@ -8,15 +9,22 @@
   li {
     border-bottom: medium none;
     display: inline-block;
-    margin: 0 -2px;
+   //  margin: 0 -2px;
     a {
+       background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+        color: #036;
+        display: inline-block;
+        height: 20px;
+        line-height: 20px;
+        padding: 5px 0;
+        text-decoration: none; 
+        
+        
       &::before {
          @extend .fa;
       }
 
-      &[href*="facebook.com"]::before {
-        @extend .fa-facebook;
-      }
+     
       &[href*="flickr.com"]::before {
           @extend .fa-flickr;
       }
@@ -70,6 +78,66 @@
          @extend .fa-envelope-o;
       }
     }
+     a[href*="facebook.com"]::before {
+        @extend .fa-facebook;
+      }
   }
 }
+/*
+#social ul.social li a::before {
+    background: #036 none repeat scroll 0 0;
+    border-radius: 12px;
+    color: #e9edf2;
+    font-size: 16px;
+    height: 21px;
+    line-height: 24px;
+    margin-right: 6px;
+    padding-top: 5px;
+    text-align: center;
+    width: 24px;
+}
+#social ul.social li a {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    color: #036;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    padding: 5px 0;
+    text-decoration: none;
+}
+*/
 
+@media screen and (min-width: 66.250em) {
+	.header-social {
+		display: block;
+		position: absolute;
+		right: 0;
+		top: 40px;
+		height: 59px;
+                ul {
+                    li {
+                        a {
+                            padding: 0;
+                            width: 45px;
+                            height: 59px;
+
+                            &::before {
+                                    text-align: center;
+                                    width: 45px;
+                                    height: 59px;
+                                    padding-top: 20px;
+                            }
+                        }
+                    }
+                }
+	}
+
+        #header-social-sticky {
+		top: 0;
+		right: 20px;
+	}
+        .header-stick #header-social-sticky {
+		top: 0;
+		z-index: 9999;
+	}
+}

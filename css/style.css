@@ -758,7 +758,7 @@ CSS Font File Roboto
 
 .fa-youtube:before { content: ""; }
 
-.fa-xing:before { content: ""; }
+.fa-xing:before { content: "\f168"; }
 
 .fa-xing-square:before { content: ""; }
 
@@ -1464,6 +1464,11 @@ CSS Font File Roboto
 
 .sr-only-focusable:active, .sr-only-focusable:focus { position: static; width: auto; height: auto; margin: 0; overflow: visible; clip: auto; }
 
+/* --- Serif Styles --- */
+p.site-title, .entry-summary, .widget, .title-footer, .entry-header p.intro, .entry-content, .entry-content p, .entry-content table, .entry-content dl, .entry-content ul, .entry-content ol, p.section-about-text, p.text-big, p.text-small { font-family: Georgia, "Times New Roman", Times, serif, "Noticia Text", serif; }
+
+.entry-content blockquote p, .entry-content p span.uppercase, .section-about-column-two .social-nav ul li a, .section-about-column-one p cite, .widget_mc4wp_form_widget input[type="email"], .widget_mc4wp_form_widget input[type="submit"], .jetpack_subscription_widget #subscribe-email input[type="email"], .jetpack_subscription_widget #subscribe-submit input[type="submit"], .contact-form input[type="submit"], input, textarea, .site-content div.wpcf7 input, .site-content div.wpcf7 textarea, .site-content div.wpcf7 p, a.standard-btn, .big-instagram-wrap .clear, .single-product .entry-summary h1 { font-family: "roboto", "DejaWeb", sans-serif, sans-serif; }
+
 /*--------------------------------------------------------------
 # Structure
 --------------------------------------------------------------*/
@@ -1499,4 +1504,17 @@ h1, h2, h3, h4, h5 { font-familiy: "roboto", "DejaWeb", sans-serif; }
 /* Social Media Icons
 */
 .social-nav ul { display: inline-block; margin: 0; padding: 0; }
-.social-nav ul li { border-bottom: medium none; display: inline-block; margin: 0 -2px; }
+.social-nav ul li { border-bottom: medium none; display: inline-block; }
+.social-nav ul li a { background: transparent none repeat scroll 0 0; color: #036; display: inline-block; height: 20px; line-height: 20px; padding: 5px 0; text-decoration: none; }
+
+/*
+#social ul.social li a::before { background: #036 none repeat scroll 0 0; border-radius: 12px; color: #e9edf2; font-size: 16px; height: 21px; line-height: 24px; margin-right: 6px; padding-top: 5px; text-align: center; width: 24px;
+}
+#social ul.social li a { background: rgba(0, 0, 0, 0) none repeat scroll 0 0; color: #036; display: inline-block; height: 20px; line-height: 20px; padding: 5px 0; text-decoration: none;
+}
+*/
+@media screen and (min-width: 66.25em) { .header-social { display: block; position: absolute; right: 0; top: 40px; height: 59px; }
+  .header-social ul li a { padding: 0; width: 45px; height: 59px; }
+  .header-social ul li a::before { text-align: center; width: 45px; height: 59px; padding-top: 20px; }
+  #header-social-sticky { top: 0; right: 20px; }
+  .header-stick #header-social-sticky { top: 0; z-index: 9999; } }

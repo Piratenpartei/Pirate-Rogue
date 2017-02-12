@@ -373,7 +373,7 @@
 .#{$fa-css-prefix}-thumbs-down:before { content: $fa-var-thumbs-down; }
 .#{$fa-css-prefix}-youtube-square:before { content: $fa-var-youtube-square; }
 .#{$fa-css-prefix}-youtube:before { content: $fa-var-youtube; }
-.#{$fa-css-prefix}-xing:before { content: $fa-var-xing; }
+.#{$fa-css-prefix}-xing:before { content: "\f168";  } // $fa-var-xing;
 .#{$fa-css-prefix}-xing-square:before { content: $fa-var-xing-square; }
 .#{$fa-css-prefix}-youtube-play:before { content: $fa-var-youtube-play; }
 .#{$fa-css-prefix}-dropbox:before { content: $fa-var-dropbox; }

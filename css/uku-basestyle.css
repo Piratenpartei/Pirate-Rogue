@@ -210,7 +210,6 @@ p.text-big,
 .authorbox h3.author-title,
 #comments h3.comments-title,
 #comments #respond h3#reply-title,
-.section-about-column-two  .social-nav ul li a,
 .section-about-column-one p cite,
 .footer-feature-btn,
 .widget_mc4wp_form_widget h2.widget-title,
@@ -1733,37 +1732,7 @@ p.site-description {
 .section-about-column-two {
 	padding-top: 60px;
 }
-/*
-.section-about-column-two  .social-nav ul {
-	display: block;
-	border-top: 1px solid #1a1a1a;
-}
-.section-about-column-two  .social-nav ul li {
-	display: block;
-	border-bottom: 1px solid #1a1a1a;
-}
-.section-about-column-two  .social-nav ul li a {
-	position: relative;
-	display: block;
-	margin: 0;
-	padding: 0;
-	padding: 22px 0 22px 35px;
-	text-align: left;
-	width: auto;
-	height: auto;
-	overflow: hidden;
-	font-weight: 600;
-	letter-spacing: 3px;
-	text-transform: uppercase;
-}
-.section-about-column-two  .social-nav ul li a:before {
-	position: absolute;
-	top: 18px;
-	left: 0;
-	font-size: 24px;
-	width: 28px;
-}
-*/
+
 /* --- Front Section - Columns --- */
 #front-section-twocolumn .type-post:last-of-type,
 #front-section-threecolumn .type-post:last-of-type {

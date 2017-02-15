@@ -2,87 +2,136 @@
     Social Media Icons
 */
 
-.social-nav ul {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  li {
-    border-bottom: medium none;
-    display: inline-block;
-   //  margin: 0 -2px;
-    a {
-       background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-        color: #036;
-        display: inline-block;
-        height: 20px;
-        line-height: 20px;
-        padding: 5px 0;
-        text-decoration: none; 
-        
-        
-      &::before {
-         @extend .fa;
-      }
 
-     
-      &[href*="flickr.com"]::before {
-          @extend .fa-flickr;
-      }
-      &[href*="plus.google.com"]::before {
-         @extend .fa-google-plus-square;
-      }
-      &[href*="github.com"]::before {
-        @extend .fa-github-square;
-      }
-      &[href*="instagram.com"]::before {
-        @extend .fa-instagram;
-      }
-      &[href*="linkedin.com"]::before {
-         @extend .fa-linkedin;
-      }
-      &[href*="pinterest.com"]::before {
-        @extend .fa-pinterest;
-      }
-      &[href*="reddit.com"]::before {
-          @extend .fa-reddit;
-      }
-     
-      &[href*="skype.com"]::before, &[href*="skype:"]::before {
-        @extend .fa-skype;
-      }
-      &[href*="stumbleupon.com"]::before {
-       @extend .fa-stumbleupon;
-      }
-      &[href*="tumblr.com"]::before {
-        @extend .fa-tumblr-square;
-      }
-      &[href*="twitter.com"]::before {
-        @extend .fa-twitter;
-      }
-      &[href*="vimeo.com"]::before {
-        @extend .fa-vimeo;
-      }
-      &[href*="youtube.com"]::before {
-        @extend .fa-youtube-square;
-      }
-      &[href*="spotify.com"]::before {
-         @extend .fa-spotify;
-      }
-      &[href*="wordpress.org"]::before, &[href*="wordpress.com"]::before {
-        @extend .fa-wordpress;
-      }
-      &[href*="feed"]::before {
-        @extend .fa-rss;
-      }
-      &[href*="mailto"]::before {
-         @extend .fa-envelope-o;
-      }
-    }
-     a[href*="facebook.com"]::before {
-        @extend .fa-facebook;
-      }
-  }
+.social-nav {
+    
+   
+    ul {
+	@extend .fa-ul;
+	li {
+	    display: inline-block;
+	    border: 1px solid #fff;
+	    border-radius: 50%;
+	    a {
+		overflow: hidden;
+		display: inline-block;
+		width: 1.4em;
+		height: 1.4em;
+		text-align: center;
+		vertical-align: middle;
+	    }
+	    :hover {
+		  background: $color-socialmedia-hover;
+		  color: white;
+		   border: 1px solid $color-socialmedia-hover;
+		   border-radius: 50%;
+	    }
+	}
+
+	li {
+	    a {
+		@extend .fa-star;
+		&::before {
+		    @extend .fa;		    
+		    width: 1.4em;
+		    height: 1.4em;
+		    text-align: center;
+		    vertical-align: middle;
+		}
+
+
+		&[href*="delicious.com"] {
+		    @extend .fa-delicious;
+		}
+		&[href*="facebook.com"] {
+		    @extend .fa-facebook;
+		}
+		&[href*="feed"] {
+		    @extend .fa-rss;
+		}
+		&[href*="flattr.com"] {
+		    @extend .fa-refresh;
+		}
+		&[href*="flickr.com"] {
+		    @extend .fa-flickr;
+		}
+		&[href*="google.com"] {
+		    @extend .fa-google;
+		}
+		&[href*="plus.google.com"] {
+		    @extend .fa-google-plus;
+		}
+		&[href*="github.com"] {
+		    @extend .fa-github;
+		}
+		&[href*="instagram.com"] {
+		    @extend .fa-instagram;
+		}
+		&[href*="linkedin.com"] {
+		    @extend .fa-linkedin;
+		}
+		&[href^="mailto"] {
+		    @extend .fa-envelope-o;
+		}
+		&[href*="pinterest.com"] {
+		    @extend .fa-pinterest;
+		}
+		&[href*="slack.com"] {
+		    @extend .fa-slack;
+		}
+		&[href*="reddit.com"] {
+		    @extend .fa-reddit;
+		}
+		&[href*="slideshare.com"] {
+		    @extend .fa-slideshare;
+		}
+		&[href*="snapchat.com"] {
+		    @extend .fa-snapchat;
+		}  
+		&[href*="skype.com"], 
+		&[href*="skype:"] {
+		    @extend .fa-skype;
+		}
+		&[href*="spotify.com"] {
+		    @extend .fa-spotify;
+		}
+		&[href*="stumbleupon.com"] {
+		    @extend .fa-stumbleupon;
+		}
+		&[href*="tumblr.com"] {
+		    @extend .fa-tumblr;
+		}
+		&[href*="twitter.com"] {
+		    @extend .fa-twitter;
+		}
+		 &[href*="vimeo.com"] {
+		    @extend .fa-vimeo;
+		}
+		&[href*="whatsapp.com"] {
+		    @extend .fa-whatsapp;
+		}
+		&[href*="wordpress.org"], 
+		&[href*="wordpress.com"] {
+		    @extend .fa-wordpress;
+		}
+
+		 &[href*="xing.com"] {
+		    @extend .fa-xing;
+		}
+		&[href*="youtube.com"] {
+		    @extend .fa-youtube;
+		}
+	    }
+	}
+    }    
 }
+
+ #footer-social.social-nav {
+        li {
+            border: none;
+        }
+    }
+
 /*
 #social ul.social li a::before {
     background: #036 none repeat scroll 0 0;
@@ -114,6 +163,7 @@
 		right: 0;
 		top: 40px;
 		height: 59px;
+                /*
                 ul {
                     li {
                         a {
@@ -129,7 +179,7 @@
                             }
                         }
                     }
-                }
+                } */
 	}
 
         #header-social-sticky {

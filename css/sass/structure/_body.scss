@@ -2,6 +2,35 @@
   Molecular and organism structures
 */
 
-body {
-    font-family: $font-family-sans-serif;
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+body {
+  font-family: $font-family-sans-serif;
+  display: block;
+  color: #1a1a1a;
+  background: #ffffff;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.35;
+  
+  &.overlay-show {
+    overflow: hidden;
+  }
+  // padding-top: 51px;
+  // if main nav is fixed-positioned */
+  &.blog {
+    &.slider-on.slider-fullscreen, 
+    &.headerimg-on.header-fullscreen {
+      padding-top: 0;
+    }
+  }
+}
+
+html.overlay-show {
+  overflow: hidden;
+}
+

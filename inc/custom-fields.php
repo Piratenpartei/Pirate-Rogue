@@ -73,6 +73,6 @@ function pirate_rogue_save_metabox_untertitel( $post_id, $post ) {
 	if ( !current_user_can( 'edit_post', $post_id ) )
             return;
         
-        pirate_rogue_save_standard('piratenkleider_subtitle', $_POST['pirate_rogue_metabox_page_untertitel'], $post_id, 'text');
+        pirate_rogue_save_standard('piratenkleider_subtitle', $_POST['pirate_rogue_metabox_untertitel'], $post_id, 'text');
 
 }

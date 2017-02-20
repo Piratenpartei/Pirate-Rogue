@@ -15,7 +15,7 @@ function pirate_rogue_enqueue_styles() {
         wp_get_theme()->get('Version')
     );
 }
-add_action( 'wp_enqueue_scripts', 'pirate_rogu_enqueue_styles' );
+add_action( 'wp_enqueue_scripts', 'pirate_rogue_enqueue_styles' );
 
 
 function uku_fonts_url() {

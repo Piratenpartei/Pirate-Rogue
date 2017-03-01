@@ -1,0 +1,32 @@
+
+/* --- Contact Form 7 --- */
+
+.site-content {
+  div.wpcf7 {
+    clear: both;
+    overflow: hidden;
+    max-width: 100%;
+    padding: 0 0 30px;
+    p {
+      margin: 10px 0 0 0;
+      padding: 0;
+      &:last-of-type {
+        padding: 0;
+      }
+    }
+    input {
+      &[type='text'], &[type='email'] {
+        width: 100%;
+      }
+    }
+    textarea {
+      width: 100%;
+    }
+  }
+  input.wpcf7-submit, div.wpcf7 p input.wpcf7-submit {
+    clear: both;
+    overflow: hidden;
+    width: 100%;
+    font-weight: 600;
+  }
+}

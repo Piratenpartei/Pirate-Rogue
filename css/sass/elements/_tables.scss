@@ -2,10 +2,13 @@
 Tables
 */
 
-
-
 table {
-    border-collapse: collapse;
+  line-height: 2;
+  font-size: 18px;
+  font-size: 1.125rem;
+  
+   border-collapse: collapse;
+   border-bottom: 1px solid $table-border; 
     border-spacing: 0;
     border-width: 1px;
     margin: 0 0 1.6em;
@@ -63,6 +66,7 @@ caption, th, td {
 caption {
     padding: 3px 5px;
     font-style: italic;
+    margin: 40px 0;
     
     &.right {
 	text-align: right;

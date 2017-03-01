@@ -1,0 +1,105 @@
+/*
+Tables
+*/
+
+
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-width: 1px;
+    margin: 0 0 1.6em;
+    table-layout: fixed;
+    /* Prevents HTML tables from becoming too wide */
+    width: 100%;
+    
+    
+    &.sorttable {
+	thead {
+	    cursor: pointer;
+	    background: $table-head-sortable;
+	    tr {
+		th.headerSortUp,
+		th.headerSortDown {
+		    background: $table-head-sortable-active;
+		}
+	    }	    
+	}
+    }
+    
+    &.center {
+	th, td {
+	    text-align: center;
+	}
+    }
+    &.right {
+	td {
+	    text-align: right;
+	}
+    }
+    thead {
+	th {
+	    border-bottom: 2px solid $table-border;	
+	}
+    }
+    &.long, 
+    &.border {
+	td {
+	    border-bottom: 1px solid $table-border;	
+	}
+    }
+    &.long {	
+	tr:nth-child(odd) td {
+		background: $table-tr-odd;
+	}
+    }
+   
+}
+
+caption, th, td {
+    font-weight: normal;
+    text-align: left;
+}
+caption {
+    padding: 3px 5px;
+    font-style: italic;
+    
+    &.right {
+	text-align: right;
+    }
+    &.center {
+	text-align: center;
+    }
+}
+
+th {
+    font-weight: bold;
+    a {
+        color: $color-text;
+    }
+}
+th, td {
+    padding: 0.4em;
+}
+td {
+    color: $table-td-color;
+    
+}
+    
+th.right,
+td.right {
+    text-align: right;
+}
+
+th.center,
+td.center {
+    text-align: center;
+}
+
+tr.odd,
+tr:hover {
+    td {
+	color: $table-td-color-hover;
+    }
+}
+

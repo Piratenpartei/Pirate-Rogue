@@ -131,7 +131,10 @@ Mixins  for borders and gradients
 @function px2rem($font-size, $base-font-size: 16) {
 	@return $font-size / $base-font-size + rem;
 }
-@mixin px2rem($font-size, $base-font-size: 16) {
+
+@mixin px2rem($font-size, $base-font-size: 16, $line: $font-size * 1.4) {
   font-size: $font-size + px; // für den IE8
+  line-height: ($line) + px;
   font-size: px2rem($font-size, $base-font-size);
+  line-height: ($line / $base-font-size) + rem;
 }

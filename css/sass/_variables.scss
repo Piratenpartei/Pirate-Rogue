@@ -1,14 +1,26 @@
-/* 
-    Created on : 07.02.2017, 23:36:56
-    Author     : xwolf
-*/
-
 // Colors
-
+$color-page-background: #fff;
 $color-main: #ff8800;
 $color-hr:  $color-main;
 $color-socialmedia-hover: $color-main;
 $color-content-links: $color-main;
+$color-text: #2b2b2b;
+$bg-grey: #e7e7eb;
+$color-border: $bg-grey;
+
+
+
+// Tabellen 
+$table-head		    : $bg-grey; // #dedee3;
+$table-head-sortable	    : $table-head; // #c9dff0;
+$table-head-sortable-active : darken($table-head-sortable, 10%); // #acc8dd;
+$table-tr-odd		    : darken($color-page-background, 5%);   
+$table-caption		    : $bg-grey;
+$table-border		    : $color-border;
+$table-td-color		    : lighten($color-text,20%);
+$table-td-color-hover	    : $color-text;
+
+
 
 // Fonts
 $font-family-sans-serif:    'roboto', 'DejaWeb', sans-serif;

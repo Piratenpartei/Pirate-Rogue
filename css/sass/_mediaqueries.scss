@@ -62,11 +62,13 @@
       width: 30%;
     }
   }
-  .widget_mc4wp_form_widget input[type="email"], .jetpack_subscription_widget #subscribe-email input[type="email"] {
+  .widget_mc4wp_form_widget input[type="email"], 
+  .jetpack_subscription_widget #subscribe-email input[type="email"] {
     width: 58%;
     float: left;
   }
-  .widget_mc4wp_form_widget input[type="submit"], .jetpack_subscription_widget #subscribe-submit input[type="submit"] {
+  .widget_mc4wp_form_widget input[type="submit"], 
+  .jetpack_subscription_widget #subscribe-submit input[type="submit"] {
     width: 40%;
     float: right;
   }
@@ -88,7 +90,11 @@
 ------------------------------------------------------------------------------------ */
 @media screen and (min-width: 48em) {
   /* --- General --- */
-  .page .content-wrap, .front-section:first-of-type, .page.has-thumb .blog-wrap, .search-results .blog-wrap, .archive .blog-wrap, .error404 .content-wrap {
+  .page .content-wrap, .front-section:first-of-type, 
+  .page.has-thumb .blog-wrap, 
+  .search-results .blog-wrap, 
+  .archive .blog-wrap, 
+  .error404 .content-wrap {
     padding-top: 60px;
   }
   /* --- Font Sizes --- */
@@ -258,8 +264,11 @@
   .front-section {
     padding-bottom: 75px;
   }
-  .front-section-title, .social-front-title, .page h1.entry-title, .recommended-posts-wrap #jp-relatedposts h3.jp-relatedposts-headline {
-    padding: 3px 0 20px;
+  .front-section-title, 
+  .social-front-title, 
+  .page h1.entry-title, 
+  .recommended-posts-wrap #jp-relatedposts h3.jp-relatedposts-headline {
+  //  padding: 3px 0 20px;
   }
   .front-section a.all-posts-link {
     top: 25px;

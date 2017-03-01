@@ -18,7 +18,8 @@
 
 /* --- Overlay Buttons: Fix-positioning --- */
 
-#overlay-open, #overlay-close {
+#overlay-open, 
+#overlay-close {
   position: absolute;
   top: 5px;
   right: 5.3125%;
@@ -39,17 +40,22 @@
     display: none;
   }
   &:before {
-    font: normal 25px/1 'Genericons';
     display: block;
   }
 }
 
-#overlay-open:before, #overlay-open-sticky:before {
-  content: '\f419';
+#overlay-open:before, 
+#overlay-open-sticky:before {
+  @extend .fa;
+   @extend .fa-2x;
+  @extend .fa-bars;
 }
 
 #overlay-close:before {
-  content: '\f406';
+//  content: '\f406';
+    @extend .fa; 
+    @extend .fa-2x;
+    @extend .fa-close;
 }
 
 .close-btn-wrap {

@@ -1318,7 +1318,7 @@
   }
   .header-stick {
     #overlay-open-sticky, #search-open-sticky {
-      top: 0;
+      top: 10px;
       z-index: 9999;
     }
     #overlay-open-sticky {

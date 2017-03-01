@@ -96,12 +96,14 @@
   }
 }
 
-.sub-menu .menu-item-has-children .dropdown-toggle, .children .page_item_has_childrenn .dropdown-toggle:after {
+.sub-menu .menu-item-has-children .dropdown-toggle, 
+.children .page_item_has_childrenn .dropdown-toggle:after {
   width: 30px;
   height: 30px;
 }
 
-.sub-menu .menu-item-has-children .dropdown-toggle:after, .children .page_item_has_children .dropdown-toggle:after {
+.sub-menu .menu-item-has-children .dropdown-toggle:after, 
+.children .page_item_has_children .dropdown-toggle:after {
   padding: 4px 0 0 0;
 }
 
@@ -145,27 +147,22 @@
 	li.menu-item-has-children {
 	    > a::after {
 		   margin-left: 3px;
-
 		   @extend .fa;
 		   content: $fa-var-caret-down;
 
 	   }
-
-
 	   a:hover::after {
 	    //  border-top-color: #51a8dd;
 	   }
 	}
 	li:hover {
 	    a {
-		border-bottom: 3px solid $color-main;    
+		border-bottom: 3px solid $color-mainnav-active-border;
 	    } 
 	    li a {
 		border-bottom: none;    
 	    }
 	}
-
-	
   }
     
   .sub-menu li a:hover, 

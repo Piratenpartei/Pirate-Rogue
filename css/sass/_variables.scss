@@ -8,6 +8,21 @@ $color-text: #2b2b2b;
 $bg-grey: #e7e7eb;
 $color-border: $bg-grey;
 
+$color-second: #672082;
+
+$color-mainnav-active-border: $color-main;
+
+// Fonts
+$font-family-sans-serif:    'DejaWeb','roboto', sans-serif;
+$font-family-serif:         Georgia, "Times New Roman", Times, serif;
+$font-family-monospace:     Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", "Courier New",monospace;
+$font-family-pre:           "Courier 10 Pitch", Courier, monospace;
+$font-family-headlines:     'roboto', 'DejaWeb', sans-serif;
+
+$font-family-base:          $font-family-sans-serif;
+$font-family-sitetitle:     $font-family-headlines;
+$font-family-code:          $font-family-monospace;
+$font-family-quotation:     $font-family-serif;
 
 
 // Tabellen 
@@ -20,16 +35,3 @@ $table-border		    : $color-border;
 $table-td-color		    : lighten($color-text,20%);
 $table-td-color-hover	    : $color-text;
 
-
-
-// Fonts
-$font-family-sans-serif:    'roboto', 'DejaWeb', sans-serif;
-$font-family-serif:         Georgia, "Times New Roman", Times, serif;
-$font-family-monospace:     Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", "Courier New",monospace;
-$font-family-sitetitle:      'roboto', sans-serif;
-
-$font-family-base:          $font-family-sans-serif;
-$font-family-headlines:     'roboto', 'DejaWeb', sans-serif;
-$font-family-code:          $font-family-monospace;
-$font-family-pre:           "Courier 10 Pitch", Courier, monospace;
-$font-family-quotation:     $font-family-serif;

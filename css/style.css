@@ -1456,9 +1456,9 @@ CSS Font File Roboto
 .sr-only-focusable:active, .sr-only-focusable:focus { position: static; width: auto; height: auto; margin: 0; overflow: visible; clip: auto; }
 
 /* --- Serif Styles --- */
-p.site-title, .entry-summary, .widget, .title-footer, .entry-header p.intro, .entry-content, .entry-content p, .entry-content table, .entry-content dl, .entry-content ul, .entry-content ol, p.section-about-text, p.text-big, p.text-small { font-family: Georgia, "Times New Roman", Times, serif, "Noticia Text", serif; }
+p.site-title, .entry-summary, .widget, .title-footer, .entry-header p.intro, .entry-content, .entry-content p, .entry-content table, .entry-content dl, .entry-content ul, .entry-content ol, p.section-about-text, p.text-big, p.text-small { font-family: "DejaWeb", "roboto", sans-serif; }
 
-.entry-content blockquote p, .entry-content p span.uppercase, .section-about-column-two .social-nav ul li a, .section-about-column-one p cite, .widget_mc4wp_form_widget input[type="email"], .widget_mc4wp_form_widget input[type="submit"], .jetpack_subscription_widget #subscribe-email input[type="email"], .jetpack_subscription_widget #subscribe-submit input[type="submit"], .contact-form input[type="submit"], input, textarea, .site-content div.wpcf7 input, .site-content div.wpcf7 textarea, .site-content div.wpcf7 p, a.standard-btn, .big-instagram-wrap .clear, .single-product .entry-summary h1 { font-family: "roboto", "DejaWeb", sans-serif, sans-serif; }
+.entry-content blockquote p, .entry-content p span.uppercase, .section-about-column-two .social-nav ul li a, .section-about-column-one p cite, .widget_mc4wp_form_widget input[type="email"], .widget_mc4wp_form_widget input[type="submit"], .jetpack_subscription_widget #subscribe-email input[type="email"], .jetpack_subscription_widget #subscribe-submit input[type="submit"], .contact-form input[type="submit"], input, textarea, .site-content div.wpcf7 input, .site-content div.wpcf7 textarea, .site-content div.wpcf7 p, a.standard-btn, .big-instagram-wrap .clear, .single-product .entry-summary h1 { font-family: "DejaWeb", "roboto", sans-serif; }
 
 /*
 * optional grid-Framework, compiled from bootstrap sass 
@@ -1731,7 +1731,7 @@ p.site-title, .entry-summary, .widget, .title-footer, .entry-header p.intro, .en
 */
 html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
-body { font-family: "roboto", "DejaWeb", sans-serif; display: block; color: #1a1a1a; background: #ffffff; font-size: 16px; font-size: 1rem; line-height: 1.35; }
+body { font-family: "DejaWeb", "roboto", sans-serif; display: block; color: #1a1a1a; background: #ffffff; font-size: 16px; font-size: 1rem; line-height: 1.35; }
 body.overlay-show { overflow: hidden; }
 body.blog.slider-on.slider-fullscreen, body.blog.headerimg-on.header-fullscreen { padding-top: 0; }
 
@@ -2352,7 +2352,7 @@ a.standard-btn.black-btn { background: #000; }
   .header-stick .sticky-header p { display: block; padding: 8px 0 0 0; }
   #overlay-open-sticky { position: absolute; height: 59px; text-align: center; top: 0; left: 10px; width: 59px; }
   #search-open-sticky { top: 0; left: 69px; width: 59px; }
-  .header-stick #overlay-open-sticky, .header-stick #search-open-sticky { top: 0; z-index: 9999; }
+  .header-stick #overlay-open-sticky, .header-stick #search-open-sticky { top: 10px; z-index: 9999; }
   .header-stick #overlay-open-sticky { width: 60px; }
   .header-stick .desktop-search { position: fixed; top: 59px; border-top: none; height: 0; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; -o-transition: all .3s ease-in-out; transition: all .3s ease-in-out; }
   .header-stick.desktop-search-show .desktop-search { height: 118px; }

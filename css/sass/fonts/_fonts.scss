@@ -22,7 +22,7 @@ p.site-title,
 p.section-about-text,
 p.text-big,
 p.text-small {
-	font-family: $font-family-serif, 'Noticia Text', serif;
+	font-family: $font-family-base;
 }
 .entry-content blockquote p,
 .entry-content p span.uppercase,
@@ -41,5 +41,5 @@ textarea,
 a.standard-btn,
 .big-instagram-wrap .clear,
 .single-product .entry-summary h1 {
-	font-family: $font-family-sans-serif, sans-serif;
+	font-family: $font-family-base;
 }

@@ -2,7 +2,11 @@
 /*	3.0 Header
 /*-----------------------------------------------------------------------------------*/
 
-#desktop-navigation, .header-social, .search-open, .desktop-search, .sticky-header {
+#desktop-navigation, 
+.header-social, 
+.search-open, 
+.desktop-search, 
+.sticky-header {
   display: none;
 }
 
@@ -20,7 +24,8 @@
 }
 
 .home.blog {
-  &.slider-on.slider-fullscreen #site-branding, &.headerimg-on.header-fullscreen #site-branding {
+  &.slider-on.slider-fullscreen #site-branding, 
+  &.headerimg-on.header-fullscreen #site-branding {
     position: absolute;
   }
 }

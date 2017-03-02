@@ -1,0 +1,44 @@
+/*
+* Blockquotes and cites
+*/
+
+
+.single-post .entry-content blockquote p, 
+.page .entry-content blockquote p {
+  position: relative;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.single-post {
+  #comments blockquote p {
+    position: relative;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  .entry-content blockquote {
+    border-top: 4px solid #2b2b2b;
+    border-bottom: 1px solid #2b2b2b;
+    padding: 20px 0;
+    margin: 0 0 30px;
+  }
+}
+
+.page .entry-content blockquote {
+  border-top: 4px solid #2b2b2b;
+  border-bottom: 1px solid #2b2b2b;
+  padding: 20px 0;
+  margin: 0 0 30px;
+  cite {
+    display: block;
+    padding-top: 10px;
+    font-style: normal;
+  }
+}
+
+.single-post .entry-content blockquote cite, 
+#comments blockquote cite {
+  display: block;
+  padding-top: 10px;
+  font-style: normal;
+}

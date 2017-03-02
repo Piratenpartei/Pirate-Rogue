@@ -1,11 +1,15 @@
-/* 
-    Structure of website
-    Created on : 07.02.2017, 23:36:04
-    Author     : Wiese
-*/
+/*-----------------------------------------------------------------------------------*/
+/* Structure
+/*-----------------------------------------------------------------------------------*/
 @import "body";
 @import "header";
 @import "menus";
 
+@import "blog-frontpage";
 @import "entries";
 @import "off-canvas";
+@import "pagination";
+@import "post-types";
+@import "widgets";
+@import "footer";
+@import "shortcodes";

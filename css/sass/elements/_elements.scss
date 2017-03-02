@@ -1,10 +1,54 @@
-/*
-* Elemente
-*/
+/*-----------------------------------------------------------------------------------*/
+/* Elements
+/*-----------------------------------------------------------------------------------*/
 
+// Reset Styles
+@import "reset";
+
+// General Styles
+@import "general-styles";
+
+// Überschriften
 @import "headlines";
+
+// Trennzeichen hr
 @import "devider";
+
+// Links
 @import "links";
+
+// Tabellen
 @import "tables";
+
+// Listen
+@import "lists";   
+
+// Blockquptes und Zitate
+@import "quotes";
+
+// Allgemeine Klassen
+@import "classes";
+
+// Formulare, Unput Felder etc
+@import "forms";
+
+// Bilder
+@import "images";
+
+// Bildergalerien
+@import "galleries";
+
+// Embeds, Videos
+@import "embeds";
+
+// Social Media Icons
 @import "social-media";
+
+// Buttons (keine Input-Buttons, sondern Klassen)
 @import "buttons";
+
+// Kommentare
+@import "comments";
+
+// Slider
+@import "slider";

@@ -1,8 +1,7 @@
 /* 
-    Ueberschriften
+*    Ueberschriften
 */
 
-/* --- Headings --- */
 
 h1, h2, h3, h4, h5, h6 {
   -webkit-hyphens: auto;
@@ -111,5 +110,8 @@ h1 {
 }
 
 
-
-
+#secondary h2.widget-title, 
+#sidebar-page h2.widget-title {
+  font-size: 16px;
+  font-size: 1rem;
+}

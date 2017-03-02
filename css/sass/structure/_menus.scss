@@ -151,9 +151,6 @@
 		   content: $fa-var-caret-down;
 
 	   }
-	   a:hover::after {
-	    //  border-top-color: #51a8dd;
-	   }
 	}
 	li:hover {
 	    a {
@@ -164,25 +161,7 @@
 	    }
 	}
   }
-    
-  .sub-menu li a:hover, 
-  .children li a:hover {
-//    background: #51a8dd;
-  }
  
   
 }
 
-
-
-
-.widget_mc4wp_form_widget input[type="submit"], 
-.jetpack_subscription_widget #subscribe-submit input[type="submit"] {
-//  background: #51a8dd;
-}
-
-.uku-neo .format-video .entry-thumbnail span.video-icon {
-  &:before, &:after {
- //   background: #51a8dd;
-  }
-}

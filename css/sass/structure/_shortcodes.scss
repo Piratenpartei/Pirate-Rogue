@@ -1,0 +1,37 @@
+/*-----------------------------------------------------------------------------------*/
+/*	16.0 Shortcodes
+/*-----------------------------------------------------------------------------------*/
+
+/* --- Multi Columns --- */
+
+.two-columns-one, .three-columns-one, .three-columns-two, .four-columns-one, .four-columns-two, .four-columns-three {
+  width: 100%;
+}
+
+.entry-content {
+  .two-columns-one, .three-columns-one, .three-columns-two, .four-columns-one, .four-columns-two, .four-columns-three {
+    position: relative;
+    float: left;
+    margin-bottom: 30px;
+    font-size: 16px;
+    font-size: 1rem;
+  }
+  .two-columns-one p, .three-columns-one p, .three-columns-two p, .four-columns-one p, .four-columns-two p, .four-columns-three p {
+    font-size: 16px;
+    font-size: 1rem;
+  }
+}
+
+.last {
+  clear: right;
+  margin-right: 0 !important;
+}
+
+.divider {
+  width: 100%;
+  margin-bottom: 21px;
+  padding-top: 21px;
+  display: block;
+  clear: both;
+}
+

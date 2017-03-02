@@ -1,0 +1,101 @@
+
+/*
+* Listelemente
+*/
+
+ul, 
+ol {
+  margin: 0 0 30px 0;
+  padding-left: 40px;
+  list-style-position: inside;
+}
+
+ul ul {
+  margin: 0;
+}
+
+ol ol {
+  margin: 0;
+  list-style: lower-alpha;
+}
+
+.comment-text {
+  ul, 
+  ol {
+    margin: 0 0 15px;
+    padding-left: 20px;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+.entry-content ul li, 
+.comment-text li {
+  position: relative;
+  padding: 0 0 0 24px;
+}
+
+.entry-content ul li:before, 
+.comment-text ul li:before {
+  vertical-align: top;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '\2013';
+  padding: 0;
+}
+
+.entry-content ol li ul li, 
+.comment-text ul li ul li {
+  padding-left: 24px;
+}
+
+.entry-content ul li ol li:before, 
+.comment-text ul li ol li:before {
+  display: none;
+}
+
+.entry-content ul li, 
+.comment-text ol ul li {
+  padding: 0 0 0 24px;
+}
+
+ol {
+  list-style: decimal;
+}
+
+li {
+  & > ul, 
+  & > ol {
+    margin-bottom: 0;
+    margin-left: 0;
+  }
+}
+
+.entry-content {
+  ul {
+    padding-left: 50px;
+  }
+  ol {
+    padding-left: 70px;
+    li {
+      padding-left: 4px;
+    }
+  }
+  ul li, 
+  ol li {
+    list-style-position: outside;
+  }
+   ul ul, ol ol {
+    padding-left: 50px;
+  }
+}
+
+
+#comments {
+  ul ul, ol ol {
+    padding-left: 50px;
+  }
+}

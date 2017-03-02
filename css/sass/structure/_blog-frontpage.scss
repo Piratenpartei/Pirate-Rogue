@@ -1,0 +1,491 @@
+
+/*-----------------------------------------------------------------------------------*/
+/* Front Page - Post Sections
+/*-----------------------------------------------------------------------------------*/
+
+.front-section {
+  margin: 0 auto;
+  padding-bottom: 70px;
+}
+
+.front-section-title {
+  position: relative;
+  display: block;
+  padding: 3px 130px 20px 0;
+  border-top: 4px solid #1a1a1a;
+}
+
+.social-front-title {
+  position: relative;
+  display: block;
+  padding: 3px 130px 20px 0;
+  border-top: 4px solid #1a1a1a;
+  padding-right: 0;
+}
+
+.front-section a.all-posts-link, .big-instagram-wrap .null-instagram-feed .clear {
+  position: absolute;
+  top: 11px;
+  right: -2px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+
+.sidebar-offcanvas .null-instagram-feed .clear, 
+.sidebar .null-instagram-feed .clear {
+  position: absolute;
+  top: 16px;
+  right: 0;
+  display: block;
+  margin: 0;
+}
+
+.front-section {
+  a.all-posts-link:after {
+    content: '\2192';
+    text-align: right;
+    padding-left: 3px;
+  }
+  .type-post {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 20px 0 35px;
+    border-top: 1px solid #1a1a1a;
+  }
+}
+
+/* --- Front Section - Meta Info  --- */
+
+.section-one-column-one .entry-author, .section-two-column-one .entry-author, .section-three-column-one .entry-author {
+  font-weight: 600;
+}
+
+.section-one-column-one .entry-date:before, .section-two-column-one .entry-date:before, .section-three-column-one .entry-date:before {
+  content: ' / ';
+  padding: 0 2px;
+}
+
+.section-one-column-one {
+  .entry-comments, .entry-edit {
+    margin-left: 20px;
+  }
+}
+
+.section-two-column-one {
+  .entry-comments, .entry-edit {
+    margin-left: 20px;
+  }
+}
+
+.section-three-column-one {
+  .entry-comments, .entry-edit {
+    margin-left: 20px;
+  }
+}
+
+/* --- Front Section Small Posts --- */
+
+.section-one-column-two, .section-two-column-two {
+  display: block;
+  overflow: hidden;
+}
+
+.section-one-column-two .type-post:nth-of-type(n+2), .section-two-column-two .type-post, .section-fourcolumn-postwrap .type-post, .section-sixcolumn-postwrap .type-post {
+  width: 47.8134110787172%;
+}
+
+.section-one-column-two .type-post {
+  &:nth-of-type(2), &:nth-of-type(4) {
+    float: left;
+    margin-right: 2.1865889212828%;
+    clear: left;
+  }
+}
+
+.section-two-column-two .type-post {
+  &:nth-of-type(1), &:nth-of-type(3), &:nth-of-type(5), &:nth-of-type(7) {
+    float: left;
+    margin-right: 2.1865889212828%;
+    clear: left;
+  }
+}
+
+.section-fourcolumn-postwrap .type-post:nth-of-type(odd), .section-sixcolumn-postwrap .type-post:nth-of-type(odd) {
+  float: left;
+  margin-right: 2.1865889212828%;
+  clear: left;
+}
+
+.section-one-column-two .type-post {
+  &:nth-of-type(3), &:nth-of-type(5) {
+    float: right;
+    margin-left: 2.1865889212828%;
+    clear: right;
+  }
+}
+
+.section-two-column-two .type-post {
+  &:nth-of-type(2), &:nth-of-type(4), &:nth-of-type(6), &:nth-of-type(8) {
+    float: right;
+    margin-left: 2.1865889212828%;
+    clear: right;
+  }
+}
+
+.section-fourcolumn-postwrap .type-post:nth-of-type(even), .section-sixcolumn-postwrap .type-post:nth-of-type(even) {
+  float: right;
+  margin-left: 2.1865889212828%;
+  clear: right;
+}
+
+#front-section-one .section-one-column-two .type-post {
+  &:nth-of-type(4), &:nth-of-type(5) {
+    padding-bottom: 0;
+  }
+}
+
+#front-section-two .section-two-column-two .type-post {
+  &:nth-of-type(7), &:nth-of-type(8) {
+    padding-bottom: 0;
+  }
+}
+
+.section-fourcolumn-postwrap .type-post {
+  &:last-child, &:nth-last-child(2) {
+    padding-bottom: 0;
+  }
+}
+
+.section-sixcolumn-postwrap .type-post {
+  &:last-child, &:nth-last-child(2) {
+    padding-bottom: 0;
+  }
+}
+
+.section-one-column-one .entry-header, .section-two-column-one .entry-header, .section-three-column-one .entry-header {
+  padding: 15px 0 10px;
+}
+
+.section-one-column-one {
+  .entry-cats {
+    position: absolute;
+    top: 37px;
+    left: 17px;
+  }
+  .entry-summary {
+    padding: 0 0 20px;
+    line-height: 1.35;
+  }
+}
+
+.section-two-column-one .entry-summary, .section-three-column-one .entry-summary {
+  padding: 0 0 20px;
+  line-height: 1.35;
+}
+
+.columns-wrap {
+  .entry-header {
+    padding: 8px 0 0 0;
+    h2.entry-title {
+      padding: 8px 0 0 0;
+    }
+  }
+  .entry-summary {
+    padding: 8px 0 0 0;
+  }
+}
+
+/* --- Front Section 3 (on Background) --- */
+
+#front-section-three {
+  width: 100%;
+  background: #f4f4f4;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 70px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  h3.front-section-title {
+    position: relative;
+    display: block;
+    padding: 8px 0 20px;
+    border-top: none;
+    &:before {
+      content: " ";
+      border-top: 4px solid #1a1a1a;
+      width: 50px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+#big-footer-feature h3.footer-feature-title:before {
+  content: " ";
+  border-top: 4px solid #1a1a1a;
+  width: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top: 4px solid #fff;
+}
+
+#front-section-three {
+  a.all-posts-link {
+    border: 2px solid #2b2b2b;
+    padding: 4px 6px;
+    top: 2px;
+    &:after {
+      display: none;
+    }
+  }
+  .section-three-column-one .type-post {
+    border-top: none;
+    padding-top: 0;
+  }
+}
+
+.section-three-column-two {
+  .entry-cats {
+    display: none;
+  }
+  .entry-thumbnail {
+    width: 50%;
+    float: left;
+    padding-right: 4.6875%;
+    padding-bottom: 35px;
+  }
+  .entry-header {
+    width: 50%;
+    float: left;
+  }
+  .type-post {
+    .entry-header h2.entry-title {
+      padding: 0;
+    }
+    &:last-of-type .entry-thumbnail {
+      padding-bottom: 0;
+    }
+    clear: both;
+  }
+}
+
+.section-three-column-one .entry-cats {
+  position: absolute;
+  top: 17px;
+  left: 17px;
+}
+
+/* --- Front Section Four (Fullwidth) --- */
+
+#front-section-four {
+  padding-left: 0;
+  padding-right: 0;
+  .type-post {
+    position: relative;
+    padding: 0;
+    border-top: none;
+    .entry-summary, .entry-author {
+      display: none;
+    }
+    .entry-thumbnail img {
+      width: 100%;
+    }
+  }
+  .meta-main-wrap {
+    display: block;
+    padding-left: 5.3125%;
+    padding-right: 5.3125%;
+    padding-bottom: 17px;
+  }
+}
+
+/* --- Front Section About (About Info + Social Menu) --- */
+
+.section-about-column-one {
+  padding: 0;
+  overflow: hidden;
+  .front-section-title {
+    border-bottom: 1px solid #1a1a1a;
+    margin-bottom: 20px;
+  }
+}
+
+.front-about-img {
+  width: 50%;
+  float: left;
+  clear: left;
+  padding-right: 2.34375%;
+}
+
+.section-about-column-one p {
+  display: block;
+  margin: 0;
+  clear: right;
+  float: left;
+  width: 50%;
+  padding-left: 2.34375%;
+  cite {
+    display: block;
+    padding: 20px 0 0 0;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-style: normal;
+  }
+}
+
+.section-about-column-two {
+  padding-top: 60px;
+}
+
+/* --- Front Section - Columns --- */
+
+#front-section-twocolumn .type-post:last-of-type, #front-section-threecolumn .type-post:last-of-type {
+  padding-bottom: 0;
+}
+
+#front-section-twocolumn .entry-summary, #front-section-threecolumn .entry-summary, #front-section-fourcolumn .entry-summary, #front-section-sixcolumn .entry-summary {
+  display: none;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* 7.0 Blog Front
+/*-----------------------------------------------------------------------------------*/
+
+.blog-wrap h3.blog-title, .archive-header h1.archive-title {
+  display: block;
+  padding: 3px 0 20px;
+  border-top: 4px solid #1a1a1a;
+}
+
+/* --- Blog Front: Posts --- */
+
+#primary .hentry {
+  position: relative;
+  padding: 20px 0 34px;
+  border-top: 1px solid #1a1a1a;
+  .entry-meta, .entry-author {
+    display: none;
+  }
+}
+
+.comment-name {
+  display: none;
+}
+
+.entry-author span {
+  padding-right: 4px;
+}
+
+.blog #primary .hentry .entry-thumbnail, .archive #primary .hentry .entry-thumbnail, .search-results #primary .hentry .entry-thumbnail {
+  width: 32.1875%;
+  /* -- 103px at 320px ---*/
+  margin: 0 0 0 10px;
+  float: right;
+}
+
+.blog {
+  .hentry .entry-cats a {
+    display: none;
+  }
+  .entry-cats a:nth-child(n+2):before {
+    content: ' / ';
+    padding: 0 2px;
+    color: #2b2b2b !important;
+  }
+}
+
+.search-results .entry-cats a:nth-child(n+2):before, .archive .entry-cats a:nth-child(n+2):before {
+  content: ' / ';
+  padding: 0 2px;
+  color: #2b2b2b !important;
+}
+
+.blog {
+  #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-cats a:before, .section-one-column-one .entry-cats a:before, .section-three-column-one .entry-cats a:before, #front-section-four .entry-cats a:before {
+    display: none;
+  }
+}
+
+.featured-slider .entry-cats a:before {
+  display: none;
+}
+
+.blog {
+  .hentry .entry-cats a {
+    &:nth-child(1), &:nth-child(2) {
+      display: inline-block;
+    }
+  }
+  #primary .hentry.has-post-thumbnail:nth-child(4n+1) {
+    margin-left: -5.94405594405594%;
+    /* -- 17px at 320px ---*/
+    margin-right: -5.94405594405594%;
+    /* -- 17px at 320px ---*/
+    margin-bottom: 34px;
+    padding: 0;
+    border-top: 0;
+    .entry-thumbnail {
+      width: 100%;
+      margin: 0;
+      float: none;
+      img {
+        width: 100%;
+      }
+    }
+    .meta-main-wrap {
+      width: 100%;
+      padding: 0 5.3125% 28px;
+    }
+    .entry-meta {
+      float: none;
+    }
+    .entry-summary {
+      display: none;
+    }
+    .entry-cats a {
+      padding: 2px 5px;
+    }
+    .entry-date, .entry-comments, .entry-edit, .entry-author {
+      display: inline-block;
+      padding-bottom: 0;
+    }
+    .entry-date {
+      padding-right: 20px;
+    }
+  }
+}
+
+/* --- Blog Front: Bigger Posts --- */
+
+#front-section-four .entry-date, .featured-slider .entry-date {
+  padding-right: 20px;
+}
+
+.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) {
+  .entry-author {
+    font-weight: 600;
+  }
+  .entry-meta {
+    display: block;
+    position: absolute;
+    width: 80.43478260869566%;
+    left: 5.3125%;
+    bottom: 17px;
+  }
+}
+
+.featured-slider .entry-edit, #front-section-four .entry-edit {
+  display: none;
+}
+
+.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) {
+  .entry-edit, .entry-author {
+    display: none;
+  }
+}

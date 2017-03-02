@@ -1,0 +1,124 @@
+
+
+/* --- Forms & Buttons --- */
+
+input {
+  padding: 12px 15px;
+  background: #fff;
+  border: 1px solid #ccc;
+  line-height: normal;
+  outline: none;
+  color: #2b2b2b;
+}
+
+textarea {
+  padding: 12px 15px;
+  background: #fff;
+  border: 1px solid #ccc;
+  line-height: normal;
+  outline: none;
+  color: #2b2b2b;
+  &:focus, &:active {
+    border: 1px solid #2b2b2b;
+  }
+}
+
+input {
+  &:focus, &:active {
+    border: 1px solid #2b2b2b;
+  }
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+button, input, optgroup, select, textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+button {
+  overflow: visible;
+  text-transform: none;
+}
+
+select {
+  text-transform: none;
+}
+
+button, html input[type="button"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+input {
+  &[type="reset"], &[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+  }
+}
+
+button[disabled], html input[disabled] {
+  cursor: default;
+}
+
+input {
+  &[type="button"], &[type="submit"], &#submit {
+    padding: 9px 30px;
+    border: 2px solid #2b2b2b;
+    line-height: normal;
+    cursor: pointer;
+    outline: none;
+    -webkit-appearance: none;
+    font-family: 'Kanit', sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 3px;
+  }
+}
+
+.post-password-form input[type="password"] {
+  padding: 9px 15px;
+}
+
+.widget_search {
+  .searchform {
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    overflow: hidden;
+  }
+  input.search-field {
+    margin-right: 6px;
+    padding: 12px 2%;
+    font-family: 'Kanit', sans-serif;
+    float: left;
+    width: 58%;
+  }
+}
+
+.error404 input {
+  &.search-field {
+    padding: 12px 2%;
+  }
+  &[type="submit"] {
+    padding: 10px 30px;
+  }
+}
+
+.widget_search input[type="submit"], .post-password-form input[type="submit"] {
+  padding: 11px 0;
+  font-weight: 600;
+  line-height: 1.65;
+  border: 2px solid #1a1a1a;
+}
+
+.widget_search input[type="submit"] {
+  width: 40%;
+  float: right;
+}
+
+

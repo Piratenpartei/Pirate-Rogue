@@ -1,0 +1,15 @@
+/* --- Embeds / Video --- */
+
+
+embed, iframe, object, video {
+  max-width: 100%;
+}
+
+.entry-content .twitter-tweet-rendered {
+  max-width: 100% !important;
+  /* Override the Twitter embed fixed width */
+}
+
+.site-content .type-attachment {
+  padding-top: 0 !important;
+}

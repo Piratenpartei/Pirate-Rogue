@@ -1,0 +1,75 @@
+/* --- Images  --- */
+
+img {
+    max-width: 100%;
+    /* Adhere to container width. */
+    height: auto;
+    /* Make sure images are scaled correctly. */
+
+    &.wp-post-image {
+      padding: 0;
+    }
+    &.img-border {
+      border: 5px solid #e2e2e2;
+    }
+    &.img-border-thin {
+      background: #fff;
+      padding: 5px;
+      border: 1px solid #ededee;
+    }
+
+    &.alignleft, 
+    &.alignright {
+      margin-top: 8px;
+      margin-bottom: 25px;
+    }
+
+  
+}
+
+.widget img {
+  max-width: 100%;
+  height: auto;
+}
+
+.wp-caption {
+  &.alignnone {
+    margin: 0;
+  }
+  max-width: 100%;
+  a {
+    line-height: 0;
+    display: block;
+  }
+}
+
+img#wpstats {
+  display: none;
+}
+
+.entry-content {
+  .wp-caption-text, p.wp-caption-text {
+    margin: 0;
+    padding: 8px 2px 30px;
+    font-size: 14px;
+    font-size: 0.875rem;
+  }
+}
+
+.type-attachment .entry-content .entry-caption p {
+  margin: 0;
+  padding: 8px 2px 30px;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+
+.entry-content {
+  .alignleft p.wp-caption-text {
+    text-align: left;
+  }
+  .alignright p.wp-caption-text {
+    text-align: right;
+    margin-right: 6px;
+  }
+}
+

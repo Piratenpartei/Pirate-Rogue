@@ -98,7 +98,9 @@
     padding-top: 60px;
   }
   /* --- Font Sizes --- */
-  .single-post .entry-header h1.entry-title, .single-attachment .entry-header h1.entry-title, .page h1.entry-title {
+  .single-post .entry-header h1.entry-title, 
+  .single-attachment .entry-header h1.entry-title, 
+  .page h1.entry-title {
     font-size: 48px;
     font-size: 3rem;
   }

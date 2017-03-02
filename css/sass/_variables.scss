@@ -13,11 +13,10 @@ $color-second: #672082;
 $color-mainnav-active-border: $color-main;
 
 // Fonts
-$font-family-sans-serif:    'DejaWeb','roboto', sans-serif;
+$font-family-sans-serif:    'DejaWeb', sans-serif;
 $font-family-serif:         Georgia, "Times New Roman", Times, serif;
-$font-family-monospace:     Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", "Courier New",monospace;
-$font-family-pre:           "Courier 10 Pitch", Courier, monospace;
-$font-family-headlines:     'roboto', 'DejaWeb', sans-serif;
+$font-family-monospace:     Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", "Courier New", "Courier 10 Pitch", Courier,monospace;
+$font-family-headlines:     'roboto', sans-serif;
 
 $font-family-base:          $font-family-sans-serif;
 $font-family-sitetitle:     $font-family-headlines;

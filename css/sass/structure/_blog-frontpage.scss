@@ -357,10 +357,10 @@
 /* 7.0 Blog Front
 /*-----------------------------------------------------------------------------------*/
 
-.blog-wrap h3.blog-title, .archive-header h1.archive-title {
+.blog-wrap h3.blog-title, 
+.archive-header h1.archive-title {
   display: block;
   padding: 3px 0 20px;
-  border-top: 4px solid #1a1a1a;
 }
 
 /* --- Blog Front: Posts --- */
@@ -368,7 +368,6 @@
 #primary .hentry {
   position: relative;
   padding: 20px 0 34px;
-  border-top: 1px solid #1a1a1a;
   .entry-meta, .entry-author {
     display: none;
   }
@@ -382,7 +381,9 @@
   padding-right: 4px;
 }
 
-.blog #primary .hentry .entry-thumbnail, .archive #primary .hentry .entry-thumbnail, .search-results #primary .hentry .entry-thumbnail {
+.blog #primary .hentry .entry-thumbnail, 
+.archive #primary .hentry .entry-thumbnail, 
+.search-results #primary .hentry .entry-thumbnail {
   width: 32.1875%;
   /* -- 103px at 320px ---*/
   margin: 0 0 0 10px;

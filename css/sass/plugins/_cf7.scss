@@ -1,12 +1,24 @@
 
 /* --- Contact Form 7 --- */
 
+
 .site-content {
   div.wpcf7 {
+      
+     
+      
     clear: both;
     overflow: hidden;
     max-width: 100%;
     padding: 0 0 30px;
+    
+    input, 
+    textarea, 
+    p {
+	font-size: 16px;
+	font-size: 1rem;
+    }
+    
     p {
       margin: 10px 0 0 0;
       padding: 0;

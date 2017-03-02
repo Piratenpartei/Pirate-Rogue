@@ -1051,7 +1051,3 @@ function pirate_rogue_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'pirate_rogue_customize_register',1000 );
 
-function remove_parent_customizer() {
-    remove_action( 'customize_register', 'uku_customize_register' );
-}
-add_action( 'after_setup_theme', 'remove_parent_customizer', 9 );

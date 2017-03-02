@@ -85,6 +85,7 @@ h1 {
     .entry-header &.entry-title,
     .page &.entry-title,
     article &,
+    .archive-header &.archive-title,
     .entry-content & {
         border-bottom: 7px;
         border-color: $color-main;
@@ -101,6 +102,7 @@ h1 {
     .single-post .entry-header &::after.entry-title,
     .entry-header &::after.entry-title,
     .page &::after.entry-title,
+    .archive-header &::after.archive-title
     article &::after,
     .entry-content &::after {
         content: " ";

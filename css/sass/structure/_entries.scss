@@ -348,7 +348,8 @@
     margin: 4px 0 0 0;
     padding: 0 0 0 18px;
   }
-  &.author-website:before, &.author-twitter:before {
+  &.author-website:before, 
+  &.author-twitter:before {
     display: block;
     position: absolute;
     top: 2px;
@@ -372,12 +373,6 @@
     border-top: none !important;
 }
 
-.page-template-default #primary .hentry,
-.page-fullwidth #primary .hentry, 
-.page-template-no-sidebar #primary .hentry,
-.error404 #primary .page {
-    border-top: none;
-}
 
 article {
     header {

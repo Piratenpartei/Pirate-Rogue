@@ -1456,9 +1456,9 @@ CSS Font File Roboto
 .sr-only-focusable:active, .sr-only-focusable:focus { position: static; width: auto; height: auto; margin: 0; overflow: visible; clip: auto; }
 
 /* --- Serif Styles --- */
-p.site-title, .entry-summary, .widget, .title-footer, .entry-header p.intro, .entry-content, .entry-content p, .entry-content table, .entry-content dl, .entry-content ul, .entry-content ol, p.section-about-text, p.text-big, p.text-small { font-family: "DejaWeb", "roboto", sans-serif; }
+p.site-title, .entry-summary, .widget, .title-footer, .entry-header p.intro, .entry-content, .entry-content p, .entry-content table, .entry-content dl, .entry-content ul, .entry-content ol, p.section-about-text, p.text-big, p.text-small { font-family: "DejaWeb", sans-serif; }
 
-.entry-content blockquote p, .entry-content p span.uppercase, .section-about-column-two .social-nav ul li a, .section-about-column-one p cite, .widget_mc4wp_form_widget input[type="email"], .widget_mc4wp_form_widget input[type="submit"], .jetpack_subscription_widget #subscribe-email input[type="email"], .jetpack_subscription_widget #subscribe-submit input[type="submit"], .contact-form input[type="submit"], input, textarea, .site-content div.wpcf7 input, .site-content div.wpcf7 textarea, .site-content div.wpcf7 p, a.standard-btn, .big-instagram-wrap .clear, .single-product .entry-summary h1 { font-family: "DejaWeb", "roboto", sans-serif; }
+.entry-content blockquote p, .entry-content p span.uppercase, .section-about-column-two .social-nav ul li a, .section-about-column-one p cite, .widget_mc4wp_form_widget input[type="email"], .widget_mc4wp_form_widget input[type="submit"], .jetpack_subscription_widget #subscribe-email input[type="email"], .jetpack_subscription_widget #subscribe-submit input[type="submit"], .contact-form input[type="submit"], input, textarea, .site-content div.wpcf7 input, .site-content div.wpcf7 textarea, .site-content div.wpcf7 p, a.standard-btn, .big-instagram-wrap .clear, .single-product .entry-summary h1 { font-family: "DejaWeb", sans-serif; }
 
 /*
 * optional grid-Framework, compiled from bootstrap sass 
@@ -1732,7 +1732,7 @@ p.site-title, .entry-summary, .widget, .title-footer, .entry-header p.intro, .en
 */
 html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
-body { font-family: "DejaWeb", "roboto", sans-serif; display: block; color: #1a1a1a; background: #ffffff; font-size: 16px; font-size: 1rem; line-height: 1.35; }
+body { font-family: "DejaWeb", sans-serif; display: block; color: #1a1a1a; background: #ffffff; font-size: 16px; font-size: 1rem; line-height: 1.35; }
 body.overlay-show { overflow: hidden; }
 body.blog.slider-on.slider-fullscreen, body.blog.headerimg-on.header-fullscreen { padding-top: 0; }
 
@@ -1800,6 +1800,7 @@ p.site-description { display: none; }
 
 .single-post .post-navigation a:hover, .single-attachment .post-navigation a:hover { border-bottom: 2px solid #51a8dd; }
 
+#desktop-navigation ul.menu { font-family: "roboto", sans-serif; }
 #desktop-navigation ul.menu li.menu-item-has-children > a::after { margin-left: 3px; content: ""; }
 #desktop-navigation ul.menu li:hover a { border-bottom: 3px solid #ff8800; }
 #desktop-navigation ul.menu li:hover li a { border-bottom: none; }
@@ -1913,10 +1914,10 @@ p.site-description { display: none; }
 /*-----------------------------------------------------------------------------------*/
 /* 7.0 Blog Front
 /*-----------------------------------------------------------------------------------*/
-.blog-wrap h3.blog-title, .archive-header h1.archive-title { display: block; padding: 3px 0 20px; border-top: 4px solid #1a1a1a; }
+.blog-wrap h3.blog-title, .archive-header h1.archive-title { display: block; padding: 3px 0 20px; }
 
 /* --- Blog Front: Posts --- */
-#primary .hentry { position: relative; padding: 20px 0 34px; border-top: 1px solid #1a1a1a; }
+#primary .hentry { position: relative; padding: 20px 0 34px; }
 #primary .hentry .entry-meta, #primary .hentry .entry-author { display: none; }
 
 .comment-name { display: none; }
@@ -2060,8 +2061,6 @@ p.site-description { display: none; }
 
 .single-post .hentry .entry-meta, .single-attachment .entry-meta { border-top: none !important; }
 
-.page-template-default #primary .hentry, .page-fullwidth #primary .hentry, .page-template-no-sidebar #primary .hentry, .error404 #primary .page { border-top: none; }
-
 article header { margin-bottom: 20px; }
 
 /*-----------------------------------------------------------------------------------*/
@@ -2133,7 +2132,7 @@ article header { margin-bottom: 20px; }
 /*-----------------------------------------------------------------------------------*/
 /* Seitentypen:  Default Page, Fullwidth / Archives / Search Results / 404
 /*-----------------------------------------------------------------------------------*/
-.page-template-default #primary .hentry, .page-fullwidth #primary .hentry, .page-template-no-sidebar #primary .hentry, .error404 #primary .page { padding: 0; border-top: 4px solid #1a1a1a; }
+.page-template-default #primary .hentry, .page-fullwidth #primary .hentry, .page-template-no-sidebar #primary .hentry, .error404 #primary .page { padding: 0; }
 
 .page h1.entry-title { display: block; margin: 0 0 20px; padding: 6px 0 20px; border-bottom: 1px solid #1a1a1a; }
 .page a.post-edit-link { text-transform: uppercase; letter-spacing: 1px; font-weight: 600; margin-top: 30px; display: inline-block; }
@@ -2371,18 +2370,14 @@ input { -webkit-border-radius: 0; border-radius: 0; }
 /* --- Font Sizes --- */
 h1.site-title, p.site-title { font-size: 25px; font-size: 1.5625rem; }
 
-.single-post .entry-header h1.entry-title, .blog-wrap h3.blog-title, .archive-header h1.archive-title, .page h1.entry-title, .featured-slider .entry-header h2.entry-title, #front-section-four .entry-header h2.entry-title, .blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-header h2.entry-title, .front-section-title, .social-front-title, .section-one-column-one .entry-header h2.entry-title, .section-three-column-one .entry-header h2.entry-title, p.text-big, .widget_mc4wp_form_widget p, .jetpack_subscription_widget #subscribe-text p, .single-post .entry-content blockquote p, .page .entry-content blockquote p, #front-section-three h3.front-section-title, .recommended-posts-wrap #jp-relatedposts h3.jp-relatedposts-headline, #big-footer-feature h3.footer-feature-title, .single-post .entry-content p.intro { font-size: 20px; font-size: 1.25rem; }
+.single-post .entry-header h1.entry-title, .blog-wrap h3.blog-title, .archive-header h1.archive-title, .page h1.entry-title, .featured-slider .entry-header h2.entry-title, #front-section-four .entry-header h2.entry-title, .blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-header h2.entry-title, .front-section-title, .social-front-title, .section-one-column-one .entry-header h2.entry-title, .section-three-column-one .entry-header h2.entry-title, p.text-big, .widget_mc4wp_form_widget p, .jetpack_subscription_widget #subscribe-text p, #front-section-three h3.front-section-title, .recommended-posts-wrap #jp-relatedposts h3.jp-relatedposts-headline, #big-footer-feature h3.footer-feature-title, .single-post .entry-content p.intro { font-size: 20px; font-size: 1.25rem; }
 
-.entry-content blockquote, .section-about-column-one p { font-size: 18px; font-size: 1.125rem; }
+.section-about-column-one p { font-size: 18px; font-size: 1.125rem; }
 
 .entry-content p { font-size: 16px; font-size: 1rem; }
 .entry-content p.pull-left, .entry-content p.pull-right { font-size: 18px; font-size: 1.125rem; }
 
 .entry-header h2.entry-title, .entry-header p.intro { font-size: 16px; font-size: 1rem; }
-
-.page .entry-content blockquote cite, .single-post .entry-content blockquote cite { font-size: 16px; font-size: 1rem; }
-
-.site-content div.wpcf7 input, .site-content div.wpcf7 textarea, .site-content div.wpcf7 p { font-size: 16px; font-size: 1rem; }
 
 .footer-menu h3.footer-menu-title, #overlay-nav ul li a, #desktop-navigation ul li a, .comments-toggle, .authorbox h3.author-title { font-size: 15px; font-size: 0.9375rem; }
 
@@ -2484,7 +2479,7 @@ address { margin: 0 0 30px; }
 
 pre { max-width: 100%; word-wrap: break-word; margin-bottom: 30px; padding: 15px; overflow: auto; background: #f4f4f4; color: #444; }
 
-code, kbd, tt, var, pre { font-family: Courier, Monaco, monospace; font-size: 15px; font-size: 0.9375rem; }
+code, kbd, tt, var, pre { font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", "Courier New", "Courier 10 Pitch", Courier, monospace; font-size: 15px; font-size: 0.9375rem; }
 
 abbr, acronym { border-bottom: 1px dotted #2b2b2b; cursor: help; }
 
@@ -2512,7 +2507,7 @@ dl dd { margin: 0 0 30px; }
 /* 
 *    Ueberschriften
 */
-h1, h2, h3, h4, h5, h6 { -webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; hyphens: auto; font-familiy: "roboto", "DejaWeb", sans-serif; }
+h1, h2, h3, h4, h5, h6 { -webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; hyphens: auto; font-familiy: "roboto", sans-serif; }
 
 .entry-content h1 { font-size: 20px; font-size: 1.25rem; padding: 6px 0 9px; line-height: 1.2; }
 .entry-content h2 { font-size: 18px; font-size: 1.125rem; padding: 6px 0 9px; line-height: 1.2; }
@@ -2529,9 +2524,9 @@ p.site-title { font-weight: bold; padding-right: 55px; margin: 0; }
 
 .footer-menu h3.footer-menu-title { font-weight: normal; text-transform: uppercase; letter-spacing: 1px; }
 
-.single-post .entry-header h1.entry-title, .entry-header h1.entry-title, .page h1.entry-title, article h1, .entry-content h1 { border-bottom: 7px; border-color: #ff8800; border-style: solid; text-transform: uppercase; margin-bottom: 50px; display: table-cell; padding-bottom: 1px; }
-.single-post .entry-header h1.entry-title + *, .entry-header h1.entry-title + *, .page h1.entry-title + *, article h1 + *, .entry-content h1 + * { margin-top: 20px; }
-.single-post .entry-header h1::after.entry-title, .entry-header h1::after.entry-title, .page h1::after.entry-title, article h1::after, .entry-content h1::after { content: " "; display: table-cell; width: 100%; }
+.single-post .entry-header h1.entry-title, .entry-header h1.entry-title, .page h1.entry-title, article h1, .archive-header h1.archive-title, .entry-content h1 { border-bottom: 7px; border-color: #ff8800; border-style: solid; text-transform: uppercase; margin-bottom: 50px; display: table-cell; padding-bottom: 1px; }
+.single-post .entry-header h1.entry-title + *, .entry-header h1.entry-title + *, .page h1.entry-title + *, article h1 + *, .archive-header h1.archive-title + *, .entry-content h1 + * { margin-top: 20px; }
+.single-post .entry-header h1::after.entry-title, .entry-header h1::after.entry-title, .page h1::after.entry-title, .archive-header h1::after.archive-title article h1::after, .entry-content h1::after { content: " "; display: table-cell; width: 100%; }
 
 #secondary h2.widget-title, #sidebar-page h2.widget-title { font-size: 16px; font-size: 1rem; }
 
@@ -2680,15 +2675,17 @@ li > ul, li > ol { margin-bottom: 0; margin-left: 0; }
 /*
 * Blockquotes and cites
 */
-.single-post .entry-content blockquote p, .page .entry-content blockquote p { position: relative; font-weight: 600; line-height: 1.2; }
+.entry-content blockquote { font-size: 18px; font-size: 1.125rem; }
+
+.single-post .entry-content blockquote p, .page .entry-content blockquote p { position: relative; font-weight: 600; font-size: 20px; font-size: 1.25rem; line-height: 1.2; }
 
 .single-post #comments blockquote p { position: relative; font-weight: 600; line-height: 1.2; }
-.single-post .entry-content blockquote { border-top: 4px solid #2b2b2b; border-bottom: 1px solid #2b2b2b; padding: 20px 0; margin: 0 0 30px; }
+.single-post .entry-content blockquote { padding: 20px 0; margin: 0 0 30px; }
 
-.page .entry-content blockquote { border-top: 4px solid #2b2b2b; border-bottom: 1px solid #2b2b2b; padding: 20px 0; margin: 0 0 30px; }
-.page .entry-content blockquote cite { display: block; padding-top: 10px; font-style: normal; }
+.page .entry-content blockquote { padding: 20px 0; margin: 0 0 30px; }
+.page .entry-content blockquote cite { display: block; padding-top: 10px; padding-right: 30px; font-style: normal; text-align: right; font-size: 16px; font-size: 1rem; }
 
-.single-post .entry-content blockquote cite, #comments blockquote cite { display: block; padding-top: 10px; font-style: normal; }
+.single-post .entry-content blockquote cite, #comments blockquote cite { display: block; padding-top: 10px; font-style: normal; font-size: 16px; font-size: 1rem; }
 
 /*
 * Allgemeine Klassen

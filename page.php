@@ -20,7 +20,6 @@ get_header(); ?>
 	<div id="blog-wrap" class="blog-wrap cf">
 
 		<div id="primary" class="site-content cf" role="main">
-
 		<?php
 			// Start the Loop.
 			while ( have_posts() ) : the_post();

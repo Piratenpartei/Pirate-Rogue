@@ -42,10 +42,10 @@ function pirate_rogue_setup() {
 	require get_template_directory() . '/inc/custom-header.php';
 
 	// This theme allows users to set a custom background.
-	add_theme_support( 'custom-background', apply_filters( 'uku_custom_background_args', array(
-		'default-color'	=> 'fff',
-		'default-image'	=> '',
-	) ) );
+//	add_theme_support( 'custom-background', apply_filters( 'uku_custom_background_args', array(
+//		'default-color'	=> 'fff',
+//		'default-image'	=> '',
+//	) ) );
 
 	// Enable support for Video Post Formats.
 	add_theme_support( 'post-formats', array (
@@ -53,11 +53,23 @@ function pirate_rogue_setup() {
 	) );
 
 	// Enable support for custom logo.
-	add_theme_support( 'custom-logo', array(
-		'width'       => 520,
-		'height'      => 236,
+//	add_theme_support( 'custom-logo', array(
+//		'width'       => 520,
+//		'height'      => 236,
+//	) );
+	
+		add_theme_support( 'custom-logo', array(
+	    'height'      => 236,
+	    'width'       => 520,
+	    'flex-height' => true,
+	    'flex-width'  => true,
+	    'header-text' => array( 'site-title', 'site-description' ),
 	) );
-
+	
+	
+	/* Excerpts für Seiten */
+	add_post_type_support('page', 'excerpt');    
+	
 	// This theme uses post thumbnails.
 	add_theme_support( 'post-thumbnails' );
 

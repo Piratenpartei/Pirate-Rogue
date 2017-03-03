@@ -19,16 +19,9 @@ function pirate_rogue_custom_header_setup() {
 	add_theme_support( 'custom-header', $args );
 	
 	
-	add_theme_support( 'custom-logo', array(
-	    'default-image'          => get_template_directory_uri().'/images/rrze-logo.png',
-	    'height'      => 100,
-	    'width'       => 235,
-	    'flex-height' => false,
-	    'flex-width'  => true,
-	    'header-text' => array( 'site-title', 'site-description' ),
-	) );
+
 }
-add_action( 'after_setup_theme', 'pirate_rogue_custom_header_setup', 11 );
+add_action( 'after_setup_theme', 'pirate_rogue_custom_header_setup');
 
 
 /*-----------------------------------------------------------------------------------*/
@@ -64,7 +57,7 @@ function pirate_rogue_header_style() {
 	<?php
 
 		// If the user has set a custom color for the text, use that.
-	elseif ( get_theme_support( 'custom-header', 'default-text-color' ) != $header_text_color ) :
+	elseif (esc_attr( $header_text_color ) && get_theme_support( 'custom-header', 'default-text-color' ) != $header_text_color ) :
 	?>
 	h1.site-title a,
 	p.site-title a,

@@ -2,16 +2,6 @@
 /**
  * Additional features to allow styling of the templates
  *
- * @package Uku
- * @since Uku 1.2.2
- * @version 1.0
- */
-
-/**
- * Adds custom classes to the array of body classes.
- *
- * @param array $classes Classes for the body element.
- * @return array
  */
 
  /*-----------------------------------------------------------------------------------*/

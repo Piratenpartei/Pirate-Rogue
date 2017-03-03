@@ -1,10 +1,6 @@
 <?php
 /**
  * Implement Theme Customizer additions and adjustments.
- *
- * @package Uku
- * @since Uku 1.0
- * @version 1.0.3
  */
 
 function pirate_rogue_customize_register( $wp_customize ) {

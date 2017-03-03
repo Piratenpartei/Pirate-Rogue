@@ -1,0 +1,1249 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Uku v1.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: Fri Jan 13 2017 22:30:17 GMT+1300 (NZDT)\n"
+"Last-Translator: Ellen <ellen.bauer@elmastudio.de>\n"
+"Language-Team: \n"
+"Language: German\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Loco - https://localise.biz/\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Textdomain-Support: yes\n"
+"X-Loco-Target-Locale: de_DE\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-Basepath: ."
+
+#: ../404.php:31
+msgid ""
+"It looks like nothing was found at this location. Maybe try another search "
+"term?"
+msgstr ""
+"Es scheint, als könne hier nichts gefunden werden. Vielleicht hilft ein "
+"anderer Suchbegriff weiter."
+
+#: ../functions.php:37
+msgid "Main menu"
+msgstr "Hauptmenü"
+
+#. translators: If there are characters in your language that are not supported by Source Serif Pro, translate this to 'off'. Do not translate into your own language.
+#: ../functions.php:125
+msgctxt "Source Serif Pro font: on or off"
+msgid "on"
+msgstr ""
+
+#. translators: If there are characters in your language that are not supported by Poppins, translate this to 'off'. Do not translate into your own language.
+#: ../functions.php:130
+msgctxt "Poppins font: on or off"
+msgid "on"
+msgstr ""
+
+#. translators: If there are characters in your language that are not supported by Cormorant Garamond, translate this to 'off'. Do not translate into your own language.
+#: ../functions.php:135
+msgctxt "Cormorant Garamond font: on or off"
+msgid "on"
+msgstr ""
+
+#: ../inc/customizer.php:361
+msgid ""
+"(Only available with the \"standard\" and \"neo\" design style, see Theme "
+"Options / Design Style.)."
+msgstr ""
+"(Nur im \"Standard\" und \"Neo\" Designstil verfügbar, siehe Theme Optionen / "
+"Designstil.)"
+
+#: ../inc/customizer.php:811
+msgid "fullscreen"
+msgstr "Vollbild"
+
+#: ../inc/customizer.php:821
+msgid "Slider Image Animation"
+msgstr "Slider Bild Animation"
+
+#: ../inc/customizer.php:822
+msgid ""
+"Choose, if you want the slider images to fade or slide from one image to the "
+"next."
+msgstr ""
+"Wähle, ob die Slider-Bilder von einem Bild zum nächsten überblenden oder "
+"sliden sollen."
+
+#: ../inc/customizer.php:827
+msgid "slide"
+msgstr "slide"
+
+#: ../inc/customizer.php:828
+msgid "fade"
+msgstr "fade"
+
+#: ../inc/customizer.php:992
+msgid ""
+"The recommended image width for the About image is 580 pixels for Uku "
+"standard and 1500 pixels for the Uku neo and serif design style."
+msgstr ""
+"Die empfohlene Bildbreite für die Aboutseite ist 580px für Uku \"standard\" "
+"Designstil und 1500px für Uku \"neo\" und \"serif\"."
+
+#: ../inc/demo-installer.php:39
+msgid ""
+"Make sure you have the WooCommerce plugin installed, before importing this "
+"demo!"
+msgstr ""
+"Vergewissere dich, dass du das WooCommerce Plugin installiert hast, bevor du "
+"die Demo importierst!"
+
+#: ../inc/template-tags.php:26
+#, php-format
+msgctxt "post date"
+msgid "%s"
+msgstr ""
+
+#. translators: used to show post author name
+#: ../inc/template-tags.php:31 ../inc/template-tags.php:49
+#, php-format
+msgctxt "post author"
+msgid "%s"
+msgstr ""
+
+#. Description of the theme
+msgid ""
+"Uku is a flexible, responsive WordPress theme with modern, bold and "
+"beautiful design styles to choose from. You can customize Uku with multiple "
+"flexible options, e.g. by adding additional posts sections on the blog front "
+"page or by showing a post slider or header image at the top of your front "
+"page. You can also change the sidebar layout, add menus and a big "
+"advertisement area to your footer."
+msgstr ""
+"Uku ist ein flexibles, responsive WordPress Theme mit modernen, großzügigen "
+"Designstilen, die du in den Theme Optionen wählen kannst. Du kannst leicht "
+"mit flexiblen Optionen anpassen, z.B. indem du die verschiedenen "
+"Blogstartseiten Optionen oder den Featured Slider nutzt. Du kannst auch das "
+"Layout anpassen, eigene Menüs hinzufügen und den Footer um Featured Sections "
+"erweitern."
+
+#: ../404.php:27
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Ups! Dieser Seite konnte nicht gefunden werden."
+
+#: ../archive.php:38 ../index.php:67 ../search.php:36
+msgid "Older"
+msgstr "Ältere"
+
+#: ../archive.php:39 ../index.php:68 ../search.php:37
+msgid "Older Posts"
+msgstr "Ältere Beiträge"
+
+#: ../archive.php:40 ../index.php:69 ../search.php:38
+msgid "Newer"
+msgstr "Neuere"
+
+#: ../archive.php:41 ../index.php:70 ../search.php:39
+msgid "Newer Posts"
+msgstr "Neuere Beiträge"
+
+#: ../archive.php:42 ../index.php:71 ../search.php:40
+msgid "Page"
+msgstr "Seite"
+
+#: ../comments.php:22
+#, php-format
+msgid "1 Comment"
+msgid_plural "%1$s Comments"
+msgstr[0] "1 Kommentar"
+msgstr[1] "%1$s Kommentare"
+
+#: ../comments.php:27
+#, php-format
+msgctxt "comments title"
+msgid "1 comment on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
+msgstr[0] "1 Kommentar zu &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s Kommentare zu &ldquo;%2$s&rdquo;"
+
+#: ../comments.php:46
+msgid "Older Comments"
+msgstr "Ältere Kommentare"
+
+#: ../comments.php:47
+msgid "Newer Comments"
+msgstr "Neuere Kommentare"
+
+#: ../comments.php:55
+msgid "Comments are closed."
+msgstr "Kommentare sind geschlossen."
+
+#: ../comments.php:62 ../comments.php:62
+msgid "Name"
+msgstr "Name"
+
+#: ../comments.php:63 ../comments.php:63
+msgid "Email"
+msgstr "Email"
+
+#: ../comments.php:64 ../comments.php:64
+msgid "Website"
+msgstr "Webseite"
+
+#: ../content.php:20 ../template-parts/content-frontpost-big.php:17 ../template-
+#: parts/content-frontpost-big.php:24 ../template-parts/content-frontpost-small-
+#: neo.php:17 ../template-parts/content-frontpost-small.php:17
+msgid "Video"
+msgstr "Video"
+
+#: ../content.php:40 ../content.php:41 ../content.php:42 ../content.php:75 ..
+#: content.php:76 ../content.php:77 ../content.php:98 ../content.php:99 ..
+#: content.php:100 ../template-parts/content-featured-post.php:34 ../template-
+#: parts/content-featured-post.php:35 ../template-parts/content-featured-post.php:
+#: 36 ../template-parts/content-frontpost-big.php:51 ../template-parts/content-
+#: frontpost-big.php:52 ../template-parts/content-frontpost-big.php:53 ..
+#: template-parts/content-single-neo.php:47 ../template-parts/content-single-neo.
+#: php:48 ../template-parts/content-single-neo.php:49 ../template-parts/content-
+#: single-serif.php:41 ../template-parts/content-single-serif.php:42 ../template-
+#: parts/content-single-serif.php:43 ../template-parts/content-single.php:57 ..
+#: template-parts/front-section-four.php:66 ../template-parts/front-section-four.
+#: php:67 ../template-parts/front-section-four.php:68
+msgid "Comments"
+msgstr "Kommentare"
+
+#: ../content.php:41 ../content.php:76 ../content.php:99 ../template-
+#: parts/content-featured-post.php:35 ../template-parts/content-frontpost-big.php:
+#: 52 ../template-parts/content-single-neo.php:48 ../template-parts/content-
+#: single-serif.php:42 ../template-parts/content-single.php:58 ../template-
+#: parts/front-section-four.php:67
+msgid "1"
+msgstr "1"
+
+#: ../content.php:42 ../content.php:77 ../content.php:100 ../template-
+#: parts/content-featured-post.php:36 ../template-parts/content-frontpost-big.php:
+#: 53 ../template-parts/content-single-neo.php:49 ../template-parts/content-
+#: single-serif.php:43 ../template-parts/content-single.php:58 ../template-
+#: parts/front-section-four.php:68
+msgid "%"
+msgstr "%"
+
+#: ../content.php:46 ../content.php:81 ../content.php:104 ../template-
+#: parts/content-featured-post.php:41 ../template-parts/content-frontpost-big.php:
+#: 57 ../template-parts/content-single-neo.php:54 ../template-parts/content-
+#: single-serif.php:48 ../template-parts/content-single.php:64 ../template-
+#: parts/front-section-four.php:73
+msgid "Edit Post"
+msgstr "Bearbeiten"
+
+#: ../footer.php:40
+#, php-format
+msgid "Copyright &copy; %1$s %2$s"
+msgstr "Copyright &copy; %1$s %2$s"
+
+#: ../footer.php:41
+msgid "Powered by"
+msgstr "Powered by"
+
+#: ../footer.php:41
+msgid "https://wordpress.org/"
+msgstr "https://wordpress.org/"
+
+#: ../footer.php:41
+msgid "WordPress"
+msgstr "WordPress"
+
+#: ../footer.php:42
+#, php-format
+msgid "Theme: %1$s by %2$s"
+msgstr "Theme: %1$s von %2$s"
+
+#: ../footer.php:52 ../template-parts/front-section-about.php:49
+msgid "Follow us"
+msgstr "Folge uns"
+
+#: ../functions.php:38
+msgid "Social Icons"
+msgstr "Social Icons"
+
+#: ../functions.php:39
+msgid "Social menu (in About section, Standard and Neo only.)"
+msgstr "Social Menu (im Aboutbereich, nur in standard und neo verfügbar)."
+
+#: ../functions.php:40
+msgid "Footer 1"
+msgstr "Footer 1"
+
+#: ../functions.php:41
+msgid "Footer 2"
+msgstr "Footer 2"
+
+#: ../functions.php:42
+msgid "Footer 3"
+msgstr "Footer 3"
+
+#: ../functions.php:43
+msgid "Footer 4"
+msgstr "Footer 4"
+
+#. translators: If there are characters in your language that are not supported by Noticia Text, translate this to 'off'. Do not translate into your own language.
+#: ../functions.php:115
+msgctxt "Noticia Text font: on or off"
+msgid "on"
+msgstr "on"
+
+#. translators: If there are characters in your language that are not supported by Kanit, translate this to 'off'. Do not translate into your own language.
+#: ../functions.php:120
+msgctxt "Kanit font: on or off"
+msgid "on"
+msgstr "on"
+
+#: ../functions.php:187
+msgid "expand child menu"
+msgstr "Child Menü aufklappen"
+
+#: ../functions.php:188
+msgid "collapse child menu"
+msgstr "Child Menü einklappen"
+
+#. translators: 1: date
+#: ../functions.php:608
+#, php-format
+msgid "%1$s"
+msgstr "%1$s"
+
+#: ../functions.php:612
+msgid " Edit"
+msgstr " Bearbeiten"
+
+#: ../functions.php:619
+msgid "Your comment is awaiting moderation."
+msgstr "Dein Kommentare befindet sich in Moderation."
+
+#: ../functions.php:623
+msgid "Reply"
+msgstr "Antworten"
+
+#: ../functions.php:634
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: ../functions.php:648
+msgid "Blog Sidebar"
+msgstr "Blog Sidebar"
+
+#: ../functions.php:650
+msgid "Widgets appear in the default sidebar."
+msgstr "Widgets erscheinen in der Standard-Sidebar."
+
+#: ../functions.php:658
+msgid "Page Sidebar"
+msgstr "Seiten Sidebar"
+
+#: ../functions.php:660
+msgid "Widgets appear in the sidebar on pages."
+msgstr "Widgets erscheinen auf Seiten."
+
+#: ../functions.php:668
+msgid "Off Canvas Widget Area"
+msgstr "Off Canvas Widgetbereich"
+
+#: ../functions.php:670
+msgid "Widgets appear in the off canvas area."
+msgstr "Widgets erscheinen im Off Canvas Bereich."
+
+#: ../functions.php:678
+msgid "Big Footer Instagram Widget Area"
+msgstr "Großer Footer Instagram Widgetbereich"
+
+#: ../functions.php:680
+msgid "Widget area to show the WP Instagram Widget in a big one-column footer area ."
+msgstr ""
+"Widgetbereich, um einen großen einspaltigen Footer-Widgetbereich für "
+"Instagram Fotos zu integrieren."
+
+#: ../functions.php:689
+msgid "Big Footer Mailchimp Widget Area"
+msgstr "Footer Mailchimp Newsletter"
+
+#: ../functions.php:691
+msgid ""
+"Widget area to show the Mailchimp Newsletter Widget in a big one-column "
+"footer area ."
+msgstr ""
+"Widgetbereich für einen großen, einspaltigen Mailchimp Newsletter im Footer "
+"(nur im Serif Designstil)."
+
+#: ../functions.php:715 ../functions.php:745
+msgid "&mdash; Select &mdash;"
+msgstr "&mdash; Auswählen &mdash;"
+
+#: ../header.php:50 ../header.php:86
+msgid "Menu"
+msgstr "Menü"
+
+#: ../header.php:74 ../header.php:77 ../header.php:88 ../searchform.php:12
+msgid "Search"
+msgstr "Suche"
+
+#: ../header.php:118
+msgid "Close"
+msgstr "Schliessen"
+
+#: ../header.php:174
+msgid "Scroll Down"
+msgstr "Nach unten"
+
+#: ../inc/customizer.php:16
+msgid "Site Title Color"
+msgstr "Seiten-Titelfarbe"
+
+#: ../inc/customizer.php:22
+msgid "Theme Options"
+msgstr "Theme Optionen"
+
+#: ../inc/customizer.php:28
+msgid "Blog Front Page"
+msgstr "Blog Startseite"
+
+#: ../inc/customizer.php:34
+msgid "Shop Front Page"
+msgstr "Shop Startseite"
+
+#: ../inc/customizer.php:39 ../inc/customizer.php:81
+msgid "Design Style"
+msgstr "Design Stil"
+
+#: ../inc/customizer.php:45 ../inc/customizer.php:110 ../inc/customizer.php:179
+msgid "General"
+msgstr "Allgemein"
+
+#: ../inc/customizer.php:51
+msgid "Header"
+msgstr "Header"
+
+#: ../inc/customizer.php:57
+msgid "Images"
+msgstr "Bilder"
+
+#: ../inc/customizer.php:63
+msgid "Footer Featured Area"
+msgstr "Footer Featured Bereich"
+
+#: ../inc/customizer.php:69 ../inc/customizer.php:100
+msgid "Custom CSS"
+msgstr "Eigenes CSS"
+
+#: ../inc/customizer.php:82
+msgid "Choose your main design style."
+msgstr "Wähle deinen Design Stil"
+
+#: ../inc/customizer.php:87
+msgid "standard"
+msgstr "standard"
+
+#: ../inc/customizer.php:88
+msgid "neo"
+msgstr "neo"
+
+#: ../inc/customizer.php:89
+msgid "serif"
+msgstr "serif"
+
+#: ../inc/customizer.php:101
+msgid ""
+"Add custom CSS here. Please consider using a child theme for bigger CSS "
+"customizations. Also remember that you will loose all custom CSS changes "
+"made here, if you change the theme."
+msgstr ""
+"Füge hier eigenes CSS hinzu. Bitte nutze für größere CSS-Anpassungen ein "
+"Child-Theme. Beachte auch, dass hier eingetragenes CSS verloren geht, wenn "
+"du das Theme wechselst."
+
+#: ../inc/customizer.php:116
+msgid "Featured Posts Slider"
+msgstr "Featured Slider"
+
+#: ../inc/customizer.php:117
+msgid ""
+"Up to 6 posts will show up in the Front page slider. The image dimension for "
+"the Featured post images should be at least 1440 x 530 pixels for the "
+"standard design style and 1500 x 690 for neo and serif."
+msgstr ""
+"Bis zu 6 Beiträgen im Startseiten-Slider. Die Bildermaße der Beitragsbilder "
+"sollten 1440x530 für Uku Standard und 1500x690 für neo und serif sein."
+
+#: ../inc/customizer.php:123
+msgid "Section Featured Top"
+msgstr "Section Featured oben"
+
+#: ../inc/customizer.php:129
+msgid "Section 2-Columns"
+msgstr "Section 2-spaltig"
+
+#: ../inc/customizer.php:135
+msgid "Section 3-Columns"
+msgstr "Section 3-spaltig"
+
+#: ../inc/customizer.php:141
+msgid "Section Fullwidth"
+msgstr "Section volle Breite"
+
+#: ../inc/customizer.php:147
+msgid "Section Featured Bottom"
+msgstr "Section Featured unten"
+
+#: ../inc/customizer.php:153
+msgid "Section About"
+msgstr "Section About"
+
+#: ../inc/customizer.php:159
+msgid "Section on Background"
+msgstr "Section auf Hintergrund"
+
+#: ../inc/customizer.php:165
+msgid "Section 4-Columns"
+msgstr "Section 4-spaltig"
+
+#: ../inc/customizer.php:171
+msgid "Section 6-Columns"
+msgstr "Section 6-spaltig"
+
+#: ../inc/customizer.php:185
+msgid "Product Categories"
+msgstr "Produkt Kategorien"
+
+#: ../inc/customizer.php:191 ../inc/customizer.php:1352
+msgid "Featured Products"
+msgstr "Hervorgehobene Produkte"
+
+#: ../inc/customizer.php:197 ../inc/customizer.php:1389
+msgid "Latest Products"
+msgstr "Neueste Produkte"
+
+#: ../inc/customizer.php:203
+msgid "Top Rated Products"
+msgstr "Bestbewertete Produkte"
+
+#: ../inc/customizer.php:209
+msgid "On Sale Products"
+msgstr "Reduzierte Produkte"
+
+#: ../inc/customizer.php:224
+msgid "Text Link Color"
+msgstr "Text Linkfarbe"
+
+#: ../inc/customizer.php:236
+msgid "Text Link Hover Color"
+msgstr "Text Link Hoverfarbe"
+
+#: ../inc/customizer.php:248
+msgid "Footer Background Color"
+msgstr "Footer Hintergrundfarbe"
+
+#: ../inc/customizer.php:260
+msgid "Footer Text Color"
+msgstr "Footer Textfarbe"
+
+#: ../inc/customizer.php:272
+msgid "Off Canvas Background Color"
+msgstr "Off Canvas Hintergrund Farbe"
+
+#: ../inc/customizer.php:284
+msgid "Off Canvas Text Color"
+msgstr "Off Canvas Text Farbe"
+
+#: ../inc/customizer.php:296
+msgid "Posts on Background Color"
+msgstr "Beiträge auf Hintergrund Farbe"
+
+#: ../inc/customizer.php:297
+msgid "Background color of the \"Posts on Background\" section."
+msgstr "Hintergrundfarbe der \"Beiträge auf Hintergrund\" Section."
+
+#: ../inc/customizer.php:309
+msgid "Subscribe Widget Background Color"
+msgstr "Newsletter Widget Hintergrund Farbe."
+
+#: ../inc/customizer.php:310
+msgid ""
+"Background color of the Jetpack Blog Subscribe or Mailchimp newsletter "
+"widget."
+msgstr "Hintergrundfarbe des Jetpack Blog Anmelden oder Mailchimp Newsletter Widgets."
+
+#: ../inc/customizer.php:322
+msgid "About Section Background Color"
+msgstr "About Section Hintergrundfarbe"
+
+#: ../inc/customizer.php:323
+msgid "Transparent About section background color (Serif Design style only)."
+msgstr ""
+"Leicht transparente Aboutbereich Hintergrundfarbe (nur im Uku serif "
+"Designstil)."
+
+#: ../inc/customizer.php:335
+msgid "Shop Categories Background Color"
+msgstr "Shop Kategorien Hintergrundfarbe"
+
+#: ../inc/customizer.php:336
+msgid ""
+"Background color of the \"Shop Categories\" Shop Front page section (only "
+"available, when WooCommerce is activated.)"
+msgstr ""
+"Hintergrundfarbe der \"Shop Kategorien\" Bereiches auf der Shop Startseite "
+"(nur mit WooCommerce verfügbar)."
+
+#: ../inc/customizer.php:348
+msgid "Hide tagline only"
+msgstr "Nur Untertitel verbergen"
+
+#: ../inc/customizer.php:360
+msgid "Show custom logo in footer"
+msgstr "Zeige eigenes Logo im Footer"
+
+#: ../inc/customizer.php:374
+msgid "Header Image Style"
+msgstr "Header Bild Stil"
+
+#: ../inc/customizer.php:375
+msgid "Choose the Header image style you like to use."
+msgstr "Wähle aus, welchen Headerbild Stil du nutzen möchtest."
+
+#: ../inc/customizer.php:380 ../inc/customizer.php:809
+msgid "fullwidth"
+msgstr "volle Breite (fullwidth)"
+
+#: ../inc/customizer.php:381 ../inc/customizer.php:810
+msgid "boxed"
+msgstr "mit Rand (boxed)"
+
+#: ../inc/customizer.php:382
+msgid "fullscreen (serif and standard only)"
+msgstr "Vollbild (nur im serif und neo Stil)"
+
+#: ../inc/customizer.php:392
+msgid "Header Image Intro Text"
+msgstr "Headerbild Introtext"
+
+#: ../inc/customizer.php:393
+msgid ""
+"Add a short intro text that will displayed centered on your header image. "
+"(Design style \"serif\" only.)"
+msgstr ""
+"Füge einen kurzen Introtext für deinen Headerbereich hinzu (für Serif "
+"Designstil mit Headerbild volle Breite)."
+
+#: ../inc/customizer.php:405
+msgid "Customize \"Scroll Down\" button text"
+msgstr "Den \"Nach unten\" Text anpassen"
+
+#: ../inc/customizer.php:406
+msgid "(Design style \"serif\" only.)"
+msgstr "(nur im \"serif\" Designstil.)"
+
+#: ../inc/customizer.php:419
+msgid "Sidebar Position"
+msgstr "Sidebar Position"
+
+#: ../inc/customizer.php:424
+msgid "sidebar right"
+msgstr "Sidebar rechts"
+
+#: ../inc/customizer.php:425
+msgid "sidebar left"
+msgstr "Sidebar links"
+
+#: ../inc/customizer.php:435
+msgid "Sidebar Visibility"
+msgstr "Sidebar Sichtbarkeit"
+
+#: ../inc/customizer.php:440
+msgid "Show sidebar"
+msgstr "Sidebar zeigen"
+
+#: ../inc/customizer.php:441
+msgid "Hide sidebar"
+msgstr "keine Sidebar"
+
+#: ../inc/customizer.php:442
+msgid "Hide sidebar on single posts"
+msgstr "Keine Sidebar auf Beitragsseiten"
+
+#: ../inc/customizer.php:443
+msgid "Hide sidebar on Front page"
+msgstr "Keine Sidebar auf der Startseite"
+
+#: ../inc/customizer.php:453
+msgid "Show Comments button on single posts"
+msgstr "Kommentar-Button auf Einzel-Beitragsseiten"
+
+#: ../inc/customizer.php:454
+msgid "(Hides comments behind a Show Comments button on single posts.)"
+msgstr ""
+"(Kommentare werden hinter einem \"Zeige Kommentare\" Button versteckt und "
+"können aus- und eingeklappt werden.)"
+
+#: ../inc/customizer.php:466
+msgid "Footer credit text"
+msgstr "Footer Credit-Text"
+
+#: ../inc/customizer.php:467
+msgid "Customize the footer credit text. (HTML is allowed)"
+msgstr "Footer Credit-Text anpassen. (HTML ist erlaubt.)"
+
+#: ../inc/customizer.php:480
+msgid "Hide search in Header"
+msgstr "Suche im Header verbergen"
+
+#: ../inc/customizer.php:492
+msgid "Header Font"
+msgstr "Headerschrift"
+
+#: ../inc/customizer.php:493
+msgid ""
+"You can choose the light header font in combination with the fullscreen "
+"header image or fullscreen slider style."
+msgstr ""
+"Du kannst die helle Headerschrift in Kombination mit dem Fullscreen "
+"Headerbild oder Fullscreen Slider wählen."
+
+#: ../inc/customizer.php:498 ../inc/customizer.php:515 ../inc/customizer.php:612
+msgid "light"
+msgstr "hell"
+
+#: ../inc/customizer.php:499 ../inc/customizer.php:516 ../inc/customizer.php:613
+msgid "dark"
+msgstr "dunkel"
+
+#: ../inc/customizer.php:509
+msgid "Fix-positioned Header style"
+msgstr "Feststehender Header"
+
+#: ../inc/customizer.php:510
+msgid "Choose a dark or light colored fix-positioned header bar."
+msgstr "Wähle eine helle oder dunkle feststehende Headerleiste."
+
+#: ../inc/customizer.php:526
+msgid "Hide fix-positioned Header"
+msgstr "Feststehende Header-Leiste nicht nutzen"
+
+#: ../inc/customizer.php:527
+msgid ""
+"(By default the fix-positioned Header is visible on wider screens, if the "
+"browser window is scrolled.)"
+msgstr ""
+"(Standardmäßig ist die feststehende Headerleiste auf größeren Bildschirmen "
+"sichtbar, wenn im Browserfenster nach unten gescrollt wird.)"
+
+#: ../inc/customizer.php:540
+msgid "Image Bottom Gradient"
+msgstr "Bild Verlauf unten"
+
+#: ../inc/customizer.php:541
+msgid ""
+"Level of transparency (in percent) for the bottom gradient of Featured "
+"images with text on the image. (The default value is 70%. Uku standard only.)"
+msgstr ""
+"Grad der Transparenz (in Prozent) des Verlaufs am unteren Bildrand bei "
+"Beitragsbildern mit Text auf dem Bild (Der Standardwert ist 70%. Nur für Uku "
+"standard.) "
+
+#: ../inc/customizer.php:547 ../inc/customizer.php:587
+msgid "10"
+msgstr "10"
+
+#: ../inc/customizer.php:548 ../inc/customizer.php:588
+msgid "20"
+msgstr "20"
+
+#: ../inc/customizer.php:549 ../inc/customizer.php:589
+msgid "30"
+msgstr "30"
+
+#: ../inc/customizer.php:550 ../inc/customizer.php:590
+msgid "40"
+msgstr "40"
+
+#: ../inc/customizer.php:551 ../inc/customizer.php:591
+msgid "50"
+msgstr "50"
+
+#: ../inc/customizer.php:552 ../inc/customizer.php:592
+msgid "60"
+msgstr "60"
+
+#: ../inc/customizer.php:553 ../inc/customizer.php:593
+msgid "70"
+msgstr "70"
+
+#: ../inc/customizer.php:554 ../inc/customizer.php:594
+msgid "80"
+msgstr "80"
+
+#: ../inc/customizer.php:555 ../inc/customizer.php:595
+msgid "90"
+msgstr "90"
+
+#: ../inc/customizer.php:556 ../inc/customizer.php:596
+msgid "100"
+msgstr "100"
+
+#: ../inc/customizer.php:567
+msgid "Image Overlay Color"
+msgstr "Farbe der Bild-Überlagerung"
+
+#: ../inc/customizer.php:568
+msgid "Image overlay color for Featured images with text on the image."
+msgstr "Bild-Überlagerung bei Bildern mit Text auf dem Bild."
+
+#: ../inc/customizer.php:580
+msgid "Image Overlay Transparency"
+msgstr "Transparenz der Bild-Überlagerung"
+
+#: ../inc/customizer.php:581
+msgid "Overlay transparency (in percent) for Featured images with text on the image."
+msgstr "Transparenz der Bild-Überlagerung (in Prozent) bei Bildern mit Text im Bild."
+
+#: ../inc/customizer.php:606
+msgid "Image Font"
+msgstr "Schrift auf Bildern"
+
+#: ../inc/customizer.php:607
+msgid ""
+"You can choose a dark image font, if you have Featured images in very light "
+"colors. (Uku standard only)"
+msgstr ""
+"Du kannst eine dunkle Schriftfarbe nutzen, wenn du sehr helle Beitragsbilder "
+"nutzt. (Nur für Uku standard.)"
+
+#: ../inc/customizer.php:625
+msgid "Title"
+msgstr "Titel"
+
+#: ../inc/customizer.php:626
+msgid "A small title text visible at the top of the area."
+msgstr "Ein kleiner Titeltext"
+
+#: ../inc/customizer.php:638
+msgid "Upload Featured image"
+msgstr "Bild hochladen"
+
+#: ../inc/customizer.php:649
+msgid "Big Text"
+msgstr "großer Text"
+
+#: ../inc/customizer.php:652
+msgid "A big slogan text next to the image (HTML is allowed.)"
+msgstr "Ein großer Slogan Text neben dem Bild (HTML ist möglich)."
+
+#: ../inc/customizer.php:662
+msgid "Small Text"
+msgstr "kleiner Text"
+
+#: ../inc/customizer.php:663
+msgid "An additional smaller description text below the big text (HTML is allowed.)"
+msgstr "Ein weiterer kleinerer Text unter dem großen Slogan Text (HTML ist möglich)."
+
+#: ../inc/customizer.php:675
+msgid "Button Text"
+msgstr "Button Text"
+
+#: ../inc/customizer.php:676
+msgid "If you want to add a \"Call to Action\" button, include the button text here."
+msgstr ""
+"Wenn du einen \"Call to Action\" Button nutzen möchtest, füge hier den Button-"
+"Text ein."
+
+#: ../inc/customizer.php:688
+msgid "Button Link URL"
+msgstr "Button Link URL"
+
+#: ../inc/customizer.php:689
+msgid "The URL the button should link to."
+msgstr "Die URL, zu der der Button linken soll."
+
+#: ../inc/customizer.php:703
+msgid "Hide default blog on Front page"
+msgstr "Standard-Blog nicht auf Startseite anzeigen."
+
+#: ../inc/customizer.php:715
+msgid "Hide date on Front page"
+msgstr "Beitrags-Datum nicht auf Startseite anzeigen"
+
+#: ../inc/customizer.php:727
+msgid "Hide comments count on Front page"
+msgstr "Kommentar-Anzahl nicht auf Startseite anzeigen"
+
+#: ../inc/customizer.php:739
+msgid "Hide categories on Front page"
+msgstr "Kategorien nicht auf Startseite anzeigen"
+
+#: ../inc/customizer.php:751
+msgid "Hide author name on Front page"
+msgstr "Autorenname nicht auf Startseite anzeigen"
+
+#: ../inc/customizer.php:763
+msgid "Latest Posts title"
+msgstr "Neueste Beiträge Titel"
+
+#: ../inc/customizer.php:764
+msgid ""
+"Customize the \"Latest Posts\" title text above the blog content on your blog "
+"front page."
+msgstr ""
+"Passe den \"Neueste Beiträge\" Titel an, der über dem Blog-Inhalt auf der Blog-"
+"Startseite steht."
+
+#: ../inc/customizer.php:776
+msgid "Follow us text"
+msgstr "Folge uns Text"
+
+#: ../inc/customizer.php:777
+msgid "Customize the \"Follow us\" text in your About section and footer social menus."
+msgstr ""
+"Passe den \"Folge uns\" Text an, der sich im About Startseitenbereich und im "
+"Footer Social-Menü befindet."
+
+#: ../inc/customizer.php:791
+msgid "Featured Slider tag (required)"
+msgstr "Featured Slider Schlagwort (Pflichtfeld)"
+
+#: ../inc/customizer.php:803
+msgid "Slider Style"
+msgstr "Slider Stil"
+
+#: ../inc/customizer.php:804
+msgid "Choose the slider design."
+msgstr "Wähle den Slider Stil"
+
+#: ../inc/customizer.php:839 ../inc/customizer.php:877 ../inc/customizer.php:915 .
+#: ./inc/customizer.php:1018 ../inc/customizer.php:1080 ../inc/customizer.php:1206
+msgid "Section Title (optional)"
+msgstr "Titel (optional)"
+
+#: ../inc/customizer.php:840 ../inc/customizer.php:878 ../inc/customizer.php:916 .
+#: ./inc/customizer.php:1019 ../inc/customizer.php:1081 ../inc/customizer.php:
+#: 1144 ../inc/customizer.php:1207
+msgid "The title will appear at the top of the section."
+msgstr "Der Titel wird oben in der Section angezeigt."
+
+#: ../inc/customizer.php:852 ../inc/customizer.php:890 ../inc/customizer.php:928 .
+#: ./inc/customizer.php:953 ../inc/customizer.php:1031 ../inc/customizer.php:1093
+#: ../inc/customizer.php:1156 ../inc/customizer.php:1219
+msgid "Section category"
+msgstr "Section Kategorie"
+
+#: ../inc/customizer.php:864 ../inc/customizer.php:902 ../inc/customizer.php:940 .
+#: ./inc/customizer.php:965 ../inc/customizer.php:1043 ../inc/customizer.php:1105
+#: ../inc/customizer.php:1168 ../inc/customizer.php:1231
+msgid "Section tag"
+msgstr "Section Schlagwort"
+
+#: ../inc/customizer.php:978
+msgid "Section Title"
+msgstr "Titel"
+
+#: ../inc/customizer.php:979
+msgid "The title will appear at the top of the section (Uku standard and neo only)."
+msgstr "Der Titel erscheint oben im Bereich (nur Uku Standard und Neo)."
+
+#: ../inc/customizer.php:991
+msgid "Upload About image"
+msgstr "Bild hochladen"
+
+#: ../inc/customizer.php:1003
+msgid "About Text (required)"
+msgstr "Text (Pflichtfeld)"
+
+#: ../inc/customizer.php:1006
+msgid "(HTML is allowed.)"
+msgstr "(HTML ist erlaubt.)"
+
+#: ../inc/customizer.php:1055 ../inc/customizer.php:1117 ../inc/customizer.php:
+#: 1180 ../inc/customizer.php:1243
+msgid "Number of posts"
+msgstr "Anzahl der Beiträge"
+
+#: ../inc/customizer.php:1067 ../inc/customizer.php:1129 ../inc/customizer.php:
+#: 1192 ../inc/customizer.php:1255
+msgid "Show post excerpt texts"
+msgstr "Zeige Textvorschau"
+
+#: ../inc/customizer.php:1143
+msgid "Section title (optional)"
+msgstr "Section Titel (optional)"
+
+#: ../inc/customizer.php:1272
+msgid "Show About Section on Shop Front Page"
+msgstr "Zeige Aboutbereich auf der Shop Startseite"
+
+#: ../inc/customizer.php:1284
+msgid "Show \"Posts on a Background\" Section on Shop Front Page"
+msgstr "Zeige \"Beiträge auf Hintergrund\" Bereich auf der Shop Startseite"
+
+#: ../inc/customizer.php:1297
+msgid "Show product categories"
+msgstr "Zeige Produkt Kategorien"
+
+#: ../inc/customizer.php:1309
+msgid "Number of product categories"
+msgstr "Anzahl der Produkt Kategorien"
+
+#: ../inc/customizer.php:1315 ../page-templates/shop-front.php:19
+msgid "Product categories"
+msgstr "Produkt Kategorien"
+
+#: ../inc/customizer.php:1321
+msgid "Product categories title"
+msgstr "Titel Produktkategorien"
+
+#: ../inc/customizer.php:1334
+msgid "Show Featured products"
+msgstr "Zeige Hervorgehobene Produkte"
+
+#: ../inc/customizer.php:1346
+msgid "Number of Featured products"
+msgstr "Anzahl der hervorgehobenen Produkte"
+
+#: ../inc/customizer.php:1358
+msgid "Featured products title"
+msgstr "Titel Hervorgehobene Produkte"
+
+#: ../inc/customizer.php:1371
+msgid "Show Latest products"
+msgstr "Zeige Neueste Produkte"
+
+#: ../inc/customizer.php:1383
+msgid "Number of Latest products"
+msgstr "Anzahl der neuesten Produkte"
+
+#: ../inc/customizer.php:1395
+msgid "Latest products title"
+msgstr "Titel Neueste Produkte"
+
+#: ../inc/customizer.php:1408
+msgid "Show Top Rated products"
+msgstr "Zeige bestbewertete Produkte"
+
+#: ../inc/customizer.php:1420
+msgid "Number of Top Rated products"
+msgstr "Anzahl der bestbewerteten Produkte"
+
+#: ../inc/customizer.php:1426
+msgid "Top Rated"
+msgstr "Bestbewertete Produkte"
+
+#: ../inc/customizer.php:1432
+msgid "Top Rated products title"
+msgstr "Bestbewertete Produkte Titel"
+
+#: ../inc/customizer.php:1445
+msgid "Show On Sale products"
+msgstr "Zeige reduzierte Produkte"
+
+#: ../inc/customizer.php:1457
+msgid "Number of On Sale products"
+msgstr "Anzahl reduzierter Produkte"
+
+#: ../inc/customizer.php:1463 ../page-templates/shop-front.php:102
+msgid "On Sale"
+msgstr "Reduzierte Produkte"
+
+#: ../inc/customizer.php:1469
+msgid "On Sale products title"
+msgstr "Titel reduzierte Produkte"
+
+#: ../inc/template-tags.php:50
+msgid "by "
+msgstr "von "
+
+#: ../index.php:56
+msgid "Latest Posts"
+msgstr "Neueste Beiträge"
+
+#. Name of the template
+msgid "Full Width Page"
+msgstr "Fullwidth-Seite"
+
+#. Name of the template
+msgid "No Sidebar Page"
+msgstr "No Sidebar Page"
+
+#. Name of the template
+msgid "Shop Front"
+msgstr "Shop Startseite"
+
+#: ../page-templates/shop-front.php:37
+msgid "Featured products"
+msgstr "Hervorgehobene Produkte"
+
+#: ../page-templates/shop-front.php:56
+msgid "Latest products"
+msgstr "Neueste Produkte"
+
+#: ../page-templates/shop-front.php:75
+msgid "Top rated products"
+msgstr "Bestbewertete Produkte"
+
+#: ../search.php:22
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Suchergebnisse für: %s"
+
+#: ../searchform.php:13
+msgctxt "placeholder"
+msgid "Search..."
+msgstr "Suche..."
+
+#: ../searchform.php:14
+msgctxt "submit button"
+msgid "Search"
+msgstr "Suchen"
+
+#: ../sidebar-offcanvas.php:16
+msgid "Info"
+msgstr "Info"
+
+#: ../template-parts/authorbox.php:19
+msgid "About"
+msgstr "über"
+
+#: ../template-parts/content-none.php:13
+msgid "Nothing Found"
+msgstr "Nichts gefunden"
+
+#: ../template-parts/content-none.php:20
+#, php-format
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Bist Du bereit deinen ersten Beitrag zu veröffentlichen? Beginne hier!"
+
+#: ../template-parts/content-none.php:24
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr "Entschuldige, aber es konnte nichts gefunden werden."
+
+#: ../template-parts/content-none.php:29
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Es scheint, als kann hier nichts gefunden werden. Vielleicht hilft ein "
+"anderer Suchbegriff."
+
+#: ../template-parts/content-page.php:22 ../template-parts/content-single-neo.php:
+#: 69 ../template-parts/content-single-serif.php:58 ../template-parts/content-
+#: single.php:81
+msgid "Pages:"
+msgstr "Seiten: "
+
+#: ../template-parts/content-page.php:28
+msgid "Edit Page"
+msgstr "Seite bearbeiten"
+
+#: ../template-parts/content-single-neo.php:78 ../template-parts/content-single-
+#: serif.php:80 ../template-parts/content-single.php:95
+msgid "Tags"
+msgstr "Schlagwörter"
+
+#: ../template-parts/content-single-neo.php:96 ../template-parts/content-single-
+#: neo.php:97 ../template-parts/content-single-serif.php:98 ../template-
+#: parts/content-single-serif.php:99 ../template-parts/content-single.php:113 ..
+#: template-parts/content-single.php:114
+msgid "Next Post"
+msgstr "Nächster Beitrag"
+
+#: ../template-parts/content-single-neo.php:98 ../template-parts/content-single-
+#: neo.php:99 ../template-parts/content-single-serif.php:100 ../template-
+#: parts/content-single-serif.php:101 ../template-parts/content-single.php:115 ..
+#: template-parts/content-single.php:116
+msgid "Previous Post"
+msgstr "Vorheriger Beitrag"
+
+#: ../template-parts/content-single-serif.php:73
+msgid "Categories"
+msgstr "Kategorien"
+
+#: ../template-parts/front-section-four.php:30 ../template-parts/front-section-
+#: four.php:32 ../template-parts/front-section-fourcolumn.php:31 ../template-
+#: parts/front-section-fourcolumn.php:33 ../template-parts/front-section-one.php:
+#: 51 ../template-parts/front-section-one.php:53 ../template-parts/front-section-
+#: sixcolumn.php:30 ../template-parts/front-section-sixcolumn.php:32 ../template-
+#: parts/front-section-three.php:40 ../template-parts/front-section-three.php:42 .
+#: ./template-parts/front-section-threecolumn.php:30 ../template-parts/front-
+#: section-threecolumn.php:32 ../template-parts/front-section-two.php:51 ..
+#: template-parts/front-section-two.php:53 ../template-parts/front-section-
+#: twocolumn.php:30 ../template-parts/front-section-twocolumn.php:32
+msgid "All posts"
+msgstr "Alle Beiträge"
+
+#: ../template-parts/shop-front-blog.php:30
+msgid "From the Blog"
+msgstr "Vom Blog"
+
+#: ../template-parts/shop-menu.php:13 ../template-parts/shop-menu.php:13
+msgid "Account"
+msgstr "Konto"
+
+#: ../template-parts/shop-menu.php:16 ../template-parts/shop-menu.php:16
+msgid "Login / Register"
+msgstr "Login / Anmelden"
+
+#: ../template-parts/shop-menu.php:19
+msgid "Cart open"
+msgstr "Warenkorb anzeigen"
+
+#: ../template-parts/shop-menu.php:20
+msgid "View cart"
+msgstr "Warenkorb zeigen"
+
+#: ../template-parts/shop-menu.php:21 ../woocommerce/woocommerce.php:146
+msgid "Cart"
+msgstr "Warenkorb"
+
+#: ../template-parts/shop-menu.php:22 ../woocommerce/woocommerce.php:147
+#, php-format
+msgid "%d"
+msgstr "%d"
+
+#: ../template-parts/shop-menu.php:26
+msgid "Close cart"
+msgstr "Warenkorb verbergen"
+
+#: ../template-parts/shop-menu.php:27
+msgid "Shopping cart"
+msgstr "Warenkorb"
+
+#: ../woocommerce/woocommerce.php:81
+msgid "Sale"
+msgstr "Reduziert"
+
+#: ../woocommerce/woocommerce.php:102
+msgid "Shop Sidebar"
+msgstr "Shop Sidebar"
+
+#: ../woocommerce/woocommerce.php:104
+msgid "Widgets for the sidebar on the WooCommerce shop page."
+msgstr "Widget für die Shopsidebar."
+
+#: ../woocommerce/woocommerce.php:145
+msgid "View Cart"
+msgstr "Warenkorb zeigen"
+
+#. Name of the theme
+msgid "Uku"
+msgstr "Uku"
+
+#. Theme URI of the theme
+msgid "http://www.elmastudio.de/en/themes/uku/"
+msgstr "http://www.elmastudio.de/en/themes/uku/\n"
+
+#. Author of the theme
+msgid "Elmastudio"
+msgstr "Elmastudio"
+
+#. Author URI of the theme
+msgid "http://www.elmastudio.de/en/"
+msgstr "http://www.elmastudio.de/"

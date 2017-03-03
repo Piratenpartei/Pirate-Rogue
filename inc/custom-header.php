@@ -1,12 +1,8 @@
 <?php
 /**
- * Implement a custom logo for Uku
+ * Implement a custom logo for Pirate Rogue
  *
  * @link http://codex.wordpress.org/Custom_Headers
- *
- * @package Uku
- * @since Uku 1.0
- * @version 1.0.1
  */
 
 function uku_custom_header_setup() {

@@ -592,9 +592,9 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'priority' 			           => 2,
 		'type' 			               => 'select',
 		'choices' 						     => array(
-			'slider-fullwidth'	 => esc_html__( 'fullwidth', 'uku' ),
-			'slider-boxed' 			 => esc_html__( 'boxed', 'uku' ),
-			'slider-fullscreen'  => esc_html__( 'fullscreen', 'uku' ),
+			'slider-fullwidth'	=> esc_html__( 'fullwidth', 'uku' ),
+			'slider-boxed'		=> esc_html__( 'boxed', 'uku' ),
+			'slider-fullscreen'	=> esc_html__( 'fullscreen', 'uku' ),
 		),
 	) );
 
@@ -1045,5 +1045,5 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	) );
 
 }
-add_action( 'customize_register', 'pirate_rogue_customize_register',1000 );
+add_action( 'customize_register', 'pirate_rogue_customize_register');
 

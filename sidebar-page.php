@@ -2,8 +2,8 @@
 /**
  * The template for the Page widget area
  *
- * @package Uku
- * @since Uku 1.0
+ * @package Pirate Rogue
+ * @since Pirate Rogue 1.0
  * @version 1.0
  */
 

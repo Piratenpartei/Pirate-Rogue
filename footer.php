@@ -2,9 +2,9 @@
 /**
  * The template for displaying the footer.
  *
- * @package Uku
- * @since Uku 1.0
- * @version 1.0.4
+ * @package Pirate Rogue
+ * @since Pirate Rogue 1.0
+ * @version 1.0
  */
 
 $blogname = get_bloginfo('name');

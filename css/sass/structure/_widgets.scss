@@ -3,13 +3,15 @@
 /* 12.0 Sidebar + Widgets
 /*-----------------------------------------------------------------------------------*/
 
-#secondary, #sidebar-page {
+#secondary, 
+#sidebar-page {
   padding-top: 40px;
   padding-bottom: 70px;
 }
 
 .no-sidebar {
-  #secondary, #sidebar-page {
+  #secondary, 
+  #sidebar-page {
     display: none;
   }
 }
@@ -21,7 +23,8 @@
   padding-bottom: 34px;
 }
 
-#secondary .widget:last-of-type, #sidebar-page.widget:last-of-type {
+#secondary .widget:last-of-type, 
+#sidebar-page.widget:last-of-type {
   padding-bottom: 0;
 }
 
@@ -78,14 +81,16 @@
   }
 }
 
-.wp_widget_tag_cloud div, .widget_tag_cloud div {
+.wp_widget_tag_cloud div, 
+.widget_tag_cloud div {
   -ms-word-break: break-all;
   word-break: break-all;
   word-break: break-word;
 }
 
 .widget_recent_comments {
-  a.url, span.comment-author-link {
+  a.url, 
+  span.comment-author-link {
     font-weight: 600;
   }
 }
@@ -117,11 +122,28 @@
 .widget_search {
   clear: both;
   overflow: hidden;
+  
+  @media screen and (min-width: $breakpoint-600) {
+      input {
+	    &.search-field {
+	      width: 67.8%;
+	    }
+	    &[type="submit"] {
+	      width: 30%;
+	    }
+	}
+    }
+  
 }
 
 .widget ul .dropdown-toggle {
   display: none;
 }
+
+
+
+
+
 
 /* --- RSS Widget --- */
 
@@ -199,3 +221,4 @@ a.rsswidget {
     line-height: 0;
   }
 }
+

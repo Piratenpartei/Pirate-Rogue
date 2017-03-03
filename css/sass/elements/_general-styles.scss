@@ -12,15 +12,6 @@
   /* 17px at 320px */
 }
 
-.featured-slider {
-  .entry-header, .entry-meta {
-    padding-left: 5.3125%;
-    /* 17px at 320px */
-    padding-right: 5.3125%;
-    /* 17px at 320px */
-  }
-}
-
 .mobile-search {
   padding-left: 5.3125%;
   /* 17px at 320px */
@@ -39,8 +30,7 @@
 
 #mobile-social,
 #sidebar-offcanvas .widget, 
-.front-section, 
-.slider-on.slider-boxed .featured-content {
+.front-section {
   padding-left: 5.3125%;
   /* 17px at 320px */
   padding-right: 5.3125%;
@@ -55,12 +45,13 @@
   /* 17px at 320px */
 }
 
-.featured-slider .entry-thumbnail a, 
+
 #front-section-four .entry-thumbnail a {
   width: 130%;
 }
 
-.featured-content, #front-section-four .type-post {
+.featured-content, 
+#front-section-four .type-post {
   width: 100%;
   overflow: hidden;
 }
@@ -72,7 +63,6 @@
   padding-top: 35px;
 }
 
-.slider-on .front-section:first-of-type, 
 .headerimg-on .front-section:first-of-type {
   padding-top: 0;
 }

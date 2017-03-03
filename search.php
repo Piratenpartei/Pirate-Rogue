@@ -2,9 +2,9 @@
 /**
 * The template for displaying search results.
 *
-* @package Uku
-* @since Uku 1.0
-* @version 1.0
+ * @package Pirate Rogue
+ * @since Pirate Rogue 1.0
+ * @version 1.0
 */
 
 get_header(); ?>

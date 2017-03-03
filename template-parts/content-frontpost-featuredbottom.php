@@ -2,8 +2,8 @@
 /**
  * The template for displaying the Featured Bottom Post on the Front Page Sections
  *
- * @package Uku
- * @since Uku 1.1
+ * @package Pirate Rogue
+ * @since Pirate Rogue 1.0
  * @version 1.0
  */
 ?>

@@ -46,13 +46,14 @@
 
 #overlay-open:before, 
 #overlay-open-sticky:before {
+  @include px2rem($font-size-overlay-icon);
   @extend .fa;
-   @extend .fa-2x;
-  @extend .fa-bars;
+  @extend .fa-2x;
+  @extend .fa-bars; 
 }
 
 #overlay-close:before {
-//  content: '\f406';
+     @include px2rem($font-size-overlay-icon);
     @extend .fa; 
     @extend .fa-2x;
     @extend .fa-close;

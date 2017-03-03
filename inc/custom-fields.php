@@ -10,8 +10,9 @@ add_action( 'load-post.php', 'pirate_rogue_metabox_cf_setup' );
 add_action( 'load-post-new.php', 'pirate_rogue_metabox_cf_setup' );
 
 
-
-/* Meta box setup function. */
+/*-----------------------------------------------------------------------------------*/
+/* Meta box setup function.
+/*-----------------------------------------------------------------------------------*/
 function pirate_rogue_metabox_cf_setup() {
 
     add_action( 'add_meta_boxes', 'pirate_rogue_add_metabox_posts' );	
@@ -23,8 +24,9 @@ function pirate_rogue_metabox_cf_setup() {
 }
 
 
-/* Create one or more meta boxes to be displayed on the post editor screen. */
-
+/*-----------------------------------------------------------------------------------*/
+/* Create one or more meta boxes to be displayed on the post editor screen.
+/*-----------------------------------------------------------------------------------*/
 function pirate_rogue_add_metabox_posts() {
     
     /* Subtitle */
@@ -34,15 +36,17 @@ function pirate_rogue_add_metabox_posts() {
 		'pirate_rogue_do_metabox_untertitel',	
 		 'post','normal','high'
     );
-
-
 }
+/*-----------------------------------------------------------------------------------*/
+/* Create one or more meta boxes to be displayed on the post editor screen.
+/*-----------------------------------------------------------------------------------*/
 function pirate_rogue_add_metabox_pages() {
     /* None yet */
 }
 
-
-/* Display Options for subtitles on posts */
+/*-----------------------------------------------------------------------------------*/
+/*  Display Options for subtitles on posts 
+/*-----------------------------------------------------------------------------------*/
 function pirate_rogue_do_metabox_untertitel( $object, $box ) { 
 	wp_nonce_field( basename( __FILE__ ), 'pirate_rogue_metabox_untertitel_nonce' ); 
 	$post_type = get_post_type( $object->ID); 
@@ -61,8 +65,9 @@ function pirate_rogue_do_metabox_untertitel( $object, $box ) {
 	pirate_rogue_form_text('pirate_rogue_metabox_untertitel', $untertitel, __('Untertitel (Inhaltsüberschrift)','pirate_rogue'));
 
  }
-
-/* Save the meta box's post/page metadata. */
+/*-----------------------------------------------------------------------------------*/
+/* Save the meta box's post/page metadata.
+/*-----------------------------------------------------------------------------------*/
 function pirate_rogue_save_metabox_untertitel( $post_id, $post ) {
 	/* Verify the nonce before proceeding. */
 	if ( !isset( $_POST['pirate_rogue_metabox_untertitel_nonce'] ) || !wp_verify_nonce( $_POST['pirate_rogue_metabox_untertitel_nonce'], basename( __FILE__ ) ) )

@@ -154,7 +154,70 @@
 	    }
 	}
   }
- 
-  
 }
+@media screen and (min-width: $breakpoint-1024) {
+    #desktop-navigation {
+	display: block;
+	padding: 0;
+	ul {
+	  margin: 0;
+	  padding: 0;
+	  text-align: center;
+	  li {
+	    position: relative;
+	    display: inline-block;
+	    padding: 20px 15px 18px;
+	  }
+	}
+	.sub-menu, .children, .dropdown-toggle {
+	  display: none;
+	}
+	ul {
+	  li:hover > ul {
+	    &.sub-menu, &.children {
+	      display: block !important;
+	    }
+	  }
+	  ul {
+	    &.sub-menu, 
+	    &.children {
+	      position: absolute;
+	      top: 59px;
+	      left: 0;
+	      width: 200px;
+	      margin: 0;
+	      padding: 5px 0;
+	      text-align: left;
+	      color: #fff;
+	      background: #1a1a1a;
+	      z-index: 100000;
+	    }
+
+	    &.sub-menu ul.sub-menu, 
+	    &.children ul.children {
+	      top: -5px;
+	      left: 200px;
+	    }
+	  }
+	}
+	.sub-menu li a, .children li a {
+	  display: block;
+	  padding: 10px 15px;
+	  font-size: 14px;
+	  font-size: 0.875rem;
+	  color: #fff !important;
+	  text-transform: none;
+	  font-weight: normal;
+	  letter-spacing: 0;
+	}
+	.sub-menu li, .children li {
+	  padding: 0;
+	  line-height: 1.1;
+	  display: block;
+	}
+      }
+  }
+  
+  
+  
 

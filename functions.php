@@ -9,7 +9,7 @@
 /*-----------------------------------------------------------------------------------*/
 /* Sets up theme defaults and registers support for various WordPress features.
 /*-----------------------------------------------------------------------------------*/
-function uku_setup() {
+function pirate_rogue_setup() {
 
 	// Make Uku available for translation. Translations can be added to the /languages/ directory.
 	load_theme_textdomain( 'uku', get_template_directory() . '/languages' );
@@ -71,7 +71,7 @@ function uku_setup() {
 	add_image_size( 'uku-serif-small', 790, 593, true );
 
 }
-add_action( 'after_setup_theme', 'uku_setup' );
+add_action( 'after_setup_theme', 'pirate_rogue_setup' );
 
 /*-----------------------------------------------------------------------------------*/
 /* Sets up the content width value based on the theme's design.
@@ -80,26 +80,26 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 900;
 }
 
-function uku_content_width() {
+function pirate_rogue_content_width() {
 	if ( is_page_template('full-width.php') ) {
 		$GLOBALS['content_width'] = 1500;
 	}
 }
-add_action( 'template_redirect', 'uku_content_width' );
+add_action( 'template_redirect', 'pirate_rogue_content_width' );
 
  /*-----------------------------------------------------------------------------------*/
  /*  JavaScript detection.
  /*  Adds a `js` class to the root `<html>` element when JavaScript is detected.
  /*-----------------------------------------------------------------------------------*/
-function uku_javascript_detection() {
+function pirate_rogue_javascript_detection() {
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
 }
-add_action( 'wp_head', 'uku_javascript_detection', 0 );
+add_action( 'wp_head', 'pirate_rogue_javascript_detection', 0 );
 
 /*-----------------------------------------------------------------------------------*/
 /*  Enqueue scripts and styles
 /*-----------------------------------------------------------------------------------*/
-function uku_scripts() {
+function pirate_rogue_scripts() {
 	global $wp_styles;
 
 
@@ -119,9 +119,6 @@ function uku_scripts() {
 		'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'uku' ) . '</span>',
 	) );
 
-	// Add Genericons font, used in the main stylesheet.
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/assets/fonts/genericons.css', array(), '3.4.1' );
-
 	// Loads Scripts for Featured Post Slider
 	if ( '' != get_theme_mod( 'uku_featuredtag' ) ) {
 		wp_enqueue_style( 'uku-slick-style', get_template_directory_uri() . '/js/slick/slick.css' );
@@ -138,10 +135,10 @@ function uku_scripts() {
 	wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), '1.1' );
 	
 	// Loading Tablesorter script
-	wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/js/jquery.tablesorter.min.js', array( 'jquery' ), '1.1' );	
+	wp_enqueue_script( 'tablesorter', get_template_directory_uri() . '/js/jquery.tablesorter.min.js', array( 'jquery' ), '1.1', true );	
 
 }
-add_action( 'wp_enqueue_scripts', 'uku_scripts' );
+add_action( 'wp_enqueue_scripts', 'pirate_rogue_scripts' );
 
 
 /*-----------------------------------------------------------------------------------*/

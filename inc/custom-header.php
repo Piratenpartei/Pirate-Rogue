@@ -1,11 +1,11 @@
 <?php
-/**
- * Implement a custom logo for Pirate Rogue
- *
- * @link http://codex.wordpress.org/Custom_Headers
- */
 
-function uku_custom_header_setup() {
+
+/*-----------------------------------------------------------------------------------*/
+/* Init custom header functions
+/* @link http://codex.wordpress.org/Custom_Headers
+/*-----------------------------------------------------------------------------------*/
+function pirate_rogue_custom_header_setup() {
 	$args = array(
 		'default-image'          => '',
 		'default-text-color'     => '2b2b2b',
@@ -13,18 +13,28 @@ function uku_custom_header_setup() {
 		'height'                  => 530,
 		'flex-width'             => false,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'uku_header_style',
+		'wp-head-callback'       => 'pirate_rogue_header_style',
 	);
 
 	add_theme_support( 'custom-header', $args );
-
+	
+	
+	add_theme_support( 'custom-logo', array(
+	    'default-image'          => get_template_directory_uri().'/images/rrze-logo.png',
+	    'height'      => 100,
+	    'width'       => 235,
+	    'flex-height' => false,
+	    'flex-width'  => true,
+	    'header-text' => array( 'site-title', 'site-description' ),
+	) );
 }
-add_action( 'after_setup_theme', 'uku_custom_header_setup', 11 );
+add_action( 'after_setup_theme', 'pirate_rogue_custom_header_setup', 11 );
 
-/**
- * Style the header text displayed on the blog.
- */
-function uku_header_style() {
+
+/*-----------------------------------------------------------------------------------*/
+/* Style the header text displayed on the blog.
+/*-----------------------------------------------------------------------------------*/
+function pirate_rogue_header_style() {
 	$header_image = get_header_image();
 	$header_text_color   = get_header_textcolor();
 
@@ -65,3 +75,44 @@ function uku_header_style() {
 	</style>
 	<?php
 }
+
+/*-----------------------------------------------------------------------------------*/
+/* Own Custom Logo function to get logo without link on startpage and with defined classes
+/*-----------------------------------------------------------------------------------*/
+if ( ! function_exists( 'pirate_rogue_get_custom_logo' ) ) :
+    function pirate_rogue_get_custom_logo($imgclass='custom-logo', $linkclass = 'custom-logo-link', $linktitle='') {
+	$html = '';
+	$switched_blog = false;
+	$blog_id = 0;
+
+	$custom_logo_id = get_theme_mod( 'custom_logo' );
+	if ( $custom_logo_id ) {
+	    if ((! is_front_page()) &&  (! is_home())) { 
+		$html = '<a href="'.esc_url( home_url( '/' ) ).'"';
+		if (!empty($linkclass)) {
+		    $html .= ' class="'.$linkclass.'"';
+		}
+		if (!empty($linktitle)) {
+		    $html .= ' title="'.$linktitle.'"';
+		}
+		$html .= ' rel="home" itemprop="url">';
+	    }
+	    
+	    $html .=  wp_get_attachment_image( $custom_logo_id, 'full', false, array(
+		    'class'    => $imgclass,
+		    'itemprop' => 'logo',
+		) );
+
+	    if ((! is_front_page()) &&  (! is_home())) { 
+		$html .= '</a>';
+	    }
+	} elseif ( is_customize_preview() ) {
+	    // If no logo is set but we're in the Customizer, leave a placeholder (needed for the live preview).
+	    $html = sprintf( '<a href="%1$s" class="custom-logo-link" style="display:none;"><img class="custom-logo"/></a>',
+		esc_url( home_url( '/' ) )
+	    );
+	}
+
+	return $html;
+    }
+endif;

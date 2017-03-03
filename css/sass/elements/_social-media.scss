@@ -4,8 +4,6 @@
 
 
 .social-nav {
-    
-   
     ul {
 	@extend .fa-ul;
 	li {
@@ -33,8 +31,7 @@
 		@extend .fa-star;
 		&::before {
 		    @extend .fa;		    
-		    width: 1.4em;
-		    height: 1.4em;
+		   @include px2rem($font-size-socialmedia-icon);
 		    text-align: center;
 		    vertical-align: middle;
 		}
@@ -156,30 +153,14 @@
 }
 */
 
-@media screen and (min-width: 66.250em) {
+@media screen and (min-width: $breakpoint-1060) {
 	.header-social {
 		display: block;
 		position: absolute;
 		right: 0;
 		top: 40px;
 		height: 59px;
-                /*
-                ul {
-                    li {
-                        a {
-                            padding: 0;
-                            width: 45px;
-                            height: 59px;
-
-                            &::before {
-                                    text-align: center;
-                                    width: 45px;
-                                    height: 59px;
-                                    padding-top: 20px;
-                            }
-                        }
-                    }
-                } */
+		padding-top: 10px;
 	}
 
         #header-social-sticky {

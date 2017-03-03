@@ -199,8 +199,10 @@
 	}
 	});
 
-
-
+	// Tablesorter
+	$(document).ready(function() {
+	    $('.sorttable').tablesorter(); 
+	});
 
 
 

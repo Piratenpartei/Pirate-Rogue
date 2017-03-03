@@ -2,8 +2,8 @@
 /**
  * Big one-column Instagram widget area in the Footer (for WP Instagram widget).
  *
- * @package Uku
- * @since Uku 1.0.3
+ * @package Pirate Rogue
+ * @since Pirate Rogue 1.0
  * @version 1.0
  */
 

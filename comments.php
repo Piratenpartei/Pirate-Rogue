@@ -2,9 +2,9 @@
 /**
  * The template for displaying Comments.
  *
- * @package Uku
- * @since Uku 1.0
- * @version 1.0.3
+ * @package Pirate Rogue
+ * @since Pirate Rogue 1.0
+ * @version 1.0
  */
 
  /*

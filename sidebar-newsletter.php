@@ -2,8 +2,8 @@
 /**
  * Big one-column Mailchimp Newsletter widget area in the Footer for the serif design style only.
  *
- * @package Uku
- * @since Uku 1.2
+ * @package Pirate Rogue
+ * @since Pirate Rogue 1.0
  * @version 1.0
  */
 

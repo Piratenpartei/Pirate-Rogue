@@ -824,7 +824,8 @@
     }
   }
   .blog {
-    &.sidebar-left #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-meta, &.no-sidebar #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-meta {
+    &.sidebar-left #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-meta, 
+    &.no-sidebar #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-meta {
       left: 40px;
     }
   }
@@ -1482,6 +1483,8 @@
       }
     }
   }
+  
+
 }
 
 /* Minimum width of 1360 pixels (larger desktop screens)
@@ -1516,7 +1519,9 @@
   .section-about-column-one p cite {
     padding: 30px 0 0 0;
   }
-  .section-one-column-one .format-video .entry-thumbnail a:before, .section-two-column-one .format-video .entry-thumbnail a:before, #front-section-four .format-video .entry-thumbnail a:before {
+  .section-one-column-one .format-video .entry-thumbnail a:before, 
+  .section-two-column-one .format-video .entry-thumbnail a:before,
+  #front-section-four .format-video .entry-thumbnail a:before {
     width: 70px;
     height: 52px;
     padding: 29px 0 0 28px;
@@ -1594,6 +1599,15 @@
     width: 38%;
     padding: 19px 4%;
   }
+      .single-post .big-thumb .entry-thumbnail a, 
+  #front-section-four .entry-thumbnail a {
+    max-height: 700px;
+    overflow: hidden;
+  }
+  .headerimg-on.header-fullscreen a.header-image {
+    max-height: 900px !important;
+    overflow: hidden;
+  }
 }
 
 /* Minimum width of 1800 pixels (larger desktop screens)
@@ -1667,15 +1681,7 @@
       margin-right: -21.42857142857143%;
     }
   }
-  .single-post .big-thumb .entry-thumbnail a, 
-  #front-section-four .entry-thumbnail a {
-    max-height: 700px;
-    overflow: hidden;
-  }
-  .headerimg-on.header-fullscreen a.header-image {
-    max-height: 900px !important;
-    overflow: hidden;
-  }
+
 }
 
 /* Minimum width of 2200 pixels (larger desktop screens)

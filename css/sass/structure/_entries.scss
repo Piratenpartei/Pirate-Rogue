@@ -1,7 +1,12 @@
 /*-----------------------------------------------------------------------------------*/
 /*	8.0 Blog Posts
 /*-----------------------------------------------------------------------------------*/
-
+.entry-thumbnail a {
+    max-height: 900px;
+    overflow: hidden;
+  }
+  
+  
 .single-post .format-video .entry-thumbnail a:before, .featured-slider .entry-date:before {
   display: none;
 }

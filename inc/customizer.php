@@ -1047,3 +1047,185 @@ function pirate_rogue_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'pirate_rogue_customize_register');
 
+
+/**
+ * Add Custom Customizer Controls - Category Dropdown
+ */
+if (class_exists('WP_Customize_Control')) {
+		class WP_Customize_Category_Control extends WP_Customize_Control {
+
+				public function render_content() {
+						$dropdown = wp_dropdown_categories(
+								array(
+										'name'              => '_customize-dropdown-categories-' . $this->id,
+										'echo'              => 0,
+										'orderby'           => 'name',
+										'show_option_none'  => esc_html__( '&mdash; Select &mdash;', 'uku' ),
+
+										'option_none_value' => '',
+										'selected'          => $this->value(),
+								)
+						);
+
+						$dropdown = str_replace( '<select', '<select ' . $this->get_link(), $dropdown );
+
+						printf(
+								'<label class="customize-control-select"><span class="customize-control-title">%s</span> %s</label>',
+								$this->label,
+								$dropdown
+						);
+				}
+		}
+}
+
+/**
+ * Add Custom Customizer Controls - Tag Dropdown
+ */
+if (class_exists('WP_Customize_Control')) {
+		class WP_Customize_Tag_Control extends WP_Customize_Control {
+
+				public function render_content() {
+						$dropdown = wp_dropdown_categories(
+								array(
+										'name'              => '_customize-dropdown-tags-' . $this->id,
+										'echo'              => 0,
+										'orderby'           => 'name',
+										'show_option_none'  => esc_html__( '&mdash; Select &mdash;', 'uku' ),
+
+										'option_none_value' => '',
+										'taxonomy'           => 'post_tag',
+										'selected'          => $this->value(),
+								)
+						);
+
+						$dropdown = str_replace( '<select', '<select ' . $this->get_link(), $dropdown );
+
+						printf(
+								'<label class="customize-control-select"><span class="customize-control-title">%s</span> %s</label>',
+								$this->label,
+								$dropdown
+						);
+				}
+		}
+}
+
+/**
+ * Sanitize Checkboxes.
+ */
+function uku_sanitize_checkbox( $input ) {
+	if ( 1 == $input ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+/**
+ * Sanitize Main Design Style
+ */
+function uku_sanitize_main_design( $uku_main_design ) {
+	if ( ! in_array( $uku_main_design, array( 'standard', 'neo', 'serif' ) ) ) {
+		$uku_main_design = 'standard';
+	}
+	return $uku_main_design;
+}
+
+/**
+ * Sanitize Sidebar Position.
+ */
+function uku_sanitize_sidebar( $uku_sidebar ) {
+	if ( ! in_array( $uku_sidebar, array( 'sidebar-right', 'sidebar-left' ) ) ) {
+		$uku_sidebar = 'sidebar-right';
+	}
+	return $uku_sidebar;
+}
+
+/**
+ * Sanitize Sidebar Visibility Settings.
+ */
+function uku_sanitize_sidebar_hide( $uku_sidebar_hide ) {
+	if ( ! in_array( $uku_sidebar_hide, array( 'sidebar-show', 'sidebar-no', 'sidebar-no-single', 'sidebar-no-front' ) ) ) {
+		$uku_sidebar_hide = 'sidebar-show';
+	}
+	return $uku_sidebar_hide;
+}
+
+/**
+ * Sanitize Featured Slider Style.
+ */
+function uku_sanitize_sliderstyle( $uku_sliderstyle ) {
+	if ( ! in_array( $uku_sliderstyle, array( 'slider-fullwidth', 'slider-boxed', 'slider-fullscreen' ) ) ) {
+		$uku_sliderstyle = 'slider-fullwidth';
+	}
+	return $uku_sliderstyle;
+}
+
+/**
+ * Sanitize Featured Slider image animation.
+ */
+function uku_sanitize_slideranimation( $uku_slideranimation ) {
+	if ( ! in_array( $uku_slideranimation, array( 'slider-slide', 'slider-fade' ) ) ) {
+		$uku_slideranimation = 'slider-slide';
+	}
+	return $uku_slideranimation;
+}
+
+/**
+ * Sanitize Custom Header Image Style.
+ */
+function uku_sanitize_headerstyle( $uku_headerstyle ) {
+	if ( ! in_array( $uku_headerstyle, array( 'header-fullwidth', 'header-boxed', 'header-fullscreen' ) ) ) {
+		$uku_headerstyle = 'header-fullwidth';
+	}
+	return $uku_headerstyle;
+}
+
+/**
+ * Sanitize Custom Fix-positioned header style.
+ */
+function uku_sanitize_fixedheader_style( $uku_fixedheader_style ) {
+	if ( ! in_array( $uku_fixedheader_style, array( 'light', 'dark' ) ) ) {
+		$uku_fixedheader_style = 'light';
+	}
+	return $uku_fixedheader_style;
+}
+
+/**
+ * Sanitize header font.
+ */
+function uku_sanitize_header_font( $uku_header_font ) {
+	if ( ! in_array( $uku_header_font, array( 'light', 'dark' ) ) ) {
+		$uku_header_font = 'dark';
+	}
+	return $uku_header_font;
+}
+
+/**
+ * Sanitize the image font.
+ */
+function uku_sanitize_image_font( $uku_image_font ) {
+	if ( ! in_array( $uku_image_font, array( 'light', 'dark' ) ) ) {
+		$uku_image_font = 'light';
+	}
+	return $uku_image_font;
+}
+
+/**
+ * Sanitize Image Transition Transparency.
+ */
+function uku_sanitize_imggradient( $uku_imggradient ) {
+	if ( ! in_array( $uku_imggradient, array( '0','0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9', '0.99' ) ) ) {
+		$uku_imggradient = '0.7';
+	}
+	return $uku_imggradient;
+}
+
+/**
+ * Sanitize Image Overlay Transparency.
+ */
+function uku_sanitize_imgoverlay_transparency( $uku_imgoverlay_transparency ) {
+	if ( ! in_array( $uku_imgoverlay_transparency, array( '0','0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9', '1' ) ) ) {
+		$uku_imgoverlay_transparency = '0';
+	}
+	return $uku_imgoverlay_transparency;
+}

@@ -1985,6 +1985,8 @@ p.site-description { display: none; }
 /*-----------------------------------------------------------------------------------*/
 /*	8.0 Blog Posts
 /*-----------------------------------------------------------------------------------*/
+.entry-thumbnail a { max-height: 900px; overflow: hidden; }
+
 .single-post .format-video .entry-thumbnail a:before, .featured-slider .entry-date:before { display: none; }
 
 .entry-header h2.entry-title { padding: 4px 0 8px; }
@@ -3478,7 +3480,9 @@ ol.commentlist ul.children li.comment:last-of-type .comment-wrap { padding-botto
   /* --- Extra Plugins --- */
   .widget_mc4wp_form_widget, .jetpack_subscription_widget { margin-bottom: 45px; }
   .widget_mc4wp_form_widget input[type="email"], .jetpack_subscription_widget #subscribe-email input[type="email"] { width: 60%; margin-bottom: 0; }
-  .widget_mc4wp_form_widget input[type="submit"], .jetpack_subscription_widget #subscribe-submit input[type="submit"] { width: 38%; padding: 19px 4%; } }
+  .widget_mc4wp_form_widget input[type="submit"], .jetpack_subscription_widget #subscribe-submit input[type="submit"] { width: 38%; padding: 19px 4%; }
+  .single-post .big-thumb .entry-thumbnail a, #front-section-four .entry-thumbnail a { max-height: 700px; overflow: hidden; }
+  .headerimg-on.header-fullscreen a.header-image { max-height: 900px !important; overflow: hidden; } }
 /* Minimum width of 1800 pixels (larger desktop screens)
 ------------------------------------------------------------------------------------ */
 @media screen and (min-width: 112.5em) { /* --- General --- */
@@ -3493,9 +3497,7 @@ ol.commentlist ul.children li.comment:last-of-type .comment-wrap { padding-botto
   .big-thumb .entry-header h1.entry-title, .big-thumb .entry-header p.intro { padding-left: 15%; padding-right: 15%; }
   #front-section-four .format-video .entry-thumbnail a:before { left: 15%; }
   .single-post .big-thumb .entry-thumbnail { width: 142.85714285714286%; margin-left: -21.42857142857143%; }
-  .single-post .big-thumb .title-wrap { width: 142.85714285714286%; margin-left: -21.42857142857143%; margin-right: -21.42857142857143%; }
-  .single-post .big-thumb .entry-thumbnail a, #front-section-four .entry-thumbnail a { max-height: 700px; overflow: hidden; }
-  .headerimg-on.header-fullscreen a.header-image { max-height: 900px !important; overflow: hidden; } }
+  .single-post .big-thumb .title-wrap { width: 142.85714285714286%; margin-left: -21.42857142857143%; margin-right: -21.42857142857143%; } }
 /* Minimum width of 2200 pixels (larger desktop screens)
 ------------------------------------------------------------------------------------ */
 @media screen and (min-width: 137.5em) { /* --- General --- */

@@ -1738,9 +1738,6 @@ body.blog.slider-on.slider-fullscreen, body.blog.headerimg-on.header-fullscreen 
 
 html.overlay-show { overflow: hidden; }
 
-.admin-bar .front-section:first-of-type, .admin-bar.page .content-wrap, .admin-bar .search-results .blog-wrap, .admin-bar.archive .blog-wrap, .admin-bar.error404 .content-wrap { margin-top: 46px; }
-@media screen and (min-width: 48em) { .admin-bar .front-section:first-of-type, .admin-bar.page .content-wrap, .admin-bar .search-results .blog-wrap, .admin-bar.archive .blog-wrap, .admin-bar.error404 .content-wrap { margin-top: 32px; } }
-
 /*-----------------------------------------------------------------------------------*/
 /*	3.0 Header
 /*-----------------------------------------------------------------------------------*/

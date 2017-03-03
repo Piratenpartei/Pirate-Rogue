@@ -34,17 +34,3 @@ html.overlay-show {
   overflow: hidden;
 }
 
-.admin-bar {
-    .front-section:first-of-type, 
-    &.page .content-wrap, 
-    .search-results .blog-wrap, 
-    &.archive .blog-wrap, 
-    &.error404 .content-wrap {
-	margin-top: 46px;
-	
-	@media screen and (min-width: 48em) {
-	    margin-top: 32px;
-
-	}
-    }
-}

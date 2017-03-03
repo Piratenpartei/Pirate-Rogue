@@ -25,10 +25,6 @@
 
 	<div class="footer-feature-textwrap">
 
-		<?php if ( '' != get_theme_mod( 'uku_footerfeature_title' ) && 'neo' == get_theme_mod('uku_main_design') ) : ?>
-    		<h3 class="footer-feature-title"><?php echo esc_html(get_theme_mod( 'uku_footerfeature_title' ) ); ?></h3>
-		<?php endif; ?>
-
 		<?php if ( '' != get_theme_mod( 'uku_footerfeature_text_big' ) ) : ?>
 			<p class="text-big"><?php echo wp_kses_post( get_theme_mod( 'uku_footerfeature_text_big' ) ); ?></p>
 		<?php endif; ?>

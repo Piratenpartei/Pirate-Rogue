@@ -145,9 +145,15 @@
 		   content: $fa-var-caret-down;
 	   }
 	}
+        li {
+            a {
+              color: $color-main-menu;  
+            }
+        }
 	li:hover {
 	    a {
 		border-bottom: 3px solid $color-mainnav-active-border;
+                color: $color-main-menu-hover;
 	    } 
 	    li a {
 		border-bottom: none;    

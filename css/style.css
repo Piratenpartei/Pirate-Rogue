@@ -1799,7 +1799,8 @@ p.site-description { display: none; }
 
 #desktop-navigation ul.menu { font-family: "roboto", sans-serif; }
 #desktop-navigation ul.menu li.menu-item-has-children > a::after { margin-left: 3px; content: ""; }
-#desktop-navigation ul.menu li:hover a { border-bottom: 3px solid #ff8800; }
+#desktop-navigation ul.menu li a { color: #2b2b2b; }
+#desktop-navigation ul.menu li:hover a { border-bottom: 3px solid #ff8800; color: #2b2b2b; }
 #desktop-navigation ul.menu li:hover li a { border-bottom: none; }
 
 @media screen and (min-width: 64em) { #desktop-navigation { display: block; padding: 0; }
@@ -1814,12 +1815,14 @@ p.site-description { display: none; }
 /*-----------------------------------------------------------------------------------*/
 /* Festgelegte Bereiche zur Suche
 /*-----------------------------------------------------------------------------------*/
+.search-open { color: #672082; background: #fff; border: 1px solid #fff; border-radius: 50%; }
+.search-open :focus, .search-open :hover { background: #ff8800; color: #fff; border: 1px solid #ff8800; border-radius: 50%; }
 .search-open:before { font-size: 18px; line-height: 25.2px; font-size: 1.125rem; line-height: 1.575rem; }
 
 @media screen and (min-width: 64em) { /* --- Search Desktop --- */
   #masthead { position: relative; border-bottom: 1px solid #ddd; }
   .search-open, .desktop-search { display: block; }
-  .search-open { position: absolute; top: 40px; left: 9.23611111111111%; right: auto; width: 4.16666666666667%; height: 59px; text-align: center; background: transparent; border: none; text-indent: -99999px; z-index: 10000; outline: none; }
+  .search-open { position: absolute; top: 40px; left: 9.23611111111111%; right: auto; width: 4.16666666666667%; height: 59px; text-align: center; border: none; text-indent: -99999px; z-index: 10000; outline: none; }
   .search-open:before { display: block; position: absolute; top: 0; left: 0; text-indent: 0; text-align: center; width: 100%; height: 59px; padding-top: 17px; }
   .desktop-search { position: absolute; top: 100%; width: 100%; opacity: 0; height: 0; z-index: 10000; background: rgba(26, 26, 26, 0.75); text-align: center; border-top: 1px solid #ddd; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; -o-transition: all .3s ease-in-out; transition: all .3s ease-in-out; }
   .desktop-search-show .desktop-search { position: absolute; top: 100%; opacity: 1; height: 118px; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; -o-transition: all .3s ease-in-out; transition: all .3s ease-in-out; }
@@ -2089,7 +2092,7 @@ p.site-description { display: none; }
 article header { margin-bottom: 20px; }
 
 /*-----------------------------------------------------------------------------------*/
-/*	4.0  Off Canvas Area
+/*  Off Canvas Area
 /*-----------------------------------------------------------------------------------*/
 /* --- Main Menu Buttons (Off Canvas) --- */
 .overlay-btn { border: none; outline: none; display: block; margin: 0; padding: 0; z-index: 9999; text-align: right; background: transparent; line-height: 1; opacity: 1; }
@@ -2097,9 +2100,9 @@ article header { margin-bottom: 20px; }
 /* --- Overlay Buttons: Fix-positioning --- */
 #overlay-open, #overlay-close { position: absolute; top: 5px; right: 5.3125%; width: 40px; height: 40px; }
 
-#overlay-open { z-index: 100; }
+#overlay-open { z-index: 100; color: #672082; }
 
-#overlay-close { z-index: 1000; }
+#overlay-close { z-index: 1000; color: #672082; }
 
 .overlay-btn span { display: none; }
 .overlay-btn:before { display: block; }
@@ -2559,9 +2562,10 @@ p.site-title { font-weight: bold; padding-right: 55px; margin: 0; }
 
 #secondary h2.widget-title, #sidebar-page h2.widget-title { font-size: 16px; font-size: 1rem; }
 
-/*  Divider
-*/
-@media screen and (min-width: 550px) { hr { display: block; border: 0px; height: 56px; margin: 3px 0; color: #ff8800; background-image: url("../img/trenner-04-50.png"); background-image: url("../img/trenner-01-50.png"); background-position: center center; background-repeat: no-repeat; } }
+/*-----------------------------------------------------------------------------------*/
+/* Divider
+/*-----------------------------------------------------------------------------------*/
+@media screen and (min-width: 550px) { hr { display: block; border: 0px; height: 56px; margin: 10px 0; color: #ccc; background-image: url("../img/trenner-04-50.png"); background-position: center center; background-repeat: no-repeat; } }
 
 /*
 Links and colors
@@ -2601,7 +2605,7 @@ a { color: #2b2b2b; text-decoration: none; }
 
 .entry-content a:hover, .comment-text a:hover, .author-bio a:hover { color: #0c6ca6; }
 
-.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-cats a:hover, .featured-slider .entry-cats a:hover, .section-one-column-one .entry-cats a:hover, .section-three-column-one .entry-cats a:hover, #front-section-four .entry-cats a:hover, .single-post .entry-cats a:hover, .footer-feature-btn:hover, .comments-show #comments-toggle, .widget_mc4wp_form_widget input[type="submit"]:hover, .jetpack_subscription_widget #subscribe-submit input[type="submit"]:hover, #comments-toggle:hover { background: #0c6ca6; }
+.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-cats a:hover, .featured-slider .entry-cats a:hover, .section-one-column-one .entry-cats a:hover, .section-three-column-one .entry-cats a:hover, #front-section-four .entry-cats a:hover, .single-post .entry-cats a:hover, .footer-feature-btn:hover, .comments-show #comments-toggle, .widget_mc4wp_form_widget input[type="submit"]:hover, .jetpack_subscription_widget #subscribe-submit input[type="submit"]:hover, #comments-toggle:hover { background: #672082; }
 
 input[type="submit"]:hover, input#submit:hover { background: #0c6ca6; }
 
@@ -2862,8 +2866,8 @@ embed, iframe, object, video { max-width: 100%; }
 /* Social Media Icons
 */
 .social-nav ul li { display: inline-block; border: 1px solid #fff; border-radius: 50%; }
-.social-nav ul li a { overflow: hidden; display: inline-block; width: 1.4em; height: 1.4em; text-align: center; vertical-align: middle; }
-.social-nav ul li :hover { background: #ff8800; color: white; border: 1px solid #ff8800; border-radius: 50%; }
+.social-nav ul li a { background: #fff; color: #672082; overflow: hidden; display: inline-block; width: 25px; height: 25px; text-align: center; vertical-align: middle; }
+.social-nav ul li :hover { background: #ff8800; color: #fff; border: 1px solid #ff8800; border-radius: 50%; }
 .social-nav ul li a::before { font-size: 18px; line-height: 25.2px; font-size: 1.125rem; line-height: 1.575rem; text-align: center; vertical-align: middle; }
 
 #footer-social.social-nav li { border: none; }

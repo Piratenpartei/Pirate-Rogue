@@ -8,21 +8,23 @@
 	@extend .fa-ul;
 	li {
 	    display: inline-block;
-	    border: 1px solid #fff;
+	    border: 1px solid $color-page-background;
 	    border-radius: 50%;
 	    a {
+                background: $color-page-background;
+                color: $color-socialmedia;
 		overflow: hidden;
 		display: inline-block;
-		width: 1.4em;
-		height: 1.4em;
+		width: 25px;
+		height: 25px;
 		text-align: center;
 		vertical-align: middle;
 	    }
 	    :hover {
-		  background: $color-socialmedia-hover;
-		  color: white;
-		   border: 1px solid $color-socialmedia-hover;
-		   border-radius: 50%;
+                    background: $color-socialmedia-hover;
+                    color: $color-page-background;
+                    border: 1px solid $color-socialmedia-hover;
+                    border-radius: 50%;
 	    }
 	}
 
@@ -31,7 +33,7 @@
 		@extend .fa-star;
 		&::before {
 		    @extend .fa;		    
-		   @include px2rem($font-size-socialmedia-icon);
+                    @include px2rem($font-size-socialmedia-icon);
 		    text-align: center;
 		    vertical-align: middle;
 		}

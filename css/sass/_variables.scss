@@ -1,16 +1,32 @@
 // Colors
 $color-page-background: #fff;
-$color-main: #ff8800;
-$color-hr:  $color-main;
-$color-socialmedia-hover: $color-main;
-$color-content-links: $color-main;
-$color-text: #2b2b2b;
-$bg-grey: #e7e7eb;
-$color-border: $bg-grey;
+$color-main:            #ff8800;
+$color-hr:              #ccc;
+$color-content-links:   $color-main;
+$color-text:            #2b2b2b;
+$bg-grey:               #e7e7eb;
+$color-border:          $bg-grey;
 
-$color-second: #672082;
+$color-second:          #672082;
 
-$color-mainnav-active-border: $color-main;
+$color-mainnav-active-border:   $color-main;
+
+$color-socialmedia:             $color-second;
+$color-socialmedia-hover:       $color-main;
+
+$color-header-search:           $color-second;
+$color-header-search-hover:     $color-main;
+
+$color-header-overlay:          $color-second;
+$color-header-overlay-hover:    $color-second;
+
+$color-main-menu:               $color-text; // $color-second;
+$color-main-menu-hover:         $color-text; // $color-main;
+
+$color-cats:                    #fff;
+$color-cats-background:          $color-main;
+$color-cats-background-hover:  $color-second;
+
 
 // Fonts
 $font-family-sans-serif:    'DejaWeb', sans-serif;

@@ -2,6 +2,18 @@
 /* Festgelegte Bereiche zur Suche
 /*-----------------------------------------------------------------------------------*/
 .search-open {
+    color: $color-header-search;
+    background: $color-page-background;
+    border: 1px solid $color-page-background;
+    border-radius: 50%;
+        
+    :focus,
+    :hover {
+        background:  $color-header-search-hover;
+        color: $color-page-background;
+        border: 1px solid $color-socialmedia-hover;
+        border-radius: 50%;
+    }
     &:before {
 	@include px2rem($font-size-search-icons);
 	@extend .fa;
@@ -18,7 +30,6 @@
 	display: block;
   }
   .search-open {
-	
 	position: absolute;
 	top: 40px;
 	left: 9.23611111111111%;
@@ -26,7 +37,6 @@
 	width: 4.16666666666667%;
 	height: 59px;
 	text-align: center;
-	background: transparent;
 	border: none;
 	text-indent: -99999px;
 	z-index: 10000;

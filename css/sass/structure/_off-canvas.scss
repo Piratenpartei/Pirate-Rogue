@@ -1,8 +1,7 @@
 /*-----------------------------------------------------------------------------------*/
-/*	4.0  Off Canvas Area
+/*  Off Canvas Area
 /*-----------------------------------------------------------------------------------*/
 /* --- Main Menu Buttons (Off Canvas) --- */
-
 .overlay-btn {
   border: none;
   outline: none;
@@ -11,13 +10,13 @@
   padding: 0;
   z-index: 9999;
   text-align: right;
+
   background: transparent;
   line-height: 1;
   opacity: 1;
 }
 
 /* --- Overlay Buttons: Fix-positioning --- */
-
 #overlay-open, 
 #overlay-close {
   position: absolute;
@@ -29,10 +28,12 @@
 
 #overlay-open {
   z-index: 100;
+    color: $color-header-overlay;
 }
 
 #overlay-close {
   z-index: 1000;
+    color: $color-header-overlay-hover;
 }
 
 .overlay-btn {
@@ -66,8 +67,8 @@
 }
 
 /* --- Sub Menu Toggle --- */
-
-.menu-item-has-children, .page_item_has_children {
+.menu-item-has-children, 
+.page_item_has_children {
   position: relative;
 }
 

@@ -54,7 +54,7 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
 <?php wp_head(); ?>
 </head>
 
-	<body <?php body_class(); ?>
+	<body <?php body_class(); ?>>
 
 	<div class="container-all">
 

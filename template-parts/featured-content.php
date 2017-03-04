@@ -12,11 +12,10 @@
 <?php
 	// Get a number of Front page recent posts set in the customizer
 	$featuredtag = get_theme_mod('uku_featuredtag');
-
-		$args = array(
-			'posts_per_page'=> 6,
-			'post_status'	=> 'publish',
-			'tag_id'  		=> $featuredtag,
+            $args = array(
+		'posts_per_page'=> 4,
+		'post_status'	=> 'publish',
+		'tag_id'  	=> $featuredtag,
 	);
 
 	$uku_front_query = new WP_Query( $args );

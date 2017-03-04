@@ -316,7 +316,8 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'priority'	     => 4,
 	) );
 
-	// Uku Theme Options - Images
+        /*
+	 Uku Theme Options - Images
 	$wp_customize->add_setting( 'uku_imggradient', array(
 		'default' 			           => '0.7',
 		'sanitize_callback' 	     => 'uku_sanitize_imggradient',
@@ -342,7 +343,9 @@ function pirate_rogue_customize_register( $wp_customize ) {
 					'0.99'	             => esc_html__( '100', 'uku' ),
 		),
 	) );
-
+        */
+        
+        /*
 	$wp_customize->add_setting( 'uku_imgoverlay_color' , array(
 			'default' 			         => '#000000',
 			'sanitize_callback'      => 'sanitize_hex_color',
@@ -356,7 +359,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'priority' 			           => 2,
 		'settings'				     => 'uku_imgoverlay_color',
 	) ) );
-
+        
 	$wp_customize->add_setting( 'uku_imgoverlay_transparency', array(
 		'default' 			           => '0',
 		'sanitize_callback' 	     => 'uku_sanitize_imgoverlay_transparency',
@@ -382,7 +385,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 					'1' 		             => esc_html__( '100', 'uku' ),
 		),
 	) );
-
+        
 	$wp_customize->add_setting( 'uku_image_font', array(
 		'default' 	         => 'light',
 		'sanitize_callback' 	     => 'uku_sanitize_header_font',
@@ -399,7 +402,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 					'dark' 		           => esc_html__( 'dark', 'uku' ),
 		),
 	) );
-
+        */
 
 	// Uku Theme Options - Big Footer Feature Area
 	$wp_customize->add_setting( 'uku_footerfeature_title', array(
@@ -1224,13 +1227,14 @@ function uku_sanitize_image_font( $uku_image_font ) {
 
 /**
  * Sanitize Image Transition Transparency.
- */
+
 function uku_sanitize_imggradient( $uku_imggradient ) {
 	if ( ! in_array( $uku_imggradient, array( '0','0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9', '0.99' ) ) ) {
 		$uku_imggradient = '0.7';
 	}
 	return $uku_imggradient;
 }
+*/
 
 /**
  * Sanitize Image Overlay Transparency.

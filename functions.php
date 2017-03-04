@@ -58,7 +58,7 @@ function pirate_rogue_setup() {
 //		'height'      => 236,
 //	) );
 	
-		add_theme_support( 'custom-logo', array(
+	add_theme_support( 'custom-logo', array(
 	    'height'      => 236,
 	    'width'       => 520,
 	    'flex-height' => true,
@@ -265,8 +265,8 @@ function uku_customize_css() {
 	 if ('' != get_theme_mod( 'uku_front_hidecats' ) ) {
 	$customcss .= '.blog .entry-cats {display: none !important;}'."\n";
 	 } 
-
-	if ('#000000' != get_theme_mod( 'uku_imgoverlay_color' ) ) { 
+         /*
+	if (('#000000' != get_theme_mod( 'uku_imgoverlay_color' ) ) && ('' != get_theme_mod( 'uku_imgoverlay_color' ) )) { 
 	       $customcss .= '.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-thumbnail a:after,';
 	       $customcss .= '.featured-slider .entry-thumbnail a:after,';
 	       $customcss .= '.uku-serif .featured-slider .entry-thumbnail:after,';
@@ -292,9 +292,11 @@ function uku_customize_css() {
 	       $customcss .= '.header-fullscreen #headerimg-wrap:after {opacity: '.get_theme_mod('uku_imgoverlay_transparency').';}'."\n";
 	} 
 	if ('0' == get_theme_mod( 'uku_imgoverlay_transparency' ) ) { 
-	       $customcss .= '.header-fullscreen #headerimg-wrap:after {	background-color: transparent;}'."\n";
+	       $customcss .= '.header-fullscreen #headerimg-wrap:after {background-color: transparent;}'."\n";
 	} 
-	if ('0.7' != get_theme_mod( 'uku_imggradient' ) ) { 
+        */
+         
+	/* if ('0.7' != get_theme_mod( 'uku_imggradient' ) ) { 
 	       $customcss .= '#front-section-four .meta-main-wrap,';
 	       $customcss .= '.featured-slider .meta-main-wrap,';
 	       $customcss .= '.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .meta-main-wrap,';
@@ -305,7 +307,8 @@ function uku_customize_css() {
 	       $customcss .= 'background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,'.get_theme_mod('uku_imggradient').') 100%);';
 	       $customcss .= '}'."\n";
 	} 
-
+        */
+        
 	if ('' != get_theme_mod( 'uku_custom_css' ) ) {
 	   $customcss .=  get_theme_mod('uku_custom_css'); 
 	} 
@@ -471,7 +474,6 @@ add_action( 'admin_enqueue_scripts', 'pirate_rogue_admin_style' );
 /*-----------------------------------------------------------------------------------*/
 /* Load helper functions
 /*-----------------------------------------------------------------------------------*/
-// require get_template_directory() . '/inc/helper-functions.php';
 require_once( get_template_directory() . '/inc/helper-functions.php' );   
 /*-----------------------------------------------------------------------------------*/
 /* Custom Fields and metaboxes belonging to them

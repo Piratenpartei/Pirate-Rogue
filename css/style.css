@@ -32,7 +32,7 @@ CSS Font File Roboto
  */
 /* FONT PATH -------------------------- */
 @font-face { font-family: 'FontAwesome'; src: url("../fonts/fontawesome/fontawesome-webfont.eot?v=4.7.0"); src: url("../fonts/fontawesome/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("../fonts/fontawesome/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("../fonts/fontawesome/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("../fonts/fontawesome/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("../fonts/fontawesome/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg"); font-weight: normal; font-style: normal; }
-.fa, .dropdown-toggle:after, #desktop-navigation ul.menu li.menu-item-has-children > a::after, .search-open:before, #overlay-open:before, #overlay-open-sticky:before, #overlay-close:before, .social-nav ul li a::before, .featured-slider button.slick-prev:after, .featured-slider button.slick-next:after { display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.fa, .dropdown-toggle:after, #desktop-navigation ul.menu li.menu-item-has-children > a::after, .search-open:before, #overlay-open:before, #overlay-open-sticky:before, #overlay-close:before, .social-nav ul li a::before, #comments-toggle:before, .entry-comments a:before, #comments .comment-reply a:before, .featured-slider button.slick-prev:after, .featured-slider button.slick-next:after { display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 /* makes the font 33% larger relative to the icon container */
 .fa-lg { font-size: 1.33333em; line-height: 0.75em; vertical-align: -15%; }
@@ -59,16 +59,16 @@ CSS Font File Roboto
 
 .fa-pull-right { float: right; }
 
-.fa.fa-pull-left, .fa-pull-left.dropdown-toggle:after, #desktop-navigation ul.menu li.menu-item-has-children > a.fa-pull-left::after, .fa-pull-left.search-open:before, .fa-pull-left#overlay-open:before, .fa-pull-left#overlay-open-sticky:before, .fa-pull-left#overlay-close:before, .social-nav ul li a.fa-pull-left::before, .featured-slider button.fa-pull-left.slick-prev:after, .featured-slider button.fa-pull-left.slick-next:after { margin-right: .3em; }
-.fa.fa-pull-right, .fa-pull-right.dropdown-toggle:after, #desktop-navigation ul.menu li.menu-item-has-children > a.fa-pull-right::after, .fa-pull-right.search-open:before, .fa-pull-right#overlay-open:before, .fa-pull-right#overlay-open-sticky:before, .fa-pull-right#overlay-close:before, .social-nav ul li a.fa-pull-right::before, .featured-slider button.fa-pull-right.slick-prev:after, .featured-slider button.fa-pull-right.slick-next:after { margin-left: .3em; }
+.fa.fa-pull-left, .fa-pull-left.dropdown-toggle:after, #desktop-navigation ul.menu li.menu-item-has-children > a.fa-pull-left::after, .fa-pull-left.search-open:before, .fa-pull-left#overlay-open:before, .fa-pull-left#overlay-open-sticky:before, .fa-pull-left#overlay-close:before, .social-nav ul li a.fa-pull-left::before, .fa-pull-left#comments-toggle:before, .entry-comments a.fa-pull-left:before, #comments .comment-reply a.fa-pull-left:before, .featured-slider button.fa-pull-left.slick-prev:after, .featured-slider button.fa-pull-left.slick-next:after { margin-right: .3em; }
+.fa.fa-pull-right, .fa-pull-right.dropdown-toggle:after, #desktop-navigation ul.menu li.menu-item-has-children > a.fa-pull-right::after, .fa-pull-right.search-open:before, .fa-pull-right#overlay-open:before, .fa-pull-right#overlay-open-sticky:before, .fa-pull-right#overlay-close:before, .social-nav ul li a.fa-pull-right::before, .fa-pull-right#comments-toggle:before, .entry-comments a.fa-pull-right:before, #comments .comment-reply a.fa-pull-right:before, .featured-slider button.fa-pull-right.slick-prev:after, .featured-slider button.fa-pull-right.slick-next:after { margin-left: .3em; }
 
 /* Deprecated as of 4.4.0 */
 .pull-right { float: right; }
 
 .pull-left { float: left; }
 
-.fa.pull-left, .pull-left.dropdown-toggle:after, #desktop-navigation ul.menu li.menu-item-has-children > a.pull-left::after, .pull-left.search-open:before, .pull-left#overlay-open:before, .pull-left#overlay-open-sticky:before, .pull-left#overlay-close:before, .social-nav ul li a.pull-left::before, .featured-slider button.pull-left.slick-prev:after, .featured-slider button.pull-left.slick-next:after { margin-right: .3em; }
-.fa.pull-right, .pull-right.dropdown-toggle:after, #desktop-navigation ul.menu li.menu-item-has-children > a.pull-right::after, .pull-right.search-open:before, .pull-right#overlay-open:before, .pull-right#overlay-open-sticky:before, .pull-right#overlay-close:before, .social-nav ul li a.pull-right::before, .featured-slider button.pull-right.slick-prev:after, .featured-slider button.pull-right.slick-next:after { margin-left: .3em; }
+.fa.pull-left, .pull-left.dropdown-toggle:after, #desktop-navigation ul.menu li.menu-item-has-children > a.pull-left::after, .pull-left.search-open:before, .pull-left#overlay-open:before, .pull-left#overlay-open-sticky:before, .pull-left#overlay-close:before, .social-nav ul li a.pull-left::before, .pull-left#comments-toggle:before, .entry-comments a.pull-left:before, #comments .comment-reply a.pull-left:before, .featured-slider button.pull-left.slick-prev:after, .featured-slider button.pull-left.slick-next:after { margin-right: .3em; }
+.fa.pull-right, .pull-right.dropdown-toggle:after, #desktop-navigation ul.menu li.menu-item-has-children > a.pull-right::after, .pull-right.search-open:before, .pull-right#overlay-open:before, .pull-right#overlay-open-sticky:before, .pull-right#overlay-close:before, .social-nav ul li a.pull-right::before, .pull-right#comments-toggle:before, .entry-comments a.pull-right:before, #comments .comment-reply a.pull-right:before, .featured-slider button.pull-right.slick-prev:after, .featured-slider button.pull-right.slick-next:after { margin-left: .3em; }
 
 .fa-spin { -webkit-animation: fa-spin 2s infinite linear; animation: fa-spin 2s infinite linear; }
 
@@ -507,7 +507,7 @@ CSS Font File Roboto
 
 .fa-dashboard:before, .fa-tachometer:before { content: ""; }
 
-.fa-comment-o:before { content: ""; }
+.fa-comment-o:before, #comments-toggle:before, .entry-comments a:before { content: ""; }
 
 .fa-comments-o:before { content: ""; }
 
@@ -1261,7 +1261,7 @@ CSS Font File Roboto
 
 .fa-commenting:before { content: ""; }
 
-.fa-commenting-o:before { content: ""; }
+.fa-commenting-o:before, .comments-show #comments-toggle:before, #comments .comment-reply a:before { content: ""; }
 
 .fa-houzz:before { content: ""; }
 
@@ -2032,11 +2032,8 @@ p.site-description { display: none; }
 /* --- Post Meta --- */
 .entry-meta { display: block; clear: both; }
 
-#primary .hentry .entry-date, #primary .hentry .entry-comments, #primary .hentry .entry-edit { display: block; }
-#primary .hentry .entry-date, #primary .hentry .entry-comments { padding-bottom: 8px; }
-
-.entry-comments a { position: relative; padding-left: 18px; }
-.entry-comments a:before { font: normal 14px/1 'Genericons'; display: block; content: '\f108'; position: absolute; top: 2px; left: 0; }
+#primary .hentry .entry-date, #primary .hentry .entry-edit { display: block; }
+#primary .hentry .entry-date { padding-bottom: 8px; }
 
 .entry-meta .entry-tags ul { margin: 0; padding: 0; }
 
@@ -2938,13 +2935,16 @@ a.standard-btn.black-btn { background: #000; }
 /* Comments
 /*-----------------------------------------------------------------------------------*/
 #comments-toggle { position: relative; display: block; width: 100%; padding: 18px 20px 18px 60px; border: 2px solid #2b2b2b; background: none; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; text-align: left; outline: none; }
-#comments-toggle:before { font: normal 24px/1 'Genericons'; display: block; content: '\f431'; position: absolute; top: 0; left: 0; width: 60px; height: 58px; text-align: center; padding-top: 16px; background: none; }
-
-.comments-show #comments-toggle:before { content: '\f432'; }
+#comments-toggle:before { display: block; position: absolute; top: 0; left: 0; width: 60px; height: 58px; text-align: center; padding-top: 16px; background: none; }
 
 .toggledcomments .comments-content { display: none; }
 
 .comments-show .comments-content { display: block; }
+
+#primary .hentry .entry-comments { display: block; padding-bottom: 8px; }
+
+.entry-comments a { position: relative; padding-left: 18px; }
+.entry-comments a:before { display: block; position: absolute; top: 2px; left: 0; }
 
 #comments { position: relative; padding: 60px 0 0 0; }
 #comments ul li, #comments ol li { list-style-position: outside; }
@@ -2982,7 +2982,7 @@ ol.commentlist ul.children li.comment:last-of-type .comment-wrap { padding-botto
 .comment-edit:before { content: ','; display: inline; }
 
 #comments .comment-reply a { padding-left: 13px; }
-#comments .comment-reply a:before { font: normal 12px/1 'Genericons'; display: block; content: '\f412'; position: absolute; top: 4px; left: 0; text-align: left; }
+#comments .comment-reply a:before { display: block; position: absolute; top: 4px; left: 0; text-align: left; }
 #comments ol li.pingback p { margin: 0; }
 
 /* --- Pingbacks --- */
@@ -3093,6 +3093,7 @@ ol.commentlist ul.children li.comment:last-of-type .comment-wrap { padding-botto
   .featured-slider .entry-header h2.entry-title { font-size: 48px; font-size: 3rem; padding-top: 10px; }
   .featured-slider .format-video .entry-thumbnail a:before { left: 6.25%; top: 40px; }
   .featured-slider .entry-date:before { content: ' / '; padding: 0 2px; display: inline-block; }
+  .no-author .featured-slider .entry-date:before { display: none; }
   .featured-slider .entry-meta { padding-top: 20px; padding-left: 0; padding-right: 0; }
   .featured-slider .entry-author { display: inline-block; }
   .featured-slider .entry-header, .featured-slider .entry-meta { width: 57.63888888888889%; /* -- 830px at 1440px ---*/ margin-left: 6.25%; }

@@ -16,9 +16,9 @@
   text-align: left;
   outline: none;
   &:before {
-    font: normal 24px/1 'Genericons';
+    @extend .fa;
+    @extend .fa-comment-o; 
     display: block;
-    content: '\f431';
     position: absolute;
     top: 0;
     left: 0;
@@ -31,7 +31,7 @@
 }
 
 .comments-show #comments-toggle:before {
-  content: '\f432';
+    @extend .fa-commenting-o;
 }
 
 .toggledcomments .comments-content {
@@ -42,7 +42,25 @@
   display: block;
 }
 
+#primary .hentry {
+  .entry-comments {
+    display: block;
+    padding-bottom: 8px;
+  }
+}
 
+.entry-comments a {
+  position: relative;
+  padding-left: 18px;
+  &:before {
+    @extend .fa;
+    @extend .fa-comment-o;
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 0;
+  }
+}
 
 #comments {
   ul li, 
@@ -181,9 +199,10 @@ ol.commentlist {
   .comment-reply a {
     padding-left: 13px;
     &:before {
-      font: normal 12px/1 'Genericons';
+      @extend .fa;
+      @extend .fa-commenting-o;
       display: block;
-      content: '\f412';
+      
       position: absolute;
       top: 4px;
       left: 0;
@@ -256,11 +275,17 @@ ol.commentlist {
 }
 
 #commentform p {
-  &.comment-form-author, &.comment-form-email, &.comment-form-url, &.comment-form-comment {
+  &.comment-form-author, 
+  &.comment-form-email, 
+  &.comment-form-url, 
+  &.comment-form-comment {
     margin: 0;
     padding: 20px 0 0;
   }
-  &.comment-form-author, &.comment-form-email, &.comment-form-url, &.comment-form-comment {
+  &.comment-form-author, 
+  &.comment-form-email, 
+  &.comment-form-url, 
+  &.comment-form-comment {
     float: none;
     clear: both;
     width: 100%;
@@ -278,12 +303,16 @@ ol.commentlist {
     &.comment-form-comment {
       line-height: 0;
     }
-    label, span, &.form-allowed-tags {
+    label, 
+    span, 
+    &.form-allowed-tags {
       display: none;
     }
   }
   input {
-    &#author, &#email, &#url {
+    &#author, 
+    &#email, 
+    &#url {
       display: block;
       width: 100%;
       margin: 0;

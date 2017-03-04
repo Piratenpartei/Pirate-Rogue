@@ -44,15 +44,18 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 
 			<div class="entry-meta cf">
 				<div class="meta-columnone">
+                                    <?php  if (('' == get_theme_mod( 'uku_front_hideauthor' ) ) &&  ('' == get_theme_mod( 'uku_all_hideauthor' ) )) { ?>
 					<div class="author-pic">
 						<?php
 						$author_bio_avatar_size = apply_filters( 'uku_author_bio_avatar_size', 100 );
 						echo get_avatar( get_the_author_meta( 'user_email' ), $author_bio_avatar_size );
 						?>
 					</div><!-- end .author-pic -->
+                                   
 					<div class="entry-author">
 					<?php uku_posted_by(); ?>
 					</div><!-- end .entry-author -->
+                                         <?php } ?>
 					<div class="entry-date">
 						<a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></a>
 					</div><!-- end .entry-date -->

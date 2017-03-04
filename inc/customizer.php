@@ -540,6 +540,18 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'priority'		     => 5,
 	) );
 
+        $wp_customize->add_setting( 'uku_all_hideauthor', array(
+		'default'							     => '',
+		'sanitize_callback' 	     => 'uku_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'uku_all_hideauthor', array(
+		'label'			     => esc_html__( 'Hide author name on all pages', 'uku' ),
+		'section'		     => 'uku_frontpage_general',
+		'type'			     => 'checkbox',
+		'priority'		     => 5,
+	) );
+        
 	$wp_customize->add_setting( 'uku_custom_latestposts', array(
 		'default' 	           => '',
 		'sanitize_callback' 	     => 'wp_kses_post',

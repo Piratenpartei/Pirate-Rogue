@@ -26,8 +26,14 @@
  		esc_html_x( '%s', 'post author', 'uku' ),
  		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
  	);
-
- 	echo '<div class="entry-author"> ' . $byline . '</div><div class="entry-date">' . $posted_on . '</div>';
+        
+        if (('' != get_theme_mod( 'uku_front_hideauthor' ) ) || ('' != get_theme_mod( 'uku_all_hideauthor' ) )) {
+                /* Do not show author information */
+        } else {
+           echo '<div class="entry-author"> ' . $byline . '</div>';
+        }
+ 	
+        echo '<div class="entry-date">' . $posted_on . '</div>';
 
  }
  endif;
@@ -38,14 +44,16 @@
 	* Prints Post Author Information
 	*/
  function uku_posted_by() {
+     if (('' != get_theme_mod( 'uku_front_hideauthor' ) ) || ('' != get_theme_mod( 'uku_all_hideauthor' ) )) {
+         return;
+     }
+    $byline = sprintf(
+    /* translators: used to show post author name */
+    esc_html_x( '%s', 'post author', 'uku' ),
+    '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html__( 'by ', 'uku' ) . esc_html( get_the_author() ) . '</a></span>'
+    );
 
-	$byline = sprintf(
-	/* translators: used to show post author name */
-	esc_html_x( '%s', 'post author', 'uku' ),
-	'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html__( 'by ', 'uku' ) . esc_html( get_the_author() ) . '</a></span>'
-	);
-
-echo '<span class="entry-author"> ' . $byline . '</span>';
+    echo '<span class="entry-author"> ' . $byline . '</span>';
 
 }
  endif;

@@ -117,7 +117,8 @@
 
 
 .section-one-column-one {
-  .entry-author, .entry-date:before {
+  .entry-author, 
+  .entry-date:before {
     display: none;
   }
 }
@@ -316,11 +317,17 @@
 	    left: 6.25%;
 	    top: 40px;
 	}
+        
 	.entry-date:before {
 	    content: ' / ';
 	    padding: 0 2px;
 	    display: inline-block;
+            
+            .no-author & {
+                display: none;
+            }
 	  }
+          
 	  .entry-meta {
 	    padding-top: 20px;
 	    padding-left: 0;

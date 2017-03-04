@@ -265,9 +265,7 @@ function uku_customize_css() {
 	 if ('' != get_theme_mod( 'uku_front_hidecats' ) ) {
 	$customcss .= '.blog .entry-cats {display: none !important;}'."\n";
 	 } 
-	if ('' != get_theme_mod( 'uku_front_hideauthor' ) ) {
-	       $customcss .= '.blog .entry-author,.blog .entry-date:before {display: none !important;}'."\n";
-	}
+
 	if ('#000000' != get_theme_mod( 'uku_imgoverlay_color' ) ) { 
 	       $customcss .= '.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-thumbnail a:after,';
 	       $customcss .= '.featured-slider .entry-thumbnail a:after,';

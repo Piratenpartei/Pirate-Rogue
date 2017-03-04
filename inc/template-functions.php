@@ -26,7 +26,9 @@
 	 if ( is_page() &&  !is_active_sidebar( 'sidebar-2' )) {
 		 $classes[] = 'no-sidebar';
 	 }
-	 
+	 if (('' != get_theme_mod( 'uku_front_hideauthor' ) ) || ('' != get_theme_mod( 'uku_all_hideauthor' ) )) {
+             $classes[] = 'no-author';
+         }
 
 	 
 	 if ( '' != get_the_post_thumbnail ()) {

@@ -1760,6 +1760,20 @@ p.site-description { display: none; }
 .custom-logo-wrap { margin-left: auto; margin-right: auto; text-align: left; display: block; }
 .custom-logo-wrap a.custom-logo-link img { max-width: 100px; max-height: 45px; }
 
+@media screen and (min-width: 66.25em) { .hide-header-sticky .sticky-header { display: none !important; }
+  .sticky-header { display: block; position: fixed; top: 0; left: 0; width: 100%; background: #fff; height: 59px; transition: -webkit-transform .3s; transition: transform .3s; transition: transform .3s,-webkit-transform .3s; -webkit-backface-visibility: hidden; backface-visibility: hidden; box-shadow: 0 0 8px rgba(0, 0, 0, 0.25); z-index: 100000; }
+  .fixedheader-dark .sticky-header { background: #1a1a1a; }
+  .fixedheader-dark.header-stick #overlay-open-sticky, .fixedheader-dark.header-stick #search-open-sticky, .fixedheader-dark.header-stick #header-social-sticky ul li a { color: rgba(255, 255, 255, 0.5); }
+  .fixedheader-dark.header-stick .sticky-header p.site-title a, .fixedheader-dark.header-stick #overlay-open-sticky:hover, .fixedheader-dark.header-stick #search-open-sticky:hover, .fixedheader-dark.header-stick #header-social-sticky ul li a:hover { color: #fff; }
+  .sticky-header.hidden { -webkit-transform: translateY(-100%); transform: translateY(-100%); box-shadow: none; }
+  .sticky-header p { display: none; font-size: 30px; font-size: 1.875rem; }
+  .header-stick .sticky-header p { display: block; padding: 8px 0 0 0; }
+  #overlay-open-sticky { position: absolute; height: 59px; text-align: center; top: 0px; left: 10px; width: 59px; }
+  #search-open-sticky { top: 0; left: 69px; width: 59px; }
+  .header-stick #overlay-open-sticky { top: 0px; z-index: 9999; }
+  .header-stick #overlay-open-sticky { width: 60px; }
+  .sticky-header .custom-logo-wrap { text-align: center; margin-left: auto; margin-right: auto; }
+  .sticky-header .custom-logo-wrap .custom-logo-link img { max-width: 130px; max-height: 59px; } }
 /* Menu Settings
 */
 /* --- Main Menu --- */
@@ -1830,7 +1844,7 @@ p.site-description { display: none; }
   .desktop-search-show .desktop-search .searchform { height: 118px; padding-top: 35px; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; -o-transition: all .3s ease-in-out; transition: all .3s ease-in-out; }
   .desktop-search input.search-field { width: 33%; border-top: 0; border-left: 0; border-right: 0; background: none; border-bottom: 1px solid #fff; padding: 9px 0; color: #fff; letter-spacing: 0.5px; }
   .desktop-search input[type="submit"] { margin-left: 10px; padding: 8px 20px; background: none; color: #fff; border: 2px solid #fff; font-size: 15px; font-size: 0.9375rem; text-transform: uppercase; letter-spacing: 3px; }
-  .header-stick #search-open-sticky { top: 10px; z-index: 9999; }
+  .header-stick #search-open-sticky { z-index: 9999; }
   .header-stick .desktop-search { position: fixed; top: 59px; border-top: none; height: 0; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; -o-transition: all .3s ease-in-out; transition: all .3s ease-in-out; }
   .header-stick.desktop-search-show .desktop-search { height: 118px; } }
 /*-----------------------------------------------------------------------------------*/
@@ -2100,7 +2114,9 @@ article header { margin-bottom: 20px; }
 /* --- Overlay Buttons: Fix-positioning --- */
 #overlay-open, #overlay-close { position: absolute; top: 5px; right: 5.3125%; width: 40px; height: 40px; }
 
-#overlay-open { z-index: 100; color: #672082; }
+#overlay-open { z-index: 100; }
+
+#overlay-open, #overlay-open-sticky { color: #672082; }
 
 #overlay-close { z-index: 1000; color: #672082; }
 
@@ -3344,23 +3360,6 @@ ol.commentlist ul.children li.comment:last-of-type .comment-wrap { padding-botto
   #sidebar-offcanvas { display: block !important; }
   #sidebar-offcanvas .widget { padding-left: 0; padding-right: 0; }
   .overlay-show .close-btn-wrap { position: relative; top: 0; left: auto; right: auto; background: transparent; height: 158px; }
-  /* --- Desktop Nav --- */
-  /* --- Desktop Nav - Sub Menu --- */
-  /* --- Desktop Header - Sticky --- */
-  .hide-header-sticky .sticky-header { display: none !important; }
-  .sticky-header { display: block; position: fixed; top: 0; left: 0; width: 100%; background: #fff; height: 59px; transition: -webkit-transform .3s; transition: transform .3s; transition: transform .3s,-webkit-transform .3s; -webkit-backface-visibility: hidden; backface-visibility: hidden; box-shadow: 0 0 8px rgba(0, 0, 0, 0.25); z-index: 100000; }
-  .fixedheader-dark .sticky-header { background: #1a1a1a; }
-  .fixedheader-dark.header-stick #overlay-open-sticky, .fixedheader-dark.header-stick #search-open-sticky, .fixedheader-dark.header-stick #header-social-sticky ul li a { color: rgba(255, 255, 255, 0.5); }
-  .fixedheader-dark.header-stick .sticky-header p.site-title a, .fixedheader-dark.header-stick #overlay-open-sticky:hover, .fixedheader-dark.header-stick #search-open-sticky:hover, .fixedheader-dark.header-stick #header-social-sticky ul li a:hover { color: #fff; }
-  .sticky-header.hidden { -webkit-transform: translateY(-100%); transform: translateY(-100%); box-shadow: none; }
-  .sticky-header p { display: none; font-size: 30px; font-size: 1.875rem; }
-  .header-stick .sticky-header p { display: block; padding: 8px 0 0 0; }
-  #overlay-open-sticky { position: absolute; height: 59px; text-align: center; top: 0; left: 10px; width: 59px; }
-  #search-open-sticky { top: 0; left: 69px; width: 59px; }
-  .header-stick #overlay-open-sticky { top: 10px; z-index: 9999; }
-  .header-stick #overlay-open-sticky { width: 60px; }
-  .sticky-header .custom-logo-wrap { text-align: center; margin-left: auto; margin-right: auto; }
-  .sticky-header .custom-logo-wrap .custom-logo-link img { max-width: 130px; max-height: 59px; }
   .section-one-column-one .entry-author, .section-one-column-one .entry-date:before { display: inline-block; }
   .headerimg-on.header-boxed .header-image { margin-top: 30px; }
   .home.blog.headerimg-on.header-fullscreen #masthead .site-header-content, .home.blog.slider-on.slider-fullscreen #masthead .site-header-content { position: absolute; top: 0; left: 0; right: 0; border-bottom: none; z-index: 1000000; }

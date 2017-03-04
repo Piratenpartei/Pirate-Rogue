@@ -27,13 +27,15 @@
 }
 
 #overlay-open {
-  z-index: 100;
-    color: $color-header-overlay;
+    z-index: 100;
 }
-
+#overlay-open,
+#overlay-open-sticky {
+        color: $color-header-overlay;
+}
 #overlay-close {
   z-index: 1000;
-    color: $color-header-overlay-hover;
+  color: $color-header-overlay-hover;
 }
 
 .overlay-btn {

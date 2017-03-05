@@ -1,10 +1,6 @@
 <?php
-/**
- * Available Pirate Rogue Shortcodes
- */
-
 /*-----------------------------------------------------------------------------------*/
-/* Uku Shortcodes
+/* Pirate Rogue Shortcodes Shortcodes
 /*-----------------------------------------------------------------------------------*/
 // Enable shortcodes in widget areas
 add_filter( 'widget_text', 'do_shortcode' );
@@ -129,11 +125,20 @@ function uku_shortcode_dark_box($atts, $content = null) {
 }
 add_shortcode( 'dark_box', 'uku_shortcode_dark_box' );
 
+function pirate_rogue_shortcode_maincolor_box($atts, $content = null) {
+   return '<div class="box maincolor-box">' . do_shortcode( ($content) ) . '</div>';
+}
+add_shortcode( 'maincolor_box', 'pirate_rogue_shortcode_maincolor_box' );
+
+function pirate_rogue_shortcode_secondcolor_box($atts, $content = null) {
+   return '<div class="box secondcolor-box">' . do_shortcode( ($content) ) . '</div>';
+}
+add_shortcode( 'secondcolor_box', 'pirate_rogue_shortcode_secondcolor_box' );
 
 /*-----------------------------------------------------------------------------------*/
 /* Buttons Shortcodes
 /*-----------------------------------------------------------------------------------*/
-function uku_button( $atts, $content = null ) {
+function pirate_rogue_button( $atts, $content = null ) {
     extract(shortcode_atts(array(
     'link'	=> '#',
     'target' => '',
@@ -153,5 +158,5 @@ function uku_button( $atts, $content = null ) {
 
     return $out;
 }
-add_shortcode('button', 'uku_button');
+add_shortcode('button', 'pirate_rogue_button');
 

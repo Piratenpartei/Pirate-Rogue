@@ -44,6 +44,13 @@
   border: 3px solid #222;
 }
 
+.maincolor-box {
+  border: 3px solid $color-main;
+}
+
+.secondcolor-box {
+  border: 3px solid $color-second;
+}
 /* --- Buttons --- */
 
 a.standard-btn {
@@ -66,7 +73,10 @@ a.standard-btn {
   transition: 0.2s background ease;
 }
 
-.post .entry-content a.standard-btn, .page .entry-content a.standard-btn, .post .entry-content a.standard-btn:hover, .page .entry-content a.standard-btn:hover {
+.post .entry-content a.standard-btn, 
+.page .entry-content a.standard-btn, 
+.post .entry-content a.standard-btn:hover,
+.page .entry-content a.standard-btn:hover {
   color: #fff;
   border: none;
 }
@@ -109,6 +119,12 @@ a.standard-btn {
   }
   &.black-btn {
     background: #000;
+  }
+  &.maincolor-btn {
+    background: $color-main;
+  }
+  &.secondcolor-btn {
+    background: $color-second;
   }
 }
 

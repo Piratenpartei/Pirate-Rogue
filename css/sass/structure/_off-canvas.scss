@@ -10,7 +10,6 @@
   padding: 0;
   z-index: 9999;
   text-align: right;
-
   background: transparent;
   line-height: 1;
   opacity: 1;
@@ -31,12 +30,29 @@
 }
 #overlay-open,
 #overlay-open-sticky {
-        color: $color-header-overlay;
+    color: $color-text;
 }
 #overlay-close {
-  z-index: 1000;
-  color: $color-header-overlay-hover;
+    z-index: 1000;
+    color: $color-text;
 }
+
+.socialmedia-maincolor {
+    #overlay-open,
+    #overlay-open-sticky,
+    #overlay-close {
+        color: $color-main;
+    }
+    
+}
+.socialmedia-secondcolor {
+    #overlay-open,
+    #overlay-open-sticky, 
+    #overlay-close {
+        color: $color-second;
+    }
+}
+
 
 .overlay-btn {
   span {

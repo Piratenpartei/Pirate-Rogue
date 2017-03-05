@@ -2,16 +2,16 @@
 /* Festgelegte Bereiche zur Suche
 /*-----------------------------------------------------------------------------------*/
 .search-open {
-    color: $color-header-search;
+    color: $color-text;
     background: $color-page-background;
     border: 1px solid $color-page-background;
     border-radius: 50%;
         
     :focus,
     :hover {
-        background:  $color-header-search-hover;
+        background:  $color-text;
         color: $color-page-background;
-        border: 1px solid $color-socialmedia-hover;
+        border: 1px solid $color-text;
         border-radius: 50%;
     }
     &:before {
@@ -20,6 +20,28 @@
 	@extend .fa-search;
     }
 }
+
+.socialmedia-maincolor .search-open {
+    color: $color-main;
+    
+    :focus,
+    :hover {
+        background:  $color-main;
+        color: $color-page-background;
+        border-color: $color-main;
+    } 
+}
+.socialmedia-secondcolor .search-open {
+    color: $color-second;
+    
+    :focus,
+    :hover {
+        background:  $color-second;
+        color: $color-page-background;
+        border-color: $color-second;
+    }
+}
+
 @media screen and (min-width: $breakpoint-1024) {
      /* --- Search Desktop --- */
   #masthead {

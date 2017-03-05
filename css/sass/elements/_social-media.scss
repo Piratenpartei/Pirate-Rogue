@@ -12,19 +12,18 @@
 	    border-radius: 50%;
 	    a {
                 background: $color-page-background;
-                color: $color-socialmedia;
+                color: $color-text;
 		overflow: hidden;
 		display: inline-block;
 		width: 25px;
 		height: 25px;
 		text-align: center;
 		vertical-align: middle;
+                border-radius: 50%;
 	    }
 	    :hover {
-                    background: $color-socialmedia-hover;
-                    color: $color-page-background;
-                    border: 1px solid $color-socialmedia-hover;
-                    border-radius: 50%;
+                    background: $color-text;
+                    color: $color-page-background;                   
 	    }
 	}
 
@@ -39,54 +38,160 @@
 		}
 
 
-		&[href*="delicious.com"] {
-		    @extend .fa-delicious;
+		&[href*="diaspora.com"] {
+		    @extend .fa-star-o;
+                    background-color: #ccc;
+                    border-color: #ccc;
+                    color: white;
 		}
+                &[href*="diaspora.com"]:hover {
+                     background-color: darken(#ccc,10%);
+                }
+                
+                &[href*="delicious.com"] {
+		    @extend .fa-delicious;
+                    background-color: #eeeeee;
+                    border-color: #eeeeee;
+                    color: white;
+		}
+                &[href*="delicious.com"]:hover {
+                     background-color: darken(#eeeeee,10%);
+                }
+                
 		&[href*="facebook.com"] {
 		    @extend .fa-facebook;
+                    background-color: #3b5998;
+                    border-color: #3b5998;
+                    color: white;
 		}
+                &[href*="facebook.com"]:hover {
+                    background-color: darken(#3b5998,10%);
+                }
+                
 		&[href*="feed"] {
 		    @extend .fa-rss;
+                    background-color: #ff8800;
+                    border-color: #ff8800;
+                    color: white;
 		}
+                &[href*="feed"]:hover {
+                     background-color: darken(#ff8800,10%);
+                }
 		&[href*="flattr.com"] {
 		    @extend .fa-refresh;
+                    background-color: #5CB85C;
+                    border-color: #5CB85C;
+                    color: white;
 		}
+                &[href*="flattr.com"]:hover {
+                     background-color: darken(#5CB85C,10%);
+                }
 		&[href*="flickr.com"] {
 		    @extend .fa-flickr;
+                    background-color: #ff0084;
+                    border-color: #ff0084;
+                    color: white;
 		}
+                &[href*="flickr.com"]:hover {
+                    background-color: darken(#ff0084,10%);
+                }
 		&[href*="google.com"] {
 		    @extend .fa-google;
+                    background-color: #4285f4;
+                    border-color: #4285f4;
+                    color: white;
 		}
+                &[href*="google.com"]:hover {
+                    background-color: darken(#4285f4,10%);
+                }
 		&[href*="plus.google.com"] {
 		    @extend .fa-google-plus;
-		}
+                    background-color: #dd4b39;
+                    border-color: #dd4b39;
+                    color: white;
+                }  
+                &[href*="plus.google.com"]:hover {
+                    background-color: darken(#dd4b39,20%);
+                }
+		
 		&[href*="github.com"] {
 		    @extend .fa-github;
+                    background-color: #4078c0;
+                    border-color: #4078c0;
+                    color: white;
 		}
+                &[href*="github.com"]:hover {
+                    background-color: darken(#4078c0,20%);
+                }
 		&[href*="instagram.com"] {
 		    @extend .fa-instagram;
+                    background-color: #c13584;
+                    border-color: #c13584;
+                    color: white;
 		}
+                &[href*="instagram.com"]:hover {
+                     background-color: darken(#c13584,20%);
+                }
 		&[href*="linkedin.com"] {
 		    @extend .fa-linkedin;
+                    background-color: #0077b5;
+                    border-color: #0077b5;
+                    color: white;
 		}
+                &[href*="linkedin.com"]:hover {
+                    background-color: darken(#0077b5,20%);
+                }
 		&[href^="mailto"] {
 		    @extend .fa-envelope-o;
 		}
 		&[href*="pinterest.com"] {
 		    @extend .fa-pinterest;
+                    background-color: #bd081c;
+                    border-color: #bd081c;
+                    color: white;
 		}
+                &[href*="pinterest.com"]:hover {
+                    background-color: darken(#bd081c,20%);                
+                }
+                &[href*="reddit.com"] {
+		    @extend .fa-reddit;
+                    background-color: #ff4500;
+                    border-color: #ff4500;
+                    color: white;
+		}
+                &[href*="reddit.com"]:hover {
+                    background-color: darken(#ff4500,20%);     
+                }
 		&[href*="slack.com"] {
 		    @extend .fa-slack;
+                    background-color: #6ecadc;
+                    border-color: #6ecadc;
+                    color: white;
 		}
-		&[href*="reddit.com"] {
-		    @extend .fa-reddit;
+                &[href*="slack.com"]:hover {
+                     background-color: darken(#6ecadc,20%);
+                }
+                &[href*="snapchat.com"] {
+		    @extend .fa-snapchat;
+                    background-color: #fffc00;
+                    border-color: #fffc00;
+                    color: white;
 		}
+                &[href*="snapchat.com"]:hover {
+                     background-color: darken(#fffc00,20%);
+                }
+		
 		&[href*="slideshare.com"] {
 		    @extend .fa-slideshare;
+                    background-color: #bddfdf;
+                    border-color: #bddfdf;
+                    color: black; 
 		}
-		&[href*="snapchat.com"] {
-		    @extend .fa-snapchat;
-		}  
+                &[href*="slideshare.com"]:hover {
+                    background-color: darken(#bddfdf,20%);
+                }
+                
+	
 		&[href*="skype.com"], 
 		&[href*="skype:"] {
 		    @extend .fa-skype;
@@ -99,13 +204,33 @@
 		}
 		&[href*="tumblr.com"] {
 		    @extend .fa-tumblr;
+                    background-color: #56BC8A;
+                    border-color: #56BC8A;
+                    color: white; 
 		}
+                &[href*="tumblr.com"]:hover {
+                    background-color: darken(#56BC8A,20%);
+                }
+                
 		&[href*="twitter.com"] {
 		    @extend .fa-twitter;
+                    background-color: #1da1f2;
+                    border-color: #1da1f2;
+                    color: white; 
 		}
-		 &[href*="vimeo.com"] {
+                &[href*="twitter.com"]:hover {
+                    background-color: darken(#1da1f2,20%);
+                }
+		&[href*="vimeo.com"] {
 		    @extend .fa-vimeo;
+                    background-color: #162221;
+                    border-color: #162221;
+                    color: white; 
 		}
+                &[href*="vimeo.com"]:hover {
+                    background-color: lighten(#162221,20%)
+                }
+                
 		&[href*="whatsapp.com"] {
 		    @extend .fa-whatsapp;
 		}
@@ -114,46 +239,72 @@
 		    @extend .fa-wordpress;
 		}
 
-		 &[href*="xing.com"] {
+		&[href*="xing.com"] {
 		    @extend .fa-xing;
+                    background-color: #026466;
+                    border-color: #026466;
+                    color: white;
 		}
+                &[href*="xing.com"]:hover {
+                     background-color: darken(#026466,20%)
+                }
 		&[href*="youtube.com"] {
 		    @extend .fa-youtube;
+                    background-color: #cd201f;
+                    border-color: #cd201f;
+                    color: white;
 		}
+                &[href*="youtube.com"]:hover {
+                    background-color: darken(#162221,20%)
+                }
 	    }
 	}
     }    
 }
+.socialmedia-maincolor .social-nav ul li {
+    a {
+        color: $color-main;
+        background-color: $color-page-background;
+        border-color: $color-page-background;
+        &:hover {
+            background:  $color-second;
+            color: $color-page-background;
+            border-color: $color-second;
+        }
+    }
+    :hover {
+        background:  $color-second;
+        color: $color-page-background;
+        border-color: $color-second;
 
- #footer-social.social-nav {
+    }
+}
+
+.socialmedia-secondcolor .social-nav ul li {
+     a {
+        color: $color-second;
+        background-color: $color-page-background;
+        border-color: $color-page-background;
+         &:hover {
+            background: $color-main;
+            color: $color-page-background;
+            border-color: $color-main;
+        }
+     }
+    :hover {
+        background: $color-main;
+        color: $color-page-background;
+         border-color: $color-main;
+  
+    }
+}
+
+#footer-social.social-nav {
         li {
             border: none;
         }
     }
 
-/*
-#social ul.social li a::before {
-    background: #036 none repeat scroll 0 0;
-    border-radius: 12px;
-    color: #e9edf2;
-    font-size: 16px;
-    height: 21px;
-    line-height: 24px;
-    margin-right: 6px;
-    padding-top: 5px;
-    text-align: center;
-    width: 24px;
-}
-#social ul.social li a {
-    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-    color: #036;
-    display: inline-block;
-    height: 20px;
-    line-height: 20px;
-    padding: 5px 0;
-    text-decoration: none;
-}
-*/
 
 @media screen and (min-width: $breakpoint-1060) {
 	.header-social {

@@ -113,7 +113,7 @@ CSS Font File Roboto
 
 .fa-star:before, .social-nav ul li a:before { content: ""; }
 
-.fa-star-o:before { content: ""; }
+.fa-star-o:before, .social-nav ul li a[href*="diaspora.com"]:before { content: ""; }
 
 .fa-user:before { content: ""; }
 
@@ -1829,9 +1829,15 @@ p.site-description { display: none; }
 /*-----------------------------------------------------------------------------------*/
 /* Festgelegte Bereiche zur Suche
 /*-----------------------------------------------------------------------------------*/
-.search-open { color: #672082; background: #fff; border: 1px solid #fff; border-radius: 50%; }
-.search-open :focus, .search-open :hover { background: #ff8800; color: #fff; border: 1px solid #ff8800; border-radius: 50%; }
+.search-open { color: #2b2b2b; background: #fff; border: 1px solid #fff; border-radius: 50%; }
+.search-open :focus, .search-open :hover { background: #2b2b2b; color: #fff; border: 1px solid #2b2b2b; border-radius: 50%; }
 .search-open:before { font-size: 18px; line-height: 25.2px; font-size: 1.125rem; line-height: 1.575rem; }
+
+.socialmedia-maincolor .search-open { color: #ff8800; }
+.socialmedia-maincolor .search-open :focus, .socialmedia-maincolor .search-open :hover { background: #ff8800; color: #fff; border-color: #ff8800; }
+
+.socialmedia-secondcolor .search-open { color: #672082; }
+.socialmedia-secondcolor .search-open :focus, .socialmedia-secondcolor .search-open :hover { background: #672082; color: #fff; border-color: #672082; }
 
 @media screen and (min-width: 64em) { /* --- Search Desktop --- */
   #masthead { position: relative; border-bottom: 1px solid #ddd; }
@@ -2113,9 +2119,13 @@ article header { margin-bottom: 20px; }
 
 #overlay-open { z-index: 100; }
 
-#overlay-open, #overlay-open-sticky { color: #672082; }
+#overlay-open, #overlay-open-sticky { color: #2b2b2b; }
 
-#overlay-close { z-index: 1000; color: #672082; }
+#overlay-close { z-index: 1000; color: #2b2b2b; }
+
+.socialmedia-maincolor #overlay-open, .socialmedia-maincolor #overlay-open-sticky, .socialmedia-maincolor #overlay-close { color: #ff8800; }
+
+.socialmedia-secondcolor #overlay-open, .socialmedia-secondcolor #overlay-open-sticky, .socialmedia-secondcolor #overlay-close { color: #672082; }
 
 .overlay-btn span { display: none; }
 .overlay-btn:before { display: block; }
@@ -2879,18 +2889,62 @@ embed, iframe, object, video { max-width: 100%; }
 /* Social Media Icons
 */
 .social-nav ul li { display: inline-block; border: 1px solid #fff; border-radius: 50%; }
-.social-nav ul li a { background: #fff; color: #672082; overflow: hidden; display: inline-block; width: 25px; height: 25px; text-align: center; vertical-align: middle; }
-.social-nav ul li :hover { background: #ff8800; color: #fff; border: 1px solid #ff8800; border-radius: 50%; }
+.social-nav ul li a { background: #fff; color: #2b2b2b; overflow: hidden; display: inline-block; width: 25px; height: 25px; text-align: center; vertical-align: middle; border-radius: 50%; }
+.social-nav ul li :hover { background: #2b2b2b; color: #fff; }
 .social-nav ul li a::before { font-size: 18px; line-height: 25.2px; font-size: 1.125rem; line-height: 1.575rem; text-align: center; vertical-align: middle; }
+.social-nav ul li a[href*="diaspora.com"] { background-color: #ccc; border-color: #ccc; color: white; }
+.social-nav ul li a[href*="diaspora.com"]:hover { background-color: #b3b3b3; }
+.social-nav ul li a[href*="delicious.com"] { background-color: #eeeeee; border-color: #eeeeee; color: white; }
+.social-nav ul li a[href*="delicious.com"]:hover { background-color: #d5d5d5; }
+.social-nav ul li a[href*="facebook.com"] { background-color: #3b5998; border-color: #3b5998; color: white; }
+.social-nav ul li a[href*="facebook.com"]:hover { background-color: #2d4373; }
+.social-nav ul li a[href*="feed"] { background-color: #ff8800; border-color: #ff8800; color: white; }
+.social-nav ul li a[href*="feed"]:hover { background-color: #cc6d00; }
+.social-nav ul li a[href*="flattr.com"] { background-color: #5CB85C; border-color: #5CB85C; color: white; }
+.social-nav ul li a[href*="flattr.com"]:hover { background-color: #449d44; }
+.social-nav ul li a[href*="flickr.com"] { background-color: #ff0084; border-color: #ff0084; color: white; }
+.social-nav ul li a[href*="flickr.com"]:hover { background-color: #cc006a; }
+.social-nav ul li a[href*="google.com"] { background-color: #4285f4; border-color: #4285f4; color: white; }
+.social-nav ul li a[href*="google.com"]:hover { background-color: #1266f1; }
+.social-nav ul li a[href*="plus.google.com"] { background-color: #dd4b39; border-color: #dd4b39; color: white; }
+.social-nav ul li a[href*="plus.google.com"]:hover { background-color: #96271a; }
+.social-nav ul li a[href*="github.com"] { background-color: #4078c0; border-color: #4078c0; color: white; }
+.social-nav ul li a[href*="github.com"]:hover { background-color: #264874; }
+.social-nav ul li a[href*="instagram.com"] { background-color: #c13584; border-color: #c13584; color: white; }
+.social-nav ul li a[href*="instagram.com"]:hover { background-color: #711f4d; }
+.social-nav ul li a[href*="linkedin.com"] { background-color: #0077b5; border-color: #0077b5; color: white; }
+.social-nav ul li a[href*="linkedin.com"]:hover { background-color: #00344f; }
+.social-nav ul li a[href*="pinterest.com"] { background-color: #bd081c; border-color: #bd081c; color: white; }
+.social-nav ul li a[href*="pinterest.com"]:hover { background-color: #5b040e; }
+.social-nav ul li a[href*="reddit.com"] { background-color: #ff4500; border-color: #ff4500; color: white; }
+.social-nav ul li a[href*="reddit.com"]:hover { background-color: #992900; }
+.social-nav ul li a[href*="slack.com"] { background-color: #6ecadc; border-color: #6ecadc; color: white; }
+.social-nav ul li a[href*="slack.com"]:hover { background-color: #2ca1b8; }
+.social-nav ul li a[href*="snapchat.com"] { background-color: #fffc00; border-color: #fffc00; color: white; }
+.social-nav ul li a[href*="snapchat.com"]:hover { background-color: #999700; }
+.social-nav ul li a[href*="slideshare.com"] { background-color: #bddfdf; border-color: #bddfdf; color: black; }
+.social-nav ul li a[href*="slideshare.com"]:hover { background-color: #78bebe; }
+.social-nav ul li a[href*="tumblr.com"] { background-color: #56BC8A; border-color: #56BC8A; color: white; }
+.social-nav ul li a[href*="tumblr.com"]:hover { background-color: #317b57; }
+.social-nav ul li a[href*="twitter.com"] { background-color: #1da1f2; border-color: #1da1f2; color: white; }
+.social-nav ul li a[href*="twitter.com"]:hover { background-color: #0967a0; }
+.social-nav ul li a[href*="vimeo.com"] { background-color: #162221; border-color: #162221; color: white; }
+.social-nav ul li a[href*="vimeo.com"]:hover { background-color: #3e605d; }
+.social-nav ul li a[href*="xing.com"] { background-color: #026466; border-color: #026466; color: white; }
+.social-nav ul li a[href*="xing.com"]:hover { background-color: #000202; }
+.social-nav ul li a[href*="youtube.com"] { background-color: #cd201f; border-color: #cd201f; color: white; }
+.social-nav ul li a[href*="youtube.com"]:hover { background-color: black; }
+
+.socialmedia-maincolor .social-nav ul li a { color: #ff8800; background-color: #fff; border-color: #fff; }
+.socialmedia-maincolor .social-nav ul li a:hover { background: #672082; color: #fff; border-color: #672082; }
+.socialmedia-maincolor .social-nav ul li :hover { background: #672082; color: #fff; border-color: #672082; }
+
+.socialmedia-secondcolor .social-nav ul li a { color: #672082; background-color: #fff; border-color: #fff; }
+.socialmedia-secondcolor .social-nav ul li a:hover { background: #ff8800; color: #fff; border-color: #ff8800; }
+.socialmedia-secondcolor .social-nav ul li :hover { background: #ff8800; color: #fff; border-color: #ff8800; }
 
 #footer-social.social-nav li { border: none; }
 
-/*
-#social ul.social li a::before { background: #036 none repeat scroll 0 0; border-radius: 12px; color: #e9edf2; font-size: 16px; height: 21px; line-height: 24px; margin-right: 6px; padding-top: 5px; text-align: center; width: 24px;
-}
-#social ul.social li a { background: rgba(0, 0, 0, 0) none repeat scroll 0 0; color: #036; display: inline-block; height: 20px; line-height: 20px; padding: 5px 0; text-decoration: none;
-}
-*/
 @media screen and (min-width: 66.25em) { .header-social { display: block; position: absolute; right: 0; top: 40px; height: 59px; padding-top: 10px; }
   #header-social-sticky { top: 0; right: 20px; }
   .header-stick #header-social-sticky { top: 0; z-index: 9999; } }

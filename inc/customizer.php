@@ -286,20 +286,21 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	) );
 
 
-	$wp_customize->add_setting( 'uku_fixedheader_style', array(
-		'default' 	         => 'light',
-		'sanitize_callback' 	     => 'uku_sanitize_fixedheader_style',
+	$wp_customize->add_setting( 'pirate_rogue_socialmedia_style', array(
+		'default' 	         => 'colorful',
+		'sanitize_callback'      => 'pirate_rogue_sanitize_socialmedia_style',
 	) );
 
-	$wp_customize->add_control( 'uku_fixedheader_style', array(
-		'label'           => esc_html__( 'Fix-positioned Header style', 'uku' ),
-		'description'	     => esc_html__( 'Choose a dark or light colored fix-positioned header bar.', 'uku' ),
-		'section' 	      => 'uku_header',
-		'priority'     => 3,
+	$wp_customize->add_control( 'pirate_rogue_socialmedia_style', array(
+		'label'         => esc_html__( 'Social Media Icon Style', 'uku' ),
+		'description'	=> esc_html__( 'Choose the color of the social media icons (needs a items in Social media menu position)', 'uku' ),
+		'section' 	=> 'uku_header',
+		'priority'      => 3,
 		'type' 		=> 'select',
 		'choices'   => array(
-					'light' 	           => esc_html__( 'light', 'uku' ),
-					'dark' 		           => esc_html__( 'dark', 'uku' ),
+                    'colorful'      => esc_html__( 'Colorful Social Media Icons', 'uku' ),
+                    'maincolor'     => esc_html__( 'Use main color', 'uku' ),
+                    'secondcolor'   => esc_html__( 'Use second color', 'uku' ),
 		),
 	) );
 
@@ -1067,30 +1068,30 @@ add_action( 'customize_register', 'pirate_rogue_customize_register');
  * Add Custom Customizer Controls - Category Dropdown
  */
 if (class_exists('WP_Customize_Control')) {
-		class WP_Customize_Category_Control extends WP_Customize_Control {
+    class WP_Customize_Category_Control extends WP_Customize_Control {
 
-				public function render_content() {
-						$dropdown = wp_dropdown_categories(
-								array(
-										'name'              => '_customize-dropdown-categories-' . $this->id,
-										'echo'              => 0,
-										'orderby'           => 'name',
-										'show_option_none'  => esc_html__( '&mdash; Select &mdash;', 'uku' ),
+        public function render_content() {
+            $dropdown = wp_dropdown_categories(
+                    array(
+                                    'name'              => '_customize-dropdown-categories-' . $this->id,
+                                    'echo'              => 0,
+                                    'orderby'           => 'name',
+                                    'show_option_none'  => esc_html__( '&mdash; Select &mdash;', 'uku' ),
 
-										'option_none_value' => '',
-										'selected'          => $this->value(),
-								)
-						);
+                                    'option_none_value' => '',
+                                    'selected'          => $this->value(),
+                    )
+            );
 
-						$dropdown = str_replace( '<select', '<select ' . $this->get_link(), $dropdown );
+            $dropdown = str_replace( '<select', '<select ' . $this->get_link(), $dropdown );
 
-						printf(
-								'<label class="customize-control-select"><span class="customize-control-title">%s</span> %s</label>',
-								$this->label,
-								$dropdown
-						);
-				}
-		}
+            printf(
+                    '<label class="customize-control-select"><span class="customize-control-title">%s</span> %s</label>',
+                    $this->label,
+                    $dropdown
+            );
+        }
+    }
 }
 
 /**
@@ -1196,16 +1197,6 @@ function uku_sanitize_headerstyle( $uku_headerstyle ) {
 }
 
 /**
- * Sanitize Custom Fix-positioned header style.
- */
-function uku_sanitize_fixedheader_style( $uku_fixedheader_style ) {
-	if ( ! in_array( $uku_fixedheader_style, array( 'light', 'dark' ) ) ) {
-		$uku_fixedheader_style = 'light';
-	}
-	return $uku_fixedheader_style;
-}
-
-/**
  * Sanitize header font.
  */
 function uku_sanitize_header_font( $uku_header_font ) {
@@ -1224,6 +1215,16 @@ function uku_sanitize_image_font( $uku_image_font ) {
 	}
 	return $uku_image_font;
 }
+
+
+
+function pirate_rogue_sanitize_socialmedia_style( $pirate_rogue_socialmedia_style ) {
+	if ( ! in_array( $pirate_rogue_socialmedia_style, array( 'colorful', 'maincolor', 'secondcolor' ) ) ) {
+		$pirate_rogue_socialmedia_style = 'colorful';
+	}
+	return $pirate_rogue_socialmedia_style;
+}
+
 
 /**
  * Sanitize Image Transition Transparency.

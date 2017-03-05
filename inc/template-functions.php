@@ -8,7 +8,10 @@
  /* Extends the default WordPress body classes
  /*-----------------------------------------------------------------------------------*/
  function pirate_rogue_body_class( $classes ) {
-
+        if ('colorful' != get_theme_mod( 'pirate_rogue_socialmedia_style' ) ) {
+            $classes[] = 'socialmedia-'.get_theme_mod( 'pirate_rogue_socialmedia_style' );
+	}
+        
 	 if ('serif' == get_theme_mod( 'uku_main_design' ) ) {
 		 $classes[] = 'imgfade-on';
 	 }
@@ -29,7 +32,6 @@
 	 if (('' != get_theme_mod( 'uku_front_hideauthor' ) ) || ('' != get_theme_mod( 'uku_all_hideauthor' ) )) {
              $classes[] = 'no-author';
          }
-
 	 
 	 if ( '' != get_the_post_thumbnail ()) {
 		 $classes[] = 'has-thumb';
@@ -85,15 +87,7 @@
 	 if ('dark' == get_theme_mod( 'uku_fixedheader' ) ) {
 		 $classes[] = 'hide-header-sticky';
 	 }
-	 if ('dark' == get_theme_mod( 'uku_fixedheader_style' ) ) {
-		 $classes[] = 'fixedheader-dark';
-	 }
-	 if ('light' == get_theme_mod( 'uku_header_font' ) ) {
-		 $classes[] = 'headerfont-light';
-	 }
-	 if ('dark' == get_theme_mod( 'uku_image_font' ) ) {
-		 $classes[] = 'imagefont-dark';
-	 }
+
 	 if ( ! is_active_sidebar( 'sidebar-offcanvas' ) ) {
 		 $classes[] = 'offcanvas-widgets-off';
 	 }

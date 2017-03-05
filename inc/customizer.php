@@ -293,7 +293,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( 'pirate_rogue_socialmedia_style', array(
 		'label'         => esc_html__( 'Social Media Icon Style', 'uku' ),
-		'description'	=> esc_html__( 'Choose the color of the social media icons (needs a items in Social media menu position)', 'uku' ),
+		'description'	=> esc_html__( 'Choose the color of the social media icons (needs a items in Social media menu position). Notice: This will also chance the color of the search icon and the hamburger overlay icon.', 'uku' ),
 		'section' 	=> 'uku_header',
 		'priority'      => 3,
 		'type' 		=> 'select',
@@ -303,6 +303,25 @@ function pirate_rogue_customize_register( $wp_customize ) {
                     'secondcolor'   => esc_html__( 'Use second color', 'uku' ),
 		),
 	) );
+        
+        $wp_customize->add_setting( 'pirate_rogue_search_overlay_backgroundcolor', array(
+		'default' 	         => 'darkcolor',
+		'sanitize_callback'      => 'pirate_rogue_sanitize_search_overlay_backgroundcolor',
+	) );
+
+	$wp_customize->add_control( 'pirate_rogue_search_overlay_backgroundcolor', array(
+		'label'         => esc_html__( 'Search Background Style', 'uku' ),
+		'description'	=> esc_html__( 'Choose the background color of the overlay search input', 'uku' ),
+		'section' 	=> 'uku_header',
+		'priority'      => 3,
+		'type' 		=> 'select',
+		'choices'   => array(
+                    'darkcolor'      => esc_html__( 'Dark grey', 'uku' ),
+                    'maincolor'     => esc_html__( 'Main color', 'uku' ),
+                    'secondcolor'   => esc_html__( 'Second color', 'uku' ),
+		),
+	) );
+        
 
 	$wp_customize->add_setting( 'uku_fixedheader', array(
 		'default'							     => '',
@@ -1224,7 +1243,12 @@ function pirate_rogue_sanitize_socialmedia_style( $pirate_rogue_socialmedia_styl
 	}
 	return $pirate_rogue_socialmedia_style;
 }
-
+function pirate_rogue_sanitize_search_overlay_backgroundcolor( $pirate_rogue_overlaysearch_style ) {
+	if ( ! in_array( $pirate_rogue_overlaysearch_style, array( 'darkcolor', 'maincolor', 'secondcolor' ) ) ) {
+		$pirate_rogue_overlaysearch_style = 'darkcolor';
+	}
+	return $pirate_rogue_overlaysearch_style;
+}
 
 /**
  * Sanitize Image Transition Transparency.

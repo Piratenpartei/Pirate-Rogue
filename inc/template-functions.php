@@ -11,6 +11,9 @@
         if ('colorful' != get_theme_mod( 'pirate_rogue_socialmedia_style' ) ) {
             $classes[] = 'socialmedia-'.get_theme_mod( 'pirate_rogue_socialmedia_style' );
 	}
+        if ('darkcolor' != get_theme_mod( 'pirate_rogue_search_overlay_backgroundcolor' ) ) {
+            $classes[] = 'searchbar-'.get_theme_mod( 'pirate_rogue_search_overlay_backgroundcolor' );
+	}
         
 	 if ('serif' == get_theme_mod( 'uku_main_design' ) ) {
 		 $classes[] = 'imgfade-on';

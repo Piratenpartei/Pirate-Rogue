@@ -1845,14 +1845,23 @@ p.site-description { display: none; }
   .search-open { position: absolute; top: 40px; left: 9.23611111111111%; right: auto; width: 4.16666666666667%; height: 59px; text-align: center; border: none; text-indent: -99999px; z-index: 10000; outline: none; }
   .search-open:before { display: block; position: absolute; top: 0; left: 0; text-indent: 0; text-align: center; width: 100%; height: 59px; padding-top: 17px; }
   .desktop-search { position: absolute; top: 100%; width: 100%; opacity: 0; height: 0; z-index: 10000; background: rgba(26, 26, 26, 0.75); text-align: center; border-top: 1px solid #ddd; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; -o-transition: all .3s ease-in-out; transition: all .3s ease-in-out; }
-  .desktop-search-show .desktop-search { position: absolute; top: 100%; opacity: 1; height: 118px; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; -o-transition: all .3s ease-in-out; transition: all .3s ease-in-out; }
-  .desktop-search .searchform { height: 0; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; -o-transition: all .3s ease-in-out; transition: all .3s ease-in-out; }
-  .desktop-search-show .desktop-search .searchform { height: 118px; padding-top: 35px; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; -o-transition: all .3s ease-in-out; transition: all .3s ease-in-out; }
   .desktop-search input.search-field { width: 33%; border-top: 0; border-left: 0; border-right: 0; background: none; border-bottom: 1px solid #fff; padding: 9px 0; color: #fff; letter-spacing: 0.5px; }
-  .desktop-search input[type="submit"] { margin-left: 10px; padding: 8px 20px; background: none; color: #fff; border: 2px solid #fff; font-size: 15px; font-size: 0.9375rem; text-transform: uppercase; letter-spacing: 3px; }
-  .header-stick #search-open-sticky { z-index: 9999; }
-  .header-stick .desktop-search { position: fixed; top: 59px; border-top: none; height: 0; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; -o-transition: all .3s ease-in-out; transition: all .3s ease-in-out; }
-  .header-stick.desktop-search-show .desktop-search { height: 118px; } }
+  .desktop-search input[type="submit"] { margin-left: 10px; padding: 8px 20px; background: none; color: #fff; border: 2px solid #ff8800; font-size: 15px; font-size: 0.9375rem; text-transform: uppercase; letter-spacing: 3px; }
+  .desktop-search input[type="submit"]:hover { background: #ff8800; }
+  .desktop-search .searchform { height: 0; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; -o-transition: all .3s ease-in-out; transition: all .3s ease-in-out; }
+  .searchbar-maincolor .desktop-search { background: rgba(255, 136, 0, 0.9); }
+  .searchbar-maincolor .desktop-search input.search-field { border-bottom: 1px solid #672082; color: #fff; }
+  .searchbar-maincolor .desktop-search input[type="submit"] { background: #672082; color: #fff; border: 2px solid #672082; }
+  .searchbar-maincolor .desktop-search input[type="submit"]:hover { background: #672082; border: 2px solid #ff8800; }
+  .searchbar-secondcolor .desktop-search { background: rgba(103, 32, 130, 0.75); }
+  .searchbar-secondcolor .desktop-search input.search-field { border-bottom: 1px solid #ff8800; color: #fff; }
+  .searchbar-secondcolor .desktop-search input[type="submit"] { background: #ff8800; color: #fff; border: 2px solid #ff8800; }
+  .searchbar-secondcolor .desktop-search input[type="submit"]:hover { background: #ff8800; border: 2px solid #672082; }
+  .desktop-search-show .desktop-search { position: absolute; top: 100%; opacity: 1; height: 118px; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; -o-transition: all .3s ease-in-out; transition: all .3s ease-in-out; }
+  .desktop-search-show .desktop-search .searchform { height: 118px; padding-top: 35px; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; -o-transition: all .3s ease-in-out; transition: all .3s ease-in-out; }
+  .desktop-search .header-stick #search-open-sticky { z-index: 9999; }
+  .desktop-search .header-stick .desktop-search { position: fixed; top: 59px; border-top: none; height: 0; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; -o-transition: all .3s ease-in-out; transition: all .3s ease-in-out; }
+  .desktop-search .header-stick.desktop-search-show .desktop-search { height: 118px; } }
 /*-----------------------------------------------------------------------------------*/
 /* Front Page - Post Sections
 /*-----------------------------------------------------------------------------------*/

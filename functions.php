@@ -496,7 +496,7 @@ require get_template_directory(). '/inc/template-functions.php' ;
 require get_template_directory() . '/inc/template-tags.php';
 
 /*-----------------------------------------------------------------------------------*/
-/* Grab the Uku Custom shortcodes.
+/* Grab the Theme Custom shortcodes.
 /*-----------------------------------------------------------------------------------*/
 require( get_template_directory() . '/inc/shortcodes.php' );
 

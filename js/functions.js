@@ -204,6 +204,66 @@
 	    $('.sorttable').tablesorter(); 
 	});
 
+// Accordions
+	
+	// Close Accordions on start, except first
+	$('.accordion-body').not(".accordion-body.open").not('.accordion-body.stayopen').hide();
+	
+        
+	$('.accordion-toggle').bind('click', function(event) {
+		event.preventDefault();
+		var accordion = $(this).attr('href');
+		$(this).closest('.accordion').find('.accordion-toggle').not($(this)).removeClass('active');
+		$(this).closest('.accordion').find('.accordion-body').not(accordion).not('.accordion-body.stayopen').slideUp();
+		$(this).toggleClass('active');
+		$(accordion).slideToggle();
+	});
+	
+	// Keyboard navigation for accordions
+	$('.accordion-toggle').keydown(function(event) {
+		if(event.keyCode == 32) {
+			var accordion = $(this).attr('href');
+			$(this).closest('.accordion').find('.accordion-toggle').not($(this)).removeClass('active');
+			$(this).closest('.accordion').find('.accordion-body').not(accordion).not('.accordion-body.stayopen').slideUp();
+			$(this).toggleClass('active');
+			$(accordion).slideToggle();
+		}
+	});
+
+
+	function openAnchorAccordion() {
+	    if (window.location.hash) {
+		var identifier = window.location.hash.split('_')[0];
+		var inpagenum = window.location.hash.split('_')[1];
+		if (identifier == '#collapse') {
+		    if ($.isNumeric(inpagenum)) {
+			var $findid = 'collapse_'+ inpagenum;
+			var $target = $('body').find('#'+ $findid);  
+						 
+			if ($target.closest('.accordion').parent().closest('.accordion-group')) {
+			    $upper = $target.closest('.accordion').parent().closest('.accordion-group');
+			   
+			    $upper.find('.accordion-toggle').addClass('active');
+			    $upper.find('.accordion-body').show();
+			    
+			    $upper.find('.accordion-toggle').children().find('.accordion-toggle').removeClass('active');
+			    $upper.find('.accordion-body').children().find('.accordion-body').hide();
+			    
+			}
+			$target.find('.accordion-toggle').addClass('active');
+			$target.show();
+
+			var offset = $target.offset(); 
+			var $scrolloffset = offset.top + 40;	
+			 $('html,body').animate({scrollTop: $scrolloffset},'slow');
+		    }
+		   
+		 }
+	    }
+	}
+	openAnchorAccordion();
+
+
 
 
 	// Sticky Share Buttons - Single Post

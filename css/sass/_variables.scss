@@ -8,7 +8,7 @@ $color-content-links:   $color-main;
 $color-text:            #2b2b2b;
 $bg-grey:               #e7e7eb;
 $color-border:          $bg-grey;
-
+$color-special-background: $color-page-background;
 $color-second:          #672082;
 
 $color-mainnav-active-border:   $color-main;
@@ -18,7 +18,7 @@ $color-main-menu-hover:         $color-text; // $color-main;
 
 $color-cats:                    #fff;
 $color-cats-background:          $color-main;
-$color-cats-background-hover:  $color-second;
+$color-cats-background-hover:   $color-second;
 
 
 
@@ -54,7 +54,7 @@ $font-size-search-icons:    18;
 $font-size-socialmedia-icon: 18;
 $font-size-overlay-icon:    20;
 $font-size-breadcrumb:	    14;
-
+$font-size-accordion-toggle:    16;
 //////////////////////////////////////////////////////////////////////////////
 // Tabellen 
 //////////////////////////////////////////////////////////////////////////////

@@ -1,0 +1,137 @@
+/*-----------------------------------------------------------------------------------*/
+/* Accordion
+/*-----------------------------------------------------------------------------------*/
+.accordion {
+	margin: 10px 0 20px 0;
+	
+	.accordion-group {
+		border: none;
+		margin-bottom: 5px;
+		
+		.accordion-heading {
+                    overflow: hidden; 
+
+                    .accordion-toggle {
+                        border-left: 10px solid $color-main;
+                        background: $color-border;
+                        color: $color-text; 
+                        @include border-radius(4px);
+                        text-decoration: none;
+                        @include px2rem($font-size-accordion-toggle);
+                        padding: 8px 35px 8px 10px;
+                        position: relative;
+                        width: 100%;
+                        display: inline-block;
+                        
+                        &:before {
+                                @extend .fa;
+                                @extend .fa-caret-down;
+                                position: absolute;
+                                top: 10px;
+                                right: 10px;
+                        }
+
+                        &:hover, &:focus {
+                                background-color: lighten($color-main, 10%);
+                                text-decoration: none;
+                        }
+
+                        &.active, 
+                        &.active:hover, 
+                        &.active:focus {
+                                background-color: lighten($color-main, 10%);
+                                color: $color-text; // $colorPrimary;
+
+                                &:before {
+                                        @extend .fa-caret-up;
+                                        top: 8px;
+                                }
+                        }
+                    }
+		}
+		
+		.accordion-body {
+			display: block; // none;			    
+			.accordion-inner {
+				@extend .clearfix;
+				border: none;
+				background: $color-border;
+				padding: 15px 20px;
+			}
+		}
+	}
+	.secondcolor .accordion-heading .accordion-toggle,
+	.second .accordion-heading .accordion-toggle {
+		border-color: $color-second;
+              
+                    &:hover, &:focus {
+                          color: #fff;
+                                background-color: lighten($color-second, 10%);
+                        }
+                        &.active, 
+                        &.active:hover, 
+                        &.active:focus {
+                              color: #fff;
+                                background-color: lighten($color-second, 10%);
+                        }
+	}
+
+
+	h1, h2, h3, h4, h5, h6 {
+	    color: $color-text;
+	}
+	hr {
+	    &::after,
+	    &::before {
+		bottom: inherit;
+		background: inherit;
+		left: inherit;
+		position: relative;
+		right: inherit;
+		top: inherit;
+	    }
+	    border: 1px solid $color-border;
+	    margin: 30px 20px;
+	    height: inherit;
+	}
+	
+	
+    & > .accordion {
+	.accordion-heading .accordion-toggle {
+	    border-left: 0;
+	}
+    }
+}
+
+/* Boxes like accordions for single glossar entries and other article-inserts/shortcodes */
+.accordionbox {
+    margin: 10px 0 20px 0;
+    
+    header {
+	border-left: 10px solid $color-main;
+	background: $color-main;
+	color: $color-text;
+	@include border-radius(4px);
+	text-decoration: none;
+	font-size: 16px;
+	padding: 8px 35px 8px 10px;
+	position: relative;
+	
+	h2 {
+	    color: $color-text;
+	    padding: 0px;
+	}
+	&.secondcolor, 
+        &.second {
+		border-color: $color-second;
+	}
+    }
+    
+     
+    
+    .body {
+	border: none;
+	background: $color-special-background;
+	padding: 15px 20px;
+    } 
+}

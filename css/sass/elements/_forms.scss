@@ -29,7 +29,8 @@ input {
   }
 }
 
-button::-moz-focus-inner, input::-moz-focus-inner {
+button::-moz-focus-inner, 
+input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
@@ -55,13 +56,15 @@ button, html input[type="button"] {
 }
 
 input {
-  &[type="reset"], &[type="submit"] {
+  &[type="reset"], 
+  &[type="submit"] {
     -webkit-appearance: button;
     cursor: pointer;
   }
 }
 
-button[disabled], html input[disabled] {
+button[disabled], 
+html input[disabled] {
   cursor: default;
 }
 
@@ -75,12 +78,23 @@ input {
     cursor: pointer;
     outline: none;
     -webkit-appearance: none;
-    font-family: 'Kanit', sans-serif;
     text-transform: uppercase;
     font-weight: 500;
     letter-spacing: 3px;
   }
 }
+
+#commentform input#submit {			       
+    border-color: $color-main;
+    background-color: $color-main;
+    color: $color-page-background;
+    
+    &:focus, &:hover {
+	background-color: $color-second;
+	border-color: $color-second;
+    }
+}
+
 
 .post-password-form input[type="password"] {
   padding: 9px 15px;

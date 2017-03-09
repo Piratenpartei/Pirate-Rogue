@@ -117,3 +117,15 @@ h1 {
   font-size: 16px;
   font-size: 1rem;
 }
+
+h3 {
+    &#reply-title {
+      margin: 0 0 10px 0;
+      padding: 0;
+      display: block;
+      line-height: 1;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+}

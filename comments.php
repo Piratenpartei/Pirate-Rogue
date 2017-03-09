@@ -57,13 +57,21 @@ if ( post_password_required() ) {
 
 	<?php endif; // have_comments() ?>
 
-	<?php $comment_args = array(
+	<?php 
+	    $comments_note = '';
+	    if ( '' != get_theme_mod( 'pirate_rogue_commentdisclaimer' ) ) {
+		$comments_note = '<p class="disclaimer">'.wp_kses_post( get_theme_mod( 'pirate_rogue_commentdisclaimer' ) ).'</p>';		
+	    }
+					
+	    $comment_args = array(
 		'fields' => apply_filters( 'comment_form_default_fields', array(
 		'author' => '<p class="comment-form-author">' . '<label for="author">' . esc_html__( 'Name', 'uku' ) . '</label><input id="author" name="author" type="text" placeholder="' . esc_html__( 'Name', 'uku' ) . '" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" aria-required="true"/></p>',
 		'email'  => '<p class="comment-form-email">' . '<label for="email">' . esc_html__( 'Email', 'uku' ) . '</label> ' . ( $req ? '<span>*</span>' : '' ) . '<input id="email" name="email" type="text" placeholder="' . esc_html__( 'Email', 'uku' ) . '" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" aria-required="true"/>'.'</p>',
 		'url'    => '<p class="comment-form-url"><label for="url">' . esc_html__( 'Website', 'uku' ) . '</label>' . '<input id="url" name="url" type="text" placeholder="' . esc_html__( 'Website', 'uku' ) . '" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>',
-			'comment_notes_after' => '',
-			 ) )
+		    'comment_notes_after' => '',
+		   
+		) ), 
+		'title_reply_after'	=> '</h3>'.$comments_note,
 	);
 	
 	comment_form($comment_args); ?>

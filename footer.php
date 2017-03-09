@@ -34,12 +34,12 @@ $blogname = get_bloginfo('name');
 
 			<div id="site-info" class="cf">
 				<ul class="credit" role="contentinfo">
-				<?php if ( get_theme_mod( 'uku_credit' ) ) : ?>
-					<li><?php echo wp_kses_post( get_theme_mod( 'uku_credit' ) ); ?></li>
+				<?php if ( get_theme_mod( 'pirate_rogue_credit' ) ) : ?>
+					<li><?php echo wp_kses_post( get_theme_mod( 'pirate_rogue_credit' ) ); ?></li>
 				<?php else : ?>
 					<li class="copyright"><?php printf(esc_html__('Copyright &copy; %1$s %2$s', 'uku'), date("Y"), $blogname ); ?></li>
 					<li class="wp-credit"><?php esc_html_e('Powered by', 'uku') ?> <a href="<?php echo esc_url(__( 'https://wordpress.org/', 'uku' ) ); ?>" ><?php esc_html_e( 'WordPress', 'uku' ); ?></a></li>
-					<li class="theme-author"><?php printf( esc_html__( 'Theme: %1$s by %2$s', 'uku' ), 'Uku', '<a href="' . esc_url('http://www.elmastudio.de/en/') . '">Elmastudio</a>' ); ?></li>
+					<li class="theme-author"><?php printf( esc_html__( 'Theme: %1$s by %2$s', 'uku' ), 'Pirate Rogue', '<a href="' . esc_url('https://github.com/Piratenpartei/Pirate-Rogue/') . '">Piratenpartei Deutschland</a>' ); ?></li>
 				<?php endif; ?>
 				</ul><!-- end .credit -->
 			</div><!-- end #site-info -->

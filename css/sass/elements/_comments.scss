@@ -156,12 +156,11 @@ ol.commentlist {
     }
   }
   .comment-author {
-        font-size: 16px;
-    font-size: 1rem;
-    font-weight: 600;
-    span {
-      display: none;
-    }
+	@include px2rem($font-size-base);
+	font-weight: 600;
+	span {
+	  display: none;
+	}
   }
   .comment-text {
     overflow: hidden;
@@ -204,6 +203,12 @@ ol.commentlist {
   ol li.pingback p {
     margin: 0;
   }  
+  .disclaimer {
+      @extend .box;
+      @extend .maincolor-box;
+      margin-bottom: 10px;
+  }
+  
 }
 
 .bypostauthor {}
@@ -245,15 +250,6 @@ ol.commentlist {
     padding-right: 0;
   }
   #respond {
-    h3#reply-title {
-      margin: 0;
-      padding: 0;
-      display: block;
-      line-height: 1;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-    }
     p {
       &.comment-notes {
         margin: 0;
@@ -261,6 +257,7 @@ ol.commentlist {
       }
       &.logged-in-as {
         padding: 3px 0 0 0;
+	margin-bottom: 0;
       }
     }
   }
@@ -347,4 +344,16 @@ ol.commentlist {
 
 .comment-notes {
   display: none;
+}
+
+
+@media screen and (min-width: $breakpoint-sm) {
+    .single-post {
+	.entry-comments-title {
+	    display: block;
+	}
+	.entry-comments a {
+	    padding-left: 22px;
+	 }
+    } 
 }

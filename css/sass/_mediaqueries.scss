@@ -455,16 +455,6 @@
     width: 200px;
   }
   .single-post {
-    .entry-comments-title {
-      display: block;
-    }
-    .entry-comments a {
-      &:before {
-        font: normal 18px/1 'Genericons';
-        top: 4px;
-      }
-      padding-left: 22px;
-    }
     .entry-tags {
       padding: 30px 0 0 0;
     }
@@ -477,7 +467,9 @@
     }
   }
   .authorbox {
-    .author-heading, p.author-bio, .author-links {
+    .author-heading, 
+    p.author-bio, 
+    .author-links {
       padding-left: 90px;
     }
     .author-pic {
@@ -857,7 +849,10 @@
       float: none;
       margin-left: 0;
     }
-    .entry-content, .entry-footer, #comments, .post-navigation {
+    .entry-content, 
+    .entry-footer, 
+    #comments, 
+    .post-navigation {
       margin-left: auto;
       margin-right: auto;
       width: 80%;
@@ -1449,7 +1444,10 @@
   }
   /* --- Single Posts --- */
   .single-post {
-    .entry-content, .entry-footer, #comments, .post-navigation {
+    .entry-content, 
+    .entry-footer, 
+    #comments, 
+    .post-navigation {
       margin-left: 12.04819277108434%;
     }
   }
@@ -1470,7 +1468,10 @@
         float: none;
         margin-left: 0;
       }
-      .entry-content, .entry-footer, #comments, .post-navigation {
+      .entry-content, 
+      .entry-footer, 
+      #comments, 
+      .post-navigation {
         width: 70%;
         margin-left: 100px;
         margin-right: auto;

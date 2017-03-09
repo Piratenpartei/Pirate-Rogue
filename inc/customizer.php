@@ -30,12 +30,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'panel'                     => 'uku_themeoptions',
 	) );
 
-	$wp_customize->add_section( 'uku_images', array(
-		'title' 		    => esc_html__( 'Images', 'uku' ),
-		'priority' 	            => 4,
-		'panel'                     => 'uku_themeoptions',
-	) );
-
+	
 	$wp_customize->add_section( 'uku_footerfeature', array(
 		'title' 		    => esc_html__( 'Footer Featured Area', 'uku' ),
 		'priority' 	            => 5,
@@ -86,7 +81,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'uku_front_section_one', array(
 		'title' 		         => esc_html__( 'Section Featured Top', 'uku' ),
 		'priority' 	               => 3,
-		'panel' 					         => 'uku_frontpage',
+		'panel' 			        => 'uku_frontpage',
 	) );
 
 	$wp_customize->add_section( 'uku_front_section_twocolumn', array(
@@ -246,30 +241,48 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		),
 	) );
 
+	
+	
+	
 	$wp_customize->add_setting( 'uku_hidecomments', array(
-		'default'	     => '',
-		'sanitize_callback' 	     => 'uku_sanitize_checkbox',
+		'default'		    => '',
+		'sanitize_callback' 	    => 'uku_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_hidecomments', array(
-		'label'			     => esc_html__( 'Show Comments button on single posts', 'uku' ),
-		'description'	     => esc_html__( '(Hides comments behind a Show Comments button on single posts.)', 'uku' ),
-		'section'		     => 'uku_general',
-		'type'			     => 'checkbox',
-		'priority'		     => 4,
+		'label'			    => esc_html__( 'Show Comments button on single posts', 'uku' ),
+		'description'		    => esc_html__( '(Hides comments behind a Show Comments button on single posts.)', 'uku' ),
+		'section'		    => 'uku_general',
+		'type'			    => 'checkbox',
+		'priority'		    => 4,
+	) );
+	
+	
+	$wp_customize->add_setting( 'pirate_rogue_commentdisclaimer', array(
+		'default'		    => '',
+		'sanitize_callback' 	    => 'wp_kses_post',
 	) );
 
-	$wp_customize->add_setting( 'uku_credit', array(
-		'default' 	           => '',
-		'sanitize_callback' => 'wp_kses_post',
+	$wp_customize->add_control( 'pirate_rogue_commentdisclaimer', array(
+		'label'			    => esc_html__( 'Comment Disclaimer', 'uku' ),
+		'description'		    => esc_html__( 'Disclaimer shown preview to comment form. (HTML is allowed)', 'uku' ),
+		'section'		    => 'uku_general',
+		'type'			    => 'textarea',
+		'priority'		    => 5,
+	) );
+	
+
+	$wp_customize->add_setting( 'pirate_rogue_credit', array(
+		'default'		    => '',
+		'sanitize_callback'	    => 'wp_kses_post',
 	) );
 
-	$wp_customize->add_control( 'uku_credit', array(
-		'label'		     => esc_html__( 'Footer credit text', 'uku' ),
-		'description'	     => esc_html__( 'Customize the footer credit text. (HTML is allowed)', 'uku' ),
-		'section' 	       => 'uku_general',
-		'type' 	       => 'text',
-		'priority'		     => 5,
+	$wp_customize->add_control( 'pirate_rogue_credit', array(
+		'label'			    => esc_html__( 'Footer credit text', 'uku' ),
+		'description'		    => esc_html__( 'Customize the footer credit text. (HTML is allowed)', 'uku' ),
+		'section'		    => 'uku_general',
+		'type'			    => 'text',
+		'priority'		    => 6,
 	) );
 
 	// Uku Theme Options - Header
@@ -336,94 +349,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'priority'	     => 4,
 	) );
 
-        /*
-	 Uku Theme Options - Images
-	$wp_customize->add_setting( 'uku_imggradient', array(
-		'default' 			           => '0.7',
-		'sanitize_callback' 	     => 'uku_sanitize_imggradient',
-	) );
-
-	$wp_customize->add_control( 'uku_imggradient', array(
-		'label' 	        => esc_html__( 'Image Bottom Gradient', 'uku' ),
-		'description'	     => esc_html__( 'Level of transparency (in percent) for the bottom gradient of Featured images with text on the image. (The default value is 70%. Uku standard only.)', 'uku' ),
-		'section' 	    => 'uku_images',
-		'priority' 	        => 1,
-		'type' 		 => 'select',
-		'choices' 	     => array(
-			'0'                      => esc_html__( '0', 'uku' ),
-					'0.1'	             => esc_html__( '10', 'uku' ),
-					'0.2'		     => esc_html__( '20', 'uku' ),
-					'0.3' 	             => esc_html__( '30', 'uku' ),
-					'0.4'	             => esc_html__( '40', 'uku' ),
-					'0.5' 	             => esc_html__( '50', 'uku' ),
-					'0.6' 	             => esc_html__( '60', 'uku' ),
-					'0.7' 	             => esc_html__( '70', 'uku' ),
-					'0.8' 	             => esc_html__( '80', 'uku' ),
-					'0.9' 	             => esc_html__( '90', 'uku' ),
-					'0.99'	             => esc_html__( '100', 'uku' ),
-		),
-	) );
-        */
         
-        /*
-	$wp_customize->add_setting( 'uku_imgoverlay_color' , array(
-			'default' 			         => '#000000',
-			'sanitize_callback'      => 'sanitize_hex_color',
-		'transport' 				       => 'refresh',
-	) );
-
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'uku_imgoverlay_color', array(
-		'label'					     => esc_html__( 'Image Overlay Color', 'uku' ),
-		'description'				     => esc_html__( 'Image overlay color for Featured images with text on the image.', 'uku' ),
-		'section'				     => 'uku_images',
-		'priority' 			           => 2,
-		'settings'				     => 'uku_imgoverlay_color',
-	) ) );
-        
-	$wp_customize->add_setting( 'uku_imgoverlay_transparency', array(
-		'default' 			           => '0',
-		'sanitize_callback' 	     => 'uku_sanitize_imgoverlay_transparency',
-	) );
-
-	$wp_customize->add_control( 'uku_imgoverlay_transparency', array(
-		'label' 			             => esc_html__( 'Image Overlay Transparency', 'uku' ),
-		'description'					     => esc_html__( 'Overlay transparency (in percent) for Featured images with text on the image.', 'uku' ),
-		'section' 			           => 'uku_images',
-		'priority' 			           => 3,
-		'type' 			               => 'select',
-		'choices' 						     => array(
-			'0'                      => esc_html__( '0', 'uku' ),
-					'0.1'		             => esc_html__( '10', 'uku' ),
-					'0.2' 	             => esc_html__( '20', 'uku' ),
-					'0.3' 	             => esc_html__( '30', 'uku' ),
-					'0.4' 	             => esc_html__( '40', 'uku' ),
-					'0.5' 	             => esc_html__( '50', 'uku' ),
-					'0.6' 	             => esc_html__( '60', 'uku' ),
-					'0.7'		             => esc_html__( '70', 'uku' ),
-					'0.8' 	             => esc_html__( '80', 'uku' ),
-					'0.9'		             => esc_html__( '90', 'uku' ),
-					'1' 		             => esc_html__( '100', 'uku' ),
-		),
-	) );
-        
-	$wp_customize->add_setting( 'uku_image_font', array(
-		'default' 	         => 'light',
-		'sanitize_callback' 	     => 'uku_sanitize_header_font',
-	) );
-
-	$wp_customize->add_control( 'uku_image_font', array(
-		'label' 	             => esc_html__( 'Image Font', 'uku' ),
-		'description'		     => esc_html__( 'You can choose a dark image font, if you have Featured images in very light colors. (Uku standard only)', 'uku' ),
-		'section' 	           => 'uku_images',
-		'priority' 	           => 4,
-		'type' 		              => 'select',
-		'choices' 						     => array(
-					'light' 	           => esc_html__( 'light', 'uku' ),
-					'dark' 		           => esc_html__( 'dark', 'uku' ),
-		),
-	) );
-        */
-
 	// Uku Theme Options - Big Footer Feature Area
 	$wp_customize->add_setting( 'uku_footerfeature_title', array(
 		'default' 	       => '',
@@ -463,15 +389,15 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting( 'uku_footerfeature_text_small', array(
-		'default' 		           => '',
-		'sanitize_callback' 	     => 'wp_kses_post',
+		'default'		    => '',
+		'sanitize_callback' 	    => 'wp_kses_post',
 	) );
 
 	$wp_customize->add_control( 'uku_footerfeature_text_small', array(
-		'label' 		         => esc_html__( 'Small Text', 'uku' ),
-		'description'					     => esc_html__( 'An additional smaller description text below the big text (HTML is allowed.)', 'uku' ),
-		'section' 			           => 'uku_footerfeature',
-		'type' 			               => 'textarea',
+		'label' 		    => esc_html__( 'Small Text', 'uku' ),
+		'description'		    => esc_html__( 'An additional smaller description text below the big text (HTML is allowed.)', 'uku' ),
+		'section' 		    => 'uku_footerfeature',
+		'type' 			    => 'textarea',
 		'priority'						     => 4,
 	) );
 
@@ -529,14 +455,14 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'uku_front_hidecomments', array(
 		'default'							     => '',
-		'sanitize_callback' 	     => 'uku_sanitize_checkbox',
+		'sanitize_callback'		     => 'uku_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_front_hidecomments', array(
-		'label'			     => esc_html__( 'Hide comments count on Front page', 'uku' ),
-		'section'	     => 'uku_frontpage_general',
-		'type'			     => 'checkbox',
-		'priority'		     => 3,
+		'label'			    => esc_html__( 'Hide comments count on Front page', 'uku' ),
+		'section'		    => 'uku_frontpage_general',
+		'type'			    => 'checkbox',
+		'priority'		    => 3,
 	) );
 
 	$wp_customize->add_setting( 'uku_front_hidecats', array(
@@ -809,10 +735,10 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize,'uku_front_section_about_image', array(
-				'label'						     => esc_html__( 'Upload About image', 'uku' ),
-				'description'			     => esc_html__( 'The recommended image width for the About image is 580 pixels for Uku standard and 1500 pixels for the Uku neo and serif design style.', 'uku' ),
-				'section'					     => 'uku_front_section_about',
-				'priority'				     => 2,
+		'label'						     => esc_html__( 'Upload About image', 'uku' ),
+		'description'			     => esc_html__( 'The recommended image width for the About image is 580 pixels for Uku standard and 1500 pixels for the Uku neo and serif design style.', 'uku' ),
+		'section'					     => 'uku_front_section_about',
+		'priority'				     => 2,
 	) ) );
 
 	$wp_customize->add_setting( 'uku_front_section_about_text', array(

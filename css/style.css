@@ -2315,9 +2315,6 @@ a.rsswidget { font-weight: 600; }
 .big-footer-feature p { margin-bottom: 0; }
 .big-footer-feature p.text-small { padding: 10px 0 0 0; opacity: 0.5; }
 
-.footer-feature-btn { display: inline-block; margin: 20px 0 0 0; padding: 18px 30px; background: none; border: 2px solid #fff; text-transform: uppercase; letter-spacing: 3px; outline: none; font-weight: 500; }
-.footer-feature-btn:hover { border: 2px solid #0c6ca6 !important; }
-
 .footer-feature-textwrap { padding: 15px 0 0 0; }
 
 .footer-feature-image a { display: block; line-height: 0; }
@@ -3008,6 +3005,9 @@ a.standard-btn.grey-btn { background: #a9a9a9; }
 a.standard-btn.black-btn { background: #000; }
 a.standard-btn.maincolor-btn { background: #ff8800; }
 a.standard-btn.secondcolor-btn { background: #672082; }
+
+.footer-feature-btn { display: inline-block; margin: 20px 0 0 0; padding: 18px 30px; background: none; border: 2px solid #ff8800; background: #ff8800; color: #fff; text-transform: uppercase; letter-spacing: 3px; outline: none; font-weight: 500; }
+.footer-feature-btn:focus, .footer-feature-btn:hover { border-color: #672082; background: #672082; }
 
 /*-----------------------------------------------------------------------------------*/
 /* Comments

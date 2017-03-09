@@ -128,3 +128,24 @@ a.standard-btn {
   }
 }
 
+
+.footer-feature-btn {
+    display: inline-block;
+    margin: 20px 0 0 0;
+    padding: 18px 30px;
+    background: none;
+    border: 2px solid $color-main;
+    background: $color-main;
+    color:  $color-page-background;
+
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    outline: none;
+    font-weight: 500;
+
+    &:focus,
+    &:hover {
+	  border-color: $color-second;
+	  background: $color-second;  
+    }
+}

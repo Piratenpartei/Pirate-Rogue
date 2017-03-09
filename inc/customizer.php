@@ -1082,16 +1082,6 @@ function uku_sanitize_checkbox( $input ) {
 }
 
 /**
- * Sanitize Main Design Style
- */
-function uku_sanitize_main_design( $uku_main_design ) {
-	if ( ! in_array( $uku_main_design, array( 'standard', 'neo', 'serif' ) ) ) {
-		$uku_main_design = 'standard';
-	}
-	return $uku_main_design;
-}
-
-/**
  * Sanitize Sidebar Position.
  */
 function uku_sanitize_sidebar( $uku_sidebar ) {

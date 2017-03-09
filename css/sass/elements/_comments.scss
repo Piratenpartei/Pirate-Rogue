@@ -72,12 +72,14 @@
   position: relative;
   padding: 60px 0 0 0;
   li {
-    &.comment, &.pingback {
+    &.comment, 
+    &.pingback {
       overflow: hidden;
       margin: 0 0 16px;
       padding: 0;
     }
-    &.comment:last-of-type, &.pingback:last-of-type {
+    &.comment:last-of-type, 
+    &.pingback:last-of-type {
       margin: 0;
     }
     &.comment ul.children {
@@ -182,10 +184,26 @@ ol.commentlist {
   .comment-reply {
     position: relative;
     padding: 0;
+    a {
+	padding-left: 20px;
+	&:before {
+	  @extend .fa;
+	  @extend .fa-commenting-o;
+	  display: block;
+
+	  position: absolute;
+	  top: 4px;
+	  left: 0;
+	  text-align: left;
+	}
+      }
   }
   p.comment-awaiting-moderation {
     display: inline-block;
   }
+  ol li.pingback p {
+    margin: 0;
+  }  
 }
 
 .bypostauthor {}
@@ -195,24 +213,6 @@ ol.commentlist {
   display: inline;
 }
 
-#comments {
-  .comment-reply a {
-    padding-left: 13px;
-    &:before {
-      @extend .fa;
-      @extend .fa-commenting-o;
-      display: block;
-      
-      position: absolute;
-      top: 4px;
-      left: 0;
-      text-align: left;
-    }
-  }
-  ol li.pingback p {
-    margin: 0;
-  }
-}
 
 /* --- Pingbacks --- */
 

@@ -3050,13 +3050,12 @@ ol.commentlist ul.children li.comment:last-of-type .comment-wrap { padding-botto
 #comments .comment-meta { overflow: hidden; list-style: none; }
 #comments .comment-meta li { display: inline; }
 #comments .comment-reply { position: relative; padding: 0; }
+#comments .comment-reply a { padding-left: 20px; }
+#comments .comment-reply a:before { display: block; position: absolute; top: 4px; left: 0; text-align: left; }
 #comments p.comment-awaiting-moderation { display: inline-block; }
+#comments ol li.pingback p { margin: 0; }
 
 .comment-edit:before { content: ','; display: inline; }
-
-#comments .comment-reply a { padding-left: 13px; }
-#comments .comment-reply a:before { display: block; position: absolute; top: 4px; left: 0; text-align: left; }
-#comments ol li.pingback p { margin: 0; }
 
 /* --- Pingbacks --- */
 /* --- No Comments Info --- */

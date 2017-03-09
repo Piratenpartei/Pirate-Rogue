@@ -65,7 +65,7 @@ if ( post_password_required() ) {
 			'comment_notes_after' => '',
 			 ) )
 	);
-
+	
 	comment_form($comment_args); ?>
 
 	</div><!-- end .comments-content -->

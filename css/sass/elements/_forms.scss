@@ -8,7 +8,7 @@ input {
   border: 1px solid #ccc;
   line-height: normal;
   outline: none;
-  color: #2b2b2b;
+  color: $color-text;
 }
 
 textarea {
@@ -17,15 +17,16 @@ textarea {
   border: 1px solid #ccc;
   line-height: normal;
   outline: none;
-  color: #2b2b2b;
+  color: $color-text;
   &:focus, &:active {
-    border: 1px solid #2b2b2b;
+	border: 1px solid $color-text;
   }
 }
 
 input {
-  &:focus, &:active {
-    border: 1px solid #2b2b2b;
+  &:focus, 
+  &:active {
+	border: 1px solid $color-text;
   }
 }
 
@@ -73,7 +74,10 @@ input {
   &[type="submit"], 
   &#submit {
     padding: 9px 30px;
-    border: 2px solid #2b2b2b;
+    border: 2px solid $color-main;
+    background-color: $color-main;
+    color: $color-page-background;
+    
     line-height: normal;
     cursor: pointer;
     outline: none;
@@ -81,6 +85,11 @@ input {
     text-transform: uppercase;
     font-weight: 500;
     letter-spacing: 3px;
+    
+     &:focus, &:hover {
+	background-color: $color-second;
+	border-color: $color-second;
+    }
   }
 }
 
@@ -129,7 +138,6 @@ input {
   padding: 11px 0;
   font-weight: 600;
   line-height: 1.65;
-  border: 2px solid #1a1a1a;
 }
 
 .widget_search input[type="submit"] {

@@ -2797,7 +2797,8 @@ input[type="reset"], input[type="submit"] { -webkit-appearance: button; cursor: 
 
 button[disabled], html input[disabled] { cursor: default; }
 
-input[type="button"], input[type="submit"], input#submit { padding: 9px 30px; border: 2px solid #2b2b2b; line-height: normal; cursor: pointer; outline: none; -webkit-appearance: none; text-transform: uppercase; font-weight: 500; letter-spacing: 3px; }
+input[type="button"], input[type="submit"], input#submit { padding: 9px 30px; border: 2px solid #ff8800; background-color: #ff8800; color: #fff; line-height: normal; cursor: pointer; outline: none; -webkit-appearance: none; text-transform: uppercase; font-weight: 500; letter-spacing: 3px; }
+input[type="button"]:focus, input[type="button"]:hover, input[type="submit"]:focus, input[type="submit"]:hover, input#submit:focus, input#submit:hover { background-color: #672082; border-color: #672082; }
 
 #commentform input#submit { border-color: #ff8800; background-color: #ff8800; color: #fff; }
 #commentform input#submit:focus, #commentform input#submit:hover { background-color: #672082; border-color: #672082; }
@@ -2810,7 +2811,7 @@ input[type="button"], input[type="submit"], input#submit { padding: 9px 30px; bo
 .error404 input.search-field { padding: 12px 2%; }
 .error404 input[type="submit"] { padding: 10px 30px; }
 
-.widget_search input[type="submit"], .post-password-form input[type="submit"] { padding: 11px 0; font-weight: 600; line-height: 1.65; border: 2px solid #1a1a1a; }
+.widget_search input[type="submit"], .post-password-form input[type="submit"] { padding: 11px 0; font-weight: 600; line-height: 1.65; }
 
 .widget_search input[type="submit"] { width: 40%; float: right; }
 

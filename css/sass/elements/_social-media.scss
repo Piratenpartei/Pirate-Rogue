@@ -303,6 +303,28 @@
         li {
             border: none;
         }
+	.socialmedia-maincolor  & ul li a {
+	    color: $color-main;
+	    background:  $color-footer-background;
+	    
+	    &:hover {
+		background:  $color-second;
+		color: $color-page-background;
+		border-color: $color-second;
+
+	   }
+	}
+	.socialmedia-secondcolor  & ul li a {
+	   color: $color-second;
+	    background:  $color-footer-background;
+	    
+	   &:hover {
+		background: $color-main;
+		color: $color-page-background;
+		border-color: $color-main;
+	    }
+	    
+	}
     }
 
 

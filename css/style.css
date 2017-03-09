@@ -2953,6 +2953,10 @@ embed, iframe, object, video { max-width: 100%; }
 .socialmedia-secondcolor .social-nav ul li :hover { background: #ff8800; color: #fff; border-color: #ff8800; }
 
 #footer-social.social-nav li { border: none; }
+.socialmedia-maincolor #footer-social.social-nav ul li a { color: #ff8800; background: #1a1a1a; }
+.socialmedia-maincolor #footer-social.social-nav ul li a:hover { background: #672082; color: #fff; border-color: #672082; }
+.socialmedia-secondcolor #footer-social.social-nav ul li a { color: #672082; background: #1a1a1a; }
+.socialmedia-secondcolor #footer-social.social-nav ul li a:hover { background: #ff8800; color: #fff; border-color: #ff8800; }
 
 @media screen and (min-width: 66.25em) { .header-social { display: block; position: absolute; right: 0; top: 40px; height: 59px; padding-top: 10px; }
   #header-social-sticky { top: 0; right: 20px; }

@@ -2315,7 +2315,7 @@ a.rsswidget { font-weight: 600; }
 .big-footer-feature p { margin-bottom: 0; }
 .big-footer-feature p.text-small { padding: 10px 0 0 0; opacity: 0.5; }
 
-.footer-feature-textwrap { padding: 15px 0 0 0; }
+.footer-feature-textwrap { padding: 15px 0 0 50px; }
 
 .footer-feature-image a { display: block; line-height: 0; }
 

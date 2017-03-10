@@ -230,3 +230,62 @@ add_shortcode('accordion-tab','pirate_rogue_accordion_tab' );
 // Define more as one shortcode name to allow nestet accordions	
 
 
+/*-----------------------------------------------------------------------------------*/
+/* Shortcodes to display feature sections top
+/*-----------------------------------------------------------------------------------*/
+function pirate_rogue_shortcode_section_featured_3to1( $atts, $content = null ) {
+    extract(shortcode_atts(array(
+    'cat'	=> '',
+    'tag'	=> '',
+    'title'	=> '',
+    'id'	=> '',
+    'num'	=> '',
+    ), $atts));
+
+    $cat = ($cat) ? $cat : '';
+    $tag = ($tag) ? $tag : '';
+    $title = ($title) ? $title : '';
+    $id = ($id) ? $id : '';
+    $num = ($num) ? intval($num) : 5;
+    
+    $out = pirate_rogue_section_featured_3to1($tag, $cat, $title, $num, $id, 'shortcode-section');
+	
+    if (empty($out)) {
+	echo '<p class="box red-box">'.__("No result for category \"$cat\", Tag \"$tag\"",'uku').'</p>';	
+    }
+    return $out;
+}
+add_shortcode('section_featured_3to1', 'pirate_rogue_shortcode_section_featured_3to1');
+add_shortcode('section_featured_top', 'pirate_rogue_shortcode_section_featured_3to1');
+
+/*-----------------------------------------------------------------------------------*/
+/* Shortcodes to display feature sections bottom
+/*-----------------------------------------------------------------------------------*/
+function pirate_rogue_shortcode_section_featured_1to3( $atts, $content = null ) {
+    extract(shortcode_atts(array(
+    'cat'	=> '',
+    'tag'	=> '',
+    'title'	=> '',
+    'id'	=> '',
+    'num'	=> '',
+    ), $atts));
+
+    $cat = ($cat) ? $cat : '';
+    $tag = ($tag) ? $tag : '';
+    $title = ($title) ? $title : '';
+    $id = ($id) ? $id : '';
+    $num = ($num) ? intval($num) : 9;
+    
+    $out = pirate_rogue_section_featured_1to3($tag, $cat, $title, $num, $id, 'shortcode-section');
+	
+    if (empty($out)) {
+	echo '<p class="box red-box">'.__("No result for category \"$cat\", Tag \"$tag\"",'uku').'</p>';	
+    }
+    return $out;
+}
+add_shortcode('section_featured_1to3', 'pirate_rogue_shortcode_section_featured_1to3');
+add_shortcode('section_featured_bottom', 'pirate_rogue_shortcode_section_featured_1to3');
+
+/*-----------------------------------------------------------------------------------*/
+/* The end of this file inc/shortcodes.php as you know it
+/*-----------------------------------------------------------------------------------*/

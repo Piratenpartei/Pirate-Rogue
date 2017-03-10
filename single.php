@@ -13,16 +13,8 @@ get_header(); ?>
 
 	<?php // Start the Loop.
 	while ( have_posts() ) : the_post(); ?>
-
-	<?php if ( 'neo' == get_theme_mod('uku_main_design') ) : ?>
-		<?php get_template_part( 'template-parts/content-single-neo' ); ?>
-	<?php elseif ( 'serif' == get_theme_mod('uku_main_design') ) : ?>
-		<?php get_template_part( 'template-parts/content-single-serif' ); ?>
-	<?php else : ?>
-		<?php get_template_part( 'template-parts/content-single' ); ?>
-	<?php endif; ?>
-
-<?php endwhile; // End of the loop. ?>
+        	<?php get_template_part( 'template-parts/content-single' ); ?>
+        <?php endwhile; // End of the loop. ?>
 
 <?php get_sidebar(); ?>
 

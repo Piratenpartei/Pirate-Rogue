@@ -22,6 +22,14 @@
 		'cat' 								=> $postcat,
 		'ignore_sticky_posts'	=> 1,
 	) );
+	
+	$thumbfallbackid = absint(get_theme_mod( 'pirate_rogue_fallback_thumbnail' ));
+	if (!isset($thumbfallbackid)) {
+	    $thumbfallbackid =0;
+	} else {
+	    $imagesrc = wp_get_attachment_image_src( $thumbfallbackid, 'uku-featured' )[0];
+	}
+	
 ?>
 
 <section id="front-section-four" class="front-section cf">
@@ -37,10 +45,11 @@
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?>>
 
-			<?php if ( 'neo' == get_theme_mod('uku_main_design') && '' != get_the_post_thumbnail() && ! post_password_required() ) : ?>
-				<div class="entry-thumbnail fadein"><a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><?php the_post_thumbnail('uku-bigthumb'); ?></span></a></div><!-- end .entry-thumbnail -->
-			<?php elseif ( '' != get_the_post_thumbnail() && ! post_password_required() ) : ?>
+			<?php if ( '' != get_the_post_thumbnail() && ! post_password_required() ) : ?>
 				<div class="entry-thumbnail fadein"><a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><?php the_post_thumbnail('uku-featured'); ?></span></a></div><!-- end .entry-thumbnail -->
+			<?php elseif ( ! post_password_required() && $imagesrc != '') : ?>
+				<div class="entry-thumbnail fadein"><a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><img src="<?php echo $imagesrc; ?>"></span></a></div><!-- end .entry-thumbnail -->
+
 			<?php endif; ?>
 
 			<div class="meta-main-wrap">

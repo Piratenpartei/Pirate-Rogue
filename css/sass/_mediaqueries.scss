@@ -84,7 +84,8 @@
 ------------------------------------------------------------------------------------ */
 @media screen and (min-width: 48em) {
   /* --- General --- */
-  .page .content-wrap, .front-section:first-of-type, 
+  .page .content-wrap, 
+  .front-section:first-of-type, 
   .page.has-thumb .blog-wrap, 
   .search-results .blog-wrap, 
   .archive .blog-wrap, 
@@ -147,7 +148,11 @@
       font-size: 1.1875rem;
     }
   }
-  .big-thumb .entry-header p.intro, .section-one-column-one .type-post .entry-summary, .section-three-column-one .type-post .entry-summary, p.text-small, .single-post .entry-content blockquote cite, .page .entry-content blockquote cite {
+  .big-thumb .entry-header p.intro, 
+  .section-one-column-one .type-post .entry-summary, 
+  .section-three-column-one .type-post .entry-summary, 
+  p.text-small, .single-post .entry-content blockquote cite, 
+  .page .entry-content blockquote cite {
     font-size: 19px;
     font-size: 1.1875rem;
   }
@@ -161,7 +166,12 @@
     font-size: 19px;
     font-size: 1.1875rem;
   }
-  .entry-summary, .section-one-column-two .type-post:nth-of-type(n+2) .entry-header h2.entry-title, .section-two-column-two .type-post .entry-header h2.entry-title, .section-three-column-two .type-post .entry-header h2.entry-title, #front-section-fourcolumn .type-post .entry-header h2.entry-title, .section-sixcolumn-postwrap .type-post .entry-header h2.entry-title {
+  .entry-summary, 
+  .section-one-column-two .type-post:nth-of-type(n+2) .entry-header h2.entry-title, 
+  .section-two-column-two .type-post .entry-header h2.entry-title, 
+  .section-three-column-two .type-post .entry-header h2.entry-title, 
+  #front-section-fourcolumn .type-post .entry-header h2.entry-title, 
+  .section-sixcolumn-postwrap .type-post .entry-header h2.entry-title {
     font-size: 16px;
     font-size: 1rem;
   }
@@ -171,7 +181,10 @@
       font-size: 0.9375rem;
     }
   }
-  .single-post .hentry .entry-meta, .single-attachment .hentry .entry-meta, .front-section a.all-posts-link {
+  .single-post .hentry .entry-meta, 
+  .single-attachment .hentry .entry-meta, 
+  .shortcode-section a.all-posts-link,
+  .front-section a.all-posts-link {
     font-size: 15px;
     font-size: 0.9375rem;
   }
@@ -181,16 +194,19 @@
       font-size: 0.9375rem;
     }
   }
-  .page div.sharedaddy h3.sd-title, .null-instagram-feed .clear {
+  .page div.sharedaddy h3.sd-title, 
+  .null-instagram-feed .clear {
     font-size: 15px;
     font-size: 0.9375rem;
   }
-  .section-fourcolumn-postwrap .type-post .entry-summary, .section-sixcolumn-postwrap .type-post .entry-summary {
+  .section-fourcolumn-postwrap .type-post .entry-summary, 
+  .section-sixcolumn-postwrap .type-post .entry-summary {
     font-size: 14px;
     font-size: 0.875rem;
   }
   /* --- Typography --- */
-  .single-post .entry-content blockquote, .page .entry-content blockquote {
+  .single-post .entry-content blockquote, 
+  .page .entry-content blockquote {
     margin: 0 0 40px;
     padding-bottom: 40px;
   }
@@ -1115,6 +1131,8 @@
       padding: 10px 0 20px;
     }
   }
+  
+  .shortcode-section .section-two-column-one .type-post,
   .front-section .section-two-column-one .type-post {
     padding-bottom: 0;
   }
@@ -1442,15 +1460,7 @@
     padding: 22px 0 0 24px;
     font-size: 16px;
   }
-  /* --- Single Posts --- */
-  .single-post {
-    .entry-content, 
-    .entry-footer, 
-    #comments, 
-    .post-navigation {
-      margin-left: 12.04819277108434%;
-    }
-  }
+
   .big-thumb .title-wrap {
     width: 114.28571428571428%;
   }
@@ -1514,11 +1524,13 @@
     width: 38%;
     padding: 19px 4%;
   }
-      .single-post .big-thumb .entry-thumbnail a, 
+/*
+  .single-post .big-thumb .entry-thumbnail a, 
   #front-section-four .entry-thumbnail a {
     max-height: 700px;
     overflow: hidden;
   }
+*/
   .headerimg-on.header-fullscreen a.header-image {
     max-height: 900px !important;
     overflow: hidden;

@@ -69,11 +69,9 @@ $uku_section_one_second_query = new WP_Query( $args );
 		<?php if($uku_section_one_second_query->have_posts()) : ?>
 			<?php while($uku_section_one_second_query->have_posts()) : $uku_section_one_second_query->the_post() ?>
 
-				<?php if ( 'neo' == get_theme_mod( 'uku_main_design' ) || 'serif' == get_theme_mod( 'uku_main_design' ) ) : ?>
-					<?php get_template_part('template-parts/content-frontpost-small-neo' ); ?>
-				<?php else : ?>
-					<?php get_template_part('template-parts/content-frontpost-small' ); ?>
-				<?php endif; ?>
+
+				<?php get_template_part('template-parts/content-frontpost-small' ); ?>
+		
 
 			<?php endwhile; ?>
 

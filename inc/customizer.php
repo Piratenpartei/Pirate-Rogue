@@ -30,6 +30,11 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'panel'                     => 'uku_themeoptions',
 	) );
 
+	$wp_customize->add_section( 'pirate_rogue_entries', array(
+		'title' 	               => esc_html__( 'Page Settings', 'uku' ),
+		'priority' 	               => 4,
+		'panel' 		       => 'uku_themeoptions',
+	) );
 	
 	$wp_customize->add_section( 'uku_footerfeature', array(
 		'title' 		    => esc_html__( 'Footer Featured Area', 'uku' ),
@@ -37,6 +42,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'panel' 		    => 'uku_themeoptions',
 	) );
 
+	
 	$wp_customize->add_section( 'uku_customcss', array(
 		'title'                     => esc_html__( 'Custom CSS', 'uku' ),
 		'priority'                  => 6,
@@ -244,34 +250,9 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	
 	
 	
-	$wp_customize->add_setting( 'uku_hidecomments', array(
-		'default'		    => '',
-		'sanitize_callback' 	    => 'uku_sanitize_checkbox',
-	) );
-
-	$wp_customize->add_control( 'uku_hidecomments', array(
-		'label'			    => esc_html__( 'Show Comments button on single posts', 'uku' ),
-		'description'		    => esc_html__( '(Hides comments behind a Show Comments button on single posts.)', 'uku' ),
-		'section'		    => 'uku_general',
-		'type'			    => 'checkbox',
-		'priority'		    => 4,
-	) );
 	
 	
-	$wp_customize->add_setting( 'pirate_rogue_commentdisclaimer', array(
-		'default'		    => '',
-		'sanitize_callback' 	    => 'wp_kses_post',
-	) );
-
-	$wp_customize->add_control( 'pirate_rogue_commentdisclaimer', array(
-		'label'			    => esc_html__( 'Comment Disclaimer', 'uku' ),
-		'description'		    => esc_html__( 'Disclaimer shown preview to comment form. (HTML is allowed)', 'uku' ),
-		'section'		    => 'uku_general',
-		'type'			    => 'textarea',
-		'priority'		    => 5,
-	) );
 	
-
 	$wp_customize->add_setting( 'pirate_rogue_credit', array(
 		'default'		    => '',
 		'sanitize_callback'	    => 'wp_kses_post',
@@ -349,6 +330,56 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'priority'	     => 4,
 	) );
 
+	
+	// pirate_rogue_entries - Settings belonging to pages and posts
+	
+	$wp_customize->add_setting( 'pirate_rogue_fallback_thumbnail', array(
+		'default'		=> '',
+		'sanitize_callback'	=> 'wp_kses_post',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'pirate_rogue_fallback_thumbnail', array(
+	    'section'     => 'pirate_rogue_entries',
+	    'label'       => esc_html__( 'Upload Fallback Thumbnail image', 'uku' ),
+	    'description'	     => esc_html__( 'If no thumbnail for a post is not avaible, define this thumbnail as a fallback', 'uku' ), 
+	    'flex_width'  => true, // Allow any width, making the specified value recommended. False by default.
+	    'flex_height' => false, // Require the resulting image to be exactly as tall as the height attribute (default).
+	    'width'       => 1260,
+	    'height'      =>  709,
+		    'priority'		=> 1,
+	) ) );
+	
+
+	
+	$wp_customize->add_setting( 'uku_hidecomments', array(
+		'default'		    => '',
+		'sanitize_callback' 	    => 'uku_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'uku_hidecomments', array(
+		'label'			    => esc_html__( 'Show Comments button on single posts', 'uku' ),
+		'description'		    => esc_html__( '(Hides comments behind a Show Comments button on single posts.)', 'uku' ),
+		'section'		    => 'pirate_rogue_entries',
+		'type'			    => 'checkbox',
+		'priority'		    => 3,
+	) );
+	
+	
+	$wp_customize->add_setting( 'pirate_rogue_commentdisclaimer', array(
+		'default'		    => '',
+		'sanitize_callback' 	    => 'wp_kses_post',
+	) );
+
+	$wp_customize->add_control( 'pirate_rogue_commentdisclaimer', array(
+		'label'			    => esc_html__( 'Comment Disclaimer', 'uku' ),
+		'description'		    => esc_html__( 'Disclaimer shown preview to comment form. (HTML is allowed)', 'uku' ),
+		'section'		    => 'pirate_rogue_entries',
+		'type'			    => 'textarea',
+		'priority'		    => 3,
+	) );
+	
+
+	
         
 	// Uku Theme Options - Big Footer Feature Area
 	$wp_customize->add_setting( 'uku_footerfeature_title', array(
@@ -1079,16 +1110,6 @@ function uku_sanitize_checkbox( $input ) {
 	} else {
 		return false;
 	}
-}
-
-/**
- * Sanitize Main Design Style
- */
-function uku_sanitize_main_design( $uku_main_design ) {
-	if ( ! in_array( $uku_main_design, array( 'standard', 'neo', 'serif' ) ) ) {
-		$uku_main_design = 'standard';
-	}
-	return $uku_main_design;
 }
 
 /**

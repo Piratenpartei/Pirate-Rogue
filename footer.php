@@ -39,7 +39,11 @@ $blogname = get_bloginfo('name');
 				<?php else : ?>
 					<li class="copyright"><?php printf(esc_html__('Copyright &copy; %1$s %2$s', 'uku'), date("Y"), $blogname ); ?></li>
 					<li class="wp-credit"><?php esc_html_e('Powered by', 'uku') ?> <a href="<?php echo esc_url(__( 'https://wordpress.org/', 'uku' ) ); ?>" ><?php esc_html_e( 'WordPress', 'uku' ); ?></a></li>
-					<li class="theme-author"><?php printf( esc_html__( 'Theme: %1$s by %2$s', 'uku' ), 'Pirate Rogue', '<a href="' . esc_url('https://github.com/Piratenpartei/Pirate-Rogue/') . '">Piratenpartei Deutschland</a>' ); ?></li>
+					<li class="theme-author">
+					    <?php printf( esc_html__( 'Theme: %1$s by %2$s', 'uku' ), 'Pirate Rogue', '<a href="' . esc_url('https://github.com/Piratenpartei/Pirate-Rogue/') . '">Piratenpartei Deutschland</a>' ); ?>
+					    <?php printf( esc_html__( '&mdash; based on %1$s by %2$s', 'uku' ), 'Uku', '<a href="' . esc_url('http://www.elmastudio.de/') . '">Elmastudio</a>' ); ?>
+
+					</li>
 				<?php endif; ?>
 				</ul><!-- end .credit -->
 			</div><!-- end #site-info -->

@@ -23,16 +23,7 @@ $uku_section_two_first_query = new WP_Query( array(
 	'ignore_sticky_posts'		=> 1,
 ) );
 
-if ( 'neo' == get_theme_mod('uku_main_design') ){
-	$args = array(
-		'posts_per_page'			=> 6,
-		'offset' 							=> 1,
-		'post_status'	 				=> 'publish',
-		'tag_id' 							=> $posttag,
-		'cat' 								=> $postcat,
-		'ignore_sticky_posts' => 1,
-	);
-} else {
+
 	$args = array(
 		'posts_per_page' 			=> 8,
 		'offset' 							=> 1,
@@ -41,7 +32,7 @@ if ( 'neo' == get_theme_mod('uku_main_design') ){
 		'cat' 								=> $postcat,
 		'ignore_sticky_posts'	=> 1,
 	);
-}
+
 $uku_section_two_second_query = new WP_Query( $args );
 ?>
 
@@ -56,13 +47,8 @@ $uku_section_two_second_query = new WP_Query( $args );
 	<div class="section-two-column-one">
 		<?php if($uku_section_two_first_query->have_posts()) : ?>
 			<?php while($uku_section_two_first_query->have_posts()) : $uku_section_two_first_query->the_post() ?>
-
-				<?php if ( 'neo' == get_theme_mod( 'uku_main_design' ) ) : ?>
-					<?php get_template_part('template-parts/content-frontpost-featuredbottom' ); ?>
-				<?php else : ?>
-					<?php get_template_part('template-parts/content-frontpost-big' ); ?>
-				<?php endif; ?>
-
+				<?php get_template_part('template-parts/content-frontpost-big' ); ?>
+			
 			<?php endwhile; ?>
 
 		<?php endif; // have_posts() ?>
@@ -73,11 +59,8 @@ $uku_section_two_second_query = new WP_Query( $args );
 		<?php if($uku_section_two_second_query->have_posts()) : ?>
 			<?php while($uku_section_two_second_query->have_posts()) : $uku_section_two_second_query->the_post() ?>
 
-				<?php if ( 'neo' == get_theme_mod( 'uku_main_design' ) ) : ?>
-					<?php get_template_part('template-parts/content-frontpost-small-neo' ); ?>
-				<?php else : ?>
-					<?php get_template_part('template-parts/content-frontpost-small' ); ?>
-				<?php endif; ?>
+
+			    <?php get_template_part('template-parts/content-frontpost-small' ); ?>
 
 			<?php endwhile; ?>
 

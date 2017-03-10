@@ -80,7 +80,8 @@ function pirate_rogue_setup() {
 	add_image_size( 'uku-bigthumb', 1440, 580, true );
 	add_image_size( 'uku-front-big', 1260, 709, true );
 	add_image_size( 'uku-front-small', 800, 450, true );
-	add_image_size( 'uku-serif-small', 790, 593, true );
+//	add_image_size( 'uku-serif-small', 790, 593, true );
+	add_image_size( 'uku-featured-bottom', 800, 450, true );
 
 }
 add_action( 'after_setup_theme', 'pirate_rogue_setup' );
@@ -265,49 +266,7 @@ function uku_customize_css() {
 	 if ('' != get_theme_mod( 'uku_front_hidecats' ) ) {
 	$customcss .= '.blog .entry-cats {display: none !important;}'."\n";
 	 } 
-         /*
-	if (('#000000' != get_theme_mod( 'uku_imgoverlay_color' ) ) && ('' != get_theme_mod( 'uku_imgoverlay_color' ) )) { 
-	       $customcss .= '.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-thumbnail a:after,';
-	       $customcss .= '.featured-slider .entry-thumbnail a:after,';
-	       $customcss .= '.uku-serif .featured-slider .entry-thumbnail:after,';
-	       $customcss .= '.header-image:after,';
-	       $customcss .= '#front-section-four .entry-thumbnail a:after,';
-	       $customcss .= '.uku-serif #front-section-four .entry-thumbnail a .thumb-wrap:after,';
-	       $customcss .= '.single-post .big-thumb .entry-thumbnail a:after,';
-	       $customcss .= '.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .thumb-wrap:after,';
-	       $customcss .= '.section-two-column-one .thumb-wrap:after,';
-	       $customcss .= '.header-fullscreen #headerimg-wrap:after {background-color: '.get_theme_mod('uku_imgoverlay_color').';}'."\n";
-	} 
-	if ('0' != get_theme_mod( 'uku_imgoverlay_transparency' ) ) { 
-	       $customcss .= '.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-thumbnail a:after,';
-	       $customcss .= '.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .thumb-wrap:after,';
-	       $customcss .= '.section-two-column-one .thumb-wrap:after,';
-	       $customcss .= '.featured-slider .entry-thumbnail a:after,';
-	       $customcss .= '.uku-serif .featured-slider .entry-thumbnail:after,';
-	       $customcss .= '.header-image:after,';
-	       $customcss .= '.uku-serif .section-two-column-one .entry-thumbnail a:after,';
-	       $customcss .= '#front-section-four .entry-thumbnail a:after,';
-	       $customcss .= '.uku-serif #front-section-four .entry-thumbnail a .thumb-wrap:after,';
-	       $customcss .= '.single-post .big-thumb .entry-thumbnail a:after,';
-	       $customcss .= '.header-fullscreen #headerimg-wrap:after {opacity: '.get_theme_mod('uku_imgoverlay_transparency').';}'."\n";
-	} 
-	if ('0' == get_theme_mod( 'uku_imgoverlay_transparency' ) ) { 
-	       $customcss .= '.header-fullscreen #headerimg-wrap:after {background-color: transparent;}'."\n";
-	} 
-        */
-         
-	/* if ('0.7' != get_theme_mod( 'uku_imggradient' ) ) { 
-	       $customcss .= '#front-section-four .meta-main-wrap,';
-	       $customcss .= '.featured-slider .meta-main-wrap,';
-	       $customcss .= '.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .meta-main-wrap,';
-	       $customcss .= '.uku-serif .section-two-column-one .entry-text-wrap,';
-	       $customcss .= '.big-thumb .title-wrap {';
-	       $customcss .= 'background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,'.get_theme_mod('uku_imggradient').') 100%);';
-	       $customcss .= 'background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,'.get_theme_mod('uku_imggradient').') 100%);';
-	       $customcss .= 'background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,'.get_theme_mod('uku_imggradient').') 100%);';
-	       $customcss .= '}'."\n";
-	} 
-        */
+
         
 	if ('' != get_theme_mod( 'uku_custom_css' ) ) {
 	   $customcss .=  get_theme_mod('uku_custom_css'); 

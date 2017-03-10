@@ -23,7 +23,9 @@
   padding-right: 0;
 }
 
-.front-section a.all-posts-link, .big-instagram-wrap .null-instagram-feed .clear {
+.shortcode-section a.all-posts-link, 
+.front-section a.all-posts-link, 
+.big-instagram-wrap .null-instagram-feed .clear {
   position: absolute;
   top: 11px;
   right: -2px;
@@ -59,11 +61,15 @@
 
 /* --- Front Section - Meta Info  --- */
 
-.section-one-column-one .entry-author, .section-two-column-one .entry-author, .section-three-column-one .entry-author {
+.section-one-column-one .entry-author, 
+.section-two-column-one .entry-author, 
+.section-three-column-one .entry-author {
   font-weight: 600;
 }
 
-.section-one-column-one .entry-date:before, .section-two-column-one .entry-date:before, .section-three-column-one .entry-date:before {
+.section-one-column-one .entry-date:before, 
+.section-two-column-one .entry-date:before, 
+.section-three-column-one .entry-date:before {
   content: ' / ';
   padding: 0 2px;
 }
@@ -88,7 +94,8 @@
 
 /* --- Front Section Small Posts --- */
 
-.section-one-column-two, .section-two-column-two {
+.section-one-column-two, 
+.section-two-column-two {
   display: block;
   overflow: hidden;
 }
@@ -368,6 +375,15 @@
   display: none;
 }
 
+@media screen and (min-width: $breakpoint-600) {
+    #front-section-twocolumn .entry-summary, 
+    #front-section-threecolumn .entry-summary, 
+    #front-section-fourcolumn .entry-summary, 
+    #front-section-sixcolumn .entry-summary {
+      display: inline-block;
+    }
+}
+
 /*-----------------------------------------------------------------------------------*/
 /* 7.0 Blog Front
 /*-----------------------------------------------------------------------------------*/
@@ -431,7 +447,6 @@
     display: none;
   }
 }
-
 
 
 .blog {

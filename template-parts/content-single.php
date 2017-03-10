@@ -12,7 +12,7 @@
 $introtext = get_post_meta($post->ID, 'intro', true);
 $custom_class = get_post_meta($post->ID, 'post_class', true);
 ?>
-
+ 
 <article id="post-<?php the_ID(); ?>" <?php post_class($custom_class); ?>>
 
 		<header class="entry-header cf">

@@ -7,7 +7,12 @@
  * @version 1.0
  */
 ?>
-
+<?php
+$thumbfallbackid = absint(get_theme_mod( 'pirate_rogue_fallback_slider' ));
+	if (!isset($thumbfallbackid)) {
+	    $thumbfallbackid =0;	    
+	}
+ ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?>>
 
 	<div class="meta-main-wrap">
@@ -47,8 +52,6 @@
 
 	<?php if ( 'slider-fullscreen' == get_theme_mod( 'uku_sliderstyle' ) 
                 || 'slider-boxed' == get_theme_mod( 'uku_sliderstyle' ) 
-                && '' == get_theme_mod('uku_main_design') 
-                || 'standard' == get_theme_mod('uku_main_design') 
                 && '' != get_the_post_thumbnail() 
                 && ! post_password_required() ) : ?>
 		<div class="entry-thumbnail"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('uku-featured-big'); ?></a></div><!-- end .entry-thumbnail -->
@@ -56,8 +59,16 @@
 	
 	<?php elseif ( '' != get_the_post_thumbnail() && ! post_password_required() ) : ?>
 		<div class="entry-thumbnail"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('uku-featured'); ?></a></div><!-- end .entry-thumbnail -->
-        <?php else : ?>
-                <div class="entry-thumbnail"><a href="<?php the_permalink(); ?>"><img src="<?php echo get_template_directory_uri() ?>/images/slider-default.jpg" alt=""></a></div><!-- end .entry-thumbnail -->                
+        <?php elseif (! post_password_required()) : 
+            if ($thumbfallbackid > 0 ) {
+                if ( 'slider-fullscreen' == get_theme_mod( 'uku_sliderstyle' ) 
+                 || 'slider-boxed' == get_theme_mod( 'uku_sliderstyle' )) {
+                     $imagesrc = wp_get_attachment_image_src( $thumbfallbackid, 'uku-featured-big' )[0];
+                } else {
+                     $imagesrc = wp_get_attachment_image_src( $thumbfallbackid, 'uku-featured' )[0];
+                } ?>
+                 <div class="entry-thumbnail fallback"><a href="<?php the_permalink(); ?>"><img src="<?php echo $imagesrc; ?>" alt=""></a></div><!-- end .entry-thumbnail -->                
+            <?php } ?>
 	<?php endif; ?>
 
 </article><!-- end post -<?php the_ID(); ?> -->

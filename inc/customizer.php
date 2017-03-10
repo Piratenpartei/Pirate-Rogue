@@ -341,14 +341,44 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'pirate_rogue_fallback_thumbnail', array(
 	    'section'     => 'pirate_rogue_entries',
 	    'label'       => esc_html__( 'Upload Fallback Thumbnail image', 'uku' ),
-	    'description'	     => esc_html__( 'If no thumbnail for a post is not avaible, define this thumbnail as a fallback', 'uku' ), 
+	    'description'	     => esc_html__( 'If thumbnail for a post is not avaible, define this thumbnail as a fallback', 'uku' ), 
 	    'flex_width'  => true, // Allow any width, making the specified value recommended. False by default.
 	    'flex_height' => false, // Require the resulting image to be exactly as tall as the height attribute (default).
 	    'width'       => 1260,
 	    'height'      =>  709,
 		    'priority'		=> 1,
 	) ) );
-	
+	$wp_customize->add_setting( 'pirate_rogue_fallback_blogroll_thumbnail', array(
+		'default'		=> '',
+		'sanitize_callback'	=> 'wp_kses_post',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'pirate_rogue_fallback_blogroll_thumbnail', array(
+	    'section'     => 'pirate_rogue_entries',
+	    'label'       => esc_html__( 'Upload Fallback Thumbnail for blogroll', 'uku' ),
+	    'description'	     => esc_html__( 'If thumbnail for a post is not avaible, define this thumbnail as a fallback for normal blogroll', 'uku' ), 
+	    'flex_width'  => true, // Allow any width, making the specified value recommended. False by default.
+	    'flex_height' => false, // Require the resulting image to be exactly as tall as the height attribute (default).
+	    'width'       => 1024,
+	    'height'      =>  576,
+		    'priority'		=> 2,
+	) ) );	
+
+        $wp_customize->add_setting( 'pirate_rogue_fallback_slider', array(
+		'default'		=> '',
+		'sanitize_callback'	=> 'wp_kses_post',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'pirate_rogue_fallback_slider', array(
+	    'section'     => 'pirate_rogue_entries',
+	    'label'       => esc_html__( 'Upload Fallback image for slider', 'uku' ),
+	    'description'	     => esc_html__( 'If  thumbnail for a post is not avaible, define this image for the slider', 'uku' ), 
+	    'flex_width'  => true, // Allow any width, making the specified value recommended. False by default.
+	    'flex_height' => false, // Require the resulting image to be exactly as tall as the height attribute (default).
+	    'width'       => 1440,
+	    'height'      =>  690,
+		    'priority'		=> 3,
+	) ) );	
 
 	
 	$wp_customize->add_setting( 'uku_hidecomments', array(
@@ -361,7 +391,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'description'		    => esc_html__( '(Hides comments behind a Show Comments button on single posts.)', 'uku' ),
 		'section'		    => 'pirate_rogue_entries',
 		'type'			    => 'checkbox',
-		'priority'		    => 3,
+		'priority'		    => 4,
 	) );
 	
 	
@@ -375,7 +405,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'description'		    => esc_html__( 'Disclaimer shown preview to comment form. (HTML is allowed)', 'uku' ),
 		'section'		    => 'pirate_rogue_entries',
 		'type'			    => 'textarea',
-		'priority'		    => 3,
+		'priority'		    => 5,
 	) );
 	
 
@@ -566,23 +596,23 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control(new WP_Customize_Tag_Control($wp_customize,'uku_featuredtag', array(
-		'label' 	             => esc_html__( 'Featured Slider tag (required)', 'uku' ),
-		'settings' 			     => 'uku_featuredtag',
-		'section' 			     => 'uku_slider',
-		'priority'			     => 1,
+		'label'                 => esc_html__( 'Featured Slider tag (required)', 'uku' ),
+		'settings' 		=> 'uku_featuredtag',
+		'section' 		=> 'uku_slider',
+		'priority'		=> 1,
 	) ) );
 
 	$wp_customize->add_setting( 'uku_sliderstyle', array(
-		'default' 		         => 'slider-fullwidth',
-		'sanitize_callback' 	     => 'uku_sanitize_sliderstyle',
+		'default' 		=> 'slider-fullwidth',
+		'sanitize_callback' 	=> 'uku_sanitize_sliderstyle',
 	) );
 
 	$wp_customize->add_control( 'uku_sliderstyle', array(
-		'label' 			             => esc_html__( 'Slider Style', 'uku' ),
-		'description'					     => esc_html__( 'Choose the slider design.', 'uku' ),
-		'section' 			           => 'uku_slider',
-		'priority' 			           => 2,
-		'type' 			               => 'select',
+		'label' 		=> esc_html__( 'Slider Style', 'uku' ),
+		'description'		=> esc_html__( 'Choose the slider design.', 'uku' ),
+		'section' 		=> 'uku_slider',
+		'priority' 		=> 2,
+		'type' 			=> 'select',
 		'choices' 						     => array(
 			'slider-fullwidth'	=> esc_html__( 'fullwidth', 'uku' ),
 			'slider-boxed'		=> esc_html__( 'boxed', 'uku' ),
@@ -591,19 +621,39 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting( 'uku_slideranimation', array(
-		'default' 				         => 'slider-slide',
-		'sanitize_callback' 	     => 'uku_sanitize_slideranimation',
+		'default' 		=> 'slider-slide',
+		'sanitize_callback' 	=> 'uku_sanitize_slideranimation',
 	) );
 
 	$wp_customize->add_control( 'uku_slideranimation', array(
-		'label' 			             => esc_html__( 'Slider Image Animation', 'uku' ),
-		'description'					     => esc_html__( 'Choose, if you want the slider images to fade or slide from one image to the next.', 'uku' ),
-		'section' 			           => 'uku_slider',
-		'priority' 			           => 3,
-		'type' 			               => 'select',
-		'choices' 						     => array(
+		'label' 		=> esc_html__( 'Slider Image Animation', 'uku' ),
+		'description'		=> esc_html__( 'Choose, if you want the slider images to fade or slide from one image to the next.', 'uku' ),
+		'section' 		=> 'uku_slider',
+		'priority' 		=> 3,
+		'type' 			=> 'select',
+		'choices' 		=> array(
 			'slider-slide'	 => esc_html__( 'slide', 'uku' ),
-			'slider-fade' 			 => esc_html__( 'fade', 'uku' ),
+			'slider-fade' 	 => esc_html__( 'fade', 'uku' ),
+		),
+	) );
+        $wp_customize->add_setting( 'pirate_rogue_featured_slider_num', array(
+		'default' 		=> 'slider-slide',
+		'sanitize_callback' 	=> 'wp_kses_post',
+	) );
+
+	$wp_customize->add_control( 'pirate_rogue_featured_slider_num', array(
+		'label' 		=> esc_html__( 'Number of slides', 'uku' ),
+		'description'		=> esc_html__( 'How many slides of feature posts are displayed (notice: each slide more will reduce the performance cause of big images load).', 'uku' ),
+		'section' 		=> 'uku_slider',
+		'priority' 		=> 3,
+                'default'               => 3,
+		'type' 			=> 'select',
+		'choices' 		=> array(
+			'2'	 => 2,
+			'3'	 => 3,
+                        '4'	 => 4,
+                        '5'	 => 5,
+                        '6'	 => 6,
 		),
 	) );
 
@@ -1197,16 +1247,6 @@ function pirate_rogue_sanitize_search_overlay_backgroundcolor( $pirate_rogue_ove
 	return $pirate_rogue_overlaysearch_style;
 }
 
-/**
- * Sanitize Image Transition Transparency.
-
-function uku_sanitize_imggradient( $uku_imggradient ) {
-	if ( ! in_array( $uku_imggradient, array( '0','0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9', '0.99' ) ) ) {
-		$uku_imggradient = '0.7';
-	}
-	return $uku_imggradient;
-}
-*/
 
 /**
  * Sanitize Image Overlay Transparency.

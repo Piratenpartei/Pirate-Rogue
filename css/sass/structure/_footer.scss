@@ -80,6 +80,14 @@
   padding: 15px 0 0 50px;
 }
 
+@media screen and (min-width: $breakpoint-1060) {
+   .footer-feature-textwrap { 
+        &.text-big {
+        font-size: 2rem;
+        }
+    }
+}
+
 .footer-feature-image a {
   display: block;
   line-height: 0;

@@ -2317,7 +2317,7 @@ a.rsswidget { font-weight: 600; }
 
 .footer-feature-textwrap { padding: 15px 0 0 50px; }
 
-@media screen and (min-width: 66.25em) { .footer-feature-textwrapp.text-big { font-size: 2rem; } }
+@media screen and (min-width: 66.25em) { .footer-feature-textwrap p.text-big { font-size: 2rem; } }
 .footer-feature-image a { display: block; line-height: 0; }
 
 /* --- Big Instagram Footer Widget Area --- */

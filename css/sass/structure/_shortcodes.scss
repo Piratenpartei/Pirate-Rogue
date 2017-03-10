@@ -4,19 +4,34 @@
 
 /* --- Multi Columns --- */
 
-.two-columns-one, .three-columns-one, .three-columns-two, .four-columns-one, .four-columns-two, .four-columns-three {
+.two-columns-one, 
+.three-columns-one, 
+.three-columns-two, 
+.four-columns-one, 
+.four-columns-two, 
+.four-columns-three {
   width: 100%;
 }
 
 .entry-content {
-  .two-columns-one, .three-columns-one, .three-columns-two, .four-columns-one, .four-columns-two, .four-columns-three {
+  .two-columns-one, 
+  .three-columns-one, 
+  .three-columns-two, 
+  .four-columns-one, 
+  .four-columns-two, 
+  .four-columns-three {
     position: relative;
     float: left;
     margin-bottom: 30px;
     font-size: 16px;
     font-size: 1rem;
   }
-  .two-columns-one p, .three-columns-one p, .three-columns-two p, .four-columns-one p, .four-columns-two p, .four-columns-three p {
+  .two-columns-one p, 
+  .three-columns-one p, 
+  .three-columns-two p, 
+  .four-columns-one p, 
+  .four-columns-two p, 
+  .four-columns-three p {
     font-size: 16px;
     font-size: 1rem;
   }
@@ -35,3 +50,78 @@
   clear: both;
 }
 
+/*
+*  Shortcodes for Sections
+*/
+
+.shortcode-section {
+    a.all-posts-link {
+	color: $color-text;
+	text-decoration: none;
+    } 
+      a.all-posts-link:after {
+	content: '\2192';
+	text-align: right;
+	padding-left: 3px;
+      }
+      .type-post {
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: 20px 0 35px;
+	border-top: 1px solid #1a1a1a;
+      }
+ 
+    
+    
+  .hentry .entry-cats a {
+    display: none;
+  }
+
+  #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-cats a:before, 
+      .section-one-column-one .entry-cats a:before, 
+      .section-three-column-one .entry-cats a:before, 
+      #front-section-four .entry-cats a:before {
+    display: none;
+  }
+  
+  #primary .hentry.has-post-thumbnail:nth-child(4n+1) {
+    margin-left: -5.94405594405594%;
+    /* -- 17px at 320px ---*/
+    margin-right: -5.94405594405594%;
+    /* -- 17px at 320px ---*/
+    margin-bottom: 34px;
+    padding: 0;
+    border-top: 0;
+    
+    .entry-thumbnail {
+      width: 100%;
+      margin: 0;
+      float: none;
+      img {
+        width: 100%;
+      }
+    }
+    .meta-main-wrap {
+      width: 100%;
+      padding: 0 5.3125% 28px;
+    }
+    .entry-meta {
+      float: none;
+    }
+    .entry-summary {
+      display: none;
+    }
+    .entry-cats a {
+      padding: 2px 5px;
+    }
+    .entry-date, .entry-comments, 
+    .entry-edit, .entry-author {
+      display: inline-block;
+      padding-bottom: 0;
+    }
+    .entry-date {
+      padding-right: 20px;
+    }
+  }
+}

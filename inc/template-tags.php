@@ -9,33 +9,59 @@ function pirate_rogue_load_template_part($template_name, $part_name=null) {
     ob_end_clean();
     return $var;
 }
+/*-----------------------------------------------------------------------------------*/
+/* Get tag id
+/*-----------------------------------------------------------------------------------*/
+function pirate_rogue_get_tag_ID($tag_name) {
+    $tag = get_term_by('name', $tag_name, 'post_tag');
+    if ($tag) {
+	return $tag->term_id;
+    } else {
+	return 0;
+    }
+}
  /*-----------------------------------------------------------------------------------*/
- /* Display blog entries with tags for "section two tag/cat"
+ /* Display blog entries with like front section bottom (1 / 3 sized)
  /*-----------------------------------------------------------------------------------*/
- if ( ! function_exists( 'pirate_rogue_section_two' ) ) :
- function pirate_rogue_section_two($posttag = '', $postcat = '', $title = '') {
-    $posttag = $posttag ? ' ' . esc_attr( $posttag ) : '';
-    if (empty($posttag)) {
+ if ( ! function_exists( 'pirate_rogue_section_featured_1to3' ) ) :
+ function pirate_rogue_section_featured_1to3($posttag = '', $postcat = '', $title = '',  $num = 8, $htmlid = '', $divclass= '') {
+    $posttag = $posttag ? esc_attr( $posttag ) : '';
+    
+    if (is_string($posttag)) {
+	$posttag = pirate_rogue_get_tag_ID($posttag);
+    }
+    
+    
+    if ($posttag=='') {
         $posttag = get_theme_mod('uku_front_section_two_tag');
     } elseif ($posttag == '-') {
-        $posttag = '';
+        $posttag = 0;
     }
-    $postcat = $postcat ? ' ' . esc_attr( $postcat ) : '';
-    if (empty($posttag)) {
+    $postcat = $postcat ? esc_attr( $postcat ) : '';
+    
+    if (is_string($postcat)) {
+	$postcat = get_cat_ID($postcat);
+    }
+    if ($postcat=='') {
         $postcat = get_theme_mod('uku_front_section_two_cat');
     } elseif ($postcat == '-') {
-        $postcat = '';
+        $postcat = 0;
     }
-    if (empty($postcat) && empty($posttag)) {
+    if (!isset($postcat) && !isset($posttag)) {
         return;
     }  
-    
-    $title = $title ? ' ' . esc_attr( $title ) : '';
+    $title = $title ?  esc_attr( $title ) : '';
     if (empty($title)) {
         if ( '' != get_theme_mod( 'uku_front_section_two_title' )) {
             $title = esc_html( get_theme_mod( 'uku_front_section_two_title' ) );
         }
     }       
+    
+    if (!is_int($num)) {
+	$num = 8;
+    }
+    $divclass = $divclass ? esc_attr( $divclass ) : '';
+    
     
         $tag_link = get_tag_link( $posttag );
         $category_link = get_category_link($postcat);
@@ -50,17 +76,17 @@ function pirate_rogue_load_template_part($template_name, $part_name=null) {
 
 
         $args = array(
-                'posts_per_page' 	=> 8,
+                'posts_per_page' 	=> $num,
                 'offset' 		=> 1,
                 'post_status'           => 'publish',
                 'tag_id' 		=> $posttag,
                 'cat' 			=> $postcat,
                 'ignore_sticky_posts'	=> 1,
         );
-
-        $pirate_rogue_section_two_second_query = new WP_Query( $args );
-
-        $out = '<section id="front-section-two" class="front-section cf">';
+	$pirate_rogue_section_two_second_query = new WP_Query( $args );
+		
+	$htmlid = $htmlid ?  esc_attr( $htmlid ) : 'page-section-two';
+        $out = '<section id="'.$htmlid.'" class="cf '.$divclass.'">';
         if (!empty($title)) {
             if (!empty($postcat)) {
                 $out .= '<h3 class="front-section-title">'.esc_html( $title ).'<span><a class="all-posts-link" href="'.esc_url( $category_link ).'">'.__('All posts', 'uku').'</a></span></h3>'."\n";
@@ -68,7 +94,7 @@ function pirate_rogue_load_template_part($template_name, $part_name=null) {
                 $out .= '<h3 class="front-section-title">'.esc_html( $title ).'<span><a class="all-posts-link" href="'.esc_url( $tag_link ).'">'.__('All posts', 'uku').'</a></span></h3>'."\n";                
             }
         }
-        $out .= '</section><!-- end #front-section-two -->'."\n";
+       
         
         $out .= '<div class="section-two-column-one">'."\n";
 		if($pirate_rogue_section_two_first_query->have_posts()) :
@@ -79,7 +105,6 @@ function pirate_rogue_load_template_part($template_name, $part_name=null) {
 		endif; // have_posts()
 
 	 $out .= '</div><!-- end .section-two-column-one -->'."\n";
-
 	 $out .= '<div class="section-two-column-two columns-wrap">'."\n";
 		if($pirate_rogue_section_two_second_query->have_posts()) : 
 			while($pirate_rogue_section_two_second_query->have_posts()) : $pirate_rogue_section_two_second_query->the_post();
@@ -91,7 +116,109 @@ function pirate_rogue_load_template_part($template_name, $part_name=null) {
 		wp_reset_postdata();
 
 	 $out .= '</div><!-- end .section-two-column-two -->'."\n";
+	 $out .= '</section><!-- end #front-section-two -->'."\n";
+        return $out;
+ }
+ endif;
+
+/*-----------------------------------------------------------------------------------*/
+ /* Display blog entries with like front section bottom (3 / 1 sized)
+ /*-----------------------------------------------------------------------------------*/
+ if ( ! function_exists( 'pirate_rogue_section_featured_3to1' ) ) :
+ function pirate_rogue_section_featured_3to1($posttag = '', $postcat = '', $title = '',  $num = 5, $htmlid = '', $divclass= '') {
+    $posttag = $posttag ? esc_attr( $posttag ) : '';
+    
+    if (is_string($posttag)) {
+	$posttag = pirate_rogue_get_tag_ID($posttag);
+    }
+    
+    
+    if ($posttag=='') {
+        $posttag = get_theme_mod('uku_front_section_one_tag');
+    } elseif ($posttag == '-') {
+        $posttag = 0;
+    }
+    $postcat = $postcat ? esc_attr( $postcat ) : '';
+    
+    if (is_string($postcat)) {
+	$postcat = get_cat_ID($postcat);
+    }
+    if ($postcat=='') {
+        $postcat = get_theme_mod('uku_front_section_one_cat');
+    } elseif ($postcat == '-') {
+        $postcat = 0;
+    }
+    if (!isset($postcat) && !isset($posttag)) {
+        return;
+    }  
+    $title = $title ?  esc_attr( $title ) : '';
+    if (empty($title)) {
+        if ( '' != get_theme_mod( 'uku_front_section_one_title' )) {
+            $title = esc_html( get_theme_mod( 'uku_front_section_one_title' ) );
+        }
+    }       
+    
+    if (!is_int($num)) {
+	$num = 5;
+    }
+    $divclass = $divclass ? esc_attr( $divclass ) : '';
+    
+    
+        $tag_link = get_tag_link( $posttag );
+        $category_link = get_category_link($postcat);
+
+        $pirate_rogue_section_two_first_query = new WP_Query( array(
+                'posts_per_page'	=> 1,
+                'post_status'		=> 'publish',
+                'tag_id' 		=> $posttag,
+                'cat' 			=> $postcat,
+                'ignore_sticky_posts'	=> 1,
+        ) );
+
+
+        $args = array(
+                'posts_per_page' 	=> $num,
+                'offset' 		=> 1,
+                'post_status'           => 'publish',
+                'tag_id' 		=> $posttag,
+                'cat' 			=> $postcat,
+                'ignore_sticky_posts'	=> 1,
+        );
+	$pirate_rogue_section_two_second_query = new WP_Query( $args );
+		
+	$htmlid = $htmlid ?  esc_attr( $htmlid ) : 'page-section-one';
+        $out = '<section id="'.$htmlid.'" class="cf '.$divclass.'">';
+        if (!empty($title)) {
+            if (!empty($postcat)) {
+                $out .= '<h3 class="front-section-title">'.esc_html( $title ).'<span><a class="all-posts-link" href="'.esc_url( $category_link ).'">'.__('All posts', 'uku').'</a></span></h3>'."\n";
+            } else {
+                $out .= '<h3 class="front-section-title">'.esc_html( $title ).'<span><a class="all-posts-link" href="'.esc_url( $tag_link ).'">'.__('All posts', 'uku').'</a></span></h3>'."\n";                
+            }
+        }
+       
         
+        $out .= '<div class="section-one-column-one">'."\n";
+		if($pirate_rogue_section_two_first_query->have_posts()) :
+			while($pirate_rogue_section_two_first_query->have_posts()) : $pirate_rogue_section_two_first_query->the_post();
+                            $out .= pirate_rogue_load_template_part('template-parts/content-frontpost-big' ); 
+			endwhile; 
+
+		endif; // have_posts()
+
+	 $out .= '</div><!-- end .section-one-column-one -->'."\n";
+	 $out .= '<div class="section-one-column-two columns-wrap">'."\n";
+		if($pirate_rogue_section_two_second_query->have_posts()) : 
+			while($pirate_rogue_section_two_second_query->have_posts()) : $pirate_rogue_section_two_second_query->the_post();
+				$out .= pirate_rogue_load_template_part('template-parts/content-frontpost-small' );
+			endwhile; 
+
+		endif; // have_posts() 
+
+		wp_reset_postdata();
+
+	 $out .= '</div><!-- end .section-one-column-two -->'."\n";
+	 $out .= '</section>'."\n";
+        return $out;
  }
  endif;
 

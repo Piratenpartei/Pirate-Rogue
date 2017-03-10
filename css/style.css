@@ -1871,7 +1871,7 @@ p.site-description { display: none; }
 
 .social-front-title { position: relative; display: block; padding: 3px 130px 20px 0; border-top: 4px solid #1a1a1a; padding-right: 0; }
 
-.front-section a.all-posts-link, .big-instagram-wrap .null-instagram-feed .clear { position: absolute; top: 11px; right: -2px; display: block; text-transform: uppercase; letter-spacing: 3px; font-weight: 600; }
+.shortcode-section a.all-posts-link, .front-section a.all-posts-link, .big-instagram-wrap .null-instagram-feed .clear { position: absolute; top: 11px; right: -2px; display: block; text-transform: uppercase; letter-spacing: 3px; font-weight: 600; }
 
 .sidebar-offcanvas .null-instagram-feed .clear, .sidebar .null-instagram-feed .clear { position: absolute; top: 16px; right: 0; display: block; margin: 0; }
 
@@ -1968,6 +1968,7 @@ p.site-description { display: none; }
 
 #front-section-twocolumn .entry-summary, #front-section-threecolumn .entry-summary, #front-section-fourcolumn .entry-summary, #front-section-sixcolumn .entry-summary { display: none; }
 
+@media screen and (min-width: 37.5em) { #front-section-twocolumn .entry-summary, #front-section-threecolumn .entry-summary, #front-section-fourcolumn .entry-summary, #front-section-sixcolumn .entry-summary { display: inline-block; } }
 /*-----------------------------------------------------------------------------------*/
 /* 7.0 Blog Front
 /*-----------------------------------------------------------------------------------*/
@@ -2289,6 +2290,12 @@ a.rsswidget { font-weight: 600; }
 .textwidget p:last-child { margin: 0; }
 .textwidget img { display: block; line-height: 0; }
 
+/*
+* Thumbnails
+*/
+.entry-thumbnail a { max-height: 400px; overflow: hidden; }
+
+@media screen and (min-width: 85em) { .entry-thumbnail a { max-height: 500px; overflow: hidden; } }
 /*-----------------------------------------------------------------------------------*/
 /*	14.0 Footer
 /*-----------------------------------------------------------------------------------*/
@@ -2368,6 +2375,24 @@ a.rsswidget { font-weight: 600; }
 .last { clear: right; margin-right: 0 !important; }
 
 .divider { width: 100%; margin-bottom: 21px; padding-top: 21px; display: block; clear: both; }
+
+/*
+*  Shortcodes for Sections
+*/
+.shortcode-section a.all-posts-link { color: #2b2b2b; text-decoration: none; }
+.shortcode-section a.all-posts-link:after { content: '\2192'; text-align: right; padding-left: 3px; }
+.shortcode-section .type-post { position: relative; display: block; margin: 0; padding: 20px 0 35px; border-top: 1px solid #1a1a1a; }
+.shortcode-section .hentry .entry-cats a { display: none; }
+.shortcode-section #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-cats a:before, .shortcode-section .section-one-column-one .entry-cats a:before, .shortcode-section .section-three-column-one .entry-cats a:before, .shortcode-section #front-section-four .entry-cats a:before { display: none; }
+.shortcode-section #primary .hentry.has-post-thumbnail:nth-child(4n+1) { margin-left: -5.94405594405594%; /* -- 17px at 320px ---*/ margin-right: -5.94405594405594%; /* -- 17px at 320px ---*/ margin-bottom: 34px; padding: 0; border-top: 0; }
+.shortcode-section #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-thumbnail { width: 100%; margin: 0; float: none; }
+.shortcode-section #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-thumbnail img { width: 100%; }
+.shortcode-section #primary .hentry.has-post-thumbnail:nth-child(4n+1) .meta-main-wrap { width: 100%; padding: 0 5.3125% 28px; }
+.shortcode-section #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-meta { float: none; }
+.shortcode-section #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-summary { display: none; }
+.shortcode-section #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-cats a { padding: 2px 5px; }
+.shortcode-section #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-date, .shortcode-section #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-comments, .shortcode-section #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-edit, .shortcode-section #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-author { display: inline-block; padding-bottom: 0; }
+.shortcode-section #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-date { padding-right: 20px; }
 
 /*-----------------------------------------------------------------------------------*/
 /* Elements
@@ -3256,7 +3281,7 @@ ol.commentlist ul.children li.comment:last-of-type .comment-wrap { padding-botto
   address { font-size: 19px; font-size: 1.1875rem; }
   .entry-summary, .section-one-column-two .type-post:nth-of-type(n+2) .entry-header h2.entry-title, .section-two-column-two .type-post .entry-header h2.entry-title, .section-three-column-two .type-post .entry-header h2.entry-title, #front-section-fourcolumn .type-post .entry-header h2.entry-title, .section-sixcolumn-postwrap .type-post .entry-header h2.entry-title { font-size: 16px; font-size: 1rem; }
   input[type="button"], input[type="submit"], input#submit { font-size: 15px; font-size: 0.9375rem; }
-  .single-post .hentry .entry-meta, .single-attachment .hentry .entry-meta, .front-section a.all-posts-link { font-size: 15px; font-size: 0.9375rem; }
+  .single-post .hentry .entry-meta, .single-attachment .hentry .entry-meta, .shortcode-section a.all-posts-link, .front-section a.all-posts-link { font-size: 15px; font-size: 0.9375rem; }
   .single-post .entry-tags, .single-post div.sharedaddy h3.sd-title { font-size: 15px; font-size: 0.9375rem; }
   .page div.sharedaddy h3.sd-title, .null-instagram-feed .clear { font-size: 15px; font-size: 0.9375rem; }
   .section-fourcolumn-postwrap .type-post .entry-summary, .section-sixcolumn-postwrap .type-post .entry-summary { font-size: 14px; font-size: 0.875rem; }
@@ -3483,7 +3508,7 @@ ol.commentlist ul.children li.comment:last-of-type .comment-wrap { padding-botto
   .section-two-column-two { width: 65.87301587301587%; /* -- 830px at 1440px ---*/ float: right; }
   .section-two-column-one .entry-header { padding: 20px 0 0 0; }
   .section-two-column-one .entry-header h2.entry-title { padding: 10px 0 20px; }
-  .front-section .section-two-column-one .type-post { padding-bottom: 0; }
+  .shortcode-section .section-two-column-one .type-post, .front-section .section-two-column-one .type-post { padding-bottom: 0; }
   /* --- Front Section Three (on Background) --- */
   #front-section-three { padding-left: 6.25%; padding-right: 6.25%; }
   .section-three-column-one { padding-bottom: 50px; clear: both; overflow: hidden; }
@@ -3569,8 +3594,6 @@ ol.commentlist ul.children li.comment:last-of-type .comment-wrap { padding-botto
   .section-about-column-one p cite { padding: 30px 0 0 0; }
   .section-one-column-one .format-video .entry-thumbnail a:before, .section-two-column-one .format-video .entry-thumbnail a:before, #front-section-four .format-video .entry-thumbnail a:before { width: 70px; height: 52px; padding: 29px 0 0 28px; font-size: 19px; }
   #front-section-fourcolumn .format-video .entry-thumbnail a:before { width: 60px; height: 42px; padding: 22px 0 0 24px; font-size: 16px; }
-  /* --- Single Posts --- */
-  .single-post .entry-content, .single-post .entry-footer, .single-post #comments, .single-post .post-navigation { margin-left: 12.04819277108434%; }
   .big-thumb .title-wrap { width: 114.28571428571428%; }
   .single-post .entry-content { margin-top: -8px; }
   /* --- No Sidebar --- */
@@ -3588,7 +3611,7 @@ ol.commentlist ul.children li.comment:last-of-type .comment-wrap { padding-botto
   .widget_mc4wp_form_widget, .jetpack_subscription_widget { margin-bottom: 45px; }
   .widget_mc4wp_form_widget input[type="email"], .jetpack_subscription_widget #subscribe-email input[type="email"] { width: 60%; margin-bottom: 0; }
   .widget_mc4wp_form_widget input[type="submit"], .jetpack_subscription_widget #subscribe-submit input[type="submit"] { width: 38%; padding: 19px 4%; }
-  .single-post .big-thumb .entry-thumbnail a, #front-section-four .entry-thumbnail a { max-height: 700px; overflow: hidden; }
+  /* .single-post .big-thumb .entry-thumbnail a,  #front-section-four .entry-thumbnail a { max-height: 700px; overflow: hidden; } */
   .headerimg-on.header-fullscreen a.header-image { max-height: 900px !important; overflow: hidden; } }
 /* Minimum width of 1800 pixels (larger desktop screens)
 ------------------------------------------------------------------------------------ */

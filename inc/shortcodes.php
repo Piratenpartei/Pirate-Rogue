@@ -286,6 +286,55 @@ function pirate_rogue_shortcode_section_featured_1to3( $atts, $content = null ) 
 add_shortcode('section_featured_1to3', 'pirate_rogue_shortcode_section_featured_1to3');
 add_shortcode('section_featured_bottom', 'pirate_rogue_shortcode_section_featured_1to3');
 
+
+/*-----------------------------------------------------------------------------------*/
+/* Shortcodes to display two column section
+/*-----------------------------------------------------------------------------------*/
+function pirate_rogue_shortcode_section_twocolumn( $atts, $content = null ) {
+    extract(shortcode_atts(array(
+    'cat'	=> '',
+    'tag'	=> '',
+    'title'	=> '',
+    'num'	=> '',
+    ), $atts));
+
+    $cat = ($cat) ? $cat : '';
+    $tag = ($tag) ? $tag : '';
+    $title = ($title) ? $title : '';
+    $num = ($num) ? intval($num) : 4;
+    
+    $out = pirate_rogue_section_twocolumn($tag, $cat, $title, $num, 'shortcode-section');
+	
+    if (empty($out)) {
+	echo '<p class="box red-box">'.__("No result for category \"$cat\", Tag \"$tag\"",'uku').'</p>';	
+    }
+    return $out;
+}
+add_shortcode('section_twocolumn', 'pirate_rogue_shortcode_section_twocolumn');
+
+/*-----------------------------------------------------------------------------------*/
+/* Shortcodes to display two column section
+/*-----------------------------------------------------------------------------------*/
+function pirate_rogue_shortcode_blogroll( $atts, $content = null ) {
+    extract(shortcode_atts(array(
+    'cat'	=> '',
+    'tag'	=> '',
+    'num'	=> '',
+    ), $atts));
+
+    $cat = ($cat) ? $cat : '';
+    $tag = ($tag) ? $tag : '';
+    $num = ($num) ? intval($num) : 4;
+    
+    $out = pirate_rogue_blogroll($tag, $cat, $num, 'shortcode-section');
+	
+    if (empty($out)) {
+	echo '<p class="box red-box">'.__("No result for category \"$cat\", Tag \"$tag\"",'uku').'</p>';	
+    }
+    return $out;
+}
+add_shortcode('blogroll', 'pirate_rogue_shortcode_blogroll');
+
 /*-----------------------------------------------------------------------------------*/
 /* The end of this file inc/shortcodes.php as you know it
 /*-----------------------------------------------------------------------------------*/

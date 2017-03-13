@@ -1982,7 +1982,7 @@ p.site-description { display: none; }
 
 .entry-author span { padding-right: 4px; }
 
-.blog #primary .hentry .entry-thumbnail, .archive #primary .hentry .entry-thumbnail, .search-results #primary .hentry .entry-thumbnail { width: 32.1875%; /* -- 103px at 320px ---*/ margin: 0 0 0 10px; float: right; }
+.page #primary .blogroll .hentry .entry-thumbnail, .blog #primary .hentry .entry-thumbnail, .archive #primary .hentry .entry-thumbnail, .search-results #primary .hentry .entry-thumbnail { width: 32.1875%; /* -- 103px at 320px ---*/ margin: 0 0 0 10px; float: right; }
 
 .blog .hentry .entry-cats a { display: none; }
 .blog .entry-cats a:nth-child(n+2):before { content: ' / '; padding: 0 2px; color: #2b2b2b !important; }
@@ -3328,14 +3328,14 @@ ol.commentlist ul.children li.comment:last-of-type .comment-wrap { padding-botto
   .section-fourcolumn-postwrap .type-post:last-child, .section-fourcolumn-postwrap .type-post:nth-last-child(2), .section-fourcolumn-postwrap .type-post:nth-last-child(3), .section-fourcolumn-postwrap .type-post:nth-last-child(4) { padding-bottom: 0; }
   .section-sixcolumn-postwrap .type-post:nth-last-child(3) { padding-bottom: 0; }
   /* --- Front Page - Blog --- */
-  #primary .hentry { padding: 20px 0 40px; }
+  .page #primary .blogroll .hentry, #primary .hentry { padding: 20px 0 40px; }
   /* --- Blog - default --- */
-  .blog #primary .hentry .entry-meta, .archive #primary .hentry .entry-meta, .search-results #primary .hentry .entry-meta { width: 25.49019607843137%; /* -- 130px at 1440px ---*/ float: left; display: block; }
-  .blog #primary .hentry .entry-main, .archive #primary .hentry .entry-main, .search-results #primary .hentry .entry-main { width: 74.50980392156863%; /* -- 380px at 1440px ---*/ float: left; }
-  .blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-main { width: 100%; float: none; }
-  .blog #primary .hentry .entry-thumbnail { width: 36.14457831325301%; /* -- 300px at 1440px ---*/ }
-  .archive #primary .hentry .entry-thumbnail, .search-results #primary .hentry .entry-thumbnail { width: 36.14457831325301%; /* -- 300px at 1440px ---*/ }
-  .blog #primary .hentry .meta-main-wrap, .archive #primary .hentry .meta-main-wrap, .search-results #primary .hentry .meta-main-wrap { width: 61.44578313253012%; /* -- 510px at 1440px ---*/ float: left; }
+  .page #primary .blogroll .hentry .entry-meta, .blog #primary .hentry .entry-meta, .archive #primary .hentry .entry-meta, .search-results #primary .hentry .entry-meta { width: 25.49019607843137%; /* -- 130px at 1440px ---*/ float: left; display: block; }
+  .page #primary .blogroll .hentry .entry-main, .blog #primary .hentry .entry-main, .archive #primary .hentry .entry-main, .search-results #primary .hentry .entry-main { width: 74.50980392156863%; /* -- 380px at 1440px ---*/ float: left; }
+  .page #primary .blogroll .hentry.has-post-thumbnail:nth-child(4n+1) .entry-main, .blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-main { width: 100%; float: none; }
+  .page #primary .blogroll .hentry .entry-thumbnail, .blog #primary .hentry .entry-thumbnail { width: 36.14457831325301%; /* -- 300px at 1440px ---*/ }
+  .page #primary .blogroll .hentry .entry-thumbnail, .archive #primary .hentry .entry-thumbnail, .search-results #primary .hentry .entry-thumbnail { width: 36.14457831325301%; /* -- 300px at 1440px ---*/ }
+  .page #primary .blogroll .hentry .meta-main-wrap, .blog #primary .hentry .meta-main-wrap, .archive #primary .hentry .meta-main-wrap, .search-results #primary .hentry .meta-main-wrap { width: 61.44578313253012%; /* -- 510px at 1440px ---*/ float: left; }
   /* --- Blog - default Bigger Posts --- */
   .blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) { margin-top: 40px; margin-bottom: 80px; }
   .blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .meta-main-wrap { padding: 0 5.3125% 64px; }

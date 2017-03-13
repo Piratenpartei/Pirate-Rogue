@@ -114,6 +114,8 @@
     font-size: 36px;
     font-size: 2.25rem;
   }
+  
+  
   .entry-header p.intro, 
   .section-about-column-one p, 
   p.text-big,
@@ -151,7 +153,8 @@
   .big-thumb .entry-header p.intro, 
   .section-one-column-one .type-post .entry-summary, 
   .section-three-column-one .type-post .entry-summary, 
-  p.text-small, .single-post .entry-content blockquote cite, 
+  p.text-small, 
+  .single-post .entry-content blockquote cite, 
   .page .entry-content blockquote cite {
     font-size: 19px;
     font-size: 1.1875rem;
@@ -368,21 +371,30 @@
     padding-bottom: 0;
   }
   /* --- Front Page - Blog --- */
+  
+  .page #primary .blogroll .hentry, 
   #primary .hentry {
     padding: 20px 0 40px;
   }
   /* --- Blog - default --- */
-  .blog #primary .hentry .entry-meta, .archive #primary .hentry .entry-meta, .search-results #primary .hentry .entry-meta {
+  .page #primary .blogroll .hentry .entry-meta,
+  .blog #primary .hentry .entry-meta, 
+  .archive #primary .hentry .entry-meta, 
+  .search-results #primary .hentry .entry-meta {
     width: 25.49019607843137%;
     /* -- 130px at 1440px ---*/
     float: left;
     display: block;
   }
-  .blog #primary .hentry .entry-main, .archive #primary .hentry .entry-main, .search-results #primary .hentry .entry-main {
+  .page #primary .blogroll .hentry .entry-main,
+  .blog #primary .hentry .entry-main, 
+  .archive #primary .hentry .entry-main, 
+  .search-results #primary .hentry .entry-main {
     width: 74.50980392156863%;
     /* -- 380px at 1440px ---*/
     float: left;
   }
+  .page #primary .blogroll .hentry, 
   .blog #primary .hentry {
     &.has-post-thumbnail:nth-child(4n+1) .entry-main {
       width: 100%;
@@ -393,11 +405,16 @@
       /* -- 300px at 1440px ---*/
     }
   }
-  .archive #primary .hentry .entry-thumbnail, .search-results #primary .hentry .entry-thumbnail {
+  .page #primary .blogroll .hentry .entry-thumbnail,
+  .archive #primary .hentry .entry-thumbnail, 
+  .search-results #primary .hentry .entry-thumbnail {
     width: 36.14457831325301%;
     /* -- 300px at 1440px ---*/
   }
-  .blog #primary .hentry .meta-main-wrap, .archive #primary .hentry .meta-main-wrap, .search-results #primary .hentry .meta-main-wrap {
+  .page #primary .blogroll .hentry .meta-main-wrap, 
+  .blog #primary .hentry .meta-main-wrap, 
+  .archive #primary .hentry .meta-main-wrap, 
+  .search-results #primary .hentry .meta-main-wrap {
     width: 61.44578313253012%;
     /* -- 510px at 1440px ---*/
     float: left;

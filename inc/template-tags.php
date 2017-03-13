@@ -357,7 +357,7 @@ function pirate_rogue_get_tag_ID($tag_name) {
     }
     
     if (!is_int($num)) {
-	$num =4;
+	$num = 4;
     }
     $divclass = $divclass ? esc_attr( $divclass ) : '';
    
@@ -365,18 +365,19 @@ function pirate_rogue_get_tag_ID($tag_name) {
     $category_link = get_category_link($postcat);
 
     $pirate_rogue_blogroll_query = new WP_Query( array(
-        'posts_per_page'		=> $num,
-        'tag_id' 			=> $posttag,
+        'posts_per_page'	=> $num,
+        'tag_id' 		=> $posttag,
         'cat' 			=> $postcat,
         'post_status'		=> 'publish',
         'ignore_sticky_posts'	=> 1,
     ) );
 
 
-    $out = '<section class="blogroll cf '.$divclass.'">';
+    $out = '<section class="blogroll '.$divclass.'">';
     if($pirate_rogue_blogroll_query->have_posts()) :
-	while($pirate_rogue_blogroll_query->have_posts()) : $pirate_rogue_blogroll_query->the_post();
-            $out .= pirate_rogue_load_template_part('content' ); 
+	while($pirate_rogue_blogroll_query->have_posts()) : 
+	    $pirate_rogue_blogroll_query->the_post();
+            $out .= pirate_rogue_load_template_part('template-parts/content-blogroll' ); 
 	endwhile; 
     endif; // have_posts()                  
      

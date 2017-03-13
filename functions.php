@@ -80,7 +80,6 @@ function pirate_rogue_setup() {
 	add_image_size( 'uku-bigthumb', 1440, 580, true );
 	add_image_size( 'uku-front-big', 1260, 709, true );
 	add_image_size( 'uku-front-small', 800, 450, true );
-//	add_image_size( 'uku-serif-small', 790, 593, true );
 	add_image_size( 'uku-featured-bottom', 800, 450, true );
 
 }

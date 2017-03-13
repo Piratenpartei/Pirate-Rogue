@@ -326,7 +326,7 @@ function pirate_rogue_shortcode_blogroll( $atts, $content = null ) {
     $tag = ($tag) ? $tag : '';
     $num = ($num) ? intval($num) : 4;
     
-    $out = pirate_rogue_blogroll($tag, $cat, $num, 'shortcode-section');
+    $out = pirate_rogue_blogroll($tag, $cat, $num);
 	
     if (empty($out)) {
 	echo '<p class="box red-box">'.__("No result for category \"$cat\", Tag \"$tag\"",'uku').'</p>';	

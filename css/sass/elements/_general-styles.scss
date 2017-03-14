@@ -60,7 +60,8 @@
   overflow: hidden;
 }
 
-.front-section:first-of-type, .page .content-wrap, 
+.front-section:first-of-type, 
+.page .content-wrap, 
 .search-results .blog-wrap, 
 .archive .blog-wrap, 
 .error404 .content-wrap {
@@ -73,28 +74,12 @@
 
 /* --- Font Sizes --- */
 
-h1.site-title, 
-p.site-title {
-  font-size: 25px;
-  font-size: 1.5625rem;
-}
 
-.single-post .entry-header h1.entry-title,
-.blog-wrap h3.blog-title,
-.archive-header h1.archive-title, 
-.page h1.entry-title, 
-.featured-slider .entry-header h2.entry-title,
-#front-section-four .entry-header h2.entry-title, 
-.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-header h2.entry-title, 
 .front-section-title, 
 .social-front-title, 
-.section-one-column-one .entry-header h2.entry-title, 
-.section-three-column-one .entry-header h2.entry-title,
 p.text-big, .widget_mc4wp_form_widget p, 
 .jetpack_subscription_widget #subscribe-text p, 
 #front-section-three h3.front-section-title, 
-.recommended-posts-wrap #jp-relatedposts h3.jp-relatedposts-headline, 
-#big-footer-feature h3.footer-feature-title, 
 .single-post .entry-content p.intro {
   font-size: 20px;
   font-size: 1.25rem;
@@ -116,37 +101,32 @@ p.text-big, .widget_mc4wp_form_widget p,
 
 
 .entry-header {
-  h2.entry-title, 
   p.intro {
     font-size: 16px;
     font-size: 1rem;
   }
 }
 
+p.site-title {
+    font-weight: bold;
+    padding-right: 55px;
+    margin: 0;
+    font-size: 25px;
+    font-size: 1.5625rem;
+}
 
 
 
-
-.footer-menu h3.footer-menu-title, 
 #overlay-nav ul li a, 
 #desktop-navigation ul li a, 
-.comments-toggle, 
-.authorbox h3.author-title {
+.comments-toggle {
   font-size: 15px;
   font-size: 0.9375rem;
 }
 
-#comments {
-  h3.comments-title, 
-  #respond h3#reply-title {
-    font-size: 15px;
-    font-size: 0.9375rem;
-  }
-}
 
-.section-about-column-one p cite, .footer-feature-btn, 
-.widget_mc4wp_form_widget h2.widget-title, 
-.jetpack_subscription_widget h2.widget-title, 
+.section-about-column-one p cite, 
+.footer-feature-btn, 
 .page a.post-edit-link {
   font-size: 15px;
   font-size: 0.9375rem;
@@ -160,7 +140,8 @@ p.text-big, .widget_mc4wp_form_widget p,
   }
 }
 
-.entry-summary, .footer-menu ul li, 
+.entry-summary, 
+.footer-menu ul li, 
 #overlay-nav ul ul li a, 
 #footer-social span {
   font-size: 14px;
@@ -168,7 +149,8 @@ p.text-big, .widget_mc4wp_form_widget p,
 }
 
 .widget_rss ul li {
-  .rssSummary, cite {
+  .rssSummary, 
+  cite {
     font-size: 14px;
     font-size: 0.875rem;
   }
@@ -182,13 +164,13 @@ p.text-big, .widget_mc4wp_form_widget p,
 #site-info, 
 .front-section a.all-posts-link, 
 .single-post .entry-tags, 
-div.sharedaddy h3.sd-title, 
 .null-instagram-feed .clear {
   font-size: 12px;
   font-size: 0.75rem;
 }
 
-.entry-meta, .entry-cats {
+.entry-meta, 
+.entry-cats {
   font-size: 11px;
   font-size: 0.6875rem;
 }
@@ -217,17 +199,6 @@ div.sharedaddy h3.sd-title,
 }
 
 
-.entry-header h2.entry-title {
-  color: #2b2b2b;
-  text-decoration: none;
-  a {
-    color: #2b2b2b;
-    text-decoration: none;
-  }
-}
-
-#secondary h2.widget-title, 
-#sidebar-page h2.widget-title, 
 .entry-meta a, 
 .entry-cats a {
   color: #2b2b2b;
@@ -236,12 +207,6 @@ div.sharedaddy h3.sd-title,
 
 
 
-
-.entry-content a:hover, 
-.comment-text a:hover, 
-.author-bio a:hover {
-  color: #0c6ca6;
-}
 
 .blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-cats a:hover,
 .featured-slider .entry-cats a:hover, .section-one-column-one .entry-cats a:hover, 
@@ -293,7 +258,8 @@ input {
 }
 
 
-#comments .comment-reply a, #respond a#cancel-comment-reply-link {
+#comments .comment-reply a, 
+#respond a#cancel-comment-reply-link {
   color: #999;
 }
 
@@ -402,16 +368,13 @@ p.wp-caption-text,
     color: #fff;
   }
   &.headerfont-light {
-    h1.site-title a, #overlay-open, 
+    h1.site-title a, 
+    #overlay-open, 
     #site-branding .site-title a, 
     #overlay-open, p.site-description {
       color: #fff;
     }
   }
-}
-
-.featured-slider .entry-header h2.entry-title a {
-  color: #fff !important;
 }
 
 

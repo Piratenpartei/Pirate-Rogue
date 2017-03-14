@@ -10,36 +10,35 @@ Links and colors
   text-decoration: underline;
 }
 
+.entry-content a:hover, 
+.comment-text a:hover, 
+.author-bio a:hover {
+  color: #0c6ca6;
+}
+
 .page-links a {
   text-decoration: none;
 }
 
 
 a {
-  color:  #2b2b2b;
+  color: $color-text;
   text-decoration: none;
 }
 
 .entry-header h2.entry-title {
-  color: #2b2b2b;
+  color: $color-text;
   text-decoration: none;
   a {
-    color: #2b2b2b;
+    color: $color-text;
     text-decoration: none;
   }
 }
 
-#secondary h2.widget-title, 
-#sidebar-page h2.widget-title, 
-.entry-meta a, 
-.entry-cats a {
-  color: #2b2b2b;
-  text-decoration: none;
-}
+
 
 .entry-content a, 
 .comment-text a, 
-
 .featured-slider button.slick-arrow:hover::after,
 .front-section a.all-posts-link:hover,
 #overlay-close:hover,
@@ -53,6 +52,16 @@ a {
 .single-post .hentry .entry-meta a:hover {
   color: $color-content-links; // #51a8dd;
 }
+
+
+#secondary h2.widget-title, 
+#sidebar-page h2.widget-title, 
+.entry-meta a, 
+.entry-cats a {
+  color: $color-text;
+  text-decoration: none;
+}
+
 #desktop-navigation ul li a:hove {
      color: #51a8dd;
 }
@@ -100,7 +109,7 @@ a {
 .widget_mc4wp_form_widget p, 
 .jetpack_subscription_widget #subscribe-text p, 
 .section-about-column-one p {
-  color: #2b2b2b;
+  color: $color-text;
 }
 
 

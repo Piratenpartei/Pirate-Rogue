@@ -20,11 +20,10 @@
   .four-columns-one, 
   .four-columns-two, 
   .four-columns-three {
-    position: relative;
-    float: left;
-    margin-bottom: 30px;
-    font-size: 16px;
-    font-size: 1rem;
+	position: relative;
+	float: left;
+	margin-bottom: 30px;
+	@include px2rem($font-size-base);
   }
   .two-columns-one p, 
   .three-columns-one p, 
@@ -32,22 +31,21 @@
   .four-columns-one p, 
   .four-columns-two p, 
   .four-columns-three p {
-    font-size: 16px;
-    font-size: 1rem;
+	@include px2rem($font-size-base);
   }
 }
 
 .last {
-  clear: right;
-  margin-right: 0 !important;
+    clear: right;
+    margin-right: 0 !important;
 }
 
 .divider {
-  width: 100%;
-  margin-bottom: 21px;
-  padding-top: 21px;
-  display: block;
-  clear: both;
+    width: 100%;
+    margin-bottom: 21px;
+    padding-top: 21px;
+    display: block;
+    clear: both;
 }
 
 /*
@@ -123,3 +121,53 @@
   }
 }
 
+
+.blogroll {
+    .entry-meta a {
+	color: $color-text;
+	text-decoration: none;
+    }
+
+    .entry-cats a:nth-child(n+2):before {
+      content: ' / ';
+      padding: 0 2px;
+      color: $color-text; 
+    }
+
+
+    @media screen and (min-width: $breakpoint-sm) {
+	.entry-content & .entry-summary p { 
+	   @include px2rem($font-size-base);
+	}
+    }
+    
+       
+}
+@media screen and (min-width: $breakpoint-sm) {
+ 
+    .page #primary .blogroll .hentry {
+      padding: 20px 0 40px;
+    }
+    /* --- Blog - default --- */
+    .page #primary .blogroll .hentry .entry-meta {
+      width: 25.49019607843137%;
+      /* -- 130px at 1440px ---*/
+      float: left;
+      display: block;
+    }
+    .page #primary .blogroll .hentry .entry-main {
+      width: 74.50980392156863%;
+      /* -- 380px at 1440px ---*/
+      float: left;
+    }
+
+    .page #primary .blogroll .hentry .entry-thumbnail {
+      width: 36.14457831325301%;
+      /* -- 300px at 1440px ---*/
+    }
+    .page #primary .blogroll .hentry .meta-main-wrap {
+      width: 61.44578313253012%;
+      /* -- 510px at 1440px ---*/
+      float: left;
+    }
+}

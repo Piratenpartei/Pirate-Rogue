@@ -1,9 +1,9 @@
 <?php
 /**
  * The template for displaying 404 error pages.
- *
- * @package Uku
- * @since Uku 1.0
+ * 
+ * @package Pirate Rogue
+ * @since Pirate Rogue 1.0
  * @version 1.0
  */
 

@@ -1,12 +1,10 @@
-/*
-Tables
-*/
+/*-----------------------------------------------------------------------------------*/
+/*  Tables
+/*-----------------------------------------------------------------------------------*/
 
 table {
   line-height: 2;
-  font-size: 18px;
-  font-size: 1.125rem;
-  
+  @include px2rem($font-size-tables);
    border-collapse: collapse;
    border-bottom: 1px solid $table-border; 
     border-spacing: 0;

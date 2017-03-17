@@ -1,5 +1,6 @@
-
-/* --- Image Galleries --- */
+/*-----------------------------------------------------------------------------------*/
+/* Image Galleries 
+/*-----------------------------------------------------------------------------------*/
 
 .gallery {
   margin-left: auto;
@@ -16,8 +17,8 @@
 	.gallery-caption {
 	  margin: 0;
 	  padding: 8px 2px 30px;
-	  font-size: 14px;
-	  font-size: 0.875rem;
+	  @include px2rem($font-size-small);
+	  
 	}
 	img {
 	    width: 100%;

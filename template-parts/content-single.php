@@ -12,7 +12,7 @@
 $introtext = get_post_meta($post->ID, 'intro', true);
 $custom_class = get_post_meta($post->ID, 'post_class', true);
 ?>
-
+ 
 <article id="post-<?php the_ID(); ?>" <?php post_class($custom_class); ?>>
 
 		<header class="entry-header cf">
@@ -36,11 +36,11 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
                                 if ($subtitle) {
                                     echo '<h2 class="subtitle">'.$subtitle."</h2>\n";
                                 }
+                                                           
                                 
-                                
-				 the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-
-				<?php if ( get_post_meta($post->ID, 'intro', true) ) { ?>
+				the_title( '<h1 class="entry-title">', '</h1>' );  
+                               
+				if ( get_post_meta($post->ID, 'intro', true) ) { ?>
 					<p class="intro"><?php echo $introtext; ?></p>
 				<?php } ?>
 			</div><!-- end .title-wrap -->
@@ -92,7 +92,10 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 
 			<div id="socialicons-sticky">
 				<div id="entry-content" class="entry-content">
-				<?php the_content(); ?>
+                                <?php    
+                                    
+                                    
+				 the_content(); ?>
 				<?php
 					wp_link_pages( array(
 						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'uku' ),

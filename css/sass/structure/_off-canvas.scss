@@ -113,8 +113,10 @@
   transition: left,.35s,ease-in-out;
 }
 
-.overlay-show .inner-offcanvas-wrap {
-  left: 0;
+.overlay-show  {
+    .inner-offcanvas-wrap {
+	left: 0;
+    }
 }
 
 #offcanvas-wrap {

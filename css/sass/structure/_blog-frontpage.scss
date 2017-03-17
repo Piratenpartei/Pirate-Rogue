@@ -12,14 +12,14 @@
   position: relative;
   display: block;
   padding: 3px 130px 20px 0;
-  border-top: 4px solid #1a1a1a;
+//  border-top: 4px solid #1a1a1a;
 }
 
 .social-front-title {
   position: relative;
   display: block;
   padding: 3px 130px 20px 0;
-  border-top: 4px solid #1a1a1a;
+//  border-top: 4px solid #1a1a1a;
   padding-right: 0;
 }
 
@@ -412,6 +412,7 @@
   padding-right: 4px;
 }
 
+.page  #primary .blogroll .hentry .entry-thumbnail, 
 .blog #primary .hentry .entry-thumbnail, 
 .archive #primary .hentry .entry-thumbnail, 
 .search-results #primary .hentry .entry-thumbnail {

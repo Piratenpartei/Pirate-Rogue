@@ -222,7 +222,171 @@ function pirate_rogue_get_tag_ID($tag_name) {
  }
  endif;
 
+ /*-----------------------------------------------------------------------------------*/
+ /* Display blog entries in two columns display
+ /*-----------------------------------------------------------------------------------*/
+ if ( ! function_exists( 'pirate_rogue_section_twocolumn' ) ) :
+ function pirate_rogue_section_twocolumn($posttag = '', $postcat = '', $title = '',  $num = 4, $divclass= '') {
+    $posttag = $posttag ? esc_attr( $posttag ) : '';
+    
+    if (is_string($posttag)) {
+	$posttag = pirate_rogue_get_tag_ID($posttag);
+    }
+    
+    
+    if ($posttag=='') {
+        $posttag = get_theme_mod('uku_front_section_twocolumn_tag');
+    } elseif ($posttag == '-') {
+        $posttag = 0;
+    }
+    $postcat = $postcat ? esc_attr( $postcat ) : '';
+    
+    if (is_string($postcat)) {
+	$postcat = get_cat_ID($postcat);
+    }
+    if ($postcat=='') {
+        $postcat = get_theme_mod('uku_front_section_twocolumn_cat');
+    } elseif ($postcat == '-') {
+        $postcat = 0;
+    }
+    if (!isset($postcat) && !isset($posttag)) {
+        return;
+    }  
+    $title = $title ?  esc_attr( $title ) : '';
+    if (empty($title)) {
+        if ( '' != get_theme_mod( 'uku_front_section_twocolumn_title' )) {
+            $title = esc_html( get_theme_mod( 'uku_front_section_twocolumn_title' ) );
+        }
+    }       
+    
+    if (!is_int($num)) {
+	$num =4;
+    }
+    $divclass = $divclass ? esc_attr( $divclass ) : '';
+    
+    
+        $tag_link = get_tag_link( $posttag );
+        $category_link = get_category_link($postcat);
 
+        $pirate_rogue_section_twocolumn_query = new WP_Query( array(
+            'posts_per_page'		=> $num,
+            'tag_id' 			=> $posttag,
+            'cat' 			=> $postcat,
+            'post_status'		=> 'publish',
+            'ignore_sticky_posts'	=> 1,
+        ) );
+
+        $thumbfallbackid = absint(get_theme_mod( 'pirate_rogue_fallback_thumbnail' ));
+	if (!isset($thumbfallbackid)) {
+	    $thumbfallbackid =0;
+	} else {
+	    $imagesrc = wp_get_attachment_image_src( $thumbfallbackid, 'uku-front-big' )[0];
+	}
+		
+        $out = '<section id="front-section-twocolumn" class="cf columns-wrap '.$divclass.'">';
+        if (!empty($title)) {
+            if (!empty($postcat)) {
+                $out .= '<h3 class="front-section-title">'.esc_html( $title ).'<span><a class="all-posts-link" href="'.esc_url( $category_link ).'">'.__('All posts', 'uku').'</a></span></h3>'."\n";
+            } else {
+                $out .= '<h3 class="front-section-title">'.esc_html( $title ).'<span><a class="all-posts-link" href="'.esc_url( $tag_link ).'">'.__('All posts', 'uku').'</a></span></h3>'."\n";                
+            }
+        }
+       
+     if($pirate_rogue_section_twocolumn_query->have_posts()) : 
+	while($pirate_rogue_section_twocolumn_query->have_posts()) : 
+                $pirate_rogue_section_twocolumn_query->the_post(); 
+
+			$out .= '<article class="'. join( ' ', get_post_class() ) .'">';
+
+			 if ( '' != get_the_post_thumbnail() && ! post_password_required() ) : 
+                            $out .= '<div class="entry-thumbnail fadein"><a href="'.get_permalink().'"><span class="thumb-wrap">'.get_the_post_thumbnail('uku-front-big').'</span></a></div><!-- end .entry-thumbnail -->'."\n";
+			 elseif ( ! post_password_required() && $imagesrc != '') :
+                            $out .= '<div class="entry-thumbnail fadein"><a href="'.get_permalink().'"><span class="thumb-wrap"><img src="'.$imagesrc.'"></span></a></div><!-- end .entry-thumbnail -->'."\n";
+			 endif;
+
+				 $out .= '<header class="entry-header">'."\n";
+					$out .= '<div class="entry-cats">'."\n";
+					
+                                        $categories = get_the_category();
+                                        $separator = ' ';
+                                        if ( ! empty( $categories ) ) {
+                                            foreach( $categories as $category ) {
+                                               $out .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
+                                            }
+                                        }
+                                        
+                                        
+					$out .= '</div><!-- end .entry-cats -->'."\n";
+                                        $out .= '<h2 class="entry-title"><a href="'.esc_url( get_permalink() ).'" rel="bookmark">';       
+					$out .= get_the_title().'</a></h2>';
+				$out .= '</header><!-- end .entry-header -->'."\n";
+
+				$out .= '<div class="entry-summary">'."\n";
+				$out .= get_the_excerpt(); 
+				$out .= '</div><!-- end .entry-summary -->'."\n";
+			$out .= '</article><!-- #post-## -->'."\n";
+
+	endwhile;
+    endif; // have_posts()   
+    wp_reset_postdata();
+        
+    $out .= '</section>'."\n";
+    return $out;
+ }
+ endif;
+ 
+ /*-----------------------------------------------------------------------------------*/
+ /* Display blog entries 
+ /*-----------------------------------------------------------------------------------*/
+ if ( ! function_exists( 'pirate_rogue_blogroll' ) ) :
+ function pirate_rogue_blogroll($posttag = '', $postcat = '', $num = 4, $divclass= '') {
+    $posttag = $posttag ? esc_attr( $posttag ) : '';
+    
+    if (is_string($posttag)) {
+	$posttag = pirate_rogue_get_tag_ID($posttag);
+    }
+    
+    $postcat = $postcat ? esc_attr( $postcat ) : '';
+    
+    if (is_string($postcat)) {
+	$postcat = get_cat_ID($postcat);
+    }
+    
+    if (!isset($postcat) && !isset($posttag)) {
+        return;
+    }
+    
+    if (!is_int($num)) {
+	$num = 4;
+    }
+    $divclass = $divclass ? esc_attr( $divclass ) : '';
+   
+    $tag_link = get_tag_link( $posttag );
+    $category_link = get_category_link($postcat);
+
+    $pirate_rogue_blogroll_query = new WP_Query( array(
+        'posts_per_page'	=> $num,
+        'tag_id' 		=> $posttag,
+        'cat' 			=> $postcat,
+        'post_status'		=> 'publish',
+        'ignore_sticky_posts'	=> 1,
+    ) );
+
+
+    $out = '<section class="blogroll '.$divclass.'">';
+    if($pirate_rogue_blogroll_query->have_posts()) :
+	while($pirate_rogue_blogroll_query->have_posts()) : 
+	    $pirate_rogue_blogroll_query->the_post();
+            $out .= pirate_rogue_load_template_part('template-parts/content-blogroll' ); 
+	endwhile; 
+    endif; // have_posts()                  
+     
+    wp_reset_postdata();
+    $out .= '</section>'."\n";
+    return $out;
+ }
+ endif;
+ 
  /*-----------------------------------------------------------------------------------*/
  /* Prints HTML with meta information for the current post-date/time and author.
  /*-----------------------------------------------------------------------------------*/

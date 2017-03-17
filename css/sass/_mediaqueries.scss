@@ -92,118 +92,8 @@
   .error404 .content-wrap {
     padding-top: 60px;
   }
-  /* --- Font Sizes --- */
-  .single-post .entry-header h1.entry-title, 
-  .single-attachment .entry-header h1.entry-title, 
-  .page h1.entry-title {
-    font-size: 48px;
-    font-size: 3rem;
-  }
-  .single-post .entry-content blockquote p, 
-  .page .entry-content blockquote p, 
-  .front-section-title, 
-  .blog-wrap h3.blog-title, 
-  .social-front-title, 
-  .blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-header h2.entry-title, 
-  .section-one-column-one .entry-header h2.entry-title, 
-  .section-three-column-one .entry-header h2.entry-title,
-  #front-section-four .entry-header h2.entry-title, 
-  .recommended-posts-wrap #jp-relatedposts h3.jp-relatedposts-headline, 
-  .archive-header h1.archive-title, 
-  .entry-content h1 {
-    font-size: 36px;
-    font-size: 2.25rem;
-  }
-  .entry-header p.intro, 
-  .section-about-column-one p, 
-  p.text-big,
-  .single-post .entry-content p.intro, 
-  .entry-content h2 {
-    font-size: 26px;
-    font-size: 1.625rem;
-  }
-  .entry-header h2.entry-title {
-    font-size: 24px;
-    font-size: 1.5rem;
-  }
-  .entry-content {
-    h3 {
-      font-size: 24px;
-      font-size: 1.5rem;
-    }
-    h4 {
-      font-size: 22px;
-      font-size: 1.375rem;
-    }
-    p {
-      &.pull-left, &.pull-right {
-        font-size: 22px;
-        font-size: 1.375rem;
-      }
-      font-size: 19px;
-      font-size: 1.1875rem;
-    }
-    ol, ul, dl {
-      font-size: 19px;
-      font-size: 1.1875rem;
-    }
-  }
-  .big-thumb .entry-header p.intro, 
-  .section-one-column-one .type-post .entry-summary, 
-  .section-three-column-one .type-post .entry-summary, 
-  p.text-small, .single-post .entry-content blockquote cite, 
-  .page .entry-content blockquote cite {
-    font-size: 19px;
-    font-size: 1.1875rem;
-  }
-  .entry-content {
-    h5, h6 {
-      font-size: 19px;
-      font-size: 1.1875rem;
-    }
-  }
-  address {
-    font-size: 19px;
-    font-size: 1.1875rem;
-  }
-  .entry-summary, 
-  .section-one-column-two .type-post:nth-of-type(n+2) .entry-header h2.entry-title, 
-  .section-two-column-two .type-post .entry-header h2.entry-title, 
-  .section-three-column-two .type-post .entry-header h2.entry-title, 
-  #front-section-fourcolumn .type-post .entry-header h2.entry-title, 
-  .section-sixcolumn-postwrap .type-post .entry-header h2.entry-title {
-    font-size: 16px;
-    font-size: 1rem;
-  }
-  input {
-    &[type="button"], &[type="submit"], &#submit {
-      font-size: 15px;
-      font-size: 0.9375rem;
-    }
-  }
-  .single-post .hentry .entry-meta, 
-  .single-attachment .hentry .entry-meta, 
-  .shortcode-section a.all-posts-link,
-  .front-section a.all-posts-link {
-    font-size: 15px;
-    font-size: 0.9375rem;
-  }
-  .single-post {
-    .entry-tags, div.sharedaddy h3.sd-title {
-      font-size: 15px;
-      font-size: 0.9375rem;
-    }
-  }
-  .page div.sharedaddy h3.sd-title, 
-  .null-instagram-feed .clear {
-    font-size: 15px;
-    font-size: 0.9375rem;
-  }
-  .section-fourcolumn-postwrap .type-post .entry-summary, 
-  .section-sixcolumn-postwrap .type-post .entry-summary {
-    font-size: 14px;
-    font-size: 0.875rem;
-  }
+
+
   /* --- Typography --- */
   .single-post .entry-content blockquote, 
   .page .entry-content blockquote {
@@ -233,12 +123,8 @@
   .front-section {
     padding-bottom: 75px;
   }
-  .front-section-title, 
-  .social-front-title, 
-  .page h1.entry-title, 
-  .recommended-posts-wrap #jp-relatedposts h3.jp-relatedposts-headline {
-  //  padding: 3px 0 20px;
-  }
+
+ 
   .front-section a.all-posts-link {
     top: 25px;
   }
@@ -368,17 +254,22 @@
     padding-bottom: 0;
   }
   /* --- Front Page - Blog --- */
+  
   #primary .hentry {
     padding: 20px 0 40px;
   }
   /* --- Blog - default --- */
-  .blog #primary .hentry .entry-meta, .archive #primary .hentry .entry-meta, .search-results #primary .hentry .entry-meta {
+  .blog #primary .hentry .entry-meta, 
+  .archive #primary .hentry .entry-meta, 
+  .search-results #primary .hentry .entry-meta {
     width: 25.49019607843137%;
     /* -- 130px at 1440px ---*/
     float: left;
     display: block;
   }
-  .blog #primary .hentry .entry-main, .archive #primary .hentry .entry-main, .search-results #primary .hentry .entry-main {
+  .blog #primary .hentry .entry-main, 
+  .archive #primary .hentry .entry-main, 
+  .search-results #primary .hentry .entry-main {
     width: 74.50980392156863%;
     /* -- 380px at 1440px ---*/
     float: left;
@@ -393,11 +284,14 @@
       /* -- 300px at 1440px ---*/
     }
   }
-  .archive #primary .hentry .entry-thumbnail, .search-results #primary .hentry .entry-thumbnail {
+  .archive #primary .hentry .entry-thumbnail, 
+  .search-results #primary .hentry .entry-thumbnail {
     width: 36.14457831325301%;
     /* -- 300px at 1440px ---*/
   }
-  .blog #primary .hentry .meta-main-wrap, .archive #primary .hentry .meta-main-wrap, .search-results #primary .hentry .meta-main-wrap {
+  .blog #primary .hentry .meta-main-wrap, 
+  .archive #primary .hentry .meta-main-wrap, 
+  .search-results #primary .hentry .meta-main-wrap {
     width: 61.44578313253012%;
     /* -- 510px at 1440px ---*/
     float: left;
@@ -526,10 +420,7 @@
       margin-left: 0;
     }
   }
-  /* --- Pages --- */
-  .page h1.entry-title {
-    margin-bottom: 45px;
-  }
+
   /* --- Footer --- */
   #colophon {
     padding-top: 70px;
@@ -634,12 +525,8 @@
   #front-section-four .entry-thumbnail a {
     width: 100%;
   }
-  /* --- Font Sizes --- */
-  .entry-header h2.entry-title {
-    font-size: 28px;
-    font-size: 1.75rem;
-  }
-  #front-section-twocolumn .entry-header h2.entry-title, 
+
+
   p.text-big {
     font-size: 32px;
     font-size: 2rem;
@@ -667,7 +554,8 @@
 ------------------------------------------------------------------------------------ */
 @media screen and (min-width: $breakpoint-1060) {
   /* --- General --- */
-  body, .inner-offcanvas-wrap, 
+  body, 
+  .inner-offcanvas-wrap, 
   .featured-content {
     padding-top: 0;
   }
@@ -879,17 +767,14 @@
     }
   }
   /* --- Font Sizes --- */
-  h1.site-title, p.site-title {
+
+  p.site-title {
     font-size: 60px;
     font-size: 3.75rem;
     line-height: 1.35;
     text-align: center;
     padding-right: 0;
   }
-  .blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-header h2.entry-title, 
-  .section-one-column-one .entry-header h2.entry-title, 
-  .section-three-column-one .entry-header h2.entry-title,
-  #front-section-four .entry-header h2.entry-title,
   p.text-big {
     font-size: 48px;
     font-size: 3rem;
@@ -904,12 +789,11 @@
     font-size: 26px;
     font-size: 1.625rem;
   }
-  #front-section-fourcolumn .type-post .entry-header h2.entry-title, 
-  .recommended-posts-wrap #jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
-    font-size: 20px;
-    font-size: 1.25rem;
-  }
-  .entry-meta, .entry-cats, .search-results a.post-edit-link, .archive a.post-edit-link {
+
+  .entry-meta, 
+  .entry-cats, 
+  .search-results a.post-edit-link, 
+  .archive a.post-edit-link {
     font-size: 12px;
     font-size: 0.75rem;
     font-weight: normal;
@@ -1222,9 +1106,6 @@
         padding-top: 20px;
       }
     }
-    .entry-header h2.entry-title {
-      padding-top: 10px;
-    }
   }
   /* --- Front Section About  --- */
   .section-about-column-one {
@@ -1305,21 +1186,27 @@
       padding-bottom: 0;
     }
   }
-  #front-section-twocolumn .entry-header, #front-section-threecolumn .entry-header, #front-section-fourcolumn .entry-header {
+  #front-section-twocolumn .entry-header, 
+  #front-section-threecolumn .entry-header, 
+  #front-section-fourcolumn .entry-header {
     padding: 20px 0 0 0;
   }
-  #front-section-twocolumn .entry-summary, #front-section-threecolumn .entry-summary, #front-section-fourcolumn .entry-summary {
+  #front-section-twocolumn .entry-summary, 
+  #front-section-threecolumn .entry-summary, 
+  #front-section-fourcolumn .entry-summary {
     padding: 12px 0 0 0;
   }
   /* --- Single Post --- */
   .singlepost-wrap {
     margin-top: 0;
   }
-  .single-post .contentwrap, .single-attachment .contentwrap {
+  .single-post .contentwrap, 
+  .single-attachment .contentwrap {
     width: 65.87301587301587%;
     float: left;
   }
-  .single-post #colophon, .single-attachment #colophon {
+  .single-post #colophon, 
+  .single-attachment #colophon {
     margin-top: 80px;
   }
   .entry-header p.intro {
@@ -1344,7 +1231,10 @@
       max-height: 59px;
     }
   }
-  #footer-menu-one, #footer-menu-two, #footer-menu-three, #footer-menu-four {
+  #footer-menu-one, 
+  #footer-menu-two, 
+  #footer-menu-three, 
+  #footer-menu-four {
     clear: none;
   }
   .footer-menu {
@@ -1352,7 +1242,9 @@
     /* -- 185px at 1440px ---*/
     float: left;
   }
-  #footer-menu-one, #footer-menu-two, #footer-menu-three {
+  #footer-menu-one, 
+  #footer-menu-two, 
+  #footer-menu-three {
     margin-right: 2.38095238095238%;
     /* -- 30px at 1440px ---*/
   }
@@ -1386,11 +1278,13 @@
     margin-left: 0;
   }
   /* --- Extra Plugins --- */
-  .widget_mc4wp_form_widget input[type="email"], .jetpack_subscription_widget #subscribe-email input[type="email"] {
+  .widget_mc4wp_form_widget input[type="email"], 
+  .jetpack_subscription_widget #subscribe-email input[type="email"] {
     width: 100%;
     margin-bottom: 10px;
   }
-  .widget_mc4wp_form_widget input[type="submit"], .jetpack_subscription_widget #subscribe-submit input[type="submit"] {
+  .widget_mc4wp_form_widget input[type="submit"], 
+  .jetpack_subscription_widget #subscribe-submit input[type="submit"] {
     width: 100%;
   }
   /*--- Jetpack Related Posts ---*/
@@ -1418,12 +1312,7 @@
 ------------------------------------------------------------------------------------ */
 @media screen and (min-width: 85em) {
   /* --- Font Sizes --- */
-  .single-post .entry-header h1.entry-title,
-  #front-section-four .entry-header h2.entry-title {
-    font-size: 58px;
-    font-size: 3.625rem;
-    line-height: 1.03;
-  }
+ 
   .section-three-column-one .type-post .entry-summary, 
   .section-about-column-one p, 
   .widget_mc4wp_form_widget p, 
@@ -1494,9 +1383,6 @@
     #socialicons-sticky {
       position: relative;
     }
-    div.sharedaddy .sd-social-icon h3.sd-title {
-      display: none;
-    }
     .sharedaddy .sd-social-icon {
       display: block;
       position: absolute;
@@ -1513,24 +1399,21 @@
   }
   /* --- Jetpack Share Icons --- */
   /* --- Extra Plugins --- */
-  .widget_mc4wp_form_widget, .jetpack_subscription_widget {
+  .widget_mc4wp_form_widget, 
+  .jetpack_subscription_widget {
     margin-bottom: 45px;
   }
-  .widget_mc4wp_form_widget input[type="email"], .jetpack_subscription_widget #subscribe-email input[type="email"] {
+  .widget_mc4wp_form_widget input[type="email"], 
+  .jetpack_subscription_widget #subscribe-email input[type="email"] {
     width: 60%;
     margin-bottom: 0;
   }
-  .widget_mc4wp_form_widget input[type="submit"], .jetpack_subscription_widget #subscribe-submit input[type="submit"] {
+  .widget_mc4wp_form_widget input[type="submit"], 
+  .jetpack_subscription_widget #subscribe-submit input[type="submit"] {
     width: 38%;
     padding: 19px 4%;
   }
-/*
-  .single-post .big-thumb .entry-thumbnail a, 
-  #front-section-four .entry-thumbnail a {
-    max-height: 700px;
-    overflow: hidden;
-  }
-*/
+
   .headerimg-on.header-fullscreen a.header-image {
     max-height: 900px !important;
     overflow: hidden;
@@ -1615,16 +1498,21 @@
 ------------------------------------------------------------------------------------ */
 @media screen and (min-width: 137.5em) {
   /* --- General --- */
-  .blog-wrap, .front-section {
+  .blog-wrap, 
+  .front-section {
     width: 56%;
   }
   #front-section-three {
-    .front-section-title, .section-three-column-one, .section-three-column-two {
+    .front-section-title, 
+    .section-three-column-one, 
+    .section-three-column-two {
       width: 56%;
     }
   }
-  .singlepost-wrap, .recommended-posts-wrap, 
-  .footer-wrap, .big-footer-feature, 
+  .singlepost-wrap, 
+  .recommended-posts-wrap, 
+  .footer-wrap, 
+  .big-footer-feature, 
   .headerimg-on.header-boxed .header-image {
     width: 56%;
   }

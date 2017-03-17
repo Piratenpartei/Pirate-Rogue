@@ -144,7 +144,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	// Uku Site Title - Custom Title and Logo
 	$wp_customize->add_setting( 'uku_hidetagline', array(
 		'default'		     => '',
-		'sanitize_callback' 	     => 'uku_sanitize_checkbox',
+		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_hidetagline', array(
@@ -156,7 +156,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'uku_customlogofooter', array(
 		'default'		     => '',
-		'sanitize_callback' 	     => 'uku_sanitize_checkbox',
+		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_customlogofooter', array(
@@ -170,7 +170,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	// Uku Additional Header Options
 	$wp_customize->add_setting( 'uku_headerstyle', array(
 		'default' 		       => 'header-fullwidth',
-		'sanitize_callback' 	     => 'uku_sanitize_headerstyle',
+		'sanitize_callback' 	     => 'pirate_rogue_sanitize_headerstyle',
 	) );
 
 	$wp_customize->add_control( 'uku_headerstyle', array(
@@ -215,7 +215,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	// Uku Theme Options - General
 	$wp_customize->add_setting( 'uku_sidebar', array(
 		'default' 	        => 'sidebar-right',
-		'sanitize_callback'	=> 'uku_sanitize_sidebar',
+		'sanitize_callback'	=> 'pirate_rogue_sanitize_sidebar',
 	) );
 
 	$wp_customize->add_control( 'uku_sidebar', array(
@@ -231,7 +231,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'uku_sidebar_hide', array(
 		'default' 		    => 'sidebar-show',
-		'sanitize_callback' 	     => 'uku_sanitize_sidebar_hide',
+		'sanitize_callback' 	     => 'pirate_rogue_sanitize_sidebar_hide',
 	) );
 
 	$wp_customize->add_control( 'uku_sidebar_hide', array(
@@ -269,7 +269,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	// Uku Theme Options - Header
 	$wp_customize->add_setting( 'uku_hidesearch', array(
 		'default'		     => '',
-		'sanitize_callback' 	     => 'uku_sanitize_checkbox',
+		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_hidesearch', array(
@@ -319,7 +319,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'uku_fixedheader', array(
 		'default'							     => '',
-		'sanitize_callback' 	     => 'uku_sanitize_checkbox',
+		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_fixedheader', array(
@@ -341,19 +341,49 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'pirate_rogue_fallback_thumbnail', array(
 	    'section'     => 'pirate_rogue_entries',
 	    'label'       => esc_html__( 'Upload Fallback Thumbnail image', 'uku' ),
-	    'description'	     => esc_html__( 'If no thumbnail for a post is not avaible, define this thumbnail as a fallback', 'uku' ), 
+	    'description'	     => esc_html__( 'If thumbnail for a post is not avaible, define this thumbnail as a fallback', 'uku' ), 
 	    'flex_width'  => true, // Allow any width, making the specified value recommended. False by default.
 	    'flex_height' => false, // Require the resulting image to be exactly as tall as the height attribute (default).
 	    'width'       => 1260,
 	    'height'      =>  709,
 		    'priority'		=> 1,
 	) ) );
-	
+	$wp_customize->add_setting( 'pirate_rogue_fallback_blogroll_thumbnail', array(
+		'default'		=> '',
+		'sanitize_callback'	=> 'wp_kses_post',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'pirate_rogue_fallback_blogroll_thumbnail', array(
+	    'section'     => 'pirate_rogue_entries',
+	    'label'       => esc_html__( 'Upload Fallback Thumbnail for blogroll', 'uku' ),
+	    'description'	     => esc_html__( 'If thumbnail for a post is not avaible, define this thumbnail as a fallback for normal blogroll', 'uku' ), 
+	    'flex_width'  => true, // Allow any width, making the specified value recommended. False by default.
+	    'flex_height' => false, // Require the resulting image to be exactly as tall as the height attribute (default).
+	    'width'       => 1024,
+	    'height'      =>  576,
+		    'priority'		=> 2,
+	) ) );	
+
+        $wp_customize->add_setting( 'pirate_rogue_fallback_slider', array(
+		'default'		=> '',
+		'sanitize_callback'	=> 'wp_kses_post',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'pirate_rogue_fallback_slider', array(
+	    'section'     => 'pirate_rogue_entries',
+	    'label'       => esc_html__( 'Upload Fallback image for slider', 'uku' ),
+	    'description'	     => esc_html__( 'If  thumbnail for a post is not avaible, define this image for the slider', 'uku' ), 
+	    'flex_width'  => true, // Allow any width, making the specified value recommended. False by default.
+	    'flex_height' => false, // Require the resulting image to be exactly as tall as the height attribute (default).
+	    'width'       => 1440,
+	    'height'      =>  690,
+		    'priority'		=> 3,
+	) ) );	
 
 	
 	$wp_customize->add_setting( 'uku_hidecomments', array(
 		'default'		    => '',
-		'sanitize_callback' 	    => 'uku_sanitize_checkbox',
+		'sanitize_callback' 	    => 'pirate_rogue_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_hidecomments', array(
@@ -361,7 +391,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'description'		    => esc_html__( '(Hides comments behind a Show Comments button on single posts.)', 'uku' ),
 		'section'		    => 'pirate_rogue_entries',
 		'type'			    => 'checkbox',
-		'priority'		    => 3,
+		'priority'		    => 4,
 	) );
 	
 	
@@ -375,7 +405,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'description'		    => esc_html__( 'Disclaimer shown preview to comment form. (HTML is allowed)', 'uku' ),
 		'section'		    => 'pirate_rogue_entries',
 		'type'			    => 'textarea',
-		'priority'		    => 3,
+		'priority'		    => 5,
 	) );
 	
 
@@ -462,7 +492,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	// Uku Front Page - General
 	$wp_customize->add_setting( 'uku_front_hideblog', array(
 		'default'							     => '',
-		'sanitize_callback' 	     => 'uku_sanitize_checkbox',
+		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_front_hideblog', array(
@@ -474,7 +504,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'uku_front_hidedate', array(
 		'default'							     => '',
-		'sanitize_callback' 	     => 'uku_sanitize_checkbox',
+		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_front_hidedate', array(
@@ -486,7 +516,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'uku_front_hidecomments', array(
 		'default'							     => '',
-		'sanitize_callback'		     => 'uku_sanitize_checkbox',
+		'sanitize_callback'		     => 'pirate_rogue_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_front_hidecomments', array(
@@ -498,7 +528,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'uku_front_hidecats', array(
 		'default'							     => '',
-		'sanitize_callback'		     => 'uku_sanitize_checkbox',
+		'sanitize_callback'		     => 'pirate_rogue_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_front_hidecats', array(
@@ -510,7 +540,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'uku_front_hideauthor', array(
 		'default'							     => '',
-		'sanitize_callback' 	     => 'uku_sanitize_checkbox',
+		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_front_hideauthor', array(
@@ -522,7 +552,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
         $wp_customize->add_setting( 'uku_all_hideauthor', array(
 		'default'							     => '',
-		'sanitize_callback' 	     => 'uku_sanitize_checkbox',
+		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_all_hideauthor', array(
@@ -566,23 +596,23 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control(new WP_Customize_Tag_Control($wp_customize,'uku_featuredtag', array(
-		'label' 	             => esc_html__( 'Featured Slider tag (required)', 'uku' ),
-		'settings' 			     => 'uku_featuredtag',
-		'section' 			     => 'uku_slider',
-		'priority'			     => 1,
+		'label'                 => esc_html__( 'Featured Slider tag (required)', 'uku' ),
+		'settings' 		=> 'uku_featuredtag',
+		'section' 		=> 'uku_slider',
+		'priority'		=> 1,
 	) ) );
 
 	$wp_customize->add_setting( 'uku_sliderstyle', array(
-		'default' 		         => 'slider-fullwidth',
-		'sanitize_callback' 	     => 'uku_sanitize_sliderstyle',
+		'default' 		=> 'slider-fullwidth',
+		'sanitize_callback' 	=> 'pirate_rogues_sanitize_sliderstyle',
 	) );
 
 	$wp_customize->add_control( 'uku_sliderstyle', array(
-		'label' 			             => esc_html__( 'Slider Style', 'uku' ),
-		'description'					     => esc_html__( 'Choose the slider design.', 'uku' ),
-		'section' 			           => 'uku_slider',
-		'priority' 			           => 2,
-		'type' 			               => 'select',
+		'label' 		=> esc_html__( 'Slider Style', 'uku' ),
+		'description'		=> esc_html__( 'Choose the slider design.', 'uku' ),
+		'section' 		=> 'uku_slider',
+		'priority' 		=> 2,
+		'type' 			=> 'select',
 		'choices' 						     => array(
 			'slider-fullwidth'	=> esc_html__( 'fullwidth', 'uku' ),
 			'slider-boxed'		=> esc_html__( 'boxed', 'uku' ),
@@ -591,19 +621,39 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting( 'uku_slideranimation', array(
-		'default' 				         => 'slider-slide',
-		'sanitize_callback' 	     => 'uku_sanitize_slideranimation',
+		'default' 		=> 'slider-slide',
+		'sanitize_callback' 	=> 'pirate_rogue_sanitize_slideranimation',
 	) );
 
 	$wp_customize->add_control( 'uku_slideranimation', array(
-		'label' 			             => esc_html__( 'Slider Image Animation', 'uku' ),
-		'description'					     => esc_html__( 'Choose, if you want the slider images to fade or slide from one image to the next.', 'uku' ),
-		'section' 			           => 'uku_slider',
-		'priority' 			           => 3,
-		'type' 			               => 'select',
-		'choices' 						     => array(
+		'label' 		=> esc_html__( 'Slider Image Animation', 'uku' ),
+		'description'		=> esc_html__( 'Choose, if you want the slider images to fade or slide from one image to the next.', 'uku' ),
+		'section' 		=> 'uku_slider',
+		'priority' 		=> 3,
+		'type' 			=> 'select',
+		'choices' 		=> array(
 			'slider-slide'	 => esc_html__( 'slide', 'uku' ),
-			'slider-fade' 			 => esc_html__( 'fade', 'uku' ),
+			'slider-fade' 	 => esc_html__( 'fade', 'uku' ),
+		),
+	) );
+        $wp_customize->add_setting( 'pirate_rogue_featured_slider_num', array(
+		'default' 		=> 'slider-slide',
+		'sanitize_callback' 	=> 'wp_kses_post',
+	) );
+
+	$wp_customize->add_control( 'pirate_rogue_featured_slider_num', array(
+		'label' 		=> esc_html__( 'Number of slides', 'uku' ),
+		'description'		=> esc_html__( 'How many slides of feature posts are displayed (notice: each slide more will reduce the performance cause of big images load).', 'uku' ),
+		'section' 		=> 'uku_slider',
+		'priority' 		=> 3,
+                'default'               => 3,
+		'type' 			=> 'select',
+		'choices' 		=> array(
+			'2'	 => 2,
+			'3'	 => 3,
+                        '4'	 => 4,
+                        '5'	 => 5,
+                        '6'	 => 6,
 		),
 	) );
 
@@ -838,7 +888,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'uku_front_section_twocolumn_excerpt', array(
 		'default'							     => '',
-		'sanitize_callback' 	     => 'uku_sanitize_checkbox',
+		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_front_section_twocolumn_excerpt', array(
@@ -900,7 +950,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'uku_front_section_threecolumn_excerpt', array(
 		'default'							     => '',
-		'sanitize_callback' 	     => 'uku_sanitize_checkbox',
+		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_front_section_threecolumn_excerpt', array(
@@ -963,7 +1013,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'uku_front_section_fourcolumn_excerpt', array(
 		'default'							   => '',
-		'sanitize_callback' 	   => 'uku_sanitize_checkbox',
+		'sanitize_callback' 	   => 'pirate_rogue_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_front_section_fourcolumn_excerpt', array(
@@ -1026,7 +1076,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'uku_front_section_sixcolumn_excerpt', array(
 			'default'							 => '',
-			'sanitize_callback' 	 => 'uku_sanitize_checkbox',
+			'sanitize_callback' 	 => 'pirate_rogue_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_front_section_sixcolumn_excerpt', array(
@@ -1104,7 +1154,7 @@ if (class_exists('WP_Customize_Control')) {
 /**
  * Sanitize Checkboxes.
  */
-function uku_sanitize_checkbox( $input ) {
+function pirate_rogue_sanitize_checkbox( $input ) {
 	if ( 1 == $input ) {
 		return true;
 	} else {
@@ -1115,7 +1165,7 @@ function uku_sanitize_checkbox( $input ) {
 /**
  * Sanitize Sidebar Position.
  */
-function uku_sanitize_sidebar( $uku_sidebar ) {
+function pirate_rogue_sanitize_sidebar( $uku_sidebar ) {
 	if ( ! in_array( $uku_sidebar, array( 'sidebar-right', 'sidebar-left' ) ) ) {
 		$uku_sidebar = 'sidebar-right';
 	}
@@ -1125,7 +1175,7 @@ function uku_sanitize_sidebar( $uku_sidebar ) {
 /**
  * Sanitize Sidebar Visibility Settings.
  */
-function uku_sanitize_sidebar_hide( $uku_sidebar_hide ) {
+function pirate_rogue_sanitize_sidebar_hide( $uku_sidebar_hide ) {
 	if ( ! in_array( $uku_sidebar_hide, array( 'sidebar-show', 'sidebar-no', 'sidebar-no-single', 'sidebar-no-front' ) ) ) {
 		$uku_sidebar_hide = 'sidebar-show';
 	}
@@ -1135,7 +1185,7 @@ function uku_sanitize_sidebar_hide( $uku_sidebar_hide ) {
 /**
  * Sanitize Featured Slider Style.
  */
-function uku_sanitize_sliderstyle( $uku_sliderstyle ) {
+function pirate_rogue_sanitize_sliderstyle( $uku_sliderstyle ) {
 	if ( ! in_array( $uku_sliderstyle, array( 'slider-fullwidth', 'slider-boxed', 'slider-fullscreen' ) ) ) {
 		$uku_sliderstyle = 'slider-fullwidth';
 	}
@@ -1145,7 +1195,7 @@ function uku_sanitize_sliderstyle( $uku_sliderstyle ) {
 /**
  * Sanitize Featured Slider image animation.
  */
-function uku_sanitize_slideranimation( $uku_slideranimation ) {
+function pirate_rogue_sanitize_slideranimation( $uku_slideranimation ) {
 	if ( ! in_array( $uku_slideranimation, array( 'slider-slide', 'slider-fade' ) ) ) {
 		$uku_slideranimation = 'slider-slide';
 	}
@@ -1155,31 +1205,11 @@ function uku_sanitize_slideranimation( $uku_slideranimation ) {
 /**
  * Sanitize Custom Header Image Style.
  */
-function uku_sanitize_headerstyle( $uku_headerstyle ) {
+function pirate_rogue_sanitize_headerstyle( $uku_headerstyle ) {
 	if ( ! in_array( $uku_headerstyle, array( 'header-fullwidth', 'header-boxed', 'header-fullscreen' ) ) ) {
 		$uku_headerstyle = 'header-fullwidth';
 	}
 	return $uku_headerstyle;
-}
-
-/**
- * Sanitize header font.
- */
-function uku_sanitize_header_font( $uku_header_font ) {
-	if ( ! in_array( $uku_header_font, array( 'light', 'dark' ) ) ) {
-		$uku_header_font = 'dark';
-	}
-	return $uku_header_font;
-}
-
-/**
- * Sanitize the image font.
- */
-function uku_sanitize_image_font( $uku_image_font ) {
-	if ( ! in_array( $uku_image_font, array( 'light', 'dark' ) ) ) {
-		$uku_image_font = 'light';
-	}
-	return $uku_image_font;
 }
 
 
@@ -1197,23 +1227,3 @@ function pirate_rogue_sanitize_search_overlay_backgroundcolor( $pirate_rogue_ove
 	return $pirate_rogue_overlaysearch_style;
 }
 
-/**
- * Sanitize Image Transition Transparency.
-
-function uku_sanitize_imggradient( $uku_imggradient ) {
-	if ( ! in_array( $uku_imggradient, array( '0','0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9', '0.99' ) ) ) {
-		$uku_imggradient = '0.7';
-	}
-	return $uku_imggradient;
-}
-*/
-
-/**
- * Sanitize Image Overlay Transparency.
- */
-function uku_sanitize_imgoverlay_transparency( $uku_imgoverlay_transparency ) {
-	if ( ! in_array( $uku_imgoverlay_transparency, array( '0','0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9', '1' ) ) ) {
-		$uku_imgoverlay_transparency = '0';
-	}
-	return $uku_imgoverlay_transparency;
-}

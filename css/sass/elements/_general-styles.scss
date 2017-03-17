@@ -1,194 +1,89 @@
-
 /*-----------------------------------------------------------------------------------*/
 /*	General Styles
 /*-----------------------------------------------------------------------------------*/
 
-
-
-#site-branding, 
-.blog-wrap, 
-.singlepost-wrap, 
-.recommended-posts-wrap, 
-#colophon {
-  padding-left: 5.3125%;
-  /* 17px at 320px */
-  padding-right: 5.3125%;
-  /* 17px at 320px */
-}
-
-.mobile-search {
-  padding-left: 5.3125%;
-  /* 17px at 320px */
-  padding-right: 5.3125%;
-  /* 17px at 320px */
-}
-
-#overlay-nav ul {
-  li a, ul li a {
-    padding-left: 5.3125%;
-    /* 17px at 320px */
-    padding-right: 5.3125%;
-    /* 17px at 320px */
-  }
-}
-
-#mobile-social,
-#sidebar-offcanvas .widget, 
-.front-section {
-  padding-left: 5.3125%;
-  /* 17px at 320px */
-  padding-right: 5.3125%;
-  /* 17px at 320px */
-}
-
-#offcanvas-widgets-open, 
-.headerimg-on.header-boxed .header-image {
-  margin-left: 5.3125%;
-  /* 17px at 320px */
-  margin-right: 5.3125%;
-  /* 17px at 320px */
-}
-
-
-#front-section-four .entry-thumbnail a {
-  width: 130%;
-}
-
-.featured-content, 
-#front-section-four .type-post {
-  width: 100%;
-  overflow: hidden;
-}
-
-.front-section:first-of-type, .page .content-wrap, 
-.search-results .blog-wrap, 
-.archive .blog-wrap, 
-.error404 .content-wrap {
-  padding-top: 35px;
-}
-
-.headerimg-on .front-section:first-of-type {
-  padding-top: 0;
-}
-
-/* --- Font Sizes --- */
-
-h1.site-title, 
-p.site-title {
-  font-size: 25px;
-  font-size: 1.5625rem;
-}
-
-.single-post .entry-header h1.entry-title,
-.blog-wrap h3.blog-title,
-.archive-header h1.archive-title, 
-.page h1.entry-title, 
-.featured-slider .entry-header h2.entry-title,
-#front-section-four .entry-header h2.entry-title, 
-.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-header h2.entry-title, 
 .front-section-title, 
 .social-front-title, 
-.section-one-column-one .entry-header h2.entry-title, 
-.section-three-column-one .entry-header h2.entry-title,
 p.text-big, .widget_mc4wp_form_widget p, 
 .jetpack_subscription_widget #subscribe-text p, 
-#front-section-three h3.front-section-title, 
-.recommended-posts-wrap #jp-relatedposts h3.jp-relatedposts-headline, 
-#big-footer-feature h3.footer-feature-title, 
 .single-post .entry-content p.intro {
-  font-size: 20px;
-  font-size: 1.25rem;
+    @include px2rem($font-size-entrytitle);  
 }
 
 .section-about-column-one p {
-  font-size: 18px;
-  font-size: 1.125rem;
+    @include px2rem($font-size-bigtext);  
 }
 
 .entry-content p {
-  &.pull-left, &.pull-right {
-    font-size: 18px;
-    font-size: 1.125rem;
-  }
-  font-size: 16px;
-  font-size: 1rem;
+    &.pull-left, 
+    &.pull-right {
+	  @include px2rem($font-size-bigtext); 
+    }
+    @include px2rem($font-size-base); 
 }
 
 
 .entry-header {
-  h2.entry-title, 
-  p.intro {
-    font-size: 16px;
-    font-size: 1rem;
-  }
+    p.intro {
+	@include px2rem($font-size-base);
+    }
 }
 
+p.site-title {
+    font-weight: bold;
+    padding-right: 55px;
+    margin: 0;   
+    @include px2rem($font-size-sitetitle);
+}
 
-
-
-
-.footer-menu h3.footer-menu-title, 
 #overlay-nav ul li a, 
 #desktop-navigation ul li a, 
-.comments-toggle, 
-.authorbox h3.author-title {
-  font-size: 15px;
-  font-size: 0.9375rem;
+.comments-toggle {
+    @include px2rem($font-size-smaller);
 }
 
-#comments {
-  h3.comments-title, 
-  #respond h3#reply-title {
-    font-size: 15px;
-    font-size: 0.9375rem;
-  }
-}
 
-.section-about-column-one p cite, .footer-feature-btn, 
-.widget_mc4wp_form_widget h2.widget-title, 
-.jetpack_subscription_widget h2.widget-title, 
+.section-about-column-one p cite, 
+.footer-feature-btn, 
 .page a.post-edit-link {
-  font-size: 15px;
-  font-size: 0.9375rem;
+    @include px2rem($font-size-smaller);
 }
 
 .site-content {
-  p.nocomments, 
-  div.wpcf7 p input.wpcf7-submit {
-    font-size: 15px;
-    font-size: 0.9375rem;
-  }
+    p.nocomments, 
+    div.wpcf7 p input.wpcf7-submit {
+	@include px2rem($font-size-smaller);
+    }
 }
 
-.entry-summary, .footer-menu ul li, 
+.entry-summary, 
+.footer-menu ul li, 
 #overlay-nav ul ul li a, 
 #footer-social span {
-  font-size: 14px;
-  font-size: 0.875rem;
+   @include px2rem($font-size-small);
 }
 
 .widget_rss ul li {
-  .rssSummary, cite {
-    font-size: 14px;
-    font-size: 0.875rem;
+  .rssSummary, 
+  cite {
+      @include px2rem($font-size-small);
   }
 }
 
 .contact-form label span {
-  font-size: 14px;
-  font-size: 0.875rem;
+    @include px2rem($font-size-small);
 }
 
 #site-info, 
 .front-section a.all-posts-link, 
 .single-post .entry-tags, 
-div.sharedaddy h3.sd-title, 
 .null-instagram-feed .clear {
   font-size: 12px;
   font-size: 0.75rem;
 }
 
-.entry-meta, .entry-cats {
+.entry-meta, 
+.entry-cats {
   font-size: 11px;
   font-size: 0.6875rem;
 }
@@ -213,35 +108,18 @@ div.sharedaddy h3.sd-title,
 .widget_mc4wp_form_widget p, 
 .jetpack_subscription_widget #subscribe-text p, 
 .section-about-column-one p {
-  color: #2b2b2b;
+  color: $color-text;
 }
 
 
-.entry-header h2.entry-title {
-  color: #2b2b2b;
-  text-decoration: none;
-  a {
-    color: #2b2b2b;
-    text-decoration: none;
-  }
-}
-
-#secondary h2.widget-title, 
-#sidebar-page h2.widget-title, 
 .entry-meta a, 
 .entry-cats a {
-  color: #2b2b2b;
+  color: $color-text;
   text-decoration: none;
 }
 
 
 
-
-.entry-content a:hover, 
-.comment-text a:hover, 
-.author-bio a:hover {
-  color: #0c6ca6;
-}
 
 .blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-cats a:hover,
 .featured-slider .entry-cats a:hover, .section-one-column-one .entry-cats a:hover, 
@@ -249,20 +127,13 @@ div.sharedaddy h3.sd-title,
 .single-post .entry-cats a:hover, 
 .footer-feature-btn:hover, 
 .comments-show #comments-toggle, 
-.widget_mc4wp_form_widget input[type="submit"]:hover, 
-.jetpack_subscription_widget #subscribe-submit input[type="submit"]:hover, #comments-toggle:hover {
+#comments-toggle:hover {
   background: #0c6ca6;
 }
 
-input {
-  &[type="submit"]:hover, &#submit:hover {
-    background: #0c6ca6;
-  }
-}
 
 #primary #infinite-handle span:hover, 
 #front-section-three a.all-posts-link:hover, 
-.desktop-search input[type="submit"]:hover,
 #offcanvas-widgets-open:hover,
 .offcanvas-widgets-show #offcanvas-widgets-open {
   background: #0c6ca6;
@@ -274,26 +145,19 @@ input {
   color: #fff;
 }
 
-input {
-  &[type="submit"]:hover, &#submit:hover {
-    border: 2px solid #0c6ca6;
-    color: #fff;
-  }
-}
 
 #primary #infinite-handle span:hover, 
 #front-section-three a.all-posts-link:hover, 
-.desktop-search input[type="submit"]:hover, 
-.widget_search input[type="submit"]:hover, 
-.post-password-form input[type="submit"]:hover 
-.footer-feature-btn:hover, #offcanvas-widgets-open:hover, 
+.footer-feature-btn:hover, 
+#offcanvas-widgets-open:hover, 
 .offcanvas-widgets-show #offcanvas-widgets-open {
   border: 2px solid #0c6ca6;
   color: #fff;
 }
 
 
-#comments .comment-reply a, #respond a#cancel-comment-reply-link {
+#comments .comment-reply a, 
+#respond a#cancel-comment-reply-link {
   color: #999;
 }
 
@@ -402,16 +266,13 @@ p.wp-caption-text,
     color: #fff;
   }
   &.headerfont-light {
-    h1.site-title a, #overlay-open, 
+    h1.site-title a, 
+    #overlay-open, 
     #site-branding .site-title a, 
     #overlay-open, p.site-description {
       color: #fff;
     }
   }
-}
-
-.featured-slider .entry-header h2.entry-title a {
-  color: #fff !important;
 }
 
 
@@ -453,18 +314,17 @@ pre {
 }
 
 code, kbd, tt, var, pre {
-  font-family: $font-family-monospace;
-  font-size: 15px;
-  font-size: 0.9375rem;
+    font-family: $font-family-monospace;
+     @include px2rem($font-size-smaller);
 }
 
 abbr, acronym {
-  border-bottom: 1px dotted #2b2b2b;
+  border-bottom: 1px dotted $color-text;
   cursor: help;
 }
 
 mark, ins {
-  background: #d2f1ff;
+  background: $color-mark-background;
   text-decoration: none;
 }
 
@@ -511,5 +371,68 @@ dl {
   }
   dd {
     margin: 0 0 30px;
+  }
+}
+
+@media screen and (min-width: 48em) {
+
+  .front-section-title,  
+  .social-front-title  {
+	@include px2rem($font-size-h1-sm);     
+  }  
+  
+  .entry-header p.intro, 
+  .section-about-column-one p, 
+  p.text-big,
+  .single-post .entry-content p.intro {
+	@include px2rem($font-size-entrytitle-sm);  
+  }
+
+  .entry-content p {
+	&.pull-left, 
+	&.pull-right {
+	      @include px2rem($font-size-bigtext-sm); 
+	}
+	@include px2rem($font-size-base-sm); 
+    }
+
+  .entry-content {
+    ol, ul, dl {
+	@include px2rem($font-size-base-sm); 
+    }
+  }
+  .big-thumb .entry-header p.intro, 
+  .section-one-column-one .type-post .entry-summary, 
+  .section-three-column-one .type-post .entry-summary, 
+  p.text-small {
+	@include px2rem($font-size-base-sm); 
+  }
+
+  address {
+      @include px2rem($font-size-base-sm); 
+  }
+  
+  .entry-summary {
+	@include px2rem($font-size-base); 
+  }
+
+  .single-post .hentry .entry-meta, 
+  .single-attachment .hentry .entry-meta, 
+  .shortcode-section a.all-posts-link,
+  .front-section a.all-posts-link {
+	@include px2rem($font-size-smaller); 
+  }
+  .single-post {
+    .entry-tags  {
+	@include px2rem($font-size-smaller); 
+    }
+  }
+
+  .null-instagram-feed .clear {
+      @include px2rem($font-size-smaller); 
+  }
+  .section-fourcolumn-postwrap .type-post .entry-summary, 
+  .section-sixcolumn-postwrap .type-post .entry-summary {
+      @include px2rem($font-size-smaller); 
   }
 }

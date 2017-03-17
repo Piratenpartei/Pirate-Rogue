@@ -13,10 +13,9 @@ $blogname = get_bloginfo('name');
 	<?php get_sidebar( 'instagram' ); ?>
 
 	<?php
-	// Big One Column Mailchimp newsletter widget area, for Serif Style only.
-	if ( 'serif' === get_theme_mod( 'uku_main_design' ) ) : ?>
-		<?php get_sidebar( 'newsletter' ); ?>
-	<?php endif; ?>
+	// Big One Column Mailchimp newsletter widget area.
+	 get_sidebar( 'newsletter' ); ?>
+
 
 	<footer id="colophon" class="site-footer cf">
 

@@ -144,7 +144,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	// Uku Site Title - Custom Title and Logo
 	$wp_customize->add_setting( 'uku_hidetagline', array(
 		'default'		     => '',
-		'sanitize_callback' 	     => 'uku_sanitize_checkbox',
+		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_hidetagline', array(
@@ -156,7 +156,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'uku_customlogofooter', array(
 		'default'		     => '',
-		'sanitize_callback' 	     => 'uku_sanitize_checkbox',
+		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_customlogofooter', array(
@@ -170,7 +170,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	// Uku Additional Header Options
 	$wp_customize->add_setting( 'uku_headerstyle', array(
 		'default' 		       => 'header-fullwidth',
-		'sanitize_callback' 	     => 'uku_sanitize_headerstyle',
+		'sanitize_callback' 	     => 'pirate_rogue_sanitize_headerstyle',
 	) );
 
 	$wp_customize->add_control( 'uku_headerstyle', array(
@@ -215,7 +215,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	// Uku Theme Options - General
 	$wp_customize->add_setting( 'uku_sidebar', array(
 		'default' 	        => 'sidebar-right',
-		'sanitize_callback'	=> 'uku_sanitize_sidebar',
+		'sanitize_callback'	=> 'pirate_rogue_sanitize_sidebar',
 	) );
 
 	$wp_customize->add_control( 'uku_sidebar', array(
@@ -231,7 +231,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'uku_sidebar_hide', array(
 		'default' 		    => 'sidebar-show',
-		'sanitize_callback' 	     => 'uku_sanitize_sidebar_hide',
+		'sanitize_callback' 	     => 'pirate_rogue_sanitize_sidebar_hide',
 	) );
 
 	$wp_customize->add_control( 'uku_sidebar_hide', array(
@@ -269,7 +269,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	// Uku Theme Options - Header
 	$wp_customize->add_setting( 'uku_hidesearch', array(
 		'default'		     => '',
-		'sanitize_callback' 	     => 'uku_sanitize_checkbox',
+		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_hidesearch', array(
@@ -319,7 +319,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'uku_fixedheader', array(
 		'default'							     => '',
-		'sanitize_callback' 	     => 'uku_sanitize_checkbox',
+		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_fixedheader', array(
@@ -383,7 +383,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_setting( 'uku_hidecomments', array(
 		'default'		    => '',
-		'sanitize_callback' 	    => 'uku_sanitize_checkbox',
+		'sanitize_callback' 	    => 'pirate_rogue_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_hidecomments', array(
@@ -492,7 +492,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	// Uku Front Page - General
 	$wp_customize->add_setting( 'uku_front_hideblog', array(
 		'default'							     => '',
-		'sanitize_callback' 	     => 'uku_sanitize_checkbox',
+		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_front_hideblog', array(
@@ -504,7 +504,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'uku_front_hidedate', array(
 		'default'							     => '',
-		'sanitize_callback' 	     => 'uku_sanitize_checkbox',
+		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_front_hidedate', array(
@@ -516,7 +516,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'uku_front_hidecomments', array(
 		'default'							     => '',
-		'sanitize_callback'		     => 'uku_sanitize_checkbox',
+		'sanitize_callback'		     => 'pirate_rogue_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_front_hidecomments', array(
@@ -528,7 +528,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'uku_front_hidecats', array(
 		'default'							     => '',
-		'sanitize_callback'		     => 'uku_sanitize_checkbox',
+		'sanitize_callback'		     => 'pirate_rogue_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_front_hidecats', array(
@@ -540,7 +540,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'uku_front_hideauthor', array(
 		'default'							     => '',
-		'sanitize_callback' 	     => 'uku_sanitize_checkbox',
+		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_front_hideauthor', array(
@@ -552,7 +552,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
         $wp_customize->add_setting( 'uku_all_hideauthor', array(
 		'default'							     => '',
-		'sanitize_callback' 	     => 'uku_sanitize_checkbox',
+		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_all_hideauthor', array(
@@ -604,7 +604,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'uku_sliderstyle', array(
 		'default' 		=> 'slider-fullwidth',
-		'sanitize_callback' 	=> 'uku_sanitize_sliderstyle',
+		'sanitize_callback' 	=> 'pirate_rogues_sanitize_sliderstyle',
 	) );
 
 	$wp_customize->add_control( 'uku_sliderstyle', array(
@@ -622,7 +622,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'uku_slideranimation', array(
 		'default' 		=> 'slider-slide',
-		'sanitize_callback' 	=> 'uku_sanitize_slideranimation',
+		'sanitize_callback' 	=> 'pirate_rogue_sanitize_slideranimation',
 	) );
 
 	$wp_customize->add_control( 'uku_slideranimation', array(
@@ -888,7 +888,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'uku_front_section_twocolumn_excerpt', array(
 		'default'							     => '',
-		'sanitize_callback' 	     => 'uku_sanitize_checkbox',
+		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_front_section_twocolumn_excerpt', array(
@@ -950,7 +950,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'uku_front_section_threecolumn_excerpt', array(
 		'default'							     => '',
-		'sanitize_callback' 	     => 'uku_sanitize_checkbox',
+		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_front_section_threecolumn_excerpt', array(
@@ -1013,7 +1013,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'uku_front_section_fourcolumn_excerpt', array(
 		'default'							   => '',
-		'sanitize_callback' 	   => 'uku_sanitize_checkbox',
+		'sanitize_callback' 	   => 'pirate_rogue_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_front_section_fourcolumn_excerpt', array(
@@ -1076,7 +1076,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'uku_front_section_sixcolumn_excerpt', array(
 			'default'							 => '',
-			'sanitize_callback' 	 => 'uku_sanitize_checkbox',
+			'sanitize_callback' 	 => 'pirate_rogue_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'uku_front_section_sixcolumn_excerpt', array(
@@ -1154,7 +1154,7 @@ if (class_exists('WP_Customize_Control')) {
 /**
  * Sanitize Checkboxes.
  */
-function uku_sanitize_checkbox( $input ) {
+function pirate_rogue_sanitize_checkbox( $input ) {
 	if ( 1 == $input ) {
 		return true;
 	} else {
@@ -1165,7 +1165,7 @@ function uku_sanitize_checkbox( $input ) {
 /**
  * Sanitize Sidebar Position.
  */
-function uku_sanitize_sidebar( $uku_sidebar ) {
+function pirate_rogue_sanitize_sidebar( $uku_sidebar ) {
 	if ( ! in_array( $uku_sidebar, array( 'sidebar-right', 'sidebar-left' ) ) ) {
 		$uku_sidebar = 'sidebar-right';
 	}
@@ -1175,7 +1175,7 @@ function uku_sanitize_sidebar( $uku_sidebar ) {
 /**
  * Sanitize Sidebar Visibility Settings.
  */
-function uku_sanitize_sidebar_hide( $uku_sidebar_hide ) {
+function pirate_rogue_sanitize_sidebar_hide( $uku_sidebar_hide ) {
 	if ( ! in_array( $uku_sidebar_hide, array( 'sidebar-show', 'sidebar-no', 'sidebar-no-single', 'sidebar-no-front' ) ) ) {
 		$uku_sidebar_hide = 'sidebar-show';
 	}
@@ -1185,7 +1185,7 @@ function uku_sanitize_sidebar_hide( $uku_sidebar_hide ) {
 /**
  * Sanitize Featured Slider Style.
  */
-function uku_sanitize_sliderstyle( $uku_sliderstyle ) {
+function pirate_rogue_sanitize_sliderstyle( $uku_sliderstyle ) {
 	if ( ! in_array( $uku_sliderstyle, array( 'slider-fullwidth', 'slider-boxed', 'slider-fullscreen' ) ) ) {
 		$uku_sliderstyle = 'slider-fullwidth';
 	}
@@ -1195,7 +1195,7 @@ function uku_sanitize_sliderstyle( $uku_sliderstyle ) {
 /**
  * Sanitize Featured Slider image animation.
  */
-function uku_sanitize_slideranimation( $uku_slideranimation ) {
+function pirate_rogue_sanitize_slideranimation( $uku_slideranimation ) {
 	if ( ! in_array( $uku_slideranimation, array( 'slider-slide', 'slider-fade' ) ) ) {
 		$uku_slideranimation = 'slider-slide';
 	}
@@ -1205,31 +1205,11 @@ function uku_sanitize_slideranimation( $uku_slideranimation ) {
 /**
  * Sanitize Custom Header Image Style.
  */
-function uku_sanitize_headerstyle( $uku_headerstyle ) {
+function pirate_rogue_sanitize_headerstyle( $uku_headerstyle ) {
 	if ( ! in_array( $uku_headerstyle, array( 'header-fullwidth', 'header-boxed', 'header-fullscreen' ) ) ) {
 		$uku_headerstyle = 'header-fullwidth';
 	}
 	return $uku_headerstyle;
-}
-
-/**
- * Sanitize header font.
- */
-function uku_sanitize_header_font( $uku_header_font ) {
-	if ( ! in_array( $uku_header_font, array( 'light', 'dark' ) ) ) {
-		$uku_header_font = 'dark';
-	}
-	return $uku_header_font;
-}
-
-/**
- * Sanitize the image font.
- */
-function uku_sanitize_image_font( $uku_image_font ) {
-	if ( ! in_array( $uku_image_font, array( 'light', 'dark' ) ) ) {
-		$uku_image_font = 'light';
-	}
-	return $uku_image_font;
 }
 
 
@@ -1247,13 +1227,3 @@ function pirate_rogue_sanitize_search_overlay_backgroundcolor( $pirate_rogue_ove
 	return $pirate_rogue_overlaysearch_style;
 }
 
-
-/**
- * Sanitize Image Overlay Transparency.
- */
-function uku_sanitize_imgoverlay_transparency( $uku_imgoverlay_transparency ) {
-	if ( ! in_array( $uku_imgoverlay_transparency, array( '0','0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9', '1' ) ) ) {
-		$uku_imgoverlay_transparency = '0';
-	}
-	return $uku_imgoverlay_transparency;
-}

@@ -1,5 +1,7 @@
+/*-----------------------------------------------------------------------------------*/
+/* Buttons
+/*-----------------------------------------------------------------------------------*/
 
-/* --- Infoboxes --- */
 
 .box {
   margin: 0 0 30px;
@@ -59,7 +61,7 @@ a.standard-btn {
   padding: 10px 18px;
   overflow: hidden;
   cursor: pointer;
-  background: #2b2b2b;
+  background: $color-text;
   color: #fff;
   font-size: 16px;
   font-size: 1rem;

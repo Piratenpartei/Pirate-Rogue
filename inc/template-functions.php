@@ -8,6 +8,8 @@
  /* Extends the default WordPress body classes
  /*-----------------------------------------------------------------------------------*/
  function pirate_rogue_body_class( $classes ) {
+     	$classes[] = 'uku-standard';
+	 
         if ('colorful' != get_theme_mod( 'pirate_rogue_socialmedia_style' ) ) {
             $classes[] = 'socialmedia-'.get_theme_mod( 'pirate_rogue_socialmedia_style' );
 	}
@@ -15,18 +17,6 @@
             $classes[] = 'searchbar-'.get_theme_mod( 'pirate_rogue_search_overlay_backgroundcolor' );
 	}
         
-	 if ('serif' == get_theme_mod( 'uku_main_design' ) ) {
-		 $classes[] = 'imgfade-on';
-	 }
-	 if ('neo' != get_theme_mod( 'uku_main_design' ) && 'serif' != get_theme_mod( 'uku_main_design' ) ) {
-		 $classes[] = 'uku-standard';
-	 }
-	 if ('neo' == get_theme_mod( 'uku_main_design' ) ) {
-		 $classes[] = 'uku-neo';
-	 }
-	 if ('serif' == get_theme_mod( 'uku_main_design' ) ) {
-		 $classes[] = 'uku-serif';
-	 }
 	 
 	 // If no sidebar for pages defined, make the page without sidebar ;)
 	 if ( is_page() &&  !is_active_sidebar( 'sidebar-2' )) {
@@ -94,8 +84,10 @@
 	 if ( ! is_active_sidebar( 'sidebar-offcanvas' ) ) {
 		 $classes[] = 'offcanvas-widgets-off';
 	 }
-	 if ( comments_open() && '' != get_theme_mod ( 'uku_hidecomments' ) && '0' == get_comments_number() ) {
-		 $classes[] = 'comments-show';
+	 if (is_single()) {
+	    if ( comments_open() && '' != get_theme_mod ( 'uku_hidecomments' ) && '0' == get_comments_number() ) {
+		    $classes[] = 'comments-show';
+	    }
 	 }
 
 	 // Option to add body classes via custom fields

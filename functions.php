@@ -123,32 +123,31 @@ function pirate_rogue_scripts() {
 	// Loads stylesheets.
 	wp_enqueue_style( 'uku-style', get_stylesheet_uri(), array(), '20160303' );
 
+
+	    // Loads Custom Uku JavaScript functionality
+	    wp_enqueue_script( 'uku-script', get_template_directory_uri() . '/js/functions.min.js', array( 'jquery' ), '20160507', true );
+	    wp_localize_script( 'uku-script', 'screenReaderText', array(
+		    'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'uku' ) . '</span>',
+		    'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'uku' ) . '</span>',
+	    ) );
+
+	    // Loads Scripts for Featured Post Slider
+	    if ( '' != get_theme_mod( 'uku_featuredtag' ) ) {
+		    wp_enqueue_script( 'uku-slick', get_template_directory_uri() . '/js/slick/slick.min.js', array( 'jquery' ) );
+	    }
+
+	    // Loading viewpoint checker script
+	    wp_enqueue_script( 'viewportchecker', get_template_directory_uri() . '/js/jquery.viewportchecker.min.js', array( 'jquery' ), '1.8.7' );
+
+	    // Loads Scripts Sticky Sidebar Element
+	    wp_enqueue_script( 'sticky-kit', get_template_directory_uri() . '/js/sticky-kit.min.js', array( 'jquery' ) );
+
+	    // Loading FitVids responsive Video script
+	    wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/js/jquery.fitvids.min.js', array( 'jquery' ), '1.1' );
+
+	    // Loading Tablesorter script
+	    wp_enqueue_script( 'tablesorter', get_template_directory_uri() . '/js/jquery.tablesorter.min.js', array( 'jquery' ), '1.1', true );	
 	
-	// Loads Custom Uku JavaScript functionality
-	wp_enqueue_script( 'uku-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20160507', true );
-	wp_localize_script( 'uku-script', 'screenReaderText', array(
-		'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'uku' ) . '</span>',
-		'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'uku' ) . '</span>',
-	) );
-
-	// Loads Scripts for Featured Post Slider
-	if ( '' != get_theme_mod( 'uku_featuredtag' ) ) {
-		wp_enqueue_style( 'uku-slick-style', get_template_directory_uri() . '/js/slick/slick.css' );
-		wp_enqueue_script( 'uku-slick', get_template_directory_uri() . '/js/slick/slick.min.js', array( 'jquery' ) );
-	}
-
-	// Loading viewpoint checker script
-	wp_enqueue_script( 'viewportchecker', get_template_directory_uri() . '/js/jquery.viewportchecker.min.js', array( 'jquery' ), '1.8.7' );
-
-	// Loads Scripts Sticky Sidebar Element
-	wp_enqueue_script( 'sticky-kit', get_template_directory_uri() . '/js/sticky-kit.min.js', array( 'jquery' ) );
-
-	// Loading FitVids responsive Video script
-	wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), '1.1' );
-	
-	// Loading Tablesorter script
-	wp_enqueue_script( 'tablesorter', get_template_directory_uri() . '/js/jquery.tablesorter.min.js', array( 'jquery' ), '1.1', true );	
-
 }
 add_action( 'wp_enqueue_scripts', 'pirate_rogue_scripts' );
 

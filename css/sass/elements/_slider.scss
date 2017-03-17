@@ -1,5 +1,5 @@
 /*-----------------------------------------------------------------------------------*/
-/* 5.0 Featured Slider + Custom Header Image
+/* Featured Slider + Custom Header Image
 /*-----------------------------------------------------------------------------------*/
 
 .featured-content {
@@ -141,7 +141,7 @@
 	display: block;
 	@extend .fa;
 	text-indent: 0;
-	color: #2b2b2b;
+	color: $color-text;
 	bottom: 13px;
     }
     &.slick-prev:after {
@@ -199,7 +199,6 @@
 	width: 60px;
 	height: 42px;
 	padding: 22px 0 0 24px;
-	font-size: 16px;
       }
     
     
@@ -209,8 +208,7 @@
     .featured-slider {
 	padding-bottom: 0;
 	.entry-header h2.entry-title {
-	    font-size: 36px;
-	    font-size: 2.25rem;
+	    @include px2rem($font-size-slider-title-sm); 
 	}
 	.meta-main-wrap {
 	  padding-bottom: 35px;
@@ -244,7 +242,8 @@
 	    &.slick-next {
 		right: 0;
 	    }
-	    &.slick-prev:after, &.slick-next:after {
+	    &.slick-prev:after, 
+	    &.slick-next:after {
 		color: #fff;
 		position: absolute;
 		bottom: 0;
@@ -304,9 +303,8 @@
 	  padding-right: 0;
 	}
 	.entry-header h2.entry-title  {
-	    font-size: 48px;
-	    font-size: 3rem;
-	     padding-top: 10px;
+	    @include px2rem($font-size-slider-title-1060); 
+	    padding-top: 10px;
 	}
 	.format-video .entry-thumbnail a:before {
 	    left: 6.25%;
@@ -345,7 +343,7 @@
 	padding-right: 0;
 	margin-left: 6.25%;
 	margin-right: 6.25%;
-	 padding-top: 30px;
+	padding-top: 30px;
 	width: 87.5%;
   }
 
@@ -360,11 +358,9 @@
   
 }
 @media screen and (min-width: 85em) {
-  .featured-slider .entry-header h2.entry-title {
-    font-size: 58px;
-    font-size: 3.625rem;
-    line-height: 1.03;
-  }
+    .featured-slider .entry-header h2.entry-title {
+	@include px2rem($font-size-slider-title-lg);
+    }
     .slider-on .featured-slider .entry-thumbnail a{
 	max-height: 900px;
 	overflow: hidden;

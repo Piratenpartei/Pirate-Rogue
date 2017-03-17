@@ -1,14 +1,78 @@
+/*-----------------------------------------------------------------------------------*/
+/* Forms
+/*-----------------------------------------------------------------------------------*/
+
+.widget_mc4wp_form_widget input[type="submit"], 
+.jetpack_subscription_widget #subscribe-submit input[type="submit"] {
+  background: $color-content-links; // #51a8dd;
+}
+
+.desktop-search input[type="submit"]:hover {
+  background: #0c6ca6;
+}
 
 
-/* --- Forms & Buttons --- */
+.widget_mc4wp_form_widget input[type="submit"]:hover, 
+.jetpack_subscription_widget #subscribe-submit input[type="submit"]:hover {
+   background: $color-cats-background-hover; 
+}
+
+
+
+.desktop-search input[type="submit"]:hover, 
+.widget_search input[type="submit"]:hover, 
+.post-password-form input[type="submit"]:hover,
+.post-password-form input[type="submit"]:hover .footer-feature-btn:hover {
+  border: 2px solid #0c6ca6;
+  color: #fff;
+  background: #0c6ca6;
+}
+
+
 
 input {
-  padding: 12px 15px;
-  background: #fff;
-  border: 1px solid #ccc;
-  line-height: normal;
-  outline: none;
-  color: $color-text;
+    padding: 12px 15px;
+    background: #fff;
+    border: 1px solid #ccc;
+    line-height: normal;
+    outline: none;
+    color: $color-text;
+
+
+    &[type="submit"]:hover, 
+    &#submit:hover {
+	background: #0c6ca6;
+	border: 2px solid #0c6ca6;
+	color: #fff;
+    }
+
+    
+    &[type="reset"], 
+    &[type="submit"] {
+	-webkit-appearance: button;
+	cursor: pointer;
+    }
+    &[type="button"], 
+    &[type="submit"], 
+    &#submit {
+	padding: 9px 30px;
+	border: 2px solid $color-main;
+	background-color: $color-main;
+	color: $color-page-background;
+
+	line-height: normal;
+	cursor: pointer;
+	outline: none;
+	-webkit-appearance: none;
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: 3px;
+
+	&:focus, &:hover {
+	    background-color: $color-second;
+	    border-color: $color-second;
+	}
+    }
 }
 
 textarea {
@@ -18,17 +82,12 @@ textarea {
   line-height: normal;
   outline: none;
   color: $color-text;
-  &:focus, &:active {
+  &:focus, 
+      &:active {
 	border: 1px solid $color-text;
   }
 }
 
-input {
-  &:focus, 
-  &:active {
-	border: 1px solid $color-text;
-  }
-}
 
 button::-moz-focus-inner, 
 input::-moz-focus-inner {
@@ -51,47 +110,18 @@ select {
   text-transform: none;
 }
 
-button, html input[type="button"] {
+button, 
+html input[type="button"] {
   -webkit-appearance: button;
   cursor: pointer;
 }
 
-input {
-  &[type="reset"], 
-  &[type="submit"] {
-    -webkit-appearance: button;
-    cursor: pointer;
-  }
-}
 
 button[disabled], 
 html input[disabled] {
   cursor: default;
 }
 
-input {
-  &[type="button"], 
-  &[type="submit"], 
-  &#submit {
-    padding: 9px 30px;
-    border: 2px solid $color-main;
-    background-color: $color-main;
-    color: $color-page-background;
-    
-    line-height: normal;
-    cursor: pointer;
-    outline: none;
-    -webkit-appearance: none;
-    text-transform: uppercase;
-    font-weight: 500;
-    letter-spacing: 3px;
-    
-     &:focus, &:hover {
-	background-color: $color-second;
-	border-color: $color-second;
-    }
-  }
-}
 
 #commentform input#submit {			       
     border-color: $color-main;
@@ -145,4 +175,13 @@ input {
   float: right;
 }
 
+@media screen and (min-width: 48em) {
 
+    input {
+	&[type="button"], 
+	&[type="submit"], 
+	&#submit {
+	    @include px2rem($font-size-smaller); 
+	}
+      }
+}

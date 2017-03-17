@@ -1,21 +1,20 @@
-/*
-* Blockquotes and cites
-*/
-
+/*-----------------------------------------------------------------------------------*/
+/*  Blockquotes and cites
+/*-----------------------------------------------------------------------------------*/
 .entry-content blockquote {
-    font-size: 18px;
-    font-size: 1.125rem;
-   
-    
-}
-
-.single-post .entry-content blockquote p, 
-.page .entry-content blockquote p {
-  position: relative;
-  font-weight: 600;
-   font-size: 20px;
-  font-size: 1.25rem;
-  line-height: 1.2;
+    p {
+	position: relative;
+	font-weight: 600;
+	@include px2rem($font-size-blockquote);  	
+    }
+    cite {
+	display: block;
+	padding-top: 10px;
+	padding-right: 30px;
+	font-style: normal;
+	text-align: right;
+	@include px2rem($font-size-blockquote-cite);
+    }
 }
 
 
@@ -24,7 +23,6 @@
   #comments blockquote p {
     position: relative;
     font-weight: 600;
-    line-height: 1.2;
   }
   .entry-content blockquote {
     padding: 20px 0;
@@ -33,26 +31,25 @@
 }
 
 .page .entry-content blockquote {
-  padding: 20px 0;
-  margin: 0 0 30px;
-  
-  cite {
-    display: block;
-    padding-top: 10px;
-    padding-right: 30px;
-    font-style: normal;
-    text-align: right;
-    font-size: 16px;
-    font-size: 1rem;
-
-  }
+    padding: 20px 0;
+    margin: 0 0 30px;
 }
 
-.single-post .entry-content blockquote cite, 
+
 #comments blockquote cite {
-  display: block;
-  padding-top: 10px;
-  font-style: normal;
-  font-size: 16px;
-  font-size: 1rem;
+    display: block;
+    padding-top: 10px;
+    font-style: normal;
+     @include px2rem($font-size-base);  	   
+}
+
+@media screen and (min-width: 48em) {
+    .entry-content blockquote {
+	p {
+	    @include px2rem($font-size-blockquote-sm);  	    
+	} 
+	cite {
+	    @include px2rem($font-size-blockquote-cite-sm);  	  
+	}
+    } 
 }

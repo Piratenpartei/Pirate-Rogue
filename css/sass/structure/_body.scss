@@ -34,3 +34,72 @@ html.overlay-show {
   overflow: hidden;
 }
 
+
+
+
+#site-branding, 
+.blog-wrap, 
+.singlepost-wrap, 
+.recommended-posts-wrap, 
+#colophon {
+  padding-left: 5.3125%;
+  /* 17px at 320px */
+  padding-right: 5.3125%;
+  /* 17px at 320px */
+}
+
+.mobile-search {
+  padding-left: 5.3125%;
+  /* 17px at 320px */
+  padding-right: 5.3125%;
+  /* 17px at 320px */
+}
+
+#overlay-nav ul {
+  li a, ul li a {
+    padding-left: 5.3125%;
+    /* 17px at 320px */
+    padding-right: 5.3125%;
+    /* 17px at 320px */
+  }
+}
+
+#mobile-social,
+#sidebar-offcanvas .widget, 
+.front-section {
+  padding-left: 5.3125%;
+  /* 17px at 320px */
+  padding-right: 5.3125%;
+  /* 17px at 320px */
+}
+
+#offcanvas-widgets-open, 
+.headerimg-on.header-boxed .header-image {
+  margin-left: 5.3125%;
+  /* 17px at 320px */
+  margin-right: 5.3125%;
+  /* 17px at 320px */
+}
+
+
+#front-section-four .entry-thumbnail a {
+  width: 130%;
+}
+
+.featured-content, 
+#front-section-four .type-post {
+  width: 100%;
+  overflow: hidden;
+}
+
+.front-section:first-of-type, 
+.page .content-wrap, 
+.search-results .blog-wrap, 
+.archive .blog-wrap, 
+.error404 .content-wrap {
+  padding-top: 35px;
+}
+
+.headerimg-on .front-section:first-of-type {
+  padding-top: 0;
+}

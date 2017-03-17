@@ -113,11 +113,6 @@ a {
 }
 
 
-.widget_mc4wp_form_widget input[type="submit"], 
-.jetpack_subscription_widget #subscribe-submit input[type="submit"] {
-  background: $color-content-links; // #51a8dd;
-}
-
 .uku-neo .format-video .entry-thumbnail span.video-icon {
   &:before, &:after {
     background: $color-content-links; // #51a8dd;
@@ -136,20 +131,14 @@ a {
 .single-post .entry-cats a:hover, 
 .footer-feature-btn:hover, 
 .comments-show #comments-toggle, 
-.widget_mc4wp_form_widget input[type="submit"]:hover, 
-.jetpack_subscription_widget #subscribe-submit input[type="submit"]:hover, #comments-toggle:hover {
+#comments-toggle:hover {
    background: $color-cats-background-hover; 
 }
 
-input {
-  &[type="submit"]:hover, &#submit:hover {
-    background: #0c6ca6;
-  }
-}
+
 
 #primary #infinite-handle span:hover, 
 #front-section-three a.all-posts-link:hover, 
-.desktop-search input[type="submit"]:hover,
 #offcanvas-widgets-open:hover,
 .offcanvas-widgets-show #offcanvas-widgets-open {
   background: #0c6ca6;
@@ -161,14 +150,10 @@ input {
   color: #fff;
 }
 
-input {
-  &[type="submit"]:hover, &#submit:hover {
-    border: 2px solid #0c6ca6;
-    color: #fff;
-  }
-}
 
-#primary #infinite-handle span:hover, #front-section-three a.all-posts-link:hover, .desktop-search input[type="submit"]:hover, .widget_search input[type="submit"]:hover, .post-password-form input[type="submit"]:hover .footer-feature-btn:hover, #offcanvas-widgets-open:hover, .offcanvas-widgets-show #offcanvas-widgets-open {
+#primary #infinite-handle span:hover, #front-section-three a.all-posts-link:hover, 
+#offcanvas-widgets-open:hover, 
+.offcanvas-widgets-show #offcanvas-widgets-open {
   border: 2px solid #0c6ca6;
   color: #fff;
 }
@@ -179,7 +164,8 @@ input {
   }
 }
 
-#comments .comment-reply a, #respond a#cancel-comment-reply-link {
+#comments .comment-reply a, 
+#respond a#cancel-comment-reply-link {
   color: #999;
 }
 

@@ -37,35 +37,21 @@ function pirate_rogue_header_style() {
 
 	// If we get this far, we have custom styles.
 	?>
-	<style type="text/css" id="uku-header-css">
+	
 	<?php
-		if ( ! empty( $header_image ) and  display_header_text()) :
-	?>
-
-	<?php
-		endif;
-
 		// Has the text been hidden?
 		if ( ! display_header_text() ) :
 	?>
+	<style type="text/css" id="uku-header-css">
 	h1.site-title,
 	p.site-title,
 	p.site-description {
 		position: absolute;
 		clip: rect(1px, 1px, 1px, 1px);
 	}
-	<?php
-
-		// If the user has set a custom color for the text, use that.
-	elseif (esc_attr( $header_text_color ) && get_theme_support( 'custom-header', 'default-text-color' ) != $header_text_color ) :
-	?>
-	h1.site-title a,
-	p.site-title a,
-	p.site-description {
-		color: #<?php echo esc_attr( $header_text_color ); ?>;
-	}
-	<?php endif; ?>
 	</style>
+	<?php endif; ?>
+	
 	<?php
 }
 

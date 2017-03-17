@@ -13,42 +13,30 @@ h1, h2, h3, h4, h5, h6 {
 
 .entry-content {
     h1 {
-	font-size: 20px;
-	font-size: 1.25rem;
 	padding: 6px 0 9px;
-	line-height: 1.2;
+	@include px2rem($font-size-h1);
     }
     h2 {
-	font-size: 18px;
-	font-size: 1.125rem;
+	@include px2rem($font-size-h2);
 	padding: 6px 0 9px;
-	line-height: 1.2;
     }
     h3 {
-	font-size: 18px;
-	font-size: 1.125rem;
+	@include px2rem($font-size-h3);
 	padding: 5px 0 8px;
-	line-height: 1.3;
     }
     h4 {
-	font-size: 16px;
-	font-size: 1rem;
+	@include px2rem($font-size-h4);
 	padding: 5px 0 8px;
-	line-height: 1.3;
     }
     h5 {
-	font-size: 15px;
-	font-size: 0.9375rem;
+	@include px2rem($font-size-h5);
 	padding: 3px 0;
-	line-height: 1.3;
 	text-transform: uppercase;
 	letter-spacing: 1px;
     }
     h6 {
-	font-size: 16px;
-	font-size: 1rem;
+	@include px2rem($font-size-h6);
 	padding: 3px 0;
-	line-height: 1.3;
     }
 }
 
@@ -64,11 +52,8 @@ h1, h2, h3, h4, h5, h6,
 h1.site-title {
     font-weight: bold;
     padding-right: 55px;
-    font-size: 25px;
-  font-size: 1.5625rem;
+    @include px2rem($font-size-h1-sitetitle);
 }
-
-
 
 
 
@@ -107,20 +92,18 @@ h1 {
 
 #secondary h2.widget-title, 
 #sidebar-page h2.widget-title {
-    font-size: 16px;
-    font-size: 1rem;
-    color: #2b2b2b;
+    @include px2rem($font-size-h2-widget);
+    color: $color-text;
     text-decoration: none;
 }
 
 .entry-header {
     h2.entry-title {
-      font-size: 16px;
-      font-size: 1rem;
-      color: #2b2b2b;
+      @include px2rem($font-size-h2-entryheader);
+      color: $color-text;
       text-decoration: none;
       a {
-	  color: #2b2b2b;
+	  color: $color-text;
 	  text-decoration: none;
       }
     }
@@ -128,12 +111,9 @@ h1 {
 
 
 
-
-
 .widget_mc4wp_form_widget h2.widget-title, 
 .jetpack_subscription_widget h2.widget-title {
-  font-size: 15px;
-  font-size: 0.9375rem;
+   @include px2rem($font-size-headersmall);
 }
 
 .featured-slider .entry-header h2.entry-title a {
@@ -161,21 +141,18 @@ h3 {
 
 .footer-menu h3.footer-menu-title, 
 .authorbox h3.author-title {
-  font-size: 15px;
-  font-size: 0.9375rem;
+    @include px2rem($font-size-headersmall);
 }
 
 #comments {
   h3.comments-title, 
   #respond h3#reply-title {
-    font-size: 15px;
-    font-size: 0.9375rem;
+    @include px2rem($font-size-headersmall);
   }
 }
 
-div.sharedaddy h3.sd-title {
-  font-size: 12px;
-  font-size: 0.75rem;
+#front-section-three h3.front-section-title {
+    @include px2rem($font-size-entrytitle);  
 }
 
 
@@ -193,17 +170,15 @@ div.sharedaddy h3.sd-title {
 #front-section-three h3.front-section-title, 
 .recommended-posts-wrap #jp-relatedposts h3.jp-relatedposts-headline, 
 #big-footer-feature h3.footer-feature-title {
-  font-size: 20px;
-  font-size: 1.25rem;
+    @include px2rem($font-size-entrytitle);
 }
 
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: $breakpoint-sm) {
     .single-post .entry-header h1.entry-title, 
     .single-attachment .entry-header h1.entry-title, 
     .page h1.entry-title {
-      font-size: 48px;
-      font-size: 3rem;
+	@include px2rem($font-size-h1-sitetitle-sm);     
     }
 
     .blog-wrap h3.blog-title, 
@@ -214,55 +189,41 @@ div.sharedaddy h3.sd-title {
     .recommended-posts-wrap #jp-relatedposts h3.jp-relatedposts-headline, 
     .archive-header h1.archive-title, 
     .entry-content h1 {
-      font-size: 36px;
-      font-size: 2.25rem;
+	@include px2rem($font-size-h1-sm);     
     }
 
     .entry-content {
-	 h2 {
-      font-size: 26px;
-      font-size: 1.625rem;
-    }
-      h3 {
-	font-size: 24px;
-	font-size: 1.5rem;
-      }
-      h4 {
-	font-size: 22px;
-	font-size: 1.375rem;
-      }
-
-      h5, h6 {
-	font-size: 19px;
-	font-size: 1.1875rem;
-      }
+	h2 {
+	    @include px2rem($font-size-h2-sm);     
+	}
+	h3 {
+	    @include px2rem($font-size-h3-sm);     
+	}
+	h4 {
+	    @include px2rem($font-size-h4-sm);     
+	}
+	h5 {
+	    @include px2rem($font-size-h5-sm);     
+	}
+	h6 {
+	    @include px2rem($font-size-h6-sm);     
+	}
     }
     .entry-header h2.entry-title {
-      font-size: 24px;
-      font-size: 1.5rem;
+	@include px2rem($font-size-h2-entryheader-sm);     
+      
     }
     .section-one-column-two .type-post:nth-of-type(n+2) .entry-header h2.entry-title, 
     .section-two-column-two .type-post .entry-header h2.entry-title, 
     .section-three-column-two .type-post .entry-header h2.entry-title, 
     #front-section-fourcolumn .type-post .entry-header h2.entry-title, 
     .section-sixcolumn-postwrap .type-post .entry-header h2.entry-title {
-	font-size: 16px;
-	font-size: 1rem;
+	@include px2rem($font-size-h2-entryheader);     
     }
-
-
-    .single-post {
-	div.sharedaddy h3.sd-title {
-	      font-size: 15px;
-	      font-size: 0.9375rem;
-	}
-    }
-
 
     .page div.sharedaddy h3.sd-title, 
     .null-instagram-feed .clear {
-	font-size: 15px;
-	font-size: 0.9375rem;
+	@include px2rem($font-size-headersmall);
     }
 
     .page h1.entry-title {
@@ -270,22 +231,19 @@ div.sharedaddy h3.sd-title {
     }
 }
 
-@media screen and (min-width: 64em) {
+@media screen and (min-width: $breakpoint-1024) {
     .entry-header h2.entry-title {
-	font-size: 28px;
-	font-size: 1.75rem;
+	@include px2rem($font-size-h2-entryheader-1024);
     }
     #front-section-twocolumn .entry-header h2.entry-title  {
-	font-size: 32px;
-	font-size: 2rem;
+	@include px2rem($font-size-h2-entryheader-1024);
+	// vorher 32 statt 28 
     }
 }
 
 @media screen and (min-width: $breakpoint-1060) {
     h1.site-title {
-	    font-size: 60px;
-	    font-size: 3.75rem;
-	    line-height: 1.35;
+	    @include px2rem( $font-size-h1-sitetitle-1060);	   
 	    text-align: center;
 	    padding-right: 0;
     }
@@ -293,13 +251,13 @@ div.sharedaddy h3.sd-title {
     .section-one-column-one .entry-header h2.entry-title, 
     .section-three-column-one .entry-header h2.entry-title,
     #front-section-four .entry-header h2.entry-title {
-	    font-size: 48px;
-	    font-size: 3rem;
+	    @include px2rem( $font-size-h2-entryheader-1060);	   
+	    
     }
     #front-section-fourcolumn .type-post .entry-header h2.entry-title, 
     .recommended-posts-wrap #jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
-	    font-size: 20px;
-	    font-size: 1.25rem;
+	    @include px2rem( $font-size-h2-entryheader-1060-small);	   
+	    
     }
     #front-section-four {
 	entry-header h2.entry-title {
@@ -308,18 +266,9 @@ div.sharedaddy h3.sd-title {
     }
 }
 
-@media screen and (min-width: 85em) {
+@media screen and (min-width: $breakpoint-lg) {
     .single-post .entry-header h1.entry-title,
     #front-section-four .entry-header h2.entry-title {
-	font-size: 58px;
-	font-size: 3.625rem;
-	line-height: 1.03;
-    }
-    .single-post {
-	div.sharedaddy .sd-social-icon h3.sd-title {
-	  display: none;
-	}
-
-    }
-  
+	@include px2rem($font-size-h2-entryheader-lg);	   
+    }  
 }

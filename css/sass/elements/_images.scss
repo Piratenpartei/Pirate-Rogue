@@ -48,19 +48,18 @@ img#wpstats {
 }
 
 .entry-content {
-  .wp-caption-text, p.wp-caption-text {
+  .wp-caption-text, 
+  p.wp-caption-text {
     margin: 0;
     padding: 8px 2px 30px;
-    font-size: 14px;
-    font-size: 0.875rem;
+    @include px2rem($font-size-small);
   }
 }
 
 .type-attachment .entry-content .entry-caption p {
   margin: 0;
   padding: 8px 2px 30px;
-  font-size: 14px;
-  font-size: 0.875rem;
+  @include px2rem($font-size-small);
 }
 
 .entry-content {

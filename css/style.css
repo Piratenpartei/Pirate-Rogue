@@ -2154,7 +2154,6 @@ article header { margin-bottom: 20px; }
 /* --- Overlay Widget Area --- */
 .inner-offcanvas-wrap { width: 100%; display: block; position: fixed; left: -100%; top: 0; height: 100%; overflow: auto; z-index: 1000; background: #fff; -webkit-transition: left,.35s,ease-in-out; -moz-transition: left,.35s,ease-in-out; -o-transition: left,.35s,ease-in-out; transition: left,.35s,ease-in-out; }
 
-.overlay-show #overlay-open { display: none; }
 .overlay-show .inner-offcanvas-wrap { left: 0; }
 
 #offcanvas-wrap { padding-top: 20px; }

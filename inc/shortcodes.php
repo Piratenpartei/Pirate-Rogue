@@ -244,7 +244,7 @@ function pirate_rogue_shortcode_section_featured_3to1( $atts, $content = null ) 
 
     $cat = ($cat) ? $cat : '';
     $tag = ($tag) ? $tag : '';
-    $title = ($title) ? $title : '';
+    $title = esc_attr($title);
     $id = ($id) ? $id : '';
     $num = ($num) ? intval($num) : 5;
     
@@ -272,7 +272,7 @@ function pirate_rogue_shortcode_section_featured_1to3( $atts, $content = null ) 
 
     $cat = ($cat) ? $cat : '';
     $tag = ($tag) ? $tag : '';
-    $title = ($title) ? $title : '';
+    $title = esc_attr($title);
     $id = ($id) ? $id : '';
     $num = ($num) ? intval($num) : 9;
     
@@ -300,7 +300,7 @@ function pirate_rogue_shortcode_section_twocolumn( $atts, $content = null ) {
 
     $cat = ($cat) ? $cat : '';
     $tag = ($tag) ? $tag : '';
-    $title = ($title) ? $title : '';
+    $title = esc_attr($title);
     $num = ($num) ? intval($num) : 4;
     
     $out = pirate_rogue_section_twocolumn($tag, $cat, $title, $num, 'shortcode-section');

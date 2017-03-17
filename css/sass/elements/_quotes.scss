@@ -45,6 +45,7 @@
 
 @media screen and (min-width: 48em) {
     .entry-content blockquote {
+        padding: 40px;
 	p {
 	    @include px2rem($font-size-blockquote-sm);  	    
 	} 

@@ -2790,7 +2790,6 @@ li > ul, li > ol { margin-bottom: 0; margin-left: 0; }
 /*-----------------------------------------------------------------------------------*/
 /*  Blockquotes and cites
 /*-----------------------------------------------------------------------------------*/
-.entry-content blockquote { padding: 40px; }
 .entry-content blockquote p { position: relative; font-weight: 600; font-size: 18px; line-height: 25.2px; font-size: 1.125rem; line-height: 1.575rem; }
 .entry-content blockquote cite { display: block; padding-top: 10px; padding-right: 30px; font-style: normal; text-align: right; font-size: 15px; line-height: 21px; font-size: 0.9375rem; line-height: 1.3125rem; }
 
@@ -2801,7 +2800,8 @@ li > ul, li > ol { margin-bottom: 0; margin-left: 0; }
 
 #comments blockquote cite { display: block; padding-top: 10px; font-style: normal; font-size: 16px; line-height: 22.4px; font-size: 1rem; line-height: 1.4rem; }
 
-@media screen and (min-width: 48em) { .entry-content blockquote p { font-size: 24px; line-height: 33.6px; font-size: 1.5rem; line-height: 2.1rem; }
+@media screen and (min-width: 48em) { .entry-content blockquote { padding: 40px; background-color: #a53ace; }
+  .entry-content blockquote p { font-size: 24px; line-height: 33.6px; font-size: 1.5rem; line-height: 2.1rem; }
   .entry-content blockquote cite { font-size: 19px; line-height: 26.6px; font-size: 1.1875rem; line-height: 1.6625rem; } }
 /*-----------------------------------------------------------------------------------*/
 /* General Classes

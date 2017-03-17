@@ -2154,6 +2154,7 @@ article header { margin-bottom: 20px; }
 /* --- Overlay Widget Area --- */
 .inner-offcanvas-wrap { width: 100%; display: block; position: fixed; left: -100%; top: 0; height: 100%; overflow: auto; z-index: 1000; background: #fff; -webkit-transition: left,.35s,ease-in-out; -moz-transition: left,.35s,ease-in-out; -o-transition: left,.35s,ease-in-out; transition: left,.35s,ease-in-out; }
 
+.overlay-show #overlay-open { display: none; }
 .overlay-show .inner-offcanvas-wrap { left: 0; }
 
 #offcanvas-wrap { padding-top: 20px; }
@@ -3230,7 +3231,6 @@ ol.commentlist ul.children li.comment:last-of-type .comment-wrap { padding-botto
   .slider-on .featured-slider .entry-thumbnail a { max-height: 700px; overflow: hidden; } }
 @media screen and (min-width: 66.25em) { .blog.slider-on #masthead { margin-bottom: 0; border-bottom: none; }
   .slider-on.slider-boxed #masthead { border-bottom: 1px solid #ddd !important; }
-  .admin-bar.slider-on.overlay-show #masthead { padding-top: 32px; }
   .featured-slider .entry-header { padding-left: 0; padding-right: 0; }
   .featured-slider .entry-header h2.entry-title { font-size: 48px; font-size: 3rem; padding-top: 10px; }
   .featured-slider .format-video .entry-thumbnail a:before { left: 6.25%; top: 40px; }

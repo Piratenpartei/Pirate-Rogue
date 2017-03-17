@@ -113,8 +113,13 @@
   transition: left,.35s,ease-in-out;
 }
 
-.overlay-show .inner-offcanvas-wrap {
-  left: 0;
+.overlay-show  {
+    #overlay-open {
+	display: none; 
+    }
+    .inner-offcanvas-wrap {
+	left: 0;
+    }
 }
 
 #offcanvas-wrap {

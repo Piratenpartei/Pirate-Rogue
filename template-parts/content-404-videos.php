@@ -11,7 +11,7 @@ $videolist = array(
     1 => array(
         'title' => '<span lang="de">Was ist denn bitte die Piratenpartei?</span>',
         'link' => 'https://www.youtube-nocookie.com/embed/Zzs_9suYC28?list=RDZzs_9suYC28',
-        'desc' => '<p lang="de">Mix: Wofür steht dieser Haufen, der sich Piratenpartei nennt?</p>',
+        'desc' => '<p lang="de"><br>Mix: Wofür steht dieser Haufen, der sich Piratenpartei nennt?</p>',
     ),
     2 => array(
         'title' => '<span lang="de">Alle, die mit uns den Bundestag entern</span>',
@@ -21,7 +21,7 @@ $videolist = array(
     3 => array(
         'title' => '<span lang="en">What shall we do with a drunken sailor?</span>',
         'link' => 'https://www.youtube-nocookie.com/embed/qGyPuey-1Jw',
-        'desc' => '<div lang="en"><p>
+        'desc' => '<div lang="en"><p><br>
             What shall we do with a drunken sailor,<br>
             What shall we do with a drunken sailor,<br>
             What shall we do with a drunken sailor,<br>

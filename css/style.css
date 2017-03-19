@@ -2370,7 +2370,8 @@ a.rsswidget { font-weight: 600; }
 #footer-social span { display: none; }
 #footer-social ul li { display: inline-block; }
 
-@media screen and (min-width: 66.25em) { .footer-feature-textwrap p.text-big { font-size: 2rem; } }
+@media screen and (min-width: 66.25em) { .footer-feature-textwrap p.text-big { font-size: 1.4rem; }
+  .footer-feature-textwrap p.text-small { font-size: .8rem; line-height: 1rem; } }
 /*-----------------------------------------------------------------------------------*/
 /*	16.0 Shortcodes
 /*-----------------------------------------------------------------------------------*/
@@ -3131,6 +3132,7 @@ ol.commentlist ul.children li.comment:last-of-type .comment-wrap { padding-botto
 #comments p.comment-awaiting-moderation { display: inline-block; }
 #comments ol li.pingback p { margin: 0; }
 #comments .disclaimer { margin-bottom: 10px; }
+#comments .disclaimer a { color: #672082; }
 
 .comment-edit:before { content: ','; display: inline; }
 

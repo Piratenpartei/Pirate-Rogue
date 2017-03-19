@@ -1,12 +1,10 @@
 <?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * The template for displaying 404 error with fun videos
  */
+?>
 
-
+<?php
 $videolist = array(
     1 => array(
         'title' => '<span lang="de">Was ist denn bitte die Piratenpartei?</span>',

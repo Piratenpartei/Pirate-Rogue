@@ -1,0 +1,20 @@
+/*-----------------------------------------------------------------------------------*/
+/* Divider
+/*-----------------------------------------------------------------------------------*/
+hr {
+        @media screen and (min-width: 550px) {
+            display:block;
+            border:0px;
+            height:56px;
+            margin: 10px 0;
+            color: $color-hr;
+            background-image: url("../img/trenner-04-50.png");
+            @if $color-hr == $color-main {
+                background-image: url("../img/trenner-01-50.png");
+            }
+
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+}

@@ -1,0 +1,201 @@
+/*-----------------------------------------------------------------------------------*/
+/* Buttons
+/*-----------------------------------------------------------------------------------*/
+
+
+.box {
+  margin: 0 0 30px;
+  padding: 20px;
+  overflow: hidden;
+  line-height: 1.4;
+  
+  a {
+      font-weight: bold;
+  }
+}
+
+.site-content .box p {
+  margin: 0 0 30px;
+}
+
+.white-box {
+  border: 3px solid #fff;
+   &.invertbox {
+    background: darken( #fff, 10%);
+  }
+}
+
+.blue-box {
+  border: 3px solid #0066ff;
+  
+  &.invertbox {
+    background: lighten( #0066ff, 10%);
+  }
+}
+
+.yellow-box {
+  border: 3px solid #e7b547;
+   &.invertbox {
+    background: lighten( #e7b547, 10%);
+  }
+}
+
+.red-box {
+  border: 3px solid #d7464d;
+   &.invertbox {
+    background: lighten( #d7464d, 10%);
+  }
+}
+
+.green-box {
+  border: 3px solid #85c066;
+  &.invertbox {
+    background: lighten( #85c066, 10%);
+  }
+}
+
+.lightgrey-box {
+  border: 3px solid #ececed;
+   &.invertbox {
+    background: lighten( #ececed, 10%);
+  }
+}
+
+.grey-box {
+  border: 3px solid #a9a9a9;
+    &.invertbox {
+    background: lighten( #a9a9a9, 10%);
+  }
+}
+
+.dark-box {
+  border: 3px solid #222;
+   &.invertbox {
+    background: lighten( #222, 10%);
+    color: #fff;
+  
+  }
+}
+
+.maincolor-box {
+  border: 3px solid $color-main;
+  a {
+      color: $color-main;
+  }
+  &.invertbox {
+        background: lighten( $color-main, 10%);
+        a {
+            color: $color-text;
+        }
+  }
+}
+
+.secondcolor-box {
+  border: 3px solid $color-second;
+  
+  a {
+      color: $color-second;
+  }
+   &.invertbox {
+        background: lighten( $color-second, 10%);
+        color: #fff;
+  }
+}
+/* --- Buttons --- */
+
+a.standard-btn {
+  display: inline-block;
+  margin: 0 0 30px;
+  padding: 10px 18px;
+  overflow: hidden;
+  cursor: pointer;
+  background: $color-text;
+  color: #fff;
+  font-size: 16px;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: normal;
+  text-decoration: none !important;
+  -webkit-transition: 0.2s background ease;
+  -moz-transition: 0.2s background ease;
+  -o-transition: 0.2s background ease;
+  -ms-transition: 0.2s background ease;
+  transition: 0.2s background ease;
+}
+
+.post .entry-content a.standard-btn, 
+.page .entry-content a.standard-btn, 
+.post .entry-content a.standard-btn:hover,
+.page .entry-content a.standard-btn:hover {
+  color: #fff;
+  border: none;
+}
+
+a.standard-btn {
+  &.xsmall-btn {
+    padding: 5px 10px 3px;
+    font-size: 14px;
+    font-size: 0.875rem;
+  }
+  &.small-btn {
+    padding: 7px 12px 5px;
+    font-size: 18px;
+    font-size: 1.125rem;
+  }
+  &.large-btn {
+    padding: 14px 20px 13px;
+    font-size: 23px;
+    font-size: 1.4375rem;
+  }
+  &.xlarge-btn {
+    padding: 18px 30px 17px;
+    font-size: 25px;
+    font-size: 1.5625rem;
+  }
+  &.red-btn {
+    background: #d7464d;
+  }
+  &.green-btn {
+    background: #85c066;
+  }
+  &.blue-btn {
+    background: #0066ff;
+  }
+  &.yellow-btn {
+    background: #e7b547;
+  }
+  &.grey-btn {
+    background: #a9a9a9;
+  }
+  &.black-btn {
+    background: #000;
+  }
+  &.maincolor-btn {
+    background: $color-main;
+  }
+  &.secondcolor-btn {
+    background: $color-second;
+  }
+}
+
+
+.footer-feature-btn {
+    display: inline-block;
+    margin: 20px 0 0 0;
+    padding: 18px 30px;
+    background: none;
+    border: 2px solid $color-main;
+    background: $color-main;
+    color:  $color-page-background;
+
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    outline: none;
+    font-weight: 500;
+
+    &:focus,
+    &:hover {
+	  border-color: $color-second;
+	  background: $color-second;  
+    }
+}

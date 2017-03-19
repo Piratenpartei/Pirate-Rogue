@@ -1,0 +1,128 @@
+/*
+  Molecular and organism structures
+*/
+
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: $font-family-base;
+  display: block;
+  color: #1a1a1a;
+  background: #ffffff;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.35;
+  
+  &.overlay-show {
+    overflow: hidden;
+  }
+  // padding-top: 51px;
+  // if main nav is fixed-positioned */
+  &.blog {
+    &.slider-on.slider-fullscreen, 
+    &.headerimg-on.header-fullscreen {
+      padding-top: 0;
+    }
+  }
+}
+
+html.overlay-show {
+  overflow: hidden;
+}
+
+
+
+
+#site-branding, 
+.blog-wrap, 
+.singlepost-wrap, 
+.recommended-posts-wrap, 
+#colophon {
+  padding-left: 5.3125%;
+  /* 17px at 320px */
+  padding-right: 5.3125%;
+  /* 17px at 320px */
+}
+
+.mobile-search {
+  padding-left: 5.3125%;
+  /* 17px at 320px */
+  padding-right: 5.3125%;
+  /* 17px at 320px */
+}
+
+#overlay-nav ul {
+  li a, ul li a {
+    padding-left: 5.3125%;
+    /* 17px at 320px */
+    padding-right: 5.3125%;
+    /* 17px at 320px */
+  }
+}
+
+#mobile-social,
+#sidebar-offcanvas .widget, 
+.front-section {
+  padding-left: 5.3125%;
+  /* 17px at 320px */
+  padding-right: 5.3125%;
+  /* 17px at 320px */
+}
+
+#offcanvas-widgets-open, 
+.headerimg-on.header-boxed .header-image {
+  margin-left: 5.3125%;
+  /* 17px at 320px */
+  margin-right: 5.3125%;
+  /* 17px at 320px */
+}
+
+
+#front-section-four .entry-thumbnail a {
+  width: 130%;
+}
+
+.featured-content, 
+#front-section-four .type-post {
+  width: 100%;
+  overflow: hidden;
+}
+
+.front-section:first-of-type, 
+.page .content-wrap, 
+.search-results .blog-wrap, 
+.archive .blog-wrap, 
+.error404 .content-wrap {
+  padding-top: 35px;
+}
+
+.headerimg-on .front-section:first-of-type {
+  padding-top: 0;
+}
+
+
+.front_section_twocolumn_excerpt {
+    #front-section-twocolumn .entry-summary {display: block;}
+}
+.front_section_threecolumn_excerpt {
+    #front-section-threecolumn .entry-summary {display: block;}
+}
+.front_section_fourcolumn_excerpt {
+    #front-section-fourcolumn .entry-summary {display: block;}
+}
+.front_section_sixcolumn_excerpt {
+    #front-section-sixcolumn .entry-summary {display: block;}
+}
+.front_hidedate {
+    .blog .entry-date {display: none !important;}
+}
+.front_hidecomments {
+    .blog .entry-comments {display: none !important;}
+}
+.front_hidecats {
+    .blog .entry-cats {display: none !important;}
+}

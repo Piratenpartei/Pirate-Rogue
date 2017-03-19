@@ -1,0 +1,274 @@
+/* 
+*    Ueberschriften
+*/
+
+
+h1, h2, h3, h4, h5, h6 {
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    font-familiy: $font-family-headlines;
+}
+
+.entry-content {
+    h1 {
+	padding: 6px 0 9px;
+	@include px2rem($font-size-h1);
+    }
+    h2 {
+	@include px2rem($font-size-h2);
+	padding: 6px 0 9px;
+    }
+    h3 {
+	@include px2rem($font-size-h3);
+	padding: 5px 0 8px;
+    }
+    h4 {
+	@include px2rem($font-size-h4);
+	padding: 5px 0 8px;
+    }
+    h5 {
+	@include px2rem($font-size-h5);
+	padding: 3px 0;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+    }
+    h6 {
+	@include px2rem($font-size-h6);
+	padding: 3px 0;
+    }
+}
+
+h1, h2, h3, h4, h5, h6, 
+#overlay-nav ul li a, 
+#desktop-navigation ul li a, 
+.authorbox h3.author-title, 
+#comments h3.comments-title, 
+.page-links {
+    font-weight: 600;
+}
+
+h1.site-title {
+    font-weight: bold;
+    padding-right: 55px;
+    @include px2rem($font-size-h1-sitetitle);
+}
+
+
+
+
+h1 {
+    .single-post .entry-header &.entry-title,
+    .entry-header &.entry-title,
+    .page &.entry-title,
+    article &,
+    .archive-header &.archive-title,
+    .entry-content & {
+        border-bottom: 7px;
+        border-color: $color-main;
+        border-style:  solid;
+        text-transform: uppercase;
+        margin-bottom: 50px;
+        display: table-cell;
+        padding-bottom: 1px;
+  
+        & + * {
+          margin-top: 20px;  
+        }
+    }
+    .single-post .entry-header &::after.entry-title,
+    .entry-header &::after.entry-title,
+    .page &::after.entry-title,
+    .archive-header &::after.archive-title
+    article &::after,
+    .entry-content &::after {
+        content: " ";
+        display: table-cell;
+        width: 100%;
+    }
+}
+
+
+#secondary h2.widget-title, 
+#sidebar-page h2.widget-title {
+    @include px2rem($font-size-h2-widget);
+    color: $color-text;
+    text-decoration: none;
+}
+
+.entry-header {
+    h2.entry-title {
+      @include px2rem($font-size-h2-entryheader);
+      color: $color-text;
+      text-decoration: none;
+      a {
+	  color: $color-text;
+	  text-decoration: none;
+      }
+    }
+}
+
+
+
+.widget_mc4wp_form_widget h2.widget-title, 
+.jetpack_subscription_widget h2.widget-title {
+   @include px2rem($font-size-headersmall);
+}
+
+.featured-slider .entry-header h2.entry-title a {
+  color: #fff !important;
+}
+
+h3 {
+    &#reply-title {
+	margin: 0 0 10px 0;
+	padding: 0;
+	display: block;
+	line-height: 1;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+    }
+}
+
+.footer-menu h3.footer-menu-title {
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+.footer-menu h3.footer-menu-title, 
+.authorbox h3.author-title {
+    @include px2rem($font-size-headersmall);
+}
+
+#comments {
+  h3.comments-title, 
+  #respond h3#reply-title {
+    @include px2rem($font-size-headersmall);
+  }
+}
+
+#front-section-three h3.front-section-title {
+    @include px2rem($font-size-entrytitle);  
+}
+
+
+
+.single-post .entry-header h1.entry-title,
+.blog-wrap h3.blog-title,
+.archive-header h1.archive-title, 
+.page h1.entry-title, 
+.featured-slider .entry-header h2.entry-title,
+#front-section-four .entry-header h2.entry-title, 
+.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-header h2.entry-title, 
+.section-one-column-one .entry-header h2.entry-title, 
+.section-three-column-one .entry-header h2.entry-title,
+.jetpack_subscription_widget #subscribe-text p, 
+#front-section-three h3.front-section-title, 
+.recommended-posts-wrap #jp-relatedposts h3.jp-relatedposts-headline, 
+#big-footer-feature h3.footer-feature-title {
+    @include px2rem($font-size-entrytitle);
+}
+
+
+@media screen and (min-width: $breakpoint-sm) {
+    .single-post .entry-header h1.entry-title, 
+    .single-attachment .entry-header h1.entry-title, 
+    .page h1.entry-title {
+	@include px2rem($font-size-h1-sitetitle-sm);     
+    }
+
+    .blog-wrap h3.blog-title, 
+    .blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-header h2.entry-title, 
+    .section-one-column-one .entry-header h2.entry-title, 
+    .section-three-column-one .entry-header h2.entry-title,
+    #front-section-four .entry-header h2.entry-title, 
+    .recommended-posts-wrap #jp-relatedposts h3.jp-relatedposts-headline, 
+    .archive-header h1.archive-title, 
+    .entry-content h1 {
+	@include px2rem($font-size-h1-sm);     
+    }
+
+    .entry-content {
+	h2 {
+	    @include px2rem($font-size-h2-sm);     
+	}
+	h3 {
+	    @include px2rem($font-size-h3-sm);     
+	}
+	h4 {
+	    @include px2rem($font-size-h4-sm);     
+	}
+	h5 {
+	    @include px2rem($font-size-h5-sm);     
+	}
+	h6 {
+	    @include px2rem($font-size-h6-sm);     
+	}
+    }
+    .entry-header h2.entry-title {
+	@include px2rem($font-size-h2-entryheader-sm);     
+      
+    }
+    .section-one-column-two .type-post:nth-of-type(n+2) .entry-header h2.entry-title, 
+    .section-two-column-two .type-post .entry-header h2.entry-title, 
+    .section-three-column-two .type-post .entry-header h2.entry-title, 
+    #front-section-fourcolumn .type-post .entry-header h2.entry-title, 
+    .section-sixcolumn-postwrap .type-post .entry-header h2.entry-title {
+	@include px2rem($font-size-h2-entryheader);     
+    }
+
+    .page div.sharedaddy h3.sd-title, 
+    .null-instagram-feed .clear {
+	@include px2rem($font-size-headersmall);
+    }
+
+    .page h1.entry-title {
+	margin-bottom: 45px;
+    }
+}
+
+@media screen and (min-width: $breakpoint-1024) {
+    .entry-header h2.entry-title {
+	@include px2rem($font-size-h2-entryheader-1024);
+    }
+    #front-section-twocolumn .entry-header h2.entry-title  {
+	@include px2rem($font-size-h2-entryheader-1024);
+	// vorher 32 statt 28 
+    }
+}
+
+@media screen and (min-width: $breakpoint-1060) {
+    h1.site-title {
+	    @include px2rem( $font-size-h1-sitetitle-1060);	   
+	    text-align: center;
+	    padding-right: 0;
+    }
+    .blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-header h2.entry-title, 
+    .section-one-column-one .entry-header h2.entry-title, 
+    .section-three-column-one .entry-header h2.entry-title,
+    #front-section-four .entry-header h2.entry-title {
+	    @include px2rem( $font-size-h2-entryheader-1060);	   
+	    
+    }
+    #front-section-fourcolumn .type-post .entry-header h2.entry-title, 
+    .recommended-posts-wrap #jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
+	    @include px2rem( $font-size-h2-entryheader-1060-small);	   
+	    
+    }
+    #front-section-four {
+	entry-header h2.entry-title {
+	    padding-top: 10px;
+	}
+    }
+}
+
+@media screen and (min-width: $breakpoint-lg) {
+    .single-post .entry-header h1.entry-title,
+    #front-section-four .entry-header h2.entry-title {
+	@include px2rem($font-size-h2-entryheader-lg);	   
+    }  
+}

@@ -1,0 +1,83 @@
+/*-----------------------------------------------------------------------------------*/
+/*  Pagination + Infinite Scroll
+/*-----------------------------------------------------------------------------------*/
+
+.pagination {
+  position: relative;
+  clear: both;
+  padding: 18px 20px;
+  border: 2px solid #2b2b2b;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #2b2b2b;
+  a {
+    color: #2b2b2b;
+  }
+  .nav-links {
+    a {
+      &.next.page-numbers:hover, &.prev.page-numbers:hover {
+        text-decoration: none;
+      }
+    }
+    text-align: center;
+  }
+}
+
+.single-post {
+  .navigation {
+    clear: both;
+    text-align: center;
+  }
+  .post-navigation {
+    overflow: hidden;
+    clear: both;
+    padding-top: 60px;
+  }
+}
+
+.single-attachment .post-navigation {
+  overflow: hidden;
+  clear: both;
+  padding-top: 60px;
+}
+
+.single-post .post-navigation .nav-previous, .pagination .prev, .single-attachment .nav-previous {
+  float: left;
+}
+
+.single-post .post-navigation .nav-next, .pagination .next, .single-attachment .nav-next {
+  float: right;
+}
+
+.single-post .post-navigation a, .single-attachment .post-navigation a {
+  position: relative;
+  display: block;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.15;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-bottom: 2px solid #2b2b2b;
+}
+
+.single-post .post-navigation {
+  .nav-previous a {
+    text-align: left;
+  }
+  .nav-next a {
+    text-align: right;
+  }
+}
+
+#nav-comments {
+  padding: 10px 0;
+  clear: both;
+  overflow: hidden;
+  .nav-previous {
+    float: right;
+  }
+}

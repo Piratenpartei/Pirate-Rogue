@@ -1,0 +1,15 @@
+/*
+* Thumbnails
+*/
+
+.entry-thumbnail a {
+    max-height: 400px;
+    overflow: hidden;
+}
+    
+@media screen and (min-width: $breakpoint-lg) {
+    .entry-thumbnail a {
+	max-height: 500px;
+	overflow: hidden;
+    }
+}

@@ -1,0 +1,45 @@
+/*
+* Active Fonts in Theme
+*/
+
+@import "font-roboto";
+@import "font-dejaweb";
+@import "font-awesome/font-awesome";
+
+
+/* --- Serif Styles --- */
+p.site-title,
+.entry-summary,
+.widget,
+.title-footer,
+.entry-header p.intro,
+.entry-content,
+.entry-content p,
+.entry-content table,
+.entry-content dl,
+.entry-content ul,
+.entry-content ol,
+p.section-about-text,
+p.text-big,
+p.text-small {
+	font-family: $font-family-base;
+}
+.entry-content blockquote p,
+.entry-content p span.uppercase,
+.section-about-column-two  .social-nav ul li a,
+.section-about-column-one p cite,
+.widget_mc4wp_form_widget input[type="email"],
+.widget_mc4wp_form_widget input[type="submit"],
+.jetpack_subscription_widget #subscribe-email input[type="email"],
+.jetpack_subscription_widget #subscribe-submit input[type="submit"],
+.contact-form input[type="submit"],
+input,
+textarea,
+.site-content div.wpcf7 input,
+.site-content div.wpcf7 textarea,
+.site-content div.wpcf7 p,
+a.standard-btn,
+.big-instagram-wrap .clear,
+.single-product .entry-summary h1 {
+	font-family: $font-family-base;
+}

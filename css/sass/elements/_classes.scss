@@ -1,0 +1,97 @@
+/*-----------------------------------------------------------------------------------*/
+/* General Classes
+/*-----------------------------------------------------------------------------------*/
+
+.wp-smiley {
+  border: 0;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
+}
+
+
+
+
+.entry-content p {
+  &.pull-left, 
+  &.pull-right {
+    margin-bottom: 15px;
+    font-weight: 600;
+    line-height: 1.4 !important;
+  }
+}
+
+span.dropcap {
+  float: left;
+  padding: 3px 4px 0 0;
+  font-size: 64px;
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 0.78;
+}
+
+.uppercase {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.wide-content {
+  margin-bottom: 30px;
+}
+
+/* --- Alignment --- */
+
+.justify {
+  text-align: justify;
+}
+
+.alignleft, 
+.alignright {
+  display: block;
+}
+
+.alignleft {
+  margin-right: 35px;
+  float: left;
+}
+
+.alignright {
+  margin-left: 35px;
+  float: right;
+}
+
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  clear: both;
+}
+
+
+.unsichtbar {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+.unsichtbar:focus {
+  position: relative;
+  left: 0;
+  width: auto;
+  height: auto;
+  overflow: auto;
+}
+
+.screen-reader-text {
+    @extend .unsichtbar;
+}
+
+.hide-desktop {
+	display: none;
+}
+.hidden {
+	display: none;
+}

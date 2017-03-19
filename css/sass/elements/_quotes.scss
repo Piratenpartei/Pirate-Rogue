@@ -1,0 +1,63 @@
+/*-----------------------------------------------------------------------------------*/
+/*  Blockquotes and cites
+/*-----------------------------------------------------------------------------------*/
+.entry-content {
+    blockquote {
+        padding: 40px;
+        background-color: lighten($color-second,60%);
+        p {
+            position: relative;
+            font-weight: 600;
+            @include px2rem($font-size-blockquote);  	
+        }
+        cite {
+            display: block;
+            padding-top: 10px;
+            padding-right: 30px;
+            font-style: normal;
+            text-align: right;
+            @include px2rem($font-size-blockquote-cite);
+        }
+    }
+}
+
+
+
+.single-post {
+  #comments blockquote p {
+    position: relative;
+    font-weight: 600;
+  }
+  .entry-content blockquote {
+    padding: 40px;
+    background-color: #fff;
+    margin: 0 0 30px;
+  }
+}
+
+.page .entry-content blockquote {
+    padding: 40px;
+    background-color: lighten($color-second,60%);
+    margin: 0 0 30px;
+}
+
+
+#comments blockquote cite {
+    display: block;
+    padding-top: 10px;
+    font-style: normal;
+     @include px2rem($font-size-base);  	   
+}
+
+@media screen and (min-width: 48em) {
+    .entry-content blockquote {
+        padding: 40px;
+        background-color: lighten($color-second,60%);
+	p {
+	    @include px2rem($font-size-blockquote-sm);  	    
+	} 
+	cite {
+	    @include px2rem($font-size-blockquote-cite-sm);  	  
+	}
+    } 
+}

@@ -1,0 +1,383 @@
+
+/* --- Jetpack Subscription Widget --- */
+
+.jetpack_subscription_widget {
+  clear: both;
+  overflow: hidden;
+  margin-bottom: 34px;
+  #subscribe-text p {
+    margin-bottom: 23px;
+    display: block;
+    margin-bottom: 0;
+  }
+  p {
+    &#subscribe-email, &#subscribe-submit {
+      width: 100%;
+      display: block;
+      margin-bottom: 0;
+    }
+    &#subscribe-email input {
+      width: 100%;
+    }
+  }
+  input[type="submit"] {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    border-left: none;
+  }
+  label#jetpack-subscribe-label {
+    display: none;
+  }
+}
+
+.widget-grofile ul.grofile-accounts {
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.comment-subscription-form .subscribe-label {
+  display: inline !important;
+  float: none !important;
+  font-weight: normal;
+}
+
+p.comment-subscription-form {
+  clear: both;
+  overflow: hidden;
+  margin-top: 2px !important;
+  margin-bottom: 2px !important;
+  font-weight: normal;
+  &:last-child {
+    padding-top: 0;
+    margin-bottom: 0 !important;
+  }
+}
+
+.widget_twitter_timeline iframe {
+  display: block;
+}
+
+.widget_jetpack_display_posts_widget img {
+  margin: 0 0 15px;
+}
+
+.widget_contact_info {
+  .contact-info-map-canvas {
+    height: 400px;
+  }
+  .confit-address {
+    margin: 30px 0 0 0;
+  }
+}
+
+.contact-form {
+  padding: 0 0 30px;
+  div {
+    overflow: hidden;
+    margin-top: 10px;
+  }
+  label {
+    margin-left: 0;
+    margin-bottom: 3px !important;
+    font-weight: 600 !important;
+    span {
+      margin-left: 3 !important;
+      padding-top: 0;
+      font-weight: normal;
+    }
+  }
+  input, textarea {
+    margin-bottom: 8px;
+  }
+}
+
+.page .contact-form {
+  input {
+    &[type='text'], &[type='email'] {
+      display: block;
+      width: 99%;
+      max-width: 99%;
+    }
+  }
+  textarea {
+    display: block;
+    width: 99%;
+    max-width: 99%;
+  }
+}
+
+.contact-form {
+  input {
+    &[type='text'], &[type='email'] {
+      margin-bottom: 4px !important;
+    }
+  }
+  p.contact-submit {
+    clear: both;
+    float: none;
+    overflow: hidden;
+    margin-top: 5px;
+  }
+  input[type='submit'] {
+    width: 99%;
+    font-weight: 600;
+  }
+}
+
+/* --- Infinite Scroll --- */
+
+.infinite-scroll .pagination {
+  display: none;
+}
+
+.infinity-end.neverending #colophon {
+  display: block;
+}
+
+#primary {
+  #infinite-footer .container {
+    display: none;
+  }
+  #infinite-handle {
+    display: block;
+    overflow: hidden;
+    clear: both;
+    float: none;
+    margin: 0;
+    text-align: center;
+    span {
+      background: none;
+      border: 2px solid #2b2b2b;
+      border-radius: 0;
+      color: #2b2b2b !important;
+      cursor: pointer;
+      display: block;
+      width: 100%;
+      padding: 18px;
+      &:hover {
+        padding: 18px;
+      }
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 15px;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      width: 100%;
+      display: block;
+      button {
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-size: 15px;
+        font-size: 0.9375rem;
+        font-weight: 600;
+        width: 100%;
+        display: block;
+      }
+    }
+  }
+  .infinite-loader {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    .spinner {
+      left: 50% !important;
+    }
+  }
+  #infinite-handle span button {
+    outline: none;
+  }
+}
+
+/* --- Jetpack Share Icons --- */
+
+.disable-share .sharedaddy {
+  display: none !important;
+}
+
+.single-post div.sharedaddy h3.sd-title {
+  margin: 0;
+}
+
+.entry-content {
+  .sd-content ul {
+    margin: 0 !important;
+  }
+  .sharedaddy ul li:before {
+    display: none;
+  }
+}
+
+div.sharedaddy h3.sd-title:before {
+  display: none !important;
+}
+
+.single-post .sd-social-icon .sd-content ul li[class*='share-'], .page .sd-social-icon .sd-content ul li[class*='share-'] {
+  a {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    margin: 0;
+    padding: 16px;
+    &:hover {
+      border-radius: 0;
+      -webkit-border-radius: 0;
+      margin: 0;
+      padding: 16px;
+    }
+  }
+  div.option a {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    margin: 0;
+    padding: 16px;
+  }
+}
+
+.single-post .sd-social-icon .sd-content ul li[class*='share-'] a.sd-button, .page .sd-social-icon .sd-content ul li[class*='share-'] a.sd-button {
+  margin-top: 0;
+}
+
+div.sharedaddy h3.sd-title {
+  font-weight: 600 !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.single-post .sd-content ul li a.sd-button:before, .page .sd-content ul li a.sd-button:before {
+  font-size: 19px !important;
+  vertical-align: top;
+}
+
+.single-post .sd-social-icon .sd-content ul li a.sd-button:hover, .page .sd-social-icon .sd-content ul li a.sd-button:hover {
+  color: #fff;
+  opacity: 0.7;
+}
+
+.single-post .sd-social-icon .sd-content ul li a.share-email:hover, .page .sd-social-icon .sd-content ul li a.share-email:hover {
+  color: #555 !important;
+  opacity: 0.7;
+}
+
+.single-post #sharing_email, .page #sharing_email {
+  z-index: 10000001;
+}
+
+/* --- Jetpack Related Posts --- */
+
+#jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post {
+  .jp-relatedposts-post-context, .jp-relatedposts-post-date {
+    display: none;
+  }
+}
+
+.recommended-posts-wrap #jp-relatedposts {
+  width: 100%;
+  display: none;
+  padding-top: 0;
+  margin: 0;
+  position: relative;
+  clear: both;
+}
+
+#jp-relatedposts h3.jp-relatedposts-headline em:before {
+  display: none !important;
+}
+
+.recommended-posts-wrap #jp-relatedposts {
+  h3.jp-relatedposts-headline {
+    margin: 0;
+    padding: 3px 140px 20px 0;
+    display: block;
+    float: none;
+    font-weight: 600;
+    font-family: inherit;
+    position: relative;
+    border-top: 4px solid #1a1a1a;
+  }
+  .jp-relatedposts-items-visual .jp-relatedposts-post {
+    padding-right: 0;
+    filter: alpha(opacity = 100);
+    -moz-opacity: 1;
+    opacity: 1;
+    width: 46.1%;
+    margin: 0;
+    padding: 20px 0 35px;
+    border-top: 1px solid #1a1a1a;
+    &:nth-of-type(odd) {
+      float: left;
+      margin-right: 2.1865889212828%;
+      clear: left;
+    }
+    &:nth-of-type(even) {
+      float: left;
+      margin-left: 2.1865889212828%;
+      clear: right;
+    }
+  }
+  .jp-relatedposts-items .jp-relatedposts-post:hover .jp-relatedposts-post-title a {
+    text-decoration: none;
+  }
+  .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.1;
+    margin: 0;
+    padding: 8px 0 0 0;
+  }
+  .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a {
+    font-weight: 600;
+  }
+}
+
+#jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post img.jp-relatedposts-post-img {
+  width: 100%;
+}
+
+/* --- Mailchimp for WP Widget --- */
+
+.widget_mc4wp_form_widget, .jetpack_subscription_widget {
+  padding: 25px 30px 30px;
+  background: #f4f4f4;
+  border: 1px solid #1a1a1a;
+  clear: both;
+  overflow: hidden;
+}
+
+#secondary .widget_mc4wp_form_widget:last-of-type, #sidebar-page .widget_mc4wp_form_widget:last-of-type, #secondary .jetpack_subscription_widget:last-of-type, #sidebar-page .jetpack_subscription_widget:last-of-type {
+  padding-bottom: 30px;
+}
+
+.widget_mc4wp_form_widget h2.widget-title, .jetpack_subscription_widget h2.widget-title {
+  padding: 0 0 15px;
+  border-top: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.widget_mc4wp_form_widget p, .jetpack_subscription_widget #subscribe-text p {
+  line-height: 1.4;
+  margin-bottom: 25px;
+}
+
+.widget_mc4wp_form_widget input[type="email"], .jetpack_subscription_widget #subscribe-email input[type="email"] {
+  width: 100%;
+  padding: 17px 4%;
+  margin-bottom: 10px;
+}
+
+.widget_mc4wp_form_widget input[type="submit"], .jetpack_subscription_widget #subscribe-submit input[type="submit"] {
+  padding: 19px 4%;
+  color: #fff;
+  border: none !important;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.52;
+  width: 100%;
+}
+
+.widget_mc4wp_form_widget input[type="submit"]:hover, .jetpack_subscription_widget #subscribe-submit input[type="submit"]:hover {
+  border: none !important;
+}
+

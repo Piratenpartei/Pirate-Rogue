@@ -1,0 +1,440 @@
+/*-----------------------------------------------------------------------------------*/
+/*	General Styles
+/*-----------------------------------------------------------------------------------*/
+
+.front-section-title, 
+.social-front-title, 
+p.text-big, .widget_mc4wp_form_widget p, 
+.jetpack_subscription_widget #subscribe-text p, 
+.single-post .entry-content p.intro {
+    @include px2rem($font-size-entrytitle);  
+}
+
+.section-about-column-one p {
+    @include px2rem($font-size-bigtext);  
+}
+
+.entry-content p {
+    &.pull-left, 
+    &.pull-right {
+	  @include px2rem($font-size-bigtext); 
+    }
+    @include px2rem($font-size-base); 
+}
+
+
+.entry-header {
+    p.intro {
+	@include px2rem($font-size-base);
+    }
+}
+
+p.site-title {
+    font-weight: bold;
+    padding-right: 55px;
+    margin: 0;   
+    @include px2rem($font-size-sitetitle);
+}
+
+#overlay-nav ul li a, 
+#desktop-navigation ul li a, 
+.comments-toggle {
+    @include px2rem($font-size-smaller);
+}
+
+
+.section-about-column-one p cite, 
+.footer-feature-btn, 
+.page a.post-edit-link {
+    @include px2rem($font-size-smaller);
+}
+
+.site-content {
+    p.nocomments, 
+    div.wpcf7 p input.wpcf7-submit {
+	@include px2rem($font-size-smaller);
+    }
+}
+
+.entry-summary, 
+.footer-menu ul li, 
+#overlay-nav ul ul li a, 
+#footer-social span {
+   @include px2rem($font-size-small);
+}
+
+.widget_rss ul li {
+  .rssSummary, 
+  cite {
+      @include px2rem($font-size-small);
+  }
+}
+
+.contact-form label span {
+    @include px2rem($font-size-small);
+}
+
+#site-info, 
+.front-section a.all-posts-link, 
+.single-post .entry-tags, 
+.single-post .canonical-link, 
+.null-instagram-feed .clear {
+  font-size: 12px;
+  font-size: 0.75rem;
+}
+
+.entry-meta, 
+.entry-cats {
+  font-size: 11px;
+  font-size: 0.6875rem;
+}
+
+.entry-meta, .entry-cats, 
+#overlay-nav ul li a, 
+#desktop-navigation ul li a, 
+.site-content p.nocomments, 
+.page-links {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* --- Links + Colors --- */
+
+.single-post .entry-header p.intro, 
+.entry-meta, 
+.entry-cats, 
+.entry-summary, 
+.front-section-title, 
+.social-front-title, 
+.widget_mc4wp_form_widget p, 
+.jetpack_subscription_widget #subscribe-text p, 
+.section-about-column-one p {
+  color: $color-text;
+}
+
+
+.entry-meta a, 
+.entry-cats a {
+  color: $color-text;
+  text-decoration: none;
+}
+
+
+
+
+.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-cats a:hover,
+.featured-slider .entry-cats a:hover, .section-one-column-one .entry-cats a:hover, 
+.section-three-column-one .entry-cats a:hover, #front-section-four .entry-cats a:hover, 
+.single-post .entry-cats a:hover, 
+.footer-feature-btn:hover, 
+.comments-show #comments-toggle, 
+#comments-toggle:hover {
+  background: #0c6ca6;
+}
+
+
+#primary #infinite-handle span:hover, 
+#front-section-three a.all-posts-link:hover, 
+#offcanvas-widgets-open:hover,
+.offcanvas-widgets-show #offcanvas-widgets-open {
+  background: #0c6ca6;
+}
+
+.comments-show #comments-toggle,
+#comments-toggle:hover {
+  border: 2px solid #0c6ca6;
+  color: #fff;
+}
+
+
+#primary #infinite-handle span:hover, 
+#front-section-three a.all-posts-link:hover, 
+.footer-feature-btn:hover, 
+#offcanvas-widgets-open:hover, 
+.offcanvas-widgets-show #offcanvas-widgets-open {
+  border: 2px solid #0c6ca6;
+  color: #fff;
+}
+
+
+#comments .comment-reply a, 
+#respond a#cancel-comment-reply-link {
+  color: #999;
+}
+
+#comments #respond p {
+  &.comment-notes a, 
+  &.logged-in-as a {
+    color: #999;
+  }
+}
+
+#nav-comments a {
+  color: #999;
+}
+
+#comments .comment-meta {
+  color: #999;
+  a {
+    color: #999;
+  }
+}
+
+.single-post .entry-tags a, 
+p.wp-caption-text, 
+.contact-form label span, 
+.gallery .gallery-item .gallery-caption {
+  color: #999;
+}
+
+#colophon {
+  .footer-menu ul a {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  #site-info {
+    color: rgba(255, 255, 255, 0.5);
+    a {
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+
+#footer-social span {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#colophon {
+  .footer-menu ul a:hover, #site-info a:hover {
+    color: rgba(255, 255, 255, 1);
+  }
+  a {
+    color: #fff;
+  }
+}
+
+/* ---  White Font Color --- */
+
+.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1), 
+.featured-slider {
+  .entry-header h2.entry-title a {
+    color: #fff;
+  }
+  .entry-meta {
+    color: #fff;
+    a {
+      color: #fff;
+    }
+  }
+  .entry-cats a {
+    color: #fff;
+  }
+}
+
+.section-one-column-one .entry-cats a, 
+.section-three-column-one .entry-cats a {
+  color: #fff;
+}
+
+#front-section-four {
+  .entry-cats a, 
+  .entry-header h2.entry-title a {
+    color: #fff;
+  }
+  .entry-meta {
+    color: #fff;
+    a {
+      color: #fff;
+    }
+  }
+}
+
+.single-post .entry-cats a {
+  color: #fff;
+}
+
+.big-thumb .entry-header {
+  h1.entry-title, p.intro {
+    color: #fff;
+  }
+}
+
+#primary #infinite-handle span:hover button {
+  color: #fff;
+}
+
+.blog {
+  .featured-slider .entry-meta a:hover {
+    color: #fff;
+  }
+  &.headerfont-light {
+    h1.site-title a, 
+    #overlay-open, 
+    #site-branding .site-title a, 
+    #overlay-open, p.site-description {
+      color: #fff;
+    }
+  }
+}
+
+
+/* --- Typography --- */
+
+p {
+  margin-bottom: 30px;
+}
+
+.entry-content p:last-child,
+.team-text p:last-child {
+  margin-bottom: 0;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+dfn, em, i {
+  font-style: italic;
+}
+
+s, strike, del {
+  text-decoration: line-through;
+}
+
+address {
+  margin: 0 0 30px;
+}
+
+pre {
+  max-width: 100%;
+  word-wrap: break-word;
+  margin-bottom: 30px;
+  padding: 15px;
+  overflow: auto;
+  background: #f4f4f4;
+  color: #444;
+}
+
+code, kbd, tt, var, pre {
+    font-family: $font-family-monospace;
+     @include px2rem($font-size-smaller);
+}
+
+abbr, acronym {
+  border-bottom: 1px dotted $color-text;
+  cursor: help;
+}
+
+mark, ins {
+  background: $color-mark-background;
+  text-decoration: none;
+}
+
+sup, sub {
+  position: relative;
+  vertical-align: baseline;
+  height: 0;
+  font-size: 75%;
+  line-height: 0;
+}
+
+sup {
+  bottom: 1ex;
+}
+
+sub {
+  top: .5ex;
+}
+
+small {
+  font-size: 75%;
+}
+
+big {
+  font-size: 125%;
+}
+
+figure {
+  margin: 0;
+}
+
+dt {
+  padding-bottom: 4px;
+  font-weight: bold;
+}
+
+dd {
+  margin: 0 0 30px;
+}
+
+dl {
+  dt {
+    font-weight: bold;
+  }
+  dd {
+    margin: 0 0 30px;
+  }
+}
+
+@media screen and (min-width: 48em) {
+
+  .front-section-title,  
+  .social-front-title  {
+	@include px2rem($font-size-h1-sm);     
+  }  
+  
+  .entry-header p.intro, 
+  .section-about-column-one p, 
+  p.text-big,
+  .single-post .entry-content p.intro {
+	@include px2rem($font-size-entrytitle-sm);  
+  }
+
+  .entry-content p {
+	&.pull-left, 
+	&.pull-right {
+	      @include px2rem($font-size-bigtext-sm); 
+	}
+	@include px2rem($font-size-base-sm); 
+    }
+
+  .entry-content {
+    ol, ul, dl {
+	@include px2rem($font-size-base-sm); 
+    }
+  }
+  .big-thumb .entry-header p.intro, 
+  .section-one-column-one .type-post .entry-summary, 
+  .section-three-column-one .type-post .entry-summary, 
+  p.text-small {
+	@include px2rem($font-size-base-sm); 
+  }
+
+  address {
+      @include px2rem($font-size-base-sm); 
+  }
+  
+  .entry-summary {
+	@include px2rem($font-size-base); 
+  }
+
+  .single-post .hentry .entry-meta, 
+  .single-attachment .hentry .entry-meta, 
+  .shortcode-section a.all-posts-link,
+  .front-section a.all-posts-link {
+	@include px2rem($font-size-smaller); 
+  }
+  .single-post {
+        .canonical-link,  
+        .entry-tags  {
+            @include px2rem($font-size-smaller); 
+        }
+  }
+
+  .null-instagram-feed .clear {
+      @include px2rem($font-size-smaller); 
+  }
+  .section-fourcolumn-postwrap .type-post .entry-summary, 
+  .section-sixcolumn-postwrap .type-post .entry-summary {
+      @include px2rem($font-size-smaller); 
+  }
+}

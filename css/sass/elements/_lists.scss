@@ -1,0 +1,134 @@
+/*-----------------------------------------------------------------------------------*/
+/*  Lists
+/*-----------------------------------------------------------------------------------*/
+
+ul, 
+ol {
+  margin: 0 0 30px 0;
+  padding-left: 40px;
+  list-style-position: inside;
+}
+
+ul {
+    list-style: none;
+    ul {
+        margin: 0;
+    } 
+}
+
+ol {
+    list-style: decimal;
+    ol {
+        margin: 0;
+        list-style: lower-alpha;
+        
+        ol {
+            list-style: lower-roman;
+        }
+    }
+} 
+
+li {
+  & > ul, 
+  & > ol {
+    margin-bottom: 0;
+    margin-left: 0;
+  }
+}
+
+
+.entry-content {
+    ul {
+        padding-left: 50px;
+
+        li {
+            position: relative;
+            padding: 0 0 0 24px;
+            list-style-position: outside;
+            
+            &:before {
+                vertical-align: top;
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: '\2013';
+                padding: 0;
+            }
+        }
+        li
+        ul {
+            padding-left: 50px;
+             
+            li {
+                padding-left: 24px;
+            } 
+        }
+        ol li:before {
+            display: none;
+        }
+        
+        &.nolist {
+            li {
+                @include no-list;
+            }
+            li:before {
+                display: none;
+            }
+        }
+    }
+    ol {
+        padding-left: 70px;
+        li {
+          padding-left: 4px;
+          list-style-position: outside;
+        }
+        ol {
+             padding-left: 50px;
+        }
+        ul {
+            li {
+                padding-left: 24px;
+            }
+        }
+    }
+
+}
+
+.comment-text {
+    ul, 
+    ol {
+        margin: 0 0 15px;
+        padding-left: 20px;
+    }
+    
+    li {
+        position: relative;
+        padding: 0 0 0 24px;
+    }
+    ul li:before {
+        vertical-align: top;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '\2013';
+        padding: 0;
+    }
+    ul li {
+        ul li {
+            padding-left: 24px;
+        }
+        ol li:before {
+          display: none;
+        }
+
+    }
+    ol ul li {
+        padding: 0 0 0 24px;
+    }
+}
+
+#comments {
+  ul ul, ol ol {
+    padding-left: 50px;
+  }
+}

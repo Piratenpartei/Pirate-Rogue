@@ -1,0 +1,187 @@
+/*-----------------------------------------------------------------------------------*/
+/* Forms
+/*-----------------------------------------------------------------------------------*/
+
+.widget_mc4wp_form_widget input[type="submit"], 
+.jetpack_subscription_widget #subscribe-submit input[type="submit"] {
+  background: $color-content-links; // #51a8dd;
+}
+
+.desktop-search input[type="submit"]:hover {
+  background: #0c6ca6;
+}
+
+
+.widget_mc4wp_form_widget input[type="submit"]:hover, 
+.jetpack_subscription_widget #subscribe-submit input[type="submit"]:hover {
+   background: $color-cats-background-hover; 
+}
+
+
+
+.desktop-search input[type="submit"]:hover, 
+.widget_search input[type="submit"]:hover, 
+.post-password-form input[type="submit"]:hover,
+.post-password-form input[type="submit"]:hover .footer-feature-btn:hover {
+  border: 2px solid #0c6ca6;
+  color: #fff;
+  background: #0c6ca6;
+}
+
+
+
+input {
+    padding: 12px 15px;
+    background: #fff;
+    border: 1px solid #ccc;
+    line-height: normal;
+    outline: none;
+    color: $color-text;
+
+
+    &[type="submit"]:hover, 
+    &#submit:hover {
+	background: #0c6ca6;
+	border: 2px solid #0c6ca6;
+	color: #fff;
+    }
+
+    
+    &[type="reset"], 
+    &[type="submit"] {
+	-webkit-appearance: button;
+	cursor: pointer;
+    }
+    &[type="button"], 
+    &[type="submit"], 
+    &#submit {
+	padding: 9px 30px;
+	border: 2px solid $color-main;
+	background-color: $color-main;
+	color: $color-page-background;
+
+	line-height: normal;
+	cursor: pointer;
+	outline: none;
+	-webkit-appearance: none;
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: 3px;
+
+	&:focus, &:hover {
+	    background-color: $color-second;
+	    border-color: $color-second;
+	}
+    }
+}
+
+textarea {
+  padding: 12px 15px;
+  background: #fff;
+  border: 1px solid #ccc;
+  line-height: normal;
+  outline: none;
+  color: $color-text;
+  &:focus, 
+      &:active {
+	border: 1px solid $color-text;
+  }
+}
+
+
+button::-moz-focus-inner, 
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+button, input, optgroup, select, textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+button {
+  overflow: visible;
+  text-transform: none;
+}
+
+select {
+  text-transform: none;
+}
+
+button, 
+html input[type="button"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+
+button[disabled], 
+html input[disabled] {
+  cursor: default;
+}
+
+
+#commentform input#submit {			       
+    border-color: $color-main;
+    background-color: $color-main;
+    color: $color-page-background;
+    
+    &:focus, &:hover {
+	background-color: $color-second;
+	border-color: $color-second;
+    }
+}
+
+
+.post-password-form input[type="password"] {
+  padding: 9px 15px;
+}
+
+.widget_search {
+  .searchform {
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    overflow: hidden;
+  }
+  input.search-field {
+    margin-right: 6px;
+    padding: 12px 2%;
+    float: left;
+    width: 58%;
+  }
+}
+
+.error404 input {
+  &.search-field {
+    padding: 12px 2%;
+  }
+  &[type="submit"] {
+    padding: 10px 30px;
+  }
+}
+
+.widget_search input[type="submit"], 
+.post-password-form input[type="submit"] {
+  padding: 11px 0;
+  font-weight: 600;
+  line-height: 1.65;
+}
+
+.widget_search input[type="submit"] {
+  width: 40%;
+  float: right;
+}
+
+@media screen and (min-width: 48em) {
+
+    input {
+	&[type="button"], 
+	&[type="submit"], 
+	&#submit {
+	    @include px2rem($font-size-smaller); 
+	}
+      }
+}

@@ -1,0 +1,136 @@
+//////////////////////////////////////////////////////////////////////////////
+// Colors
+//////////////////////////////////////////////////////////////////////////////
+$color-main:			#ff8800;
+$color-second:			#672082;
+$color-third:			#698bc1; //
+$color-four:			#148f93;
+
+$color-page-background:		#fff;
+$color-hr:			#ccc;
+$color-content-links:		$color-main;
+$color-text:			#2b2b2b; 
+$bg-grey:			#e7e7eb;
+$color-border:			$bg-grey;
+$color-special-background:	$color-page-background;
+
+$color-mainnav-active-border:   $color-main;
+
+$color-main-menu:               $color-text; // $color-second;
+$color-main-menu-hover:         $color-text; // $color-main;
+$color-cats:                    #fff;
+$color-cats-background:          $color-main;
+$color-cats-background-hover:   $color-second;
+$color-mark-background:		lighten($color-four,20%); // #d2f1ff;
+$color-footer-background:	#1a1a1a;
+
+//////////////////////////////////////////////////////////////////////////////
+// Fonts
+//////////////////////////////////////////////////////////////////////////////
+$font-family-sans-serif:    'DejaWeb', sans-serif;
+$font-family-serif:         Georgia, "Times New Roman", Times, serif;
+$font-family-monospace:     Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", "Courier New", "Courier 10 Pitch", Courier,monospace;
+$font-family-headlines:     'roboto', sans-serif;
+
+$font-family-base:          $font-family-sans-serif;
+$font-family-sitetitle:     $font-family-headlines;
+$font-family-code:          $font-family-monospace;
+$font-family-quotation:     $font-family-serif;
+
+
+// Font Sizes
+$font-size-base:	    16;
+$font-size-headersmall:	    15;
+$font-size-sitetitle:	    25;
+$font-size-entrytitle:	    20;
+$font-size-bigtext:	    18;
+$font-size-smaller:	    15;
+$font-size-small:	    14;
+    
+$font-size-base-sm:	    18;
+$font-size-bigtext-sm:	    20;
+$font-size-smaller-sm:	    16;
+$font-size-entrytitle-sm:   26;
+
+$font-size-h1:		    20;
+$font-size-h1-sm:	    36;
+$font-size-h1-sitetitle:    $font-size-sitetitle;
+$font-size-h1-sitetitle-sm: 48;
+$font-size-h1-sitetitle-1060:	60;
+$font-size-h1-sitetitle-sm: 48;
+
+$font-size-h2:		    18;
+$font-size-h2-sm:	    26;
+$font-size-h2-widget:	    16;
+$font-size-h2-entryheader:  16;
+$font-size-h2-entryheader-sm:	24;
+$font-size-h2-entryheader-1024:	28;
+$font-size-h2-entryheader-1060:	48;
+$font-size-h2-entryheader-1060-small: 20;
+$font-size-h2-entryheader-lg:	58;
+
+$font-size-h3:		    18;
+$font-size-h3-sm:	    24;
+
+$font-size-h4:		    $font-size-base;
+$font-size-h4-sm:	    22;
+
+$font-size-h5:		    $font-size-headersmall;
+$font-size-h5-sm:	    19;
+
+$font-size-h6:		    $font-size-base;
+$font-size-h6-sm:	    19;
+
+
+$font-size-search:	    $font-size-base;
+$font-size-search-icons:    18;	    
+$font-size-socialmedia-icon: 18;
+$font-size-overlay-icon:    20;
+$font-size-breadcrumb:	    14;
+
+$font-size-slider-title-sm: 36;
+$font-size-slider-title-1060:	48;
+$font-size-slider-title-lg:	58;
+
+$font-size-accordion-toggle:    $font-size-base;
+$font-size-tables:	    $font-size-base;
+
+$font-size-blockquote:		$font-size-bigtext;
+$font-size-blockquote-cite:	$font-size-smaller;
+$font-size-blockquote-sm:	24;
+$font-size-blockquote-cite-sm:	19;
+
+//////////////////////////////////////////////////////////////////////////////
+// Tabellen 
+//////////////////////////////////////////////////////////////////////////////
+$table-head		    : $bg-grey; // #dedee3;
+$table-head-sortable	    : $table-head; // #c9dff0;
+$table-head-sortable-active : darken($table-head-sortable, 10%); // #acc8dd;
+$table-tr-odd		    : darken($color-page-background, 5%);   
+$table-caption		    : $bg-grey;
+$table-border		    : $color-border;
+$table-td-color		    : lighten($color-text,20%);
+$table-td-color-hover	    : $color-text;
+
+//////////////////////////////////////////////////////////////////////////////
+// Breakpoints
+//////////////////////////////////////////////////////////////////////////////
+// Minimum width of 600 pixels (smartphone landscape)
+$breakpoint-600:    37.5em;
+    
+// Minimum width of 768 pixels (tablet portrait)
+$breakpoint-sm:	    48em;
+
+// Minimum width of 790 pixels (WP Admin bar changes size)
+$breakpoint-790:    49.375em;
+    
+// Minimum width of 1024 pixels (tablet landscape)
+$breakpoint-1024:   64em;
+
+// Minimum width of 1060 pixels (small desktop screens)
+$breakpoint-1060:   66.25em;
+    
+// Minimum width of 1360 pixels (larger desktop screens)
+$breakpoint-lg:	    85em;
+    
+    

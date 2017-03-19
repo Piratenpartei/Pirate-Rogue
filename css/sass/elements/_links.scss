@@ -192,9 +192,12 @@ p.wp-caption-text,
 .contact-form label span, 
 .gallery .gallery-item .gallery-caption {
   color: #999;
-  a {
-    line-height: 2em;
-  }
+}
+
+.wp-caption-text {
+    a {
+        line-height: 1.6em !important;
+      }
 }
 
 #colophon {

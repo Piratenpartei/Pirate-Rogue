@@ -130,6 +130,11 @@
 	 if ( get_post_meta( get_the_ID(), 'post_class', true) == 'no-thumb' ) {
 		 $classes[] = 'no-thumb';
 	 }
+         
+         if (is_404()) {
+              $classes[] = 'no-sidebar';
+              // No diebadr for 404 pages due to danger of loops cause of 404-files in sidebar :)
+         } 
 
 	 // Additional body classes for WooCommerce
 	 if ( is_active_sidebar( 'sidebar-shop' )) {

@@ -68,3 +68,30 @@ span.dropcap {
   clear: both;
 }
 
+
+.unsichtbar {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+.unsichtbar:focus {
+  position: relative;
+  left: 0;
+  width: auto;
+  height: auto;
+  overflow: auto;
+}
+
+.screen-reader-text {
+    @extend .unsichtbar;
+}
+
+.hide-desktop {
+	display: none;
+}
+.hidden {
+	display: none;
+}

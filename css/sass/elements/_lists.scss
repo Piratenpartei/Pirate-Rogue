@@ -9,61 +9,24 @@ ol {
   list-style-position: inside;
 }
 
-ul ul {
-  margin: 0;
-}
-
-ol ol {
-  margin: 0;
-  list-style: lower-alpha;
-}
-
-.comment-text {
-  ul, 
-  ol {
-    margin: 0 0 15px;
-    padding-left: 20px;
-  }
-}
-
 ul {
-  list-style: none;
-}
-
-.entry-content ul li, 
-.comment-text li {
-  position: relative;
-  padding: 0 0 0 24px;
-}
-
-.entry-content ul li:before, 
-.comment-text ul li:before {
-  vertical-align: top;
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: '\2013';
-  padding: 0;
-}
-
-.entry-content ol li ul li, 
-.comment-text ul li ul li {
-  padding-left: 24px;
-}
-
-.entry-content ul li ol li:before, 
-.comment-text ul li ol li:before {
-  display: none;
-}
-
-.entry-content ul li, 
-.comment-text ol ul li {
-  padding: 0 0 0 24px;
+    list-style: none;
+    ul {
+        margin: 0;
+    } 
 }
 
 ol {
-  list-style: decimal;
-}
+    list-style: decimal;
+    ol {
+        margin: 0;
+        list-style: lower-alpha;
+        
+        ol {
+            list-style: lower-roman;
+        }
+    }
+} 
 
 li {
   & > ul, 
@@ -73,25 +36,96 @@ li {
   }
 }
 
+
 .entry-content {
-  ul {
-    padding-left: 50px;
-  }
-  ol {
-    padding-left: 70px;
-    li {
-      padding-left: 4px;
+    ul {
+        padding-left: 50px;
+
+        li {
+            position: relative;
+            padding: 0 0 0 24px;
+            list-style-position: outside;
+            
+            &:before {
+                vertical-align: top;
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: '\2013';
+                padding: 0;
+            }
+        }
+        li
+        ul {
+            padding-left: 50px;
+             
+            li {
+                padding-left: 24px;
+            } 
+        }
+        ol li:before {
+            display: none;
+        }
+        
+        &.nolist {
+            li {
+                @include no-list;
+            }
+            li:before {
+                display: none;
+            }
+        }
     }
-  }
-  ul li, 
-  ol li {
-    list-style-position: outside;
-  }
-   ul ul, ol ol {
-    padding-left: 50px;
-  }
+    ol {
+        padding-left: 70px;
+        li {
+          padding-left: 4px;
+          list-style-position: outside;
+        }
+        ol {
+             padding-left: 50px;
+        }
+        ul {
+            li {
+                padding-left: 24px;
+            }
+        }
+    }
+
 }
 
+.comment-text {
+    ul, 
+    ol {
+        margin: 0 0 15px;
+        padding-left: 20px;
+    }
+    
+    li {
+        position: relative;
+        padding: 0 0 0 24px;
+    }
+    ul li:before {
+        vertical-align: top;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '\2013';
+        padding: 0;
+    }
+    ul li {
+        ul li {
+            padding-left: 24px;
+        }
+        ol li:before {
+          display: none;
+        }
+
+    }
+    ol ul li {
+        padding: 0 0 0 24px;
+    }
+}
 
 #comments {
   ul ul, ol ol {

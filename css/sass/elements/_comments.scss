@@ -209,6 +209,9 @@ ol.commentlist {
       a {
           color: $color-second;
       }
+      a:hover {
+          color: $color-main;
+      }
   }
   
 }

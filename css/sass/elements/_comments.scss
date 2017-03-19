@@ -206,6 +206,9 @@ ol.commentlist {
       @extend .box;
       @extend .maincolor-box;
       margin-bottom: 10px;
+      a {
+          color: $color-second;
+      }
   }
   
 }

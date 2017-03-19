@@ -20,41 +20,73 @@
 
 .white-box {
   border: 3px solid #fff;
+   &.invertbox {
+    background: darken( #fff, 10%);
+  }
 }
 
 .blue-box {
   border: 3px solid #0066ff;
+  
+  &.invertbox {
+    background: lighten( #0066ff, 10%);
+  }
 }
 
 .yellow-box {
   border: 3px solid #e7b547;
+   &.invertbox {
+    background: lighten( #e7b547, 10%);
+  }
 }
 
 .red-box {
   border: 3px solid #d7464d;
+   &.invertbox {
+    background: lighten( #d7464d, 10%);
+  }
 }
 
 .green-box {
   border: 3px solid #85c066;
+  &.invertbox {
+    background: lighten( #85c066, 10%);
+  }
 }
 
 .lightgrey-box {
   border: 3px solid #ececed;
+   &.invertbox {
+    background: lighten( #ececed, 10%);
+  }
 }
 
 .grey-box {
   border: 3px solid #a9a9a9;
+    &.invertbox {
+    background: lighten( #a9a9a9, 10%);
+  }
 }
 
 .dark-box {
   border: 3px solid #222;
+   &.invertbox {
+    background: lighten( #222, 10%);
+    color: #fff;
+  
+  }
 }
 
 .maincolor-box {
   border: 3px solid $color-main;
-  
   a {
       color: $color-main;
+  }
+  &.invertbox {
+        background: lighten( $color-main, 10%);
+        a {
+            color: $color-text;
+        }
   }
 }
 
@@ -63,6 +95,10 @@
   
   a {
       color: $color-second;
+  }
+   &.invertbox {
+        background: lighten( $color-second, 10%);
+        color: #fff;
   }
 }
 /* --- Buttons --- */

@@ -91,6 +91,9 @@
 	 }
 
 	 // Option to add body classes via custom fields
+        if (  get_post_meta( get_the_ID(), 'pirate_rogue_canonical', true ) ) {
+            $classes[] = 'is-mirror';
+        }
 	 if ( get_post_meta( get_the_ID(), 'sidebar-left', true ) ) {
 		 $classes[] = 'sidebar-left';
 	 }

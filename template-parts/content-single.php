@@ -32,7 +32,11 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 				</div><!-- end .entry-cats -->
 				<?php endif; // has_category() 
                                 
-                                $subtitle =  get_post_meta( get_the_ID(), 'piratenkleider_subtitle', true );
+                                $piratenkleider_untertitel  = get_post_meta( get_the_ID(), 'piratenkleider_subtitle', true );	
+                                $subtitle  = get_post_meta( get_the_ID(), 'pirate_rogue_subtitle', true );
+                                if ((empty($subtitle)) && (isset($piratenkleider_untertitel))) {
+                                    $subtitle = $piratenkleider_untertitel;
+                                }
                                 if ($subtitle) {
                                     echo '<h2 class="subtitle">'.$subtitle."</h2>\n";
                                 }
@@ -95,7 +99,11 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
                                 <?php    
                                     
                                     
-				 the_content(); ?>
+				 the_content(); 
+                                 
+                                 
+                                 
+                                 ?>
 				<?php
 					wp_link_pages( array(
 						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'uku' ),
@@ -111,15 +119,23 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 
 			<footer class="entry-footer cf">
 				<?php $tags_list = get_the_tag_list();
-					if ( $tags_list ): ?>
+                                    if ( $tags_list ): ?>
 					<div class="entry-tags"><span><?php esc_html_e('Tags', 'uku') ?></span><?php the_tags('',' &bull; ', ''); ?></div>
-				<?php endif; ?>
+                                    <?php endif; ?>
 				<?php
 				// Author bio.
 				if ( get_the_author_meta( 'description' ) ) :
 					get_template_part( 'template-parts/authorbox' );
 				endif;
-				?>
+				
+                                $canonical = get_post_meta( get_the_ID(), 'pirate_rogue_canonical', true );
+                                 
+                                 if ($canonical) { ?>
+                                        <div class="canonical-link"><span><?php echo __('Origin: ','pirate_rogue');?></span><a href="<?php echo $canonical; ?>"><?php echo $canonical; ?></a></div>
+                                     
+                                 <?php }
+                                
+                                ?>
 			</footer><!-- end .entry-footer -->
 
 			<?php

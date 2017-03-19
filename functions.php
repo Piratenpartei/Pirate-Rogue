@@ -260,6 +260,22 @@ function pirate_rogue_google_verification() {
 	}
 }
 add_action( 'wp_head', 'pirate_rogue_google_verification');
+/*-----------------------------------------------------------------------------------*/
+/* Add Canonical URL if need
+/*-----------------------------------------------------------------------------------*/
+function pirate_rogue_add_canonical() {
+    if (is_single()) {
+            
+        $canonical = get_post_meta( get_the_ID(), 'pirate_rogue_canonical', true );
+        if ($canonical) {
+            $canonical = esc_url( $canonical );
+            if ($canonical) {
+                 echo '<link rel="canonical" href="'.$canonical.'" />'."\n";
+            }
+        }
+    }
+}
+add_action( 'wp_head', 'pirate_rogue_add_canonical');
 
 /*-----------------------------------------------------------------------------------*/
 /* Remove inline styles printed when the gallery shortcode is used.
@@ -447,6 +463,11 @@ require get_template_directory() . '/inc/template-tags.php';
 /* Grab the Theme Custom shortcodes.
 /*-----------------------------------------------------------------------------------*/
 require( get_template_directory() . '/inc/shortcodes.php' );
+
+/*-----------------------------------------------------------------------------------*/
+/* Load Plugin Specials
+/*-----------------------------------------------------------------------------------*/
+require get_template_directory() . '/inc/pluginsupport.php';
 
 /*-----------------------------------------------------------------------------------*/
 /* Load Jetpack compatibility file.

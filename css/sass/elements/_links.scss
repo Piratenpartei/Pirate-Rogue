@@ -194,6 +194,12 @@ p.wp-caption-text,
   color: #999;
 }
 
+.wp-caption-text {
+    a {
+        line-height: 1.6em !important;
+      }
+}
+
 #colophon {
   .footer-menu ul a {
     color: rgba(255, 255, 255, 0.5);

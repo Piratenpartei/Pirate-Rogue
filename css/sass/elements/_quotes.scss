@@ -3,7 +3,7 @@
 /*-----------------------------------------------------------------------------------*/
 .entry-content blockquote {
     padding: 40px;
-    background-color: lighten(#672082,40%);
+    background-color: lighten(#672082,60%);
     p {
 	position: relative;
 	font-weight: 600;
@@ -28,14 +28,14 @@
   }
   .entry-content blockquote {
     padding: 40px;
-    background-color: lighten(#672082,40%);
+    background-color: #fff;
     margin: 0 0 30px;
   }
 }
 
 .page .entry-content blockquote {
     padding: 40px;
-    background-color: lighten(#672082,40%);
+    background-color: lighten(#672082,60%);
     margin: 0 0 30px;
 }
 
@@ -50,7 +50,7 @@
 @media screen and (min-width: 48em) {
     .entry-content blockquote {
         padding: 40px;
-        background-color: lighten(#672082,40%);
+        background-color: lighten(#672082,60%);
 	p {
 	    @include px2rem($font-size-blockquote-sm);  	    
 	} 

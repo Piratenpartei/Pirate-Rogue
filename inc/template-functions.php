@@ -136,6 +136,36 @@
               // No diebadr for 404 pages due to danger of loops cause of 404-files in sidebar :)
          } 
 
+         if ( ! display_header_text() ) {
+             $classes[] = 'no-header-text';
+         }
+             
+
+        if ('' != get_theme_mod( 'uku_front_section_twocolumn_excerpt') ) { 
+            $classes[] = 'front_section_twocolumn_excerpt';
+        }
+        if ('' != get_theme_mod( 'uku_front_section_threecolumn_excerpt' ) ) { 
+            $classes[] = 'front_section_threecolumn_excerpt';
+        } 
+        if ('' != get_theme_mod( 'uku_front_section_fourcolumn_excerpt' ) ) { 
+            $classes[] = 'front_section_fourcolumn_excerpt';
+        } 
+        if ('' != get_theme_mod( 'uku_front_section_sixcolumn_excerpt' ) ) {
+            $classes[] = 'front_section_sixcolumn_excerpt';
+        } 
+        if ('' != get_theme_mod( 'uku_front_hidedate' ) ) {
+           $classes[] = 'front_hidedate';
+        }
+         if ('' != get_theme_mod( 'uku_front_hidecomments' ) ) { 
+            $classes[] = 'front_hidecomments';
+        } 
+        if ('' != get_theme_mod( 'uku_front_hidecats' ) ) {
+            $classes[] = 'front_hidecats';
+        } 
+
+         
+         
+         
 	 // Additional body classes for WooCommerce
 	 if ( is_active_sidebar( 'sidebar-shop' )) {
 		 $classes[] = 'sidebar-shop';

@@ -53,17 +53,13 @@ function pirate_rogue_setup() {
 	) );
 
 	// Enable support for custom logo.
-//	add_theme_support( 'custom-logo', array(
-//		'width'       => 520,
-//		'height'      => 236,
-//	) );
-	
 	add_theme_support( 'custom-logo', array(
 	    'height'      => 236,
 	    'width'       => 520,
 	    'flex-height' => true,
 	    'flex-width'  => true,
-	    'header-text' => array( 'site-title', 'site-description' ),
+	//    'header-text' => array( 'site-title', 'site-description' ),
+        //    'wp-head-callback'       => 'pirate_rogue_header_style',
 	) );
 	
 	
@@ -239,33 +235,8 @@ add_filter( 'user_contactmethods', 'add_twitter_contactmethod', 10, 1 );
 /*-----------------------------------------------------------------------------------*/
 /* Add Theme Customizer CSS
 /*-----------------------------------------------------------------------------------*/
-function uku_customize_css() {
+function pirate_rogue_customize_css() {
 	$customcss = '';
-	
-	
-	 if ('' != get_theme_mod( 'uku_front_section_twocolumn_excerpt') ) { 
-	    $customcss .= '#front-section-twocolumn .entry-summary {display: block;}'."\n";
-	}
-	if ('' != get_theme_mod( 'uku_front_section_threecolumn_excerpt' ) ) { 
-	    $customcss .= '#front-section-threecolumn .entry-summary {display: block;}'."\n";
-	} 
-	if ('' != get_theme_mod( 'uku_front_section_fourcolumn_excerpt' ) ) { 
-	    $customcss .= '#front-section-fourcolumn .entry-summary {display: block;}'."\n";
-	} 
-	if ('' != get_theme_mod( 'uku_front_section_sixcolumn_excerpt' ) ) {
-	$customcss .= '#front-section-sixcolumn .entry-summary {display: block;}'."\n";
-	 } 
-	 if ('' != get_theme_mod( 'uku_front_hidedate' ) ) {
-	$customcss .= '.blog .entry-date {display: none !important;}'."\n";
-	 }
-	 if ('' != get_theme_mod( 'uku_front_hidecomments' ) ) { 
-	$customcss .= '.blog .entry-comments {display: none !important;}'."\n";
-	 } 
-	 if ('' != get_theme_mod( 'uku_front_hidecats' ) ) {
-	$customcss .= '.blog .entry-cats {display: none !important;}'."\n";
-	 } 
-
-        
 	if ('' != get_theme_mod( 'uku_custom_css' ) ) {
 	   $customcss .=  get_theme_mod('uku_custom_css'); 
 	} 
@@ -275,7 +246,20 @@ function uku_customize_css() {
 	    echo '</style>'."\n";
 	}
 }
-add_action( 'wp_head', 'uku_customize_css');
+add_action( 'wp_head', 'pirate_rogue_customize_css');
+/*-----------------------------------------------------------------------------------*/
+/* Add Google Webmaster Tools Verification
+/*-----------------------------------------------------------------------------------*/
+function pirate_rogue_google_verification() {
+	$customcss = '';
+	if ('' != get_theme_mod( 'pirate_rogue_google_wmt_verification_text' ) ) {
+	   $verificationcode =  get_theme_mod('pirate_rogue_google_wmt_verification_text'); 
+	} 
+	if (!empty($verificationcode)) {
+	    echo '<meta name="google-site-verification" content="'.$verificationcode.'" />'."\n";
+	}
+}
+add_action( 'wp_head', 'pirate_rogue_google_verification');
 
 /*-----------------------------------------------------------------------------------*/
 /* Remove inline styles printed when the gallery shortcode is used.
@@ -342,7 +326,14 @@ function uku_comment( $comment, $args, $depth ) {
 	endswitch;
 }
 endif;
-
+/*-----------------------------------------------------------------------------------*/
+/* Remove recent comments default css
+/*-----------------------------------------------------------------------------------*/
+function remove_recent_comments_style() {
+    global $wp_widget_factory;
+    remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
+}
+add_action('widgets_init', 'remove_recent_comments_style');
 /*-----------------------------------------------------------------------------------*/
 /* Register widgetized areas
 /*-----------------------------------------------------------------------------------*/

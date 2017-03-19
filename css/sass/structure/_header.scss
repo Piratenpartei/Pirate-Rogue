@@ -65,6 +65,17 @@ p.site-description {
   }
 }
 
+.no-header-text {
+    h1.site-title,
+    p.site-title,
+    p.site-description {
+	position: absolute;
+	clip: rect(1px, 1px, 1px, 1px);
+    }
+}
+
+
+
 @media screen and (min-width: $breakpoint-1060) {
    .hide-header-sticky .sticky-header {
         display: none !important;

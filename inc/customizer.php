@@ -249,10 +249,6 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	
 	
-	
-	
-	
-	
 	$wp_customize->add_setting( 'pirate_rogue_credit', array(
 		'default'		    => '',
 		'sanitize_callback'	    => 'wp_kses_post',
@@ -265,6 +261,21 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'type'			    => 'text',
 		'priority'		    => 6,
 	) );
+        
+        $wp_customize->add_setting( 'pirate_rogue_google_wmt_verification_text', array(
+		'default'		    => '',
+		'sanitize_callback'	    => 'wp_kses_post',
+	) );
+
+	$wp_customize->add_control( 'pirate_rogue_google_wmt_verification_text', array(
+		'label'			    => esc_html__( 'Google Site Verification', 'uku' ),
+		'description'		    => __( 'For verification of your website as property owner at <a target="_blank" href="https://www.google.com/webmasters/tools/home">Google Webmaster Tools</a>, use the alternative method and copy the <b>content</b>-Attribut of the given HTML-Tag. <br>Insert this string here. <br>'
+                        . 'Example: If given: <br><code>&lt;meta name="google-site-verification" content="BBssyCpddd8" /&gt;</code><br> then insert <code>BBssyCpddd8</code> ', 'uku' ),
+		'section'		    => 'uku_general',
+		'type'			    => 'text',
+		'priority'		    => 7,
+	) );
+        
 
 	// Uku Theme Options - Header
 	$wp_customize->add_setting( 'uku_hidesearch', array(

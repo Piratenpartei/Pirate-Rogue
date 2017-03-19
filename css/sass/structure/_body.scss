@@ -103,3 +103,26 @@ html.overlay-show {
 .headerimg-on .front-section:first-of-type {
   padding-top: 0;
 }
+
+
+.front_section_twocolumn_excerpt {
+    #front-section-twocolumn .entry-summary {display: block;}
+}
+.front_section_threecolumn_excerpt {
+    #front-section-threecolumn .entry-summary {display: block;}
+}
+.front_section_fourcolumn_excerpt {
+    #front-section-fourcolumn .entry-summary {display: block;}
+}
+.front_section_sixcolumn_excerpt {
+    #front-section-sixcolumn .entry-summary {display: block;}
+}
+.front_hidedate {
+    .blog .entry-date {display: none !important;}
+}
+.front_hidecomments {
+    .blog .entry-comments {display: none !important;}
+}
+.front_hidecats {
+    .blog .entry-cats {display: none !important;}
+}

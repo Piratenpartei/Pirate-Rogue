@@ -8,6 +8,10 @@
   padding: 20px;
   overflow: hidden;
   line-height: 1.4;
+  
+  a {
+      font-weight: bold;
+  }
 }
 
 .site-content .box p {
@@ -48,10 +52,18 @@
 
 .maincolor-box {
   border: 3px solid $color-main;
+  
+  a {
+      color: $color-main;
+  }
 }
 
 .secondcolor-box {
   border: 3px solid $color-second;
+  
+  a {
+      color: $color-second;
+  }
 }
 /* --- Buttons --- */
 

@@ -1,21 +1,23 @@
 /*-----------------------------------------------------------------------------------*/
 /*  Blockquotes and cites
 /*-----------------------------------------------------------------------------------*/
-.entry-content blockquote {
-    padding: 40px;
-    background-color: lighten(#672082,60%);
-    p {
-	position: relative;
-	font-weight: 600;
-	@include px2rem($font-size-blockquote);  	
-    }
-    cite {
-	display: block;
-	padding-top: 10px;
-	padding-right: 30px;
-	font-style: normal;
-	text-align: right;
-	@include px2rem($font-size-blockquote-cite);
+.entry-content {
+    blockquote {
+        padding: 40px;
+        background-color: lighten($color-second,60%);
+        p {
+            position: relative;
+            font-weight: 600;
+            @include px2rem($font-size-blockquote);  	
+        }
+        cite {
+            display: block;
+            padding-top: 10px;
+            padding-right: 30px;
+            font-style: normal;
+            text-align: right;
+            @include px2rem($font-size-blockquote-cite);
+        }
     }
 }
 
@@ -35,7 +37,7 @@
 
 .page .entry-content blockquote {
     padding: 40px;
-    background-color: lighten(#672082,60%);
+    background-color: lighten($color-second,60%);
     margin: 0 0 30px;
 }
 
@@ -50,7 +52,7 @@
 @media screen and (min-width: 48em) {
     .entry-content blockquote {
         padding: 40px;
-        background-color: lighten(#672082,60%);
+        background-color: lighten($color-second,60%);
 	p {
 	    @include px2rem($font-size-blockquote-sm);  	    
 	} 

@@ -19,7 +19,7 @@ function pirate_rogue_metabox_cf_setup() {
     add_action( 'add_meta_boxes', 'pirate_rogue_add_metabox_pages' );
 
     /* Save subtitle */
-    add_action( 'save_post', 'pirate_rogue_save_metabox_untertitel', 10, 2 );
+    add_action( 'save_post', 'pirate_rogue_save_metabox_attributes', 10, 2 );
 
 }
 
@@ -31,9 +31,9 @@ function pirate_rogue_add_metabox_posts() {
     
     /* Subtitle */
     add_meta_box(
-		'pirate_rogue_metabox_untertitel',		
-		esc_html__( 'Subtitle', 'piratenkleider' ),
-		'pirate_rogue_do_metabox_untertitel',	
+		'pirate_rogue_metabox_attributes',		
+		esc_html__( 'Attributes', 'pirate_rogue' ),
+		'pirate_rogue_do_metabox_attributes',	
 		 'post','normal','high'
     );
 }
@@ -47,8 +47,8 @@ function pirate_rogue_add_metabox_pages() {
 /*-----------------------------------------------------------------------------------*/
 /*  Display Options for subtitles on posts 
 /*-----------------------------------------------------------------------------------*/
-function pirate_rogue_do_metabox_untertitel( $object, $box ) { 
-	wp_nonce_field( basename( __FILE__ ), 'pirate_rogue_metabox_untertitel_nonce' ); 
+function pirate_rogue_do_metabox_attributes( $object, $box ) { 
+	wp_nonce_field( basename( __FILE__ ), 'pirate_rogue_metabox_attributes_nonce' ); 
 	$post_type = get_post_type( $object->ID); 
 	
 	if ( 'post' == $post_type ) {
@@ -61,16 +61,22 @@ function pirate_rogue_do_metabox_untertitel( $object, $box ) {
 	    return;
 	}
 	
-	$untertitel  = get_post_meta( $object->ID, 'piratenkleider_subtitle', true );	
-	pirate_rogue_form_text('pirate_rogue_metabox_untertitel', $untertitel, __('Untertitel (Inhaltsüberschrift)','pirate_rogue'));
-
+	$piratenkleider_untertitel  = get_post_meta( $object->ID, 'piratenkleider_subtitle', true );	
+        $untertitel  = get_post_meta( $object->ID, 'pirate_rogue_subtitle', true );
+        if ((empty($untertitel)) && (isset($piratenkleider_untertitel))) {
+            $untertitel = $piratenkleider_untertitel;
+        }
+	pirate_rogue_form_text('pirate_rogue_metabox_untertitel', $untertitel, __('Sub-Titel','pirate_rogue'),  __('Enter a text for a subtitle here, which belongs to the main title of the entry. Do not use more as 120 Chars.','pirate_rogue'));
+        
+        $canonical  = get_post_meta( $object->ID, 'pirate_rogue_canonical', true );
+        pirate_rogue_form_url('pirate_rogue_metabox_canonical', $canonical, __('URL (Originaladresse)','pirate_rogue'), __('Enter the URL of the original posts address (e.g. another blog or website, were this text was mirrored from)','pirate_rogue'));
  }
 /*-----------------------------------------------------------------------------------*/
 /* Save the meta box's post/page metadata.
 /*-----------------------------------------------------------------------------------*/
-function pirate_rogue_save_metabox_untertitel( $post_id, $post ) {
+function pirate_rogue_save_metabox_attributes( $post_id, $post ) {
 	/* Verify the nonce before proceeding. */
-	if ( !isset( $_POST['pirate_rogue_metabox_untertitel_nonce'] ) || !wp_verify_nonce( $_POST['pirate_rogue_metabox_untertitel_nonce'], basename( __FILE__ ) ) )
+	if ( !isset( $_POST['pirate_rogue_metabox_attributes_nonce'] ) || !wp_verify_nonce( $_POST['pirate_rogue_metabox_attributes_nonce'], basename( __FILE__ ) ) )
 		return $post_id;
 
 
@@ -78,6 +84,16 @@ function pirate_rogue_save_metabox_untertitel( $post_id, $post ) {
 	if ( !current_user_can( 'edit_post', $post_id ) )
             return;
         
-        pirate_rogue_save_standard('piratenkleider_subtitle', $_POST['pirate_rogue_metabox_untertitel'], $post_id, 'text');
+        
+        $piratenkleider_untertitel  = get_post_meta( $post_id, 'piratenkleider_subtitle', true );
+        if ($piratenkleider_untertitel) {
+            delete_post_meta( $post_id, 'piratenkleider_subtitle', $piratenkleider_untertitel );	
+        }
+        pirate_rogue_save_standard('pirate_rogue_subtitle', $_POST['pirate_rogue_metabox_untertitel'], $post_id, 'text');
+        pirate_rogue_save_standard('pirate_rogue_canonical', $_POST['pirate_rogue_metabox_canonical'], $post_id, 'url');
 
 }
+
+/*-----------------------------------------------------------------------------------*/
+/* Beim Klabautermann! Da is ja nix mehr!
+/*-----------------------------------------------------------------------------------*/

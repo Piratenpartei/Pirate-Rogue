@@ -86,52 +86,133 @@ add_shortcode( 'divider', 'pirate_rogue_shortcode_divider' );
 /*-----------------------------------------------------------------------------------*/
 
 function pirate_rogue_shortcode_white_box($atts, $content = null) {
-   return '<div class="box white-box">' . do_shortcode( ($content) ) . '</div>';
+    extract(shortcode_atts(array(
+        'background'	=> '',
+    ), $atts));
+    
+   $setinvertclass = '';
+   if ($background) {
+       $setinvertclass = ' invertbox';
+   }    
+   return '<div class="box white-box'.$setinvertclass.'">' . do_shortcode( ($content) ) . '</div>';
 }
 add_shortcode( 'white_box', 'pirate_rogue_shortcode_white_box' );
 
 function pirate_rogue_shortcode_yellow_box($atts, $content = null) {
-   return '<div class="box yellow-box">' . do_shortcode( ($content) ) . '</div>';
+    extract(shortcode_atts(array(
+        'background'	=> '',
+    ), $atts));
+    
+   $setinvertclass = '';
+   if ($background) {
+       $setinvertclass = ' invertbox';
+   }    
+   return '<div class="box yellow-box'.$setinvertclass.'">' . do_shortcode( ($content) ) . '</div>';
 }
 add_shortcode( 'yellow_box', 'pirate_rogue_shortcode_yellow_box' );
 
 function pirate_rogue_shortcode_red_box($atts, $content = null) {
-   return '<div class="box red-box">' . do_shortcode( ($content) ) . '</div>';
+    extract(shortcode_atts(array(
+        'background'	=> '',
+    ), $atts));
+    
+   $setinvertclass = '';
+   if ($background) {
+       $setinvertclass = ' invertbox';
+   }    
+   return '<div class="box red-box'.$setinvertclass.'">' . do_shortcode( ($content) ) . '</div>';
 }
 add_shortcode( 'red_box', 'pirate_rogue_shortcode_red_box' );
 
 function pirate_rogue_shortcode_blue_box($atts, $content = null) {
-   return '<div class="box blue-box">' . do_shortcode( ($content) ) . '</div>';
+    extract(shortcode_atts(array(
+        'background'	=> '',
+    ), $atts));
+    
+   $setinvertclass = '';
+   if ($background) {
+       $setinvertclass = ' invertbox';
+   }    
+   return '<div class="box blue-box'.$setinvertclass.'">' . do_shortcode( ($content) ) . '</div>';
 }
 add_shortcode( 'blue_box', 'pirate_rogue_shortcode_blue_box' );
 
 function pirate_rogue_shortcode_green_box($atts, $content = null) {
-   return '<div class="box green-box">' . do_shortcode( ($content) ) . '</div>';
+    extract(shortcode_atts(array(
+        'background'	=> '',
+    ), $atts));
+    
+   $setinvertclass = '';
+   if ($background) {
+       $setinvertclass = ' invertbox';
+   }    
+   return '<div class="box green-box'.$setinvertclass.'">' . do_shortcode( ($content) ) . '</div>';
 }
 add_shortcode( 'green_box', 'pirate_rogue_shortcode_green_box' );
 
 function pirate_rogue_shortcode_lightgrey_box($atts, $content = null) {
-   return '<div class="box lightgrey-box">' . do_shortcode( ($content) ) . '</div>';
+    extract(shortcode_atts(array(
+        'background'	=> '',
+    ), $atts));
+    
+   $setinvertclass = '';
+   if ($background) {
+       $setinvertclass = ' invertbox';
+   }    
+   return '<div class="box lightgrey-box'.$setinvertclass.'">' . do_shortcode( ($content) ) . '</div>';
 }
 add_shortcode( 'lightgrey_box', 'pirate_rogue_shortcode_lightgrey_box' );
 
 function pirate_rogue_shortcode_grey_box($atts, $content = null) {
-   return '<div class="box grey-box">' . do_shortcode( ($content) ) . '</div>';
+    extract(shortcode_atts(array(
+        'background'	=> '',
+    ), $atts));
+    
+   $setinvertclass = '';
+   if ($background) {
+       $setinvertclass = ' invertbox';
+   }    
+   return '<div class="box grey-box'.$setinvertclass.'">' . do_shortcode( ($content) ) . '</div>';
 }
 add_shortcode( 'grey_box', 'pirate_rogue_shortcode_grey_box' );
 
 function pirate_rogue_shortcode_dark_box($atts, $content = null) {
-   return '<div class="box dark-box">' . do_shortcode( ($content) ) . '</div>';
+    extract(shortcode_atts(array(
+        'background'	=> '',
+    ), $atts));
+    
+   $setinvertclass = '';
+   if ($background) {
+       $setinvertclass = ' invertbox';
+   }
+   return '<div class="box dark-box'.$setinvertclass.'">' . do_shortcode( ($content) ) . '</div>';
 }
 add_shortcode( 'dark_box', 'pirate_rogue_shortcode_dark_box' );
 
 function pirate_rogue_shortcode_maincolor_box($atts, $content = null) {
-   return '<div class="box maincolor-box">' . do_shortcode( ($content) ) . '</div>';
+    extract(shortcode_atts(array(
+        'background'	=> '',
+    ), $atts));
+    
+   $setinvertclass = '';
+   if ($background) {
+       $setinvertclass = ' invertbox';
+   }
+   return '<div class="box maincolor-box'.$setinvertclass.'">' . do_shortcode( ($content) ) . '</div>';
 }
 add_shortcode( 'maincolor_box', 'pirate_rogue_shortcode_maincolor_box' );
 
 function pirate_rogue_shortcode_secondcolor_box($atts, $content = null) {
-   return '<div class="box secondcolor-box">' . do_shortcode( ($content) ) . '</div>';
+    extract(shortcode_atts(array(
+        'background'	=> '',
+    ), $atts));
+    
+   $setinvertclass = '';
+   if ($background) {
+       $setinvertclass = ' invertbox';
+   }
+    
+   return '<div class="box secondcolor-box'.$setinvertclass.'">' . do_shortcode( ($content) ) . '</div>';
 }
 add_shortcode( 'secondcolor_box', 'pirate_rogue_shortcode_secondcolor_box' );
 

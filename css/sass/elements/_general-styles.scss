@@ -77,6 +77,7 @@ p.site-title {
 #site-info, 
 .front-section a.all-posts-link, 
 .single-post .entry-tags, 
+.single-post .canonical-link, 
 .null-instagram-feed .clear {
   font-size: 12px;
   font-size: 0.75rem;
@@ -423,9 +424,10 @@ dl {
 	@include px2rem($font-size-smaller); 
   }
   .single-post {
-    .entry-tags  {
-	@include px2rem($font-size-smaller); 
-    }
+        .canonical-link,  
+        .entry-tags  {
+            @include px2rem($font-size-smaller); 
+        }
   }
 
   .null-instagram-feed .clear {

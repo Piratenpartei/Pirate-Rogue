@@ -17,8 +17,6 @@ function pirate_rogue_custom_header_setup() {
 	);
 
 	add_theme_support( 'custom-header', $args );
-	
-	
 
 }
 add_action( 'after_setup_theme', 'pirate_rogue_custom_header_setup');
@@ -28,31 +26,7 @@ add_action( 'after_setup_theme', 'pirate_rogue_custom_header_setup');
 /* Style the header text displayed on the blog.
 /*-----------------------------------------------------------------------------------*/
 function pirate_rogue_header_style() {
-	$header_image = get_header_image();
-	$header_text_color   = get_header_textcolor();
-
-	// If no custom options for text are set, let's bail.
-	if ( empty( $header_image ) && get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color )
 	return;
-
-	// If we get this far, we have custom styles.
-	?>
-	
-	<?php
-		// Has the text been hidden?
-		if ( ! display_header_text() ) :
-	?>
-	<style type="text/css" id="uku-header-css">
-	h1.site-title,
-	p.site-title,
-	p.site-description {
-		position: absolute;
-		clip: rect(1px, 1px, 1px, 1px);
-	}
-	</style>
-	<?php endif; ?>
-	
-	<?php
 }
 
 /*-----------------------------------------------------------------------------------*/

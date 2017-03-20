@@ -21,13 +21,14 @@ $blogname = get_bloginfo('name');
 
 		<?php
 		// Big Footer Feature Section
-		if ( '' !== get_theme_mod( 'uku_footerfeature_image' ) && 'serif' != get_theme_mod( 'uku_main_design' ) ) : ?>
+		if ( '' !== get_theme_mod( 'uku_footerfeature_image' )  ) : ?>
 			<?php get_template_part( 'template-parts/footer-feature' ); ?>
 		<?php endif; ?>
 
 		<div class="footer-wrap">
 			<?php // Footer Menus.
-			if ( has_nav_menu( 'footer-one' ) || has_nav_menu( 'footer-two' ) || has_nav_menu( 'footer-three' ) || has_nav_menu( 'footer-four' ) ) : ?>
+			if ( has_nav_menu( 'footer-one' ) || has_nav_menu( 'footer-two' ) 
+                                || has_nav_menu( 'footer-three' ) || has_nav_menu( 'footer-four' ) ) : ?>
 				<?php get_template_part( 'template-parts/footermenus' ); ?>
 			<?php endif; ?>
 

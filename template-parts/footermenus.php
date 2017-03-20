@@ -10,15 +10,18 @@
 
 <div class="footer-menus-wrap cf">
 
-	<?php if ( has_custom_logo() && '' != get_theme_mod( 'uku_customlogofooter' ) ) : ?>
+	<?php if ( has_custom_logo() && '' != get_theme_mod( 'uku_customlogofooter' ) ) { ?>
 		<div class="custom-logo-wrap">
 			<?php the_custom_logo(); ?>
 		</div><!-- end .custom-logo-wrap -->
-	<?php else : ?>
-		<p class="title-footer"><?php bloginfo( 'name' ); ?></p>
-	<?php endif; ?>
-
-	<?php if (has_nav_menu( 'footer-one' ) ) : ?>
+	<?php } else { ?>
+                <p class="title-footer">
+                <?php if ( '' == get_theme_mod( 'uku_footerfeature_image' )  ) : ?>
+			<?php bloginfo( 'name' ); ?>
+		<?php endif; ?>
+                </p>    
+        <?php }        
+	if (has_nav_menu( 'footer-one' ) ) : ?>
 	<nav id="footer-menu-one" class="footer-menu" role="navigation">
 		<?php
 			$location = 'footer-one';

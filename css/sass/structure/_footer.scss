@@ -193,9 +193,13 @@
 }
 
 @media screen and (min-width: $breakpoint-1060) {
-   .footer-feature-textwrap { 
+   .footer-feature-textwrap {
         p.text-big {
-	    font-size: 2rem;
+	    font-size: 1.4rem;
+        }
+        p.text-small {
+            font-size: .8rem;
+            line-height: 1rem;
         }
     }
 }

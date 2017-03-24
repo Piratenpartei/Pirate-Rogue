@@ -60,6 +60,7 @@ table {
 caption, th, td {
     font-weight: normal;
     text-align: left;
+    vertical-align: top;
 }
 caption {
     padding: 3px 5px;
@@ -105,3 +106,9 @@ tr:hover {
     }
 }
 
+@media screen and (min-width: $breakpoint-sm) {
+    table {
+        min-width: $breakpoint-600;
+        width: auto;
+    }
+}

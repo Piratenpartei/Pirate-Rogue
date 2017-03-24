@@ -121,6 +121,11 @@ a.standard-btn {
   -o-transition: 0.2s background ease;
   -ms-transition: 0.2s background ease;
   transition: 0.2s background ease;
+  
+    &:focus, 
+    &:hover {
+        background: lighten($color-text, 35%);
+    }
 }
 
 .post .entry-content a.standard-btn, 
@@ -152,29 +157,62 @@ a.standard-btn {
     font-size: 25px;
     font-size: 1.5625rem;
   }
+  
   &.red-btn {
     background: #d7464d;
+    &:focus, 
+    &:hover {
+        background: darken(#d7464d, 15%);
+    }
   }
   &.green-btn {
     background: #85c066;
+    &:focus, 
+    &:hover {
+        background: darken(#85c066, 15%);
+    }
   }
   &.blue-btn {
     background: #0066ff;
+    &:focus, 
+    &:hover {
+        background: darken(#0066ff, 15%);
+    }
   }
   &.yellow-btn {
     background: #e7b547;
+    &:focus, 
+    &:hover {
+        background: darken(#e7b547, 15%);
+    }
   }
   &.grey-btn {
     background: #a9a9a9;
+    &:focus, 
+    &:hover {
+        background: darken(#a9a9a9, 15%);
+    }
   }
   &.black-btn {
     background: #000;
+    &:focus, 
+    &:hover {
+        background: darken(#fff, 65%);
+    }
   }
   &.maincolor-btn {
     background: $color-main;
+    &:focus, 
+    &:hover {
+        background: $color-second;
+    }
   }
   &.secondcolor-btn {
     background: $color-second;
+    &:focus, 
+    &:hover {
+        background: $color-main;
+    }
   }
 }
 

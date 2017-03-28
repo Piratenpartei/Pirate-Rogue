@@ -330,7 +330,7 @@ if ( ! function_exists( 'pirate_rogue_form_image' ) ) :
 	    
 
 	    <input class="button" name="image_button_<?php echo $name; ?>" id="image_button_<?php echo $name; ?>" value="<?php _e('Bild auswählen', 'pirate_rogue'); ?>" />
-	    <small><a href="#" class="image_remove_<?php echo $name; ?>"><?php _e( "Entfernen", 'pirate_rogue' );?></a></small>
+	    <small><a href="#" class="image_remove_<?php echo $name; ?>"><?php _e( "Entfernen", 'pirate-rogue');?></a></small>
 	    <br><p class="howto"><?php echo $howtotext; ?>	      
 	    </p><script>
 	    jQuery(document).ready(function() {

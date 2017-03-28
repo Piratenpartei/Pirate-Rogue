@@ -13,7 +13,7 @@ if ( ! is_active_sidebar( 'sidebar-offcanvas' ) ) {
 ?>
 
 <div id="offcanvas-wrap">
-<a href="#offcanvas-wrap" id="offcanvas-widgets-open"><span><?php esc_html_e( 'Info', 'uku' ); ?></span></a>
+<a href="#offcanvas-wrap" id="offcanvas-widgets-open"><span><?php esc_html_e( 'Info', 'pirate-rogue'); ?></span></a>
 <aside id="sidebar-offcanvas" class="sidebar-offcanvas cf" role="complementary">
 	<?php if ( is_active_sidebar( 'sidebar-offcanvas' ) ) : ?>
 		<div class="widget-area">

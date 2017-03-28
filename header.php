@@ -79,7 +79,7 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
                              <?php endif; ?>
 
                             <p class="site-description"><?php bloginfo( 'description' ); ?></p>
-                            <button id="overlay-open" class="overlay-open overlay-btn"><span><?php esc_html_e( 'Menu', 'uku' ); ?></span></button>
+                            <button id="overlay-open" class="overlay-open overlay-btn"><span><?php esc_html_e( 'Menu', 'pirate-rogue'); ?></span></button>
 
                             <?php if (has_nav_menu( 'social' ) ) : ?>
                                     <nav id="header-social" class="header-social social-nav" role="navigation">
@@ -99,10 +99,10 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
                     <?php endif; ?>
 
                     <?php if ( '' == get_theme_mod( 'uku_hidesearch' ) ) : ?>
-                    <button id="search-open" class="search-open search-btn"><span><?php esc_html_e( 'Search', 'uku' ); ?></span></button>
+                    <button id="search-open" class="search-open search-btn"><span><?php esc_html_e( 'Search', 'pirate-rogue'); ?></span></button>
                             <div class="desktop-search">
                                     <?php if ( 'neo' == get_theme_mod( 'uku_main_design') || 'serif' == get_theme_mod( 'uku_main_design' )) : ?>
-                                            <button id="search-close" class="search-close"><span><?php esc_html_e( 'Search', 'uku' ); ?></span></button>
+                                            <button id="search-close" class="search-close"><span><?php esc_html_e( 'Search', 'pirate-rogue'); ?></span></button>
                                     <?php endif; ?>
                                     <?php get_search_form(); ?>
                             </div><!-- end .desktop-search -->
@@ -111,9 +111,9 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
             </div><!-- .site-header-content -->
 
             <div class="sticky-header hidden">
-                    <button id="overlay-open-sticky" class="overlay-open overlay-btn"><span><?php esc_html_e( 'Menu', 'uku' ); ?></span></button>
+                    <button id="overlay-open-sticky" class="overlay-open overlay-btn"><span><?php esc_html_e( 'Menu', 'pirate-rogue'); ?></span></button>
                     <?php if ( '' == get_theme_mod( 'uku_hidesearch' ) ) : ?>
-                            <button id="search-open-sticky" class="search-open search-btn"><span><?php esc_html_e( 'Search', 'uku' ); ?></span></button>
+                            <button id="search-open-sticky" class="search-open search-btn"><span><?php esc_html_e( 'Search', 'pirate-rogue'); ?></span></button>
                     <?php endif; ?>
 
                     <?php if ( has_custom_logo() ) : ?>
@@ -137,7 +137,7 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
             </div><!-- end .sticky-header -->
             <div class="inner-offcanvas-wrap">
                     <div class="close-btn-wrap">
-                            <button id="overlay-close" class="overlay-btn"><span><?php esc_html_e( 'Close', 'uku' ); ?></span></button>
+                            <button id="overlay-close" class="overlay-btn"><span><?php esc_html_e( 'Close', 'pirate-rogue'); ?></span></button>
                     </div><!-- end .close-btn-wrap -->
 
                     <div class="overlay-desktop-content cf">

@@ -92,12 +92,12 @@ html.overlay-show {
   overflow: hidden;
 }
 
+#page-start,
 .front-section:first-of-type, 
 .page .content-wrap, 
-.search-results .blog-wrap, 
-.archive .blog-wrap, 
+.singlepost-wrap,
 .error404 .content-wrap {
-  padding-top: 35px;
+  padding-top: 60px;
 }
 
 .headerimg-on .front-section:first-of-type {

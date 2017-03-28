@@ -12,7 +12,7 @@
 function pirate_rogue_setup() {
 
 	// Make Uku available for translation. Translations can be added to the /languages/ directory.
-	load_theme_textdomain( 'uku', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'pirate-rogue', get_template_directory() . '/languages' );
 
 
 	// Add default posts and comments RSS feed links to head
@@ -23,13 +23,13 @@ function pirate_rogue_setup() {
 
 	// This theme uses wp_nav_menu().
 	register_nav_menus( array (
-		'primary'	=> esc_html__( 'Main menu', 'uku' ),
-		'social' 	=> esc_html__( 'Social Icons', 'uku' ),
-		'social-front' 	=> esc_html__( 'Social menu (in About section, Standard and Neo only.)', 'uku' ),
-		'footer-one' 	=> esc_html__( 'Footer 1', 'uku' ),
-		'footer-two' 	=> esc_html__( 'Footer 2', 'uku' ),
-		'footer-three' 	=> esc_html__( 'Footer 3', 'uku' ),
-		'footer-four' 	=> esc_html__( 'Footer 4', 'uku' ),
+		'primary'	=> esc_html__( 'Main menu', 'pirate-rogue'),
+		'social' 	=> esc_html__( 'Social Icons', 'pirate-rogue'),
+		'social-front' 	=> esc_html__( 'Social menu (in About section, Standard and Neo only.)', 'pirate-rogue'),
+		'footer-one' 	=> esc_html__( 'Footer 1', 'pirate-rogue'),
+		'footer-two' 	=> esc_html__( 'Footer 2', 'pirate-rogue'),
+		'footer-three' 	=> esc_html__( 'Footer 3', 'pirate-rogue'),
+		'footer-four' 	=> esc_html__( 'Footer 4', 'pirate-rogue'),
 	) );
 
 	// Switch default core markup to output valid HTML5.
@@ -123,8 +123,8 @@ function pirate_rogue_scripts() {
 	    // Loads Custom Uku JavaScript functionality
 	    wp_enqueue_script( 'uku-script', get_template_directory_uri() . '/js/functions.min.js', array( 'jquery' ), '20160507', true );
 	    wp_localize_script( 'uku-script', 'screenReaderText', array(
-		    'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'uku' ) . '</span>',
-		    'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'uku' ) . '</span>',
+		    'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'pirate-rogue') . '</span>',
+		    'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'pirate-rogue') . '</span>',
 	    ) );
 
 	    // Loads Scripts for Featured Post Slider
@@ -309,7 +309,7 @@ function uku_comment( $comment, $args, $depth ) {
 						<span class="comment-time"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 							<?php
 							/* translators: 1: date */
-								printf( esc_html__( '%1$s', 'uku' ),
+								printf( esc_html__( '%1$s', 'pirate-rogue'),
 								get_comment_date());
 							?></a>
 						</span>
@@ -320,11 +320,11 @@ function uku_comment( $comment, $args, $depth ) {
 				<div class="comment-text">
 				<?php comment_text(); ?>
 					<?php if ( $comment->comment_approved == '0' ) : ?>
-						<p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'uku' ); ?></p>
+						<p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'pirate-rogue'); ?></p>
 					<?php endif; ?>
 				</div><!-- end .comment-text -->
 				<?php if ( comments_open () ) : ?>
-					<div class="comment-reply"><?php comment_reply_link( array_merge( $args, array( 'reply_text' => esc_html__( 'Reply', 'uku' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?></div>
+					<div class="comment-reply"><?php comment_reply_link( array_merge( $args, array( 'reply_text' => esc_html__( 'Reply', 'pirate-rogue'), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?></div>
 				<?php endif; ?>
 			</div><!-- end .comment-wrap -->
 		</div><!-- end .comment -->
@@ -335,7 +335,7 @@ function uku_comment( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li class="pingback">
-		<p><?php esc_html_e( 'Pingback:', 'uku' ); ?> <?php comment_author_link(); ?></p>
+		<p><?php esc_html_e( 'Pingback:', 'pirate-rogue'); ?> <?php comment_author_link(); ?></p>
 		<p class="pingback-edit"><?php edit_comment_link(); ?></p>
 	<?php
 			break;
@@ -356,9 +356,9 @@ add_action('widgets_init', 'remove_recent_comments_style');
 function uku_widgets_init() {
 
 	register_sidebar( array (
-		'name'          => esc_html__( 'Blog Sidebar', 'uku' ),
+		'name'          => esc_html__( 'Blog Sidebar', 'pirate-rogue'),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Widgets appear in the default sidebar.', 'uku' ),
+		'description'   => esc_html__( 'Widgets appear in the default sidebar.', 'pirate-rogue'),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => "</section>",
 		'before_title'  => '<h2 class="widget-title">',
@@ -366,9 +366,9 @@ function uku_widgets_init() {
 	) );
 
 	register_sidebar( array (
-		'name'          => esc_html__( 'Page Sidebar', 'uku' ),
+		'name'          => esc_html__( 'Page Sidebar', 'pirate-rogue'),
 		'id'            => 'sidebar-2',
-		'description'   => esc_html__( 'Widgets appear in the sidebar on pages.', 'uku' ),
+		'description'   => esc_html__( 'Widgets appear in the sidebar on pages.', 'pirate-rogue'),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => "</section>",
 		'before_title'  => '<h2 class="widget-title">',
@@ -376,9 +376,9 @@ function uku_widgets_init() {
 	) );
 
 	register_sidebar( array (
-		'name'          => esc_html__( 'Off Canvas Widget Area', 'uku' ),
+		'name'          => esc_html__( 'Off Canvas Widget Area', 'pirate-rogue'),
 		'id'            => 'sidebar-offcanvas',
-		'description'   => esc_html__( 'Widgets appear in the off canvas area.', 'uku' ),
+		'description'   => esc_html__( 'Widgets appear in the off canvas area.', 'pirate-rogue'),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => "</section>",
 		'before_title'  => '<h2 class="widget-title">',
@@ -386,9 +386,9 @@ function uku_widgets_init() {
 	) );
 
 	register_sidebar( array (
-		'name'          => esc_html__( 'Big Footer Instagram Widget Area', 'uku' ),
+		'name'          => esc_html__( 'Big Footer Instagram Widget Area', 'pirate-rogue'),
 		'id'            => 'sidebar-instagram',
-		'description'   => esc_html__( 'Widget area to show the WP Instagram Widget in a big one-column footer area .', 'uku' ),
+		'description'   => esc_html__( 'Widget area to show the WP Instagram Widget in a big one-column footer area .', 'pirate-rogue'),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => "</section>",
 		'before_title'  => '<h2 class="widget-title">',
@@ -397,9 +397,9 @@ function uku_widgets_init() {
 
 	if ( 'serif' == get_theme_mod( 'uku_main_design' ) ) {
 		register_sidebar( array (
-			'name'          => esc_html__( 'Big Footer Mailchimp Widget Area', 'uku' ),
+			'name'          => esc_html__( 'Big Footer Mailchimp Widget Area', 'pirate-rogue'),
 			'id'            => 'sidebar-newsletter',
-			'description'   => esc_html__( 'Widget area to show the Mailchimp Newsletter Widget in a big one-column footer area .', 'uku' ),
+			'description'   => esc_html__( 'Widget area to show the Mailchimp Newsletter Widget in a big one-column footer area .', 'pirate-rogue'),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => "</section>",
 			'before_title'  => '<h2 class="widget-title">',

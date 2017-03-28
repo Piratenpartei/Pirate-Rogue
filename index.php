@@ -66,11 +66,11 @@ if ( '' == get_theme_mod( 'uku_front_hideblog' ) ) : ?>
 		<?php endwhile; // end of the loop. ?>
 
 		<?php the_posts_pagination( array(
-			'next_text' => '<span class="meta-nav">' . esc_html__( 'Older', 'uku' ) . '</span> ' .
-			'<span class="screen-reader-text">' . esc_html__( 'Older Posts', 'uku' ) . '</span> ',
-			'prev_text' => '<span class="meta-nav">' . esc_html__( 'Newer', 'uku' ) . '</span> ' .
-			'<span class="screen-reader-text">' . esc_html__( 'Newer Posts', 'uku' ) . '</span> ',
-			'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'uku' ) . ' </span>',
+			'next_text' => '<span class="meta-nav">' . esc_html__( 'Older', 'pirate-rogue') . '</span> ' .
+			'<span class="screen-reader-text">' . esc_html__( 'Older Posts', 'pirate-rogue') . '</span> ',
+			'prev_text' => '<span class="meta-nav">' . esc_html__( 'Newer', 'pirate-rogue') . '</span> ' .
+			'<span class="screen-reader-text">' . esc_html__( 'Newer Posts', 'pirate-rogue') . '</span> ',
+			'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'pirate-rogue') . ' </span>',
 			) ); ?>
 		</div><!-- end #primary -->
 

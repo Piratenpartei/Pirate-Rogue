@@ -35,11 +35,11 @@ get_header(); ?>
 
 				// Previous/next page navigation.
 				the_posts_pagination( array(
-					'next_text' => '<span aria-hidden="true" class="meta-nav">' . esc_html__( 'Older', 'uku' ) . '</span> ' .
-					'<span class="screen-reader-text">' . esc_html__( 'Older Posts', 'uku' ) . '</span> ',
-					'prev_text' => '<span aria-hidden="true" class="meta-nav">' . esc_html__( 'Newer', 'uku' ) . '</span> ' .
-					'<span class="screen-reader-text">' . esc_html__( 'Newer Posts', 'uku' ) . '</span> ',
-					'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'uku' ) . ' </span>',
+					'next_text' => '<span aria-hidden="true" class="meta-nav">' . esc_html__( 'Older', 'pirate-rogue') . '</span> ' .
+					'<span class="screen-reader-text">' . esc_html__( 'Older Posts', 'pirate-rogue') . '</span> ',
+					'prev_text' => '<span aria-hidden="true" class="meta-nav">' . esc_html__( 'Newer', 'pirate-rogue') . '</span> ' .
+					'<span class="screen-reader-text">' . esc_html__( 'Newer Posts', 'pirate-rogue') . '</span> ',
+					'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'pirate-rogue') . ' </span>',
 			) );
 
 			// If no content, include the "No posts found" template.

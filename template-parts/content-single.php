@@ -71,14 +71,14 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 				<div class="meta-columntwo">
 					<?php if ( comments_open() ) : ?>
 					<div class="entry-comments-single">
-						<span class="entry-comments-title"><?php esc_html_e( 'Comments', 'uku' ); ?></span>
-						<span class="entry-comments"><?php comments_popup_link( esc_html__( '0', 'uku' ), esc_html__( '1', 'uku' ), esc_html__( '%', 'uku' ),'comments-link' ); ?></span>
+						<span class="entry-comments-title"><?php esc_html_e( 'Comments', 'pirate-rogue'); ?></span>
+						<span class="entry-comments"><?php comments_popup_link( esc_html__( '0', 'pirate-rogue'), esc_html__( '1', 'pirate-rogue'), esc_html__( '%', 'pirate-rogue'),'comments-link' ); ?></span>
 					</div><!-- end .entry-comments -->
 					<?php endif; // comments_open() ?>
 				</div><!-- end .meta-columntwo -->
 
 				<div class="meta-columnthree">
-					<?php edit_post_link( esc_html__( 'Edit Post', 'uku' ), '<span class="entry-edit">', '</span>' ); ?>
+					<?php edit_post_link( esc_html__( 'Edit Post', 'pirate-rogue'), '<span class="entry-edit">', '</span>' ); ?>
 				</div><!-- end .meta-columnthree -->
 			</div><!-- end .entry-meta -->
 		</header><!-- end .entry-header -->
@@ -106,7 +106,7 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
                                  ?>
 				<?php
 					wp_link_pages( array(
-						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'uku' ),
+						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'pirate-rogue'),
 						'after'  => '</div>',
 					) );
 				?>
@@ -146,10 +146,10 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 			?>
 
 			<?php the_post_navigation( array (
-				'next_text' => '<span class="meta-nav">' . esc_html__( 'Next Post', 'uku' ) . '</span> ' .
-				'<span class="screen-reader-text">' . esc_html__( 'Next Post', 'uku' ) . '</span> ',
-				'prev_text' => '<span class="meta-nav">' . esc_html__( 'Previous Post', 'uku' ) . '</span> ' .
-				'<span class="screen-reader-text">' . esc_html__( 'Previous Post', 'uku' ) . '</span> ',
+				'next_text' => '<span class="meta-nav">' . esc_html__( 'Next Post', 'pirate-rogue') . '</span> ' .
+				'<span class="screen-reader-text">' . esc_html__( 'Next Post', 'pirate-rogue') . '</span> ',
+				'prev_text' => '<span class="meta-nav">' . esc_html__( 'Previous Post', 'pirate-rogue') . '</span> ' .
+				'<span class="screen-reader-text">' . esc_html__( 'Previous Post', 'pirate-rogue') . '</span> ',
 			) ); ?>
 
 		</div><!-- end #socialicons-sticky -->

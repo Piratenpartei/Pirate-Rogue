@@ -7,18 +7,18 @@
 <?php
 $font_sizes = array(22, 20, 18, 16);
 $text_fields = array(
-    __('File not found', 'pirate_rogue'),
-    __('404', 'pirate_rogue'),
-    __('Lost', 'pirate_rogue'),
-    __('These are not the droids you are looking for', 'pirate_rogue'),
-    __('Not here anymore', 'pirate_rogue'),
-    __('Arrrgh!', 'pirate_rogue'),
-    __('Arr!', 'pirate_rogue'),
-    __('404', 'pirate_rogue'),
-    __('Versenk mich doch!', 'pirate_rogue'),
-    __('Beim Klabautermann! ', 'pirate_rogue'),
-    __('404', 'pirate_rogue'),
-    __('Yo-ho-ho', 'pirate_rogue'),
+    __('File not found', 'pirate-rogue'),
+    __('404', 'pirate-rogue'),
+    __('Lost', 'pirate-rogue'),
+    __('These are not the droids you are looking for', 'pirate-rogue'),
+    __('Not here anymore', 'pirate-rogue'),
+    __('Arrrgh!', 'pirate-rogue'),
+    __('Arr!', 'pirate-rogue'),
+    __('404', 'pirate-rogue'),
+    __('Versenk mich doch!', 'pirate-rogue'),
+    __('Beim Klabautermann! ', 'pirate-rogue'),
+    __('404', 'pirate-rogue'),
+    __('Yo-ho-ho', 'pirate-rogue'),
 );
 
 $scrollamount_range = array(1, 2, 3, 4, 5, 6, 7, 8);

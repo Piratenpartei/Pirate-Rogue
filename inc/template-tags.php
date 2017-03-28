@@ -400,12 +400,12 @@ function pirate_rogue_get_tag_ID($tag_name) {
  	);
 
  	$posted_on = sprintf(
- 		esc_html_x( '%s', 'post date', 'uku' ),
+ 		esc_html_x( '%s', 'post date', 'pirate-rogue'),
  		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
  	);
 
  	$byline = sprintf(
- 		esc_html_x( '%s', 'post author', 'uku' ),
+ 		esc_html_x( '%s', 'post author', 'pirate-rogue'),
  		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
  	);
         
@@ -430,8 +430,8 @@ function pirate_rogue_get_tag_ID($tag_name) {
      }
     $byline = sprintf(
     /* translators: used to show post author name */
-    esc_html_x( '%s', 'post author', 'uku' ),
-    '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html__( 'by ', 'uku' ) . esc_html( get_the_author() ) . '</a></span>'
+    esc_html_x( '%s', 'post author', 'pirate-rogue'),
+    '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html__( 'by ', 'pirate-rogue') . esc_html( get_the_author() ) . '</a></span>'
     );
 
     echo '<span class="entry-author"> ' . $byline . '</span>';

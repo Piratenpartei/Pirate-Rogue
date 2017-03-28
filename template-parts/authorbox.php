@@ -16,7 +16,7 @@
 		?>
 	</div><!-- .author-pic -->
 	<div class="author-heading">
-		<h3 class="author-title"><span><?php esc_html_e( 'About', 'uku' ); ?></span><?php printf( "<a href='" .  esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) )) . "' rel='author'>" . get_the_author() . "</a>" ); ?></h3>
+		<h3 class="author-title"><span><?php esc_html_e( 'About', 'pirate-rogue'); ?></span><?php printf( "<a href='" .  esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) )) . "' rel='author'>" . get_the_author() . "</a>" ); ?></h3>
 	</div><!-- end .author-heading -->
 	<p class="author-bio"><?php the_author_meta( 'description' ); ?></p>
 	<div class="author-links">

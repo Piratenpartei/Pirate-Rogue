@@ -87,19 +87,14 @@
   .page .content-wrap, 
   .front-section:first-of-type, 
   .page.has-thumb .blog-wrap, 
-  .search-results .blog-wrap, 
+  .search .blog-wrap, 
   .archive .blog-wrap, 
   .error404 .content-wrap {
     padding-top: 60px;
   }
 
 
-  /* --- Typography --- */
-  .single-post .entry-content blockquote, 
-  .page .entry-content blockquote {
-    margin: 0 0 40px;
-    padding-bottom: 40px;
-  }
+
   #front-section-four .format-video .entry-thumbnail a:before, 
   .section-three-column-one .format-video .entry-thumbnail a:before  {
     width: 60px;

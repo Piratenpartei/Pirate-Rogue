@@ -1,58 +1,97 @@
 /*-----------------------------------------------------------------------------------*/
 /*  Blockquotes and cites
 /*-----------------------------------------------------------------------------------*/
-.entry-content {
-    blockquote {
-        padding: 40px;
-        background-color: lighten($color-second,60%);
-        p {
-            position: relative;
-            font-weight: 600;
-            @include px2rem($font-size-blockquote);  	
-        }
-        cite {
-            display: block;
-            padding-top: 10px;
-            padding-right: 30px;
-            font-style: normal;
-            text-align: right;
-            @include px2rem($font-size-blockquote-cite);
-        }
+blockquote {
+    display:block;
+    background: #fff;
+    padding: 20px 20px 20px 45px;
+    margin: 10px 20px 30px;
+    position: relative;
+  //  text-align: justify;
+    font-family: $font-family-quotation;
+
+    /*Borders - (Optional)*/
+    border-left: 15px solid $color-main;
+    border-right: 2px solid $color-main;
+
+    /*Box Shadow - (Optional)*/
+    -moz-box-shadow: 2px 2px 15px #ccc;
+    -webkit-box-shadow: 2px 2px 15px #ccc;
+    box-shadow: 2px 2px 15px #ccc;
+
+    a {
+        text-decoration: none;
+        background: #eee;
+        cursor: pointer;
+        padding: 0 3px;
+    }
+    em{
+        font-style: italic;
+    }
+    &.secondcolor {
+         border-left: 15px solid $color-second;
+         border-right: 2px solid $color-second;
+         a {
+             color: $color-second;
+         }
+    }
+    p {
+        position: relative;
+        font-weight: 600;
+        @include px2rem($font-size-blockquote);  	
+    }
+    cite {
+        display: block;
+        padding-top: 10px;
+        padding-right: 30px;
+        font-style: normal;
+        text-align: right;
+        @include px2rem($font-size-blockquote-cite);
+    }
+    // In Case wie want a Double Quote before. 
+    // But normally all cites have them in text already...
+    
+}
+
+blockquote.quotesign {
+    padding: 20px 20px 20px 55px;
+    
+    &::before {
+        content: "\201C"; // Unicode for Left Double Quote
+        font-family: Georgia, serif;
+        font-size: 80px;
+        font-weight: bold;
+        color: lighten($color-text,50%); 
+
+        position: absolute;
+        left: 10px;
+        top: 0px;
+    }
+    &::after{
+        // Reset to make sure
+        content: "";
+    }
+    
+}
+    
+#comments blockquote {
+    border-left: none;
+    border-right: none;
+    p {
+        position: relative;
+        font-weight: 600;
+    } 
+   cite {
+        display: block;
+        padding-top: 10px;
+        font-style: normal;
+        @include px2rem($font-size-base);  	   
     }
 }
 
 
-
-.single-post {
-  #comments blockquote p {
-    position: relative;
-    font-weight: 600;
-  }
-  .entry-content blockquote {
-    padding: 40px;
-    background-color: #fff;
-    margin: 0 0 30px;
-  }
-}
-
-.page .entry-content blockquote {
-    padding: 40px;
-    background-color: lighten($color-second,60%);
-    margin: 0 0 30px;
-}
-
-
-#comments blockquote cite {
-    display: block;
-    padding-top: 10px;
-    font-style: normal;
-     @include px2rem($font-size-base);  	   
-}
-
 @media screen and (min-width: 48em) {
     .entry-content blockquote {
-        padding: 40px;
-        background-color: lighten($color-second,60%);
 	p {
 	    @include px2rem($font-size-blockquote-sm);  	    
 	} 

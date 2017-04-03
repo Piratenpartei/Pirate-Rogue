@@ -91,6 +91,13 @@ h1 {
     }
 }
 
+.entry-header {
+    h1.entry-title {
+	display: block;
+	margin: 0;
+    }
+}
+
 
 #secondary h2.widget-title, 
 #sidebar-page h2.widget-title {
@@ -104,6 +111,9 @@ h1 {
       @include px2rem($font-size-h2-entryheader);
       color: $color-text;
       text-decoration: none;
+      padding: 4px 0 8px;
+      display: block;
+	margin: 0;
       a {
 	  color: $color-text;
 	  text-decoration: none;

@@ -181,6 +181,3 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
 
     <div id="overlay-wrap" class="overlay-wrap cf"></div><!-- end #overlay-wrap -->
 
-    <?php if ( get_header_image()  && is_front_page() ) : ?>
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="header-image"><img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
-    <?php endif; ?>

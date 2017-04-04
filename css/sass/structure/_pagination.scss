@@ -18,7 +18,10 @@
   }
   .nav-links {
     a {
-      &.next.page-numbers:hover, &.prev.page-numbers:hover {
+      &.next.page-numbers:focus, 
+      &.prev.page-numbers:focus,
+      &.next.page-numbers:hover, 
+      &.prev.page-numbers:hover {
         text-decoration: none;
       }
     }
@@ -44,15 +47,20 @@
   padding-top: 60px;
 }
 
-.single-post .post-navigation .nav-previous, .pagination .prev, .single-attachment .nav-previous {
+.single-post .post-navigation .nav-previous, 
+.pagination .prev,
+.single-attachment .nav-previous {
   float: left;
 }
 
-.single-post .post-navigation .nav-next, .pagination .next, .single-attachment .nav-next {
+.single-post .post-navigation .nav-next, 
+.pagination .next, 
+.single-attachment .nav-next {
   float: right;
 }
 
-.single-post .post-navigation a, .single-attachment .post-navigation a {
+.single-post .post-navigation a, 
+.single-attachment .post-navigation a {
   position: relative;
   display: block;
   font-size: 15px;

@@ -104,14 +104,17 @@ p.site-title {
 }
 
 
-
+.footer-feature-btn:focus, 
+#comments-toggle:focus, 
 .footer-feature-btn:hover, 
 .comments-show #comments-toggle, 
 #comments-toggle:hover {
   background: #0c6ca6;
 }
 
-
+#primary #infinite-handle span:focus, 
+#front-section-three a.all-posts-link:focus, 
+#offcanvas-widgets-open:focus,
 #primary #infinite-handle span:hover, 
 #front-section-three a.all-posts-link:hover, 
 #offcanvas-widgets-open:hover,
@@ -120,12 +123,16 @@ p.site-title {
 }
 
 .comments-show #comments-toggle,
+#comments-toggle:focus,
 #comments-toggle:hover {
   border: 2px solid #0c6ca6;
   color: #fff;
 }
 
-
+#primary #infinite-handle span:focus, 
+#front-section-three a.all-posts-link:focus, 
+.footer-feature-btn:focus, 
+#offcanvas-widgets-open:focus,
 #primary #infinite-handle span:hover, 
 #front-section-three a.all-posts-link:hover, 
 .footer-feature-btn:hover, 

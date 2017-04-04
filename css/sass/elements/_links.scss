@@ -203,10 +203,13 @@ p.wp-caption-text,
 }
 
 #colophon {
-  .footer-menu ul a:hover, #site-info a:hover {
-    color: rgba(255, 255, 255, 1);
-  }
-  a {
-    color: #fff;
-  }
+    .footer-menu ul a:focus, 
+    #site-info a:focus,
+    .footer-menu ul a:hover, 
+    #site-info a:hover {
+        color: rgba(255, 255, 255, 1);
+    }
+    a {
+        color: #fff;
+    }
 }

@@ -21,6 +21,7 @@ blockquote {
         cursor: pointer;
         padding: 0 3px;
     }
+    a:focus,
     a:hover {
             color: $color-second;
     }
@@ -33,7 +34,8 @@ blockquote {
          a {
              color: $color-second;   
          }
-         a::hover {
+         a:focus,
+         a:hover {
             color: $color-main;
          }
     }
@@ -91,7 +93,7 @@ blockquote.quotesign {
 }
 
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: $breakpoint-sm) {
     .entry-content blockquote {
 	p {
 	    @include px2rem($font-size-blockquote-sm);  	    

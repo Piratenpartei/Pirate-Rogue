@@ -1,6 +1,6 @@
-/*
-  Molecular and organism structures
-*/
+/*-----------------------------------------------------------------------------------*/
+/* Rahmen
+/*-----------------------------------------------------------------------------------*/
 
 
 html {
@@ -92,7 +92,7 @@ html.overlay-show {
   overflow: hidden;
 }
 
-#page-start,
+
 .front-section:first-of-type, 
 .page .content-wrap, 
 .singlepost-wrap,
@@ -123,6 +123,31 @@ html.overlay-show {
 .front_hidecomments {
     .blog .entry-comments {display: none !important;}
 }
-.front_hidecats {
-    .blog .entry-cats {display: none !important;}
+
+@media screen and (min-width: $breakpoint-sm) {
+    /* --- General --- */
+    .page .content-wrap, 
+    .front-section:first-of-type, 
+    .page.has-thumb .blog-wrap, 
+    .search .blog-wrap, 
+    .archive .blog-wrap, 
+    .singlepost-wrap,
+    .error404 .content-wrap {
+	  padding-top: 60px;
+    }
+}
+
+@media screen and (min-width: $breakpoint-1024) {
+    .page .content-wrap, 
+    .front-section:first-of-type, 
+    .page.has-thumb .blog-wrap, 
+    .search .blog-wrap, 
+    .archive .blog-wrap, 
+    .error404 .content-wrap {
+	  padding-top: 40px;
+    }
+    
+    .singlepost-wrap {
+        padding-top: 20px;
+    }
 }

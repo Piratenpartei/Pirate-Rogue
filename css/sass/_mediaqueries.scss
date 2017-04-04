@@ -9,35 +9,35 @@
     display: inline-block;
   }
   .blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) {
-    .entry-edit, 
-    .entry-author {
-      display: inline-block;
-    }
-    .entry-date:before {
-      content: ' / ';
-      padding: 0 4px;
-    }
-    .entry-edit {
-      padding-left: 20px;
-    }
+	.entry-edit, 
+	.entry-author {
+	  display: inline-block;
+	}
+	.entry-date:before {
+	  content: ' / ';
+	  padding: 0 4px;
+	}
+	.entry-edit {
+	  padding-left: 20px;
+	}
   }
   #front-section-four .entry-edit {
     padding-left: 20px;
   }
   .entry-content p {
-    &.pull-left,
-    &.pull-right {
-      width: 48%;
-    }
-    &.pull-left {
-      float: left;
-      margin-right: 20px;
-    }
-    &.pull-right {
-      float: right;
-      margin-left: 20px;
-      text-align: right;
-    }
+	&.pull-left,
+	&.pull-right {
+	  width: 48%;
+	}
+	&.pull-left {
+	  float: left;
+	  margin-right: 20px;
+	}
+	&.pull-right {
+	  float: right;
+	  margin-left: 20px;
+	  text-align: right;
+	}
   }
   /* --- Front Section 2-column --- */
   #front-section-twocolumn .type-post {
@@ -66,41 +66,13 @@
     width: 40%;
     float: right;
   }
-  /* --- Footer --- */
-  .footer-feature-image {
-    width: 47.8134110787172%;
-    float: left;
-    margin-right: 2.1865889212828%;
-  }
-  .footer-feature-textwrap {
-    width: 47.8134110787172%;
-    float: right;
-    padding-top: 0;
-    margin-left: 2.1865889212828%;
-  }
 }
 
 /* Minimum width of 768 pixels (tablet portrait)
 ------------------------------------------------------------------------------------ */
 @media screen and (min-width: 48em) {
-  /* --- General --- */
-  .page .content-wrap, 
-  .front-section:first-of-type, 
-  .page.has-thumb .blog-wrap, 
-  .search-results .blog-wrap, 
-  .archive .blog-wrap, 
-  .error404 .content-wrap {
-    padding-top: 60px;
-  }
 
-
-  /* --- Typography --- */
-  .single-post .entry-content blockquote, 
-  .page .entry-content blockquote {
-    margin: 0 0 40px;
-    padding-bottom: 40px;
-  }
-  #front-section-four .format-video .entry-thumbnail a:before, 
+    #front-section-four .format-video .entry-thumbnail a:before, 
   .section-three-column-one .format-video .entry-thumbnail a:before  {
     width: 60px;
     height: 42px;
@@ -254,7 +226,7 @@
     padding-bottom: 0;
   }
   /* --- Front Page - Blog --- */
-  
+  #primary .not-found,
   #primary .hentry {
     padding: 20px 0 40px;
   }
@@ -312,26 +284,7 @@
       padding-bottom: 8px;
     }
   }
-  /* --- Single Post --- */
-  .single-post {
-    .entry-header {
-      margin: 0 0 60px;
-      padding: 45px 0 0;
-    }
-    .big-thumb .entry-header {
-      padding: 0;
-    }
-    .entry-thumbnail {
-      padding-bottom: 53px;
-    }
-    .big-thumb .entry-thumbnail {
-      padding-bottom: 60px;
-      margin-left: -7.14285714285714%;
-      /* 90px at 1440px */
-      margin-right: -7.14285714285714%;
-      padding-bottom: 60px;
-    }
-  }
+
   .big-thumb {
     .title-wrap {
       margin-left: -7.14285714285714%;
@@ -520,12 +473,11 @@
 
 /* Minimum width of 1024 pixels (tablet landscape)
 ------------------------------------------------------------------------------------ */
-@media screen and (min-width: 64em) {
+@media screen and (min-width: $breakpoint-1024) {
   /* --- General --- */
   #front-section-four .entry-thumbnail a {
     width: 100%;
   }
-
 
   p.text-big {
     font-size: 32px;
@@ -539,14 +491,6 @@
   .section-about-column-one p {
     padding-left: 1.6%;
     width: 67.2%;
-  }
-  /* --- Footer --- */
-  .footer-feature-btn {
-    margin: 40px 0 0 0;
-    padding: 18px 40px;
-  }
-  .big-footer-feature p.text-small {
-    padding: 20px 0 0 0;
   }
 }
 
@@ -571,9 +515,7 @@
   .front-section:first-of-type {
     padding-top: 0;
   }
-  .page .content-wrap {
-    padding-top: 60px;
-  }
+
   .blog #masthead {
     margin-bottom: 60px;
   }
@@ -1212,71 +1154,8 @@
   .entry-header p.intro {
     display: block;
   }
-  /* --- Footer --- */
-  .title-footer {
-    width: 31.74603174603175%;
-    /* -- 400px at 1440px ---*/
-    margin-right: 2.38095238095238%;
-    /* -- 30px at 1440px ---*/
-    float: left;
-  }
-  #colophon .custom-logo-wrap {
-    width: 31.74603174603175%;
-    /* -- 400px at 1440px ---*/
-    margin-right: 2.38095238095238%;
-    /* -- 30px at 1440px ---*/
-    float: left;
-    .custom-logo-link img {
-      max-width: 130px;
-      max-height: 59px;
-    }
-  }
-  #footer-menu-one, 
-  #footer-menu-two, 
-  #footer-menu-three, 
-  #footer-menu-four {
-    clear: none;
-  }
-  .footer-menu {
-    width: 14.68253968253968%;
-    /* -- 185px at 1440px ---*/
-    float: left;
-  }
-  #footer-menu-one, 
-  #footer-menu-two, 
-  #footer-menu-three {
-    margin-right: 2.38095238095238%;
-    /* -- 30px at 1440px ---*/
-  }
-  .title-footer {
-    font-size: 36px;
-    font-size: 2.25rem;
-  }
-  #site-info {
-    width: 50%;
-    float: left;
-  }
-  #footer-social {
-    padding-top: 23px;
-    float: right;
-    text-align: right;
-    ul {
-      float: left;
-    }
-    span {
-      display: inline-block;
-      float: left;
-      padding: 8px 15px 0px 0px;
-    }
-  }
-  .footer-feature-image {
-    width: 31.74603174603175%;
-    margin-right: 0;
-  }
-  .footer-feature-textwrap {
-    width: 65.87301587301587%;
-    margin-left: 0;
-  }
+
+ 
   /* --- Extra Plugins --- */
   .widget_mc4wp_form_widget input[type="email"], 
   .jetpack_subscription_widget #subscribe-email input[type="email"] {

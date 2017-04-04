@@ -11,6 +11,7 @@ h1, h2, h3, h4, h5, h6 {
     font-familiy: $font-family-headlines;
 }
 
+.site-content,
 .entry-content {
     h1 {
 	padding: 6px 0 9px;
@@ -62,8 +63,9 @@ h1 {
     .single-post .entry-header &.entry-title,
     .entry-header &.entry-title,
     .page &.entry-title,
-    article &,
+    &.entry-title,
     .archive-header &.archive-title,
+    .site-content &,
     .entry-content & {
         border-bottom: 7px;
         border-color: $color-main;
@@ -89,6 +91,12 @@ h1 {
     }
 }
 
+.entry-header {
+    h1.entry-title {
+	margin: 0;
+    }
+}
+
 
 #secondary h2.widget-title, 
 #sidebar-page h2.widget-title {
@@ -102,6 +110,9 @@ h1 {
       @include px2rem($font-size-h2-entryheader);
       color: $color-text;
       text-decoration: none;
+      padding: 4px 0 8px;
+      display: block;
+	margin: 0;
       a {
 	  color: $color-text;
 	  text-decoration: none;
@@ -119,6 +130,8 @@ h1 {
 .featured-slider .entry-header h2.entry-title a {
   color: #fff !important;
 }
+
+
 
 h3 {
     &#reply-title {
@@ -171,6 +184,17 @@ h3 {
 .recommended-posts-wrap #jp-relatedposts h3.jp-relatedposts-headline, 
 #big-footer-feature h3.footer-feature-title {
     @include px2rem($font-size-entrytitle);
+}
+
+.site-content,
+.entry-content {
+    header {
+        margin-bottom: 20px;
+    }
+}
+
+.home .entry-header {
+  @extend .screen-reader-text;
 }
 
 

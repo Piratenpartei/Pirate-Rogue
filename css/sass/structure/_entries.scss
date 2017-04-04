@@ -4,7 +4,7 @@
 .entry-thumbnail a {
     max-height: 900px;
     overflow: hidden;
-  }
+}
   
   
 .single-post .format-video .entry-thumbnail a:before, 
@@ -12,24 +12,12 @@
   display: none;
 }
 
-.entry-header h2.entry-title {
-  padding: 4px 0 8px;
-}
 
 .entry-thumbnail a {
   position: relative;
   line-height: 0;
   display: block;
 }
-
-.entry-header {
-  h2.entry-title, h1.entry-title {
-    display: block;
-    margin: 0;
-  }
-}
-
-
 
 
 .format-video .entry-thumbnail {
@@ -84,37 +72,7 @@
 
 .sticky {}
 
-/* --- Post Meta --- */
 
-.entry-meta {
-  display: block;
-  clear: both;
-}
-
-#primary .hentry {
-  .entry-date, 
-  .entry-edit {
-    display: block;
-  }
-  .entry-date {
-    padding-bottom: 8px;
-  }
-}
-
-.entry-meta .entry-tags ul {
-  margin: 0;
-  padding: 0;
-}
-
-.featured-slider .entry-cats a, 
-.section-one-column-one .entry-cats a, 
-.section-three-column-one .entry-cats a, 
-#front-section-four .entry-cats a, 
-.single-post .entry-cats a {
-  padding: 3px 5px;
-  margin: 0 2px 4px 0;
-  color: #fff !important;
-}
 
 /* --- Single Post --- */
 
@@ -147,12 +105,7 @@
 
 .single-post {
   .entry-header {
-    .entry-cats {
-      display: block;
-      a {
-        display: inline-block;
-      }
-    }
+    
     h1.entry-title {
       position: relative;
       display: block;
@@ -350,14 +303,6 @@
     left: -4px;
     text-align: left;
   }
-  &.author-website:before {
-    font: normal 23px/1 'Genericons';
-    content: '\f442';
-  }
-  &.author-twitter:before {
-    font: normal 18px/1 'Genericons';
-    content: '\f202';
-  }
 }
 
 
@@ -372,4 +317,27 @@ article {
     header {
         margin-bottom: 20px;
     }
+}
+
+@media screen and (min-width:$breakpoint-sm) {
+      /* --- Single Post --- */
+  .single-post {
+    .entry-header {
+      margin: 0 0 20px;
+      padding: 25px 0 0;
+    }
+    .big-thumb .entry-header {
+      padding: 0;
+    }
+    .entry-thumbnail {
+      padding-bottom: 53px;
+    }
+    .big-thumb .entry-thumbnail {
+      padding-bottom: 60px;
+      margin-left: -7.14285714285714%;
+      /* 90px at 1440px */
+      margin-right: -7.14285714285714%;
+      padding-bottom: 60px;
+    }
+  }
 }

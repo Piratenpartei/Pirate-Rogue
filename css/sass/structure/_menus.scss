@@ -113,7 +113,8 @@
 }
 
 #overlay-nav ul {
-  &.sub-menu.toggled-on, &.children.toggled-on {
+  &.sub-menu.toggled-on, 
+  &.children.toggled-on {
     display: block !important;
   }
 }
@@ -127,7 +128,8 @@
   }
 }
 
-
+.single-post .post-navigation a:focus, 
+.single-attachment .post-navigation a:focus,
 .single-post .post-navigation a:hover, 
 .single-attachment .post-navigation a:hover {
   border-bottom: 2px solid #51a8dd;
@@ -150,6 +152,8 @@
               color: $color-main-menu;  
             }
         }
+        
+        li:focus,
 	li:hover {
 	    a {
 		border-bottom: 3px solid $color-mainnav-active-border;
@@ -179,8 +183,10 @@
 	  display: none;
 	}
 	ul {
+          li:focus > ul,  
 	  li:hover > ul {
-	    &.sub-menu, &.children {
+	    &.sub-menu, 
+            &.children {
 	      display: block !important;
 	    }
 	  }

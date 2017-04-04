@@ -107,6 +107,9 @@ p.site-description {
         color: rgba(255, 255, 255, 0.5);
       }
       .sticky-header p.site-title a, 
+       #overlay-open-sticky:focus, 
+      #search-open-sticky:focus, 
+	#header-social-sticky ul li a:focus,
       #overlay-open-sticky:hover, 
       #search-open-sticky:hover, 
 	#header-social-sticky ul li a:hover {
@@ -114,7 +117,7 @@ p.site-description {
       }
     }
   }
-  .sticky-header {
+  .sticky-header {s
     &.hidden {
       -webkit-transform: translateY(-100%);
       transform: translateY(-100%);

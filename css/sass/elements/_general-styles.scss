@@ -76,20 +76,13 @@ p.site-title {
 
 #site-info, 
 .front-section a.all-posts-link, 
-.single-post .entry-tags, 
 .single-post .canonical-link, 
 .null-instagram-feed .clear {
   font-size: 12px;
   font-size: 0.75rem;
 }
 
-.entry-meta, 
-.entry-cats {
-  font-size: 11px;
-  font-size: 0.6875rem;
-}
 
-.entry-meta, .entry-cats, 
 #overlay-nav ul li a, 
 #desktop-navigation ul li a, 
 .site-content p.nocomments, 
@@ -101,8 +94,6 @@ p.site-title {
 /* --- Links + Colors --- */
 
 .single-post .entry-header p.intro, 
-.entry-meta, 
-.entry-cats, 
 .entry-summary, 
 .front-section-title, 
 .social-front-title, 
@@ -113,26 +104,17 @@ p.site-title {
 }
 
 
-.entry-meta a, 
-.entry-cats a {
-  color: $color-text;
-  text-decoration: none;
-}
-
-
-
-
-.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-cats a:hover,
-.featured-slider .entry-cats a:hover, .section-one-column-one .entry-cats a:hover, 
-.section-three-column-one .entry-cats a:hover, #front-section-four .entry-cats a:hover, 
-.single-post .entry-cats a:hover, 
+.footer-feature-btn:focus, 
+#comments-toggle:focus, 
 .footer-feature-btn:hover, 
 .comments-show #comments-toggle, 
 #comments-toggle:hover {
   background: #0c6ca6;
 }
 
-
+#primary #infinite-handle span:focus, 
+#front-section-three a.all-posts-link:focus, 
+#offcanvas-widgets-open:focus,
 #primary #infinite-handle span:hover, 
 #front-section-three a.all-posts-link:hover, 
 #offcanvas-widgets-open:hover,
@@ -141,12 +123,16 @@ p.site-title {
 }
 
 .comments-show #comments-toggle,
+#comments-toggle:focus,
 #comments-toggle:hover {
   border: 2px solid #0c6ca6;
   color: #fff;
 }
 
-
+#primary #infinite-handle span:focus, 
+#front-section-three a.all-posts-link:focus, 
+.footer-feature-btn:focus, 
+#offcanvas-widgets-open:focus,
 #primary #infinite-handle span:hover, 
 #front-section-three a.all-posts-link:hover, 
 .footer-feature-btn:hover, 
@@ -180,7 +166,6 @@ p.site-title {
   }
 }
 
-.single-post .entry-tags a, 
 p.wp-caption-text, 
 .contact-form label span, 
 .gallery .gallery-item .gallery-caption {
@@ -212,45 +197,24 @@ p.wp-caption-text,
   }
 }
 
-/* ---  White Font Color --- */
 
 .blog #primary .hentry.has-post-thumbnail:nth-child(4n+1), 
 .featured-slider {
-  .entry-header h2.entry-title a {
-    color: #fff;
-  }
-  .entry-meta {
-    color: #fff;
-    a {
+    .entry-header h2.entry-title a {
       color: #fff;
     }
-  }
-  .entry-cats a {
-    color: #fff;
-  }
+    
 }
 
-.section-one-column-one .entry-cats a, 
-.section-three-column-one .entry-cats a {
-  color: #fff;
-}
+
 
 #front-section-four {
-  .entry-cats a, 
   .entry-header h2.entry-title a {
     color: #fff;
   }
-  .entry-meta {
-    color: #fff;
-    a {
-      color: #fff;
-    }
-  }
 }
 
-.single-post .entry-cats a {
-  color: #fff;
-}
+
 
 .big-thumb .entry-header {
   h1.entry-title, p.intro {
@@ -263,9 +227,6 @@ p.wp-caption-text,
 }
 
 .blog {
-  .featured-slider .entry-meta a:hover {
-    color: #fff;
-  }
   &.headerfont-light {
     h1.site-title a, 
     #overlay-open, 
@@ -375,7 +336,7 @@ dl {
   }
 }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: $breakpoint-sm) {
 
   .front-section-title,  
   .social-front-title  {
@@ -417,18 +378,6 @@ dl {
 	@include px2rem($font-size-base); 
   }
 
-  .single-post .hentry .entry-meta, 
-  .single-attachment .hentry .entry-meta, 
-  .shortcode-section a.all-posts-link,
-  .front-section a.all-posts-link {
-	@include px2rem($font-size-smaller); 
-  }
-  .single-post {
-        .canonical-link,  
-        .entry-tags  {
-            @include px2rem($font-size-smaller); 
-        }
-  }
 
   .null-instagram-feed .clear {
       @include px2rem($font-size-smaller); 

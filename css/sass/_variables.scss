@@ -13,17 +13,18 @@ $color-text:			#2b2b2b;
 $bg-grey:			#e7e7eb;
 $color-border:			$bg-grey;
 $color-special-background:	$color-page-background;
-
+$color-linkhover:               $color-main; // #0c6ca6;
 $color-mainnav-active-border:   $color-main;
 
 $color-main-menu:               $color-text; // $color-second;
 $color-main-menu-hover:         $color-text; // $color-main;
 $color-cats:                    #fff;
-$color-cats-background:          $color-main;
-$color-cats-background-hover:   $color-second;
+$color-cats-hover:		#fff;
+$color-cats-background:         $color-second;
+$color-cats-background-hover:   $color-main;
 $color-mark-background:		lighten($color-four,20%); // #d2f1ff;
 $color-footer-background:	#1a1a1a;
-
+ 
 //////////////////////////////////////////////////////////////////////////////
 // Fonts
 //////////////////////////////////////////////////////////////////////////////
@@ -46,7 +47,8 @@ $font-size-entrytitle:	    20;
 $font-size-bigtext:	    18;
 $font-size-smaller:	    15;
 $font-size-small:	    14;
-    
+$font-size-xsmall:	    11;
+
 $font-size-base-sm:	    18;
 $font-size-bigtext-sm:	    20;
 $font-size-smaller-sm:	    16;

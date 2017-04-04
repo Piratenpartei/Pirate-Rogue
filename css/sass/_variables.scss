@@ -19,8 +19,9 @@ $color-mainnav-active-border:   $color-main;
 $color-main-menu:               $color-text; // $color-second;
 $color-main-menu-hover:         $color-text; // $color-main;
 $color-cats:                    #fff;
-$color-cats-background:          $color-main;
-$color-cats-background-hover:   $color-second;
+$color-cats-hover:		#fff;
+$color-cats-background:         $color-second;
+$color-cats-background-hover:   $color-main;
 $color-mark-background:		lighten($color-four,20%); // #d2f1ff;
 $color-footer-background:	#1a1a1a;
 

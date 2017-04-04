@@ -113,7 +113,8 @@
 }
 
 #overlay-nav ul {
-  &.sub-menu.toggled-on, &.children.toggled-on {
+  &.sub-menu.toggled-on, 
+  &.children.toggled-on {
     display: block !important;
   }
 }
@@ -150,6 +151,7 @@
               color: $color-main-menu;  
             }
         }
+        li:focus,
 	li:hover {
 	    a {
 		border-bottom: 3px solid $color-mainnav-active-border;

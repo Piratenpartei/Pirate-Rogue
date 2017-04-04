@@ -43,6 +43,7 @@
                     border-color: #ccc;
                     color: white;
 		}
+                 &[href*="diaspora.com"]:focus,
                 &[href*="diaspora.com"]:hover {
                      background-color: darken(#ccc,10%);
                 }
@@ -53,6 +54,7 @@
                     border-color: #eeeeee;
                     color: white;
 		}
+                 &[href*="delicious.com"]:focus,
                 &[href*="delicious.com"]:hover {
                      background-color: darken(#eeeeee,10%);
                 }
@@ -63,6 +65,7 @@
                     border-color: #3b5998;
                     color: white;
 		}
+                &[href*="facebook.com"]:focus,
                 &[href*="facebook.com"]:hover {
                     background-color: darken(#3b5998,10%);
                 }
@@ -73,6 +76,7 @@
                     border-color: #ff8800;
                     color: white;
 		}
+                 &[href*="feed"]:focus,
                 &[href*="feed"]:hover {
                      background-color: darken(#ff8800,10%);
                 }
@@ -82,6 +86,7 @@
                     border-color: #5CB85C;
                     color: white;
 		}
+                &[href*="flattr.com"]:focus,
                 &[href*="flattr.com"]:hover {
                      background-color: darken(#5CB85C,10%);
                 }
@@ -91,6 +96,7 @@
                     border-color: #ff0084;
                     color: white;
 		}
+                &[href*="flickr.com"]:focus,
                 &[href*="flickr.com"]:hover {
                     background-color: darken(#ff0084,10%);
                 }
@@ -100,6 +106,7 @@
                     border-color: #4285f4;
                     color: white;
 		}
+                 &[href*="google.com"]:focus,
                 &[href*="google.com"]:hover {
                     background-color: darken(#4285f4,10%);
                 }
@@ -109,6 +116,7 @@
                     border-color: #dd4b39;
                     color: white;
                 }  
+                 &[href*="plus.google.com"]:focus,
                 &[href*="plus.google.com"]:hover {
                     background-color: darken(#dd4b39,20%);
                 }
@@ -119,6 +127,7 @@
                     border-color: #4078c0;
                     color: white;
 		}
+                &[href*="github.com"]:focus,
                 &[href*="github.com"]:hover {
                     background-color: darken(#4078c0,20%);
                 }
@@ -128,6 +137,7 @@
                     border-color: #c13584;
                     color: white;
 		}
+                &[href*="instagram.com"]:focus,
                 &[href*="instagram.com"]:hover {
                      background-color: darken(#c13584,20%);
                 }
@@ -137,6 +147,7 @@
                     border-color: #0077b5;
                     color: white;
 		}
+                &[href*="linkedin.com"]:focus,
                 &[href*="linkedin.com"]:hover {
                     background-color: darken(#0077b5,20%);
                 }
@@ -149,6 +160,7 @@
                     border-color: #bd081c;
                     color: white;
 		}
+                &[href*="pinterest.com"]:focus,
                 &[href*="pinterest.com"]:hover {
                     background-color: darken(#bd081c,20%);                
                 }
@@ -158,6 +170,7 @@
                     border-color: #ff4500;
                     color: white;
 		}
+                &[href*="reddit.com"]:focus,
                 &[href*="reddit.com"]:hover {
                     background-color: darken(#ff4500,20%);     
                 }
@@ -167,6 +180,7 @@
                     border-color: #6ecadc;
                     color: white;
 		}
+                &[href*="slack.com"]:focus,
                 &[href*="slack.com"]:hover {
                      background-color: darken(#6ecadc,20%);
                 }
@@ -176,6 +190,7 @@
                     border-color: #fffc00;
                     color: white;
 		}
+                &[href*="snapchat.com"]:focus,
                 &[href*="snapchat.com"]:hover {
                      background-color: darken(#fffc00,20%);
                 }
@@ -186,6 +201,7 @@
                     border-color: #bddfdf;
                     color: black; 
 		}
+                &[href*="slideshare.com"]:focus,
                 &[href*="slideshare.com"]:hover {
                     background-color: darken(#bddfdf,20%);
                 }
@@ -207,6 +223,7 @@
                     border-color: #56BC8A;
                     color: white; 
 		}
+                &[href*="tumblr.com"]:focus,
                 &[href*="tumblr.com"]:hover {
                     background-color: darken(#56BC8A,20%);
                 }
@@ -217,6 +234,7 @@
                     border-color: #1da1f2;
                     color: white; 
 		}
+                &[href*="twitter.com"]:focus,
                 &[href*="twitter.com"]:hover {
                     background-color: darken(#1da1f2,20%);
                 }
@@ -226,6 +244,7 @@
                     border-color: #162221;
                     color: white; 
 		}
+                &[href*="vimeo.com"]:focus,
                 &[href*="vimeo.com"]:hover {
                     background-color: lighten(#162221,20%)
                 }
@@ -244,6 +263,7 @@
                     border-color: #026466;
                     color: white;
 		}
+                &[href*="xing.com"]:focus,
                 &[href*="xing.com"]:hover {
                      background-color: darken(#026466,20%)
                 }
@@ -253,6 +273,7 @@
                     border-color: #cd201f;
                     color: white;
 		}
+                &[href*="youtube.com"]:focus,
                 &[href*="youtube.com"]:hover {
                     background-color: darken(#162221,20%)
                 }
@@ -265,12 +286,14 @@
         color: $color-main;
         background-color: $color-page-background;
         border-color: $color-page-background;
+        &:focus,
         &:hover {
             background:  $color-second;
             color: $color-page-background;
             border-color: $color-second;
         }
     }
+    :focus,
     :hover {
         background:  $color-second;
         color: $color-page-background;
@@ -284,12 +307,14 @@
         color: $color-second;
         background-color: $color-page-background;
         border-color: $color-page-background;
+         &:focus,
          &:hover {
             background: $color-main;
             color: $color-page-background;
             border-color: $color-main;
         }
      }
+    :focus,
     :hover {
         background: $color-main;
         color: $color-page-background;
@@ -305,7 +330,7 @@
 	.socialmedia-maincolor  & ul li a {
 	    color: $color-main;
 	    background:  $color-footer-background;
-	    
+	    &:focus,
 	    &:hover {
 		background:  $color-second;
 		color: $color-page-background;
@@ -317,7 +342,7 @@
 	   color: $color-main; 
 
 	    background:  $color-footer-background;
-	    
+	   &:focus, 
 	   &:hover {
 		background: $color-main;
 		color: $color-page-background;

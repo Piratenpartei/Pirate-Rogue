@@ -4,7 +4,7 @@
 .entry-thumbnail a {
     max-height: 900px;
     overflow: hidden;
-  }
+}
   
   
 .single-post .format-video .entry-thumbnail a:before, 
@@ -303,14 +303,6 @@
     left: -4px;
     text-align: left;
   }
-  &.author-website:before {
-    font: normal 23px/1 'Genericons';
-    content: '\f442';
-  }
-  &.author-twitter:before {
-    font: normal 18px/1 'Genericons';
-    content: '\f202';
-  }
 }
 
 
@@ -325,4 +317,27 @@ article {
     header {
         margin-bottom: 20px;
     }
+}
+
+@media screen and (min-width:$breakpoint-sm) {
+      /* --- Single Post --- */
+  .single-post {
+    .entry-header {
+      margin: 0 0 20px;
+      padding: 25px 0 0;
+    }
+    .big-thumb .entry-header {
+      padding: 0;
+    }
+    .entry-thumbnail {
+      padding-bottom: 53px;
+    }
+    .big-thumb .entry-thumbnail {
+      padding-bottom: 60px;
+      margin-left: -7.14285714285714%;
+      /* 90px at 1440px */
+      margin-right: -7.14285714285714%;
+      padding-bottom: 60px;
+    }
+  }
 }

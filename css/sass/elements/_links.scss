@@ -2,28 +2,20 @@
 Links and colors
 */
 
+a {
+  color: $color-text;
+  text-decoration: none;
+  
+  &:hover {
+       color: $color-linkhover;
+  }
+}
 
 .entry-content a, 
 .comment-text a, 
 .author-bio a, 
 .textwidget a {
   text-decoration: underline;
-}
-
-.entry-content a:hover, 
-.comment-text a:hover, 
-.author-bio a:hover {
-  color: #0c6ca6;
-}
-
-.page-links a {
-  text-decoration: none;
-}
-
-
-a {
-  color: $color-text;
-  text-decoration: none;
 }
 
 .entry-header h2.entry-title {
@@ -103,17 +95,6 @@ a {
 }
 
 
-.uku-neo .format-video .entry-thumbnail span.video-icon {
-  &:before, &:after {
-    background: $color-content-links; // #51a8dd;
-  }
-}
-
-.entry-content a:hover, 
-.comment-text a:hover, 
-.author-bio a:hover {
-  color: #0c6ca6;
-}
 
 
 .footer-feature-btn:hover, 
@@ -128,12 +109,12 @@ a {
 #front-section-three a.all-posts-link:hover, 
 #offcanvas-widgets-open:hover,
 .offcanvas-widgets-show #offcanvas-widgets-open {
-  background: #0c6ca6;
+  background: $color-linkhover;
 }
 
 .comments-show #comments-toggle,
 #comments-toggle:hover {
-  border: 2px solid #0c6ca6;
+  border: 2px solid $color-linkhover;
   color: #fff;
 }
 
@@ -142,7 +123,7 @@ a {
 #front-section-three a.all-posts-link:hover, 
 #offcanvas-widgets-open:hover, 
 .offcanvas-widgets-show #offcanvas-widgets-open {
-  border: 2px solid #0c6ca6;
+  border: 2px solid $color-linkhover;
   color: #fff;
 }
 

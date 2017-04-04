@@ -71,19 +71,8 @@
 /* Minimum width of 768 pixels (tablet portrait)
 ------------------------------------------------------------------------------------ */
 @media screen and (min-width: 48em) {
-    /* --- General --- */
-    .page .content-wrap, 
-    .front-section:first-of-type, 
-    .page.has-thumb .blog-wrap, 
-    .search .blog-wrap, 
-    .archive .blog-wrap, 
-    .error404 .content-wrap {
-	  padding-top: 60px;
-    }
 
-
-
-  #front-section-four .format-video .entry-thumbnail a:before, 
+    #front-section-four .format-video .entry-thumbnail a:before, 
   .section-three-column-one .format-video .entry-thumbnail a:before  {
     width: 60px;
     height: 42px;
@@ -295,26 +284,7 @@
       padding-bottom: 8px;
     }
   }
-  /* --- Single Post --- */
-  .single-post {
-    .entry-header {
-      margin: 0 0 60px;
-      padding: 45px 0 0;
-    }
-    .big-thumb .entry-header {
-      padding: 0;
-    }
-    .entry-thumbnail {
-      padding-bottom: 53px;
-    }
-    .big-thumb .entry-thumbnail {
-      padding-bottom: 60px;
-      margin-left: -7.14285714285714%;
-      /* 90px at 1440px */
-      margin-right: -7.14285714285714%;
-      padding-bottom: 60px;
-    }
-  }
+
   .big-thumb {
     .title-wrap {
       margin-left: -7.14285714285714%;
@@ -545,9 +515,7 @@
   .front-section:first-of-type {
     padding-top: 0;
   }
-  .page .content-wrap {
-    padding-top: 60px;
-  }
+
   .blog #masthead {
     margin-bottom: 60px;
   }

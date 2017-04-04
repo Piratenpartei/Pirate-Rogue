@@ -7,23 +7,22 @@ blockquote {
     padding: 20px 20px 20px 45px;
     margin: 10px 20px 30px;
     position: relative;
-  //  text-align: justify;
     font-family: $font-family-quotation;
 
-    /*Borders - (Optional)*/
     border-left: 15px solid $color-main;
     border-right: 2px solid $color-main;
 
-    /*Box Shadow - (Optional)*/
     -moz-box-shadow: 2px 2px 15px #ccc;
     -webkit-box-shadow: 2px 2px 15px #ccc;
     box-shadow: 2px 2px 15px #ccc;
 
     a {
         text-decoration: none;
-        background: #eee;
         cursor: pointer;
         padding: 0 3px;
+    }
+    a:hover {
+            color: $color-second;
     }
     em{
         font-style: italic;
@@ -32,7 +31,10 @@ blockquote {
          border-left: 15px solid $color-second;
          border-right: 2px solid $color-second;
          a {
-             color: $color-second;
+             color: $color-second;   
+         }
+         a::hover {
+            color: $color-main;
          }
     }
     p {
@@ -48,9 +50,6 @@ blockquote {
         text-align: right;
         @include px2rem($font-size-blockquote-cite);
     }
-    // In Case wie want a Double Quote before. 
-    // But normally all cites have them in text already...
-    
 }
 
 blockquote.quotesign {
@@ -61,7 +60,7 @@ blockquote.quotesign {
         font-family: Georgia, serif;
         font-size: 80px;
         font-weight: bold;
-        color: lighten($color-text,50%); 
+        color: $color-main; //lighten($color-text,50%); 
 
         position: absolute;
         left: 10px;
@@ -71,7 +70,9 @@ blockquote.quotesign {
         // Reset to make sure
         content: "";
     }
-    
+    &.secondcolor::before {
+         color: $color-second;
+    }
 }
     
 #comments blockquote {

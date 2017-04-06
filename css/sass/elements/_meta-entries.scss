@@ -128,10 +128,6 @@
 
 
 .blog {
-    .featured-slider .entry-meta a:hover {
-	color: #fff;
-    }
-   
     #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-cats a:before, 
       .section-one-column-one .entry-cats a:before, 
       .section-three-column-one .entry-cats a:before, 
@@ -140,23 +136,43 @@
     }
     .hentry .entry-cats a {
 	display: none;
-	color: #fff;
-	    
-	&:nth-child(1), &:nth-child(2) {
+	color: $color-cats-background; 
+	background-color: white;
+	
+	
+	&:nth-child(1), 
+	&:nth-child(2),
+	&:nth-child(3),
+	&:nth-child(4) {
 	    display: inline-block;
 	}
-	
+	&:focus,
 	&:hover {
-	    color: #fff;
+	    color: $color-cats-hover;
+	    background: $color-cats-background-hover; 
 	}
     }
     .entry-cats a:nth-child(n+2):before {
 	content: ' / ';
-	padding: 0 2px;
 	color: #2b2b2b;
         background-color: white;
     }
 
+    .featured-slider {
+	.entry-cats a,
+	.entry-meta a {
+	    color: $color-cats;
+	    background: $color-cats-background; 
+	    
+	    &:focus,
+	    &:hover {
+		color: $color-cats-hover;
+		background: $color-cats-background-hover; 
+	    }
+	}
+    }
+ 
+    
     #primary .hentry.has-post-thumbnail:nth-child(4n+1) {
 	.entry-cats a {
 	    padding: 2px 5px;
@@ -182,17 +198,14 @@
 .blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-cats a {
   background: $color-cats-background; 
   color: #fff;
+  
+  &:focus,
+  &:hover {
+      background: $color-cats-background-hover; 
+    color: #fff;
+  }
 }
 
-.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-cats a:hover,
-.featured-slider .entry-cats a:hover, 
-.section-one-column-one .entry-cats a:hover, 
-.section-three-column-one .entry-cats a:hover, 
-#front-section-four .entry-cats a:hover, 
-.single-post .entry-cats a:hover {
-   background: $color-cats-background-hover; 
-   color: #fff;
-}
 
 
 

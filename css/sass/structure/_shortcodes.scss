@@ -137,7 +137,16 @@
     
     margin-left: 0;
     margin-right: 0;
-
+  
+    img {
+          z-index: 1;
+    }
+    p, h1, h2, h3, h4, h5, h6, blockquote, em, code {
+        position:relative;
+        z-index: 2;
+        margin-left: 6.25%;
+        margin-right: 6.25%;
+    }  
     
     &.secondcolor {
 	    background: $color-shortcodes-secondcolor;

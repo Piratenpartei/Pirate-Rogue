@@ -284,14 +284,16 @@ function pirate_rogue_shortcode_divider($atts, $content = null) {
 add_shortcode( 'divider', 'pirate_rogue_shortcode_divider' );
 
 
-
 /*-----------------------------------------------------------------------------------*/
 /* Info Boxes Shortcodes
 /*-----------------------------------------------------------------------------------*/
-function pirate_rogue_shortcode_fullwith($atts, $content = null) {
+function pirate_rogue_shortcode_fullwidth($atts, $content = null) {
     extract(shortcode_atts(array(
-	'color'	=> '',
-	'lighten'   => '',
+	'color'         => '',
+	'lighten'       => '',
+        'imgisbackground'   => '',
+        'fixed'         => '',
+        'maxheight'     => '',
     ), $atts));
     $addclass = '';
     if (isset($color)) {
@@ -304,6 +306,19 @@ function pirate_rogue_shortcode_fullwith($atts, $content = null) {
 	    $addclass= $color;
 	    $addclass .= $setlighten;
 	}
+    }
+    $setstyle = '';
+    if (!empty($maxheight)) {
+        $maxheight = intval($maxheight);
+        if ($maxheight > 0) {
+            $setstyle = ' style="height: '.$maxheight.'px; overflow:hidden;"';
+        }
+    }
+    if (!empty($imgisbackground)) {
+         $addclass .= ' imgisbackground';
+    }
+    if (!empty($fixed) ) {
+         $addclass .= ' fixed';
     }
     if (!empty($addclass)) {
 	$addclass = ' class="'.$addclass.'"';
@@ -322,12 +337,12 @@ function pirate_rogue_shortcode_fullwith($atts, $content = null) {
 	$open_markup .= '<article class="cf page hentry">';
 	$open_markup .= '<div class="entry-content">';
 	
-	$res = $close_markup.'<section id="section-fullwidth"'.$addclass.'>' . do_shortcode( ($content) ). '</section>'.$open_markup;
+	$res = $close_markup.'<section id="section-fullwidth"'.$addclass.$setstyle.'>' . do_shortcode( ($content) ). '</section>'.$open_markup;
 	return $res;
 	
     }
 }
-add_shortcode( 'section_fullwith', 'pirate_rogue_shortcode_fullwith' );
+add_shortcode( 'section_fullwidth', 'pirate_rogue_shortcode_fullwidth' );
 
 /*-----------------------------------------------------------------------------------*/
 /* Info Boxes Shortcodes

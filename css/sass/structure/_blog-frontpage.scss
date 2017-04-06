@@ -372,13 +372,18 @@
 
 /* --- Blog Front: Posts --- */
 
-#primary .hentry {
-  position: relative;
-  padding: 20px 0 34px;
-  .entry-meta, .entry-author {
-    display: none;
-  }
+.site-content {
+    .hentry {
+        position: relative;
+        padding: 20px 0 0;
+        .entry-meta, .entry-author {
+            display: none;
+        }
+    }
 }
+ .blog-wrap:last-child .hentry { 
+     padding-bottom: 34px;
+ }
 
 .comment-name {
   display: none;
@@ -677,12 +682,17 @@
     }
   }
   #front-section-threecolumn .type-post {
-    &:last-child, &:nth-last-child(2), &:nth-last-child(3) {
+    &:last-child, 
+        &:nth-last-child(2), 
+        &:nth-last-child(3) {
       padding-bottom: 0;
     }
   }
   .section-fourcolumn-postwrap .type-post {
-    &:last-child, &:nth-last-child(2), &:nth-last-child(3), &:nth-last-child(4) {
+    &:last-child,
+        &:nth-last-child(2), 
+        &:nth-last-child(3), 
+        &:nth-last-child(4) {
       padding-bottom: 0;
     }
   }
@@ -690,10 +700,21 @@
     padding-bottom: 0;
   }
   /* --- Front Page - Blog --- */
-  #primary .not-found,
-  #primary .hentry {
-    padding: 20px 0 40px;
-  }
+    #primary {
+      .not-found {
+         padding: 20px 0 40px;
+      }
+    }
+    .site-content {
+       .hentry {     
+           padding: 20px 0 0;
+       }
+     }
+    .blog-wrap:last-child .hentry { 
+       padding-bottom: 40px;
+    }
+  
+  
   /* --- Blog - default --- */
   .blog #primary .hentry .entry-meta, 
   .archive #primary .hentry .entry-meta, 
@@ -835,7 +856,7 @@
     }
     
     .blog-wrap {
-      padding-bottom: 80px;
+    //  padding-bottom: 80px;
       padding-left: 0;
       padding-right: 0;
     }

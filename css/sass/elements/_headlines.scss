@@ -120,7 +120,15 @@ h1 {
     }
 }
 
-
+.widget {
+  h2.widget-title {
+    display: block;
+    margin: 0;
+    padding: 15px 0 24px;
+    border-top: 1px solid #1a1a1a;
+    color: $color-text;
+  }
+}
 
 .widget_mc4wp_form_widget h2.widget-title, 
 .jetpack_subscription_widget h2.widget-title {
@@ -262,6 +270,11 @@ h3 {
     #front-section-twocolumn .entry-header h2.entry-title  {
 	@include px2rem($font-size-h2-entryheader-1024);
 	// vorher 32 statt 28 
+    }
+    .widget {
+        h2.widget-title {
+            border-top: none;
+        }
     }
 }
 

@@ -146,9 +146,7 @@
 
 .blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-thumbnail a:after, 
 .featured-slider .entry-thumbnail a:after, 
-.uku-serif #front-section-four .entry-thumbnail a .thumb-wrap:after, 
-.single-post .big-thumb .entry-thumbnail a:after, .header-image:after, 
-.uku-serif .section-two-column-one .entry-thumbnail a:after {
+.single-post .big-thumb .entry-thumbnail a:after, .header-image:after {
   background-color: #000000;
   opacity: 0;
 }
@@ -168,8 +166,7 @@
 }
 
 #front-section-four .meta-main-wrap, .featured-slider .meta-main-wrap, 
-.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .meta-main-wrap, .big-thumb .title-wrap, 
-.uku-serif .section-two-column-one .entry-text-wrap {
+.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .meta-main-wrap, .big-thumb .title-wrap {
   background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
   background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);

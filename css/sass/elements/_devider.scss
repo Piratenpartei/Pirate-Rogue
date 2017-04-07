@@ -15,6 +15,13 @@ hr {
 
             background-position: center center;
             background-repeat: no-repeat;
-        }
 
+        }
+	.menu_separator & {
+	    background-image: url("../img/trenner-01-30.png");
+	     @if $color-hr == $color-main {	 
+		background-image: url("../img/trenner-04-30.png");
+	     }
+	     height: 40px;
+	}
 }

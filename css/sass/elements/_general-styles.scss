@@ -286,6 +286,7 @@ abbr, acronym {
 }
 
 mark, ins {
+  color: $color-mark;
   background: $color-mark-background;
   text-decoration: none;
 }

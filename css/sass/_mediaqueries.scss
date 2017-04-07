@@ -262,7 +262,8 @@
     padding-left: 0;
     padding-right: 0;
   }
-  .blog-wrap, .front-section, 
+  .blog-wrap, 
+  .front-section, 
   .singlepost-wrap, 
   .recommended-posts-wrap, 
   .footer-wrap, 
@@ -534,7 +535,9 @@
       clear: left;
     }
     .section-three-column-one {
-      .entry-header, .entry-summary, .entry-meta {
+      .entry-header, 
+      .entry-summary, 
+      .entry-meta {
         width: 100%;
       }
     }

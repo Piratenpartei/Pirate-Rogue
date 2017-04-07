@@ -291,7 +291,7 @@ function pirate_rogue_shortcode_fullwidth($atts, $content = null) {
     extract(shortcode_atts(array(
 	'color'         => '',
 	'lighten'       => '',
-        'imgisbackground'   => '',
+        'background'   => '',
         'fixed'         => '',
         'maxheight'     => '',
     ), $atts));
@@ -311,15 +311,28 @@ function pirate_rogue_shortcode_fullwidth($atts, $content = null) {
     if (!empty($maxheight)) {
         $maxheight = intval($maxheight);
         if ($maxheight > 0) {
-            $setstyle = ' style="height: '.$maxheight.'px; overflow:hidden;"';
+            $setstyle = 'height: '.$maxheight.'px; overflow:hidden;';
         }
     }
-    if (!empty($imgisbackground)) {
-         $addclass .= ' imgisbackground';
+    if (!empty($background)) {
+        $background = esc_url($background);
+	if (!empty($background)) {
+	    $setstyle .= 'background-image: url('.$background.'); background-repeat: no-repeat; ';
+	}
+	if (!empty($fixed) ) {
+	    $setstyle .= 'background-attachment: fixed;';
+	}
+	if (!empty($maxheight)) {
+	    $setstyle .= 'background-size: cover '.$maxheight.'px;';
+	} else {
+	    $setstyle .= 'background-size: cover;';
+	}
+	$addclass .= ' withbackground';
     }
-    if (!empty($fixed) ) {
-         $addclass .= ' fixed';
+    if (!empty($setstyle)) {
+	$setstyle = ' style="'.$setstyle.'"';
     }
+    
     if (!empty($addclass)) {
 	$addclass = ' class="'.$addclass.'"';
     }

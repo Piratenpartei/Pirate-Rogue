@@ -22,7 +22,8 @@ $color-cats:                    #fff;
 $color-cats-hover:		#fff;
 $color-cats-background:         $color-second;
 $color-cats-background-hover:   $color-main;
-$color-mark-background:		lighten($color-four,20%); // #d2f1ff;
+$color-mark:			#fff;
+$color-mark-background:		lighten($color-second,10%); // #d2f1ff;
 $color-footer-background:	#1a1a1a;
  
 
@@ -115,6 +116,7 @@ $font-size-blockquote-cite:	$font-size-smaller;
 $font-size-blockquote-sm:	24;
 $font-size-blockquote-cite-sm:	19;
 
+$font-size-men-childs:		$font-size-small;
 //////////////////////////////////////////////////////////////////////////////
 // Tabellen 
 //////////////////////////////////////////////////////////////////////////////

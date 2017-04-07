@@ -40,31 +40,22 @@ li {
 .entry-content {
     ul {
         padding-left: 50px;
-
-        li {
-            position: relative;
-            padding: 0 0 0 24px;
-            list-style-position: outside;
-            
-            &:before {
-                vertical-align: top;
-                position: absolute;
-                top: 0;
-                left: 0;
-                content: '\2013';
-                padding: 0;
-            }
-        }
-        li
+	
+	li {
+	    display: list-item;
+	    padding: 0;
+	    list-style-type: circle;
+	    
+	    li {
+		 list-style-type: square;
+		 
+		 li {
+		     list-style-type: disc ; 
+		 }
+	    }
+	}
         ul {
-            padding-left: 50px;
-             
-            li {
-                padding-left: 24px;
-            } 
-        }
-        ol li:before {
-            display: none;
+            padding-left: 50px; 
         }
         
         &.nolist {
@@ -75,6 +66,51 @@ li {
                 display: none;
             }
         }
+	
+	&.sign {
+	    li {
+		list-style-image: url(../img/sign-20.gif);
+		list-style-position: inline;
+		display: list-item;
+		padding: 0;
+		ul li {
+		    list-style-type:  circle; 
+		    list-style-image: none;
+		
+		    ul li {
+			 list-style-type: square; 
+		    }
+		}
+	    }	
+	}
+	&.line {
+	    li {
+		position: relative;
+		padding: 0 0 0 24px;
+		list-style-position: outside;
+		list-style-type: none;
+		
+		&:before {
+		    vertical-align: top;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    content: '\2013';		
+		    padding: 0;
+		}
+		
+		ul {
+		    padding-left: 50px;
+
+		    li {
+			padding-left: 24px;
+		    } 
+		}
+		ol li:before {
+		    display: none;
+		}
+	    }
+	}
     }
     ol {
         padding-left: 70px;
@@ -131,4 +167,16 @@ li {
   ul ul, ol ol {
     padding-left: 50px;
   }
+}
+
+.fontawesome-icon-list {
+    
+    a {
+	text-decoration: none;
+	
+	i {
+	    color: $color-text;
+	    min-width: 2em;
+	}
+    }
 }

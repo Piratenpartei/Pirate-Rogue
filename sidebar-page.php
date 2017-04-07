@@ -7,15 +7,26 @@
  * @version 1.0
  */
 
-if ( ! is_active_sidebar( 'sidebar-2' ) ) {
+
+
+
+$pirate_rogue_page_sidebar  = get_post_meta( $post->ID, 'pirate_rogue_page_sidebar', true );
+if (! is_active_sidebar( 'sidebar-2' ) && (empty($pirate_rogue_page_sidebar)) ) {
 	return;
 }
+// If we get this far, we have widgets or content. Let's do this.
 
-// If we get this far, we have widgets. Let's do this.
 ?>
 
 <aside id="sidebar-page" class="sidebar-page widget-area" role="complementary">
-	<?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
+    <?php 
+	if (!empty($pirate_rogue_page_sidebar)) { ?>
+	    <div class="widget-area">
+		<?php echo $pirate_rogue_page_sidebar; ?>
+	    </div><!-- .widget-area -->	    
+	<?php }
+    
+	if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
 		<div class="widget-area">
 			<?php dynamic_sidebar( 'sidebar-2' ); ?>
 		</div><!-- .widget-area -->

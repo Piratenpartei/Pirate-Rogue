@@ -160,14 +160,14 @@ add_filter( 'wp_page_menu_args', 'uku_page_menu_args' );
 /*-----------------------------------------------------------------------------------*/
 /* Sets the authordata global when viewing an author archive.
 /*-----------------------------------------------------------------------------------*/
-function uku_setup_author() {
+function pirate_rogue_setup_author() {
 	global $wp_query;
 
 	if ( $wp_query->is_author() && isset( $wp_query->post ) ) {
 		$GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
 	}
 }
-add_action( 'wp', 'uku_setup_author' );
+add_action( 'wp', 'pirate_rogue_setup_author' );
 
 /*-----------------------------------------------------------------------------------*/
 /* Add title to custom menu
@@ -186,10 +186,10 @@ function uku_get_menu_by_location( $location ) {
 /*-----------------------------------------------------------------------------------*/
 /* Add custom max excerpt lengths.
 /*-----------------------------------------------------------------------------------*/
-function uku_custom_excerpt_length( $length ) {
+function pirate_rogue_custom_excerpt_length( $length ) {
 	return 23;
 }
-add_filter( 'excerpt_length', 'uku_custom_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'pirate_rogue_custom_excerpt_length', 999 );
 
 /*-----------------------------------------------------------------------------------*/
 /* Replace "[...]" with custom read more in excerpts.
@@ -313,7 +313,7 @@ function uku_comment( $comment, $args, $depth ) {
 								get_comment_date());
 							?></a>
 						</span>
-						<?php edit_comment_link( esc_html__(' Edit', 'uku'), '<span class="comment-edit">', '</span>'); ?>
+						<?php edit_comment_link( esc_html__(' Edit', 'pirate-rogue'), '<span class="comment-edit">', '</span>'); ?>
 					</div><!-- end .comment-meta -->
 				</div><!-- end .comment-details -->
 
@@ -353,7 +353,7 @@ add_action('widgets_init', 'remove_recent_comments_style');
 /*-----------------------------------------------------------------------------------*/
 /* Register widgetized areas
 /*-----------------------------------------------------------------------------------*/
-function uku_widgets_init() {
+function pirate_rogue_widgets_init() {
 
 	register_sidebar( array (
 		'name'          => esc_html__( 'Blog Sidebar', 'pirate-rogue'),
@@ -395,20 +395,9 @@ function uku_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 
-	if ( 'serif' == get_theme_mod( 'uku_main_design' ) ) {
-		register_sidebar( array (
-			'name'          => esc_html__( 'Big Footer Mailchimp Widget Area', 'pirate-rogue'),
-			'id'            => 'sidebar-newsletter',
-			'description'   => esc_html__( 'Widget area to show the Mailchimp Newsletter Widget in a big one-column footer area .', 'pirate-rogue'),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => "</section>",
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		) );
-	}
-
+	
 }
-add_action( 'widgets_init', 'uku_widgets_init' );
+add_action( 'widgets_init', 'pirate_rogue_widgets_init' );
 
 /*-----------------------------------------------------------------------------------*/
 /* Admin Init functions

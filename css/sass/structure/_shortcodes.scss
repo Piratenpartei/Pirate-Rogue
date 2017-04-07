@@ -145,8 +145,70 @@
         position:relative;
         z-index: 2;
         margin-left: 6.25%;
-        margin-right: 6.25%;
+        margin-right: 6.25%;	
     }  
+    &.withbackground {
+	p, h1, h2, h3, h4, h5, h6, blockquote, em, code {
+	    background: #000; // rgba($color-main, 0.70);
+	    color: #fff;
+	    display: table;
+	    padding: 2px 5px;
+	}
+    }
+    &.withbackground.maincolor  {
+	p, h1, h2, h3, h4, h5, h6, blockquote, em, code {
+	  background: $color-shortcodes-maincolor;
+	  color: #fff;	    
+       }
+    }
+    &.withbackground.secondcolor  {
+	p, h1, h2, h3, h4, h5, h6, blockquote, em, code {
+	  background: $color-shortcodes-secondcolor;
+	   color: #fff;	    
+       }
+    }
+    &.withbackground.red  {
+	p, h1, h2, h3, h4, h5, h6, blockquote, em, code {
+	  background: $color-shortcodes-red;
+	   color: #fff;	    
+       }
+    }
+     &.withbackground.green  {
+	p, h1, h2, h3, h4, h5, h6, blockquote, em, code {
+	  background: $color-shortcodes-green;
+	   color: #fff;	    
+       }
+    }
+     &.withbackground.yellow  {
+	p, h1, h2, h3, h4, h5, h6, blockquote, em, code {
+	  background: $color-shortcodes-yellow;
+	   color: #fff;	    
+       }
+    }
+     &.withbackground.blue  {
+	p, h1, h2, h3, h4, h5, h6, blockquote, em, code {
+	  background: $color-shortcodes-blue;
+	   color: #fff;	    
+       }
+    }
+     &.withbackground.lightgrey  {
+	p, h1, h2, h3, h4, h5, h6, blockquote, em, code {
+	  background: $color-shortcodes-lightgrey;
+	   color: #fff;	    
+       }
+    }
+     &.withbackground.grey  {
+	p, h1, h2, h3, h4, h5, h6, blockquote, em, code {
+	  background: $color-shortcodes-grey;
+	   color: #fff;	    
+       }
+    }
+   
+    p {
+	 @include px2rem($font-size-bigtext); 
+    }
+   
+   
     
     &.secondcolor {
 	    background: $color-shortcodes-secondcolor;

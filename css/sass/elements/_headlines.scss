@@ -11,6 +11,7 @@ h1, h2, h3, h4, h5, h6 {
     font-familiy: $font-family-headlines;
 }
 
+#section-fullwidth,
 .site-content,
 .entry-content {
     h1 {
@@ -224,6 +225,7 @@ h3 {
 	@include px2rem($font-size-h1-sm);     
     }
 
+    #section-fullwidth,
     .entry-content {
 	h2 {
 	    @include px2rem($font-size-h2-sm);     
@@ -269,7 +271,6 @@ h3 {
     }
     #front-section-twocolumn .entry-header h2.entry-title  {
 	@include px2rem($font-size-h2-entryheader-1024);
-	// vorher 32 statt 28 
     }
     .widget {
         h2.widget-title {

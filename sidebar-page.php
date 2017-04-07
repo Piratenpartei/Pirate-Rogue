@@ -21,14 +21,12 @@ if (! is_active_sidebar( 'sidebar-2' ) && (empty($pirate_rogue_page_sidebar)) ) 
 <aside id="sidebar-page" class="sidebar-page widget-area" role="complementary">
     <?php 
 	if (!empty($pirate_rogue_page_sidebar)) { ?>
-	    <div class="widget-area">
+	    <div class="widget textwidget">
 		<?php echo $pirate_rogue_page_sidebar; ?>
 	    </div><!-- .widget-area -->	    
 	<?php }
     
-	if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
-		<div class="widget-area">
-			<?php dynamic_sidebar( 'sidebar-2' ); ?>
-		</div><!-- .widget-area -->
-	<?php endif; ?>
+	if ( is_active_sidebar( 'sidebar-2' ) ) : 
+           dynamic_sidebar( 'sidebar-2' ); 
+	endif; ?>
 </aside><!-- .sidebar-page -->

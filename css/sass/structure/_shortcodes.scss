@@ -134,10 +134,8 @@
 
 #section-fullwidth {
     padding: 0;
-    
-    margin-left: 0;
-    margin-right: 0;
-  
+    margin: 20px 0;
+
     img {
           z-index: 1;
     }
@@ -148,6 +146,9 @@
         margin-right: 6.25%;	
     }  
     &.withbackground {
+        background-size: cover;
+        background-position: center center;
+        
 	p, h1, h2, h3, h4, h5, h6, blockquote, em, code {
 	    background: #000; // rgba($color-main, 0.70);
 	    color: #fff;

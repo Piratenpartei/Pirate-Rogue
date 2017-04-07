@@ -322,11 +322,9 @@ function pirate_rogue_shortcode_fullwidth($atts, $content = null) {
 	if (!empty($fixed) ) {
 	    $setstyle .= 'background-attachment: fixed;';
 	}
-	if (!empty($maxheight)) {
-	    $setstyle .= 'background-size: cover '.$maxheight.'px;';
-	} else {
-	    $setstyle .= 'background-size: cover;';
-	}
+
+	$setstyle .= 'background-size: cover;';
+
 	$addclass .= ' withbackground';
     }
     if (!empty($setstyle)) {

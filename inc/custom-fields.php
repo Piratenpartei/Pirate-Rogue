@@ -20,7 +20,9 @@ function pirate_rogue_metabox_cf_setup() {
 
     /* Save subtitle */
     add_action( 'save_post', 'pirate_rogue_save_metabox_attributes', 10, 2 );
-
+    
+    /* Save Page Sidebar */
+    add_action( 'save_post', 'pirate_rogue_save_metabox_page_sidebar', 10, 2 );
 }
 
 
@@ -32,7 +34,7 @@ function pirate_rogue_add_metabox_posts() {
     /* Subtitle */
     add_meta_box(
 		'pirate_rogue_metabox_attributes',		
-		esc_html__( 'Attributes', 'pirate_rogue' ),
+		esc_html__( 'Attributes', 'pirate-rogue' ),
 		'pirate_rogue_do_metabox_attributes',	
 		 'post','normal','high'
     );
@@ -42,8 +44,50 @@ function pirate_rogue_add_metabox_posts() {
 /*-----------------------------------------------------------------------------------*/
 function pirate_rogue_add_metabox_pages() {
     /* None yet */
+    add_meta_box(
+		'pirate_rogue_metabox_page_sidebar',			
+		esc_html__( 'Sidebar', 'pirate-rogue' ),		
+		'pirate_rogue_do_metabox_page_sidebar',		
+		 'page','normal','core'
+	);
+    
 }
 
+
+/*-----------------------------------------------------------------------------------*/
+/*  Display metabox in pages for sidebar
+/*-----------------------------------------------------------------------------------*/
+function pirate_rogue_do_metabox_page_sidebar( $object, $box ) { 
+	wp_nonce_field( basename( __FILE__ ), 'pirate_rogue_metabox_page_sidebar_nonce' ); 
+	$post_type = get_post_type( $object->ID); 
+	
+	if ( 'post' == $post_type ) {
+	    if ( !current_user_can( 'edit_post', $object->ID) )
+		return;
+        } elseif ('page' == $post_type ) {
+             if ( !current_user_can( 'edit_page', $object->ID) )
+		return;
+	} else {
+	    return;
+	}
+	$pirate_rogue_page_sidebar  = get_post_meta( $object->ID, 'pirate_rogue_page_sidebar', true );
+	pirate_rogue_form_wpeditor('pirate_rogue_page_sidebar', $pirate_rogue_page_sidebar, __('Content','pirate_rogue'), __('Optional entries for the sidebar','pirate-rogue'), false);
+}
+/*-----------------------------------------------------------------------------------*/
+/* Save the meta box page sidebar data
+/*-----------------------------------------------------------------------------------*/
+function pirate_rogue_save_metabox_page_sidebar( $post_id, $post ) {
+	/* Verify the nonce before proceeding. */
+	if ( !isset( $_POST['pirate_rogue_metabox_page_sidebar_nonce'] ) || !wp_verify_nonce( $_POST['pirate_rogue_metabox_page_sidebar_nonce'], basename( __FILE__ ) ) )
+		return $post_id;
+
+
+	/* Check if the current user has permission to edit the post. */
+	if ( !current_user_can( 'edit_page', $post_id ) )
+            return;
+       pirate_rogue_save_standard('pirate_rogue_page_sidebar', $_POST['pirate_rogue_page_sidebar'], $post_id, 'page', 'wpeditor');
+
+}
 /*-----------------------------------------------------------------------------------*/
 /*  Display Options for subtitles on posts 
 /*-----------------------------------------------------------------------------------*/
@@ -66,10 +110,10 @@ function pirate_rogue_do_metabox_attributes( $object, $box ) {
         if ((empty($untertitel)) && (isset($piratenkleider_untertitel))) {
             $untertitel = $piratenkleider_untertitel;
         }
-	pirate_rogue_form_text('pirate_rogue_metabox_untertitel', $untertitel, __('Sub-Titel','pirate_rogue'),  __('Enter a text for a subtitle here, which belongs to the main title of the entry. Do not use more as 120 Chars.','pirate_rogue'));
+	pirate_rogue_form_text('pirate_rogue_metabox_untertitel', $untertitel, __('Sub-Titel','pirate_rogue'),  __('Enter a text for a subtitle here, which belongs to the main title of the entry. Do not use more as 120 Chars.','pirate-rogue'));
         
         $canonical  = get_post_meta( $object->ID, 'pirate_rogue_canonical', true );
-        pirate_rogue_form_url('pirate_rogue_metabox_canonical', $canonical, __('URL (Originaladresse)','pirate_rogue'), __('Enter the URL of the original posts address (e.g. another blog or website, were this text was mirrored from)','pirate_rogue'));
+        pirate_rogue_form_url('pirate_rogue_metabox_canonical', $canonical, __('URL (Originaladresse)','pirate_rogue'), __('Enter the URL of the original posts address (e.g. another blog or website, were this text was mirrored from)','pirate-rogue'));
  }
 /*-----------------------------------------------------------------------------------*/
 /* Save the meta box's post/page metadata.

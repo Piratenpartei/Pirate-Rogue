@@ -55,7 +55,7 @@ if ( '' == get_theme_mod( 'uku_front_hideblog' ) ) : ?>
 		<?php if ( get_theme_mod( 'uku_custom_latestposts' ) ) : ?>
 			<h3 class="blog-title"><?php echo esc_html( get_theme_mod( 'uku_custom_latestposts' ) ); ?></h3>
 		<?php else : ?>
-			<h3 class="blog-title"><?php esc_html_e('Latest Posts', 'uku') ?></h3>
+			<h3 class="blog-title"><?php esc_html_e('Latest Posts', 'pirate-rogue') ?></h3>
 		<?php endif; ?>
 
 		<?php /* Start the Loop */ ?>

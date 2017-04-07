@@ -21,14 +21,14 @@ if (!isset($thumbfallbackid)) {
 		<div class="entry-thumbnail fadein">
 			<a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><?php the_post_thumbnail('uku-front-big'); ?></span></a>
 			<?php if ( has_post_format('video') ) : ?>
-				<span class="video-icon"><?php esc_html_e('Video', 'uku') ?></span>
+				<span class="video-icon"><?php esc_html_e('Video', 'pirate-rogue') ?></span>
 			<?php endif; ?>
 		</div><!-- end .entry-thumbnail -->
 	<?php elseif ( ! post_password_required() && $imagesrc != '') : ?>
 		<div class="entry-thumbnail fadein">
 			<a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><img src="<?php echo $imagesrc; ?>"></span></a>
 			<?php if ( has_post_format('video') ) : ?>
-				<span class="video-icon"><?php esc_html_e('Video', 'uku') ?></span>
+				<span class="video-icon"><?php esc_html_e('Video', 'pirate-rogue') ?></span>
 			<?php endif; ?>
 		</div><!-- end .entry-thumbnail -->
 	<?php endif; ?>

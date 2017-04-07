@@ -120,7 +120,7 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 			<footer class="entry-footer cf">
 				<?php $tags_list = get_the_tag_list();
                                     if ( $tags_list ): ?>
-					<div class="entry-tags"><span><?php esc_html_e('Tags', 'uku') ?></span><?php the_tags('',' &bull; ', ''); ?></div>
+					<div class="entry-tags"><span><?php esc_html_e('Tags', 'pirate-rogue') ?></span><?php the_tags('',' &bull; ', ''); ?></div>
                                     <?php endif; ?>
 				<?php
 				// Author bio.

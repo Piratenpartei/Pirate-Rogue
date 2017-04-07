@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pirate Rogue v1.0.20\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-28 14:40+0000\n"
-"PO-Revision-Date: 2017-03-28 14:55+0000\n"
+"POT-Creation-Date: 2017-04-06 19:38+0000\n"
+"PO-Revision-Date: 2017-04-06 19:40+0000\n"
 "Last-Translator: xwolf <xwolf@xwolf.de>\n"
 "Language-Team: German\n"
 "Language: de-DE\n"
@@ -23,136 +23,21 @@ msgstr ""
 "X-Poedit-SearchPath-0: ..\n"
 "X-Poedit-Basepath: ."
 
-#: content.php:41 template-parts/content-blogroll.php:41
-#: template-parts/content-featured-post.php:39
-#: template-parts/content-frontpost-big.php:57
-#: template-parts/content-single.php:75
-#: template-parts/front-section-four.php:75
-msgid "0"
-msgstr "0"
+#: index.php:58
+msgid "Latest Posts"
+msgstr "Letzte Beiträge"
 
-#: footer.php:44
-#, php-format
-msgid "&mdash; based on %1$s by %2$s"
-msgstr "&mdash; zu %1$s von %2$s"
+#: 404.php:31
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Ups! Die Seite konnte nicht gefunden werden."
 
-#: inc/customizer.php:34
-msgid "Page Settings"
-msgstr "Seiteneinstellungen"
-
-#: inc/customizer.php:271
-msgid "Google Site Verification"
-msgstr "Google Site Verification"
-
-#: inc/customizer.php:300
-msgid "Social Media Icon Style"
-msgstr "Social Media Icon Stil"
-
-#: inc/customizer.php:301
+#: 404.php:33
 msgid ""
-"Choose the color of the social media icons (needs a items in Social media "
-"menu position). Notice: This will also chance the color of the search icon "
-"and the hamburger overlay icon."
+"It looks like nothing was found at this location. Maybe try another search "
+"term?"
 msgstr ""
-"Wählen Sie die Farbe der Social Media Icons (benötigt vorhandene Social "
-"Media Links in einem Menü, welches den Social Media Bereich zugeordnet ist). "
-"Hinweis: Dies ändert auch die Farbe des Such-Icons und des Hamburger-Menu-"
-"Icons."
-
-#: inc/customizer.php:306
-msgid "Colorful Social Media Icons"
-msgstr "Bunte Social Media Icons"
-
-#: inc/customizer.php:307
-msgid "Use main color"
-msgstr "Verwende Hauptfarbe"
-
-#: inc/customizer.php:308
-msgid "Use second color"
-msgstr "Verwende Nebenfarbe"
-
-#: inc/customizer.php:318
-msgid "Search Background Style"
-msgstr "Hintergrundstil der Sucheingabemaske"
-
-#: inc/customizer.php:319
-msgid "Choose the background color of the overlay search input"
-msgstr "Wähle die Hintergrundfarbe von der Sucheingabe"
-
-#: inc/customizer.php:324
-msgid "Dark grey"
-msgstr "Dunkelgrau"
-
-#: inc/customizer.php:325
-msgid "Main color"
-msgstr "Hauptfarbe"
-
-#: inc/customizer.php:326
-msgid "Second color"
-msgstr "Nebenfarbe"
-
-#: inc/customizer.php:354
-msgid "Upload Fallback Thumbnail image"
-msgstr "Lade Ersatzbild für Thumbnails"
-
-#: inc/customizer.php:355
-msgid ""
-"If thumbnail for a post is not avaible, define this thumbnail as a fallback"
-msgstr ""
-"Falls kein Artikelbild für ein Artikel vorhanden ist, verwende dieses "
-"Ersatzbild"
-
-#: inc/customizer.php:369
-msgid "Upload Fallback Thumbnail for blogroll"
-msgstr "Lade Ersatzbild für Thumbnails in der Blogroll"
-
-#: inc/customizer.php:370
-msgid ""
-"If thumbnail for a post is not avaible, define this thumbnail as a fallback "
-"for normal blogroll"
-msgstr ""
-"Wenn kein Artikelbild vorhanden ist, verwende dieses Bild als Ersatzbild in "
-"der normalen Blogroll"
-
-#: inc/customizer.php:385
-msgid "Upload Fallback image for slider"
-msgstr "Ersatzbild für Slider"
-
-#: inc/customizer.php:386
-msgid ""
-"If  thumbnail for a post is not avaible, define this image for the slider"
-msgstr ""
-"Wenn kein Artikelbild vorhanden ist, verwende dieses Bild als Ersatz für den "
-"Slider"
-
-#: inc/customizer.php:415
-msgid "Comment Disclaimer"
-msgstr "Kommentar Hinweis"
-
-#: inc/customizer.php:416
-msgid "Disclaimer shown preview to comment form. (HTML is allowed)"
-msgstr "Hinweistext vor der Kommentareingabe (HTML ist erlaubt)"
-
-#: inc/customizer.php:570
-msgid "Hide author name on all pages"
-msgstr "Verstecke Autornamen auf allen Seiten"
-
-#: inc/customizer.php:656
-msgid "Number of slides"
-msgstr "Anzahl der Slides"
-
-#: inc/customizer.php:657
-#, fuzzy
-msgid ""
-"How many slides of feature posts are displayed (notice: each slide more will "
-"reduce the performance cause of big images load)."
-msgstr ""
-"Definiere wieviele Slides maximal angezeigt werden sollen (Hinweis: Um so "
-"mehr Slides vorgehalten werden, um so langsamer läd die Seite)"
-
-#: inc/helper-functions.php:333
-msgid "Entfernen"
-msgstr "Entfernen"
+"Unter der angegebenen Adresse konnte nichts gefunden werden. Vielleicht "
+"hilft eine Suche?"
 
 #: inc/template-tags.php:403
 #, php-format
@@ -167,192 +52,14 @@ msgctxt "post author"
 msgid "%s"
 msgstr ""
 
-#: template-parts/content-404-marque.php:10
-msgid "File not found"
-msgstr "Datei nicht gefunden"
-
-#: template-parts/content-404-marque.php:11
-#: template-parts/content-404-marque.php:17
-#: template-parts/content-404-marque.php:20
-msgid "404"
-msgstr "404"
-
-#: template-parts/content-404-marque.php:12
-msgid "Lost"
-msgstr "Verloren"
-
-#: template-parts/content-404-marque.php:13
-msgid "These are not the droids you are looking for"
-msgstr "These are not the droids you are looking for"
-
-#: template-parts/content-404-marque.php:14
-msgid "Not here anymore"
-msgstr "Nix da"
-
-#: template-parts/content-404-marque.php:15
-msgid "Arrrgh!"
-msgstr "Arrrgh!"
-
-#: template-parts/content-404-marque.php:16
-msgid "Arr!"
-msgstr "Arr!"
-
-#: template-parts/content-404-marque.php:18
-msgid "Versenk mich doch!"
-msgstr "Versenk mich doch!"
-
-#: template-parts/content-404-marque.php:19
-msgid "Beim Klabautermann! "
-msgstr "Beim Klabautermann! "
-
-#: template-parts/content-404-marque.php:21
-msgid "Yo-ho-ho"
-msgstr "Yo Ho Ho"
-
-#: template-parts/content-404-videos.php:70
+#: inc/customizer.php:657
+#, fuzzy
 msgid ""
-"We are sorry, that we could not serve, what you we are looking for. But how "
-"about this:"
+"How many slides of feature posts are displayed (notice: each slide more will "
+"reduce the performance cause of big images load)."
 msgstr ""
-"Leider konnte die gesuchte Seite oder Datei nicht gefunden werden. Wie wäre "
-"es stattdessen hiermit:"
-
-#. Name of the theme
-msgid "Pirate Rogue"
-msgstr "Pirate Rogue"
-
-#. Description of the theme
-msgid "Pirate Rogue Theme - Based on Uku by Elmastudio"
-msgstr "Pirate Rogue Theme - Basierend auf Uku Theme von Elmastudio"
-
-#. URI of the theme
-msgid "https://github.com/Piratenpartei/Pirate-Rogue/"
-msgstr "https://github.com/Piratenpartei/Pirate-Rogue/"
-
-#. Author of the theme
-msgid "Piratenpartei Deutschland"
-msgstr "Piratenpartei Deutschland"
-
-#. Author URI of the theme
-msgid "https://www.piratenpartei.de/"
-msgstr "https://www.piratenpartei.de/"
-
-#: archive.php:38 index.php:69 search.php:36
-msgid "Older"
-msgstr "Ältere"
-
-#: archive.php:39 index.php:70 search.php:37
-msgid "Older Posts"
-msgstr "Ältere Beiträge"
-
-#: archive.php:40 index.php:71 search.php:38
-msgid "Newer"
-msgstr "Neuere"
-
-#: archive.php:41 index.php:72 search.php:39
-msgid "Newer Posts"
-msgstr "Neuere Beiträge"
-
-#: archive.php:42 index.php:73 search.php:40
-msgid "Page"
-msgstr "Seite"
-
-#: comments.php:22
-#, php-format
-msgid "1 Comment"
-msgid_plural "%1$s Comments"
-msgstr[0] "1 Kommentar"
-msgstr[1] "%1$s Kommentare"
-
-#: comments.php:27
-#, php-format
-msgctxt "comments title"
-msgid "1 comment on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
-msgstr[0] "1 Kommentar zu &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s Kommentare zu &ldquo;%2$s&rdquo;"
-
-#: comments.php:46
-msgid "Older Comments"
-msgstr "Ältere Kommentare"
-
-#: comments.php:47
-msgid "Newer Comments"
-msgstr "Neuere Kommentare"
-
-#: comments.php:55
-msgid "Comments are closed."
-msgstr "Kommentare sind geschlossen."
-
-#: comments.php:68 comments.php:68
-msgid "Name"
-msgstr "Name"
-
-#: comments.php:69 comments.php:69
-msgid "Email"
-msgstr "Email"
-
-#: comments.php:70 comments.php:70
-msgid "Website"
-msgstr "Webseite"
-
-#: content.php:41 content.php:42 content.php:43
-#: template-parts/content-blogroll.php:41
-#: template-parts/content-blogroll.php:42
-#: template-parts/content-blogroll.php:43
-#: template-parts/content-featured-post.php:39
-#: template-parts/content-featured-post.php:40
-#: template-parts/content-featured-post.php:41
-#: template-parts/content-frontpost-big.php:57
-#: template-parts/content-frontpost-big.php:58
-#: template-parts/content-frontpost-big.php:59
-#: template-parts/content-single.php:74
-#: template-parts/front-section-four.php:75
-#: template-parts/front-section-four.php:76
-#: template-parts/front-section-four.php:77
-msgid "Comments"
-msgstr "Kommentare"
-
-#: content.php:42 template-parts/content-blogroll.php:42
-#: template-parts/content-featured-post.php:40
-#: template-parts/content-frontpost-big.php:58
-#: template-parts/content-single.php:75
-#: template-parts/front-section-four.php:76
-msgid "1"
-msgstr "1"
-
-#: content.php:43 template-parts/content-blogroll.php:43
-#: template-parts/content-featured-post.php:41
-#: template-parts/content-frontpost-big.php:59
-#: template-parts/content-single.php:75
-#: template-parts/front-section-four.php:77
-msgid "%"
-msgstr "%"
-
-#: content.php:47 template-parts/content-blogroll.php:47
-#: template-parts/content-featured-post.php:46
-#: template-parts/content-frontpost-big.php:63
-#: template-parts/content-single.php:81
-#: template-parts/front-section-four.php:82
-msgid "Edit Post"
-msgstr "Bearbeiten"
-
-#: footer.php:41
-msgid "https://wordpress.org/"
-msgstr "https://wordpress.org/"
-
-#: footer.php:41
-msgid "WordPress"
-msgstr "WordPress"
-
-#: footer.php:43
-#, php-format
-msgid "Theme: %1$s by %2$s"
-msgstr "Theme: %1$s von %2$s"
-
-#: footer.php:56
-msgid "Follow us"
-msgstr "Folge uns"
+"Definiere wieviele Slides maximal angezeigt werden sollen (Hinweis: Um so "
+"mehr Slides vorgehalten werden, um so langsamer läd die Seite)"
 
 #: functions.php:26
 msgid "Main menu"
@@ -455,6 +162,65 @@ msgstr ""
 "Widgetbereich für einen großen, einspaltigen Mailchimp Newsletter im Footer "
 "(nur im Serif Designstil)."
 
+#: index.php:69 search.php:30 archive.php:38
+msgid "Older"
+msgstr "Ältere"
+
+#: index.php:70 search.php:31 archive.php:39
+msgid "Older Posts"
+msgstr "Ältere Beiträge"
+
+#: index.php:71 search.php:32 archive.php:40
+msgid "Newer"
+msgstr "Neuere"
+
+#: index.php:72 search.php:33 archive.php:41
+msgid "Newer Posts"
+msgstr "Neuere Beiträge"
+
+#: index.php:73 search.php:34 archive.php:42
+msgid "Page"
+msgstr "Seite"
+
+#: comments.php:22
+#, php-format
+msgid "1 Comment"
+msgid_plural "%1$s Comments"
+msgstr[0] "1 Kommentar"
+msgstr[1] "%1$s Kommentare"
+
+#: comments.php:27
+#, php-format
+msgctxt "comments title"
+msgid "1 comment on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
+msgstr[0] "1 Kommentar zu &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s Kommentare zu &ldquo;%2$s&rdquo;"
+
+#: comments.php:46
+msgid "Older Comments"
+msgstr "Ältere Kommentare"
+
+#: comments.php:47
+msgid "Newer Comments"
+msgstr "Neuere Kommentare"
+
+#: comments.php:55
+msgid "Comments are closed."
+msgstr "Kommentare sind geschlossen."
+
+#: comments.php:68 comments.php:68
+msgid "Name"
+msgstr "Name"
+
+#: comments.php:69 comments.php:69
+msgid "Email"
+msgstr "Email"
+
+#: comments.php:70 comments.php:70
+msgid "Website"
+msgstr "Webseite"
+
 #: header.php:82 header.php:114
 msgid "Menu"
 msgstr "Menü"
@@ -467,7 +233,7 @@ msgstr "Suche"
 msgid "Close"
 msgstr "Schliessen"
 
-#: search.php:22
+#: search.php:19
 #, php-format
 msgid "Search Results for: %s"
 msgstr "Suchergebnisse für: %s"
@@ -486,6 +252,220 @@ msgstr "Suchen"
 msgid "Info"
 msgstr "Info"
 
+#: footer.php:40
+#, php-format
+msgid "Copyright &copy; %1$s %2$s"
+msgstr "Copyright &copy; %1$s %2$s"
+
+#: footer.php:41
+msgid "Powered by"
+msgstr "Powered by"
+
+#: footer.php:41
+msgid "https://wordpress.org/"
+msgstr "https://wordpress.org/"
+
+#: footer.php:41
+msgid "WordPress"
+msgstr "WordPress"
+
+#: footer.php:43
+#, php-format
+msgid "Theme: %1$s by %2$s"
+msgstr "Theme: %1$s von %2$s"
+
+#: footer.php:44
+#, php-format
+msgid "&mdash; based on %1$s by %2$s"
+msgstr "&mdash; zu %1$s von %2$s"
+
+#: footer.php:56 template-parts/front-section-about.php:49
+msgid "Follow us"
+msgstr "Folge uns"
+
+#: content.php:41 content.php:42 content.php:43
+#: template-parts/content-single.php:74
+#: template-parts/content-featured-post.php:39
+#: template-parts/content-featured-post.php:40
+#: template-parts/content-featured-post.php:41
+#: template-parts/content-frontpost-big.php:57
+#: template-parts/content-frontpost-big.php:58
+#: template-parts/content-frontpost-big.php:59
+#: template-parts/front-section-four.php:75
+#: template-parts/front-section-four.php:76
+#: template-parts/front-section-four.php:77
+#: template-parts/content-blogroll.php:41
+#: template-parts/content-blogroll.php:42
+#: template-parts/content-blogroll.php:43
+msgid "Comments"
+msgstr "Kommentare"
+
+#: content.php:41 template-parts/content-single.php:75
+#: template-parts/content-featured-post.php:39
+#: template-parts/content-frontpost-big.php:57
+#: template-parts/front-section-four.php:75
+#: template-parts/content-blogroll.php:41
+msgid "0"
+msgstr "0"
+
+#: content.php:42 template-parts/content-single.php:75
+#: template-parts/content-featured-post.php:40
+#: template-parts/content-frontpost-big.php:58
+#: template-parts/front-section-four.php:76
+#: template-parts/content-blogroll.php:42
+msgid "1"
+msgstr "1"
+
+#: content.php:43 template-parts/content-single.php:75
+#: template-parts/content-featured-post.php:41
+#: template-parts/content-frontpost-big.php:59
+#: template-parts/front-section-four.php:77
+#: template-parts/content-blogroll.php:43
+msgid "%"
+msgstr "%"
+
+#: content.php:47 template-parts/content-single.php:81
+#: template-parts/content-featured-post.php:46
+#: template-parts/content-frontpost-big.php:63
+#: template-parts/front-section-four.php:82
+#: template-parts/content-blogroll.php:47
+msgid "Edit Post"
+msgstr "Bearbeiten"
+
+#: template-parts/content-single.php:109 template-parts/content-page.php:22
+msgid "Pages:"
+msgstr "Seiten: "
+
+#: template-parts/content-single.php:123
+msgid "Tags"
+msgstr "Schlagworte"
+
+#: template-parts/content-single.php:149 template-parts/content-single.php:150
+msgid "Next Post"
+msgstr "Nächster Beitrag"
+
+#: template-parts/content-single.php:151 template-parts/content-single.php:152
+msgid "Previous Post"
+msgstr "Vorheriger Beitrag"
+
+#: template-parts/authorbox.php:19
+msgid "About"
+msgstr "über"
+
+#: template-parts/content-frontpost-big.php:24
+#: template-parts/content-frontpost-big.php:31
+msgid "Video"
+msgstr "Video"
+
+#: template-parts/content-none.php:13
+msgid "Nothing Found"
+msgstr "Nichts gefunden"
+
+#: template-parts/content-none.php:19
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Bist Du bereit deinen ersten Beitrag zu veröffentlichen? Beginne hier!"
+
+#: template-parts/content-none.php:21
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr "Entschuldige, aber es konnte nichts gefunden werden."
+
+#: template-parts/content-none.php:24
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Es scheint, als kann hier nichts gefunden werden. Vielleicht hilft ein "
+"anderer Suchbegriff."
+
+#: template-parts/content-page.php:28
+msgid "Edit Page"
+msgstr "Seite bearbeiten"
+
+#: template-parts/front-section-four.php:38
+#: template-parts/front-section-four.php:40
+#: template-parts/front-section-fourcolumn.php:38
+#: template-parts/front-section-fourcolumn.php:40
+#: template-parts/front-section-one.php:51
+#: template-parts/front-section-one.php:53
+#: template-parts/front-section-sixcolumn.php:36
+#: template-parts/front-section-sixcolumn.php:38
+#: template-parts/front-section-three.php:40
+#: template-parts/front-section-three.php:42
+#: template-parts/front-section-threecolumn.php:37
+#: template-parts/front-section-threecolumn.php:39
+#: template-parts/front-section-two.php:42
+#: template-parts/front-section-two.php:44
+#: template-parts/front-section-twocolumn.php:36
+#: template-parts/front-section-twocolumn.php:38
+msgid "All posts"
+msgstr "Alle Beiträge"
+
+#: template-parts/content-404-marque.php:10
+msgid "File not found"
+msgstr "Datei nicht gefunden"
+
+#: template-parts/content-404-marque.php:11
+#: template-parts/content-404-marque.php:17
+#: template-parts/content-404-marque.php:20
+msgid "404"
+msgstr "404"
+
+#: template-parts/content-404-marque.php:12
+msgid "Lost"
+msgstr "Verloren"
+
+#: template-parts/content-404-marque.php:13
+msgid "These are not the droids you are looking for"
+msgstr "These are not the droids you are looking for"
+
+#: template-parts/content-404-marque.php:14
+msgid "Not here anymore"
+msgstr "Nix da"
+
+#: template-parts/content-404-marque.php:15
+msgid "Arrrgh!"
+msgstr "Arrrgh!"
+
+#: template-parts/content-404-marque.php:16
+msgid "Arr!"
+msgstr "Arr!"
+
+#: template-parts/content-404-marque.php:18
+msgid "Versenk mich doch!"
+msgstr "Versenk mich doch!"
+
+#: template-parts/content-404-marque.php:19
+msgid "Beim Klabautermann! "
+msgstr "Beim Klabautermann! "
+
+#: template-parts/content-404-marque.php:21
+msgid "Yo-ho-ho"
+msgstr "Yo Ho Ho"
+
+#: template-parts/content-404-videos.php:70
+msgid ""
+"We are sorry, that we could not serve, what you we are looking for. But how "
+"about this:"
+msgstr ""
+"Leider konnte die gesuchte Seite oder Datei nicht gefunden werden. Wie wäre "
+"es stattdessen hiermit:"
+
+#. Name of the template
+msgid "No Sidebar Page"
+msgstr "No Sidebar Page"
+
+#. Name of the template
+msgid "Full Width Page"
+msgstr "Fullwidth-Seite"
+
+#: inc/helper-functions.php:333
+msgid "Entfernen"
+msgstr "Entfernen"
+
 #: inc/customizer.php:18
 msgid "Theme Options"
 msgstr "Theme Optionen"
@@ -497,6 +477,10 @@ msgstr "Allgemein"
 #: inc/customizer.php:28
 msgid "Header"
 msgstr "Header"
+
+#: inc/customizer.php:34
+msgid "Page Settings"
+msgstr "Seiteneinstellungen"
 
 #: inc/customizer.php:40
 msgid "Footer Featured Area"
@@ -661,9 +645,60 @@ msgstr "Footer Credit-Text"
 msgid "Customize the footer credit text. (HTML is allowed)"
 msgstr "Footer Credit-Text anpassen. (HTML ist erlaubt.)"
 
+#: inc/customizer.php:271
+msgid "Google Site Verification"
+msgstr "Google Site Verification"
+
 #: inc/customizer.php:287
 msgid "Hide search in Header"
 msgstr "Suche im Header verbergen"
+
+#: inc/customizer.php:300
+msgid "Social Media Icon Style"
+msgstr "Social Media Icon Stil"
+
+#: inc/customizer.php:301
+msgid ""
+"Choose the color of the social media icons (needs a items in Social media "
+"menu position). Notice: This will also chance the color of the search icon "
+"and the hamburger overlay icon."
+msgstr ""
+"Wählen Sie die Farbe der Social Media Icons (benötigt vorhandene Social "
+"Media Links in einem Menü, welches den Social Media Bereich zugeordnet ist). "
+"Hinweis: Dies ändert auch die Farbe des Such-Icons und des Hamburger-Menu-"
+"Icons."
+
+#: inc/customizer.php:306
+msgid "Colorful Social Media Icons"
+msgstr "Bunte Social Media Icons"
+
+#: inc/customizer.php:307
+msgid "Use main color"
+msgstr "Verwende Hauptfarbe"
+
+#: inc/customizer.php:308
+msgid "Use second color"
+msgstr "Verwende Nebenfarbe"
+
+#: inc/customizer.php:318
+msgid "Search Background Style"
+msgstr "Hintergrundstil der Sucheingabemaske"
+
+#: inc/customizer.php:319
+msgid "Choose the background color of the overlay search input"
+msgstr "Wähle die Hintergrundfarbe von der Sucheingabe"
+
+#: inc/customizer.php:324
+msgid "Dark grey"
+msgstr "Dunkelgrau"
+
+#: inc/customizer.php:325
+msgid "Main color"
+msgstr "Hauptfarbe"
+
+#: inc/customizer.php:326
+msgid "Second color"
+msgstr "Nebenfarbe"
 
 #: inc/customizer.php:337
 msgid "Hide fix-positioned Header"
@@ -677,6 +712,40 @@ msgstr ""
 "(Standardmäßig ist die feststehende Headerleiste auf größeren Bildschirmen "
 "sichtbar, wenn im Browserfenster nach unten gescrollt wird.)"
 
+#: inc/customizer.php:354
+msgid "Upload Fallback Thumbnail image"
+msgstr "Lade Ersatzbild für Thumbnails"
+
+#: inc/customizer.php:355
+msgid ""
+"If thumbnail for a post is not avaible, define this thumbnail as a fallback"
+msgstr ""
+"Falls kein Artikelbild für ein Artikel vorhanden ist, verwende dieses "
+"Ersatzbild"
+
+#: inc/customizer.php:369
+msgid "Upload Fallback Thumbnail for blogroll"
+msgstr "Lade Ersatzbild für Thumbnails in der Blogroll"
+
+#: inc/customizer.php:370
+msgid ""
+"If thumbnail for a post is not avaible, define this thumbnail as a fallback "
+"for normal blogroll"
+msgstr ""
+"Wenn kein Artikelbild vorhanden ist, verwende dieses Bild als Ersatzbild in "
+"der normalen Blogroll"
+
+#: inc/customizer.php:385
+msgid "Upload Fallback image for slider"
+msgstr "Ersatzbild für Slider"
+
+#: inc/customizer.php:386
+msgid ""
+"If  thumbnail for a post is not avaible, define this image for the slider"
+msgstr ""
+"Wenn kein Artikelbild vorhanden ist, verwende dieses Bild als Ersatz für den "
+"Slider"
+
 #: inc/customizer.php:401
 msgid "Show Comments button on single posts"
 msgstr "Kommentar-Button auf Einzel-Beitragsseiten"
@@ -686,6 +755,14 @@ msgid "(Hides comments behind a Show Comments button on single posts.)"
 msgstr ""
 "(Kommentare werden hinter einem \"Zeige Kommentare\" Button versteckt und "
 "können aus- und eingeklappt werden.)"
+
+#: inc/customizer.php:415
+msgid "Comment Disclaimer"
+msgstr "Kommentar Hinweis"
+
+#: inc/customizer.php:416
+msgid "Disclaimer shown preview to comment form. (HTML is allowed)"
+msgstr "Hinweistext vor der Kommentareingabe (HTML ist erlaubt)"
 
 #: inc/customizer.php:432
 msgid "Title"
@@ -756,6 +833,10 @@ msgstr "Kategorien nicht auf Startseite anzeigen"
 msgid "Hide author name on Front page"
 msgstr "Autorenname nicht auf Startseite anzeigen"
 
+#: inc/customizer.php:570
+msgid "Hide author name on all pages"
+msgstr "Verstecke Autornamen auf allen Seiten"
+
 #: inc/customizer.php:582
 msgid "Latest Posts title"
 msgstr "Neueste Beiträge Titel"
@@ -815,6 +896,10 @@ msgstr "slide"
 #: inc/customizer.php:647
 msgid "fade"
 msgstr "fade"
+
+#: inc/customizer.php:656
+msgid "Number of slides"
+msgstr "Anzahl der Slides"
 
 #: inc/customizer.php:678 inc/customizer.php:716 inc/customizer.php:754
 #: inc/customizer.php:857 inc/customizer.php:919 inc/customizer.php:1045
@@ -890,54 +975,22 @@ msgstr "&mdash; Auswählen &mdash;"
 msgid "by "
 msgstr "von "
 
-#. Name of the template
-msgid "Full Width Page"
-msgstr "Fullwidth-Seite"
+#. Name of the theme
+msgid "Pirate Rogue"
+msgstr "Pirate Rogue"
 
-#. Name of the template
-msgid "No Sidebar Page"
-msgstr "No Sidebar Page"
+#. Description of the theme
+msgid "Pirate Rogue Theme - Based on Uku by Elmastudio"
+msgstr "Pirate Rogue Theme - Basierend auf Uku Theme von Elmastudio"
 
-#: template-parts/authorbox.php:19
-msgid "About"
-msgstr "über"
+#. URI of the theme
+msgid "https://github.com/Piratenpartei/Pirate-Rogue/"
+msgstr "https://github.com/Piratenpartei/Pirate-Rogue/"
 
-#: template-parts/content-none.php:13
-msgid "Nothing Found"
-msgstr "Nichts gefunden"
+#. Author of the theme
+msgid "Piratenpartei Deutschland"
+msgstr "Piratenpartei Deutschland"
 
-#: template-parts/content-none.php:20
-#, php-format
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr "Bist Du bereit deinen ersten Beitrag zu veröffentlichen? Beginne hier!"
-
-#: template-parts/content-none.php:24
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr "Entschuldige, aber es konnte nichts gefunden werden."
-
-#: template-parts/content-none.php:29
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
-msgstr ""
-"Es scheint, als kann hier nichts gefunden werden. Vielleicht hilft ein "
-"anderer Suchbegriff."
-
-#: template-parts/content-page.php:22 template-parts/content-single.php:109
-msgid "Pages:"
-msgstr "Seiten: "
-
-#: template-parts/content-page.php:28
-msgid "Edit Page"
-msgstr "Seite bearbeiten"
-
-#: template-parts/content-single.php:149 template-parts/content-single.php:150
-msgid "Next Post"
-msgstr "Nächster Beitrag"
-
-#: template-parts/content-single.php:151 template-parts/content-single.php:152
-msgid "Previous Post"
-msgstr "Vorheriger Beitrag"
+#. Author URI of the theme
+msgid "https://www.piratenpartei.de/"
+msgstr "https://www.piratenpartei.de/"

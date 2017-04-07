@@ -58,13 +58,6 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
     <div class="container-all">
         <header id="masthead" class="site-header cf" role="banner">
             <div class="site-header-content">
-
-                    <?php if ( 'neo' == get_theme_mod( 'uku_main_design' ) || 'serif' == get_theme_mod( 'uku_main_design' )) : ?>
-                            <nav id="desktop-navigation" class="desktop-navigation cf" role="navigation">
-                                    <?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false,)); ?>
-                            </nav><!-- .main-navigation -->
-                    <?php endif; ?>
-
                     <div id="site-branding">
                             <?php if ( is_front_page() ) : ?>
                                     <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -85,25 +78,21 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
                                     <nav id="header-social" class="header-social social-nav" role="navigation">
                                     <?php wp_nav_menu( array(
                                             'theme_location'	=> 'social',
-                                            'container' 		=> 'false',
-                                            'depth' 			=> -1));
+                                            'container' 	=> 'false',
+                                            'depth' 		=> -1));
                                     ?>
                                     </nav><!-- end #header-social -->
                             <?php endif; ?>
                     </div><!-- end #site-branding -->
 
-                    <?php if ( '' == get_theme_mod( 'uku_main_design' ) || 'standard' == get_theme_mod( 'uku_main_design' ) ) : ?>
-                            <nav id="desktop-navigation" class="desktop-navigation cf" role="navigation">
-                                    <?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false,)); ?>
-                            </nav><!-- .main-navigation -->
-                    <?php endif; ?>
+                    <nav id="desktop-navigation" class="desktop-navigation cf" role="navigation">
+                            <?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false, 'walker'  => new Pirate_Rogue_Menu_Walker() ) ); ?>
+                    </nav><!-- .main-navigation -->
+
 
                     <?php if ( '' == get_theme_mod( 'uku_hidesearch' ) ) : ?>
                     <button id="search-open" class="search-open search-btn"><span><?php esc_html_e( 'Search', 'pirate-rogue'); ?></span></button>
-                            <div class="desktop-search">
-                                    <?php if ( 'neo' == get_theme_mod( 'uku_main_design') || 'serif' == get_theme_mod( 'uku_main_design' )) : ?>
-                                            <button id="search-close" class="search-close"><span><?php esc_html_e( 'Search', 'pirate-rogue'); ?></span></button>
-                                    <?php endif; ?>
+                            <div class="desktop-search">                         
                                     <?php get_search_form(); ?>
                             </div><!-- end .desktop-search -->
                     <?php endif; ?>

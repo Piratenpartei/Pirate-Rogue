@@ -142,8 +142,7 @@
     p, h1, h2, h3, h4, h5, h6, blockquote, em, code {
         position:relative;
         z-index: 2;
-        margin-left: 6.25%;
-        margin-right: 6.25%;	
+       
     }  
     &.withbackground {
         background-size: cover;
@@ -154,6 +153,8 @@
 	    color: #fff;
 	    display: table;
 	    padding: 2px 5px;
+            margin-left: 6.25%;
+            margin-right: 6.25%;	
 	}
     }
     &.withbackground.maincolor  {

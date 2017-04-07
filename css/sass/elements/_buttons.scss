@@ -26,64 +26,64 @@
 }
 
 .blue-box {
-  border: 3px solid #0066ff;
+  border: 3px solid $color-shortcodes-blue;
   
   &.invertbox {
-    background: lighten( #0066ff, 10%);
+    background: lighten( $color-shortcodes-blue, 10%);
   }
 }
 
 .yellow-box {
-  border: 3px solid #e7b547;
+  border: 3px solid $color-shortcodes-yellow;
    &.invertbox {
-    background: lighten( #e7b547, 10%);
+    background: lighten( $color-shortcodes-yellow, 10%);
   }
 }
 
 .red-box {
-  border: 3px solid #d7464d;
+  border: 3px solid $color-shortcodes-red;
    &.invertbox {
-    background: lighten( #d7464d, 10%);
+    background: lighten( $color-shortcodes-red, 10%);
   }
 }
 
 .green-box {
-  border: 3px solid #85c066;
+  border: 3px solid $color-shortcodes-green;
   &.invertbox {
-    background: lighten( #85c066, 10%);
+    background: lighten( $color-shortcodes-green, 10%);
   }
 }
 
 .lightgrey-box {
-  border: 3px solid #ececed;
+  border: 3px solid $color-shortcodes-lightgrey;
    &.invertbox {
-    background: lighten( #ececed, 10%);
+    background: lighten( $color-shortcodes-lightgrey, 10%);
   }
 }
 
 .grey-box {
-  border: 3px solid #a9a9a9;
+  border: 3px solid $color-shortcodes-grey;
     &.invertbox {
-    background: lighten( #a9a9a9, 10%);
+    background: lighten( $color-shortcodes-grey, 10%);
   }
 }
 
 .dark-box {
-  border: 3px solid #222;
+  border: 3px solid $color-shortcodes-dark;
    &.invertbox {
-    background: lighten( #222, 10%);
+    background: lighten( $color-shortcodes-dark, 10%);
     color: #fff;
   
   }
 }
 
 .maincolor-box {
-  border: 3px solid $color-main;
+  border: 3px solid $color-shortcodes-maincolor;
   a {
-      color: $color-main;
+      color: $color-shortcodes-maincolor;
   }
   &.invertbox {
-        background: lighten( $color-main, 10%);
+        background: lighten( $color-shortcodes-maincolor, 10%);
         a {
             color: $color-text;
         }
@@ -91,13 +91,13 @@
 }
 
 .secondcolor-box {
-  border: 3px solid $color-second;
+  border: 3px solid $color-shortcodes-secondcolor;
   
   a {
-      color: $color-second;
+      color: $color-shortcodes-secondcolor;
   }
    &.invertbox {
-        background: lighten( $color-second, 10%);
+        background: lighten( $color-shortcodes-secondcolor, 10%);
         color: #fff;
   }
 }
@@ -159,42 +159,42 @@ a.standard-btn {
   }
   
   &.red-btn {
-    background: #d7464d;
+    background: $color-shortcodes-red;
     &:focus, 
     &:hover {
-        background: darken(#d7464d, 15%);
+        background: darken($color-shortcodes-red, 15%);
     }
   }
   &.green-btn {
-    background: #85c066;
+    background: $color-shortcodes-green;
     &:focus, 
     &:hover {
-        background: darken(#85c066, 15%);
+        background: darken($color-shortcodes-green, 15%);
     }
   }
   &.blue-btn {
-    background: #0066ff;
+    background: $color-shortcodes-blue;
     &:focus, 
     &:hover {
-        background: darken(#0066ff, 15%);
+        background: darken($color-shortcodes-blue, 15%);
     }
   }
   &.yellow-btn {
-    background: #e7b547;
+    background: $color-shortcodes-yellow;
     &:focus, 
     &:hover {
-        background: darken(#e7b547, 15%);
+        background: darken($color-shortcodes-yellow, 15%);
     }
   }
   &.grey-btn {
-    background: #a9a9a9;
+    background: $color-shortcodes-grey;
     &:focus, 
     &:hover {
-        background: darken(#a9a9a9, 15%);
+        background: darken($color-shortcodes-grey, 15%);
     }
   }
   &.black-btn {
-    background: #000;
+    background: $color-shortcodes-black;
     &:focus, 
     &:hover {
         background: darken(#fff, 65%);
@@ -204,11 +204,11 @@ a.standard-btn {
     background: $color-main;
     &:focus, 
     &:hover {
-        background: $color-second;
+        background: $color-shortcodes-secondcolor;
     }
   }
   &.secondcolor-btn {
-    background: $color-second;
+    background: $color-shortcodes-secondcolor;
     &:focus, 
     &:hover {
         background: $color-main;

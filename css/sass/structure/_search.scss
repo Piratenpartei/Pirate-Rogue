@@ -116,6 +116,7 @@
                     text-transform: uppercase;
                     letter-spacing: 3px;
                 }
+                 &[type="submit"]:focus,
                  &[type="submit"]:hover {
                      background: $color-main;
                  }
@@ -141,6 +142,7 @@
                     color: #fff;
                     border: 2px solid  $color-second;
                 }
+                &[type="submit"]:focus,
                 &[type="submit"]:hover {
                         background: $color-second;
                         border: 2px solid $color-main;
@@ -161,6 +163,7 @@
                     color: #fff;
                     border: 2px solid  $color-main;   
                 }
+                &[type="submit"]:focus,
                 &[type="submit"]:hover {
                         background: $color-main;
                         border: 2px solid $color-second;

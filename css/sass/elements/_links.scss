@@ -5,7 +5,7 @@ Links and colors
 a {
   color: $color-text;
   text-decoration: none;
-  
+  &:focus,
   &:hover {
        color: $color-linkhover;
   }
@@ -31,16 +31,28 @@ a {
 
 .entry-content a, 
 .comment-text a, 
+.author-bio a,
+.featured-slider button.slick-arrow:focus::after,
+.front-section a.all-posts-link:focus,
+#overlay-close:focus,
+.widget-area .widget ul li a:focus, 
+#sidebar-offcanvas .widget a:focus,
+.textwidget a:focus, 
+#overlay-nav a:focus,
+.author-links a:focus, 
+.single-post .post-navigation a:focus,
+.single-attachment .post-navigation a:focus,
+.single-post .hentry .entry-meta a:focus,
 .featured-slider button.slick-arrow:hover::after,
 .front-section a.all-posts-link:hover,
 #overlay-close:hover,
 .widget-area .widget ul li a:hover, 
 #sidebar-offcanvas .widget a:hover,
-.textwidget a:hover, #overlay-nav a:hover,
+.textwidget a:hover, 
+#overlay-nav a:hover,
 .author-links a:hover, 
 .single-post .post-navigation a:hover,
 .single-attachment .post-navigation a:hover,
-.author-bio a,
 .single-post .hentry .entry-meta a:hover {
   color: $color-content-links; // #51a8dd;
 }
@@ -52,24 +64,28 @@ a {
   text-decoration: none;
 }
 
-#desktop-navigation ul li a:hove {
-     color: #51a8dd;
+#desktop-navigation ul li a:focus,
+#desktop-navigation ul li a:hover {
+     color:  $color-linkhover; // #51a8dd;
 }
 .entry-header {
-  a:hover, 
+  a:focus,  
+  a:hover,
+  h2.entry-title a:focus,
   h2.entry-title a:hover {
-    color: #51a8dd; 
+    color:  $color-linkhover; // #51a8dd; 
   }
 }
-
+.blog .entry-meta a:focus,
 .blog .entry-meta a:hover {
   color: $color-content-links; // #51a8dd;
 }
-
+#desktop-navigation ul li.menu-item-has-children a:focus::after,
 #desktop-navigation ul li.menu-item-has-children a:hover::after {
   border-top-color: $color-content-links; //  #51a8dd;
 }
-
+.single-post .post-navigation a:focus,
+.single-attachment .post-navigation a:focus,
 .single-post .post-navigation a:hover,
 .single-attachment .post-navigation a:hover {
   border-bottom: 2px solid $color-content-links; //  #51a8dd;
@@ -78,6 +94,8 @@ a {
 
 
 #desktop-navigation {
+    .sub-menu li a:focus, 
+    .children li a:focus, 
     .sub-menu li a:hover, 
     .children li a:hover {
 	background: $color-content-links; // #51a8dd;
@@ -96,39 +114,38 @@ a {
 
 
 
-
+.footer-feature-btn:focus, 
 .footer-feature-btn:hover, 
 .comments-show #comments-toggle, 
+#comments-toggle:focus,
 #comments-toggle:hover {
    background: $color-cats-background-hover; 
 }
 
 
-
+#primary #infinite-handle span:focus, 
+#front-section-three a.all-posts-link:focus, 
+#offcanvas-widgets-open:focus,
 #primary #infinite-handle span:hover, 
 #front-section-three a.all-posts-link:hover, 
 #offcanvas-widgets-open:hover,
 .offcanvas-widgets-show #offcanvas-widgets-open {
   background: $color-linkhover;
+  border: 2px solid $color-linkhover;
+  color: #fff;
 }
 
 .comments-show #comments-toggle,
+#comments-toggle:focus,
 #comments-toggle:hover {
   border: 2px solid $color-linkhover;
   color: #fff;
 }
 
 
-#primary #infinite-handle span:hover, 
-#front-section-three a.all-posts-link:hover, 
-#offcanvas-widgets-open:hover, 
-.offcanvas-widgets-show #offcanvas-widgets-open {
-  border: 2px solid $color-linkhover;
-  color: #fff;
-}
-
 .desktop-search input.search-field {
-  &:active, &:focus {
+  &:active, 
+  &:focus {
     border-bottom: 1px solid $color-content-links; // #51a8dd;
   }
 }
@@ -186,10 +203,13 @@ p.wp-caption-text,
 }
 
 #colophon {
-  .footer-menu ul a:hover, #site-info a:hover {
-    color: rgba(255, 255, 255, 1);
-  }
-  a {
-    color: #fff;
-  }
+    .footer-menu ul a:focus, 
+    #site-info a:focus,
+    .footer-menu ul a:hover, 
+    #site-info a:hover {
+        color: rgba(255, 255, 255, 1);
+    }
+    a {
+        color: #fff;
+    }
 }

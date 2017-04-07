@@ -2,8 +2,9 @@
 /*	16.0 Shortcodes
 /*-----------------------------------------------------------------------------------*/
 
-/* --- Multi Columns --- */
-
+/*
+*  Columns
+*/
 .two-columns-one, 
 .three-columns-one, 
 .three-columns-two, 
@@ -14,25 +15,108 @@
 }
 
 .entry-content {
-  .two-columns-one, 
-  .three-columns-one, 
-  .three-columns-two, 
-  .four-columns-one, 
-  .four-columns-two, 
-  .four-columns-three {
+    .two-columns-one, 
+    .three-columns-one, 
+    .three-columns-two, 
+    .four-columns-one, 
+    .four-columns-two, 
+    .four-columns-three {
 	position: relative;
 	float: left;
 	margin-bottom: 30px;
 	@include px2rem($font-size-base);
-  }
-  .two-columns-one p, 
-  .three-columns-one p, 
-  .three-columns-two p, 
-  .four-columns-one p, 
-  .four-columns-two p, 
-  .four-columns-three p {
-	@include px2rem($font-size-base);
-  }
+	  
+
+	&.secondcolor {
+	    background: $color-shortcodes-secondcolor;
+	    color: #fff;
+	    padding: 10px;
+	    
+	    &.lighten {
+		  background: lighten( $color-shortcodes-secondcolor, 10%);
+	    }
+	}
+	&.maincolor {
+	    background: $color-shortcodes-maincolor;
+	    padding: 10px;
+	    a {
+		color: $color-shortcodes-secondcolor;
+	    }
+	    
+	    &.lighten {
+		  background: lighten( $color-shortcodes-maincolor, 10%);
+	    }
+	    
+	}
+	&.blue {
+	    background: $color-shortcodes-blue;
+	   padding: 10px;
+	    &.lighten {
+		  background: lighten( $color-shortcodes-blue, 10%);
+	    }
+	}
+	&.red {
+	    background: $color-shortcodes-red;
+	  padding: 10px;
+	   &.lighten {
+		  background: lighten( $color-shortcodes-red, 10%);
+	    }
+	}
+	&.yellow {
+	    background: $color-shortcodes-yellow;
+	    padding: 10px;
+	     &.lighten {
+		  background: lighten( $color-shortcodes-yellow, 10%);
+	    }
+	}
+	&.green {
+	    background: $color-shortcodes-green;
+	    padding: 10px;
+	     &.lighten {
+		  background: lighten( $color-shortcodes-green, 10%);
+	    }
+	}
+	&.lightgrey {
+	    background: $color-shortcodes-lightgrey;
+	    padding: 10px;
+	     &.lighten {
+		  background: lighten( $color-shortcodes-lightgrey, 10%);
+	    }
+	}
+	&.grey {
+	    background: $color-shortcodes-grey;
+	    padding: 10px;
+	     &.lighten {
+		  background: lighten( $color-shortcodes-grey, 10%);
+	    }
+	}
+	&.black {
+	    background: $color-shortcodes-black;
+	    padding: 10px;
+	    color: #fff;
+	     &.lighten {
+		  background: lighten( $color-shortcodes-black, 10%);
+	    }
+	}
+	&.dark {
+	    background: $color-shortcodes-dark;
+	    padding: 10px;
+	    color: #fff;
+	     &.lighten {
+		  background: lighten( $color-shortcodes-dark, 10%);
+	    }
+	}
+
+	  
+    }
+    .two-columns-one p, 
+    .three-columns-one p, 
+    .three-columns-two p, 
+    .four-columns-one p, 
+    .four-columns-two p, 
+    .four-columns-three p {
+	  @include px2rem($font-size-base);
+    }
 }
 
 .last {
@@ -47,6 +131,205 @@
     display: block;
     clear: both;
 }
+
+#section-fullwidth {
+    padding: 0;
+    margin: 20px 0;
+
+    img {
+          z-index: 1;
+    }
+    p, h1, h2, h3, h4, h5, h6, blockquote, em, code {
+        position:relative;
+        z-index: 2;
+        margin-left: 6.25%;
+        margin-right: 6.25%;	
+    }  
+    &.withbackground {
+        background-size: cover;
+        background-position: center center;
+        
+	p, h1, h2, h3, h4, h5, h6, blockquote, em, code {
+	    background: #000; // rgba($color-main, 0.70);
+	    color: #fff;
+	    display: table;
+	    padding: 2px 5px;
+	}
+    }
+    &.withbackground.maincolor  {
+	p, h1, h2, h3, h4, h5, h6, blockquote, em, code {
+	  background: $color-shortcodes-maincolor;
+	  color: #fff;	    
+       }
+    }
+    &.withbackground.secondcolor  {
+	p, h1, h2, h3, h4, h5, h6, blockquote, em, code {
+	  background: $color-shortcodes-secondcolor;
+	   color: #fff;	    
+       }
+    }
+    &.withbackground.red  {
+	p, h1, h2, h3, h4, h5, h6, blockquote, em, code {
+	  background: $color-shortcodes-red;
+	   color: #fff;	    
+       }
+    }
+     &.withbackground.green  {
+	p, h1, h2, h3, h4, h5, h6, blockquote, em, code {
+	  background: $color-shortcodes-green;
+	   color: #fff;	    
+       }
+    }
+     &.withbackground.yellow  {
+	p, h1, h2, h3, h4, h5, h6, blockquote, em, code {
+	  background: $color-shortcodes-yellow;
+	   color: #fff;	    
+       }
+    }
+     &.withbackground.blue  {
+	p, h1, h2, h3, h4, h5, h6, blockquote, em, code {
+	  background: $color-shortcodes-blue;
+	   color: #fff;	    
+       }
+    }
+     &.withbackground.lightgrey  {
+	p, h1, h2, h3, h4, h5, h6, blockquote, em, code {
+	  background: $color-shortcodes-lightgrey;
+	   color: #fff;	    
+       }
+    }
+     &.withbackground.grey  {
+	p, h1, h2, h3, h4, h5, h6, blockquote, em, code {
+	  background: $color-shortcodes-grey;
+	   color: #fff;	    
+       }
+    }
+   
+    p {
+	 @include px2rem($font-size-bigtext); 
+    }
+   
+   
+    
+    &.secondcolor {
+	    background: $color-shortcodes-secondcolor;
+	    color: #fff;	    
+	    &.lighten {
+		  background: lighten( $color-shortcodes-secondcolor, 10%);
+	    }
+	}
+	&.maincolor {
+	    background: $color-shortcodes-maincolor;
+	    a {
+		color: $color-shortcodes-secondcolor;
+	    }
+	    
+	    &.lighten {
+		  background: lighten( $color-shortcodes-maincolor, 10%);
+	    }
+	    
+	}
+	&.blue {
+	    background: $color-shortcodes-blue;
+	    &.lighten {
+		  background: lighten( $color-shortcodes-blue, 10%);
+	    }
+	}
+	&.red {
+	    background: $color-shortcodes-red;
+	   &.lighten {
+		  background: lighten( $color-shortcodes-red, 10%);
+	    }
+	}
+	&.yellow {
+	    background: $color-shortcodes-yellow;
+	    padding: 10px;
+	     &.lighten {
+		  background: lighten( $color-shortcodes-yellow, 10%);
+	    }
+	}
+	&.green {
+	    background: $color-shortcodes-green;
+	     &.lighten {
+		  background: lighten( $color-shortcodes-green, 10%);
+	    }
+	}
+	&.lightgrey {
+	    background: $color-shortcodes-lightgrey;
+	     &.lighten {
+		  background: lighten( $color-shortcodes-lightgrey, 10%);
+	    }
+	}
+	&.grey {
+	    background: $color-shortcodes-grey;
+	     &.lighten {
+		  background: lighten( $color-shortcodes-grey, 10%);
+	    }
+	}
+	&.black {
+	    background: $color-shortcodes-black;
+	    color: #fff;
+	     &.lighten {
+		  background: lighten( $color-shortcodes-black, 10%);
+	    }
+	}
+	&.dark {
+	    background: $color-shortcodes-dark;
+	    color: #fff;
+	     &.lighten {
+		  background: lighten( $color-shortcodes-dark, 10%);
+	    }
+	}
+    
+    
+}
+
+
+@media screen and (min-width: 48em) {
+    .two-columns-one {
+       width: 48.5%;
+    }
+    .three-columns-one {
+       width: 30.3%;
+    }
+    .three-columns-two {
+       width: 65.15%;
+    }
+    .four-columns-one {
+       width: 22.375%;
+    }
+    .four-columns-two {
+       width: 48%;
+    }
+    .four-columns-three {
+       width: 74.5%;
+    }
+    .two-columns-one, 
+    .three-columns-one, 
+    .three-columns-two, 
+    .four-columns-one, 
+    .four-columns-two, 
+    .four-columns-three {
+       position: relative;
+       float: left;
+       margin-bottom: 0;
+    }
+    .two-columns-one {
+       margin: 0 1.5% 0 0;
+       &.last {
+	 margin: 0 1.5% 0;
+       }
+    }
+    .three-columns-one {
+       margin: 0 3% 0 0;
+    }
+    .four-columns-one {
+       margin: 0 3.5% 0 0;
+    }
+}
+
+
+
 
 /*
 *  Shortcodes for Sections

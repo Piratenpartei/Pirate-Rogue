@@ -37,10 +37,10 @@ $blogname = get_bloginfo('name');
 				<?php if ( get_theme_mod( 'pirate_rogue_credit' ) ) : ?>
 					<li><?php echo wp_kses_post( get_theme_mod( 'pirate_rogue_credit' ) ); ?></li>
 				<?php else : ?>
-					<li class="copyright"><?php printf(esc_html__('Copyright &copy; %1$s %2$s', 'uku'), date("Y"), $blogname ); ?></li>
-					<li class="wp-credit"><?php esc_html_e('Powered by', 'uku') ?> <a href="<?php echo esc_url(__( 'https://wordpress.org/', 'pirate-rogue') ); ?>" ><?php esc_html_e( 'WordPress', 'pirate-rogue'); ?></a></li>
+					<li class="copyright"><?php printf(esc_html__('Copyright &copy; %1$s %2$s', 'pirate-rogue'), date("Y"), $blogname ); ?></li>
+					<li class="wp-credit"><?php esc_html_e('Powered by', 'pirate-rogue') ?> <a href="<?php echo esc_url(__( 'https://wordpress.org/', 'pirate-rogue') ); ?>" ><?php esc_html_e( 'WordPress', 'pirate-rogue'); ?></a></li>
 					<li class="theme-author">
-					    <?php printf( esc_html__( 'Theme: %1$s by %2$s', 'pirate-rogue'), 'Pirate Rogue', '<a href="' . esc_url('https://github.com/Piratenpartei/Pirate-Rogue/') . '">Piratenpartei Deutschland</a>' ); ?>
+					    <?php printf( esc_html__( 'Theme: %1$s by %2$s', 'pirate-rogue'), '<a href="' . esc_url('https://github.com/Piratenpartei/Pirate-Rogue/') . '">Pirate Rogue</a>', 'Piratenpartei Deutschland' ); ?>
 					    <?php printf( esc_html__( '&mdash; based on %1$s by %2$s', 'pirate-rogue'), 'Uku', '<a href="' . esc_url('http://www.elmastudio.de/') . '">Elmastudio</a>' ); ?>
 
 					</li>

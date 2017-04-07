@@ -12,64 +12,267 @@ add_filter( 'widget_text', 'do_shortcode' );
 
 // Two Columns
 function pirate_rogue_shortcode_two_columns_one( $atts, $content = null ) {
-   return '<div class="two-columns-one">' . ($content) . '</div>';
+    extract(shortcode_atts(array(
+	'color'	=> '',
+	'lighten'   => '',
+    ), $atts));
+    $addclass = '';
+    if (isset($color)) {
+	
+	$setlighten = '';
+	if ($lighten) {
+	    $setlighten = ' lighten';
+	}   
+	
+	$color = pirate_rogue_columns_checkcolor($color);
+	if (!empty($color)) {
+	    $addclass=' '.$color;
+	    $addclass .= $setlighten;
+	}
+    }
+    return '<div class="two-columns-one'.$addclass.'">' . do_shortcode( ($content) ) . '</div>';
 }
 add_shortcode( 'two_columns_one', 'pirate_rogue_shortcode_two_columns_one' );
 
 function pirate_rogue_shortcode_two_columns_one_last( $atts, $content = null ) {
-   return '<div class="two-columns-one last">' . ($content) . '</div>';
+    extract(shortcode_atts(array(
+	'color'	=> '',
+	'lighten'   => '',
+    ), $atts));
+    $addclass = '';
+    if (isset($color)) {
+	$setlighten = '';
+	if ($lighten) {
+	    $setlighten = ' lighten';
+	}   
+
+	$color = pirate_rogue_columns_checkcolor($color);
+	if (!empty($color)) {
+	    $addclass=' '.$color;
+	    $addclass .= $setlighten;
+	}
+    }
+   return '<div class="two-columns-one'.$addclass.' last">' . do_shortcode( ($content) ) . '</div>';
 }
 add_shortcode( 'two_columns_one_last', 'pirate_rogue_shortcode_two_columns_one_last' );
 
 // Three Columns
 function pirate_rogue_shortcode_three_columns_one($atts, $content = null) {
-   return '<div class="three-columns-one">' . ($content) . '</div>';
+    extract(shortcode_atts(array(
+	'color'	=> '',
+	'lighten'   => '',
+    ), $atts));
+    $addclass = '';
+    if (isset($color)) {
+	$setlighten = '';
+	if ($lighten) {
+	    $setlighten = ' lighten';
+	}   
+
+	$color = pirate_rogue_columns_checkcolor($color);
+	if (!empty($color)) {
+	    $addclass=' '.$color;
+	    $addclass .= $setlighten;
+	}
+    }
+    return '<div class="three-columns-one'.$addclass.'">' . do_shortcode( ($content) ) . '</div>';
 }
 add_shortcode( 'three_columns_one', 'pirate_rogue_shortcode_three_columns_one' );
 
 function pirate_rogue_shortcode_three_columns_one_last($atts, $content = null) {
-   return '<div class="three-columns-one last">' . ($content) . '</div>';
+    extract(shortcode_atts(array(
+	'color'	=> '',
+	'lighten'   => '',
+    ), $atts));
+    $addclass = '';
+    if (isset($color)) {
+	$setlighten = '';
+	if ($lighten) {
+	    $setlighten = ' lighten';
+	}   
+
+	$color = pirate_rogue_columns_checkcolor($color);
+	if (!empty($color)) {
+	    $addclass=' '.$color;
+	    $addclass .= $setlighten;
+	}
+    }
+   return '<div class="three-columns-one'.$addclass.' last">' . do_shortcode( ($content) ) . '</div>';
 }
 add_shortcode( 'three_columns_one_last', 'pirate_rogue_shortcode_three_columns_one_last' );
 
 function pirate_rogue_shortcode_three_columns_two($atts, $content = null) {
-   return '<div class="three-columns-two">' . ($content) . '</div>';
+     extract(shortcode_atts(array(
+	'color'	=> '',
+	 'lighten'   => '',
+    ), $atts));
+    $addclass = '';
+    if (isset($color)) {
+	$setlighten = '';
+	if ($lighten) {
+	    $setlighten = ' lighten';
+	}   
+
+	$color = pirate_rogue_columns_checkcolor($color);
+	if (!empty($color)) {
+	    $addclass=' '.$color;
+	    $addclass .= $setlighten;
+	}
+    }
+   return '<div class="three-columns-two'.$addclass.'">' . do_shortcode( ($content) ). '</div>';
 }
 add_shortcode( 'three_columns_two', 'pirate_rogue_shortcode_three_columns_two' );
 
 function pirate_rogue_shortcode_three_columns_two_last($atts, $content = null) {
-   return '<div class="three-columns-two last">' . ($content) . '</div>';
+     extract(shortcode_atts(array(
+	'color'	=> '',
+	 'lighten'   => '',
+    ), $atts));
+    $addclass = '';
+    if (isset($color)) {
+	$setlighten = '';
+	if ($lighten) {
+	    $setlighten = ' lighten';
+	}   
+	$color = pirate_rogue_columns_checkcolor($color);
+	if (!empty($color)) {
+	    $addclass=' '.$color;
+	    $addclass .= $setlighten;
+	}
+    }
+   return '<div class="three-columns-two'.$addclass.' last">' . do_shortcode( ($content) ) . '</div>';
 }
 add_shortcode( 'three_columns_two_last', 'pirate_rogue_shortcode_three_columns_two_last' );
 
 // Four Columns
 function pirate_rogue_shortcode_four_columns_one($atts, $content = null) {
-   return '<div class="four-columns-one">' . ($content) . '</div>';
+     extract(shortcode_atts(array(
+	'color'	=> '',
+	 'lighten'   => '',
+    ), $atts));
+    $addclass = '';
+    if (isset($color)) {
+	$setlighten = '';
+	if ($lighten) {
+	    $setlighten = ' lighten';
+	}   
+
+	$color = pirate_rogue_columns_checkcolor($color);
+	if (!empty($color)) {
+	    $addclass=' '.$color;
+	    $addclass .= $setlighten;
+	}
+    }
+   return '<div class="four-columns-one'.$addclass.'">' . do_shortcode( ($content) ) . '</div>';
 }
 add_shortcode( 'four_columns_one', 'pirate_rogue_shortcode_four_columns_one' );
 
 function pirate_rogue_shortcode_four_columns_one_last($atts, $content = null) {
-   return '<div class="four-columns-one last">' . ($content) . '</div>';
+     extract(shortcode_atts(array(
+	'color'	=> '',
+	 'lighten'   => '',
+    ), $atts));
+    $addclass = '';
+    if (isset($color)) {
+	$setlighten = '';
+	if ($lighten) {
+	    $setlighten = ' lighten';
+	}   
+
+	$color = pirate_rogue_columns_checkcolor($color);
+	if (!empty($color)) {
+	    $addclass=' '.$color;
+	    $addclass .= $setlighten;
+	}
+    }
+   return '<div class="four-columns-one'.$addclass.' last">' . do_shortcode( ($content) ) . '</div>';
 }
 add_shortcode( 'four_columns_one_last', 'pirate_rogue_shortcode_four_columns_one_last' );
 
 function pirate_rogue_shortcode_four_columns_two($atts, $content = null) {
-   return '<div class="four-columns-two">' . ($content) . '</div>';
+     extract(shortcode_atts(array(
+	'color'	=> '',
+	 'lighten'   => '',
+    ), $atts));
+    $addclass = '';
+    if (isset($color)) {
+	$setlighten = '';
+	if ($lighten) {
+	    $setlighten = ' lighten';
+	}
+	$color = pirate_rogue_columns_checkcolor($color);
+	if (!empty($color)) {
+	    $addclass=' '.$color;
+	    $addclass .= $setlighten;
+	}
+    }
+   return '<div class="four-columns-two'.$addclass.'">' . do_shortcode( ($content) ) . '</div>';
 }
 add_shortcode( 'four_columns_two', 'pirate_rogue_shortcode_four_columns_two' );
 
 function pirate_rogue_shortcode_four_columns_two_last($atts, $content = null) {
-   return '<div class="four-columns-two last">' . ($content) . '</div>';
+     extract(shortcode_atts(array(
+	'color'	=> '',
+	 'lighten'   => '',
+    ), $atts));
+    $addclass = '';
+    if (isset($color)) {
+		$setlighten = '';
+	if ($lighten) {
+	    $setlighten = ' lighten';
+	}   
+
+	$color = pirate_rogue_columns_checkcolor($color);
+	if (!empty($color)) {
+	    $addclass=' '.$color;
+	    $addclass .= $setlighten;
+	}
+    }
+   return '<div class="four-columns-two'.$addclass.' last">' . do_shortcode( ($content) ) . '</div>';
 }
 add_shortcode( 'four_columns_two_last', 'pirate_rogue_shortcode_four_columns_two_last' );
 
 function pirate_rogue_shortcode_four_columns_three($atts, $content = null) {
-   return '<div class="four-columns-three">' . ($content) . '</div>';
+     extract(shortcode_atts(array(
+	'color'	=> '',
+	 'lighten'   => '',
+    ), $atts));
+    $addclass = '';
+    if (isset($color)) {
+	$setlighten = '';
+	if ($lighten) {
+	    $setlighten = ' lighten';
+	}   
+
+	$color = pirate_rogue_columns_checkcolor($color);
+	if (!empty($color)) {
+	    $addclass=' '.$color;
+	    $addclass .= $setlighten;
+	}
+    }
+   return '<div class="four-columns-three'.$addclass.'">' . do_shortcode( ($content) ) . '</div>';
 }
 add_shortcode( 'four_columns_three', 'pirate_rogue_shortcode_four_columns_three' );
 
 function pirate_rogue_shortcode_four_columns_three_last($atts, $content = null) {
-   return '<div class="four-columns-three last">' . ($content) . '</div>';
+    extract(shortcode_atts(array(
+	'color'	=> '',
+	'lighten'   => '',
+    ), $atts));
+    $addclass = '';
+    if (isset($color)) {
+	$setlighten = '';
+	if ($lighten) {
+	    $setlighten = ' lighten';
+	}   
+
+	$color = pirate_rogue_columns_checkcolor($color);
+	if (!empty($color)) {
+	    $addclass=' '.$color;
+	    $addclass .= $setlighten;
+	}
+    }
+   return '<div class="four-columns-three'.$addclass.' last">' . do_shortcode( ($content) ). '</div>';
 }
 add_shortcode( 'four_columns_three_last', 'pirate_rogue_shortcode_four_columns_three_last' );
 
@@ -80,6 +283,77 @@ function pirate_rogue_shortcode_divider($atts, $content = null) {
 }
 add_shortcode( 'divider', 'pirate_rogue_shortcode_divider' );
 
+
+/*-----------------------------------------------------------------------------------*/
+/* Info Boxes Shortcodes
+/*-----------------------------------------------------------------------------------*/
+function pirate_rogue_shortcode_fullwidth($atts, $content = null) {
+    extract(shortcode_atts(array(
+	'color'         => '',
+	'lighten'       => '',
+        'background'   => '',
+        'fixed'         => '',
+        'maxheight'     => '',
+    ), $atts));
+    $addclass = '';
+    if (isset($color)) {
+	$setlighten = '';
+	if ($lighten) {
+	    $setlighten = ' lighten';
+	}   
+	$color = pirate_rogue_columns_checkcolor($color);
+	if (!empty($color)) {
+	    $addclass= $color;
+	    $addclass .= $setlighten;
+	}
+    }
+    $setstyle = '';
+    if (!empty($maxheight)) {
+        $maxheight = intval($maxheight);
+        if ($maxheight > 0) {
+            $setstyle = 'height: '.$maxheight.'px; overflow:hidden;';
+        }
+    }
+    if (!empty($background)) {
+        $background = esc_url($background);
+	if (!empty($background)) {
+	    $setstyle .= 'background-image: url('.$background.'); background-repeat: no-repeat; ';
+	}
+	if (!empty($fixed) ) {
+	    $setstyle .= 'background-attachment: fixed;';
+	}
+
+	$setstyle .= 'background-size: cover;';
+
+	$addclass .= ' withbackground';
+    }
+    if (!empty($setstyle)) {
+	$setstyle = ' style="'.$setstyle.'"';
+    }
+    
+    if (!empty($addclass)) {
+	$addclass = ' class="'.$addclass.'"';
+    }
+    
+    if (is_page()) {
+	// Close sourounding markup, then insert secxtion, then open markup for page again
+	
+	$close_markup = '</div> <!-- close entry content -->';
+	$close_markup .= '</article> <!-- close article -->';
+	$close_markup .= '</div> <!-- close #primary div -->';
+	$close_markup .= '</div> <!-- close #blog wrap -->';
+	
+	$open_markup = '<div class="blog-wrap cf">';
+	$open_markup .= '<div class="site-content cf">';
+	$open_markup .= '<article class="cf page hentry">';
+	$open_markup .= '<div class="entry-content">';
+	
+	$res = $close_markup.'<section id="section-fullwidth"'.$addclass.$setstyle.'>' . do_shortcode( ($content) ). '</section>'.$open_markup;
+	return $res;
+	
+    }
+}
+add_shortcode( 'section_fullwidth', 'pirate_rogue_shortcode_fullwidth' );
 
 /*-----------------------------------------------------------------------------------*/
 /* Info Boxes Shortcodes
@@ -415,6 +689,17 @@ function pirate_rogue_shortcode_blogroll( $atts, $content = null ) {
     return $out;
 }
 add_shortcode('blogroll', 'pirate_rogue_shortcode_blogroll');
+
+/*-----------------------------------------------------------------------------------*/
+/* Check if color attribut is valid
+/*-----------------------------------------------------------------------------------*/
+function pirate_rogue_columns_checkcolor($color = '') {
+    if ( ! in_array( $color, array( 'black', 'red', 'yellow', 'green', 'blue', 'white', 'lightgrey', 'grey', 'dark', 'maincolor', 'secondcolor' ) ) ) {
+	return '';
+    }
+    return $color;
+}
+
 
 /*-----------------------------------------------------------------------------------*/
 /* The end of this file inc/shortcodes.php as you know it

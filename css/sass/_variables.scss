@@ -13,7 +13,7 @@ $color-text:			#2b2b2b;
 $bg-grey:			#e7e7eb;
 $color-border:			$bg-grey;
 $color-special-background:	$color-page-background;
-$color-linkhover:               #0c6ca6;
+$color-linkhover:               $color-main; // #0c6ca6;
 $color-mainnav-active-border:   $color-main;
 
 $color-main-menu:               $color-text; // $color-second;
@@ -22,9 +22,23 @@ $color-cats:                    #fff;
 $color-cats-hover:		#fff;
 $color-cats-background:         $color-second;
 $color-cats-background-hover:   $color-main;
-$color-mark-background:		lighten($color-four,20%); // #d2f1ff;
+$color-mark:			#fff;
+$color-mark-background:		lighten($color-second,10%); // #d2f1ff;
 $color-footer-background:	#1a1a1a;
  
+
+$color-shortcodes-blue:		#0066ff;
+$color-shortcodes-red:		#d7464d;
+$color-shortcodes-yellow:	#e7b547;
+$color-shortcodes-green:	#85c066;
+$color-shortcodes-lightgrey:	#ececed;
+$color-shortcodes-grey:		#a9a9a9;
+$color-shortcodes-dark:		#222;
+$color-shortcodes-maincolor:	$color-main;	
+$color-shortcodes-secondcolor:	$color-second;
+$color-shortcodes-black:	#000;
+$color-shortcodes-white:	#fff;
+
 //////////////////////////////////////////////////////////////////////////////
 // Fonts
 //////////////////////////////////////////////////////////////////////////////
@@ -102,6 +116,7 @@ $font-size-blockquote-cite:	$font-size-smaller;
 $font-size-blockquote-sm:	24;
 $font-size-blockquote-cite-sm:	19;
 
+$font-size-men-childs:		$font-size-small;
 //////////////////////////////////////////////////////////////////////////////
 // Tabellen 
 //////////////////////////////////////////////////////////////////////////////

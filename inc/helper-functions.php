@@ -482,8 +482,8 @@ if ( ! function_exists( 'pirate_rogue_save_standard' ) ) :
 	        $newval = ( isset( $val ) ? wp_strip_all_tags( $val ) : 0 );	 
 	    } elseif ($type == 'textarea') {
 		 $newval =  ( isset( $val ) ? esc_textarea( $val ) : 0 );				 
-	     } elseif ($type == 'wpeditor') {
-		 $newval =  $val;			 
+	    } elseif ($type == 'wpeditor') {
+		 $newval =  wp_kses_post($val);			 
 	    } else {
 		 $newval = ( isset( $val ) ? sanitize_text_field( $val ) : 0 );
 	    }

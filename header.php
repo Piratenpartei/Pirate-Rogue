@@ -56,18 +56,26 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
 
 <body <?php body_class(); ?>>
     <div class="container-all">
+        <nav id="skiplinks" aria-label="<?php _e('Skiplinks', 'pirate-rogue'); ?>">
+            <ul>
+                <li><a href="#overlay-wrap" data-target="#overlay-wrap" data-firstchild="0" class="jumplink-content"><?php _e('Content','pirate-rogue'); ?></a></li>
+                <li><a href="#masthead" data-target="#desktop-navigation" data-firstchild="1" class="jumplink-nav"><?php _e('Main Menu','pirate-rogue'); ?></a></li>
+                <li><a href="#colophon" data-target="#colophon" data-firstchild="1" class="jumplink-nav"><?php _e('Footer','pirate-rogue'); ?></a></li>
+            </ul>
+	</nav>   
         <header id="masthead" class="site-header cf" role="banner">
             <div class="site-header-content">
                     <div id="site-branding">
                             <?php if ( is_front_page() ) : ?>
-                                    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                                    <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
                             <?php else : ?>
                                     <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
                             <?php endif; ?>
 
                             <?php if ( has_custom_logo() ) : ?>
                                     <div class="custom-logo-wrap">
-                                            <?php the_custom_logo(); ?>
+                                        <?php echo pirate_rogue_get_custom_logo(); ?>
+                                        
                                      </div><!-- end .custom-logo-wrap -->
                              <?php endif; ?>
 
@@ -131,18 +139,18 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
 
                     <div class="overlay-desktop-content cf">
 
-                            <?php if ( 'neo' == get_theme_mod( 'uku_main_design' )) : ?>
+            
                             <div class="overlay-title-wrap">
                                     <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-                                    <p class="site-description"><?php bloginfo( 'description' ); ?></p>
                             </div><!-- end .overlay-title-wrap -->
-                            <?php endif; ?>
+                
 
                             <nav id="overlay-nav" class="main-nav cf" role="navigation">
                             <?php
                                     wp_nav_menu( array(
-                                            'theme_location'	=> 'primary',
-                                            'container' 		=> false,));
+                                        'theme_location'	=> 'primary',
+                                        'container' 		=> false,
+                                        'walker'  => new Pirate_Rogue_Menu_Walker()));
                             ?>
                             </nav><!-- .main-navigation -->
 

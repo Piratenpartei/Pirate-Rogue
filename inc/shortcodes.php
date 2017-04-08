@@ -291,6 +291,7 @@ function pirate_rogue_shortcode_fullwidth($atts, $content = null) {
     extract(shortcode_atts(array(
 	'color'         => '',
 	'lighten'       => '',
+        'scrollleft'    => '',
         'background'   => '',
         'fixed'         => '',
         'maxheight'     => '',
@@ -307,7 +308,13 @@ function pirate_rogue_shortcode_fullwidth($atts, $content = null) {
 	    $addclass .= $setlighten;
 	}
     }
+    
+    
+    if (!empty(scrollleft)) {
+        $addclass .= ' scrollleft';
+    }
     $setstyle = '';
+    $setinnerstyle = '';
     if (!empty($maxheight)) {
         $maxheight = intval($maxheight);
         if ($maxheight > 0) {
@@ -330,7 +337,10 @@ function pirate_rogue_shortcode_fullwidth($atts, $content = null) {
     if (!empty($setstyle)) {
 	$setstyle = ' style="'.$setstyle.'"';
     }
-    
+    if (!empty($setinnerstyle)) {
+	$setinnerstyle = ' style="'.$setinnerstyle.'"';
+    }
+
     if (!empty($addclass)) {
 	$addclass = ' class="'.$addclass.'"';
     }
@@ -347,8 +357,9 @@ function pirate_rogue_shortcode_fullwidth($atts, $content = null) {
 	$open_markup .= '<div class="site-content cf">';
 	$open_markup .= '<article class="cf page hentry">';
 	$open_markup .= '<div class="entry-content">';
-	
-	$res = $close_markup.'<section id="section-fullwidth"'.$addclass.$setstyle.'>' . do_shortcode( ($content) ). '</section>'.$open_markup;
+	$innerstyle = '<div class="fullwidth-inner"'.$setinnerstyle.'>';
+               
+	$res = $close_markup.'<section id="section-fullwidth"'.$addclass.$setstyle.'>' .$innerstyle. do_shortcode( ($content) ). '</div></section>'.$open_markup;
 	return $res;
 	
     }

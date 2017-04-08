@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pirate Rogue v1.0.20\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-06 19:38+0000\n"
-"PO-Revision-Date: 2017-04-06 19:40+0000\n"
+"POT-Creation-Date: 2017-04-08 18:39+0000\n"
+"PO-Revision-Date: 2017-04-08 18:44+0000\n"
 "Last-Translator: xwolf <xwolf@xwolf.de>\n"
 "Language-Team: German\n"
 "Language: de-DE\n"
@@ -23,43 +23,79 @@ msgstr ""
 "X-Poedit-SearchPath-0: ..\n"
 "X-Poedit-Basepath: ."
 
-#: index.php:58
-msgid "Latest Posts"
-msgstr "Letzte Beiträge"
-
-#: 404.php:31
-msgid "Oops! That page can&rsquo;t be found."
-msgstr "Ups! Die Seite konnte nicht gefunden werden."
-
-#: 404.php:33
-msgid ""
-"It looks like nothing was found at this location. Maybe try another search "
-"term?"
-msgstr ""
-"Unter der angegebenen Adresse konnte nichts gefunden werden. Vielleicht "
-"hilft eine Suche?"
-
 #: inc/template-tags.php:403
 #, php-format
 msgctxt "post date"
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #. translators: used to show post author name
 #: inc/template-tags.php:408 inc/template-tags.php:433
 #, php-format
 msgctxt "post author"
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: inc/customizer.php:657
-#, fuzzy
 msgid ""
 "How many slides of feature posts are displayed (notice: each slide more will "
 "reduce the performance cause of big images load)."
 msgstr ""
 "Definiere wieviele Slides maximal angezeigt werden sollen (Hinweis: Um so "
 "mehr Slides vorgehalten werden, um so langsamer läd die Seite)"
+
+#: functions.php:316
+msgid " Edit"
+msgstr "Bearbeiten"
+
+#: header.php:59
+msgid "Skiplinks"
+msgstr "Skip Navigation"
+
+#: header.php:61
+msgid "Content"
+msgstr "Inhalt"
+
+#: header.php:62
+msgid "Main Menu"
+msgstr "Hauptmenü"
+
+#: header.php:63
+msgid "Footer"
+msgstr "Fußteil"
+
+#: footer.php:43
+#, php-format
+msgid "Theme: %1$s by %2$s for %3$s"
+msgstr "Theme: %1$s von %2$s für die %3$s"
+
+#: inc/custom-fields.php:37
+msgid "Attributes"
+msgstr "Eigenschaften"
+
+#: inc/custom-fields.php:49
+msgid "Sidebar"
+msgstr "Sidebar"
+
+#: inc/custom-fields.php:74
+msgid "Optional entries for the sidebar"
+msgstr "Optionale Einträge in der Sidebar"
+
+#: inc/custom-fields.php:113
+msgid ""
+"Enter a text for a subtitle here, which belongs to the main title of the "
+"entry. Do not use more as 120 Chars."
+msgstr ""
+"Gebe hier einen Text für den Untertitel ein. Dieser wird neben den "
+"eigentlichen Titel angezeigt. Bitte geb nicht mehr als 120 Zeichen ein."
+
+#: inc/custom-fields.php:116
+msgid ""
+"Enter the URL of the original posts address (e.g. another blog or website, "
+"were this text was mirrored from)"
+msgstr ""
+"Gebe hier die URL an von der Quelle auf welcher der Beitrag zuerst "
+"erschienen ist. (Zum Beispiel ein Blog oder ein anders Webportal)."
 
 #: functions.php:26
 msgid "Main menu"
@@ -150,17 +186,9 @@ msgstr ""
 "Widgetbereich, um einen großen einspaltigen Footer-Widgetbereich für "
 "Instagram Fotos zu integrieren."
 
-#: functions.php:400
-msgid "Big Footer Mailchimp Widget Area"
-msgstr "Footer Mailchimp Newsletter"
-
-#: functions.php:402
-msgid ""
-"Widget area to show the Mailchimp Newsletter Widget in a big one-column "
-"footer area ."
-msgstr ""
-"Widgetbereich für einen großen, einspaltigen Mailchimp Newsletter im Footer "
-"(nur im Serif Designstil)."
+#: index.php:58
+msgid "Latest Posts"
+msgstr "Letzte Beiträge"
 
 #: index.php:69 search.php:30 archive.php:38
 msgid "Older"
@@ -221,17 +249,29 @@ msgstr "Email"
 msgid "Website"
 msgstr "Webseite"
 
-#: header.php:82 header.php:114
+#: header.php:83 header.php:111
 msgid "Menu"
 msgstr "Menü"
 
-#: header.php:102 header.php:105 header.php:116 searchform.php:12
+#: header.php:102 header.php:113 searchform.php:12
 msgid "Search"
 msgstr "Suche"
 
-#: header.php:140
+#: header.php:137
 msgid "Close"
 msgstr "Schliessen"
+
+#: 404.php:31
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Ups! Die Seite konnte nicht gefunden werden."
+
+#: 404.php:33
+msgid ""
+"It looks like nothing was found at this location. Maybe try another search "
+"term?"
+msgstr ""
+"Unter der angegebenen Adresse konnte nichts gefunden werden. Vielleicht "
+"hilft eine Suche?"
 
 #: search.php:19
 #, php-format
@@ -269,17 +309,7 @@ msgstr "https://wordpress.org/"
 msgid "WordPress"
 msgstr "WordPress"
 
-#: footer.php:43
-#, php-format
-msgid "Theme: %1$s by %2$s"
-msgstr "Theme: %1$s von %2$s"
-
-#: footer.php:44
-#, php-format
-msgid "&mdash; based on %1$s by %2$s"
-msgstr "&mdash; zu %1$s von %2$s"
-
-#: footer.php:56 template-parts/front-section-about.php:49
+#: footer.php:54 template-parts/front-section-about.php:49
 msgid "Follow us"
 msgstr "Folge uns"
 

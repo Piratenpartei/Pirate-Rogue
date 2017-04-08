@@ -134,8 +134,10 @@
 
 #section-fullwidth {
     padding: 0;
-    margin: 20px 0;
-
+   // margin: 20px 0;
+   margin: 0;
+    // Kein Margin, um aufeinanderfolgende Bereiche ohne Abstand zuzulassen
+    
     img {
           z-index: 1;
     }
@@ -144,6 +146,7 @@
         z-index: 2;
        
     }  
+
     &.withbackground {
         background-size: cover;
         background-position: center center;

@@ -61,6 +61,7 @@ p.site-title {
 #overlay-nav ul ul li a, 
 #footer-social span {
    @include px2rem($font-size-small);
+   hypens: auto;
 }
 
 .widget_rss ul li {
@@ -242,6 +243,10 @@ p.wp-caption-text,
 
 p {
   margin-bottom: 30px;
+  
+  .entry-summary & {
+      hyphens: auto;
+  }
 }
 
 .entry-content p:last-child,

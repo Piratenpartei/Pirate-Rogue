@@ -142,7 +142,7 @@ function pirate_rogue_scripts() {
 	    wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/js/jquery.fitvids.min.js', array( 'jquery' ), '1.1' );
 
 	    // Loading Tablesorter script
-	    wp_enqueue_script( 'tablesorter', get_template_directory_uri() . '/js/jquery.tablesorter.min.js', array( 'jquery' ), '1.1', true );	
+	//     wp_enqueue_script( 'tablesorter', get_template_directory_uri() . '/js/jquery.tablesorter.min.js', array( 'jquery' ), '1.1', true );	
 	
 }
 add_action( 'wp_enqueue_scripts', 'pirate_rogue_scripts' );

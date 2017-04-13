@@ -5,9 +5,9 @@
 $color_1: #aaa;
 $color_2: #333;
 $color_3: #1f1f1f;
-$color_4: #000;
+$color_4: $color-second;
 $color_5: #fff;
-$color_6: #111;
+$color_6: $color-second;
 $background_color_1: rgba(113, 113, 113, 0.04);
 $background_color_2: #eee;
 
@@ -70,34 +70,14 @@ $background_color_2: #eee;
 
 [class^="picrew-icon-"] {
     @extend .fa;
-    /*
-	font-family: $font_family_1 !important;
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale; */
 }
 [class*=" picrew-icon-"] {
       @extend .fa;
-      /*
-	font-family: $font_family_1 !important;
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-      */
 }
 
 ul.picrew-social-icons {
 	li {
+	   
 		list-style: none;
 		margin: 0;
 		padding: 0;
@@ -111,6 +91,8 @@ ul.picrew-social-icons {
 	}
 }
 .picrew-social-icons {
+	border: 1px solid $color-page-background;
+	border-radius: 50%;
 	span {
 		display: inline-block;
 		padding: 0 5px;
@@ -121,14 +103,22 @@ ul.picrew-social-icons {
 		-webkit-transition: -webkit-transform 0.3s;
 		-moz-transition: -moz-transform 0.3s;
 		transition: transform 0.3s;
-		line-height: 1;
+		width: 25px;
+		height: 25px;
+		text-align: center;
+		vertical-align: middle;
+                border-radius: 50%;
+		color: $color-second;
+		
 		&:hover {
-			-moz-transform: translateY(-4px);
-			-webkit-transform: translateY(-4px);
-			transform: translateY(-4px);
+			color: #fff;
+			background-color: $color-main;
+		
 		}
 	}
 }
+
+
 
 .picrew-icon-yelp {
 	&:before {
@@ -413,6 +403,7 @@ ul.picrew-social-icons {
 
 
 .picrew-grid-wrapper {
+	font-family: $font-family-base;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
@@ -443,20 +434,14 @@ ul.picrew-social-icons {
 		-webkit-margin-end: 0;
 	}
 	a {
-		color: $color_1;
 		text-decoration: none;
 		text-decoration: none;
 		box-shadow: none;
 		border-bottom: 0;
 		outline: none;
-		&:hover {
-			color: $color_2;
-		}
-		&:active {
-			color: $color_2;
-		}
 	}
 	.picrew-grid {
+	    	font-family: $font-family-base;
 		list-style: none;
 		padding: 30px 0;
 		margin: 0 -15px;
@@ -470,9 +455,6 @@ ul.picrew-social-icons {
 		h3 {
 			margin: 0 0 3px;
 			padding: 0;
-			font-size: 1.17em;
-			line-height: 1.4;
-			color: $color_3;
 		}
 	}
 	.picrew-grid.drawer-style {
@@ -543,8 +525,8 @@ html.picrew-popup-on {
 	margin-bottom: 15px;
 	span {
 		text-transform: uppercase;
-		font-size: 0.815em;
-		line-height: 1.4;
+		@include px2rem($font-size-base);
+		
 		display: block;
 	}
 }
@@ -553,7 +535,6 @@ html.picrew-popup-on {
 	p {
 		margin: 0 0 15px;
 		line-height: normal;
-		color: $color_3;
 	}
 }
 .picrew-flip-front {
@@ -616,7 +597,7 @@ figure {
 }
 figcaption {
 	p {
-		font-size: 14px;
+		@include px2rem($font-size-smaller);
 	}
 }
 .picrew-popup-details {
@@ -709,12 +690,9 @@ figcaption {
 		transition: transform 0.4s;
 		text-align: center;
 		z-index: 2;
-		color: $color_4;
-		a {
-			color: $color_4;
-		}
+
 		p {
-			font-size: 14px;
+			@include px2rem($font-size-smaller);
 		}
 	}
 	.picrew-contact-info {
@@ -875,7 +853,7 @@ figcaption {
 		display: inline-block;
 		width: calc(100% - 1px);
 		vertical-align: middle;
-		font-size: 14px;
+		@include px2rem($font-size-smaller);
 	}
 }
 .cards-style.style-2 {
@@ -919,7 +897,7 @@ figcaption {
 		padding: 30px 20px;
 		background: #fff;
 		border: 1px solid rgba(0, 0, 0, 0.1);
-		color: $color_4;
+		color: $color-text;
 		-webkit-transition: -webkit-transform 0.6s, z-index 0.7s;
 		-moz-transition: -moz-transform 0.6s, z-index 0.7s;
 		transition: transform 0.6s, z-index 0.7s;
@@ -933,9 +911,7 @@ figcaption {
 		top: 0;
 		right: 0;
 		bottom: 0;
-		a {
-			color: $color_4;
-		}
+
 	}
 	figure.cs-hover {
 		.picrew-flip-front {
@@ -1006,12 +982,10 @@ figcaption {
 		transition: transform 0.4s;
 		text-align: center;
 		z-index: 2;
-		color: $color_4;
-		a {
-			color: $color_4;
-		}
+		color: $color-text;
+
 		p {
-			font-size: 14px;
+			 @include px2rem($font-size-smaller);
 		}
 	}
 	.picrew-contact-info {
@@ -1083,12 +1057,10 @@ figcaption {
 		padding: 20px;
 		text-align: center;
 		z-index: 2;
-		color: $color_4;
-		a {
-			color: $color_4;
-		}
+		color: $color-text;
+
 		p {
-			font-size: 14px;
+			@include px2rem($font-size-smaller);
 		}
 	}
 	figure.cs-hover {
@@ -1109,7 +1081,7 @@ figcaption {
 		bottom: 25px;
 		padding: 30px;
 		background: rgba(35, 35, 35, 0.8);
-		color: $color_5;
+		color: $color-text;
 		text-align: center;
 		opacity: 0;
 		-webkit-backface-visibility: hidden;
@@ -1129,19 +1101,17 @@ figcaption {
 		img {
 			max-width: 300px;
 		}
-		color: $color_6;
+		color: $color-text;
 	}
 	.picrew-personal-info {
 	    text-align: left;
 		h3 {
-			font-size: 18px;
 			margin: 0 0 5px;
-			line-height: 1.1;
 		}
 	}
 	figcaption {
 		p {
-			font-size: 16px;
+			@include px2rem($font-size-base);
 		}
 	}
 	.picrew-social-icons {
@@ -1154,9 +1124,7 @@ figcaption {
 	.picrew-contact-info {
 	        text-align: left;
 		a {
-			color: $color_6;
-			padding: 10px 0;
-			width: 40px;
+			margin-left: 10px;
 		}
 	}
 }
@@ -1178,19 +1146,17 @@ figcaption {
 		}
 	}
 	h3 {
-		font-size: 36px;
 		margin: 0 0 10px;
-		line-height: 1.1;
 	}
 	.picrew-personal-info {
 		span {
-			font-size: 14px;
+			@include px2rem($font-size-smaller);
 		}
 	}
 }
 .list-style.style-1 {
 	.picrew-contact-info {
-		font-size: 16px;
+		@include px2rem($font-size-base);
 	}
 	figure {
 		img {
@@ -1210,7 +1176,7 @@ figcaption {
 .picrew-table {
 	display: table;
 	width: 100%;
-	color: $color_6;
+	color: $color-text;
 }
 .picrew-table-row {
 	display: table-row;
@@ -1224,7 +1190,12 @@ figcaption {
 	}
 	.picrew-social-icons {
 		a {
-			color: $color_6;
+			color: $color-second;
+			
+			&:hover {
+			    color: #fff;
+			    background-color: $color-main;
+			}
 		}
 	}
 }
@@ -1239,17 +1210,12 @@ figcaption {
 	}
 	.picrew-table-cell {
 		h3 {
-			font-size: 16px;
-			font-weight: normal;
 			margin: 0;
 			padding: 0;
-			line-height: 1.235;
 		}
 		h2 {
-			font-size: 16px;
 			margin: 0;
 			padding: 0;
-			line-height: 1.235;
 		}
 		p {
 			margin-bottom: 10px;
@@ -1276,21 +1242,16 @@ figcaption {
 		.picrew-table-cell {
 			border-bottom: none;
 		}
-		background-color: $background_color_2;
 	}
 	.picrew-table-cell {
 		border-bottom: none;
 	}
-	.picrew-table-row {
-		&:nth-child(2n+1) {
-			background-color: $background_color_1;
-		}
-	}
+
 }
 .picrew-table.style-3 {
 	.picrew-table-row.picrew-table-head {
 		.picrew-table-cell {
-			background-color: $background_color_2;
+	//		background-color: $background_color_2;
 		}
 	}
 	.picrew-table-cell {

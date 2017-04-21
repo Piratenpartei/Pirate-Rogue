@@ -75,13 +75,13 @@
 	
 
 	// Keyboard-navigation, remove and set focus class on focus-change
-	$('a').not($('#desktop-navigation > ul > a')).focus(function() {
-		$('#desktop-navigation > ul').removeClass('focus');
+	$('a').not($('#desktop-navigation > .sub-menu > a')).focus(function() {
+		$('#desktop-navigation > .sub-menu').removeClass('focus');
 	});
 	
-	$('#desktop-navigation > ul > ul > a').focus(function() {
-		$('#desktop-navigation > ul> ul').removeClass('focus');
-		$(this).parents('ul').addClass('focus');
+	$('#desktop-navigation > .sub-menu > a').focus(function() {
+		$('#desktop-navigation > .sub-menu').removeClass('focus');
+		$(this).parents('.sub-menu').addClass('focus');
 	});
 	
 

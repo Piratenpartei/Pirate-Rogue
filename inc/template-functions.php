@@ -194,11 +194,14 @@
                 $class_names = $value = '';
 
                 $classes = empty( $item->classes ) ? array() : (array) $item->classes;
-
+                $ariapopup = '';
+                if (in_array('has_children', $classes)) {
+                    $ariapopup = ' aria-haspopup="true"';
+                }
                 $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
                 $class_names = ' class="'. esc_attr( $class_names ) . '"';
 
-                $output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
+                $output .= $indent . '<li role="menu-item" ' . $value . $class_names .$ariapopup.'>';
                 
                 
                 $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';

@@ -25,6 +25,12 @@ hr {
 	     height: 40px;
                           
 	}
+	
+	.site-content & {
+	    clear: both;
+	}
+	
+	
 }
 #overlay-nav .menu_separator hr {
     display: none;

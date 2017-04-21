@@ -28,7 +28,8 @@
       padding-bottom: 15px;
     }
     ul {
-      &.sub-menu, &.children {
+      &.sub-menu, 
+      &.children {
         display: none;
         overflow: hidden;
         margin: 0;
@@ -139,8 +140,11 @@
 	font-family: $font-family-headlines;
 	
 	li.menu-item-has-children {
+            > a {
+                margin-right: 0px;
+            }
 	    > a::after {
-		   margin-left: 3px;
+		   margin-left: 5px;
 		   @extend .fa;
 		   content: $fa-var-caret-down;
 	   }
@@ -180,10 +184,25 @@
 	.sub-menu, 
 	.children, 
 	.dropdown-toggle {
-	  display: none;
+	   display: none;
+
+           &:hover,
+           &:focus,
+	   &.focus {
+	        display: block !important;
+	   }
 	}
-	
+        .sub-menu {
+            .sub-menu {
+                border-top: 1px solid #ccc;
+                border-left: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
+            }
+        }
+	 
+	 
 	ul {
+	    li > ul.focus,
 	    li:focus > ul,  
 	    li:hover > ul {
 		&.sub-menu, 
@@ -197,7 +216,8 @@
 		      position: absolute;
 		      top: 59px;
 		      left: 0;
-		      width: 200px;
+		      min-width: 230px;
+                      max-width: 300px;
 		      margin: 0;
 		      padding: 5px 0;
 		      text-align: left;
@@ -209,7 +229,7 @@
 		&.sub-menu ul.sub-menu, 
 		&.children ul.children {
 		      top: -5px;
-		      left: 200px;
+		      left: 215px;
 		}
 	  }
 	}
@@ -226,7 +246,6 @@
 	.sub-menu li, 
 	.children li {
 	  padding: 0;
-	 // line-height: 1.1;
 	  display: block;
 	}
       }

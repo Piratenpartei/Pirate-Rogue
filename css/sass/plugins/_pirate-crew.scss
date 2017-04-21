@@ -2,16 +2,6 @@
 * Plugin Pirate Crew Settings
 */
 
-$color_1: #aaa;
-$color_2: #333;
-$color_3: #1f1f1f;
-$color_4: $color-second;
-$color_5: #fff;
-$color_6: $color-second;
-$background_color_1: rgba(113, 113, 113, 0.04);
-$background_color_2: #eee;
-
-
 /****************** Presets ***********************/
 
 @keyframes "DownMove" {
@@ -632,7 +622,7 @@ figcaption {
 }
 .picrew-coming-soon {
 	text-align: center;
-	color: $color_2;
+	color: $color-shortcodes-lightgrey;
 }
 
 .cards-style.style-1 {
@@ -878,7 +868,7 @@ figcaption {
 		padding: 30px 20px;
 		background: #fff;
 		border: 1px solid rgba(0, 0, 0, 0.1);
-		color: $color_4;
+		color: $color-second;
 		-webkit-transition: -webkit-transform 0.6s, z-index 0.7s;
 		-moz-transition: -moz-transform 0.6s, z-index 0.7s;
 		transition: transform 0.6s, z-index 0.7s;
@@ -1253,11 +1243,7 @@ figcaption {
 
 }
 .picrew-table.style-3 {
-	.picrew-table-row.picrew-table-head {
-		.picrew-table-cell {
-	//		background-color: $background_color_2;
-		}
-	}
+
 	.picrew-table-cell {
 		border-bottom: 1px solid #ddd;
 	}

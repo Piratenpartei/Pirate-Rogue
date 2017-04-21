@@ -70,21 +70,9 @@
 		$('body').removeClass('offcanvascart-show');
 	});
 	
-	
-	
-	
 
-	// Keyboard-navigation, remove and set focus class on focus-change
-	$('a').not($('#desktop-navigation > .sub-menu > a')).focus(function() {
-		$('#desktop-navigation > .sub-menu').removeClass('focus');
-	});
-	
-	$('#desktop-navigation > .sub-menu > a').focus(function() {
-		$('#desktop-navigation > .sub-menu').removeClass('focus');
-		$(this).parents('.sub-menu').addClass('focus');
-	});
-	
-
+		
+		
 
 
 	// Featured Posts Slider

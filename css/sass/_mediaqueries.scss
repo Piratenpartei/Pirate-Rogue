@@ -428,7 +428,8 @@
   .close-btn-wrap {
     border: none;
   }
-  .mobile-search, #mobile-social {
+  .mobile-search, 
+  #mobile-social {
     display: none;
   }
   #overlay-nav {
@@ -463,7 +464,8 @@
       padding-top: 15px;
       padding-bottom: 15px;
       border-bottom: 1px solid #1a1a1a;
-      &.menu-item-has-children, &.page_item_has_children {
+      &.menu-item-has-children, 
+      &.page_item_has_children {
         padding-bottom: 0;
         border-bottom: none;
       }
@@ -471,20 +473,23 @@
         display: inline-block;
         padding: 0;
       }
-      &.menu-item-has-children a, &.page_item_has_children a {
+      &.menu-item-has-children a, 
+      &.page_item_has_children a {
         border-bottom: none !important;
         padding-bottom: 0;
       }
     }
     ul {
-      &.sub-menu, &.children {
+      &.sub-menu, 
+      &.children {
         display: block;
         border-bottom: 1px solid #1a1a1a;
         padding-top: 15px;
         padding-bottom: 15px;
       }
       ul {
-        &.sub-menu, &.children {
+        &.sub-menu, 
+        &.children {
           border-bottom: none;
           padding-top: 0;
           padding-bottom: 0;

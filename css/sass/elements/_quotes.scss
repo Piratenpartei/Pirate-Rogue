@@ -11,10 +11,6 @@ blockquote {
     border-left: 15px solid $color-main;
     border-right: 2px solid $color-main;
 
-    -moz-box-shadow: 2px 2px 15px #ccc;
-    -webkit-box-shadow: 2px 2px 15px #ccc;
-    box-shadow: 2px 2px 15px #ccc;
-
     a {
         text-decoration: none;
         cursor: pointer;

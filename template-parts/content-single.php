@@ -51,7 +51,8 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 
 			<div class="entry-meta cf">
 				<div class="meta-columnone">
-                                    <?php  if (('' == get_theme_mod( 'uku_front_hideauthor' ) ) &&  ('' == get_theme_mod( 'uku_all_hideauthor' ) )) { ?>
+				    
+				    <?php if (('' == get_theme_mod( 'uku_front_hideauthor' ) ) &&  ('' == get_theme_mod( 'uku_all_hideauthor' ) )) { ?>
 					<div class="author-pic">
 						<?php
 						$author_bio_avatar_size = apply_filters( 'uku_author_bio_avatar_size', 100 );
@@ -62,10 +63,13 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 					<div class="entry-author">
 					<?php uku_posted_by(); ?>
 					</div><!-- end .entry-author -->
-                                         <?php } ?>
-					<div class="entry-date">
-						<a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></a>
-					</div><!-- end .entry-date -->
+                                    <?php } ?>
+					
+					
+					
+				    <div class="entry-date">
+					<a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></a>
+				    </div><!-- end .entry-date -->
 				</div><!-- end .meta-columnone -->
 
 				<div class="meta-columntwo">
@@ -101,7 +105,19 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
                                     
 				 the_content(); 
                                  
-                                 
+				if ( class_exists( 'Pirate_Crew' ) && 'content' == get_theme_mod( 'pirate_rogue_crewmember-position' ) ) {
+				    $preauthor =  get_post_meta( $post->ID, 'pirate_crew_member_id', true );	
+				    $style = pirate_rogue_sanitize_pirate_crew_member_style(get_theme_mod( 'pirate_rogue_crewmember-style' ));
+				    $format = pirate_rogue_sanitize_pirate_crew_member_format(get_theme_mod( 'pirate_rogue_crewmember-format' ));
+				    $title = get_theme_mod( 'pirate_rogue_crewmember-title' );
+
+				    if ($preauthor) {		
+						if (isset($title)) {  
+						    echo '<h2 class="pirate-crew-title">'.$title.'</h2>';
+						}
+						echo do_shortcode( '[pirate id="'.$preauthor.'" format="'.$format.'" style="'.$style.'" showcontent="0"]' ); 
+					    }
+				}
                                  
                                  ?>
 				<?php

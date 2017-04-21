@@ -8,6 +8,7 @@
  */
 ?>
 
+                 
 <div class="featured-slider cf">
 <?php
 	// Get a number of Front page recent posts set in the customizer

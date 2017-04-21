@@ -23,5 +23,15 @@ hr {
 		background-image: url("../img/trenner-04-30.png");
 	     }
 	     height: 40px;
+                          
 	}
+	
+	.site-content & {
+	    clear: both;
+	}
+	
+	
+}
+#overlay-nav .menu_separator hr {
+    display: none;
 }

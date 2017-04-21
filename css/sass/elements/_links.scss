@@ -213,3 +213,37 @@ p.wp-caption-text,
         color: #fff;
     }
 }
+
+#skiplinks{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    margin-left: 0;
+    text-align: center;
+    list-style: outside none;
+    
+    li  { 
+            list-style-type: none;
+    }
+    a{
+	position: absolute;
+	left: -99999px;
+	top: 150px;
+    }
+    a:focus, 
+    a:active{  
+        @include px2rem($font-size-base);
+	position: relative;
+	left: 0;
+	z-index:9999;
+	width: 75%;
+	height: auto;
+	margin: 0 auto;
+	padding: 30px 45px;
+	text-align: center;
+	text-decoration: none;
+        color: #fff;
+	background: $color-second;
+    }
+}
+

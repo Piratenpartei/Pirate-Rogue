@@ -41,12 +41,6 @@ function pirate_rogue_setup() {
 	// Implement the Custom Header feature
 	require get_template_directory() . '/inc/custom-header.php';
 
-	// This theme allows users to set a custom background.
-//	add_theme_support( 'custom-background', apply_filters( 'uku_custom_background_args', array(
-//		'default-color'	=> 'fff',
-//		'default-image'	=> '',
-//	) ) );
-
 	// Enable support for Video Post Formats.
 	add_theme_support( 'post-formats', array (
 		'video',
@@ -58,8 +52,6 @@ function pirate_rogue_setup() {
 	    'width'       => 520,
 	    'flex-height' => true,
 	    'flex-width'  => true,
-	//    'header-text' => array( 'site-title', 'site-description' ),
-        //    'wp-head-callback'       => 'pirate_rogue_header_style',
 	) );
 	
 	
@@ -105,47 +97,62 @@ function pirate_rogue_javascript_detection() {
 add_action( 'wp_head', 'pirate_rogue_javascript_detection', 0 );
 
 /*-----------------------------------------------------------------------------------*/
-/*  Enqueue scripts and styles
+/* Registre Scripts
 /*-----------------------------------------------------------------------------------*/
-function pirate_rogue_scripts() {
+function pirate_rogue_register_scripts() {
+    // Registre Slick
+    wp_register_script('pirate-rogue-slick', get_template_directory_uri() . '/js/slick/slick.min.js', array('jquery') ); 
+
+    // Loading viewpoint checker script
+   // wp_register_script( 'viewportchecker', get_template_directory_uri() . '/js/jquery.viewportchecker.min.js', array( 'jquery' ), '1.8.7' );
+    // Loads Scripts Sticky Sidebar Element
+   // wp_register_script( 'sticky-kit', get_template_directory_uri() . '/js/sticky-kit.min.js', array( 'jquery' ) );
+
+    // Loading FitVids responsive Video script
+   // wp_register_script( 'fitvids', get_template_directory_uri() . '/js/jquery.fitvids.min.js', array( 'jquery' ), '1.1' );
+    
+    wp_register_script( 'pirate-rogue-jquery-misc', get_template_directory_uri() . '/js/jquery.misc.js', array( 'jquery' ), '1.1' );
+
+}
+add_action('init', 'pirate_rogue_register_scripts');
+
+
+/*-----------------------------------------------------------------------------------*/
+/*  Enqueue scripts and styles that are beeing used always
+/*-----------------------------------------------------------------------------------*/
+function pirate_rogue_base_scripts() {
 	global $wp_styles;
-
-
 	// Loads JavaScript to pages with the comment form to support sites with threaded comments (when in use)
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
 	// Loads stylesheets.
-	wp_enqueue_style( 'uku-style', get_stylesheet_uri(), array(), '20160303' );
+	wp_enqueue_style( 'pirate-rogue-style', get_stylesheet_uri(), array(), '20170421' );
+        
+        // Loads Custom Uku JavaScript functionality
+        wp_enqueue_script( 'pirate-rogue-script', get_template_directory_uri() . '/js/functions.min.js', array( 'jquery' ), '20170421', true );
+        wp_localize_script( 'pirate-rogue-script', 'screenReaderText', array(
+                'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'pirate-rogue') . '</span>',
+                'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'pirate-rogue') . '</span>',
+        ) );
+        
+        if (is_home() && ( '' != get_theme_mod( 'uku_featuredtag' ) )) {
+             wp_enqueue_script( 'pirate-rogue-slick' );
+        }
+        // Loading viewpoint checker script
+    //    wp_enqueue_script( 'viewportchecker');
 
+        // Loads Scripts Sticky Sidebar Element
+    //    wp_enqueue_script( 'sticky-kit' );
 
-	    // Loads Custom Uku JavaScript functionality
-	    wp_enqueue_script( 'uku-script', get_template_directory_uri() . '/js/functions.min.js', array( 'jquery' ), '20160507', true );
-	    wp_localize_script( 'uku-script', 'screenReaderText', array(
-		    'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'pirate-rogue') . '</span>',
-		    'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'pirate-rogue') . '</span>',
-	    ) );
+        // Loading FitVids responsive Video script
+   //     wp_enqueue_script( 'fitvids' );
+        
+         wp_enqueue_script( 'pirate-rogue-jquery-misc' );
 
-	    // Loads Scripts for Featured Post Slider
-	    if ( '' != get_theme_mod( 'uku_featuredtag' ) ) {
-		    wp_enqueue_script( 'uku-slick', get_template_directory_uri() . '/js/slick/slick.min.js', array( 'jquery' ) );
-	    }
-
-	    // Loading viewpoint checker script
-	    wp_enqueue_script( 'viewportchecker', get_template_directory_uri() . '/js/jquery.viewportchecker.min.js', array( 'jquery' ), '1.8.7' );
-
-	    // Loads Scripts Sticky Sidebar Element
-	    wp_enqueue_script( 'sticky-kit', get_template_directory_uri() . '/js/sticky-kit.min.js', array( 'jquery' ) );
-
-	    // Loading FitVids responsive Video script
-	    wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/js/jquery.fitvids.min.js', array( 'jquery' ), '1.1' );
-
-	    // Loading Tablesorter script
-	    wp_enqueue_script( 'tablesorter', get_template_directory_uri() . '/js/jquery.tablesorter.min.js', array( 'jquery' ), '1.1', true );	
-	
 }
-add_action( 'wp_enqueue_scripts', 'pirate_rogue_scripts' );
+add_action( 'wp_enqueue_scripts', 'pirate_rogue_base_scripts' );
 
 
 /*-----------------------------------------------------------------------------------*/
@@ -408,6 +415,7 @@ function pirate_rogue_admin_init() {
 }
 add_action('admin_init', 'pirate_rogue_admin_init'); 
 
+
 /*-----------------------------------------------------------------------------------*/
 /* Admin Styles
 /*-----------------------------------------------------------------------------------*/
@@ -423,6 +431,17 @@ function pirate_rogue_admin_style() {
 }
 add_action( 'admin_enqueue_scripts', 'pirate_rogue_admin_style' );
 
+/*-----------------------------------------------------------------------------------*/
+/* No comments on attachments please
+/*-----------------------------------------------------------------------------------*/
+function pirate_rogue_filter_media_comment_status( $open, $post_id ) {
+    $post = get_post( $post_id );
+    if( $post->post_type == 'attachment' ) {
+        return false;
+    }
+    return $open;
+}
+add_filter( 'comments_open', 'pirate_rogue_filter_media_comment_status', 10 , 2 );
 
 /*-----------------------------------------------------------------------------------*/
 /* Load helper functions

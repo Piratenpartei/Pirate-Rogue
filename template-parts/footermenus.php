@@ -10,7 +10,17 @@
 
 <div class="footer-menus-wrap cf">
 
-	<?php if ( has_custom_logo() && '' != get_theme_mod( 'uku_customlogofooter' ) ) { ?>
+        <?php if ( '' != get_theme_mod( 'pirate_rogue_footermenu_image' ) ) {  
+	
+	    $image = absint(get_theme_mod( 'pirate_rogue_footermenu_image' ));
+	    $imagesrc = wp_get_attachment_image_src( $image,  'uku-featured-bottom' )[0];
+
+	    ?>
+		<div class="custom-logo-wrap">
+			<img src="<?php echo $imagesrc; ?>">
+		</div><!-- end .custom-logo-wrap -->
+ 
+	<?php } elseif ( has_custom_logo() && '' != get_theme_mod( 'uku_customlogofooter' ) ) { ?>
 		<div class="custom-logo-wrap">
 			<?php the_custom_logo(); ?>
 		</div><!-- end .custom-logo-wrap -->

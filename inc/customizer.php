@@ -49,6 +49,10 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'panel'                     => 'uku_themeoptions',
 	) );
 
+	
+	
+	
+	
 	// Custom CSS Section
 	$wp_customize->add_setting( 'uku_custom_css_input', array(
 		'default'                   => '',
@@ -446,6 +450,10 @@ function pirate_rogue_customize_register( $wp_customize ) {
 				'section'		     => 'uku_footerfeature',
 				'priority'	     => 2,
 	) ) );
+	
+	
+	
+	
 
 	$wp_customize->add_setting( 'uku_footerfeature_text_big', array(
 		'default' 			           => '',
@@ -479,10 +487,10 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'uku_footerfeature_btn_text', array(
-		'label' 			             => esc_html__( 'Button Text', 'pirate-rogue'),
-		'description'					     => esc_html__( 'If you want to add a "Call to Action" button, include the button text here.', 'pirate-rogue'),
-		'section' 			           => 'uku_footerfeature',
-		'type' 			               => 'text',
+		'label' 		     => esc_html__( 'Button Text', 'pirate-rogue'),
+		'description'		     => esc_html__( 'If you want to add a "Call to Action" button, include the button text here.', 'pirate-rogue'),
+		'section'		     => 'uku_footerfeature',
+		'type' 			      => 'text',
 		'priority'						     => 5,
 	) );
 
@@ -500,6 +508,23 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	) );
 
 
+	$wp_customize->add_setting( 'pirate_rogue_footermenu_image', array(
+		'default' 	        => '',
+		'sanitize_callback' 	=> 'wp_kses_post',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'pirate_rogue_footermenu_image', array(
+	    'section'     => 'uku_footerfeature',
+	    'label'       => esc_html__( 'Menu Footer Image', 'pirate-rogue'),
+	    'flex_width'  => true, // Allow any width, making the specified value recommended. False by default.
+	    'flex_height' => true, // Require the resulting image to be exactly as tall as the height attribute (default).
+	    'width'       => 800,
+	    'height'      =>  450,
+		    'priority'		=> 7,
+	) ) );
+	
+	
+	
 	// Uku Front Page - General
 	$wp_customize->add_setting( 'uku_front_hideblog', array(
 		'default'							     => '',
@@ -1096,7 +1121,92 @@ function pirate_rogue_customize_register( $wp_customize ) {
 			'type'								 => 'checkbox',
 			'priority'						 => 5,
 	) );
+	
+	
 
+	    
+	    // Add Panel for Plugin Pirate Crew
+	    $wp_customize->add_section( 'plugin_pirate_crew_setting', array(
+		'priority' 	               => 8,
+		'theme_supports' 	        => '',
+		'title' 	                 => esc_html__('Pirate Crew Settings', 'pirate-rogue'),
+		'panel' 		       => 'uku_themeoptions',
+
+	    ) );
+	    
+	   $wp_customize->add_setting( 'pirate_rogue_crewmember-title', array(
+		'default'		    => '',
+		'sanitize_callback'	    => 'wp_kses_post',
+	    ) );
+
+	    $wp_customize->add_control( 'pirate_rogue_crewmember-title', array(
+		    'label'		    => esc_html__( 'Title', 'pirate-rogue'),
+		    'description'	    => esc_html__( 'Sets a title above Pirate Crew Member Infopanel', 'pirate-rogue'),
+		    'section'		    => 'plugin_pirate_crew_setting',
+		    'type'		    => 'text',
+		    'priority'		    => 1,
+	    ) );
+	    
+	    
+	    
+	    $wp_customize->add_setting( 'pirate_rogue_crewmember-position', array(
+		'default' 		=> 'sidebar',
+		'sanitize_callback' 	=> 'pirate_rogue_sanitize_pirate_crew_member_position',
+	    ) );
+
+	    $wp_customize->add_control( 'pirate_rogue_crewmember-position', array(
+		'label' 		=> esc_html__( 'Position', 'pirate-rogue'),
+		'description'		=> esc_html__( 'Sets the position to display the pirate crew member card.', 'pirate-rogue'),
+		'section' 		=> 'plugin_pirate_crew_setting',
+		'priority' 		=> 2,
+                'default'               => 'sidebar',
+		'type' 			=> 'select',
+		'choices' 		=> array(
+			'sidebar'	 => 'sidebar',
+			'content'	 => 'content'
+		),
+	    ) );
+	    
+	    $wp_customize->add_setting( 'pirate_rogue_crewmember-style', array(
+		'default' 		=> 'style3',
+		'sanitize_callback' 	=> 'pirate_rogue_sanitize_pirate_crew_member_style',
+	    ) );
+
+	    $wp_customize->add_control( 'pirate_rogue_crewmember-style', array(
+		'label' 		=> esc_html__( 'Styling', 'pirate-rogue'),
+		'description'		=> esc_html__( 'Sets the position to display the pirate crew member card.', 'pirate-rogue'),
+		'section' 		=> 'plugin_pirate_crew_setting',
+		'priority' 		=> 2,
+                'default'               => 'style3',
+		'type' 			=> 'select',
+		'choices' 		=> array(
+			'style1'	 => 'style1',
+			'style2'	 => 'style2',
+			'style3'	 => 'style3',
+			'style4'	 => 'style4',
+		),
+	    ) );
+	    
+	    $wp_customize->add_setting( 'pirate_rogue_crewmember-format', array(
+		'default' 		=> 'card',
+		'sanitize_callback' 	=> 'pirate_rogue_sanitize_pirate_crew_member_format',
+	    ) );
+
+	    $wp_customize->add_control( 'pirate_rogue_crewmember-format', array(
+		'label' 		=> esc_html__( 'Format', 'pirate-rogue'),
+		'description'		=> esc_html__( 'Sets the format to display the pirate crew member card.', 'pirate-rogue'),
+		'section' 		=> 'plugin_pirate_crew_setting',
+		'priority' 		=> 2,
+                'default'               => 'card',
+		'type' 			=> 'select',
+		'choices' 		=> array(
+			'card'	 => 'card',
+			'list'	 => 'list',
+		),
+	    ) );
+	    
+	
+		
 }
 add_action( 'customize_register', 'pirate_rogue_customize_register');
 
@@ -1238,3 +1348,34 @@ function pirate_rogue_sanitize_search_overlay_backgroundcolor( $pirate_rogue_ove
 	return $pirate_rogue_overlaysearch_style;
 }
 
+
+/*-----------------------------------------------------------------------------------*/
+/* Pirate Crew Plugin Member Format
+/*-----------------------------------------------------------------------------------*/
+function pirate_rogue_sanitize_pirate_crew_member_format( $pirate_crew_format ) {
+	if ( ! in_array( $pirate_crew_format, array( 'card', 'list') ) ) {
+		$pirate_crew_format = 'card';
+	}
+	return $pirate_crew_format;
+}
+/*--------------------------------------------------------------------*/
+/* Sanitize format for member shortcode, list style 
+/*--------------------------------------------------------------------*/
+function pirate_rogue_sanitize_pirate_crew_member_style( $pirate_crew_style ) {
+	if ( ! in_array( $pirate_crew_style, array( 'style1', 'style2', 'style3', 'style4') ) ) {
+		$pirate_crew_style = 'style3';
+	}
+	return $pirate_crew_style;
+}
+/*--------------------------------------------------------------------*/
+/* Sanitize format for member shortcode position
+/*--------------------------------------------------------------------*/
+function pirate_rogue_sanitize_pirate_crew_member_position( $pirate_crew_pos ) {
+	if ( ! in_array( $pirate_crew_pos, array( 'sidebar', 'content') ) ) {
+		$pirate_crew_pos = 'sidebar';
+	}
+	return $pirate_crew_pos;
+}
+/*--------------------------------------------------------------------*/
+/* The end of this file as you know it
+/*--------------------------------------------------------------------*/

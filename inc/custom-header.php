@@ -40,25 +40,26 @@ if ( ! function_exists( 'pirate_rogue_get_custom_logo' ) ) :
 
 	$custom_logo_id = get_theme_mod( 'custom_logo' );
 	if ( $custom_logo_id ) {
-	    if ((! is_front_page()) &&  (! is_home())) { 
-		$html = '<a href="'.esc_url( home_url( '/' ) ).'"';
-		if (!empty($linkclass)) {
-		    $html .= ' class="'.$linkclass.'"';
-		}
-		if (!empty($linktitle)) {
-		    $html .= ' title="'.$linktitle.'"';
-		}
-		$html .= ' rel="home" itemprop="url">';
+            $html = '<a';
+            if ( !is_front_page() ) {
+		$html .= ' href="'.esc_url( home_url( '/' ) ).'"';
+		$html .= ' rel="home"';
 	    }
-	    
+            if (!empty($linkclass)) {
+		    $html .= ' class="'.$linkclass.'"';
+            }
+            if (!empty($linktitle)) {
+                $html .= ' title="'.$linktitle.'"';
+            }
+	    $html .= ' itemprop="url">';
 	    $html .=  wp_get_attachment_image( $custom_logo_id, 'full', false, array(
 		    'class'    => $imgclass,
 		    'itemprop' => 'logo',
 		) );
 
-	    if ((! is_front_page()) &&  (! is_home())) { 
-		$html .= '</a>';
-	    }
+	  
+            $html .= '</a>';
+	   
 	} elseif ( is_customize_preview() ) {
 	    // If no logo is set but we're in the Customizer, leave a placeholder (needed for the live preview).
 	    $html = sprintf( '<a href="%1$s" class="custom-logo-link" style="display:none;"><img class="custom-logo"/></a>',

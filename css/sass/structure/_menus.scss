@@ -28,7 +28,8 @@
       padding-bottom: 15px;
     }
     ul {
-      &.sub-menu, &.children {
+      &.sub-menu, 
+      &.children {
         display: none;
         overflow: hidden;
         margin: 0;
@@ -180,10 +181,17 @@
 	.sub-menu, 
 	.children, 
 	.dropdown-toggle {
-	  display: none;
+	   display: none;
+	   
+	   &.focus {
+	        display: block !important;
+	   }
 	}
 	
+	 
+	 
 	ul {
+	    li > ul.focus,
 	    li:focus > ul,  
 	    li:hover > ul {
 		&.sub-menu, 
@@ -197,7 +205,7 @@
 		      position: absolute;
 		      top: 59px;
 		      left: 0;
-		      width: 200px;
+		      width: 220px;
 		      margin: 0;
 		      padding: 5px 0;
 		      text-align: left;

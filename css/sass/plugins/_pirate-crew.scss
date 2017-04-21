@@ -91,8 +91,7 @@ ul.picrew-social-icons {
 	}
 }
 .picrew-social-icons {
-	border: 1px solid $color-page-background;
-	border-radius: 50%;
+	border: 1px solid $color-page-background;	
 	span {
 		display: inline-block;
 		padding: 0 5px;
@@ -460,6 +459,11 @@ ul.picrew-social-icons {
 	.picrew-grid.drawer-style {
 		margin: 0;
 	}
+	.grid-full-col {
+		>.picrew-grid-card {
+			width: 100%;
+		}
+	}
 	.grid-2-col {
 		>.picrew-grid-card {
 			width: 50%;
@@ -523,10 +527,8 @@ html.picrew-popup-on {
 	display: block;
 	position: relative;
 	margin-bottom: 15px;
-	span {
-		text-transform: uppercase;
-		@include px2rem($font-size-base);
-		
+	p, span {
+		@include px2rem($font-size-base);		
 		display: block;
 	}
 }
@@ -1115,11 +1117,13 @@ figcaption {
 		}
 	}
 	.picrew-social-icons {
+	    margin-bottom: 15px;
 		span {
 			margin: 0 1px 2px 1px;
 			text-align: center;
 			padding: 0;
 		}
+		
 	}
 	.picrew-contact-info {
 	        text-align: left;
@@ -1290,6 +1294,37 @@ figcaption {
 		}
 	}
 }
+
+
+.pirate-crew-error {
+    @extend .box;
+    @extend .red-box;
+  //  @extend .invertbox
+}
+
+.pirate-crew-single {
+    @extend .picrew-grid-wrapper;
+    
+    &.list {
+	width: 100%;
+    }
+    .picrew-grid {
+	min-width: 260px;
+    }
+    
+    
+    
+    .cards-style.picrew-grid {
+	max-width: 300px;
+    }
+    
+    &.aligncenter {
+	.cards-style.picrew-grid {
+	    margin: 0 auto;
+	}
+    }
+}
+
 @media (max-width:1230px) {
 	.picrew-grid-wrapper {
 		.grid-5-col {

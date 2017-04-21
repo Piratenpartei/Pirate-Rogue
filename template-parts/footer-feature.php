@@ -10,7 +10,7 @@
 
 <section id="big-footer-feature" class="big-footer-feature cf">
 
-	<?php if ( '' != get_theme_mod( 'uku_footerfeature_title' ) && '' == get_theme_mod('uku_main_design') || 'standard' == get_theme_mod('uku_main_design')) : ?>
+	<?php if ( '' != get_theme_mod( 'uku_footerfeature_title' )) : ?>
     	<h3 class="footer-feature-title"><?php echo esc_html(get_theme_mod( 'uku_footerfeature_title' ) ); ?></h3>
     <?php endif; ?>
 

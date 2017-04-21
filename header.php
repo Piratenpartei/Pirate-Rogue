@@ -62,8 +62,8 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
                 <li><a href="#masthead" data-target="#desktop-navigation" data-firstchild="1" class="jumplink-nav"><?php _e('Main Menu','pirate-rogue'); ?></a></li>
                 <li><a href="#colophon" data-target="#colophon" data-firstchild="1" class="jumplink-nav"><?php _e('Footer','pirate-rogue'); ?></a></li>
             </ul>
-	</nav>   
-        <header id="masthead" class="site-header cf" role="banner">
+	</nav>    
+        <header id="masthead" class="site-header cf" role="banner"> 
             <div class="site-header-content">
                     <div id="site-branding">
                             <?php if ( is_front_page() ) : ?>

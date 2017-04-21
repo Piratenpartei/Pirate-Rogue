@@ -121,7 +121,7 @@ function pirate_rogue_scripts() {
 
 
 	    // Loads Custom Uku JavaScript functionality
-	    wp_enqueue_script( 'uku-script', get_template_directory_uri() . '/js/functions.min.js', array( 'jquery' ), '20160507', true );
+	    wp_enqueue_script( 'uku-script', get_template_directory_uri() . '/js/functions.min.js', array( 'jquery' ), '20170421', true );
 	    wp_localize_script( 'uku-script', 'screenReaderText', array(
 		    'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'pirate-rogue') . '</span>',
 		    'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'pirate-rogue') . '</span>',

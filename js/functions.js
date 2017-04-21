@@ -69,6 +69,23 @@
 	$('.cart-close').on( 'click', function () {
 		$('body').removeClass('offcanvascart-show');
 	});
+	
+	
+	
+	
+
+	// Keyboard-navigation, remove and set focus class on focus-change
+	$('a').not($('#desktop-navigation > ul > a')).focus(function() {
+		$('#desktop-navigation > ul').removeClass('focus');
+	});
+	
+	$('#desktop-navigation > ul > ul > a').focus(function() {
+		$('#desktop-navigation > ul> ul').removeClass('focus');
+		$(this).parents('ul').addClass('focus');
+	});
+	
+
+
 
 	// Featured Posts Slider
 	if ( $.fn.slick ) {

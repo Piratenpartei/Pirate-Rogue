@@ -696,12 +696,18 @@
 @media screen and (min-width: 112.5em) {
   /* --- General --- */
  
+  .blog-wrap {
+    min-width: 1560px;     
+    margin-left: auto;
+    margin-right: auto;
+  }
   .singlepost-wrap, 
   .recommended-posts-wrap, 
   .footer-wrap, 
   .big-footer-feature, 
   .headerimg-on.header-boxed .header-image {
     width: 70%;
+  
     margin-left: auto;
     margin-right: auto;
   }

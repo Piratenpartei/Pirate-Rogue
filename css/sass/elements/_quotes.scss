@@ -46,6 +46,35 @@ blockquote {
         font-style: normal;
         text-align: right;
         @include px2rem($font-size-blockquote-cite);
+        
+        &::before {
+            content: "\2013";
+        }
+    }
+    
+    .inner-offcanvas-wrap & {
+        background: inherit;
+        margin: 10px 5px 30px 20px;
+        font-style: italic;
+        border: 0;
+       
+        &::before {
+            content: "\201C"; // Unicode for Left Double Quote
+            font-family: Georgia, serif;
+            font-size: 60px;
+            font-weight: bold;
+            color: lighten($color-text,20%); //lighten($color-text,50%); 
+
+            position: absolute;
+            left: 2px;
+            top: -5px;
+        }
+        &::after{
+            // Reset to make sure
+            content: "";
+        }
+       
+       
     }
 }
 

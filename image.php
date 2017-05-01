@@ -13,7 +13,7 @@ get_header(); ?>
 
 	<?php // Start the Loop.
 	while ( have_posts() ) : the_post(); ?>
-        	<?php get_template_part( 'template-parts/content-single' ); ?>
+        	<?php get_template_part( 'template-parts/content-image' ); ?>
         <?php endwhile; // End of the loop. ?>
 
 <?php get_sidebar(); ?>

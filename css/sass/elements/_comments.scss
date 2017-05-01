@@ -62,44 +62,152 @@
 }
 
 #comments {
-  ul li, 
-  ol li {
-    list-style-position: outside;
-  }
-    
-    
-  position: relative;
-  padding: 60px 0 0 0;
-  li {
-    &.comment, 
-    &.pingback {
-      overflow: hidden;
-      margin: 0 0 16px;
-      padding: 0;
+    ul li, 
+    ol li {
+      list-style-position: outside;
     }
-    &.comment:last-of-type, 
-    &.pingback:last-of-type {
+
+    position: relative;
+    padding: 20px 0 0 0;
+
+    li {
+      &.comment, 
+      &.pingback {
+        overflow: hidden;
+        margin: 0 0 16px;
+        padding: 0;
+      }
+      &.comment:last-of-type, 
+      &.pingback:last-of-type {
+        margin: 0;
+      }
+      &.comment ul.children {
+        margin: 16px 0 0;
+      }
+    }
+    .children .comment:last-child {
       margin: 0;
     }
-    &.comment ul.children {
-      margin: 16px 0 0;
+    h3.comments-title {
+      padding: 27px 0 0 0;
+      border-top: 1px solid #1a1a1a;
+      display: block;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 3px;
     }
-  }
-  .children .comment:last-child {
-    margin: 0;
-  }
-  h3.comments-title {
-    padding: 27px 0 0 0;
-    border-top: 1px solid #1a1a1a;
-    display: block;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-  }
-  ul.children {
-    margin: 0;
-    padding: 0;
-  }
+    ul.children {
+      margin: 0;
+      padding: 0;
+    }
+    
+    .comment-details {
+      position: relative;
+      margin: 0 90px 0 0;
+      padding: 0;
+    }
+    li.pingback {
+      padding: 0 0 0 50px;
+    }
+    .comment-avatar {
+      margin: 0;
+      padding: 0;
+      line-height: 0;
+      float: left;
+      img.avatar {
+        width: 40px;
+        height: 40px;
+        margin: 0;
+        -moz-border-radius: 50px;
+        -webkit-border-radius: 50px;
+        border-radius: 50px;
+      }
+    }
+    .comment-author {
+          @include px2rem($font-size-base);
+          font-weight: 600;
+          span {
+            display: none;
+          }
+    }
+    .comment-text {
+      overflow: hidden;
+      padding: 10px 30px 10px 0;
+      p {
+        margin: 0;
+        padding: 0 0 15px;
+        &:last-child {
+          padding: 0;
+        }
+      }
+    }
+    .comment-meta {
+      overflow: hidden;
+      list-style: none;
+      li {
+        display: inline;
+      }
+    }
+    .comment-reply {
+      position: relative;
+      padding: 0;
+      a {
+          padding-left: 20px;
+          &:before {
+            @extend .fa;
+            @extend .fa-commenting-o;
+            display: block;
+
+            position: absolute;
+            top: 4px;
+            left: 0;
+            text-align: left;
+          }
+        }
+    }
+    p.comment-awaiting-moderation {
+      display: inline-block;
+    }
+    ol li.pingback p {
+      margin: 0;
+    }  
+    .disclaimer {
+        @extend .box;
+        @extend .maincolor-box;
+        margin-bottom: 10px;
+        a {
+            color: $color-second;
+        }
+        a:hover {
+            color: $color-main;
+        }
+    }    
+     #respond {
+      margin: 0;
+      padding-top: 30px;
+      overflow: hidden;
+      text-align: left;
+    }
+    li.comment #respond {
+      padding-top: 20px;
+    }
+    ol.commentlist #respond {
+      margin: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    #respond {
+      p {
+        &.comment-notes {
+          margin: 0;
+          padding: 0;
+        }
+        &.logged-in-as {
+          padding: 3px 0 0 0;
+          margin-bottom: 0;
+        }
+      }
+    } 
 }
 
 ol.commentlist {
@@ -131,90 +239,6 @@ ol.commentlist {
   }
 }
 
-#comments {
-  .comment-details {
-    position: relative;
-    margin: 0 90px 0 0;
-    padding: 0;
-  }
-  li.pingback {
-    padding: 0 0 0 50px;
-  }
-  .comment-avatar {
-    margin: 0;
-    padding: 0;
-    line-height: 0;
-    float: left;
-    img.avatar {
-      width: 40px;
-      height: 40px;
-      margin: 0;
-      -moz-border-radius: 50px;
-      -webkit-border-radius: 50px;
-      border-radius: 50px;
-    }
-  }
-  .comment-author {
-	@include px2rem($font-size-base);
-	font-weight: 600;
-	span {
-	  display: none;
-	}
-  }
-  .comment-text {
-    overflow: hidden;
-    padding: 10px 30px 10px 0;
-    p {
-      margin: 0;
-      padding: 0 0 15px;
-      &:last-child {
-        padding: 0;
-      }
-    }
-  }
-  .comment-meta {
-    overflow: hidden;
-    list-style: none;
-    li {
-      display: inline;
-    }
-  }
-  .comment-reply {
-    position: relative;
-    padding: 0;
-    a {
-	padding-left: 20px;
-	&:before {
-	  @extend .fa;
-	  @extend .fa-commenting-o;
-	  display: block;
-
-	  position: absolute;
-	  top: 4px;
-	  left: 0;
-	  text-align: left;
-	}
-      }
-  }
-  p.comment-awaiting-moderation {
-    display: inline-block;
-  }
-  ol li.pingback p {
-    margin: 0;
-  }  
-  .disclaimer {
-      @extend .box;
-      @extend .maincolor-box;
-      margin-bottom: 10px;
-      a {
-          color: $color-second;
-      }
-      a:hover {
-          color: $color-main;
-      }
-  }
-  
-}
 
 .bypostauthor {}
 
@@ -229,35 +253,6 @@ ol.commentlist {
     margin: 15px 0 0;
     padding: 0;
     font-weight: 600;
-  }
-}
-
-#comments {
-  #respond {
-    margin: 0;
-    padding-top: 60px;
-    overflow: hidden;
-    text-align: left;
-  }
-  li.comment #respond {
-    padding-top: 20px;
-  }
-  ol.commentlist #respond {
-    margin: 0;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  #respond {
-    p {
-      &.comment-notes {
-        margin: 0;
-        padding: 0;
-      }
-      &.logged-in-as {
-        padding: 3px 0 0 0;
-	margin-bottom: 0;
-      }
-    }
   }
 }
 
@@ -342,6 +337,11 @@ ol.commentlist {
 
 .comment-notes {
   display: none;
+}
+
+
+.externcomments a.standard-btn {
+    width: 100%;
 }
 
 

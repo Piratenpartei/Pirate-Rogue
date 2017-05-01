@@ -244,8 +244,8 @@ add_filter( 'user_contactmethods', 'add_twitter_contactmethod', 10, 1 );
 /*-----------------------------------------------------------------------------------*/
 function pirate_rogue_customize_css() {
 	$customcss = '';
-	if ('' != get_theme_mod( 'uku_custom_css' ) ) {
-	   $customcss .=  get_theme_mod('uku_custom_css'); 
+	if ('' != get_theme_mod( 'pirate_rogue_custom_css' ) ) {
+	   $customcss .=  get_theme_mod('pirate_rogue_custom_css'); 
 	} 
 	if (!empty($customcss)) {
 	    echo '<style type="text/css">';

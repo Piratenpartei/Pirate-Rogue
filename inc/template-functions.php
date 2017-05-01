@@ -33,31 +33,31 @@
 	 if ( has_header_image() ) {
 		 $classes[] = 'headerimg-on';
 	 }
-	 if ( '' != get_theme_mod( 'uku_hidecomments' ) ) {
+	 if ( '' != get_theme_mod( 'pirate_rogue_hidecomments' ) ) {
 		 $classes[] = 'toggledcomments';
 	 }
 	 if ( '' != get_theme_mod( 'uku_customlogo' ) ) {
 		 $classes[] = 'custom-logo-on';
 	 }
-	 if ( '' != get_theme_mod( 'uku_hidetagline' ) ) {
+	 if ( '' != get_theme_mod( 'pirate_rogue_hidetagline' ) ) {
 		 $classes[] = 'hide-tagline';
 	 }
-	 if ('sidebar-left' == get_theme_mod( 'uku_sidebar' ) ) {
+	 if ('sidebar-left' == get_theme_mod( 'pirate_rogue_sidebar' ) ) {
 		 $classes[] = 'sidebar-left';
 	 }
 	 if ( is_page_template( 'page-templates/no-sidebar.php' ) ) {
 		 $classes[] = 'no-sidebar';
 	 }
-	 if ('sidebar-no' == get_theme_mod( 'uku_sidebar' ) ) {
+	 if ('sidebar-no' == get_theme_mod( 'pirate_rogue_sidebar' ) ) {
 		 $classes[] = 'no-sidebar';
 	 }
-	 if (is_single() && 'sidebar-no-single' == get_theme_mod( 'uku_sidebar_hide' ) ) {
+	 if (is_single() && 'sidebar-no-single' == get_theme_mod( 'pirate_rogue_sidebar_hide' ) ) {
 		 $classes[] = 'no-sidebar';
 	 }
-	 if (is_front_page() && 'sidebar-no-front' == get_theme_mod( 'uku_sidebar_hide' ) ) {
+	 if (is_front_page() && 'sidebar-no-front' == get_theme_mod( 'pirate_rogue_sidebar_hide' ) ) {
 		 $classes[] = 'no-sidebar';
 	 }
-	 if ('sidebar-no' == get_theme_mod( 'uku_sidebar_hide' ) ) {
+	 if ('sidebar-no' == get_theme_mod( 'pirate_rogue_sidebar_hide' ) ) {
 		 $classes[] = 'no-sidebar';
 	 }
 	 if ('' != get_theme_mod( 'uku_featuredtag' ) ) {
@@ -72,10 +72,10 @@
 	 if ('slider-fade' == get_theme_mod( 'uku_slideranimation' ) ) {
 		 $classes[] = 'slider-fade';
 	 }
-	 if ('header-boxed' == get_theme_mod( 'uku_headerstyle' ) ) {
+	 if ('header-boxed' == get_theme_mod( 'pirate_rogue_headerstyle' ) ) {
 		 $classes[] = 'header-boxed';
 	 }
-	 if ('header-fullscreen' == get_theme_mod( 'uku_headerstyle' ) ) {
+	 if ('header-fullscreen' == get_theme_mod( 'pirate_rogue_headerstyle' ) ) {
 		 $classes[] = 'header-fullscreen';
 	 }
 	 if ('dark' == get_theme_mod( 'uku_fixedheader' ) ) {
@@ -86,7 +86,7 @@
 		 $classes[] = 'offcanvas-widgets-off';
 	 }
 	 if (is_single()) {
-	    if ( comments_open() && '' != get_theme_mod ( 'uku_hidecomments' ) && '0' == get_comments_number() ) {
+	    if ( comments_open() && '' != get_theme_mod ( 'pirate_rogue_hidecomments' ) && '0' == get_comments_number() ) {
 		    $classes[] = 'comments-show';
 	    }
 	 }
@@ -234,3 +234,115 @@
     }
 }
 
+/*-----------------------------------------------------------------------------------*/
+/* Get Image Meta Data
+/*-----------------------------------------------------------------------------------*/
+function pirate_rogue_get_image_attributs($id=0) {
+        $precopyright = ''; 
+        if ($id==0) return;
+        
+        $meta = get_post_meta( $id );
+        if (!isset($meta)) {
+         return;
+        }
+    
+        $result = array();
+	if (isset($meta['_wp_attachment_image_alt'][0])) {
+	    $result['alt'] = trim(strip_tags($meta['_wp_attachment_image_alt'][0]));
+	} else {
+	    $result['alt'] = "";
+	}   
+
+        if (isset($meta['_wp_attachment_metadata']) && is_array($meta['_wp_attachment_metadata'])) {        
+	    $data = unserialize($meta['_wp_attachment_metadata'][0]);
+	    if (isset($data['image_meta']) && is_array($data['image_meta'])) {
+		if (isset($data['image_meta']['copyright'])) {
+		       $result['copyright'] = trim(strip_tags($data['image_meta']['copyright']));
+		}
+		if (isset($data['image_meta']['author'])) {
+		       $result['author'] = trim(strip_tags($data['image_meta']['author']));
+		} elseif (isset($data['image_meta']['credit'])) {
+		       $result['credit'] = trim(strip_tags($data['image_meta']['credit']));
+		}
+		if (isset($data['image_meta']['title'])) {
+		     $result['title'] = $data['image_meta']['title'];
+		}
+		if (isset($data['image_meta']['caption'])) {
+		     $result['caption'] = $data['image_meta']['caption'];
+		}
+	    }
+	    $result['orig_width'] = $data['width'];
+	    $result['orig_height'] = $data['height'];
+	    $result['orig_file'] = $data['file'];
+	    
+        }
+	
+        $attachment = get_post($id);
+        if (isset($attachment) ) {
+	    if (isset($attachment->post_excerpt)) {
+		$result['excerpt'] = trim(strip_tags( $attachment->post_excerpt ));
+	    }
+	    if (isset($attachment->post_content)) {
+		$result['description'] = trim(strip_tags( $attachment->post_content ));
+	    }        
+	    if (isset($attachment->post_title) && (empty( $result['title']))) {
+		 $result['title'] = trim(strip_tags( $attachment->post_title )); 
+	    }   
+        }      
+	$result['credits'] = '';
+	
+
+	
+	    if (!empty($result['copyright'])) {
+		$result['credits'] = $precopyright.' '.$result['copyright'];		
+	    } elseif (!empty($result['author'])) {
+		$result['credits'] = $precopyright.' '.$result['author'];
+	    } elseif (!empty($result['credit'])) {
+		$result['credits'] = $precopyright.' '.$result['credit'];		
+            } else {
+		if (!empty($result['description'])) {
+		    $result['credits'] = $result['description'];
+		} elseif (!empty($result['caption'])) {
+		    $result['credits'] = $result['caption'];
+		} elseif (!empty($result['excerpt'])) {
+		    $result['credits'] = $result['excerpt'];
+		} 
+	    }   
+	
+        return $result;
+                
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* Returns an array as table
+/*-----------------------------------------------------------------------------------*/
+
+function pirate_rogue_array2table($array, $table = true) {
+    $out = '';
+    $tableHeader = '';
+    foreach ($array as $key => $value) {
+	 $out .= '<tr>';
+	 $out .= "<th>$key</th>";
+        if (is_array($value)) {   
+            if (!isset($tableHeader)) {
+                $tableHeader =
+                    '<th>' .
+                    implode('</th><th>', array_keys($value)) .
+                    '</th>';
+            }
+            array_keys($value);
+	    $out .= "<td>";
+            $out .= pirate_rogue_array2table($value, true);     
+	    $out .= "</td>";
+        } else {
+            $out .= "<td>$value</td>";
+        }
+	$out .= '</tr>';
+    }
+
+    if ($table) {
+        return '<table>' . $tableHeader . $out . '</table>';
+    } else {
+        return $out;
+    }
+}

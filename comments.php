@@ -17,8 +17,8 @@ if ( post_password_required() ) {
 ?>
 
 <div id="comments" class="comments-area cf">
-
-	<?php if ( '' != get_theme_mod( 'uku_hidecomments' ) ) : ?>
+    <?php if ( '' == get_theme_mod( 'pirate_rogue_externcomments_active' ) ) { ?>
+	<?php if ( '' != get_theme_mod( 'pirate_rogue_hidecomments' ) ) : ?>
 		<button id="comments-toggle"><span class="comments-title"><?php printf( _n( '1 Comment', '%1$s Comments', get_comments_number(), 'pirate-rogue'), number_format_i18n( get_comments_number() ) ); ?></span></button>
 	<?php else : ?>
 		<h3 class="comments-title">
@@ -77,4 +77,10 @@ if ( post_password_required() ) {
 	comment_form($comment_args); ?>
 
 	</div><!-- end .comments-content -->
+    <?php } else {
+        $url = get_theme_mod( 'pirate_rogue_externcomments_url' );
+        $title = get_theme_mod( 'pirate_rogue_externcomments_title' );
+        echo '<div class="externcomments"><a class="standard-btn maincolor-btn" href="'.$url.'"><span>'.$title.'</span></a></div>';
+       
+    }   ?> 
 </div><!-- end #comments .comments-area -->

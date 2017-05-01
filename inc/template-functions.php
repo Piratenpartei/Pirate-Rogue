@@ -33,7 +33,7 @@
 	 if ( has_header_image() ) {
 		 $classes[] = 'headerimg-on';
 	 }
-	 if ( '' != get_theme_mod( 'uku_hidecomments' ) ) {
+	 if ( '' != get_theme_mod( 'pirate_rogue_hidecomments' ) ) {
 		 $classes[] = 'toggledcomments';
 	 }
 	 if ( '' != get_theme_mod( 'uku_customlogo' ) ) {
@@ -86,7 +86,7 @@
 		 $classes[] = 'offcanvas-widgets-off';
 	 }
 	 if (is_single()) {
-	    if ( comments_open() && '' != get_theme_mod ( 'uku_hidecomments' ) && '0' == get_comments_number() ) {
+	    if ( comments_open() && '' != get_theme_mod ( 'pirate_rogue_hidecomments' ) && '0' == get_comments_number() ) {
 		    $classes[] = 'comments-show';
 	    }
 	 }

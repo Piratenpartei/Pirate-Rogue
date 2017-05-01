@@ -20,13 +20,13 @@
   }
   .nav-links {
     span,
-    a {
-        &.page-numbers:not(.next) {
+    a { 
+        &.page-numbers  {
             background: $color-page-background;
             color: $color-second;
             overflow: hidden;
             display: inline-block;
-            width: 25px;
+            min-width: 25px;
             height: 25px;
             text-align: center;
             vertical-align: middle;
@@ -40,8 +40,10 @@
 
             }
         }
+        &.page-numbers.prev, 
         &.page-numbers.next {
             padding: 0 5px;
+            border-radius: inherit;
             &:hover, &:focus {
                 color:  $color-page-background;
                 background: $color-main;

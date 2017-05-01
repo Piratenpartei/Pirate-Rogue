@@ -43,8 +43,8 @@
 
 		<?php if (has_nav_menu( 'social-front' ) && '' == get_theme_mod('uku_main_design') or 'standard' == get_theme_mod('uku_main_design') ) : ?>
 			<div class="section-about-column-two">
-				<?php if ( get_theme_mod( 'uku_custom_followus' ) ) : ?>
-					<h3 class="social-front-title"><?php echo esc_html( get_theme_mod( 'uku_custom_followus' ) ); ?></h3>
+				<?php if ( get_theme_mod( 'pirate_rogue_custom_followus' ) ) : ?>
+					<h3 class="social-front-title"><?php echo esc_html( get_theme_mod( 'pirate_rogue_custom_followus' ) ); ?></h3>
 				<?php else : ?>
 					<h3 class="social-front-title"><?php esc_html_e('Follow us', 'pirate-rogue') ?></h3>
 				<?php endif; ?>

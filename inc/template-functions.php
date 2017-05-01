@@ -39,25 +39,25 @@
 	 if ( '' != get_theme_mod( 'uku_customlogo' ) ) {
 		 $classes[] = 'custom-logo-on';
 	 }
-	 if ( '' != get_theme_mod( 'uku_hidetagline' ) ) {
+	 if ( '' != get_theme_mod( 'pirate_rogue_hidetagline' ) ) {
 		 $classes[] = 'hide-tagline';
 	 }
-	 if ('sidebar-left' == get_theme_mod( 'uku_sidebar' ) ) {
+	 if ('sidebar-left' == get_theme_mod( 'pirate_rogue_sidebar' ) ) {
 		 $classes[] = 'sidebar-left';
 	 }
 	 if ( is_page_template( 'page-templates/no-sidebar.php' ) ) {
 		 $classes[] = 'no-sidebar';
 	 }
-	 if ('sidebar-no' == get_theme_mod( 'uku_sidebar' ) ) {
+	 if ('sidebar-no' == get_theme_mod( 'pirate_rogue_sidebar' ) ) {
 		 $classes[] = 'no-sidebar';
 	 }
-	 if (is_single() && 'sidebar-no-single' == get_theme_mod( 'uku_sidebar_hide' ) ) {
+	 if (is_single() && 'sidebar-no-single' == get_theme_mod( 'pirate_rogue_sidebar_hide' ) ) {
 		 $classes[] = 'no-sidebar';
 	 }
-	 if (is_front_page() && 'sidebar-no-front' == get_theme_mod( 'uku_sidebar_hide' ) ) {
+	 if (is_front_page() && 'sidebar-no-front' == get_theme_mod( 'pirate_rogue_sidebar_hide' ) ) {
 		 $classes[] = 'no-sidebar';
 	 }
-	 if ('sidebar-no' == get_theme_mod( 'uku_sidebar_hide' ) ) {
+	 if ('sidebar-no' == get_theme_mod( 'pirate_rogue_sidebar_hide' ) ) {
 		 $classes[] = 'no-sidebar';
 	 }
 	 if ('' != get_theme_mod( 'uku_featuredtag' ) ) {
@@ -72,10 +72,10 @@
 	 if ('slider-fade' == get_theme_mod( 'uku_slideranimation' ) ) {
 		 $classes[] = 'slider-fade';
 	 }
-	 if ('header-boxed' == get_theme_mod( 'uku_headerstyle' ) ) {
+	 if ('header-boxed' == get_theme_mod( 'pirate_rogue_headerstyle' ) ) {
 		 $classes[] = 'header-boxed';
 	 }
-	 if ('header-fullscreen' == get_theme_mod( 'uku_headerstyle' ) ) {
+	 if ('header-fullscreen' == get_theme_mod( 'pirate_rogue_headerstyle' ) ) {
 		 $classes[] = 'header-fullscreen';
 	 }
 	 if ('dark' == get_theme_mod( 'uku_fixedheader' ) ) {

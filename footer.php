@@ -48,8 +48,8 @@ $blogname = get_bloginfo('name');
 
 			<?php if (has_nav_menu( 'social' ) ) : ?>
 				<nav id="footer-social" class="social-nav" role="navigation">
-					<?php if ( get_theme_mod( 'uku_custom_followus' ) ) : ?>
-						<span><?php echo esc_html( get_theme_mod( 'uku_custom_followus' ) ); ?></span>
+					<?php if ( get_theme_mod( 'pirate_rogue_custom_followus' ) ) : ?>
+						<span><?php echo esc_html( get_theme_mod( 'pirate_rogue_custom_followus' ) ); ?></span>
 					<?php else : ?>
 						<span><?php esc_html_e( 'Follow us', 'pirate-rogue'); ?></span>
 					<?php endif; ?>

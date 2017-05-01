@@ -38,13 +38,13 @@ get_header(); ?>
                             else :
                                     get_template_part( 'template-parts/content', 'none' );
                             endif;
-                            ?>
+                        ?>
 
-                            </div><!-- end #primary -->
+                    </div><!-- end #primary -->
 
-                            <?php get_sidebar(); ?>
+                    <?php get_sidebar(); ?>
 
-			</div><!-- end .blog-wrap -->
-		</div><!-- end .content-wrap -->
+        </div><!-- end .blog-wrap -->
+</div><!-- end .content-wrap -->
 
-		<?php get_footer(); ?>
+<?php get_footer(); ?>

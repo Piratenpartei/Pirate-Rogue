@@ -43,7 +43,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	) );
 
 	
-	$wp_customize->add_section( 'uku_customcss', array(
+	$wp_customize->add_section( 'pirate_rogue_customcss', array(
 		'title'                     => esc_html__( 'Custom CSS', 'pirate-rogue'),
 		'priority'                  => 6,
 		'panel'                     => 'uku_themeoptions',
@@ -54,7 +54,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	
 	
 	// Custom CSS Section
-	$wp_customize->add_setting( 'uku_custom_css_input', array(
+	$wp_customize->add_setting( 'pirate_rogue_custom_css_input', array(
 		'default'                   => '',
 		'sanitize_callback' 	     => 'wp_kses_post',
 	) );
@@ -62,7 +62,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'uku_custom_css_input', array(
 		'label'             => esc_html__( 'Custom CSS', 'pirate-rogue'),
 		'description'	    => esc_html__( 'Add custom CSS here. Please consider using a child theme for bigger CSS customizations. Also remember that you will loose all custom CSS changes made here, if you change the theme.', 'pirate-rogue'),
-		'section' 	    => 'uku_customcss',
+		'section' 	    => 'pirate_rogue_customcss',
 		'type' 		    => 'textarea',
 		'priority'	    => 1,
 	) );
@@ -203,19 +203,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'priority'		     => 11,
 	) );
 
-	$wp_customize->add_setting( 'uku_scrolldownbtn_text', array(
-		'default' 		        => 'Scroll Down',
-		'sanitize_callback'	   => 'wp_kses_post',
-	) );
-
-	$wp_customize->add_control( 'uku_scrolldownbtn_text', array(
-		'label'			     => esc_html__( 'Customize "Scroll Down" button text', 'pirate-rogue'),
-		'description'	     => esc_html__( '(Design style "serif" only.)', 'pirate-rogue'),
-		'section' 		       => 'header_image',
-		'type' 		              => 'text',
-		'priority'		   => 12,
-	) );
-
+	
 	// Uku Theme Options - General
 	$wp_customize->add_setting( 'uku_sidebar', array(
 		'default' 	        => 'sidebar-right',
@@ -446,9 +434,9 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize,'uku_footerfeature_image', array(
-				'label'			     => esc_html__( 'Upload Featured image', 'pirate-rogue'),
-				'section'		     => 'uku_footerfeature',
-				'priority'	     => 2,
+                'label'			     => esc_html__( 'Upload Featured image', 'pirate-rogue'),
+                'section'		     => 'uku_footerfeature',
+                'priority'	     => 2,
 	) ) );
 	
 	

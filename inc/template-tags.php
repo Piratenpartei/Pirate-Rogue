@@ -336,7 +336,7 @@ function pirate_rogue_get_tag_ID($tag_name) {
  endif;
  
  /*-----------------------------------------------------------------------------------*/
- /* Display blog entries 
+ /* Display blog entries as blogroll
  /*-----------------------------------------------------------------------------------*/
  if ( ! function_exists( 'pirate_rogue_blogroll' ) ) :
  function pirate_rogue_blogroll($posttag = '', $postcat = '', $num = 4, $divclass= '') {
@@ -383,6 +383,69 @@ function pirate_rogue_get_tag_ID($tag_name) {
      
     wp_reset_postdata();
     $out .= '</section>'."\n";
+    return $out;
+ }
+ endif;
+  /*-----------------------------------------------------------------------------------*/
+ /* Display blog entries as list
+ /*-----------------------------------------------------------------------------------*/
+ if ( ! function_exists( 'pirate_rogue_articlelist' ) ) :
+ function pirate_rogue_articlelist($posttag = '', $postcat = '', $num = 5, $divclass= '', $title = '') {
+    $posttag = $posttag ? esc_attr( $posttag ) : '';
+    
+    if (is_string($posttag)) {
+	$posttag = pirate_rogue_get_tag_ID($posttag);
+    }
+    
+    $postcat = $postcat ? esc_attr( $postcat ) : '';
+    
+    if (is_string($postcat)) {
+	$postcat = get_cat_ID($postcat);
+    }
+    
+    if (!isset($postcat) && !isset($posttag)) {
+        return;
+    }
+    
+    if (!is_int($num)) {
+	$num = 5;
+    }
+    $divclass = $divclass ? esc_attr( $divclass ) : '';
+    $title =  esc_attr( $title );
+   
+    $tag_link = get_tag_link( $posttag );
+    $category_link = get_category_link($postcat);
+
+    $pirate_rogue_blogroll_query = new WP_Query( array(
+        'posts_per_page'	=> $num,
+        'tag_id' 		=> $posttag,
+        'cat' 			=> $postcat,
+        'post_status'		=> 'publish',
+        'ignore_sticky_posts'	=> 1,
+    ) );
+
+    $out ='';
+    if (!empty($title)) {
+        $out .= '<section class="section_articlelist"><h2>'.$title.'</h2>';
+    }
+    $out .= '<ul class="articlelist '.$divclass.'">';
+    if($pirate_rogue_blogroll_query->have_posts()) :
+	while($pirate_rogue_blogroll_query->have_posts()) : 
+	    $pirate_rogue_blogroll_query->the_post();
+    
+            $out .= '<li>';
+            $out .= '<a href="'.esc_url( get_permalink() ).'">';
+            $out .= get_the_title();
+            $out .= '</a>';
+            $out .= '</li>';
+	endwhile; 
+    endif; // have_posts()                  
+     
+    wp_reset_postdata();
+    $out .= '</ul>'."\n";
+    if (!empty($title)) {
+        $out .= '</section>';
+    }  
     return $out;
  }
  endif;

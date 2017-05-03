@@ -22,7 +22,7 @@ if (! is_active_sidebar( 'sidebar-2' ) && (empty($pirate_rogue_page_sidebar)) ) 
     <?php 
 	if (!empty($pirate_rogue_page_sidebar)) { ?>
 	    <div class="widget textwidget">
-		<?php echo $pirate_rogue_page_sidebar; ?>
+		<?php echo do_shortcode($pirate_rogue_page_sidebar); ?>
 	    </div><!-- .widget-area -->	    
 	<?php }
     

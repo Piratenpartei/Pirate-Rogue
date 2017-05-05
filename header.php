@@ -94,7 +94,7 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
                     </div><!-- end #site-branding -->
 
                     <nav id="desktop-navigation" class="desktop-navigation cf" role="navigation">
-                            <?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false, 'walker'  => new Pirate_Rogue_Menu_Walker() ) ); ?>
+                            <?php wp_nav_menu( array( 'menu_class' => 'menu mainmenu', 'theme_location' => 'primary', 'container' => false, 'walker'  => new Pirate_Rogue_Menu_Walker() ) ); ?>
                     </nav><!-- .main-navigation -->
 
 

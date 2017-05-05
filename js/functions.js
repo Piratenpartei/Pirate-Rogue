@@ -280,17 +280,17 @@
 
 	$('#overlay-nav a').attr("tabindex","-1");
 
-	$('a').not($('#desktop-navigation #menu-all-pages a')).focus(function() {
-		$('#menu-all-pages li').removeClass('focus');
+	$('a').not($('#desktop-navigation .mainmenu a')).focus(function() {
+		$('.mainmenu li').removeClass('focus');
 	});
-	$('#desktop-navigation #menu-all-pages a').focus(function() {
-	    $('#menu-all-pages li').removeClass('focus');
+	$('#desktop-navigation .mainmenu a').focus(function() {
+	    $('.mainmenu li').removeClass('focus');
 	    $(this).parents('li').addClass('focus');
 	    $(this).children('li').addClass('focus');
 	    $(this).next( '.children, .sub-menu' ).toggleClass( 'toggled-on' );
 	});
 	$('#desktop-navigation .submenu a').focus(function() {
-	    $('#menu-all-pages li').removeClass('focus');
+	    $('.mainmenu li').removeClass('focus');
 	    $(this).parents('li').addClass('focus');
 	    $(this).children('li').addClass('focus');
 	    $(this).next( '.children, .sub-menu' ).toggleClass( 'toggled-on' );

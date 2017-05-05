@@ -121,7 +121,7 @@
         @include px2rem($font-size-small);
          
 	a {
-	     color: #999;
+	     color: $color-second;
 	}
     }
 }

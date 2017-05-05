@@ -1,6 +1,6 @@
 /*
-    Menu Settings
-*/
+ * Menu Settings
+ */
 
 
 /* --- Main Menu --- */
@@ -12,45 +12,45 @@
     margin: 0;
     padding: 0;
     li {
-      display: block;
-      margin: 0;
-      padding: 0;
-      border-bottom: 1px solid #ddd;
+	display: block;
+	margin: 0;
+	padding: 0;
+	border-bottom: 1px solid #ddd;
     }
     ul li {
-      margin: 0;
-      padding: 5px 0;
-      border-bottom: none;
+	margin: 0;
+	padding: 5px 0;
+	border-bottom: none;
     }
     li a {
-      display: block;
-      padding-top: 15px;
-      padding-bottom: 15px;
+	display: block;
+	padding-top: 15px;
+	padding-bottom: 15px;
     }
     ul {
-      &.sub-menu, 
-      &.children {
-        display: none;
-        overflow: hidden;
-        margin: 0;
-        padding: 0 0 10px;
-      }
-      ul {
-        &.sub-menu, 
+	&.sub-menu, 
 	&.children {
-          margin: 0;
-          border-top: none;
-        }
-      }
-      li a {
-        border-bottom: none;
-        padding-top: 0;
-        padding-bottom: 0;
-        font-weight: normal;
-        line-height: 1.5;
-        text-transform: none;
-        letter-spacing: 0;
-      }
+	      display: none;
+	      overflow: hidden;
+	      margin: 0;
+	      padding: 0 0 10px;
+	}
+	ul {
+	  &.sub-menu, 
+	  &.children {
+	      margin: 0;
+	      border-top: none;
+	  }
+	}
+	li a {
+	      border-bottom: none;
+	      padding-top: 0;
+	      padding-bottom: 0;
+	      font-weight: normal;
+	      line-height: 1.5;
+	      text-transform: none;
+	      letter-spacing: 0;
+	}
     }
   }
 }
@@ -96,42 +96,36 @@
 	margin-right: -10px;
     }
     &.toggle-on:after {
-      content: $fa-var-chevron-up;
+	content: $fa-var-chevron-up;
     }
 }
 
 .sub-menu .menu-item-has-children .dropdown-toggle, 
 .children .page_item_has_childrenn .dropdown-toggle:after {
-  width: 30px;
-  height: 30px;
+    width: 30px;
+    height: 30px;
 }
 
 .sub-menu .menu-item-has-children .dropdown-toggle:after, 
 .children .page_item_has_children .dropdown-toggle:after {
-  padding: 4px 0 0 0;
+    padding: 4px 0 0 0;
 }
 
 #overlay-nav ul {
   &.sub-menu.toggled-on, 
   &.children.toggled-on {
-    display: block !important;
+	display: block !important;
   }
 }
 
 /* --- Overlay - Mobile Social Menu --- */
 
-#mobile-social {
-  border-bottom: 1px solid #ddd;
-  li {
-    padding: 10px 0;
-  }
-}
 
 .single-post .post-navigation a:focus, 
 .single-attachment .post-navigation a:focus,
 .single-post .post-navigation a:hover, 
 .single-attachment .post-navigation a:hover {
-  border-bottom: 2px solid #51a8dd;
+    border-bottom: 2px solid #51a8dd;
 }
 
 
@@ -155,6 +149,7 @@
             }
         }
         li.current-menu-ancestor,
+	li.focus,
         li:focus,
 	li:hover {
 	    a {
@@ -169,9 +164,17 @@
 }
 
 
+/* --- Social Media Icons --- */
+
+#mobile-social {
+    border-bottom: 1px solid #ddd;
+    li {
+	padding: 10px 0;
+    }
+}
+
+
 /* --- Skiplinks --- */
-
-
 #skiplinks{
     position: relative;
     left: 0;
@@ -216,25 +219,26 @@
 	display: block;
 	padding: 0;
 	ul {
-	  margin: 0;
-	  padding: 0;
-	  text-align: center;
-	  li {
-	    position: relative;
-	    display: inline-block;
-	    padding: 20px 15px 18px;
-	  }
+	    margin: 0;
+	    padding: 0;
+	    text-align: center;
+	    li {
+		  position: relative;
+		  display: inline-block;
+		  padding: 20px 15px 18px;
+	    }
 	}
 	.sub-menu, 
 	.children, 
 	.dropdown-toggle {
-	   display: none;
-
-           &:hover,
-           &:focus,
-	   &.focus {
-	        display: block !important;
-	   }
+	    position: absolute;
+	    left: -9999px;
+	    
+	    &:hover,
+	    &:focus,
+	    &.focus {
+		display: block !important;
+	    }
 	}
         .sub-menu {
             .sub-menu {
@@ -247,11 +251,28 @@
 	 
 	ul {
 	    li > ul.focus,
+	    li.focus > ul, 
 	    li:focus > ul,  
 	    li:hover > ul {
 		&.sub-menu, 
 		&.children {
-		    display: block !important;
+		    display: block;
+		    left: 0;   	    
+		    li > ul.focus,
+		    li.focus > ul, 
+		    li:focus > ul,  
+		    li:hover > ul {
+			top: 20px;
+			left: 215px;
+
+			li > ul.focus,
+			li.focus > ul, 
+			li:focus > ul,  
+			li:hover > ul {
+			    top: 20px;
+			    left: 75px;
+			}
+		    }
 		}
 	    }
 	    ul {
@@ -259,7 +280,7 @@
 		&.children {
 		      position: absolute;
 		      top: 59px;
-		      left: 0;
+		     
 		      min-width: 230px;
                       max-width: 300px;
 		      margin: 0;
@@ -270,11 +291,6 @@
 		      z-index: 100000;
 		}
 
-		&.sub-menu ul.sub-menu, 
-		&.children ul.children {
-		      top: -5px;
-		      left: 215px;
-		}
 	  }
 	}
 	.sub-menu li a, 
@@ -289,8 +305,8 @@
 	}
 	.sub-menu li, 
 	.children li {
-	  padding: 0;
-	  display: block;
+	    padding: 0;
+	    display: block;
 	}
       }
   }

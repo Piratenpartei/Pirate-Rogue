@@ -65,6 +65,7 @@ h1.site-title {
 h1 {
     .single-post .entry-header &.entry-title,
     .entry-header &.entry-title,
+    .attachment &.entry-title,
     .page &.entry-title,
     &.entry-title,
     .archive-header &.archive-title,
@@ -85,6 +86,7 @@ h1 {
     .single-post .entry-header &::after.entry-title,
     .entry-header &::after.entry-title,
     .page &::after.entry-title,
+    .attachment &::after.entry-title,
     .archive-header &::after.archive-title
     article &::after,
     .entry-content &::after {
@@ -188,6 +190,7 @@ h3 {
 .single-post .entry-header h1.entry-title,
 .blog-wrap h3.blog-title,
 .archive-header h1.archive-title, 
+.attachment h1.entry-title, 
 .page h1.entry-title, 
 .featured-slider .entry-header h2.entry-title,
 #front-section-four .entry-header h2.entry-title, 
@@ -216,6 +219,7 @@ h3 {
 @media screen and (min-width: $breakpoint-sm) {
     .single-post .entry-header h1.entry-title, 
     .single-attachment .entry-header h1.entry-title, 
+    .attachment h1.entry-title,
     .page h1.entry-title {
 	@include px2rem($font-size-h1-sitetitle-sm);     
     }
@@ -265,7 +269,8 @@ h3 {
     .null-instagram-feed .clear {
 	@include px2rem($font-size-headersmall);
     }
-
+    
+    .attachment h1.entry-title,
     .page h1.entry-title {
 	margin-bottom: 45px;
     }

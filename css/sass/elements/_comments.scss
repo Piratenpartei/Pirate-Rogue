@@ -49,79 +49,79 @@
 }
 
 .entry-comments a {
-  position: relative;
-  padding-left: 18px;
-  &:before {
-    @extend .fa;
-    @extend .fa-comment-o;
-    display: block;
-    position: absolute;
-    top: 2px;
-    left: 0;
-  }
+    position: relative;
+    padding-left: 18px;
+    &:before {
+	@extend .fa;
+	@extend .fa-comment-o;
+	display: block;
+	position: absolute;
+	top: 2px;
+	left: 0;
+    }
 }
 
 #comments {
     ul li, 
     ol li {
-      list-style-position: outside;
+	list-style-position: outside;
     }
 
     position: relative;
     padding: 20px 0 0 0;
+    
+    ul.children {
+	margin: 0;
+	padding: 0;
+    }
 
     li {
-      &.comment, 
-      &.pingback {
-        overflow: hidden;
-        margin: 0 0 16px;
-        padding: 0;
-      }
-      &.comment:last-of-type, 
-      &.pingback:last-of-type {
-        margin: 0;
-      }
-      &.comment ul.children {
-        margin: 16px 0 0;
-      }
+	&.comment, 
+	&.pingback {
+	  overflow: hidden;
+	  margin: 0 0 16px;
+	  padding: 0;
+	}
+	&.comment:last-of-type, 
+	&.pingback:last-of-type {
+	  margin: 0;
+	}
+	&.comment ul.children {
+	  margin: 16px 0 0;
+	}
     }
     .children .comment:last-child {
       margin: 0;
     }
     h3.comments-title {
-      padding: 27px 0 0 0;
-      border-top: 1px solid #1a1a1a;
-      display: block;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-    }
-    ul.children {
-      margin: 0;
-      padding: 0;
+	padding: 27px 0 0 0;
+	border-top: 1px solid #1a1a1a;
+	display: block;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 3px;
     }
     
     .comment-details {
-      position: relative;
-      margin: 0 90px 0 0;
-      padding: 0;
+	position: relative;
+	margin: 0 90px 0 0;
+	padding: 0;
     }
-    li.pingback {
-      padding: 0 0 0 50px;
-    }
+    
     .comment-avatar {
-      margin: 0;
-      padding: 0;
-      line-height: 0;
-      float: left;
-      img.avatar {
-        width: 40px;
-        height: 40px;
-        margin: 0;
-        -moz-border-radius: 50px;
-        -webkit-border-radius: 50px;
-        border-radius: 50px;
-      }
+	margin: 0;
+	padding: 0;
+	line-height: 0;
+	float: left;
+
+	img.avatar {
+	    width: 40px;
+	    height: 40px;
+	    margin: 0;
+	    -moz-border-radius: 50px;
+	    -webkit-border-radius: 50px;
+	    border-radius: 50px;
+	}
     }
     .comment-author {
           @include px2rem($font-size-base);
@@ -131,38 +131,38 @@
           }
     }
     .comment-text {
-      overflow: hidden;
-      padding: 10px 30px 10px 0;
-      p {
-        margin: 0;
-        padding: 0 0 15px;
-        &:last-child {
-          padding: 0;
-        }
-      }
+	overflow: hidden;
+	padding: 10px 30px 10px 0;
+	p {
+	    margin: 0;
+	    padding: 0 0 15px;
+	    &:last-child {
+	      padding: 0;
+	    }
+	}
     }
     .comment-meta {
-      overflow: hidden;
-      list-style: none;
-      li {
-        display: inline;
-      }
+	overflow: hidden;
+	list-style: none;
+	li {
+	      display: inline;
+	}
     }
     .comment-reply {
       position: relative;
       padding: 0;
       a {
-          padding-left: 20px;
-          &:before {
-            @extend .fa;
-            @extend .fa-commenting-o;
-            display: block;
+	    padding-left: 20px;
+	    &:before {
+	      @extend .fa;
+	      @extend .fa-commenting-o;
+	      display: block;
 
-            position: absolute;
-            top: 4px;
-            left: 0;
-            text-align: left;
-          }
+	      position: absolute;
+	      top: 4px;
+	      left: 0;
+	      text-align: left;
+	    }
         }
     }
     p.comment-awaiting-moderation {

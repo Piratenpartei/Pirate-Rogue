@@ -49,11 +49,9 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
                                     echo '<p class="auszug">';
                                         the_excerpt();
                                     echo "</p>\n";
-                                    
                                     the_content();
 						
                                     $imgdata = pirate_rogue_get_image_attributs($post->ID);
-				
                                     if ( is_user_logged_in() ) {
 					echo '<p class="box maincolor-box">'.__('Only viewed by website members:','pirate-rogue').'</p>';
 					echo "<h3>".__('Image-Attributs','pirate-rogue')."</h3>";
@@ -107,7 +105,12 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
                                             <th><?php _e('Copyright','pirate-rogue');?></th>
                                             <td><?php echo $imgdata['copyright']; ?></td>
                                         </tr>
-                                        <?php } ?>
+                                        <?php } 		
+					?>
+					<tr>
+					    <th><?php _e('Download','pirate-rogue');?></th>
+					    <td><a href="<?php echo $imgdata['src']; ?>"><?php echo $imgdata['title']; ?> (<?php _e('Size','pirate-rogue');?> <?php echo $imgdata['width']; ?> x <?php echo $imgdata['height']; ?>)</a></td>
+					</tr>
                                     </table>
 
 				<?php

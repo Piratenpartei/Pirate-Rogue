@@ -15,8 +15,6 @@
 	// Variables and DOM Caching.
 	var $body = $( 'body' ),
 		sliderFade = $body.hasClass( 'slider-fade' ),
-		ukuNeo = $body.hasClass( 'uku-neo' ),
-		ukuSerif = $body.hasClass( 'uku-serif' ),
 		headerOffset,
 		menuTop = 0,
 		resizeTimer;
@@ -279,7 +277,26 @@
 	$('#primary').fitVids();
 	$('#singlepost-wrap').fitVids();
 
-		// Add dropdown toggle that display child menu items.
+
+	$('#overlay-nav a').attr("tabindex","-1");
+
+	$('a').not($('#desktop-navigation #menu-all-pages a')).focus(function() {
+		$('#menu-all-pages li').removeClass('focus');
+	});
+	$('#desktop-navigation #menu-all-pages a').focus(function() {
+	    $('#menu-all-pages li').removeClass('focus');
+	    $(this).parents('li').addClass('focus');
+	    $(this).children('li').addClass('focus');
+	    $(this).next( '.children, .sub-menu' ).toggleClass( 'toggled-on' );
+	});
+	$('#desktop-navigation .submenu a').focus(function() {
+	    $('#menu-all-pages li').removeClass('focus');
+	    $(this).parents('li').addClass('focus');
+	    $(this).children('li').addClass('focus');
+	    $(this).next( '.children, .sub-menu' ).toggleClass( 'toggled-on' );
+	});
+
+	// Add dropdown toggle that display child menu items.
 	$( '.menu-item-has-children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false">' + screenReaderText.expand + '</button>' );
 
 	// Toggle buttons and submenu items with active children menu items.
@@ -294,6 +311,8 @@
 		_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
 		_this.html( _this.html() === screenReaderText.expand ? screenReaderText.collapse : screenReaderText.expand );
 	} );
+
+
 
 	secondary = $( '#secondary' );
 	button = $( '.site-branding' ).find( '.secondary-toggle' );

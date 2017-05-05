@@ -14,7 +14,6 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 ?>
  
 <article id="post-<?php the_ID(); ?>" <?php post_class($custom_class); ?>>
-
 		<header class="entry-header cf">
 			<?php if ( $custom_class != 'no-thumb' 
 				&& $custom_class == 'big-thumb' 
@@ -90,7 +89,6 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 		<div class="contentwrap">
 			<?php if ( $custom_class != 'big-thumb' 
 				&& $custom_class != 'no-thumb' 
-				&& 'serif' != get_theme_mod( 'uku_main_design' ) 
 				&& '' != get_the_post_thumbnail() 
 				&& ! post_password_required() ) : ?>
 				<div class="entry-thumbnail">

@@ -20,7 +20,7 @@
 			<img src="<?php echo $imagesrc; ?>">
 		</div><!-- end .custom-logo-wrap -->
  
-	<?php } elseif ( has_custom_logo() && '' != get_theme_mod( 'uku_customlogofooter' ) ) { ?>
+	<?php } elseif ( has_custom_logo() && '' != get_theme_mod( 'pirate_rogue_customlogofooter' ) ) { ?>
 		<div class="custom-logo-wrap">
 			<?php the_custom_logo(); ?>
 		</div><!-- end .custom-logo-wrap -->

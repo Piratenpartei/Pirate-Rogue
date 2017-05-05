@@ -128,10 +128,10 @@ function pirate_rogue_base_scripts() {
 	}
 
 	// Loads stylesheets.
-	wp_enqueue_style( 'pirate-rogue-style', get_stylesheet_uri(), array(), '20170421' );
+	wp_enqueue_style( 'pirate-rogue-style', get_stylesheet_uri(), array(), '20170505' );
         
         // Loads Custom Uku JavaScript functionality
-        wp_enqueue_script( 'pirate-rogue-script', get_template_directory_uri() . '/js/functions.min.js', array( 'jquery' ), '20170421', true );
+        wp_enqueue_script( 'pirate-rogue-script', get_template_directory_uri() . '/js/functions.min.js', array( 'jquery' ), '20170505', true );
         wp_localize_script( 'pirate-rogue-script', 'screenReaderText', array(
                 'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'pirate-rogue') . '</span>',
                 'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'pirate-rogue') . '</span>',
@@ -244,8 +244,8 @@ add_filter( 'user_contactmethods', 'add_twitter_contactmethod', 10, 1 );
 /*-----------------------------------------------------------------------------------*/
 function pirate_rogue_customize_css() {
 	$customcss = '';
-	if ('' != get_theme_mod( 'uku_custom_css' ) ) {
-	   $customcss .=  get_theme_mod('uku_custom_css'); 
+	if ('' != get_theme_mod( 'pirate_rogue_custom_css' ) ) {
+	   $customcss .=  get_theme_mod('pirate_rogue_custom_css'); 
 	} 
 	if (!empty($customcss)) {
 	    echo '<style type="text/css">';

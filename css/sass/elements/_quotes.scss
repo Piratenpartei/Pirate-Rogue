@@ -10,7 +10,8 @@ blockquote {
     font-family: $font-family-quotation;
     border-left: 15px solid $color-main;
     border-right: 2px solid $color-main;
-
+    font-style: italic;
+      
     a {
         text-decoration: none;
         cursor: pointer;
@@ -44,33 +45,70 @@ blockquote {
         padding-top: 10px;
         padding-right: 30px;
         font-style: normal;
+        font-weight: normal;
         text-align: right;
         @include px2rem($font-size-blockquote-cite);
+        
+        &::before {
+            content: "\2013 ";
+        }
     }
-}
+    &.quotesign {
+        padding: 20px 20px 20px 60px;
 
-blockquote.quotesign {
-    padding: 20px 20px 20px 55px;
+        &::before {
+            content: "\201C"; // Unicode for Left Double Quote
+            font-family: Georgia, serif;
+            font-size: 70px;
+            font-weight: bold;
+            color: $color-main; //lighten($color-text,50%); 
+
+            position: absolute;
+            left: 10px;
+            top: 0px;
+        }
+        &::after{
+            // Reset to make sure
+            content: "";
+        }
+        &.secondcolor::before {
+             color: $color-second;
+        }
+    }
     
-    &::before {
-        content: "\201C"; // Unicode for Left Double Quote
-        font-family: Georgia, serif;
-        font-size: 80px;
-        font-weight: bold;
-        color: $color-main; //lighten($color-text,50%); 
+    
+    &.borderless {
+        border: none;
+    }
+    
+    
+    .inner-offcanvas-wrap & {
+        background: inherit;
+        margin: 10px 5px 30px 20px;
+      
+        border: 0;
+       
+        &::before {
+            content: "\201C"; // Unicode for Left Double Quote
+            font-family: Georgia, serif;
+            font-size: 60px;
+            font-weight: bold;
+            color: lighten($color-text,20%); //lighten($color-text,50%); 
 
-        position: absolute;
-        left: 10px;
-        top: 0px;
-    }
-    &::after{
-        // Reset to make sure
-        content: "";
-    }
-    &.secondcolor::before {
-         color: $color-second;
+            position: absolute;
+            left: 2px;
+            top: -5px;
+        }
+        &::after{
+            // Reset to make sure
+            content: "";
+        }
+       
+       
     }
 }
+
+blockquote
     
 #comments blockquote {
     border-left: none;

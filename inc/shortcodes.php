@@ -700,7 +700,31 @@ function pirate_rogue_shortcode_blogroll( $atts, $content = null ) {
     return $out;
 }
 add_shortcode('blogroll', 'pirate_rogue_shortcode_blogroll');
-
+/*-----------------------------------------------------------------------------------*/
+/* Shortcodes to display articlelist
+/*-----------------------------------------------------------------------------------*/
+function pirate_rogue_shortcode_articlelist( $atts, $content = null ) {
+    extract(shortcode_atts(array(
+    'cat'	=> '',
+    'tag'	=> '',
+        
+    'num'	=> '',
+    'class'     => '',
+    'title'	=> '',
+    ), $atts));
+    $title =  esc_attr($title);
+    $cat = ($cat) ? $cat : '';
+    $tag = ($tag) ? $tag : '';
+    $num = ($num) ? intval($num) : 5;
+    $class = ($class) ? $class : '';
+    $out = pirate_rogue_articlelist($tag, $cat, $num,$class, $title);
+	
+    if (empty($out)) {
+	echo '<p class="box red-box">'.__("No result for category \"$cat\", Tag \"$tag\"",'uku').'</p>';	
+    }
+    return $out;
+}
+add_shortcode('articlelist', 'pirate_rogue_shortcode_articlelist');
 /*-----------------------------------------------------------------------------------*/
 /* Check if color attribut is valid
 /*-----------------------------------------------------------------------------------*/

@@ -17,7 +17,7 @@ if ( class_exists( 'Pirate_Crew' ) && 'content' != get_theme_mod( 'pirate_rogue_
     $format = pirate_rogue_sanitize_pirate_crew_member_format(get_theme_mod( 'pirate_rogue_crewmember-format' ));
     $title = get_theme_mod( 'pirate_rogue_crewmember-title' );
 }
-if (( is_active_sidebar( 'sidebar-1' ) && 'sidebar-no' != get_theme_mod( 'uku_sidebar' ) ) or ($preauthor)) { ?>
+if (( is_active_sidebar( 'sidebar-1' ) && 'sidebar-no' != get_theme_mod( 'pirate_rogue_sidebar' ) ) or ($preauthor)) { ?>
 	<aside id="secondary" class="sidebar widget-area" role="complementary"> 
 	    <?php if ($preauthor) {		
 		if (isset($title)) {  
@@ -25,7 +25,7 @@ if (( is_active_sidebar( 'sidebar-1' ) && 'sidebar-no' != get_theme_mod( 'uku_si
 		}
 		echo do_shortcode( '[pirate id="'.$preauthor.'" format="'.$format.'" style="'.$style.'" showcontent="0"]' ); 
 	    }
-	    if ( is_active_sidebar( 'sidebar-1' ) && 'sidebar-no' != get_theme_mod( 'uku_sidebar' ) ) {
+	    if ( is_active_sidebar( 'sidebar-1' ) && 'sidebar-no' != get_theme_mod( 'pirate_rogue_sidebar' ) ) {
 		 dynamic_sidebar( 'sidebar-1' );
 	    }
 	    ?>

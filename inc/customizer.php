@@ -43,7 +43,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	) );
 
 	
-	$wp_customize->add_section( 'uku_customcss', array(
+	$wp_customize->add_section( 'pirate_rogue_customcss', array(
 		'title'                     => esc_html__( 'Custom CSS', 'pirate-rogue'),
 		'priority'                  => 6,
 		'panel'                     => 'uku_themeoptions',
@@ -54,15 +54,15 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	
 	
 	// Custom CSS Section
-	$wp_customize->add_setting( 'uku_custom_css_input', array(
+	$wp_customize->add_setting( 'pirate_rogue_custom_css_input', array(
 		'default'                   => '',
 		'sanitize_callback' 	     => 'wp_kses_post',
 	) );
 
-	$wp_customize->add_control( 'uku_custom_css_input', array(
+	$wp_customize->add_control( 'pirate_rogue_custom_css_input', array(
 		'label'             => esc_html__( 'Custom CSS', 'pirate-rogue'),
 		'description'	    => esc_html__( 'Add custom CSS here. Please consider using a child theme for bigger CSS customizations. Also remember that you will loose all custom CSS changes made here, if you change the theme.', 'pirate-rogue'),
-		'section' 	    => 'uku_customcss',
+		'section' 	    => 'pirate_rogue_customcss',
 		'type' 		    => 'textarea',
 		'priority'	    => 1,
 	) );
@@ -146,99 +146,73 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	
 	// Uku Site Title - Custom Title and Logo
-	$wp_customize->add_setting( 'uku_hidetagline', array(
+	$wp_customize->add_setting( 'pirate_rogue_hidetagline', array(
 		'default'		     => '',
 		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
 	) );
 
-	$wp_customize->add_control( 'uku_hidetagline', array(
+	$wp_customize->add_control( 'pirate_rogue_hidetagline', array(
 		'label'			     => esc_html__( 'Hide tagline only', 'pirate-rogue'),
 		'section'		     => 'title_tagline',
 		'type'			     => 'checkbox',
 		'priority'		     => 22,
 	) );
 
-	$wp_customize->add_setting( 'uku_customlogofooter', array(
+	$wp_customize->add_setting( 'pirate_rogue_customlogofooter', array(
 		'default'		     => '',
 		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
 	) );
 
-	$wp_customize->add_control( 'uku_customlogofooter', array(
+	$wp_customize->add_control( 'pirate_rogue_customlogofooter', array(
 		'label'			     => esc_html__( 'Show custom logo in footer', 'pirate-rogue'),
-		'description'		     => esc_html__( '(Only available with the "standard" and "neo" design style, see Theme Options / Design Style.).', 'pirate-rogue'),
 		'section'		     => 'title_tagline',
 		'type'			     => 'checkbox',
 		'priority'		     => 23,
 	) );
 
 	// Uku Additional Header Options
-	$wp_customize->add_setting( 'uku_headerstyle', array(
+	$wp_customize->add_setting( 'pirate_rogue_headerstyle', array(
 		'default' 		       => 'header-fullwidth',
 		'sanitize_callback' 	     => 'pirate_rogue_sanitize_headerstyle',
 	) );
 
-	$wp_customize->add_control( 'uku_headerstyle', array(
+	$wp_customize->add_control( 'pirate_rogue_headerstyle', array(
 		'label' 		   => esc_html__( 'Header Image Style', 'pirate-rogue'),
 		'description'		    => esc_html__( 'Choose the Header image style you like to use.', 'pirate-rogue'),
 		'section' 		    => 'header_image',
 		'priority' 	           => 10,
 		'type' 		           => 'select',
 		'choices' 						     => array(
-					'header-fullwidth' 	 => esc_html__( 'fullwidth', 'pirate-rogue'),
-					'header-boxed' 			 => esc_html__( 'boxed', 'pirate-rogue'),
-					'header-fullscreen'  => esc_html__( 'fullscreen (serif and standard only)', 'pirate-rogue'),
+			'header-fullwidth' 	 => esc_html__( 'fullwidth', 'pirate-rogue'),
+			'header-boxed' 		 => esc_html__( 'boxed', 'pirate-rogue'),
+			'header-fullscreen'     => esc_html__( 'fullscreen', 'pirate-rogue'),
 		),
 	) );
 
-	$wp_customize->add_setting( 'uku_custom_header_intro', array(
-		'default' 		     => '',
-		'sanitize_callback' 	     => 'wp_kses_post',
-	) );
-
-	$wp_customize->add_control( 'uku_custom_header_intro', array(
-		'label' 		      => esc_html__( 'Header Image Intro Text', 'pirate-rogue'),
-		'description'		    => esc_html__( 'Add a short intro text that will displayed centered on your header image. (Design style "serif" only.)', 'pirate-rogue'),
-		'section' 		      => 'header_image',
-		'type' 			      => 'textarea',
-		'priority'		     => 11,
-	) );
-
-	$wp_customize->add_setting( 'uku_scrolldownbtn_text', array(
-		'default' 		        => 'Scroll Down',
-		'sanitize_callback'	   => 'wp_kses_post',
-	) );
-
-	$wp_customize->add_control( 'uku_scrolldownbtn_text', array(
-		'label'			     => esc_html__( 'Customize "Scroll Down" button text', 'pirate-rogue'),
-		'description'	     => esc_html__( '(Design style "serif" only.)', 'pirate-rogue'),
-		'section' 		       => 'header_image',
-		'type' 		              => 'text',
-		'priority'		   => 12,
-	) );
 
 	// Uku Theme Options - General
-	$wp_customize->add_setting( 'uku_sidebar', array(
+	$wp_customize->add_setting( 'pirate_rogue_sidebar', array(
 		'default' 	        => 'sidebar-right',
 		'sanitize_callback'	=> 'pirate_rogue_sanitize_sidebar',
 	) );
 
-	$wp_customize->add_control( 'uku_sidebar', array(
+	$wp_customize->add_control( 'pirate_rogue_sidebar', array(
 		'label' 	     => esc_html__( 'Sidebar Position', 'pirate-rogue'),
 		'section' 	  => 'uku_general',
 		'priority'                => 2,
 		'type' 			  => 'select',
 		'choices'     => array(
-					'sidebar-right' 	   => esc_html__( 'sidebar right', 'pirate-rogue'),
-					'sidebar-left' 		   => esc_html__( 'sidebar left', 'pirate-rogue'),
+			'sidebar-right' 	   => esc_html__( 'sidebar right', 'pirate-rogue'),
+			'sidebar-left' 		   => esc_html__( 'sidebar left', 'pirate-rogue'),
 		),
 	) );
 
-	$wp_customize->add_setting( 'uku_sidebar_hide', array(
+	$wp_customize->add_setting( 'pirate_rogue_sidebar_hide', array(
 		'default' 		    => 'sidebar-show',
 		'sanitize_callback' 	     => 'pirate_rogue_sanitize_sidebar_hide',
 	) );
 
-	$wp_customize->add_control( 'uku_sidebar_hide', array(
+	$wp_customize->add_control( 'pirate_rogue_sidebar_hide', array(
 		'label' 	  => esc_html__( 'Sidebar Visibility', 'pirate-rogue'),
 		'section' 	  => 'uku_general',
 		'priority' 	  => 3,
@@ -396,12 +370,12 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	) ) );	
 
 	
-	$wp_customize->add_setting( 'uku_hidecomments', array(
+	$wp_customize->add_setting( 'pirate_rogue_hidecomments', array(
 		'default'		    => '',
 		'sanitize_callback' 	    => 'pirate_rogue_sanitize_checkbox',
 	) );
 
-	$wp_customize->add_control( 'uku_hidecomments', array(
+	$wp_customize->add_control( 'pirate_rogue_hidecomments', array(
 		'label'			    => esc_html__( 'Show Comments button on single posts', 'pirate-rogue'),
 		'description'		    => esc_html__( '(Hides comments behind a Show Comments button on single posts.)', 'pirate-rogue'),
 		'section'		    => 'pirate_rogue_entries',
@@ -424,6 +398,44 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	) );
 	
 
+        $wp_customize->add_setting( 'pirate_rogue_externcomments_active', array(
+		'default'		    => '',
+		'sanitize_callback' 	    => 'pirate_rogue_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'pirate_rogue_externcomments_active', array(
+		'label'			    => esc_html__( 'Link to external board for comments', 'pirate-rogue'),
+		'description'		    => esc_html__( '(Instead of allowing comments on side, users are directed to an external website)', 'pirate-rogue'),
+		'section'		    => 'pirate_rogue_entries',
+		'type'			    => 'checkbox',
+		'priority'		    => 6,
+	) );
+        
+        $wp_customize->add_setting( 'pirate_rogue_externcomments_title', array(
+		'default'		    => '',
+		'sanitize_callback'	    => 'wp_kses_post',
+	) );
+
+	$wp_customize->add_control( 'pirate_rogue_externcomments_title', array(
+                'label'                     => esc_html__( 'Linktext', 'pirate-rogue'),
+                'description'               => esc_html__( 'Sets a link text for directing to external board', 'pirate-rogue'),
+                'section'		    => 'pirate_rogue_entries',
+                'type'                      => 'text',
+                'default'                   => esc_html__( 'Discuss this on our board', 'pirate-rogue'),
+                'priority'		    => 7,
+	) ); 
+        $wp_customize->add_setting( 'pirate_rogue_externcomments_url', array(
+		'default'		    => 'https://news.piratenpartei.de',
+		'sanitize_callback'	    => 'wp_kses_post',
+	) );
+
+	$wp_customize->add_control( 'pirate_rogue_externcomments_url', array(
+                'label'                     => esc_html__( 'URL', 'pirate-rogue'),
+                'description'               => esc_html__( 'Enter the URL for the external board', 'pirate-rogue'),
+                'section'                   => 'pirate_rogue_entries',
+                'type'                      => 'text',
+                'priority'                  => 8,
+	) ); 
 	
         
 	// Uku Theme Options - Big Footer Feature Area
@@ -446,9 +458,9 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize,'uku_footerfeature_image', array(
-				'label'			     => esc_html__( 'Upload Featured image', 'pirate-rogue'),
-				'section'		     => 'uku_footerfeature',
-				'priority'	     => 2,
+                'label'			     => esc_html__( 'Upload Featured image', 'pirate-rogue'),
+                'section'		     => 'uku_footerfeature',
+                'priority'	     => 2,
 	) ) );
 	
 	
@@ -500,11 +512,11 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'uku_footerfeature_btn_link', array(
-		'label' 			             => esc_html__( 'Button Link URL', 'pirate-rogue'),
-		'description'					     => esc_html__( 'The URL the button should link to.', 'pirate-rogue'),
-		'section' 			           => 'uku_footerfeature',
-		'type' 			               => 'text',
-		'priority'						     => 6,
+		'label'         => esc_html__( 'Button Link URL', 'pirate-rogue'),
+		'description'   => esc_html__( 'The URL the button should link to.', 'pirate-rogue'),
+		'section'       => 'uku_footerfeature',
+		'type'          => 'text',
+		'priority'      => 6,
 	) );
 
 
@@ -611,12 +623,12 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'priority'	     => 6,
 	) );
 
-	$wp_customize->add_setting( 'uku_custom_followus', array(
+	$wp_customize->add_setting( 'pirate_rogue_custom_followus', array(
 		'default' 	          => '',
 		'sanitize_callback' 	     => 'wp_kses_post',
 	) );
 
-	$wp_customize->add_control( 'uku_custom_followus', array(
+	$wp_customize->add_control( 'pirate_rogue_custom_followus', array(
 		'label' 	    => esc_html__( 'Follow us text', 'pirate-rogue'),
 		'description'		     => esc_html__( 'Customize the "Follow us" text in your About section and footer social menus.', 'pirate-rogue'),
 		'section' 	         => 'uku_frontpage_general',
@@ -700,16 +712,16 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'uku_front_section_one_title', array(
-		'label' 			             => esc_html__( 'Section Title (optional)', 'pirate-rogue'),
-		'description'					     => esc_html__( 'The title will appear at the top of the section.', 'pirate-rogue'),
-		'section' 			           => 'uku_front_section_one',
-		'type' 			               => 'text',
-		'priority'						     => 1,
+		'label'             => esc_html__( 'Section Title (optional)', 'pirate-rogue'),
+		'description'       => esc_html__( 'The title will appear at the top of the section.', 'pirate-rogue'),
+		'section'           => 'uku_front_section_one',
+		'type'              => 'text',
+		'priority'          => 1,
 	) );
 
 	$wp_customize->add_setting( 'uku_front_section_one_cat', array(
-		'default' 			           => '',
-		'sanitize_callback' 	     => 'wp_kses_post',
+		'default'           => '',
+		'sanitize_callback' => 'wp_kses_post',
 	) );
 
 	$wp_customize->add_control(new WP_Customize_Category_Control($wp_customize,'uku_front_section_one_cat', array(
@@ -733,21 +745,21 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	// Uku Front Page - Sections 2 (Featured Bottom)
 	$wp_customize->add_setting( 'uku_front_section_two_title', array(
-		'default' 			           => '',
-		'sanitize_callback' 	     => 'wp_kses_post',
+		'default'           => '',
+		'sanitize_callback' => 'wp_kses_post',
 	) );
 
 	$wp_customize->add_control( 'uku_front_section_two_title', array(
-		'label' 			             => esc_html__( 'Section Title (optional)', 'pirate-rogue'),
-		'description'					     => esc_html__( 'The title will appear at the top of the section.', 'pirate-rogue'),
-		'section' 			           => 'uku_front_section_two',
-		'type' 			               => 'text',
-		'priority'						     => 1,
+		'label'             => esc_html__( 'Section Title (optional)', 'pirate-rogue'),
+		'description'       => esc_html__( 'The title will appear at the top of the section.', 'pirate-rogue'),
+		'section'           => 'uku_front_section_two',
+		'type'              => 'text',
+		'priority'          => 1,
 	) );
 
 	$wp_customize->add_setting( 'uku_front_section_two_cat', array(
-		'default' 			           => '',
-		'sanitize_callback' 	     => 'wp_kses_post',
+		'default'           => '',
+		'sanitize_callback' => 'wp_kses_post',
 	) );
 
 	$wp_customize->add_control(new WP_Customize_Category_Control($wp_customize,'uku_front_section_two_cat', array(
@@ -1062,16 +1074,16 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	// Uku Front Page - Sections 6-Column
 	$wp_customize->add_setting( 'uku_front_section_sixcolumn_title', array(
-		'default' 			         => '',
-		'sanitize_callback'		   => 'wp_kses_post',
+		'default'               => '',
+		'sanitize_callback'     => 'wp_kses_post',
 	) );
 
 	$wp_customize->add_control( 'uku_front_section_sixcolumn_title', array(
-		'label' 			           => esc_html__( 'Section Title (optional)', 'pirate-rogue'),
-		'description'					   => esc_html__( 'The title will appear at the top of the section.', 'pirate-rogue'),
-		'section' 			         => 'uku_front_section_sixcolumn',
-		'type' 			             => 'text',
-		'priority'						   => 1,
+		'label'                 => esc_html__( 'Section Title (optional)', 'pirate-rogue'),
+		'description'           => esc_html__( 'The title will appear at the top of the section.', 'pirate-rogue'),
+		'section'               => 'uku_front_section_sixcolumn',
+		'type'                  => 'text',
+		'priority'              => 1,
 	) );
 
 	$wp_customize->add_setting( 'uku_front_section_sixcolumn_cat', array(
@@ -1286,21 +1298,21 @@ function pirate_rogue_sanitize_checkbox( $input ) {
 /**
  * Sanitize Sidebar Position.
  */
-function pirate_rogue_sanitize_sidebar( $uku_sidebar ) {
-	if ( ! in_array( $uku_sidebar, array( 'sidebar-right', 'sidebar-left' ) ) ) {
-		$uku_sidebar = 'sidebar-right';
+function pirate_rogue_sanitize_sidebar( $pirate_rogue_sidebar ) {
+	if ( ! in_array( $pirate_rogue_sidebar, array( 'sidebar-right', 'sidebar-left' ) ) ) {
+		$pirate_rogue_sidebar = 'sidebar-right';
 	}
-	return $uku_sidebar;
+	return $pirate_rogue_sidebar;
 }
 
 /**
  * Sanitize Sidebar Visibility Settings.
  */
-function pirate_rogue_sanitize_sidebar_hide( $uku_sidebar_hide ) {
-	if ( ! in_array( $uku_sidebar_hide, array( 'sidebar-show', 'sidebar-no', 'sidebar-no-single', 'sidebar-no-front' ) ) ) {
-		$uku_sidebar_hide = 'sidebar-show';
+function pirate_rogue_sanitize_sidebar_hide( $pirate_rogue_sidebar_hide ) {
+	if ( ! in_array( $pirate_rogue_sidebar_hide, array( 'sidebar-show', 'sidebar-no', 'sidebar-no-single', 'sidebar-no-front' ) ) ) {
+		$pirate_rogue_sidebar_hide = 'sidebar-show';
 	}
-	return $uku_sidebar_hide;
+	return $pirate_rogue_sidebar_hide;
 }
 
 /**
@@ -1326,11 +1338,11 @@ function pirate_rogue_sanitize_slideranimation( $uku_slideranimation ) {
 /**
  * Sanitize Custom Header Image Style.
  */
-function pirate_rogue_sanitize_headerstyle( $uku_headerstyle ) {
-	if ( ! in_array( $uku_headerstyle, array( 'header-fullwidth', 'header-boxed', 'header-fullscreen' ) ) ) {
-		$uku_headerstyle = 'header-fullwidth';
+function pirate_rogue_sanitize_headerstyle( $pirate_rogue_headerstyle ) {
+	if ( ! in_array( $pirate_rogue_headerstyle, array( 'header-fullwidth', 'header-boxed', 'header-fullscreen' ) ) ) {
+		$pirate_rogue_headerstyle = 'header-fullwidth';
 	}
-	return $uku_headerstyle;
+	return $pirate_rogue_headerstyle;
 }
 
 

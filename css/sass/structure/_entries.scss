@@ -73,6 +73,14 @@
 .sticky {}
 
 
+/* -- Attachment -- */
+.attachment {
+    .entry-header {
+	.entry-meta {
+	    margin-top: 20px;
+	}
+    }
+}
 
 /* --- Single Post --- */
 
@@ -95,7 +103,6 @@
 }
 
 /* --- Single Post - Header --- */
-
 .single-attachment .entry-header {
   display: block;
   margin: 0 0 35px;

@@ -64,11 +64,6 @@ if (!isset($thumbfallbackid)) {
 				</div><!-- .entry-summary -->
 			<?php endif; ?>
 
-			
-
-
 		</div><!-- .meta-main-wrap -->
-
-
 
 </article><!-- end post -<?php the_ID(); ?> -->

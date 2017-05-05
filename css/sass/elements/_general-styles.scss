@@ -146,31 +146,31 @@ p.site-title {
 
 #comments .comment-reply a, 
 #respond a#cancel-comment-reply-link {
-  color: #999;
+  color: $color-meta;
 }
 
 #comments #respond p {
   &.comment-notes a, 
   &.logged-in-as a {
-    color: #999;
+    color: $color-meta;
   }
 }
 
 #nav-comments a {
-  color: #999;
+  color: $color-meta;;
 }
 
 #comments .comment-meta {
-  color: #999;
+  color: $color-meta;
   a {
-    color: #999;
+    color: $color-meta;
   }
 }
 
 p.wp-caption-text, 
 .contact-form label span, 
 .gallery .gallery-item .gallery-caption {
-  color: #999;
+  color: $color-meta;
 }
 
 #colophon {

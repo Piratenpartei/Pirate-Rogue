@@ -39,6 +39,7 @@
         padding-right: 6.25%;
       }
     }
+    
     .title-wrap {
       bottom: 128px;
       padding-bottom: 35px;
@@ -90,9 +91,7 @@
     }
   }
   /* --- Comments --- */
-  #comments {
-    padding: 70px 0 0 0;
-  }
+
   ol.commentlist {
     padding: 40px 0 10px;
   }
@@ -160,8 +159,7 @@
 ------------------------------------------------------------------------------------ */
 @media screen and (min-width: 49.375em) {
   .admin-bar {
-    #site-branding, 
-    .inner-offcanvas-wrap {
+    #site-branding {
       top: 32px;
     }
   }
@@ -207,10 +205,6 @@
     #site-branding {
       top: 0;
     }
-    .inner-offcanvas-wrap {
-      top: 0;
-      top: 32px;
-    }
   }
   p.site-description {
     display: block;
@@ -223,7 +217,7 @@
     letter-spacing: 1px;
   }
   .hide-tagline p.site-description {
-    display: none !important;
+	display: none !important;
   }
 
   .content-wrap {
@@ -371,155 +365,7 @@
     font-weight: normal;
   }
 
-  /* --- Off Canvas Area --- */
-  #overlay-nav .dropdown-toggle {
-    display: none !important;
-  }
-  .overlay-show #overlay-wrap {
-    width: 100%;
-    /* -- 1010px at 1440px ---*/
-    background: transparent;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: -20px;
-    z-index: 90000000;
-    cursor: pointer;
-  }
-  .inner-offcanvas-wrap {
-    position: fixed;
-    left: -100%;
-    top: 0;
-    height: 100%;
-    overflow: auto;
-    display: block;
-    background: #f4f4f4;
-    width: 70.13888888888889%;
-    /* -- 1010px at 1440px ---*/
-    padding-left: 6.25%;
-    /* -- 90px at 1440px ---*/
-    padding-right: 6.25%;
-    /* -- 90px at 1440px ---*/
-    z-index: 100000000;
-    pointer-events: auto;
-    padding-bottom: 100px;
-    -webkit-transition: left,.35s,ease-in-out;
-    -moz-transition: left,.35s,ease-in-out;
-    -o-transition: left,.35s,ease-in-out;
-    transition: left,.35s,ease-in-out;
-  }
-  .offcanvas-widgets-off .inner-offcanvas-wrap {
-    width: 40.27777777777778%;
-    /* -- 580px at 1440px ---*/
-  }
-  .overlay-show .inner-offcanvas-wrap {
-    left: 0;
-  }
-  #overlay-open {
-    position: absolute;
-    top: 40px;
-    left: -17px;
-    right: auto;
-    width: 4.76190476190476%;
-    height: 59px;
-    text-align: center;
-  }
-  .close-btn-wrap {
-    border: none;
-  }
-  .mobile-search, 
-  #mobile-social {
-    display: none;
-  }
-  #overlay-nav {
-    width: 48.19277108433735%;
-    /* -- 400px at 1440px ---*/
-    float: left;
-    border-top: 1px solid #1a1a1a;
-  }
-  #sidebar-offcanvas {
-    width: 48.19277108433735%;
-    /* -- 400px at 1440px ---*/
-    float: right;
-  }
-  .offcanvas-widgets-off #overlay-nav {
-    width: 100%;
-  }
-  .close-btn-wrap {
-    position: relative;
-    height: 160px;
-  }
-  #overlay-close {
-    position: absolute;
-    top: 40px;
-    left: -17px;
-    right: auto;
-    width: 59px;
-    height: 59px;
-    text-align: center;
-  }
-  #overlay-nav ul {
-    li {
-      padding-top: 15px;
-      padding-bottom: 15px;
-      border-bottom: 1px solid #1a1a1a;
-      &.menu-item-has-children, 
-      &.page_item_has_children {
-        padding-bottom: 0;
-        border-bottom: none;
-      }
-      a {
-        display: inline-block;
-        padding: 0;
-      }
-      &.menu-item-has-children a, 
-      &.page_item_has_children a {
-        border-bottom: none !important;
-        padding-bottom: 0;
-      }
-    }
-    ul {
-      &.sub-menu, 
-      &.children {
-        display: block;
-        border-bottom: 1px solid #1a1a1a;
-        padding-top: 15px;
-        padding-bottom: 15px;
-      }
-      ul {
-        &.sub-menu, 
-        &.children {
-          border-bottom: none;
-          padding-top: 0;
-          padding-bottom: 0;
-        }
-      }
-      li a {
-        padding-left: 0;
-        padding-right: 0;
-      }
-    }
-  }
-  #offcanvas-widgets-open {
-    display: none;
-  }
-  #sidebar-offcanvas {
-    display: block !important;
-    .widget {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
-  .overlay-show .close-btn-wrap {
-    position: relative;
-    top: 0;
-    left: auto;
-    right: auto;
-    background: transparent;
-    height: 158px;
-  }
-  
+ 
   .section-one-column-one {
     .entry-author, .entry-date:before {
       display: inline-block;
@@ -696,12 +542,18 @@
 @media screen and (min-width: 112.5em) {
   /* --- General --- */
  
+  .blog-wrap {
+    min-width: 1560px;     
+    margin-left: auto;
+    margin-right: auto;
+  }
   .singlepost-wrap, 
   .recommended-posts-wrap, 
   .footer-wrap, 
   .big-footer-feature, 
   .headerimg-on.header-boxed .header-image {
     width: 70%;
+  
     margin-left: auto;
     margin-right: auto;
   }

@@ -277,9 +277,13 @@
 	$('#primary').fitVids();
 	$('#singlepost-wrap').fitVids();
 
-
-	$('#overlay-nav a').attr("tabindex","-1");
-
+        // Make overlay navi non-tabable, if desktop navi is shown
+        $(document).ready(function() {
+            if ( window.innerWidth >= 1060 ) {
+                $('#overlay-nav a').attr("tabindex","-1");
+            }
+	});
+        
 	$('a').not($('#desktop-navigation .mainmenu a')).focus(function() {
 		$('.mainmenu li').removeClass('focus');
 	});

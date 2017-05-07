@@ -22,7 +22,7 @@
 		<a href="<?php echo esc_url( get_theme_mod( 'uku_footerfeature_btn_link' ) ); ?>"><img src="<?php echo esc_url( get_theme_mod( 'uku_footerfeature_image' ) ); ?>" width="600" height="600"></a>
             <?php } else {
                     if ( '' != get_theme_mod( 'uku_footerfeature_image' ) ) { ?>
-                         <img src="<?php echo esc_url( get_theme_mod( 'uku_footerfeature_image' ) ); ?>" width="600" height="600">
+                         <img src="<?php echo esc_url( get_theme_mod( 'uku_footerfeature_image' ) ); ?>" alt="" width="600" height="600">
                     <?php }
             } ?>
     </div><!-- end .footer-feature-image -->

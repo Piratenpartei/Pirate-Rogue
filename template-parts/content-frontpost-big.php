@@ -26,7 +26,7 @@ if (!isset($thumbfallbackid)) {
 		</div><!-- end .entry-thumbnail -->
 	<?php elseif ( ! post_password_required() && $imagesrc != '') : ?>
 		<div class="entry-thumbnail fadein">
-			<a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><img src="<?php echo $imagesrc; ?>"></span></a>
+			<a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><img src="<?php echo $imagesrc; ?>" alt=""></span></a>
 			<?php if ( has_post_format('video') ) : ?>
 				<span class="video-icon"><?php esc_html_e('Video', 'pirate-rogue') ?></span>
 			<?php endif; ?>

@@ -255,7 +255,7 @@
                 $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
                 $class_names = ' class="'. esc_attr( $class_names ) . '"';
 
-                $output .= $indent . '<li role="menu-item" ' . $value . $class_names .$ariapopup.'>';
+                $output .= $indent . '<li ' . $value . $class_names .$ariapopup.'>';
                 
                 
                 $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';

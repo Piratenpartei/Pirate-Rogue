@@ -118,6 +118,18 @@ h1 {
     text-decoration: none;
 }
 
+
+h2 {
+    #footer-social &.socialmedia {
+        @include px2rem($font-size-small);
+        hypens: auto;
+        color: rgba(255, 255, 255, 0.5);
+        display: inline-block;
+        float: left;
+        padding: 8px 15px 0px 0px;
+    }
+}
+
 .entry-header {
     h2.entry-title {
       @include px2rem($font-size-h2-entryheader);
@@ -168,6 +180,15 @@ h3 {
     .all-posts-link {
         color: $color-text;
     }
+    
+    #footer-social &.socialmedia {
+        @include px2rem($font-size-small);
+        hypens: auto;
+        color: rgba(255, 255, 255, 0.5);
+         display: inline-block;
+      float: left;
+      padding: 8px 15px 0px 0px;
+    }
 }
 
 .footer-menu h3.footer-menu-title {
@@ -208,6 +229,7 @@ h3 {
 .jetpack_subscription_widget #subscribe-text p, 
 #front-section-three h3.front-section-title, 
 .recommended-posts-wrap #jp-relatedposts h3.jp-relatedposts-headline, 
+#big-footer-feature h2.footer-feature-title,
 #big-footer-feature h3.footer-feature-title {
     @include px2rem($font-size-entrytitle);
 }

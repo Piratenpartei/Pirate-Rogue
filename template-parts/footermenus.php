@@ -9,7 +9,7 @@
 ?>
 
 <div class="footer-menus-wrap cf">
-
+    <h2 class="screen-reader-text"><?php _e('Navigation','pirate-rogue'); ?></h2>
         <?php if ( '' != get_theme_mod( 'pirate_rogue_footermenu_image' ) ) {  
 	
 	    $image = absint(get_theme_mod( 'pirate_rogue_footermenu_image' ));

@@ -11,7 +11,9 @@
 <section id="big-footer-feature" class="big-footer-feature cf">
 
 	<?php if ( '' != get_theme_mod( 'uku_footerfeature_title' )) : ?>
-    	<h3 class="footer-feature-title"><?php echo esc_html(get_theme_mod( 'uku_footerfeature_title' ) ); ?></h3>
+    	<h2 class="footer-feature-title"><?php echo esc_html(get_theme_mod( 'uku_footerfeature_title' ) ); ?></h2>
+        <?php else : ?>
+         <h2 class="screen-reader-text"><?php echo _e('Featured','pirate-rogue'); ?></h2>
     <?php endif; ?>
 
     <div class="footer-feature-image fadein">

@@ -18,11 +18,13 @@
 
     <div class="footer-feature-image fadein">
 
-	    <?php if ( '' != get_theme_mod( 'uku_footerfeature_btn_link' ) ) : ?>
+	    <?php if ( '' != get_theme_mod( 'uku_footerfeature_btn_link' ) ) { ?>
 		<a href="<?php echo esc_url( get_theme_mod( 'uku_footerfeature_btn_link' ) ); ?>"><img src="<?php echo esc_url( get_theme_mod( 'uku_footerfeature_image' ) ); ?>" width="600" height="600"></a>
-		<?php else : ?>
-		 <img src="<?php echo esc_url( get_theme_mod( 'uku_footerfeature_image' ) ); ?>" width="600" height="600">
-		<?php endif; ?>
+            <?php } else {
+                    if ( '' != get_theme_mod( 'uku_footerfeature_image' ) ) { ?>
+                         <img src="<?php echo esc_url( get_theme_mod( 'uku_footerfeature_image' ) ); ?>" width="600" height="600">
+                    <?php }
+            } ?>
     </div><!-- end .footer-feature-image -->
 
 	<div class="footer-feature-textwrap">

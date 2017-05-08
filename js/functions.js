@@ -300,7 +300,11 @@
 	    $(this).next( '.children, .sub-menu' ).toggleClass( 'toggled-on' );
 	});
 
+
+// erstmal auskommentiert, da durch Tab-Navi ersetzt
+/*
 	// Add dropdown toggle that display child menu items.
+
 	$( '.menu-item-has-children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false">' + screenReaderText.expand + '</button>' );
 
 	// Toggle buttons and submenu items with active children menu items.
@@ -315,7 +319,7 @@
 		_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
 		_this.html( _this.html() === screenReaderText.expand ? screenReaderText.collapse : screenReaderText.expand );
 	} );
-
+    */
 
 
 	secondary = $( '#secondary' );

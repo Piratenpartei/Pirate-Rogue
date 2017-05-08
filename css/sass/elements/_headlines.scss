@@ -17,33 +17,37 @@ h1, h2, h3, h4, h5, h6 {
     h1 {
 	padding: 6px 0 9px;
 	@include px2rem($font-size-h1);
+        color: $color-content-h1;   
     }
     h2 {
 	@include px2rem($font-size-h2);
 	padding: 6px 0 9px;
+        color: $color-content-h2; 
     }
     h3 {
 	@include px2rem($font-size-h3);
 	padding: 5px 0 8px;
+        color: $color-content-h3; 
     }
     h4 {
 	@include px2rem($font-size-h4);
 	padding: 5px 0 8px;
+        color: $color-content-h4; 
     }
     h5 {
 	@include px2rem($font-size-h5);
 	padding: 3px 0;
+        color: $color-content-h5; 
 	text-transform: uppercase;
 	letter-spacing: 1px;
     }
     h6 {
 	@include px2rem($font-size-h6);
+        color: $color-content-h6; 
 	padding: 3px 0;
     }
 }
 h2, h3 {
-    color: $color-main;
-    
     #sidebar-page & {
         color: $color-text;
     }

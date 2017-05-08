@@ -79,12 +79,12 @@ a {
      color:  $color-linkhover; // #51a8dd;
 }
 .entry-header {
-  a:focus,  
-  a:hover,
-  h2.entry-title a:focus,
-  h2.entry-title a:hover {
-    color:  $color-linkhover; // #51a8dd; 
-  }
+    a:focus,  
+    a:hover,
+    h2.entry-title a:focus,
+    h2.entry-title a:hover {
+      color:  $color-linkhover; // #51a8dd; 
+    }
 }
 .blog .entry-meta a:focus,
 .blog .entry-meta a:hover {
@@ -119,18 +119,9 @@ a {
 .widget_mc4wp_form_widget p, 
 .jetpack_subscription_widget #subscribe-text p, 
 .section-about-column-one p {
-  color: $color-text;
+    color: $color-text;
 }
 
-
-
-.footer-feature-btn:focus, 
-.footer-feature-btn:hover, 
-.comments-show #comments-toggle, 
-#comments-toggle:focus,
-#comments-toggle:hover {
-   background: $color-cats-background-hover; 
-}
 
 
 #primary #infinite-handle span:focus, 
@@ -195,32 +186,4 @@ p.wp-caption-text,
     a {
         line-height: 1.6em !important;
       }
-}
-
-#colophon {
-  .footer-menu ul a {
-    color: rgba(255, 255, 255, 0.5);
-  }
-  #site-info {
-    color: rgba(255, 255, 255, 0.5);
-    a {
-      color: rgba(255, 255, 255, 0.5);
-    }
-  }
-}
-
-#footer-social span {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-#colophon {
-    .footer-menu ul a:focus, 
-    #site-info a:focus,
-    .footer-menu ul a:hover, 
-    #site-info a:hover {
-        color: rgba(255, 255, 255, 1);
-    }
-    a {
-        color: #fff;
-    }
 }

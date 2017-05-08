@@ -344,6 +344,11 @@ ol.commentlist {
     width: 100%;
 }
 
+.comments-show #comments-toggle, 
+#comments-toggle:focus,
+#comments-toggle:hover {
+   background: $color-cats-background-hover; 
+}
 
 @media screen and (min-width: $breakpoint-sm) {
     .single-post {

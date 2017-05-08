@@ -1,8 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////
 // Colors
 //////////////////////////////////////////////////////////////////////////////
-$color-main:			#df7800; // #ff8800;
-// http://leaverou.github.io/contrast-ratio/#%23df7800-on-white
+$color-main:			#ff8800;
 $color-second:			#672082;
 $color-third:			#698bc1; //
 $color-four:			#148f93;
@@ -25,7 +24,11 @@ $color-cats-background:         $color-second;
 $color-cats-background-hover:   $color-main;
 $color-mark:			#fff;
 $color-mark-background:		lighten($color-second,10%); // #d2f1ff;
-$color-footer-background:	#1a1a1a;
+$color-footer-background:	darken($color-second,10%);
+$color-footer-text:             rgba(255, 255, 255, 0.5);
+$color-footer-text-links:       rgba(255, 255, 255, 0.5);
+$color-footer-text-links-hover: #fff;
+
 $color-meta:			#666;
 
 $color-shortcodes-blue:		#0066ff;
@@ -39,6 +42,14 @@ $color-shortcodes-maincolor:	$color-main;
 $color-shortcodes-secondcolor:	$color-second;
 $color-shortcodes-black:	#000;
 $color-shortcodes-white:	#fff;
+
+$color-content-h1:              $color-text;
+$color-content-h2:              $color-second;
+$color-content-h3:              $color-second;
+$color-content-h4:              $color-text;
+$color-content-h5:              $color-text;
+$color-content-h6:              $color-text;
+
 
 //////////////////////////////////////////////////////////////////////////////
 // Fonts

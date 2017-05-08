@@ -178,7 +178,25 @@
 	 return $classes;
  }
  add_filter( 'body_class', 'pirate_rogue_body_class' );
- 
+  /*-----------------------------------------------------------------------------------*/
+ /* make links relative
+ /*-----------------------------------------------------------------------------------*/
+ function pirate_rogue_make_link_relative($url) {
+    $current_site_url = get_site_url();   
+	if (!empty($GLOBALS['_wp_switched_stack'])) {
+        $switched_stack = $GLOBALS['_wp_switched_stack'];
+        $blog_id = end($switched_stack);
+        if ($GLOBALS['blog_id'] != $blog_id) {
+            $current_site_url = get_site_url($blog_id);
+        }
+    }
+    $current_host = parse_url($current_site_url, PHP_URL_HOST);
+    $host = parse_url($url, PHP_URL_HOST);
+    if($current_host == $host) {
+        $url = wp_make_link_relative($url);
+    }
+    return $url; 
+}
  /*-----------------------------------------------------------------------------------*/
  /* Add a special walker for the main menu, allowing us, to add some stuff :)
  /*-----------------------------------------------------------------------------------*/
@@ -195,12 +213,26 @@
 
                 $classes = empty( $item->classes ) ? array() : (array) $item->classes;
                 $ariapopup = '';
+                
+                $rellink = pirate_rogue_make_link_relative($item->url);
+		if (substr($rellink,0,4) == 'http') {
+		    // absoluter Link auf externe Seite
+		    $classes[] = 'external';
+		} elseif ($rellink == '/') {
+		    // Link auf Startseite
+		    $classes[] = 'homelink';
+		}                 
+                
+                
                 if (in_array('has_children', $classes)) {
                     $ariapopup = ' aria-haspopup="true"';
                 }
                 $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
                 $class_names = ' class="'. esc_attr( $class_names ) . '"';
 
+                
+		               
+                
                 $output .= $indent . '<li role="menu-item" ' . $value . $class_names .$ariapopup.'>';
                 
                 
@@ -255,7 +287,7 @@
                 $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
                 $class_names = ' class="'. esc_attr( $class_names ) . '"';
 
-                $output .= $indent . '<li role="menu-item" ' . $value . $class_names .$ariapopup.'>';
+                $output .= $indent . '<li ' . $value . $class_names .$ariapopup.'>';
                 
                 
                 $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';

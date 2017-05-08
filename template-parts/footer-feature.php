@@ -11,16 +11,20 @@
 <section id="big-footer-feature" class="big-footer-feature cf">
 
 	<?php if ( '' != get_theme_mod( 'uku_footerfeature_title' )) : ?>
-    	<h3 class="footer-feature-title"><?php echo esc_html(get_theme_mod( 'uku_footerfeature_title' ) ); ?></h3>
+    	<h2 class="footer-feature-title"><?php echo esc_html(get_theme_mod( 'uku_footerfeature_title' ) ); ?></h2>
+        <?php else : ?>
+         <h2 class="screen-reader-text"><?php echo _e('Featured','pirate-rogue'); ?></h2>
     <?php endif; ?>
 
     <div class="footer-feature-image fadein">
 
-	    <?php if ( '' != get_theme_mod( 'uku_footerfeature_btn_link' ) ) : ?>
+	    <?php if ( '' != get_theme_mod( 'uku_footerfeature_btn_link' ) ) { ?>
 		<a href="<?php echo esc_url( get_theme_mod( 'uku_footerfeature_btn_link' ) ); ?>"><img src="<?php echo esc_url( get_theme_mod( 'uku_footerfeature_image' ) ); ?>" width="600" height="600"></a>
-		<?php else : ?>
-		 <img src="<?php echo esc_url( get_theme_mod( 'uku_footerfeature_image' ) ); ?>" width="600" height="600">
-		<?php endif; ?>
+            <?php } else {
+                    if ( '' != get_theme_mod( 'uku_footerfeature_image' ) ) { ?>
+                         <img src="<?php echo esc_url( get_theme_mod( 'uku_footerfeature_image' ) ); ?>" alt="" width="600" height="600">
+                    <?php }
+            } ?>
     </div><!-- end .footer-feature-image -->
 
 	<div class="footer-feature-textwrap">

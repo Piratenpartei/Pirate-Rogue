@@ -41,7 +41,7 @@
 			<?php endif; ?>
 		</div><!-- end .section-about-column-one -->
 
-		<?php if (has_nav_menu( 'social-front' ) && '' == get_theme_mod('uku_main_design') or 'standard' == get_theme_mod('uku_main_design') ) : ?>
+		<?php if (has_nav_menu( 'social-front' )  ) : ?>
 			<div class="section-about-column-two">
 				<?php if ( get_theme_mod( 'pirate_rogue_custom_followus' ) ) : ?>
 					<h3 class="social-front-title"><?php echo esc_html( get_theme_mod( 'pirate_rogue_custom_followus' ) ); ?></h3>

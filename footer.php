@@ -18,7 +18,7 @@ $blogname = get_bloginfo('name');
 
 
 	<footer id="colophon" class="site-footer cf">
-
+            <h1 class="screen-reader-text"><?php _e('More Informations','pirate-rogue'); ?></h1>
 		<?php
 		// Big Footer Feature Section
 		if ( '' !== get_theme_mod( 'uku_footerfeature_image' )  ) : ?>
@@ -32,7 +32,7 @@ $blogname = get_bloginfo('name');
 				<?php get_template_part( 'template-parts/footermenus' ); ?>
 			<?php endif; ?>
 
-			<div id="site-info" class="cf">
+			<div id="site-info" class="cf">                           
 				<ul class="credit" role="contentinfo">
 				<?php if ( get_theme_mod( 'pirate_rogue_credit' ) ) : ?>
 					<li><?php echo wp_kses_post( get_theme_mod( 'pirate_rogue_credit' ) ); ?></li>
@@ -47,18 +47,18 @@ $blogname = get_bloginfo('name');
 			</div><!-- end #site-info -->
 
 			<?php if (has_nav_menu( 'social' ) ) : ?>
-				<nav id="footer-social" class="social-nav" role="navigation">
+				<div id="footer-social" class="social-nav">
 					<?php if ( get_theme_mod( 'pirate_rogue_custom_followus' ) ) : ?>
-						<span><?php echo esc_html( get_theme_mod( 'pirate_rogue_custom_followus' ) ); ?></span>
+						<h2 class="socialmedia"><?php echo esc_html( get_theme_mod( 'pirate_rogue_custom_followus' ) ); ?></h2>
 					<?php else : ?>
-						<span><?php esc_html_e( 'Follow us', 'pirate-rogue'); ?></span>
+						<h2 class="socialmedia"><?php esc_html_e( 'Follow us', 'pirate-rogue'); ?>:</h2>
 					<?php endif; ?>
 					<?php wp_nav_menu( array(
 						'theme_location'	 => 'social',
 						'container' 		   => 'false',
 						'depth' 			     => -1));
 					?>
-				</nav><!-- end #footer-social -->
+				</div><!-- end #footer-social -->
 			<?php endif; ?>
 
 		</div><!-- end .footer-wrap -->

@@ -83,13 +83,14 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
                             <button id="overlay-open" class="overlay-open overlay-btn"><span><?php esc_html_e( 'Menu', 'pirate-rogue'); ?></span></button>
 
                             <?php if (has_nav_menu( 'social' ) ) : ?>
-                                    <nav id="header-social" class="header-social social-nav" role="navigation">
+                                    <div id="header-social" class="header-social social-nav">
+                                        <h2 class="screen-reader-text"><?php _e('Social Media Plattformen','pirate-rogue'); ?></h2>
                                     <?php wp_nav_menu( array(
                                             'theme_location'	=> 'social',
                                             'container' 	=> 'false',
                                             'depth' 		=> -1));
                                     ?>
-                                    </nav><!-- end #header-social -->
+                                    </div><!-- end #header-social -->
                             <?php endif; ?>
                     </div><!-- end #site-branding -->
 
@@ -100,8 +101,12 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
 
                     <?php if ( '' == get_theme_mod( 'uku_hidesearch' ) ) : ?>
                     <button id="search-open" class="search-open search-btn"><span><?php esc_html_e( 'Search', 'pirate-rogue'); ?></span></button>
-                            <div class="desktop-search">                         
-                                    <?php get_search_form(); ?>
+                            <div class="desktop-search">                                     
+                                <form method="get" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
+                                        <label for="s" class="screen-reader-text"><span><?php esc_html_e( 'Search', 'pirate-rogue'); ?></span></label>
+                                        <input type="text" class="search-field" id="s" name="s" placeholder="<?php echo esc_attr_x( 'Search...', 'placeholder', 'pirate-rogue'); ?>" />
+                                        <input type="submit" class="submit" name="submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'pirate-rogue'); ?>" />
+                                </form>     
                             </div><!-- end .desktop-search -->
                     <?php endif; ?>
 
@@ -155,13 +160,14 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
                             </nav><!-- .main-navigation -->
 
                             <?php if (has_nav_menu( 'social' ) ) : ?>
-                                    <nav id="mobile-social" class="social-nav" role="navigation">
+                                    <div id="mobile-social" class="social-nav" role="navigation">
+                                        <h2 class="screen-reader-text"><?php _e('Social Media Plattformen','pirate-rogue'); ?></h2>
                                     <?php wp_nav_menu( array(
                                             'theme_location'	=> 'social',
                                             'container' 		=> 'false',
                                             'depth' 			=> -1));
                                     ?>
-                                    </nav><!-- end #mobile-social -->
+                                    </div><!-- end #mobile-social -->
                             <?php endif; ?>
 
                             <?php if ( '' == get_theme_mod( 'uku_hidesearch' ) ) : ?>

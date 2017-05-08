@@ -8,6 +8,9 @@
   overflow: hidden;
   margin: 0 auto;
   background: $color-footer-background;
+  border-top: 1px solid  $color-footer-background;  
+    // seems useless, but in case someone changes the background via user style
+    // this will make a line between main content and footer
   color: #fff;
   padding-top: 40px;
   padding-bottom: 40px;
@@ -22,17 +25,18 @@
 }
 
 #site-info {
-  padding-top: 30px;
+  padding-top: 10px;
   ul {
     margin: 0;
     padding: 0;
     li {
-      display: block;
-      &.copyright:after, 
-          &.wp-credit:after, 
-          &.theme-author:after {
-        content: '\002E';
-      }
+        display: block;
+
+        &.copyright:after, 
+        &.wp-credit:after, 
+        &.theme-author:after {
+              content: '\002E';
+        }
     }
   }
 }
@@ -60,7 +64,7 @@
   padding-bottom: 40px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-
+#big-footer-feature h2.footer-feature-title,
 #big-footer-feature h3.footer-feature-title {
   position: relative;
   display: block;
@@ -178,21 +182,49 @@
 
 #footer-social {
   padding-top: 30px;
-  span {
-    display: none;
-  }
+
   ul {
     margin: 0;
     padding: 0;
     display: inline-block;
   }
+  h3.socialmedia,
   span {
-    display: none;
+    @extend .screen-reader-text;
+    color: rgba(255, 255, 255, 0.5);
   }
   ul li {
     display: inline-block;
   }
 }
+
+
+#colophon {
+    .footer-menu ul a {
+        color: $color-footer-text-links;
+    }
+    #site-info {
+        color:  $color-footer-text;
+        a {
+            color:  $color-footer-text-links;
+        }
+    }
+  
+    .footer-menu ul a:focus, 
+    #site-info a:focus,
+    .footer-menu ul a:hover, 
+    #site-info a:hover {
+        color:  $color-footer-text-links-hover;
+    }
+    a {
+        color: $color-footer-text-links;
+    }
+
+}
+
+
+
+
 @media screen and (min-width: $breakpoint-600) {
     .footer-feature-image {
 	width: 47.8134110787172%;
@@ -277,6 +309,7 @@
     ul {
       float: left;
     }
+
     span {
       display: inline-block;
       float: left;

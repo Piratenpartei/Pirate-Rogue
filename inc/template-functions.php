@@ -201,28 +201,28 @@
  /* Add a special walker for the main menu, allowing us, to add some stuff :)
  /*-----------------------------------------------------------------------------------*/
  class Pirate_Rogue_Menu_Walker extends Walker_Nav_Menu {
-      public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
-      {
+      public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
            if ( '-' === $item->title ) {
                 $item_output = '<li class="menu_separator"><hr>';
            } else {     
                 global $wp_query;
                 $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
-                $class_names = $value = '';
+                $class_names = $value = $attributes = '';
 
                 $classes = empty( $item->classes ) ? array() : (array) $item->classes;
                 $ariapopup = '';
-                
-                $rellink = pirate_rogue_make_link_relative($item->url);
-		if (substr($rellink,0,4) == 'http') {
-		    // absoluter Link auf externe Seite
-		    $classes[] = 'external';
-		} elseif ($rellink == '/') {
-		    // Link auf Startseite
-		    $classes[] = 'homelink';
-		}                 
-                
+                $rellink = '';
+		if (!empty($item->url)) {		
+		    $rellink = pirate_rogue_make_link_relative($item->url);
+		    if (substr($rellink,0,4) == 'http') {
+			// absoluter Link auf externe Seite
+			$classes[] = 'external';
+		    } elseif ($rellink == '/') {
+			// Link auf Startseite
+			$classes[] = 'homelink';
+		    }                 
+		}
                 
                 if (in_array('has_children', $classes)) {
                     $ariapopup = ' aria-haspopup="true"';
@@ -233,7 +233,7 @@
                 
 		               
                 
-                $output .= $indent . '<li role="menu-item" ' . $value . $class_names .$ariapopup.'>';
+                $output .= $indent . '<li ' . $value . $class_names .$ariapopup.'>';
                 
                 
                 $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
@@ -245,14 +245,24 @@
                 if($depth != 0) {
                           $description = "";
                 }
-
-                 $item_output = $args->before;
+		$item_output = '';
+		if (!empty($args->before))
+		    $item_output .= $args->before;
                  $item_output .= '<a'. $attributes .'>';
-                 $item_output .= $args->link_before .apply_filters( 'the_title', $item->title, $item->ID );
-                 $item_output .= $description;
-                 $item_output .= $args->link_after;                
-                 $item_output .= '</a>';
-                 $item_output .= $args->after;
+                 
+		if (!empty($args->link_before)) 
+		    $item_output .= $args->link_before;
+		
+		$item_output .=apply_filters( 'the_title', $item->title, $item->ID );
+                $item_output .= $description;
+                
+		if (!empty($args->link_after)) 
+		    $item_output .= $args->link_after;                
+                
+		$item_output .= '</a>';
+		
+		 if (!empty($args->after))
+		    $item_output .= $args->after;
            }
            $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
             
@@ -269,15 +279,14 @@
  /* Add a special walker for the main menu, allowing us, to add some stuff :)
  /*-----------------------------------------------------------------------------------*/
  class Pirate_Rogue_OverlayMenu_Walker extends Walker_Nav_Menu {
-      public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
-      {
+      public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
            if ( '-' === $item->title ) {
                 $item_output = '<li class="menu_separator">';
            } else {     
                 global $wp_query;
                 $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
-                $class_names = $value = '';
+                $class_names = $value = $attributes = '';
 
                 $classes = empty( $item->classes ) ? array() : (array) $item->classes;
                 $ariapopup = '';
@@ -299,25 +308,38 @@
                 if($depth != 0) {
                           $description = "";
                 }
+		$item_output = '';
+		if (!empty($attributes)) {
 
-                 $item_output = $args->before;
-                 $item_output .= '<a'. $attributes .'>';
-                 $item_output .= $args->link_before .apply_filters( 'the_title', $item->title, $item->ID );
-                 $item_output .= $description;
-                 $item_output .= $args->link_after;                
-                 $item_output .= '</a>';
-                 $item_output .= $args->after;
+		    if (!empty($args->before))
+			$item_output .= $args->before;
+		     $item_output .= '<a'. $attributes .'>';
+
+		    if (!empty($args->link_before)) 
+			$item_output .= $args->link_before;
+
+		    $item_output .=apply_filters( 'the_title', $item->title, $item->ID );
+		    $item_output .= $description;
+
+		    if (!empty($args->link_after)) 
+			$item_output .= $args->link_after;                
+
+		    $item_output .= '</a>';
+
+		     if (!empty($args->after))
+			$item_output .= $args->after;
+		}
            }
            $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
             
        }
         public function display_element($el, &$children, $max_depth, $depth = 0, $args = array(), &$output){
-        $id = $this->db_fields['id'];
-        if(isset($children[$el->$id]))
-            $el->classes[] = 'has_children';
+	    $id = $this->db_fields['id'];
+	    if(isset($children[$el->$id]))
+		$el->classes[] = 'has_children';
 
-        parent::display_element($el, $children, $max_depth, $depth, $args, $output);
-    }
+	    parent::display_element($el, $children, $max_depth, $depth, $args, $output);
+	}
 }
 /*-----------------------------------------------------------------------------------*/
 /* Get Image Meta Data

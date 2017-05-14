@@ -42,7 +42,7 @@
     }
 }
 
-@media screen and (min-width: $breakpoint-1024) {
+@media screen and (min-width: $breakpoint-1060) {
      /* --- Search Desktop --- */
   #masthead {
 	position: relative;
@@ -104,11 +104,12 @@
                     padding: 9px 0;
                     color: #fff;
                     letter-spacing: 0.5px;
+		    font-weight: bolder;
                 }
                 &[type="submit"] {
                     margin-left: 10px;
                     padding: 8px 20px;
-                    background: none;
+                    background: $color-main;;
                     color: #fff;
                     border: 2px solid $color-main;
                     font-size: 15px;
@@ -132,10 +133,17 @@
   
     .searchbar-maincolor .desktop-search {     
         background:  rgba($color-main, 0.9);
+	
         input {
                 &.search-field {            
                     border-bottom: 1px solid $color-second;
-                     color: #fff;     
+                    color: #fff;
+		 
+		    &:hover, 
+		    &:focus {
+			background: darken($color-main,20%);
+			padding-left: 10px;
+		    }
                 }
                 &[type="submit"] {
                     background:  $color-second;;
@@ -146,6 +154,7 @@
                 &[type="submit"]:hover {
                         background: $color-second;
                         border: 2px solid $color-main;
+			font-weight: bolder;
                 }
           }
     }

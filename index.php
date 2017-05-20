@@ -13,7 +13,7 @@ get_header(); ?>
 
 <?php
 // Featured Slider
-if ( '' != get_theme_mod( 'uku_featuredtag' ) ) : ?>
+if ( '' != get_theme_mod( 'pirate_rogue_featuredtag' ) || '' != get_theme_mod( 'pirate_rogue_featuredcat' ) )  : ?>
 <div class="featured-content cf">
 	<?php
 	// Front Page Featured Post Slider
@@ -87,7 +87,7 @@ if ( '' != get_theme_mod( 'uku_front_section_two_tag' ) || '' != get_theme_mod( 
 
 <?php
 // Front Page Section About
-if ( '' != get_theme_mod( 'uku_front_section_about_text' ) ) : ?>
+if ( '' != get_theme_mod( 'pirate_rogue_front_section_about_text' ) ) : ?>
 <?php get_template_part( 'template-parts/front-section-about' ); ?>
 <?php endif; ?>
 

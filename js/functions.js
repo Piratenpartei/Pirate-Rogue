@@ -53,12 +53,20 @@
 	// Desktio Search open/close
 	$('.search-open').on( 'click', function () {
 		$('body').toggleClass('desktop-search-show');
+                var searchInput = $('.desktop-search input#s');
+                searchInput.focus();
 	});
-
+        
+        $('.desktop-search').focusout(function() {
+		$('body').removeClass('desktop-search-show');
+	});
+        
 	$('.search-close').on( 'click', function () {
 		$('body').removeClass('desktop-search-show');
 	});
-
+        
+        
+        
 	// Off Canvas Cart open/close
 	$('.cart-offcanvas-open').on( 'click', function () {
 		$('body').toggleClass('offcanvascart-show');
@@ -104,17 +112,12 @@
 		} );
 	}
 
-	// Fade In Animations (Uku Neo, Standard)
+	// Fade In Animations
 	$('.fadein').viewportChecker({
 		classToAdd: 'inview', // Class to add to the elements when they are visible
 		removeClassAfterAnimation: false
 	});
 
-	// Fade + SlideIn In Animations (Uku Serif)
-	$('.type-product').viewportChecker({
-		classToAdd: 'inview', // Class to add to the elements when they are visible
-		removeClassAfterAnimation: false // Remove added classes after animation has finished
-	});
 
 	$('.product-category').viewportChecker({
 		classToAdd: 'inview', // Class to add to the elements when they are visible

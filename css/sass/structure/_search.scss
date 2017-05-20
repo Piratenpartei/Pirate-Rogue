@@ -42,6 +42,49 @@
     }
 }
 
+#footer-search {
+    @include px2rem($font-size-smaller);
+    
+    .search-field {
+        background:  rgba(26, 26, 26, 0.25);;
+        border: 1px solid rgba(255, 255, 255, 0.2);;
+        padding: 5px;
+        color: #fff;
+        letter-spacing: 0.5px;
+        font-weight: bolder;
+            
+        :focus,
+        :hover {
+            background: #fff;
+            color: $color-text;
+        }
+    }
+    input#submit, 
+    input[type="submit"] { 
+       background:  rgba(26, 26, 26, 0.4);;
+       border: 1px solid rgba(255, 255, 255, 0.2);;
+       padding: 5px;
+       
+            :focus,
+            :hover {
+                background: $color-main;
+                color: #fff;
+            }
+    }
+    input#submit:focus, 
+    input#submit:hover, 
+    input[type="submit"]:focus,
+    input[type="submit"]:hover{ 
+
+                background: $color-main;
+                color: #fff;
+   
+    }
+    
+    
+}
+
+
 @media screen and (min-width: $breakpoint-1060) {
      /* --- Search Desktop --- */
   #masthead {

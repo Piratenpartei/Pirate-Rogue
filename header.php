@@ -60,6 +60,7 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
             <ul>
                 <li><a href="#overlay-wrap" data-target="#overlay-wrap" data-firstchild="0" class="jumplink-content"><?php _e('Content','pirate-rogue'); ?></a></li>
                 <li><a href="#masthead" data-target="#desktop-navigation" data-firstchild="1" class="jumplink-nav"><?php _e('Main Menu','pirate-rogue'); ?></a></li>
+                <li><a href="#footer-search" data-target="#footer-search" data-firstchild="1" class="jumplink-nav"><?php _e('Search','pirate-rogue'); ?></a></li>
                 <li><a href="#colophon" data-target="#colophon" data-firstchild="1" class="jumplink-nav"><?php _e('Footer','pirate-rogue'); ?></a></li>
             </ul>
 	</nav>    
@@ -99,7 +100,7 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
                     </nav><!-- .main-navigation -->
 
 
-                    <?php if ( '' == get_theme_mod( 'uku_hidesearch' ) ) : ?>
+                    <?php if ( '' == get_theme_mod( 'pirate_rogue_hidesearch' ) ) : ?>
                     <button id="search-open" class="search-open search-btn"><span><?php esc_html_e( 'Search', 'pirate-rogue'); ?></span></button>
                             <div class="desktop-search">                                     
                                 <form method="get" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
@@ -114,7 +115,7 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
 
             <div class="sticky-header hidden">
                     <button id="overlay-open-sticky" class="overlay-open overlay-btn"><span><?php esc_html_e( 'Menu', 'pirate-rogue'); ?></span></button>
-                    <?php if ( '' == get_theme_mod( 'uku_hidesearch' ) ) : ?>
+                    <?php if ( '' == get_theme_mod( 'pirate_rogue_hidesearch' ) ) : ?>
                             <button id="search-open-sticky" class="search-open search-btn"><span><?php esc_html_e( 'Search', 'pirate-rogue'); ?></span></button>
                     <?php endif; ?>
 
@@ -170,7 +171,7 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
                                     </div><!-- end #mobile-social -->
                             <?php endif; ?>
 
-                            <?php if ( '' == get_theme_mod( 'uku_hidesearch' ) ) : ?>
+                            <?php if ( '' == get_theme_mod( 'pirate_rogue_hidesearch' ) ) : ?>
                             <div class="mobile-search">
                                     <?php get_search_form(); ?>
                             </div><!-- end .mobile-search -->

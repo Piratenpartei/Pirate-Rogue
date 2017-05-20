@@ -178,6 +178,15 @@
   }
 }
 
+/* --- Footer Search --- */
+
+#footer-search {
+    @extend .screen-reader-text;
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+}
+
 /* --- Footer Social --- */
 
 #footer-social {
@@ -247,6 +256,8 @@
   .big-footer-feature p.text-small {
     padding: 20px 0 0 0;
   }
+  
+  
 }
 
 @media screen and (min-width: $breakpoint-1060) {

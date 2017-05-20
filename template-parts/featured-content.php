@@ -12,15 +12,23 @@
 <div class="featured-slider cf">
 <?php
 	// Get a number of Front page recent posts set in the customizer
-	$featuredtag = get_theme_mod('uku_featuredtag');
-        $featurednum = absint( get_theme_mod('pirate_rogue_featured_slider_num'));
+	$featuredtag = get_theme_mod('pirate_rogue_featuredtag');
+        $featurednum = absint( get_theme_mod('pirate_rogue_featured_slider_num'));        
+        $postcat = get_theme_mod('pirate_rogue_featuredcat');
+
+        
         if (!isset($featurednum)) {
             $featurednum = 3;
         }
+        
+        
+        
         $args = array(
-		'posts_per_page'=> $featurednum,
-		'post_status'	=> 'publish',
-		'tag_id'  	=> $featuredtag,
+		'posts_per_page'    => $featurednum,
+		'post_status'       => 'publish',
+		'tag_id'            => $featuredtag,
+                'cat'               => $postcat,     
+                'ignore_sticky_posts' => 1,
 	);
 
 	$uku_front_query = new WP_Query( $args );

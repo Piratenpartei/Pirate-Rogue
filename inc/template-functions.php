@@ -140,7 +140,8 @@
               // No diebadr for 404 pages due to danger of loops cause of 404-files in sidebar :)
          } 
 
-         if ( ! display_header_text() ) {
+        $logo =  pirate_rogue_get_custom_logo();
+         if ( !empty($logo)) {
              $classes[] = 'no-header-text';
          }
              

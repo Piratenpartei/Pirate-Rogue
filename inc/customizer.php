@@ -158,6 +158,8 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'priority'		     => 22,
 	) );
 
+
+        
 	$wp_customize->add_setting( 'pirate_rogue_customlogofooter', array(
 		'default'		     => '',
 		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',

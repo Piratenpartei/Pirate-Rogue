@@ -26,13 +26,13 @@
 		</div><!-- end .custom-logo-wrap -->
 	<?php } else { ?>
                 <p class="title-footer">
-                <?php if ( '' == get_theme_mod( 'uku_footerfeature_image' )  ) : ?>
+                <?php if ( '' == get_theme_mod( 'pirate_rogue_footerfeature_image' )  ) : ?>
 			<?php bloginfo( 'name' ); ?>
 		<?php endif; ?>
                 </p>    
         <?php }        
 	if (has_nav_menu( 'footer-one' ) ) : ?>
-	<nav id="footer-menu-one" class="footer-menu" role="navigation">
+	<nav id="footer-menu-one" class="footer-menu">
 		<?php
 			$location = 'footer-one';
 			$menu_obj = uku_get_menu_by_location($location );
@@ -45,7 +45,7 @@
 	<?php endif; ?>
 
 	<?php if (has_nav_menu( 'footer-two' ) ) : ?>
-	<nav id="footer-menu-two" class="footer-menu" role="navigation">
+	<nav id="footer-menu-two" class="footer-menu">
 		<?php
 			$location = 'footer-two';
 			$menu_obj = uku_get_menu_by_location($location );
@@ -58,7 +58,7 @@
 	<?php endif; ?>
 
 	<?php if (has_nav_menu( 'footer-three' ) ) : ?>
-	<nav id="footer-menu-three" class="footer-menu" role="navigation">
+	<nav id="footer-menu-three" class="footer-menu">
 		<?php
 			$location = 'footer-three';
 			$menu_obj = uku_get_menu_by_location($location );
@@ -71,7 +71,7 @@
 	<?php endif; ?>
 
 	<?php if (has_nav_menu( 'footer-four' ) ) : ?>
-	<nav id="footer-menu-four" class="footer-menu" role="navigation">
+	<nav id="footer-menu-four" class="footer-menu">
 		<?php
 			$location = 'footer-four';
 			$menu_obj = uku_get_menu_by_location($location );

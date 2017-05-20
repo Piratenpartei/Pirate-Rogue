@@ -104,17 +104,12 @@
 		} );
 	}
 
-	// Fade In Animations (Uku Neo, Standard)
+	// Fade In Animations
 	$('.fadein').viewportChecker({
 		classToAdd: 'inview', // Class to add to the elements when they are visible
 		removeClassAfterAnimation: false
 	});
 
-	// Fade + SlideIn In Animations (Uku Serif)
-	$('.type-product').viewportChecker({
-		classToAdd: 'inview', // Class to add to the elements when they are visible
-		removeClassAfterAnimation: false // Remove added classes after animation has finished
-	});
 
 	$('.product-category').viewportChecker({
 		classToAdd: 'inview', // Class to add to the elements when they are visible

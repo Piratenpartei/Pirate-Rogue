@@ -60,7 +60,7 @@
 	 if ('sidebar-no' == get_theme_mod( 'pirate_rogue_sidebar_hide' ) ) {
 		 $classes[] = 'no-sidebar';
 	 }
-	 if ('' != get_theme_mod( 'uku_featuredtag' ) ) {
+	 if ('' != get_theme_mod( 'pirate_rogue_featuredtag' )  || '' != get_theme_mod( 'pirate_rogue_featuredcat' ) ) {
 		 $classes[] = 'slider-on';
 	 }
 	 if ('slider-boxed' == get_theme_mod( 'uku_sliderstyle' ) ) {
@@ -78,7 +78,7 @@
 	 if ('header-fullscreen' == get_theme_mod( 'pirate_rogue_headerstyle' ) ) {
 		 $classes[] = 'header-fullscreen';
 	 }
-	 if ('dark' == get_theme_mod( 'uku_fixedheader' ) ) {
+	 if ('dark' == get_theme_mod( 'pirate_rogue_fixedheader' ) ) {
 		 $classes[] = 'hide-header-sticky';
 	 }
 
@@ -296,7 +296,7 @@
                 $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
                 $class_names = ' class="'. esc_attr( $class_names ) . '"';
 
-                $output .= $indent . '<li ' . $value . $class_names .$ariapopup.'>';
+                
                 
                 
                 $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
@@ -328,6 +328,9 @@
 
 		     if (!empty($args->after))
 			$item_output .= $args->after;
+                     
+                     
+                    $output .= $indent . '<li ' . $value . $class_names .$ariapopup.'>';
 		}
            }
            $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );

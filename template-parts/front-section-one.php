@@ -23,16 +23,7 @@ $uku_section_one_first_query = new WP_Query( array(
 	'ignore_sticky_posts' 	=> 1,
 ) );
 
-if ( 'neo' == get_theme_mod('uku_main_design') || 'serif' == get_theme_mod('uku_main_design')  ){
-	$args = array(
-		'posts_per_page'			=> 3,
-		'offset'							=> 1,
-		'post_status'					=> 'publish',
-		'tag_id'							=> $posttag,
-		'cat'									=> $postcat,
-		'ignore_sticky_posts' => 1,
-	);
-} else {
+
 	$args = array(
 		'posts_per_page'			=> 5,
 		'offset' 							=> 1,
@@ -41,7 +32,7 @@ if ( 'neo' == get_theme_mod('uku_main_design') || 'serif' == get_theme_mod('uku_
 		'cat' 								=> $postcat,
 		'ignore_sticky_posts' => 1,
 	);
-}
+
 $uku_section_one_second_query = new WP_Query( $args );
 ?>
 

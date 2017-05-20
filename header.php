@@ -99,7 +99,7 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
                     </nav><!-- .main-navigation -->
 
 
-                    <?php if ( '' == get_theme_mod( 'uku_hidesearch' ) ) : ?>
+                    <?php if ( '' == get_theme_mod( 'pirate_rogue_hidesearch' ) ) : ?>
                     <button id="search-open" class="search-open search-btn"><span><?php esc_html_e( 'Search', 'pirate-rogue'); ?></span></button>
                             <div class="desktop-search">                                     
                                 <form method="get" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
@@ -114,7 +114,7 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
 
             <div class="sticky-header hidden">
                     <button id="overlay-open-sticky" class="overlay-open overlay-btn"><span><?php esc_html_e( 'Menu', 'pirate-rogue'); ?></span></button>
-                    <?php if ( '' == get_theme_mod( 'uku_hidesearch' ) ) : ?>
+                    <?php if ( '' == get_theme_mod( 'pirate_rogue_hidesearch' ) ) : ?>
                             <button id="search-open-sticky" class="search-open search-btn"><span><?php esc_html_e( 'Search', 'pirate-rogue'); ?></span></button>
                     <?php endif; ?>
 
@@ -170,7 +170,7 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
                                     </div><!-- end #mobile-social -->
                             <?php endif; ?>
 
-                            <?php if ( '' == get_theme_mod( 'uku_hidesearch' ) ) : ?>
+                            <?php if ( '' == get_theme_mod( 'pirate_rogue_hidesearch' ) ) : ?>
                             <div class="mobile-search">
                                     <?php get_search_form(); ?>
                             </div><!-- end .mobile-search -->

@@ -36,8 +36,8 @@
 				<?php endif; ?>
 			</div><!-- end .about-img-wrap -->
 
-			<?php if ( '' != get_theme_mod( 'uku_front_section_about_text' ) ) : ?>
-				<p class="section-about-text"><span><?php echo wp_kses_post( get_theme_mod( 'uku_front_section_about_text' ) ); ?></span></p>
+			<?php if ( '' != get_theme_mod( 'pirate_rogue_front_section_about_text' ) ) : ?>
+				<p class="section-about-text"><span><?php echo wp_kses_post( get_theme_mod( 'pirate_rogue_front_section_about_text' ) ); ?></span></p>
 			<?php endif; ?>
 		</div><!-- end .section-about-column-one -->
 

@@ -111,6 +111,16 @@ li {
 		}
 	    }
 	}
+        &.textlist {
+            @extend .nolist;
+            margin-left: 0;
+            padding-left: 0;
+            
+            li {
+                padding-left: 0;
+                display: inline;
+            }
+        }
     }
     ol {
         padding-left: 70px;

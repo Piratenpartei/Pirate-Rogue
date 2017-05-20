@@ -3,21 +3,34 @@ Links and colors
 */
 
 a {
-  color: $color-text;
-  text-decoration: none;
+    color: $color-text;
+    text-decoration: none;
+
+    &:focus,
+    &:hover {
+         color: $color-linkhover;
+    }
   
-  &:focus,
-  &:hover {
-       color: $color-linkhover;
-  }
+    .entry-content &, 
+    .comment-text & {
+        color: $color-content-links; 
+        font-weight: bold;
+       // text-decoration: underline;
+        
+        &:focus,
+        &:hover {
+            color: $color-second;
+        }
+    }
+    .author-bio &,
+    .textwidget & {
+        text-decoration: underline;
+    }
+  
 }
 
-.entry-content a, 
-.comment-text a, 
-.author-bio a, 
-.textwidget a {
-    text-decoration: underline;
-}
+
+
 
 .entry-header h2.entry-title {
     color: $color-text;
@@ -33,6 +46,7 @@ a {
 
 .author-bio a,
 .featured-slider button.slick-arrow:focus::after,
+.featured-slider button.slick-arrow:hover::after,
 .front-section a.all-posts-link:focus,
 #overlay-close:focus,
 .widget-area .widget ul li a:focus, 
@@ -43,7 +57,6 @@ a {
 .single-post .post-navigation a:focus,
 .single-attachment .post-navigation a:focus,
 .single-post .hentry .entry-meta a:focus,
-.featured-slider button.slick-arrow:hover::after,
 .front-section a.all-posts-link:hover,
 #overlay-close:hover,
 .widget-area .widget ul li a:hover, 
@@ -57,15 +70,7 @@ a {
     color: $color-content-links; 
 }
 
-.comment-text a, 
-.entry-content a {
-    color: $color-content-links; 
-     
-    &:focus,
-    &:hover {
-       color: $color-second;
-    }
-}
+
 
 
 #secondary h2.widget-title, 

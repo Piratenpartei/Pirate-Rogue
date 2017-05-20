@@ -16,20 +16,20 @@ $postcat = get_theme_mod('uku_front_section_two_cat');
 $category_link = get_category_link($postcat);
 
 $uku_section_two_first_query = new WP_Query( array(
-	'posts_per_page'				=> 1,
-	'post_status'						=> 'publish',
-	'tag_id' 								=> $posttag,
-	'cat' 									=> $postcat,
+	'posts_per_page'                => 1,
+	'post_status'                   => 'publish',
+	'tag_id'                        => $posttag,
+	'cat'                           => $postcat,
 	'ignore_sticky_posts'		=> 1,
 ) );
 
 
 	$args = array(
-		'posts_per_page' 			=> 8,
-		'offset' 							=> 1,
-		'post_status'	 				=> 'publish',
-		'tag_id' 							=> $posttag,
-		'cat' 								=> $postcat,
+		'posts_per_page'        => 8,
+		'offset'                => 1,
+		'post_status'           => 'publish',
+		'tag_id'                => $posttag,
+		'cat'                   => $postcat,
 		'ignore_sticky_posts'	=> 1,
 	);
 

@@ -53,12 +53,20 @@
 	// Desktio Search open/close
 	$('.search-open').on( 'click', function () {
 		$('body').toggleClass('desktop-search-show');
+                var searchInput = $('.desktop-search input#s');
+                searchInput.focus();
 	});
-
+        
+        $('.desktop-search').focusout(function() {
+		$('body').removeClass('desktop-search-show');
+	});
+        
 	$('.search-close').on( 'click', function () {
 		$('body').removeClass('desktop-search-show');
 	});
-
+        
+        
+        
 	// Off Canvas Cart open/close
 	$('.cart-offcanvas-open').on( 'click', function () {
 		$('body').toggleClass('offcanvascart-show');

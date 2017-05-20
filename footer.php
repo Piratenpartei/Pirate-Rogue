@@ -31,8 +31,12 @@ $blogname = get_bloginfo('name');
                                 || has_nav_menu( 'footer-three' ) || has_nav_menu( 'footer-four' ) ) : ?>
 				<?php get_template_part( 'template-parts/footermenus' ); ?>
 			<?php endif; ?>
-
-			<div id="site-info" class="cf">                           
+                        <?php if ( '' == get_theme_mod( 'pirate_rogue_footer_hidesearch' ) ) { ?>
+                        <div id="footer-search">
+                                <?php get_search_form(); ?>
+                        </div>
+                        <?php } ?>
+			<div id="site-info" class="cf">  
 				<ul class="credit" role="contentinfo">
 				<?php if ( get_theme_mod( 'pirate_rogue_credit' ) ) : ?>
 					<li><?php echo wp_kses_post( get_theme_mod( 'pirate_rogue_credit' ) ); ?></li>

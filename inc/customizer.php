@@ -257,7 +257,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	) );
         
 
-	// Uku Theme Options - Header
+	//  Theme Options - Header
 	$wp_customize->add_setting( 'pirate_rogue_hidesearch', array(
 		'default'		     => '',
 		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
@@ -270,6 +270,10 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'priority'	     => 1,
 	) );
 
+        
+        
+        
+        
 
 	$wp_customize->add_setting( 'pirate_rogue_socialmedia_style', array(
 		'default' 	         => 'colorful',
@@ -536,7 +540,19 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	    'height'      =>  450,
 		    'priority'		=> 7,
 	) ) );
-	
+        
+        // Add search in footer
+	$wp_customize->add_setting( 'pirate_rogue_footer_search', array(
+		'default'		     => '',
+		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'pirate_rogue_footer_search', array(
+		'label'		     => esc_html__( 'Show search in Footer', 'pirate-rogue'),
+		'section'	     => 'pirate_rogue_footerfeature',
+		'type'		     => 'checkbox',
+		'priority'	     => 8,
+	) );       	
 	
 	
 	// Uku Front Page - General

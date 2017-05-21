@@ -60,7 +60,9 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
             <ul>
                 <li><a href="#overlay-wrap" data-target="#overlay-wrap" data-firstchild="0" class="jumplink-content"><?php _e('Content','pirate-rogue'); ?></a></li>
                 <li><a href="#masthead" data-target="#desktop-navigation" data-firstchild="1" class="jumplink-nav"><?php _e('Main Menu','pirate-rogue'); ?></a></li>
+                 <?php if ( get_theme_mod( 'pirate_rogue_footer_search' ) ) { ?>             
                 <li><a href="#footer-search" data-target="#footer-search" data-firstchild="1" class="jumplink-nav"><?php _e('Search','pirate-rogue'); ?></a></li>
+                 <?php } ?>
                 <li><a href="#colophon" data-target="#colophon" data-firstchild="1" class="jumplink-nav"><?php _e('Footer','pirate-rogue'); ?></a></li>
             </ul>
 	</nav>    

@@ -21,7 +21,7 @@ if ( ! function_exists( 'pirate_rogue_form_textarea' ) ) :
 		echo "</p>\n";
 	    }
 	} else {
-	    echo _('Ungültiger Aufruf von pirate_rogue_form_textarea() - Name oder Label fehlt.', 'pirate_rogue');
+	    echo _('Invalid call to pirate_rogue_form_textarea() - name or label is missing.', 'pirate_rogue');
 	}
     }
 endif;
@@ -45,7 +45,7 @@ if ( ! function_exists( 'pirate_rogue_form_wpeditor' ) ) :
 		echo "</p>\n";
 	    }
 	} else {
-	    echo _('Ungültiger Aufruf von pirate_rogue_form_wpeditor() - Name oder Label fehlt.', 'pirate_rogue');
+	    echo _('Invalid call to pirate_rogue_form_wpeditor() - name or label is missing.', 'pirate_rogue');
 	}
     }
 endif;
@@ -78,7 +78,7 @@ if ( ! function_exists( 'pirate_rogue_form_text' ) ) :
 		echo "</p>\n";
 	    }
 	} else {
-	    echo _('Ungültiger Aufruf von pirate_rogue_form_text() - Name oder Label fehlt.', 'pirate_rogue');
+	    echo _('Invalid call to pirate_rogue_form_text() - name or label is missing.', 'pirate_rogue');
 	}
     }
 endif;
@@ -111,7 +111,7 @@ if ( ! function_exists( 'pirate_rogue_form_email' ) ) :
 		echo "</p>\n";
 	    }
 	} else {
-	    echo _('Ungültiger Aufruf von pirate_rogue_form_email() - Name oder Label fehlt.', 'pirate_rogue');
+	    echo _('Invalid call to pirate_rogue_form_email() - name or label is missing.', 'pirate_rogue');
 	}
     }
 endif;
@@ -146,7 +146,7 @@ if ( ! function_exists( 'pirate_rogue_form_number' ) ) :
 		echo "</p>\n";
 	    }
 	} else {
-	    echo _('Ungültiger Aufruf von pirate_rogue_form_number() - Name oder Label fehlt.', 'pirate_rogue');
+	    echo _('Invalid call to pirate_rogue_form_number() - name or label is missing.', 'pirate_rogue');
 	}
     }
 endif;
@@ -175,7 +175,7 @@ if ( ! function_exists( 'pirate_rogue_form_url' ) ) :
 		echo "</p>\n";
 	    }
 	} else {
-	    echo _('Ungültiger Aufruf von pirate_rogue_form_url() - Name oder Label fehlt.', 'pirate_rogue');
+	    echo _('Invalid call to pirate_rogue_form_url() - name or label is missing.', 'pirate_rogue');
 	}
     }
 endif;    
@@ -201,7 +201,7 @@ if ( ! function_exists( 'pirate_rogue_form_onoff' ) ) :
 		echo "</p>\n";
 	    }
 	} else {
-	    echo _('Ungültiger Aufruf von pirate_rogue_form_onoff() - Name oder Label fehlt.', 'pirate_rogue');
+	    echo _('Invalid call to pirate_rogue_form_onoff() - name or label is missing.', 'pirate_rogue');
 	}
     }
 endif;    
@@ -224,7 +224,7 @@ if ( ! function_exists( 'pirate_rogue_form_select' ) ) :
 		    if (!empty($emptytext)) {
 			echo $emptytext;
 		    } else {
-			_e('Keine Auswahl','pirate_rogue');
+			_e('No selection','pirate_rogue');
 		    }
 		    echo '</option>';
 		}
@@ -242,7 +242,7 @@ if ( ! function_exists( 'pirate_rogue_form_select' ) ) :
 		echo "</p>\n";
 	    }
 	} else {
-	    echo _('Ungültiger Aufruf von pirate_rogue_form_select() - Array, Name oder Label fehlt.', 'pirate_rogue');
+	    echo _('Invalid call to pirate_rogue_form_select() - array, name or label is missing.', 'pirate_rogue');
 	}
     }
 endif;    
@@ -265,7 +265,7 @@ if ( ! function_exists( 'pirate_rogue_form_multiselect' ) ) :
 		    if (!empty($emptytext)) {
 			echo $emptytext;
 		    } else {
-			_e('Keine Auswahl','pirate_rogue');
+			_e('No selection','pirate_rogue');
 		    }
 		    echo '</option>';
 		}
@@ -293,7 +293,7 @@ if ( ! function_exists( 'pirate_rogue_form_multiselect' ) ) :
 		echo "</p>\n";
 	    }
 	} else {
-	    echo _('Ungültiger Aufruf von pirate_rogue_form_multiselect() - Array, Name oder Label fehlt.', 'pirate_rogue');
+	    echo _('Invalid call to pirate_rogue_form_multiselect() - array, name or label is missing.', 'pirate_rogue');
 	}
     }
 endif;    
@@ -329,8 +329,8 @@ if ( ! function_exists( 'pirate_rogue_form_image' ) ) :
 	    <input type="hidden" name="<?php echo $name; ?>" id="<?php echo $name; ?>" value="<?php echo sanitize_key( $preimageid ) ; ?>" />
 	    
 
-	    <input class="button" name="image_button_<?php echo $name; ?>" id="image_button_<?php echo $name; ?>" value="<?php _e('Bild auswählen', 'pirate_rogue'); ?>" />
-	    <small><a href="#" class="image_remove_<?php echo $name; ?>"><?php _e( "Entfernen", 'pirate-rogue');?></a></small>
+	    <input class="button" name="image_button_<?php echo $name; ?>" id="image_button_<?php echo $name; ?>" value="<?php _e('Select image', 'pirate_rogue'); ?>" />
+	    <small><a href="#" class="image_remove_<?php echo $name; ?>"><?php _e( "Remove", 'pirate-rogue');?></a></small>
 	    <br><p class="howto"><?php echo $howtotext; ?>	      
 	    </p><script>
 	    jQuery(document).ready(function() {
@@ -348,7 +348,7 @@ if ( ! function_exists( 'pirate_rogue_form_image' ) ) :
 	    jQuery(document).ready(function() {
 		jQuery('.image_remove_<?php echo $name; ?>').click(function()   {
 			jQuery('#<?php echo $name; ?>').val('');
-			jQuery('.showimg_<?php echo $name; ?>').html('<?php _e('Kein Bild ausgewählt.', 'pirate_rogue'); ?>');
+			jQuery('.showimg_<?php echo $name; ?>').html('<?php _e('No image selected.', 'pirate_rogue'); ?>');
 			return false;
 		});
 	    });
@@ -357,7 +357,7 @@ if ( ! function_exists( 'pirate_rogue_form_image' ) ) :
 	   <?php 
 	
 	} else {
-	    echo _('Ungültiger Aufruf von pirate_rogue_form_image() - Name oder Label fehlt.', 'pirate_rogue');
+	    echo _('Invalid call to pirate_rogue_form_image() - name or label is missing.', 'pirate_rogue');
 	}
     }
  endif;
@@ -382,7 +382,7 @@ if ( ! function_exists( 'pirate_rogue_form_link' ) ) :
 	    }
 	    echo '<div class="linkauswahl" id="container_'.$rand.'">';
 	    echo "<p>\n";
-	    echo '<label for="title_'.$rand.'_'.$name.'">'.__('Titel','pirate_rogue');   
+	    echo '<label for="title_'.$rand.'_'.$name.'">'.__('Title','pirate_rogue');   
 	    echo "</label><br />\n";
 	    echo '<input type="text" class="large-text" name="'.$name.'_title" id="title_'.$rand.'_'.$name.'" value="'.$pretitle.'">';
 	    echo "</p>\n";	    
@@ -391,7 +391,7 @@ if ( ! function_exists( 'pirate_rogue_form_link' ) ) :
 	    echo "</label><br />\n";
 	    echo '<input type="url" class="large-text" name="'.$name.'_url" id="url_'.$rand.'_'.$name.'" value="'.$preurl.'" placeholder="https://">';
 	    echo "</p>";
-	    echo '<p><input class="button link_button_'.$name.'" name="link_button_'.$name.'" id="link_button_'.$name.'" type="button" value="'.__('Wähle Link','pirate_rogue').'"></p>';
+	    echo '<p><input class="button link_button_'.$name.'" name="link_button_'.$name.'" id="link_button_'.$name.'" type="button" value="'.__('Select link','pirate_rogue').'"></p>';
 	    echo "</div>\n";
 	   
 ?>
@@ -461,7 +461,7 @@ if ( ! function_exists( 'pirate_rogue_form_link' ) ) :
 
 	 
 	} else {
-	    echo _('Ungültiger Aufruf von pirate_rogue_form_link() - Name oder Label fehlt.', 'pirate_rogue');
+	    echo _('Invalid call to pirate_rogue_form_link() - name or label is missing.', 'pirate_rogue');
 	}
     }
  endif;

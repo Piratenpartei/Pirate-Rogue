@@ -453,8 +453,8 @@ function pirate_rogue_get_tag_ID($tag_name) {
  /*-----------------------------------------------------------------------------------*/
  /* Prints HTML with meta information for the current post-date/time and author.
  /*-----------------------------------------------------------------------------------*/
- if ( ! function_exists( 'uku_posted_on' ) ) :
- function uku_posted_on() {
+ if ( ! function_exists( 'pirate_rogue_posted_on' ) ) :
+ function pirate_rogue_posted_on() {
  	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 
  	$time_string = sprintf( $time_string,
@@ -486,8 +486,8 @@ function pirate_rogue_get_tag_ID($tag_name) {
  /*-----------------------------------------------------------------------------------*/
  /* Prints Post Author Information
  /*-----------------------------------------------------------------------------------*/
- if ( ! function_exists( 'uku_posted_by' ) ) :
-    function uku_posted_by() {
+ if ( ! function_exists( 'pirate_rogue_posted_by' ) ) :
+    function pirate_rogue_posted_by() {
 	if (('' != get_theme_mod( 'uku_front_hideauthor' ) ) || ('' != get_theme_mod( 'uku_all_hideauthor' ) )) {
 	    return;
 	}

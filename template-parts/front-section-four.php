@@ -2,9 +2,9 @@
 /**
  * The template for the Front Page Post Section Four
  *
- * @package Uku
- * @since Uku 1.0
- * @version 1.0.5
+ * @package Pirate Rogue
+ * @since Pirate Rogue 1.0
+ * @version 1.0
  */
 ?>
 
@@ -65,7 +65,7 @@
 					</header><!-- end .entry-header -->
 
 					<div class="entry-meta">
-						<?php uku_posted_by(); ?>
+						<?php pirate_rogue_posted_by(); ?>
 						<span class="entry-date">
 							<a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></a>
 						</span><!-- end .entry-date -->

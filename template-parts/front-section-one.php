@@ -1,11 +1,11 @@
 <?php
 /**
-* The template for the Front Page Post Section One
-*
-* @package Uku
-* @since Uku 1.0
-* @version 1.0.5
-*/
+ * The template for the Front Page Post Section One
+ *
+ * @package Pirate Rogue
+ * @since Pirate Rogue 1.0
+ * @version 1.0
+ */
 ?>
 
 <?php
@@ -16,20 +16,20 @@ $postcat = get_theme_mod('uku_front_section_one_cat');
 $category_link = get_category_link($postcat);
 
 $uku_section_one_first_query = new WP_Query( array(
-	'posts_per_page'				=> 1,
-	'post_status'						=> 'publish',
-	'tag_id' 								=> $posttag,
-	'cat' 									=> $postcat,
+	'posts_per_page'        => 1,
+	'post_status'           => 'publish',
+	'tag_id'                => $posttag,
+	'cat'                   => $postcat,
 	'ignore_sticky_posts' 	=> 1,
 ) );
 
 
 	$args = array(
-		'posts_per_page'			=> 5,
-		'offset' 							=> 1,
-		'post_status'	 				=> 'publish',
-		'tag_id' 							=> $posttag,
-		'cat' 								=> $postcat,
+		'posts_per_page'    => 5,
+		'offset'            => 1,
+		'post_status'       => 'publish',
+		'tag_id'            => $posttag,
+		'cat'               => $postcat,
 		'ignore_sticky_posts' => 1,
 	);
 

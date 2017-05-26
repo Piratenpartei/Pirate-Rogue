@@ -2,9 +2,9 @@
 /**
  * The template for the footer menus
  *
- * @subpackage Uku
- * @since Uku 1.0
-  * @version 1.0.1
+ * @package Pirate Rogue
+ * @since Pirate Rogue 1.0
+ * @version 1.0
  */
 ?>
 

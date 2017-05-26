@@ -628,12 +628,12 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'priority'		     => 5,
 	) );
         
-	$wp_customize->add_setting( 'uku_custom_latestposts', array(
+	$wp_customize->add_setting( 'pirate_rogue_custom_latestposts', array(
 		'default' 	           => '',
 		'sanitize_callback' 	     => 'wp_kses_post',
 	) );
 
-	$wp_customize->add_control( 'uku_custom_latestposts', array(
+	$wp_customize->add_control( 'pirate_rogue_custom_latestposts', array(
 		'label' 	        => esc_html__( 'Latest Posts title', 'pirate-rogue'),
 		'description'	     => esc_html__( 'Customize the "Latest Posts" title text above the blog content on your blog front page.', 'pirate-rogue'),
 		'section' 	       => 'pirate_rogue_frontpage_general',
@@ -792,26 +792,26 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'priority'          => 1,
 	) );
 
-	$wp_customize->add_setting( 'uku_front_section_two_cat', array(
+	$wp_customize->add_setting( 'pirate_rogue_front_section_two_cat', array(
 		'default'           => '',
 		'sanitize_callback' => 'wp_kses_post',
 	) );
 
-	$wp_customize->add_control(new WP_Customize_Category_Control($wp_customize,'uku_front_section_two_cat', array(
+	$wp_customize->add_control(new WP_Customize_Category_Control($wp_customize,'pirate_rogue_front_section_two_cat', array(
 		'label' 							     => esc_html__( 'Section category', 'pirate-rogue'),
-		'settings' 						     => 'uku_front_section_two_cat',
+		'settings' 						     => 'pirate_rogue_front_section_two_cat',
 		'section' 						     => 'uku_front_section_two',
 		'priority'						     => 2,
 	) ) );
 
-	$wp_customize->add_setting( 'uku_front_section_two_tag', array(
+	$wp_customize->add_setting( 'pirate_rogue_front_section_two_tag', array(
 		'default' 			           => '',
 		'sanitize_callback' 	     => 'wp_kses_post',
 	) );
 
-	$wp_customize->add_control(new WP_Customize_Tag_Control($wp_customize,'uku_front_section_two_tag', array(
+	$wp_customize->add_control(new WP_Customize_Tag_Control($wp_customize,'pirate_rogue_front_section_two_tag', array(
 		'label' 			             => esc_html__( 'Section tag', 'pirate-rogue'),
-		'settings' 						     => 'uku_front_section_two_tag',
+		'settings' 						     => 'pirate_rogue_front_section_two_tag',
 		'section' 						     => 'uku_front_section_two',
 		'priority'						     => 3,
 	) ) );
@@ -920,12 +920,12 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 
 	// Uku Front Page - Sections 2-Column
-	$wp_customize->add_setting( 'uku_front_section_twocolumn_title', array(
+	$wp_customize->add_setting( 'pirate_rogue_front_section_twocolumn_title', array(
 		'default' 			           => '',
 		'sanitize_callback' 	     => 'wp_kses_post',
 	) );
 
-	$wp_customize->add_control( 'uku_front_section_twocolumn_title', array(
+	$wp_customize->add_control( 'pirate_rogue_front_section_twocolumn_title', array(
 		'label' 			             => esc_html__( 'Section Title (optional)', 'pirate-rogue'),
 		'description'					     => esc_html__( 'The title will appear at the top of the section.', 'pirate-rogue'),
 		'section' 			           => 'uku_front_section_twocolumn',
@@ -933,36 +933,36 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'priority'						     => 1,
 	) );
 
-	$wp_customize->add_setting( 'uku_front_section_twocolumn_cat', array(
+	$wp_customize->add_setting( 'pirate_rogue_front_section_twocolumn_cat', array(
 		'default' 			           => '',
 		'sanitize_callback'		     => 'wp_kses_post',
 	) );
 
-	$wp_customize->add_control(new WP_Customize_Category_Control($wp_customize,'uku_front_section_twocolumn_cat', array(
+	$wp_customize->add_control(new WP_Customize_Category_Control($wp_customize,'pirate_rogue_front_section_twocolumn_cat', array(
 		'label' 							     => esc_html__( 'Section category', 'pirate-rogue'),
-		'settings' 						     => 'uku_front_section_twocolumn_cat',
+		'settings' 						     => 'pirate_rogue_front_section_twocolumn_cat',
 		'section' 						     => 'uku_front_section_twocolumn',
 		'priority'						     => 2,
 	) ) );
 
-	$wp_customize->add_setting( 'uku_front_section_twocolumn_tag', array(
+	$wp_customize->add_setting( 'pirate_rogue_front_section_twocolumn_tag', array(
 		'default' 			           => '',
 		'sanitize_callback' 	     => 'wp_kses_post',
 	) );
 
-	$wp_customize->add_control(new WP_Customize_Tag_Control($wp_customize,'uku_front_section_twocolumn_tag', array(
+	$wp_customize->add_control(new WP_Customize_Tag_Control($wp_customize,'pirate_rogue_front_section_twocolumn_tag', array(
 		'label' 			             => esc_html__( 'Section tag', 'pirate-rogue'),
-		'settings' 						     => 'uku_front_section_twocolumn_tag',
+		'settings' 						     => 'pirate_rogue_front_section_twocolumn_tag',
 		'section' 						     => 'uku_front_section_twocolumn',
 		'priority'						     => 2,
 	) ) );
 
-	$wp_customize->add_setting( 'uku_front_section_twocolumn_number', array(
+	$wp_customize->add_setting( 'pirate_rogue_front_section_twocolumn_number', array(
 		'default' 				         => '',
 		'sanitize_callback' 	     => 'wp_kses_post',
 	) );
 
-	$wp_customize->add_control( 'uku_front_section_twocolumn_number', array(
+	$wp_customize->add_control( 'pirate_rogue_front_section_twocolumn_number', array(
 		'label' 			             => esc_html__( 'Number of posts', 'pirate-rogue'),
 		'section' 			           => 'uku_front_section_twocolumn',
 		'priority' 			           => 4,

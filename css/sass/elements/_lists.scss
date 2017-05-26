@@ -51,7 +51,9 @@ li {
 		    @extend .fa;
                     @extend .fa-chevron-circle-right;
                     color: $color-main;
-                    margin-right: 5px;
+                    margin-right: 10px;
+                    margin-left: -24px;
+                    
 		}
 		
 		ul {
@@ -73,6 +75,7 @@ li {
                             &:before {
                                 content: "";
                                 margin-right: 0;
+                                margin-left: 0;
                             }
                         }
 		    } 

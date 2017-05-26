@@ -29,7 +29,7 @@ $thumbfallbackid = absint(get_theme_mod( 'pirate_rogue_fallback_slider' ));
 		</header><!-- end .entry-header -->
 
 		<div class="entry-meta">
-			<?php uku_posted_by(); ?>
+			<?php pirate_rogue_posted_by(); ?>
 			<span class="entry-date">
 				<a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></a>
 			</span><!-- end .entry-date -->

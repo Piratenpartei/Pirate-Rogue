@@ -60,7 +60,7 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 					</div><!-- end .author-pic -->
                                    
 					<div class="entry-author">
-					<?php uku_posted_by(); ?>
+					<?php pirate_rogue_posted_by(); ?>
 					</div><!-- end .entry-author -->
                                     <?php } ?>
 					

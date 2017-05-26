@@ -2,9 +2,9 @@
 /**
  * The template for the Big Footer Feature Section
  *
- * @package Uku
- * @since Uku 1.0
- * @version 1.0.4
+ * @package Pirate Rogue
+ * @since Pirate Rogue 1.0
+ * @version 1.0
  */
 ?>
 

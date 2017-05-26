@@ -1,11 +1,11 @@
 <?php
 /**
-* The template for the Front Page Post Section One
-*
-* @package Uku
-* @since Uku 1.0
-* @version 1.0.5
-*/
+ * The template for the Front Page Post Section One
+ *
+ * @package Pirate Rogue
+ * @since Pirate Rogue 1.0
+ * @version 1.0
+ */
 ?>
 
 <?php
@@ -15,25 +15,25 @@ $tag_link = get_tag_link( $posttag );
 $postcat = get_theme_mod('uku_front_section_one_cat');
 $category_link = get_category_link($postcat);
 
-$uku_section_one_first_query = new WP_Query( array(
-	'posts_per_page'				=> 1,
-	'post_status'						=> 'publish',
-	'tag_id' 								=> $posttag,
-	'cat' 									=> $postcat,
+$pirate_rogue_section_one_first_query = new WP_Query( array(
+	'posts_per_page'        => 1,
+	'post_status'           => 'publish',
+	'tag_id'                => $posttag,
+	'cat'                   => $postcat,
 	'ignore_sticky_posts' 	=> 1,
 ) );
 
 
 	$args = array(
-		'posts_per_page'			=> 5,
-		'offset' 							=> 1,
-		'post_status'	 				=> 'publish',
-		'tag_id' 							=> $posttag,
-		'cat' 								=> $postcat,
+		'posts_per_page'    => 5,
+		'offset'            => 1,
+		'post_status'       => 'publish',
+		'tag_id'            => $posttag,
+		'cat'               => $postcat,
 		'ignore_sticky_posts' => 1,
 	);
 
-$uku_section_one_second_query = new WP_Query( $args );
+$pirate_rogue_section_one_second_query = new WP_Query( $args );
 ?>
 
 <section id="front-section-one" class="front-section cf">
@@ -45,30 +45,23 @@ $uku_section_one_second_query = new WP_Query( $args );
 	<?php endif; ?>
 
 	<div class="section-one-column-one">
-		<?php if($uku_section_one_first_query->have_posts()) : ?>
-			<?php while($uku_section_one_first_query->have_posts()) : $uku_section_one_first_query->the_post() ?>
+		<?php if($pirate_rogue_section_one_first_query->have_posts()) {
+			while($pirate_rogue_section_one_first_query->have_posts()) : $pirate_rogue_section_one_first_query->the_post();
+                            get_template_part('template-parts/content-frontpost-big' );
+			endwhile; 
 
-				<?php get_template_part('template-parts/content-frontpost-big' ); ?>
-
-			<?php endwhile; ?>
-
-		<?php endif; // have_posts() ?>
+		} // have_posts() ?>
 
 	</div><!-- end .section-one-column-one -->
 
 	<div class="section-one-column-two columns-wrap">
-		<?php if($uku_section_one_second_query->have_posts()) : ?>
-			<?php while($uku_section_one_second_query->have_posts()) : $uku_section_one_second_query->the_post() ?>
+		<?php 
+                if($pirate_rogue_section_one_second_query->have_posts()) { 
+			while($pirate_rogue_section_one_second_query->have_posts()) : $pirate_rogue_section_one_second_query->the_post();
+			    get_template_part('template-parts/content-frontpost-small' );
+			endwhile; 
+                } // have_posts() 
 
-
-				<?php get_template_part('template-parts/content-frontpost-small' ); ?>
-		
-
-			<?php endwhile; ?>
-
-		<?php endif; // have_posts() ?>
-
-		<?php wp_reset_postdata(); ?>
-
+		wp_reset_postdata(); ?>
 	</div><!-- end .section-one-column-two -->
 </section><!-- end #front-section-one -->

@@ -1,26 +1,26 @@
 <?php
 /**
-* The template for the Front Page Post Section 2 Columns
-*
-* @package Uku
-* @since Uku 1.0
-* @version 1.0.5
-*/
+ * The template for the Front Page Post Section 2 Columns
+ *
+ * @package Pirate Rogue
+ * @since Pirate Rogue 1.0
+ * @version 1.0
+ */
 ?>
 
 <?php
-$postnumber = get_theme_mod('uku_front_section_twocolumn_number');
-$posttag = get_theme_mod('uku_front_section_twocolumn_tag');
+$postnumber = get_theme_mod('pirate_rogue_front_section_twocolumn_number');
+$posttag = get_theme_mod('pirate_rogue_front_section_twocolumn_tag');
 $tag_link = get_tag_link( $posttag );
-$postcat = get_theme_mod('uku_front_section_twocolumn_cat');
+$postcat = get_theme_mod('pirate_rogue_front_section_twocolumn_cat');
 $category_link = get_category_link($postcat);
 
 $uku_section_twocolumn_query = new WP_Query( array(
-	'posts_per_page'			=> $postnumber,
-	'tag_id' 							=> $posttag,
-	'cat' 								=> $postcat,
-	'post_status'					=> 'publish',
-	'ignore_sticky_posts'	=> 1,
+	'posts_per_page'        => $postnumber,
+	'tag_id'                => $posttag,
+	'cat'                   => $postcat,
+	'post_status'           => 'publish',
+	'ignore_sticky_posts'   => 1,
 ) );
 $thumbfallbackid = absint(get_theme_mod( 'pirate_rogue_fallback_thumbnail' ));
 	if (!isset($thumbfallbackid)) {
@@ -32,10 +32,10 @@ $thumbfallbackid = absint(get_theme_mod( 'pirate_rogue_fallback_thumbnail' ));
 
 <section id="front-section-twocolumn" class="front-section columns-wrap cf">
 
-	<?php if ( '' != get_theme_mod( 'uku_front_section_twocolumn_title' ) && '' != get_theme_mod( 'uku_front_section_twocolumn_cat') ) : ?>
-		<h3 class="front-section-title"><?php echo esc_html( get_theme_mod( 'uku_front_section_twocolumn_title' ) ); ?><span><a class="all-posts-link" href="<?php echo esc_url( $category_link ); ?>"><?php esc_html_e('All posts', 'pirate-rogue') ?></a></span></h3>
-	<?php elseif ( '' != get_theme_mod( 'uku_front_section_twocolumn_title' ) && '' != get_theme_mod( 'uku_front_section_twocolumn_tag' ) ) : ?>
-		<h3 class="front-section-title"><?php echo esc_html( get_theme_mod( 'uku_front_section_twocolumn_title' ) ); ?><span><a class="all-posts-link" href="<?php echo esc_url( $tag_link ); ?>"><?php esc_html_e('All posts', 'pirate-rogue') ?></a></span></h3>
+	<?php if ( '' != get_theme_mod( 'pirate_rogue_front_section_twocolumn_title' ) && '' != get_theme_mod( 'pirate_rogue_front_section_twocolumn_cat') ) : ?>
+		<h3 class="front-section-title"><?php echo esc_html( get_theme_mod( 'pirate_rogue_front_section_twocolumn_title' ) ); ?><span><a class="all-posts-link" href="<?php echo esc_url( $category_link ); ?>"><?php esc_html_e('All posts', 'pirate-rogue') ?></a></span></h3>
+	<?php elseif ( '' != get_theme_mod( 'pirate_rogue_front_section_twocolumn_title' ) && '' != get_theme_mod( 'pirate_rogue_front_section_twocolumn_tag' ) ) : ?>
+		<h3 class="front-section-title"><?php echo esc_html( get_theme_mod( 'pirate_rogue_front_section_twocolumn_title' ) ); ?><span><a class="all-posts-link" href="<?php echo esc_url( $tag_link ); ?>"><?php esc_html_e('All posts', 'pirate-rogue') ?></a></span></h3>
 	<?php endif; ?>
 
 	<?php if($uku_section_twocolumn_query->have_posts()) : ?>
@@ -53,7 +53,11 @@ $thumbfallbackid = absint(get_theme_mod( 'pirate_rogue_fallback_thumbnail' ));
 					<div class="entry-cats">
 						<?php the_category(' '); ?>
 					</div><!-- end .entry-cats -->
-					<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+                                        <?php 
+                                        echo '<h2 class="entry-title"><a href="'.esc_url( get_permalink() ).'" rel="bookmark">';
+                                        echo get_the_title();
+                                        echo '</a><span class="screen-reader-text"> ('. get_the_date().')</span></h2>';
+                                        ?>
 				</header><!-- end .entry-header -->
 
 				<div class="entry-summary">

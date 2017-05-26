@@ -1,11 +1,11 @@
 <?php
 /**
-* The template for the Front Page Post Section 6 Columns
-*
-* @package Uku
-* @since Uku 1.0
-* @version 1.0.5
-*/
+ * The template for the Front Page Post Section 6 Columns
+ *
+ * @package Pirate Rogue
+ * @since Pirate Rogue 1.0
+ * @version 1.0
+ */
 ?>
 
 <?php
@@ -60,7 +60,11 @@ if (!isset($thumbfallbackid)) {
 						<div class="entry-cats">
 							<?php the_category(' '); ?>
 						</div><!-- end .entry-cats -->
-						<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+                                                <?php 
+                                                echo '<h2 class="entry-title"><a href="'.esc_url( get_permalink() ).'" rel="bookmark">';
+                                                echo get_the_title();
+                                                echo '</a><span class="screen-reader-text"> ('. get_the_date().')</span></h2>';
+                                                ?>
 					</header><!-- end .entry-header -->
 
 					<div class="entry-summary">

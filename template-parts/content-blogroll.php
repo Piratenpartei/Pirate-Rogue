@@ -16,6 +16,7 @@ if (!isset($thumbfallbackid)) {
     $imagesrc = wp_get_attachment_image_src( $thumbfallbackid, 'uku-front-small' )[0];
 }
 ?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?>>
 
 	<?php if ( '' !== get_the_post_thumbnail() && ! post_password_required() ) : ?>
@@ -31,8 +32,8 @@ if (!isset($thumbfallbackid)) {
 	<div class="meta-main-wrap">
 
                 <div class="entry-meta">
-                        <?php uku_posted_by(); ?>
-                        <span class="entry-date">
+                        <?php pirate_rogue_posted_by(); ?>
+                        <span class="entry-date" aria-hidden="true">
                                 <a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></a>
                         </span><!-- end .entry-date -->
                         <?php if ( comments_open() ) : ?>
@@ -53,10 +54,14 @@ if (!isset($thumbfallbackid)) {
 				<?php if ( has_category() ) : ?>
 				<div class="entry-cats">
 					<?php the_category(' '); ?>
-				</div><!-- end .entry-cats -->
-				<?php endif; // has_category() ?>
-				<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-			</header><!-- end .entry-header -->
+				</div>
+				<?php endif; // has_category() 
+      
+                                echo '<h2 class="entry-title"><a href="'.esc_url( get_permalink() ).'" rel="bookmark">';
+                                echo get_the_title();
+                                echo '</a><span class="screen-reader-text"> ('. get_the_date().')</span></h2>';
+                                ?>			
+                        </header><!-- end .entry-header -->
 			
 			<div class="entry-summary">
 				<?php the_excerpt(); ?>

@@ -39,16 +39,18 @@ if (!isset($thumbfallbackid)) {
 				<div class="entry-cats">
 					<?php the_category(' '); ?>
 				</div><!-- end .entry-cats -->
-				<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+				<?php 
+                                echo '<h2 class="entry-title"><a href="'.esc_url( get_permalink() ).'" rel="bookmark">';
+                                echo get_the_title();
+                                echo '</a><span class="screen-reader-text"> ('. get_the_date().')</span></h2>';
+                                ?>
 			</header><!-- end .entry-header -->
 
-			<div class="entry-summary">
-					 <?php the_excerpt(); ?>
-			</div><!-- end .entry-summary -->
+			
 
-			<footer class="entry-meta">
-				<?php uku_posted_by(); ?>
-				<span class="entry-date">
+			<div class="entry-meta">
+				<?php pirate_rogue_posted_by(); ?>
+				<span class="entry-date" aria-hidden="true">
 					<a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></a>
 				</span><!-- end .entry-date -->
 				<?php if ( comments_open() ) : ?>
@@ -61,7 +63,13 @@ if (!isset($thumbfallbackid)) {
 					</span><!-- end .entry-comments -->
 				<?php endif; // comments_open() ?>
 				<?php edit_post_link( esc_html__( 'Edit Post', 'pirate-rogue'), '<span class="entry-edit">', '</span>' ); ?>
-			</footer><!-- end .entry-meta -->
+			</div><!-- end .entry-meta -->
+                        
+                        <div class="entry-summary">   
+                           
+					 <?php echo pirate_rogue_custom_excerpt(600); ?>
+			</div><!-- end .entry-summary -->
+                        
 		</div><!-- end .entry-text -->
 	</div><!-- end .entry-text-wrap -->
 

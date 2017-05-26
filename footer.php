@@ -51,7 +51,7 @@ $blogname = get_bloginfo('name');
 				</ul><!-- end .credit -->
 			</div><!-- end #site-info -->
 
-			<?php if (has_nav_menu( 'social' ) ) : ?>
+			<?php if (has_nav_menu( 'social-footer' ) ) : ?>
 				<div id="footer-social" class="social-nav">
 					<?php if ( get_theme_mod( 'pirate_rogue_custom_followus' ) ) : ?>
 						<h2 class="socialmedia"><?php echo esc_html( get_theme_mod( 'pirate_rogue_custom_followus' ) ); ?></h2>
@@ -59,9 +59,9 @@ $blogname = get_bloginfo('name');
 						<h2 class="socialmedia"><?php esc_html_e( 'Follow us', 'pirate-rogue'); ?>:</h2>
 					<?php endif; ?>
 					<?php wp_nav_menu( array(
-						'theme_location'	 => 'social',
-						'container' 		   => 'false',
-						'depth' 			     => -1));
+						'theme_location'    => 'social-footer',
+						'container'         => 'false',
+						'depth'             => -1));
 					?>
 				</div><!-- end #footer-social -->
 			<?php endif; ?>

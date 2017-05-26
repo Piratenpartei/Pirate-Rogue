@@ -2,9 +2,9 @@
 /**
  * The template for the Front Page Post Section 3 Columns
  *
- * @package Uku
- * @since Uku 1.0
- * @version 1.0.5
+ * @package Pirate Rogue
+ * @since Pirate Rogue 1.0
+ * @version 1.0
  */
 ?>
 
@@ -16,10 +16,10 @@
 	$category_link = get_category_link($postcat);
 
 	$uku_section_threecolumn_query = new WP_Query( array(
-		'posts_per_page'			=> $postnumber,
-		'tag_id' 							=> $posttag,
-		'cat' 								=> $postcat,
-		'post_status'					=> 'publish',
+		'posts_per_page'        => $postnumber,
+		'tag_id'                => $posttag,
+		'cat'                   => $postcat,
+		'post_status'           => 'publish',
 		'ignore_sticky_posts'	=> 1,
 	) );
 	
@@ -54,7 +54,11 @@
 					<div class="entry-cats">
 						<?php the_category(' '); ?>
 					</div><!-- end .entry-cats -->
-					<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+                                        <?php 
+                                        echo '<h2 class="entry-title"><a href="'.esc_url( get_permalink() ).'" rel="bookmark">';
+                                        echo get_the_title();
+                                        echo '</a><span class="screen-reader-text"> ('. get_the_date().')</span></h2>';
+                                        ?>
 				</header><!-- end .entry-header -->
 
 				<div class="entry-summary">

@@ -26,6 +26,7 @@ function pirate_rogue_setup() {
 		'primary'	=> esc_html__( 'Main menu', 'pirate-rogue'),
 		'social' 	=> esc_html__( 'Social Icons', 'pirate-rogue'),
 		'social-front' 	=> esc_html__( 'Social menu (in About section)', 'pirate-rogue'),
+                'social-footer' => esc_html__( 'Social Icons (in Footer)', 'pirate-rogue'),
 		'footer-one' 	=> esc_html__( 'Footer 1', 'pirate-rogue'),
 		'footer-two' 	=> esc_html__( 'Footer 2', 'pirate-rogue'),
 		'footer-three' 	=> esc_html__( 'Footer 3', 'pirate-rogue'),
@@ -180,7 +181,7 @@ add_action( 'wp', 'pirate_rogue_setup_author' );
 /*-----------------------------------------------------------------------------------*/
 /* Add title to custom menu
 /*-----------------------------------------------------------------------------------*/
-function uku_get_menu_by_location( $location ) {
+function pirate_rogue_get_menu_by_location( $location ) {
 		if( empty($location) ) return false;
 
 		$locations = get_nav_menu_locations();
@@ -202,16 +203,16 @@ add_filter( 'excerpt_length', 'pirate_rogue_custom_excerpt_length', 999 );
 /*-----------------------------------------------------------------------------------*/
 /* Replace "[...]" with custom read more in excerpts.
 /*-----------------------------------------------------------------------------------*/
-function uku_excerpt_more( $more ) {
+function pirate_rogue_excerpt_more( $more ) {
 	global $post;
 	return '&hellip;';
 }
-add_filter( 'excerpt_more', 'uku_excerpt_more' );
+add_filter( 'excerpt_more', 'pirate_rogue_excerpt_more' );
 
 /*-----------------------------------------------------------------------------------*/
 /* Featured Slider Function
 /*-----------------------------------------------------------------------------------*/
-function uku_has_featured_posts( $minimum = 1 ) {
+function pirate_rogue_has_featured_posts( $minimum = 1 ) {
 		if ( is_paged() )
 				return false;
 

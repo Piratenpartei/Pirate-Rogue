@@ -60,13 +60,17 @@
 						<div class="entry-cats">
 							<?php the_category(' '); ?>
 						</div><!-- end .entry-cats -->
-						<?php endif; // has_category() ?>
-						<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+						<?php endif; // has_category() 
+                                                
+                                                echo '<h2 class="entry-title"><a href="'.esc_url( get_permalink() ).'" rel="bookmark">';
+                                                echo get_the_title();
+                                                echo '</a><span class="screen-reader-text"> ('. get_the_date().')</span></h2>';
+                                                ?>
 					</header><!-- end .entry-header -->
 
 					<div class="entry-meta">
 						<?php pirate_rogue_posted_by(); ?>
-						<span class="entry-date">
+						<span class="entry-date" aria-hidden="true">
 							<a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></a>
 						</span><!-- end .entry-date -->
 						<?php if ( comments_open() ) : ?>

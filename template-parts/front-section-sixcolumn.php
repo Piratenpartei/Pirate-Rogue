@@ -60,7 +60,11 @@ if (!isset($thumbfallbackid)) {
 						<div class="entry-cats">
 							<?php the_category(' '); ?>
 						</div><!-- end .entry-cats -->
-						<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+                                                <?php 
+                                                echo '<h2 class="entry-title"><a href="'.esc_url( get_permalink() ).'" rel="bookmark">';
+                                                echo get_the_title();
+                                                echo '</a><span class="screen-reader-text"> ('. get_the_date().')</span></h2>';
+                                                ?>
 					</header><!-- end .entry-header -->
 
 					<div class="entry-summary">

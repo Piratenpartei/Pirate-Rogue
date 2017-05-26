@@ -35,7 +35,7 @@
 	<nav id="footer-menu-one" class="footer-menu">
 		<?php
 			$location = 'footer-one';
-			$menu_obj = uku_get_menu_by_location($location );
+			$menu_obj = pirate_rogue_get_menu_by_location($location );
 			wp_nav_menu( array(
 			'theme_location'	=> 'footer-one',
 			'items_wrap'			=> '<h3 class="footer-menu-title">'.esc_html($menu_obj->name).'</h3><ul id="%1$s" class="%2$s">%3$s</ul>',
@@ -48,7 +48,7 @@
 	<nav id="footer-menu-two" class="footer-menu">
 		<?php
 			$location = 'footer-two';
-			$menu_obj = uku_get_menu_by_location($location );
+			$menu_obj = pirate_rogue_get_menu_by_location($location );
 			wp_nav_menu( array(
 			'theme_location'	=> 'footer-two',
 			'items_wrap'			=> '<h3 class="footer-menu-title">'.esc_html($menu_obj->name).'</h3><ul id="%1$s" class="%2$s">%3$s</ul>',
@@ -61,7 +61,7 @@
 	<nav id="footer-menu-three" class="footer-menu">
 		<?php
 			$location = 'footer-three';
-			$menu_obj = uku_get_menu_by_location($location );
+			$menu_obj = pirate_rogue_get_menu_by_location($location );
 			wp_nav_menu( array(
 			'theme_location'	=> 'footer-three',
 			'items_wrap'			=> '<h3 class="footer-menu-title">'.esc_html($menu_obj->name).'</h3><ul id="%1$s" class="%2$s">%3$s</ul>',
@@ -74,7 +74,7 @@
 	<nav id="footer-menu-four" class="footer-menu">
 		<?php
 			$location = 'footer-four';
-			$menu_obj = uku_get_menu_by_location($location );
+			$menu_obj = pirate_rogue_get_menu_by_location($location );
 			wp_nav_menu( array(
 			'theme_location'	=> 'footer-four',
 			'items_wrap'			=> '<h3 class="footer-menu-title">'.esc_html($menu_obj->name).'</h3><ul id="%1$s" class="%2$s">%3$s</ul>',

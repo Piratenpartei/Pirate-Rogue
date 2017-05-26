@@ -33,7 +33,7 @@ function pirate_rogue_get_tag_ID($tag_name) {
     
     
     if ($posttag=='') {
-        $posttag = get_theme_mod('uku_front_section_two_tag');
+        $posttag = get_theme_mod('pirate_rogue_front_section_two_tag');
     } elseif ($posttag == '-') {
         $posttag = 0;
     }
@@ -43,7 +43,7 @@ function pirate_rogue_get_tag_ID($tag_name) {
 	$postcat = get_cat_ID($postcat);
     }
     if ($postcat=='') {
-        $postcat = get_theme_mod('uku_front_section_two_cat');
+        $postcat = get_theme_mod('pirate_rogue_front_section_two_cat');
     } elseif ($postcat == '-') {
         $postcat = 0;
     }
@@ -235,7 +235,7 @@ function pirate_rogue_get_tag_ID($tag_name) {
     
     
     if ($posttag=='') {
-        $posttag = get_theme_mod('uku_front_section_twocolumn_tag');
+        $posttag = get_theme_mod('pirate_rogue_front_section_twocolumn_tag');
     } elseif ($posttag == '-') {
         $posttag = 0;
     }
@@ -245,7 +245,7 @@ function pirate_rogue_get_tag_ID($tag_name) {
 	$postcat = get_cat_ID($postcat);
     }
     if ($postcat=='') {
-        $postcat = get_theme_mod('uku_front_section_twocolumn_cat');
+        $postcat = get_theme_mod('pirate_rogue_front_section_twocolumn_cat');
     } elseif ($postcat == '-') {
         $postcat = 0;
     }
@@ -254,8 +254,8 @@ function pirate_rogue_get_tag_ID($tag_name) {
     }  
     $title = $title ?  esc_attr( $title ) : '';
     if (empty($title)) {
-        if ( '' != get_theme_mod( 'uku_front_section_twocolumn_title' )) {
-            $title = esc_html( get_theme_mod( 'uku_front_section_twocolumn_title' ) );
+        if ( '' != get_theme_mod( 'pirate_rogue_front_section_twocolumn_title' )) {
+            $title = esc_html( get_theme_mod( 'pirate_rogue_front_section_twocolumn_title' ) );
         }
     }       
     
@@ -317,8 +317,11 @@ function pirate_rogue_get_tag_ID($tag_name) {
                                         
                                         
 					$out .= '</div><!-- end .entry-cats -->'."\n";
-                                        $out .= '<h2 class="entry-title"><a href="'.esc_url( get_permalink() ).'" rel="bookmark">';       
-					$out .= get_the_title().'</a></h2>';
+                                        $out .= '<h2 class="entry-title"><a href="'.esc_url( get_permalink() ).'" rel="bookmark">';
+                                        $out .= get_the_title();
+                                        $out .= '</a><span class="screen-reader-text"> ('. get_the_date().')</span></h2>';
+
+                                        
 				$out .= '</header><!-- end .entry-header -->'."\n";
 
 				$out .= '<div class="entry-summary">'."\n";
@@ -502,7 +505,42 @@ function pirate_rogue_get_tag_ID($tag_name) {
    }
  endif;
  
+ /*-----------------------------------------------------------------------------------*/
+ /* Get special excerpt by content
+ /*-----------------------------------------------------------------------------------*/
+if ( ! function_exists( 'pirate_rogue_custom_excerpt' ) ) :
+    function pirate_rogue_custom_excerpt($length = 400){
+            $excerpt = get_the_content();
+               if (!isset($excerpt)) {
+                  $excerpt = __( 'No content', 'piratenkleider' );
+                }
 
+          if ($length <=0) {
+                $length = 100;
+           }
+
+          $excerpt = preg_replace('/\s+(https?:\/\/www\.youtube[\/a-z0-9\.\-\?&;=_]+)/i','',$excerpt);
+          $excerpt = strip_shortcodes($excerpt);
+          $excerpt = strip_tags($excerpt, '<br>,<br />,<b>,</b>,<strong>,</strong>,<em>,</em>'); 
+
+
+          if (mb_strlen($excerpt)<5) {
+              $excerpt = '<!-- '.__( 'No entry for this post', 'piratenkleider' ).' -->';
+          }
+
+          $needcontinue =0;
+          if (mb_strlen($excerpt) >  $length) {
+            $the_str = mb_substr($excerpt, 0, $length);
+            $the_str .= "...";
+            $needcontinue = 1;
+          }  else {
+              $the_str = $excerpt;
+          }
+          $the_str = '<p>'.$the_str.'</p>';
+          return $the_str;
+    }
+endif;
+ 
  /*-----------------------------------------------------------------------------------*/
  /* The end of this file as you know it
  /*-----------------------------------------------------------------------------------*/

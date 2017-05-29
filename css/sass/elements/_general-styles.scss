@@ -173,31 +173,6 @@ p.wp-caption-text,
   color: $color-meta;
 }
 
-#colophon {
-  .footer-menu ul a {
-    color: rgba(255, 255, 255, 0.5);
-  }
-  #site-info {
-    color: rgba(255, 255, 255, 0.5);
-    a {
-      color: rgba(255, 255, 255, 0.5);
-    }
-  }
-}
-
-#footer-social span {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-#colophon {
-  .footer-menu ul a:hover, #site-info a:hover {
-    color: rgba(255, 255, 255, 1);
-  }
-  a {
-    color: #fff;
-  }
-}
-
 
 .blog #primary .hentry.has-post-thumbnail:nth-child(4n+1), 
 .featured-slider {

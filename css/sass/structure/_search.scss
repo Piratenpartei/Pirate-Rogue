@@ -175,7 +175,7 @@
     }
   
     .searchbar-maincolor .desktop-search {     
-        background:  rgba($color-main, 0.9);
+        background:  rgba($color-main, 0.95);
 	
         input {
                 &.search-field {            
@@ -192,6 +192,7 @@
                     background:  $color-second;;
                     color: #fff;
                     border: 2px solid  $color-second;
+                    font-weight: bold;
                 }
                 &[type="submit"]:focus,
                 &[type="submit"]:hover {
@@ -203,7 +204,7 @@
     }
     
     .searchbar-secondcolor .desktop-search {     
-        background: rgba($color-second, 0.75);
+        background: rgba($color-second, 0.95);
         input {
                 &.search-field {            
                     border-bottom: 1px solid $color-main;
@@ -214,6 +215,7 @@
                     background:  $color-main;;
                     color: #fff;
                     border: 2px solid  $color-main;   
+                    font-weight: bold;
                 }
                 &[type="submit"]:focus,
                 &[type="submit"]:hover {

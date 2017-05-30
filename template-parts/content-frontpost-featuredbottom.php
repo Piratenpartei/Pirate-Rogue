@@ -11,14 +11,14 @@ $thumbfallbackid = absint(get_theme_mod( 'pirate_rogue_fallback_thumbnail' ));
 if (!isset($thumbfallbackid)) {
     $thumbfallbackid =0;
 } else {
-    $imagesrc = wp_get_attachment_image_src( $thumbfallbackid, 'uku-front-big' )[0];
+    $imagesrc = wp_get_attachment_image_src( $thumbfallbackid, 'pirate-rogue-front-big' )[0];
 }
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article <?php post_class(); ?>>
 
 	<?php if ( '' != get_the_post_thumbnail() && ! post_password_required() ) : ?>
-		<div class="entry-thumbnail fadein"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('uku-featured-bottom'); ?></a></div><!-- end .entry-thumbnail -->
+		<div class="entry-thumbnail fadein"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('pirate-rogue-featured-bottom'); ?></a></div><!-- end .entry-thumbnail -->
 	<?php elseif ( ! post_password_required()  && $imagesrc != '')  : ?>
 		<div class="entry-thumbnail fadein"><a href="<?php the_permalink(); ?>"><img src="<?php echo $imagesrc; ?>" alt=""></a></div><!-- end .entry-thumbnail -->		
 	<?php endif; ?>

@@ -15,7 +15,7 @@ get_header(); ?>
 	
 	<?php if ( '' != get_the_post_thumbnail() && ! post_password_required() ) : ?>
 	<div class="entry-thumbnail">
-		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('uku-bigthumb'); ?></a>
+		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('pirate-rogue-bigthumb'); ?></a>
 	</div><!-- end .entry-thumbnail -->
 	<?php endif; ?>
 

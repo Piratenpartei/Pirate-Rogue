@@ -20,7 +20,7 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 				&& '' != get_the_post_thumbnail() 
 				&& ! post_password_required() ) : ?>
 				<div class="entry-thumbnail">
-					<?php the_post_thumbnail('uku-bigthumb'); ?>
+					<?php the_post_thumbnail('pirate-rogue-bigthumb'); ?>
 				</div><!-- end .entry-thumbnail -->
 			<?php endif; ?>
 

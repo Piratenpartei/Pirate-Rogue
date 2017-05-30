@@ -9,7 +9,7 @@
 
 $blogname = get_bloginfo('name');
 ?>
-
+    </main>
 	<?php get_sidebar( 'instagram' ); ?>
 
 	<?php
@@ -38,7 +38,7 @@ $blogname = get_bloginfo('name');
                         </div>
                         <?php } ?>
 			<div id="site-info" class="cf">  
-				<ul class="credit" role="contentinfo">
+				<ul class="credit">
 				<?php if ( get_theme_mod( 'pirate_rogue_credit' ) ) : ?>
 					<li><?php echo wp_kses_post( get_theme_mod( 'pirate_rogue_credit' ) ); ?></li>
 				<?php else : ?>

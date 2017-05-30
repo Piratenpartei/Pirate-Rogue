@@ -10,7 +10,7 @@
 get_header(); ?>
 
 
-<div class="content-wrap">
+    <div class="content-wrap">
 	<div id="blog-wrap" class="blog-wrap cf">
 		<div id="primary" class="site-content cf" role="main">
 			<?php if ( have_posts() ) : ?>
@@ -45,6 +45,6 @@ get_header(); ?>
                     <?php get_sidebar(); ?>
 
         </div><!-- end .blog-wrap -->
-</div><!-- end .content-wrap -->
+    </div><!-- end .content-wrap -->
 
 <?php get_footer(); ?>

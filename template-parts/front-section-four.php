@@ -27,7 +27,7 @@
 	if (!isset($thumbfallbackid)) {
 	    $thumbfallbackid =0;
 	} else {
-	    $imagesrc = wp_get_attachment_image_src( $thumbfallbackid, 'uku-featured' )[0];
+	    $imagesrc = wp_get_attachment_image_src( $thumbfallbackid, 'pirate-rogue-featured' )[0];
 	}
 	
 ?>
@@ -42,11 +42,10 @@
 
 	<?php if($uku_section_four_query->have_posts()) : ?>
 		<?php while($uku_section_four_query->have_posts()) : $uku_section_four_query->the_post() ?>
-
-		<article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?>>
+		<article <?php post_class('cf'); ?>>
 
 			<?php if ( '' != get_the_post_thumbnail() && ! post_password_required() ) : ?>
-				<div class="entry-thumbnail fadein"><a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><?php the_post_thumbnail('uku-featured'); ?></span></a></div><!-- end .entry-thumbnail -->
+				<div class="entry-thumbnail fadein"><a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><?php the_post_thumbnail('pirate-rogue-featured'); ?></span></a></div><!-- end .entry-thumbnail -->
 			<?php elseif ( ! post_password_required() && $imagesrc != '') : ?>
 				<div class="entry-thumbnail fadein"><a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><img src="<?php echo $imagesrc; ?>" alt=""></span></a></div><!-- end .entry-thumbnail -->
 
@@ -81,7 +80,7 @@
 								'<span class="comment-name">' . esc_html__( 'Comments', 'pirate-rogue') .  '</span>' . esc_html__( '%', 'pirate-rogue') )
 							; ?>
 						</span><!-- end .entry-comments -->
-					<?php endif; // comments_open() ?>
+                                                <?php endif; // comments_open() ?>
 
 						<?php edit_post_link( esc_html__( 'Edit Post', 'pirate-rogue'), '<span class="entry-edit">', '</span>' ); ?>
 					</div><!-- end .entry-meta -->
@@ -92,7 +91,6 @@
 		<?php endwhile; ?>
 
 	<?php endif; // have_posts() ?>
-
 	<?php wp_reset_postdata(); ?>
 
 </section><!-- end #front-section-four -->

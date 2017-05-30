@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<div id="page-start" class="cf">
+    <div id="page-start" class="cf">
 
 <?php
 // Featured Slider
@@ -72,9 +72,9 @@ if ( '' == get_theme_mod( 'uku_front_hideblog' ) ) : ?>
 			'<span class="screen-reader-text">' . esc_html__( 'Newer Posts', 'pirate-rogue') . '</span> ',
 			'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'pirate-rogue') . ' </span>',
 			) ); ?>
-		</div><!-- end #primary -->
+	</div><!-- end #primary -->
 
-		<?php get_sidebar(); ?>
+	<?php get_sidebar(); ?>
 
 	</div><!-- end .blog-wrap -->
 <?php endif; ?>
@@ -109,6 +109,6 @@ if ( '' != get_theme_mod( 'uku_front_section_sixcolumn_tag' ) || '' != get_theme
 <?php get_template_part( 'template-parts/front-section-sixcolumn' ); ?>
 <?php endif; ?>
 
-</div><!-- end #page-start -->
+    </div><!-- end #page-start -->
 
 <?php get_footer(); ?>

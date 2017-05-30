@@ -18,7 +18,7 @@ if ( class_exists( 'Pirate_Crew' ) && 'content' != get_theme_mod( 'pirate_rogue_
     $title = get_theme_mod( 'pirate_rogue_crewmember-title' );
 }
 if (( is_active_sidebar( 'sidebar-1' ) && 'sidebar-no' != get_theme_mod( 'pirate_rogue_sidebar' ) ) or ($preauthor)) { ?>
-	<aside id="secondary" class="sidebar widget-area" role="complementary"> 
+	<aside id="secondary" class="sidebar widget-area"> 
 	    <?php if ($preauthor) {		
 		if (isset($title)) {  
 		    echo '<h2 class="widget-title">'.$title.'</h2>';

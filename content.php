@@ -13,18 +13,18 @@ $thumbfallbackid = absint(get_theme_mod( 'pirate_rogue_fallback_blogroll_thumbna
 if (!isset($thumbfallbackid)) {
     $thumbfallbackid =0;
 } else {
-    $imagesrc = wp_get_attachment_image_src( $thumbfallbackid, 'uku-standard-blog' )[0];
+    $imagesrc = wp_get_attachment_image_src( $thumbfallbackid, 'pirate-rogue-standard-blog' )[0];
 }
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?>>
+    <article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?>>
 
 	<?php if ( '' !== get_the_post_thumbnail() && ! post_password_required() ) : ?>
 		<div class="entry-thumbnail fadein">
-			<a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><?php the_post_thumbnail('uku-standard-blog'); ?></span></a>
+			<a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><?php the_post_thumbnail('pirate-rogue-standard-blog'); ?></span></a>
 		</div><!-- end .entry-thumbnail -->
         <?php elseif ( ! post_password_required() &&  $imagesrc != '') : ?>
 		<div class="entry-thumbnail fadein fallback">
-			<a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><img src="<?php echo $imagesrc; ?>"></span></a>
+			<a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><img src="<?php echo $imagesrc; ?>" alt=""></span></a>
 		</div><!-- end .entry-thumbnail -->        
 	<?php endif; ?>
 
@@ -61,12 +61,10 @@ if (!isset($thumbfallbackid)) {
                                 ?>
 			</header><!-- end .entry-header -->
 
-			<?php if ( 'serif' !== get_theme_mod( 'uku_main_design' )) : ?>
-				<div class="entry-summary">
+
+			<div class="entry-summary">
 					<?php the_excerpt(); ?>
-				</div><!-- .entry-summary -->
-			<?php endif; ?>
-
-		</div><!-- .meta-main-wrap -->
-
-</article><!-- end post -<?php the_ID(); ?> -->
+			</div><!-- .entry-summary -->
+		</div>
+        </div><!-- .meta-main-wrap -->
+    </article><!-- end post -<?php the_ID(); ?> -->

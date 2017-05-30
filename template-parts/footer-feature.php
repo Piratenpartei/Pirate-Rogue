@@ -8,24 +8,24 @@
  */
 ?>
 
-<section id="big-footer-feature" class="big-footer-feature cf">
+    <section id="big-footer-feature" class="big-footer-feature cf">
 
 	<?php if ( '' != get_theme_mod( 'pirate_rogue_footerfeature_title' )) : ?>
     	<h2 class="footer-feature-title"><?php echo esc_html(get_theme_mod( 'pirate_rogue_footerfeature_title' ) ); ?></h2>
         <?php else : ?>
          <h2 class="screen-reader-text"><?php echo _e('Featured','pirate-rogue'); ?></h2>
-    <?php endif; ?>
+        <?php endif; ?>
 
-    <div class="footer-feature-image fadein">
+        <div class="footer-feature-image fadein">
 
-	    <?php if ( '' != get_theme_mod( 'pirate_rogue_footerfeature_btn_link' ) ) { ?>
-		<a href="<?php echo esc_url( get_theme_mod( 'pirate_rogue_footerfeature_btn_link' ) ); ?>"><img src="<?php echo esc_url( get_theme_mod( 'pirate_rogue_footerfeature_image' ) ); ?>" width="600" height="600"></a>
-            <?php } else {
-                    if ( '' != get_theme_mod( 'pirate_rogue_footerfeature_image' ) ) { ?>
-                         <img src="<?php echo esc_url( get_theme_mod( 'pirate_rogue_footerfeature_image' ) ); ?>" alt="" width="600" height="600">
-                    <?php }
-            } ?>
-    </div><!-- end .footer-feature-image -->
+                <?php if ( '' != get_theme_mod( 'pirate_rogue_footerfeature_btn_link' ) ) { ?>
+                    <a href="<?php echo esc_url( get_theme_mod( 'pirate_rogue_footerfeature_btn_link' ) ); ?>"><img src="<?php echo esc_url( get_theme_mod( 'pirate_rogue_footerfeature_image' ) ); ?>" width="600" height="600"></a>
+                <?php } else {
+                        if ( '' != get_theme_mod( 'pirate_rogue_footerfeature_image' ) ) { ?>
+                             <img src="<?php echo esc_url( get_theme_mod( 'pirate_rogue_footerfeature_image' ) ); ?>" alt="" width="600" height="600">
+                        <?php }
+                } ?>
+        </div><!-- end .footer-feature-image -->
 
 	<div class="footer-feature-textwrap">
 
@@ -42,4 +42,4 @@
 		<?php endif; ?>
 
 	</div><!-- end .footer-feature-textwrap -->
-</section><!-- end #big-footer-feature -->
+    </section><!-- end #big-footer-feature -->

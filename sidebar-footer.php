@@ -14,7 +14,7 @@ if ( ! is_active_sidebar( 'sidebar-footer' ) ) {
 // If we get this far, we have widgets. Let's do this.
 ?>
 
-<aside id="sidebar-footer" class="sidebar-footer cf" role="complementary">
+<aside id="sidebar-footer" class="sidebar-footer cf">
 	<?php if ( is_active_sidebar( 'sidebar-footer' ) ) : ?>
 		<div class="widget-area">
 			<?php dynamic_sidebar( 'sidebar-footer' ); ?>

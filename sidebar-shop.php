@@ -14,7 +14,7 @@ if ( ! is_active_sidebar( 'sidebar-shop' ) ) {
 // If we get this far, we have widgets. Let's do this.
 ?>
 
-<aside id="sidebar-shop" class="sidebar-page widget-area" role="complementary">
+<aside id="sidebar-shop" class="sidebar-page widget-area">
 	<?php if ( is_active_sidebar( 'sidebar-shop' ) ) : ?>
 		<div class="widget-area">
 			<?php dynamic_sidebar( 'sidebar-shop' ); ?>

@@ -13,7 +13,7 @@
         <?php if ( '' != get_theme_mod( 'pirate_rogue_footermenu_image' ) ) {  
 	
 	    $image = absint(get_theme_mod( 'pirate_rogue_footermenu_image' ));
-	    $imagesrc = wp_get_attachment_image_src( $image,  'uku-featured-bottom' )[0];
+	    $imagesrc = wp_get_attachment_image_src( $image,  'pirate-rogue-featured-bottom' )[0];
 
 	    ?>
 		<div class="custom-logo-wrap">

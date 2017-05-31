@@ -12,9 +12,9 @@
 $introtext = get_post_meta($post->ID, 'intro', true);
 $custom_class = get_post_meta($post->ID, 'post_class', true);
 ?>
- 
-<article id="post-<?php the_ID(); ?>" <?php post_class($custom_class); ?>>
-		<header class="entry-header cf">
+    
+    <article id="post-<?php the_ID(); ?>" <?php post_class($custom_class); ?>>
+	<header class="entry-header cf">
 			<?php if ( $custom_class != 'no-thumb' 
 				&& $custom_class == 'big-thumb' 
 				&& '' != get_the_post_thumbnail() 
@@ -84,72 +84,70 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 					<?php edit_post_link( esc_html__( 'Edit Post', 'pirate-rogue'), '<span class="entry-edit">', '</span>' ); ?>
 				</div><!-- end .meta-columnthree -->
 			</div><!-- end .entry-meta -->
-		</header><!-- end .entry-header -->
+	</header><!-- end .entry-header -->
+	<div class="contentwrap">
+	    <?php if ( $custom_class != 'big-thumb' 
+		    && $custom_class != 'no-thumb' 
+		    && '' != get_the_post_thumbnail() 
+		    && ! post_password_required() ) : ?>
+		<div class="entry-thumbnail">
+			<?php the_post_thumbnail(); ?>
+		</div><!-- end .entry-thumbnail -->
+	    <?php endif; ?>
 
-		<div class="contentwrap">
-			<?php if ( $custom_class != 'big-thumb' 
-				&& $custom_class != 'no-thumb' 
-				&& '' != get_the_post_thumbnail() 
-				&& ! post_password_required() ) : ?>
-				<div class="entry-thumbnail">
-					<?php the_post_thumbnail(); ?>
-				</div><!-- end .entry-thumbnail -->
-			<?php endif; ?>
+	    <div id="socialicons-sticky">
+			<div id="entry-content" class="entry-content">
+			    <?php    
 
-			<div id="socialicons-sticky">
-				<div id="entry-content" class="entry-content">
-                                <?php    
-                                    
-                                    
-				 the_content(); 
-                                 
-				if ( class_exists( 'Pirate_Crew' ) && 'content' == get_theme_mod( 'pirate_rogue_crewmember-position' ) ) {
-				    $preauthor =  get_post_meta( $post->ID, 'pirate_crew_member_id', true );	
-				    $style = pirate_rogue_sanitize_pirate_crew_member_style(get_theme_mod( 'pirate_rogue_crewmember-style' ));
-				    $format = pirate_rogue_sanitize_pirate_crew_member_format(get_theme_mod( 'pirate_rogue_crewmember-format' ));
-				    $title = get_theme_mod( 'pirate_rogue_crewmember-title' );
+			     the_content(); 
 
-				    if ($preauthor) {		
-						if (isset($title)) {  
-						    echo '<h2 class="pirate-crew-title">'.$title.'</h2>';
-						}
-						echo do_shortcode( '[pirate id="'.$preauthor.'" format="'.$format.'" style="'.$style.'" showcontent="0"]' ); 
-					    }
+			    if ( class_exists( 'Pirate_Crew' ) && 'content' == get_theme_mod( 'pirate_rogue_crewmember-position' ) ) {
+				$preauthor =  get_post_meta( $post->ID, 'pirate_crew_member_id', true );	
+				$style = pirate_rogue_sanitize_pirate_crew_member_style(get_theme_mod( 'pirate_rogue_crewmember-style' ));
+				$format = pirate_rogue_sanitize_pirate_crew_member_format(get_theme_mod( 'pirate_rogue_crewmember-format' ));
+				$title = get_theme_mod( 'pirate_rogue_crewmember-title' );
+
+				if ($preauthor) {		
+				    if (isset($title)) {  
+					echo '<h2 class="pirate-crew-title">'.$title.'</h2>';
+				    }
+				    echo do_shortcode( '[pirate id="'.$preauthor.'" format="'.$format.'" style="'.$style.'" showcontent="0"]' ); 
 				}
-                                 
-                                 ?>
-				<?php
-					wp_link_pages( array(
-						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'pirate-rogue'),
-						'after'  => '</div>',
-					) );
-				?>
-				<?php if ( function_exists( 'sharing_display' ) ) {sharing_display( '', true );}
-					if ( class_exists( 'Jetpack_Likes' ) ) {
-					$custom_likes = new Jetpack_Likes;
-					echo $custom_likes->post_likes( '' );
-				} ?>
-				</div><!-- end .entry-content -->
+			    }
+
+			     ?>
+			    <?php
+				    wp_link_pages( array(
+					    'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'pirate-rogue'),
+					    'after'  => '</div>',
+				    ) );
+			    ?>
+			    <?php if ( function_exists( 'sharing_display' ) ) {sharing_display( '', true );}
+				    if ( class_exists( 'Jetpack_Likes' ) ) {
+				    $custom_likes = new Jetpack_Likes;
+				    echo $custom_likes->post_likes( '' );
+			    } ?>
+			</div><!-- end .entry-content -->
 
 			<footer class="entry-footer cf">
-				<?php $tags_list = get_the_tag_list();
-                                    if ( $tags_list ): ?>
-					<div class="entry-tags"><span><?php esc_html_e('Tags', 'pirate-rogue') ?></span><?php the_tags('',' &bull; ', ''); ?></div>
-                                    <?php endif; ?>
-				<?php
-				// Author bio.
-				if ( get_the_author_meta( 'description' ) ) :
-					get_template_part( 'template-parts/authorbox' );
-				endif;
-				
-                                $canonical = get_post_meta( get_the_ID(), 'pirate_rogue_canonical', true );
-                                 
-                                 if ($canonical) { ?>
-                                        <div class="canonical-link"><span><?php echo __('Origin: ','pirate_rogue');?></span><a href="<?php echo $canonical; ?>"><?php echo $canonical; ?></a></div>
-                                     
-                                 <?php }
-                                
-                                ?>
+			    <?php $tags_list = get_the_tag_list();
+				if ( $tags_list ): ?>
+				    <div class="entry-tags"><span><?php esc_html_e('Tags', 'pirate-rogue') ?></span><?php the_tags('',' &bull; ', ''); ?></div>
+				<?php endif; ?>
+			    <?php
+			    // Author bio.
+			    if ( get_the_author_meta( 'description' ) ) :
+				    get_template_part( 'template-parts/authorbox' );
+			    endif;
+
+			    $canonical = get_post_meta( get_the_ID(), 'pirate_rogue_canonical', true );
+
+			     if ($canonical) { ?>
+				    <div class="canonical-link"><span><?php echo __('Origin: ','pirate_rogue');?></span><a href="<?php echo $canonical; ?>"><?php echo $canonical; ?></a></div>
+
+			     <?php }
+
+			    ?>
 			</footer><!-- end .entry-footer -->
 
 			<?php
@@ -166,7 +164,6 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 				'<span class="screen-reader-text">' . esc_html__( 'Previous Post', 'pirate-rogue') . '</span> ',
 			) ); ?>
 
-		</div><!-- end #socialicons-sticky -->
-		</div><!-- end .content-wrap -->
-
-	</article><!-- end post -<?php the_ID(); ?> -->
+	    </div><!-- end #socialicons-sticky -->
+	</div><!-- end .content-wrap -->
+    </article><!-- end post -<?php the_ID(); ?> -->

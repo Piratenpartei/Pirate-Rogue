@@ -34,9 +34,12 @@ $blogname = get_bloginfo('name');
                     
                         <?php if ( get_theme_mod( 'pirate_rogue_footer_search' ) ) { ?>   
                         <div id="footer-search">
+			<?php } else { ?>
+			<div id="footer-search" class="screen-reader-text">
+			<?php }  ?>
                                 <?php get_search_form(); ?>
                         </div>
-                        <?php } ?>
+                       
 			<div id="site-info" class="cf">  
 				<ul class="credit">
 				<?php if ( get_theme_mod( 'pirate_rogue_credit' ) ) : ?>

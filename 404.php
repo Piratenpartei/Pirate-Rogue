@@ -26,8 +26,8 @@ get_header(); ?>
                     <div class="entry-content">
                         <div class="two-columns-one">
                             <header class="entry-header">
-                            <h1 class="entry-title">404</h1>       
-                    </header><!--end .entry-header -->
+				<h1 class="entry-title">404</h1>       
+			    </header><!--end .entry-header -->
                             <p><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'pirate-rogue' ); ?>
                             <br>
                                 <?php esc_html_e( 'It looks like nothing was found at this location. Maybe try another search term?', 'pirate-rogue' ); ?></p>

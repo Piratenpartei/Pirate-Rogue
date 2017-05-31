@@ -3,26 +3,26 @@
 /*-----------------------------------------------------------------------------------*/
 /* --- Main Menu Buttons (Off Canvas) --- */
 .overlay-btn {
-  border: none;
-  outline: none;
-  display: block;
-  margin: 0;
-  padding: 0;
-  z-index: 9999;
-  text-align: right;
-  background: transparent;
-  line-height: 1;
-  opacity: 1;
+    border: none;
+    outline: none;
+    display: block;
+    margin: 0;
+    padding: 0;
+    z-index: 9999;
+    text-align: right;
+    background: transparent;
+    line-height: 1;
+    opacity: 1;
 }
 
 /* --- Overlay Buttons: Fix-positioning --- */
 #overlay-open, 
 #overlay-close {
-  position: absolute;
-  top: 5px;
-  right: 5.3125%;
-  width: 40px;
-  height: 40px;
+    position: absolute;
+    top: 8px;
+    right: 5.3125%;
+    width: 40px;
+    height: 40px;
 }
 
 #overlay-open {
@@ -90,27 +90,28 @@
   position: relative;
 }
 
-.screen-reader-text {
-  position: absolute;
-  left: -1000em;
-}
 
 /* --- Overlay Widget Area --- */
 
 .inner-offcanvas-wrap {
-  width: 100%;
-  display: block;
-  position: fixed;
-  left: -100%;
-  top: 0;
-  height: 100%;
-  overflow: auto;
-  z-index: 1000;
-  background: #fff;
-  -webkit-transition: left,.35s,ease-in-out;
-  -moz-transition: left,.35s,ease-in-out;
-  -o-transition: left,.35s,ease-in-out;
-  transition: left,.35s,ease-in-out;
+    width: 100%;
+    display: block;
+    position: fixed;
+    left: -100%;
+    top: 0;
+    height: 100%;
+    overflow: auto;
+    z-index: 1000;
+    background: #fff;
+    -webkit-transition: left,.35s,ease-in-out;
+    -moz-transition: left,.35s,ease-in-out;
+    -o-transition: left,.35s,ease-in-out;
+    transition: left,.35s,ease-in-out;
+
+  
+    .admin-bar & {
+	top: 46px;
+    }
 }
 
 .overlay-show  {
@@ -225,7 +226,7 @@
   }
   #overlay-open {
 	position: absolute;
-	top: 40px;
+	top: 34px;
 	left: -17px;
 	right: auto;
 	width: 4.76190476190476%;

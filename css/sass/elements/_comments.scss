@@ -359,4 +359,15 @@ ol.commentlist {
 	    padding-left: 22px;
 	 }
     } 
+    ol.commentlist {
+	padding: 40px 0 10px;
+    }
+
+    #comments li.comment ul.children {
+	margin-left: 60px;
+	ul.children ul.children {
+	  margin-left: 0;
+	}
+    }
 }
+

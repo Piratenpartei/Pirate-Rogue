@@ -17,7 +17,7 @@
 
 	    ?>
 		<div class="custom-logo-wrap">
-			<img src="<?php echo $imagesrc; ?>">
+			<img src="<?php echo $imagesrc; ?>" alt="">
 		</div><!-- end .custom-logo-wrap -->
  
 	<?php } elseif ( has_custom_logo() && '' != get_theme_mod( 'pirate_rogue_customlogofooter' ) ) { ?>

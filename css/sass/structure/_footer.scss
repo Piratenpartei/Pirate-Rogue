@@ -1,23 +1,51 @@
 
 /*-----------------------------------------------------------------------------------*/
-/*	14.0 Footer
+/*  Footer
 /*-----------------------------------------------------------------------------------*/
 
 #colophon {
-  clear: both;
-  overflow: hidden;
-  margin: 0 auto;
-  background: $color-footer-background;
-  border-top: 1px solid  $color-footer-background;  
-    // seems useless, but in case someone changes the background via user style
-    // this will make a line between main content and footer
-  color: #fff;
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
+    clear: both;
+    overflow: hidden;
+    margin: 0 auto;
+    background: $color-footer-background;
+    border-top: 1px solid  $color-footer-background;  
+      // seems useless, but in case someone changes the background via user style
+      // this will make a line between main content and footer
+    color: #fff;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  
+    .no-sidebar & {
+	margin-top: 60px;
+    }
 
-.no-sidebar #colophon {
-  margin-top: 60px;
+    .footer-menu ul a {
+        color: $color-footer-text-links;
+    }
+    p,
+    #site-info {
+        color:  $color-footer-text;
+        a {
+            color:  $color-footer-text-links;
+        }
+    }
+  
+    .footer-menu ul a:focus, 
+    #site-info a:focus,
+    .footer-menu ul a:hover, 
+    #site-info a:hover {
+        color:  $color-footer-text-links-hover;
+    }
+    a {
+        color: $color-footer-text-links;
+    }
+
+    .custom-logo-wrap {
+	text-align: left;
+	display: block;
+	padding-bottom: 45px;
+    }
+    
 }
 
 .page-template-shop-front #colophon {
@@ -50,12 +78,6 @@
   font-weight: bold;
 }
 
-#colophon .custom-logo-wrap {
-  text-align: left;
-  display: block;
-  padding-bottom: 45px;
-}
-
 /* --- Big Footer Featured Area --- */
 
 .big-footer-feature {
@@ -74,22 +96,12 @@
 .big-footer-feature p {
   margin-bottom: 0;
   &.text-small {
-    padding: 10px 0 0 0;
-    opacity: 0.5;
+	padding: 10px 0 0 0;
   }
 }
 
-
 .footer-feature-textwrap {
   padding: 15px 0 0 50px;
-}
-
-@media screen and (min-width: $breakpoint-1060) {
-   .footer-feature-textwrap { 
-        p.text-big {
-            font-size: 2rem;
-        }
-    }
 }
 
 .footer-feature-image a {
@@ -207,31 +219,6 @@
 }
 
 
-#colophon {
-    .footer-menu ul a {
-        color: $color-footer-text-links;
-    }
-    #site-info {
-        color:  $color-footer-text;
-        a {
-            color:  $color-footer-text-links;
-        }
-    }
-  
-    .footer-menu ul a:focus, 
-    #site-info a:focus,
-    .footer-menu ul a:hover, 
-    #site-info a:hover {
-        color:  $color-footer-text-links-hover;
-    }
-    a {
-        color: $color-footer-text-links;
-    }
-
-}
-
-
-
 
 @media screen and (min-width: $breakpoint-600) {
     .footer-feature-image {
@@ -247,16 +234,41 @@
     }
 }
 
+@media screen and (min-width: $breakpoint-sm) {
+    #colophon {
+      padding-top: 70px;
+    }
+    #site-info {
+	font-size: 14px;
+	font-size: 0.875rem;
+	ul li {
+	  display: inline-block;
+	}
+    }
+    #footer-social {
+	padding-top: 10px;
+    }	
+    .big-footer-feature {
+	margin-bottom: 70px;
+	padding-bottom: 70px;
+	
+	h3.footer-feature-title {
+	    padding: 8px 0 35px;
+	}
+    }
+    .big-instagram-wrap .widget-area .widget {
+	padding: 45px 0 0 0;
+    }
+}
+
 @media screen and (min-width: $breakpoint-1024) { 
-  .footer-feature-btn {
-    margin: 40px 0 0 0;
-    padding: 18px 40px;
-  }
-  .big-footer-feature p.text-small {
-    padding: 20px 0 0 0;
-  }
-  
-  
+    .footer-feature-btn {
+	margin: 40px 0 0 0;
+	padding: 18px 40px;
+    }
+    .big-footer-feature p.text-small {
+	padding: 20px 0 0 0;
+    }
 }
 
 @media screen and (min-width: $breakpoint-1060) {
@@ -269,69 +281,76 @@
             line-height: 1rem;
         }
     }
-     .title-footer {
-    width: 31.74603174603175%;
-    /* -- 400px at 1440px ---*/
-    margin-right: 2.38095238095238%;
-    /* -- 30px at 1440px ---*/
-    float: left;
-  }
-  #colophon .custom-logo-wrap {
-    width: 31.74603174603175%;
-    /* -- 400px at 1440px ---*/
-    margin-right: 2.38095238095238%;
-    /* -- 30px at 1440px ---*/
-    float: left;
-    .custom-logo-link img {
-      max-width: 130px;
-      max-height: 59px;
+    .title-footer {
+	width: 31.74603174603175%;
+	/* -- 400px at 1440px ---*/
+	margin-right: 2.38095238095238%;
+	/* -- 30px at 1440px ---*/
+	float: left;
     }
-  }
-  #footer-menu-one, 
-  #footer-menu-two, 
-  #footer-menu-three, 
-  #footer-menu-four {
-    clear: none;
-  }
-  .footer-menu {
-    width: 14.68253968253968%;
-    /* -- 185px at 1440px ---*/
-    float: left;
-  }
-  #footer-menu-one, 
-  #footer-menu-two, 
-  #footer-menu-three {
-    margin-right: 2.38095238095238%;
-    /* -- 30px at 1440px ---*/
-  }
-  .title-footer {
-    font-size: 36px;
-    font-size: 2.25rem;
-  }
-  #site-info {
-    width: 50%;
-    float: left;
-  }
-  #footer-social {
-    padding-top: 23px;
-    float: right;
-    text-align: right;
-    ul {
-      float: left;
+     #colophon {
+	padding-left: 0;
+	padding-right: 0;
+	
+	.custom-logo-wrap {
+	    width: 31.74603174603175%;
+	    /* -- 400px at 1440px ---*/
+	    margin-right: 2.38095238095238%;
+	    /* -- 30px at 1440px ---*/
+	    float: left;
+	    .custom-logo-link img {
+		max-width: 130px;
+		max-height: 59px;
+	    }
+	}
     }
+  
 
-    span {
-      display: inline-block;
-      float: left;
-      padding: 8px 15px 0px 0px;
+    #footer-menu-one, 
+    #footer-menu-two, 
+    #footer-menu-three, 
+    #footer-menu-four {
+	clear: none;
     }
-  }
-  .footer-feature-image {
-    width: 31.74603174603175%;
-    margin-right: 0;
-  }
-  .footer-feature-textwrap {
-    width: 65.87301587301587%;
-    margin-left: 0;
-  }
+    .footer-menu {
+	width: 14.68253968253968%;
+	/* -- 185px at 1440px ---*/
+	float: left;
+    }
+    #footer-menu-one, 
+    #footer-menu-two, 
+    #footer-menu-three {
+	margin-right: 2.38095238095238%;
+	/* -- 30px at 1440px ---*/
+    }
+    .title-footer {
+	font-size: 36px;
+	font-size: 2.25rem;
+    }
+    #site-info {
+	width: 50%;
+	float: left;
+    }
+    #footer-social {
+	padding-top: 23px;
+	float: right;
+	text-align: right;
+	ul {
+	    float: left;
+	}
+
+	span {
+	    display: inline-block;
+	    float: left;
+	    padding: 8px 15px 0px 0px;
+	}
+    }
+    .footer-feature-image {
+	width: 31.74603174603175%;
+	margin-right: 0;
+    }
+    .footer-feature-textwrap {
+	width: 65.87301587301587%;
+	margin-left: 0;
+    }
 }

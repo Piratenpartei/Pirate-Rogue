@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<div class="content-wrap">
+    <div class="content-wrap">
 
 	<?php if ( '' != get_the_post_thumbnail() && ! post_password_required() ) : ?>
 	<div class="entry-thumbnail">
@@ -36,6 +36,6 @@ get_header(); ?>
 	<?php get_sidebar( 'page' ); ?>
 
 	</div><!-- end .blog-wrap -->
-</div><!-- end .content-wrap -->
+    </div><!-- end .content-wrap -->
 
 <?php get_footer(); ?>

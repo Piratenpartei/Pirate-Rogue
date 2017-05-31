@@ -364,11 +364,12 @@
 	}
 
         #header-social-sticky {
-		top: 0;
+		top: 7px;
 		right: 20px;
+		
+		.header-stick & {
+		    z-index: 9999;
+		}
 	}
-        .header-stick #header-social-sticky {
-		top: 0;
-		z-index: 9999;
-	}
+
 }

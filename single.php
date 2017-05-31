@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<div id="singlepost-wrap" class="singlepost-wrap cf">
+    <div id="singlepost-wrap" class="singlepost-wrap cf">
 
 	<?php // Start the Loop.
 	while ( have_posts() ) : the_post(); ?>
@@ -18,9 +18,8 @@ get_header(); ?>
 
 <?php get_sidebar(); ?>
 
-</div><!-- end .singlepost-wrap -->
-</div>
-
+    </div><!-- end .singlepost-wrap -->
+    
 <?php if ( class_exists( 'Jetpack_RelatedPosts' ) ) : ?>
 	<div class="recommended-posts-wrap cf">
 		<?php echo do_shortcode( '[jetpack-related-posts]' ); ?>

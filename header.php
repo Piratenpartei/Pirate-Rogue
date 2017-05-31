@@ -10,7 +10,7 @@
  */
 
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js">
+<html <?php language_attributes(); ?> class="no-js" itemscope itemtype="http://schema.org/WebPage">
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -59,20 +59,18 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
         <nav id="skiplinks" aria-label="<?php _e('Skiplinks', 'pirate-rogue'); ?>">
             <ul>
                 <li><a href="#overlay-wrap" data-target="#overlay-wrap" data-firstchild="0" class="jumplink-content"><?php _e('Content','pirate-rogue'); ?></a></li>
-                <li><a href="#masthead" data-target="#desktop-navigation" data-firstchild="1" class="jumplink-nav"><?php _e('Main Menu','pirate-rogue'); ?></a></li>
-                 <?php if ( get_theme_mod( 'pirate_rogue_footer_search' ) ) { ?>             
+                <li><a href="#masthead" data-target="#desktop-navigation" data-firstchild="1" class="jumplink-nav"><?php _e('Main Menu','pirate-rogue'); ?></a></li>        
                 <li><a href="#footer-search" data-target="#footer-search" data-firstchild="1" class="jumplink-nav"><?php _e('Search','pirate-rogue'); ?></a></li>
-                 <?php } ?>
                 <li><a href="#colophon" data-target="#colophon" data-firstchild="1" class="jumplink-nav"><?php _e('Footer','pirate-rogue'); ?></a></li>
             </ul>
 	</nav>    
-        <header id="masthead" class="site-header cf" role="banner"> 
+        <header id="masthead" class="site-header cf"> 
             <div class="site-header-content">
-                    <div id="site-branding">
+                    <div id="site-branding" role="banner" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
                             <?php if ( is_front_page() ) : ?>
-                                    <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+                                    <h1 class="site-title" itemprop="name"><?php bloginfo( 'name' ); ?></h1>
                             <?php else : ?>
-                                    <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+                                    <p class="site-title" itemprop="name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url"><?php bloginfo( 'name' ); ?></a></p>
                             <?php endif; ?>
 
                             <?php if ( has_custom_logo() ) : ?>
@@ -97,7 +95,7 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
                             <?php endif; ?>
                     </div><!-- end #site-branding -->
 
-                    <nav id="desktop-navigation" class="desktop-navigation cf" role="navigation">
+                    <nav id="desktop-navigation" class="desktop-navigation cf">
                             <?php wp_nav_menu( array( 'menu_class' => 'menu mainmenu', 'theme_location' => 'primary', 'container' => false, 'walker'  => new Pirate_Rogue_Menu_Walker() ) ); ?>
                     </nav><!-- .main-navigation -->
 
@@ -131,7 +129,7 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
 
 
                     <?php if (has_nav_menu( 'social' ) ) : ?>
-                            <nav id="header-social-sticky" class="header-social social-nav" role="navigation">
+                            <nav id="header-social-sticky" class="header-social social-nav">
                                     <?php wp_nav_menu( array(
                                             'theme_location'	=> 'social',
                                             'container' 		=> 'false',
@@ -153,7 +151,7 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
                             </div><!-- end .overlay-title-wrap -->
                 
 
-                            <nav id="overlay-nav" class="main-nav cf" role="navigation">
+                            <nav id="overlay-nav" class="main-nav cf">
                             <?php
                                     wp_nav_menu( array(
                                         'theme_location'	=> 'primary',
@@ -186,4 +184,4 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
     </header><!-- end #masthead -->
 
     <div id="overlay-wrap" class="overlay-wrap cf"></div><!-- end #overlay-wrap -->
-
+    <main>

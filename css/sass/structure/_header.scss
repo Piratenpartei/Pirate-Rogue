@@ -1,5 +1,5 @@
 /*-----------------------------------------------------------------------------------*/
-/*	3.0 Header
+/* Header
 /*-----------------------------------------------------------------------------------*/
 
 #desktop-navigation, 
@@ -7,7 +7,7 @@
 .search-open, 
 .desktop-search, 
 .sticky-header {
-  display: none;
+    display: none;
 }
 
 #site-branding {
@@ -16,11 +16,16 @@
     left: 0;
     right: 0;
     display: block;
-    padding-top: 9px;
-    padding-bottom: 9px;
+    
+    padding-top: 5px;
+    padding-bottom: 5px;
     border-bottom: 1px solid #ddd;
     background: #fff;
     z-index: 10;
+    
+    .admin-bar & {
+	top: 46px;
+    }
 }
 
 .home.blog {
@@ -29,21 +34,17 @@
     }
 }
 
-.admin-bar {
-  #site-branding, 
-  .inner-offcanvas-wrap {
-	top: 46px;
-  }
-}
+
 
 a.site-logo {
     display: none;
     line-height: 0;
+    
+    .home & {
+	display: inline-block;
+    }
 }
 
-.home a.site-logo {
-    display: inline-block;
-}
 
 p.site-description {
     display: none;
@@ -55,32 +56,44 @@ p.site-description {
 }
 
 .custom-logo-wrap {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
-  display: block;
-  a.custom-logo-link img {
-    max-width: 100px;
-    max-height: 45px;
-  }
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    display: block;
+    
+    a.custom-logo-link {
+	img {
+	    vertical-align: middle;
+	    width: auto;
+	    max-width: 300px;
+	    height: 49px;
+        }
+    }
 }
 
 .no-header-text {
     h1.site-title,
     p.site-title,
     p.site-description {
-	position: absolute;
-	clip: rect(1px, 1px, 1px, 1px);
+	@extend .unsichtbar;
     }
 }
 
 
+/* Minimum width of 790 pixels (WP Admin bar changes size)
+------------------------------------------------------------------------------------ */
+
+@media screen and (min-width: $breakpoint-790) {
+  .admin-bar {
+    #site-branding {
+	top: 32px;
+    }
+  }
+}
+
 
 @media screen and (min-width: $breakpoint-1060) {
-   .hide-header-sticky .sticky-header {
-        display: none !important;
-    }
-  .sticky-header {
+    .sticky-header {
         display: block;
         position: fixed;
         top: 0;
@@ -95,75 +108,118 @@ p.site-description {
         backface-visibility: hidden;
         box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
         z-index: 100000;
-  }
-  .fixedheader-dark {
-    .sticky-header {
-        background: #1a1a1a;
-    }
-    &.header-stick {
-	#overlay-open-sticky, 
-	#search-open-sticky, 
-	#header-social-sticky ul li a {
-	    color: rgba(255, 255, 255, 0.5);
+	
+	&.hidden {
+	    -webkit-transform: translateY(-100%);
+	    transform: translateY(-100%);
+	    box-shadow: none;
 	}
-	.sticky-header p.site-title a, 
-	#overlay-open-sticky:focus, 
-	#search-open-sticky:focus, 
-	#header-social-sticky ul li a:focus,
-	#overlay-open-sticky:hover, 
-	#search-open-sticky:hover, 
-	#header-social-sticky ul li a:hover {
-	    color: #fff;
+	p {
+	    display: none;
+	    font-size: 30px;
+	    font-size: 1.875rem;
 	}
+	
+	.hide-header-sticky & {
+	    display: none !important;
+	}
+	
+	.fixedheader-dark & {
+	     background: #1a1a1a;
+	}
+	
     }
-  }
-  .sticky-header {s
-    &.hidden {
-      -webkit-transform: translateY(-100%);
-      transform: translateY(-100%);
-      box-shadow: none;
-    }
-    p {
-      display: none;
-      font-size: 30px;
-      font-size: 1.875rem;
-    }
-  }
-  .header-stick .sticky-header p {
-    display: block;
-    padding: 8px 0 0 0;
-  }
-  #overlay-open-sticky {
-    position: absolute;
-    height: 59px;
-    text-align: center;
-    top: 0px;
-    left: 10px;
-    width: 59px;
-  }
-  #search-open-sticky {
-    top: 0;
-    left: 69px;
-    width: 59px;
-  }
-  .header-stick {
-    #overlay-open-sticky {
-      top: 0px;
-      z-index: 9999;
-    }
-    #overlay-open-sticky {
-      width: 60px;
-    }
-   
-  }
-  .sticky-header .custom-logo-wrap {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    .custom-logo-link img {
-      max-width: 130px;
-      max-height: 59px;
-    }
-  }
 
+    .fixedheader-dark {
+      &.header-stick {
+	  #overlay-open-sticky, 
+	  #search-open-sticky, 
+	  #header-social-sticky ul li a {
+	      color: rgba(255, 255, 255, 0.5);
+	  }
+	  .sticky-header p.site-title a, 
+	  #overlay-open-sticky:focus, 
+	  #search-open-sticky:focus, 
+	  #header-social-sticky ul li a:focus,
+	  #overlay-open-sticky:hover, 
+	  #search-open-sticky:hover, 
+	  #header-social-sticky ul li a:hover {
+	      color: #fff;
+	  }
+      }
+    }
+
+    
+    .header-stick {
+	.sticky-header p {
+	      display: block;
+	      padding: 8px 0 0 0;
+	}
+	#overlay-open-sticky {
+	  top: 0px;
+	  z-index: 9999;
+	}
+	#overlay-open-sticky {
+	  width: 60px;
+	}
+    }
+
+    .custom-logo-wrap {     
+	  text-align: center;
+
+	  a.custom-logo-link img {
+	    width: auto;
+	    height: 100px;
+	    max-width: 360px;
+	  }
+
+	  .sticky-header & {
+	      text-align: center;
+	      margin-left: auto;
+	      margin-right: auto;
+
+	      .custom-logo-link img {
+		  max-width: 400px;
+		  width: auto;		
+		  height: 59px;
+	      }
+	  }
+    }
+  
+    #site-branding {
+	position: relative;
+	width: 87.5%;
+	/* -- 1260px at 1440px ---*/
+	margin-left: auto;
+	margin-right: auto;
+	padding: 17px 0 0;
+	border-bottom: none;
+	background: none;
+	
+	.admin-bar & {
+	    top: 0;
+	}
+
+   }
+  
+   
+   
+    p.site-description {
+	display: block;
+	text-align: center;
+	margin: 0;
+	padding: 4px 0 0 0;
+	font-size: 12px;
+	font-size: 0.75rem;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+      
+      
+	.hide-tagline & {
+	    display: none !important;
+	}  
+    }
+    
+  
 }
+

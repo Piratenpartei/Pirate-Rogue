@@ -9,7 +9,7 @@
 
 $blogname = get_bloginfo('name');
 ?>
-
+    </main>
 	<?php get_sidebar( 'instagram' ); ?>
 
 	<?php
@@ -21,7 +21,7 @@ $blogname = get_bloginfo('name');
             <h1 class="screen-reader-text"><?php _e('More Informations','pirate-rogue'); ?></h1>
 		<?php
 		// Big Footer Feature Section
-		if ( '' == get_theme_mod( 'pirate_rogue_footerfeature_image' )  ) : ?>
+		if ( '' !== get_theme_mod( 'pirate_rogue_footerfeature_image' )  ) : ?>
 			<?php get_template_part( 'template-parts/footer-feature' ); ?>
 		<?php endif; ?>
 
@@ -34,11 +34,14 @@ $blogname = get_bloginfo('name');
                     
                         <?php if ( get_theme_mod( 'pirate_rogue_footer_search' ) ) { ?>   
                         <div id="footer-search">
+			<?php } else { ?>
+			<div id="footer-search" class="screen-reader-text">
+			<?php }  ?>
                                 <?php get_search_form(); ?>
                         </div>
-                        <?php } ?>
+                       
 			<div id="site-info" class="cf">  
-				<ul class="credit" role="contentinfo">
+				<ul class="credit">
 				<?php if ( get_theme_mod( 'pirate_rogue_credit' ) ) : ?>
 					<li><?php echo wp_kses_post( get_theme_mod( 'pirate_rogue_credit' ) ); ?></li>
 				<?php else : ?>

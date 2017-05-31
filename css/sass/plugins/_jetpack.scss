@@ -1,5 +1,6 @@
-
-/* --- Jetpack Subscription Widget --- */
+/*-----------------------------------------------------------------------------------*/
+/*  Jetpack
+/*-----------------------------------------------------------------------------------*/
 
 .jetpack_subscription_widget {
   clear: both;
@@ -381,3 +382,97 @@ div.sharedaddy h3.sd-title {
   border: none !important;
 }
 
+/* Minimum width of 600 pixels (smartphone landscape)
+------------------------------------------------------------------------------------ */
+@media screen and (min-width: $breakpoint-600) {
+
+  .widget_mc4wp_form_widget input[type="email"], 
+  .jetpack_subscription_widget #subscribe-email input[type="email"] {
+    width: 58%;
+    float: left;
+  }
+  .widget_mc4wp_form_widget input[type="submit"], 
+  .jetpack_subscription_widget #subscribe-submit input[type="submit"] {
+    width: 40%;
+    float: right;
+  }
+}
+
+@media screen and (min-width: 48em) {
+    /*--- Jetpack Related Posts ---*/
+  .recommended-posts-wrap #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post {
+    width: 21.8%;
+    margin-right: 3.6144578313253%;
+    float: left;
+    clear: none;
+    &:nth-of-type(odd), &:nth-of-type(even) {
+      margin-left: 0;
+      margin-right: 3.6144578313253%;
+      clear: none;
+    }
+    &:nth-of-type(4n+4) {
+      margin-right: 0;
+      clear: right;
+    }
+    &:nth-of-type(4n+1) {
+      clear: left;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-1060) {
+  .widget_mc4wp_form_widget input[type="email"], 
+  .jetpack_subscription_widget #subscribe-email input[type="email"] {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .widget_mc4wp_form_widget input[type="submit"], 
+  .jetpack_subscription_widget #subscribe-submit input[type="submit"] {
+    width: 100%;
+  }
+
+  .recommended-posts-wrap {
+    padding-top: 80px;
+    
+    #jp-relatedposts .jp-relatedposts-items-visual {
+      .jp-relatedposts-post {
+        width: 22.6%;
+        margin-right: 2.38095238095238%;
+        padding-bottom: 0;
+        &:nth-of-type(odd), &:nth-of-type(even) {
+          margin-right: 2.38095238095238%;
+        }
+      }
+      h4.jp-relatedposts-post-title {
+        padding: 18px 0 0 0;
+      }
+    }
+  }
+  
+}
+
+
+@media screen and (min-width: 85em) {
+     .widget_mc4wp_form_widget p, 
+  .jetpack_subscription_widget #subscribe-text p {
+    font-size: 34px;
+    font-size: 2.125rem;
+    line-height: 1.3;
+  }
+
+  .widget_mc4wp_form_widget, 
+  .jetpack_subscription_widget {
+    margin-bottom: 45px;
+  }
+  .widget_mc4wp_form_widget input[type="email"], 
+  .jetpack_subscription_widget #subscribe-email input[type="email"] {
+    width: 60%;
+    margin-bottom: 0;
+  }
+  .widget_mc4wp_form_widget input[type="submit"], 
+  .jetpack_subscription_widget #subscribe-submit input[type="submit"] {
+    width: 38%;
+    padding: 19px 4%;
+  }
+
+}

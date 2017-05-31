@@ -880,12 +880,12 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	) ) );
 
 	// Uku Front Page - Sections About
-	$wp_customize->add_setting( 'uku_front_section_about_title', array(
+	$wp_customize->add_setting( 'pirate_rogue_front_section_about_title', array(
 		'default' 			           => '',
 		'sanitize_callback' 	     => 'wp_kses_post',
 	) );
 
-	$wp_customize->add_control( 'uku_front_section_about_title', array(
+	$wp_customize->add_control( 'pirate_rogue_front_section_about_title', array(
 		'label' 			             => esc_html__( 'Section Title', 'pirate-rogue'),
 		'description'					     => esc_html__( 'The title will appear at the top of the section.', 'pirate-rogue'),
 		'section' 			           => 'uku_front_section_about',
@@ -893,12 +893,12 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'priority'						     => 1,
 	) );
 
-	$wp_customize->add_setting( 'uku_front_section_about_image', array(
+	$wp_customize->add_setting( 'pirate_rogue_front_section_about_image', array(
 		'default' 			           => '',
 		'sanitize_callback' 	     => 'wp_kses_post',
 	) );
 
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize,'uku_front_section_about_image', array(
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize,'pirate_rogue_front_section_about_image', array(
 		'label'         => esc_html__( 'Upload About image', 'pirate-rogue'),
 		'description'   => esc_html__( 'The recommended image width for the About image is 580 pixels.', 'pirate-rogue'),
 		'section'       => 'uku_front_section_about',

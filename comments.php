@@ -37,7 +37,7 @@ if ( post_password_required() ) {
 	<?php if ( have_comments() ) : ?>
 		<ol class="commentlist">
 			<?php
-				wp_list_comments( array( 'callback' => 'uku_comment' ) );
+				wp_list_comments( array( 'callback' => 'pirate_rogue_comment' ) );
 			?>
 		</ol><!-- end .comment-list -->
 

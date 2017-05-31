@@ -5,7 +5,6 @@
  */
 /*-----------------------------------------------------------------------------------*/
 
-
 /*-----------------------------------------------------------------------------------*/
 /* Sets up theme defaults and registers support for various WordPress features.
 /*-----------------------------------------------------------------------------------*/
@@ -63,13 +62,13 @@ function pirate_rogue_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	//  Adding several sizes for Post Thumbnails
-	add_image_size( 'uku-standard-blog', 1024, 576, true );
-	add_image_size( 'uku-featured', 1440, 530, true );
-	add_image_size( 'uku-featured-big', 1440, 690, true );
-	add_image_size( 'uku-bigthumb', 1440, 580, true );
-	add_image_size( 'uku-front-big', 1260, 709, true );
-	add_image_size( 'uku-front-small', 800, 450, true );
-	add_image_size( 'uku-featured-bottom', 800, 450, true );
+	add_image_size( 'pirate-rogue-standard-blog',   1024, 576, true );
+	add_image_size( 'pirate-rogue-featured',        1440, 530, true );
+	add_image_size( 'pirate-rogue-featured-big',    1440, 690, true );
+	add_image_size( 'pirate-rogue-bigthumb',        1440, 580, true );
+	add_image_size( 'pirate-rogue-front-big',       1260, 709, true );
+	add_image_size( 'pirate-rogue-front-small',      800, 450, true );
+	add_image_size( 'pirate-rogue-featured-bottom',  800, 450, true );
 
 }
 add_action( 'after_setup_theme', 'pirate_rogue_setup' );
@@ -160,11 +159,11 @@ add_action( 'wp_enqueue_scripts', 'pirate_rogue_base_scripts' );
 /*-----------------------------------------------------------------------------------*/
 /* Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
 /*-----------------------------------------------------------------------------------*/
-function uku_page_menu_args( $args ) {
+function pirate_rogue_page_menu_args( $args ) {
 	$args['show_home'] = true;
 	return $args;
 }
-add_filter( 'wp_page_menu_args', 'uku_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'pirate_rogue_page_menu_args' );
 
 /*-----------------------------------------------------------------------------------*/
 /* Sets the authordata global when viewing an author archive.
@@ -291,12 +290,12 @@ add_action( 'wp_head', 'pirate_rogue_add_canonical');
 /*-----------------------------------------------------------------------------------*/
 add_filter('use_default_gallery_style', '__return_false');
 
-if ( ! function_exists( 'uku_comment' ) ) :
+if ( ! function_exists( 'pirate_rogue_comment' ) ) :
 
 /*-----------------------------------------------------------------------------------*/
-/* Comments template uku_comment
+/* Comments template pirate_rogue_comment
 /*-----------------------------------------------------------------------------------*/
-function uku_comment( $comment, $args, $depth ) {
+function pirate_rogue_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case '' :

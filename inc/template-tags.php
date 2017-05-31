@@ -280,7 +280,7 @@ function pirate_rogue_get_tag_ID($tag_name) {
 	if (!isset($thumbfallbackid)) {
 	    $thumbfallbackid =0;
 	} else {
-	    $imagesrc = wp_get_attachment_image_src( $thumbfallbackid, 'uku-front-big' )[0];
+	    $imagesrc = wp_get_attachment_image_src( $thumbfallbackid, 'pirate-rogue-front-big' )[0];
 	}
 		
         $out = '<section id="front-section-twocolumn" class="cf columns-wrap '.$divclass.'">';
@@ -299,7 +299,7 @@ function pirate_rogue_get_tag_ID($tag_name) {
 			$out .= '<article class="'. join( ' ', get_post_class() ) .'">';
 
 			 if ( '' != get_the_post_thumbnail() && ! post_password_required() ) : 
-                            $out .= '<div class="entry-thumbnail fadein"><a href="'.get_permalink().'"><span class="thumb-wrap">'.get_the_post_thumbnail('uku-front-big').'</span></a></div><!-- end .entry-thumbnail -->'."\n";
+                            $out .= '<div class="entry-thumbnail fadein"><a href="'.get_permalink().'"><span class="thumb-wrap">'.get_the_post_thumbnail('pirate-rogue-front-big').'</span></a></div><!-- end .entry-thumbnail -->'."\n";
 			 elseif ( ! post_password_required() && $imagesrc != '') :
                             $out .= '<div class="entry-thumbnail fadein"><a href="'.get_permalink().'"><span class="thumb-wrap"><img src="'.$imagesrc.'"></span></a></div><!-- end .entry-thumbnail -->'."\n";
 			 endif;

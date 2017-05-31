@@ -9,7 +9,7 @@
 ?>
 
                  
-<div class="featured-slider cf">
+   
 <?php
 	// Get a number of Front page recent posts set in the customizer
 	$featuredtag = get_theme_mod('pirate_rogue_featuredtag');
@@ -32,7 +32,10 @@
 	);
 
 	$uku_front_query = new WP_Query( $args );
-	if($uku_front_query->have_posts()) :
+	if($uku_front_query->have_posts()) { ?>
+            <div class="featured-slider cf">
+            
+            <?php 
 	  	while($uku_front_query->have_posts()) : $uku_front_query->the_post(); 
                     // Include the featured content template.
                     get_template_part( 'template-parts/content', 'featured-post' );
@@ -40,8 +43,7 @@
 
                     /* Restore original Post Data */
 		wp_reset_postdata();
-	?>
+            ?>
 	</div><!-- end .featured-slider -->
-<?php endif; // have_posts() blog ?>
-
-</div><!-- #featured-content .featured-content -->
+        <?php } ?>
+   <!-- /div #featured-content .featured-content -->

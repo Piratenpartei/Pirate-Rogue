@@ -19,26 +19,28 @@
 	@extend .fa;
 	@extend .fa-search;
     }
+    span {
+	    @extend .screen-reader-text;
+	}
 }
-
 .socialmedia-maincolor .search-open {
     color: $color-main;
     
-    :focus,
-    :hover {
-        background:  $color-main;
-        color: $color-page-background;
-        border-color: $color-main;
+    &:focus,
+    &:hover {
+       background:  $color-second;
+            color: $color-page-background;
+            border-color: $color-second;
     } 
 }
 .socialmedia-secondcolor .search-open {
     color: $color-second;
     
-    :focus,
-    :hover {
-        background:  $color-second;
+    &:focus,
+    &:hover {
+        background: $color-main;
         color: $color-page-background;
-        border-color: $color-second;
+        border-color: $color-main;
     }
 }
 
@@ -97,29 +99,31 @@
   }
   .search-open {
 	position: absolute;
-	top: 40px;
+	top: 50px;
 	left: 9.23611111111111%;
 	right: auto;
-	width: 4.16666666666667%;
-	height: 59px;
-	text-align: center;
 	border: none;
-	text-indent: -99999px;
-	z-index: 10000;
-	outline: none;
+	z-index: 1000;
+	padding: 0;
+	overflow: hidden;
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	text-align: center;
+	vertical-align: middle;
+	border-radius: 50%;
+	
 	&:before {
-	    display: block;
-	    position: absolute;
-	    top: 0;
-	    left: 0;
-	    text-indent: 0;
-	   
+	    vertical-align: middle;
 	    text-align: center;
-	    width: 100%;
-	    height: 59px;
-	    padding-top: 17px;
-	}
+	}	
   }
+  
+  
+  
+  
+  
+  
   .desktop-search {
 	position: absolute;
 	top: 100%;
@@ -175,7 +179,7 @@
     }
   
     .searchbar-maincolor .desktop-search {     
-        background:  rgba($color-main, 0.9);
+        background:  rgba($color-main, 0.95);
 	
         input {
                 &.search-field {            
@@ -192,6 +196,7 @@
                     background:  $color-second;;
                     color: #fff;
                     border: 2px solid  $color-second;
+                    font-weight: bold;
                 }
                 &[type="submit"]:focus,
                 &[type="submit"]:hover {
@@ -203,7 +208,7 @@
     }
     
     .searchbar-secondcolor .desktop-search {     
-        background: rgba($color-second, 0.75);
+        background: rgba($color-second, 0.95);
         input {
                 &.search-field {            
                     border-bottom: 1px solid $color-main;
@@ -214,6 +219,7 @@
                     background:  $color-main;;
                     color: #fff;
                     border: 2px solid  $color-main;   
+                    font-weight: bold;
                 }
                 &[type="submit"]:focus,
                 &[type="submit"]:hover {
@@ -261,4 +267,16 @@
 	  height: 118px;
 	}
    }
+   #overlay-open-sticky {
+	position: absolute;
+	height: 59px;
+	text-align: center;
+	top: 0px;
+	left: 10px;
+	width: 59px;
+    }
+    #search-open-sticky {
+	top: 17px;
+	left: 69px;
+    }
 }

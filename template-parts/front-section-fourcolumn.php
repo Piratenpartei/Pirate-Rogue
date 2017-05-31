@@ -28,7 +28,7 @@ $uku_section_fourcolumn_query = new WP_Query( array(
 	if (!isset($thumbfallbackid)) {
 	    $thumbfallbackid =0;
 	} else {
-	    $imagesrc = wp_get_attachment_image_src( $thumbfallbackid, 'uku-front-small' )[0];
+	    $imagesrc = wp_get_attachment_image_src( $thumbfallbackid, 'pirate-rogue-front-small' )[0];
 	}
 ?>
 
@@ -44,11 +44,11 @@ $uku_section_fourcolumn_query = new WP_Query( array(
 		<?php if($uku_section_fourcolumn_query->have_posts()) : ?>
 			<?php while($uku_section_fourcolumn_query->have_posts()) : $uku_section_fourcolumn_query->the_post() ?>
 
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<article <?php post_class(); ?>>
 
 					<?php if ( '' !== get_the_post_thumbnail() && ! post_password_required() ) : ?>
 							<div class="entry-thumbnail fadein">
-								<a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><?php the_post_thumbnail('uku-front-small'); ?></span></a>
+								<a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><?php the_post_thumbnail('pirate-rogue-front-small'); ?></span></a>
 							</div><!-- end .entry-thumbnail -->
 					<?php elseif ( ! post_password_required() && $imagesrc != '') : ?>
 							<div class="entry-thumbnail fadein">

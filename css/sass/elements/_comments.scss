@@ -350,11 +350,13 @@ ol.commentlist {
    background: $color-cats-background-hover; 
 }
 
+.single-post {
+    .entry-comments-title {
+        @extend .screen-reader-text;
+    }
+}
 @media screen and (min-width: $breakpoint-sm) {
     .single-post {
-	.entry-comments-title {
-	    display: block;
-	}
 	.entry-comments a {
 	    padding-left: 22px;
 	 }

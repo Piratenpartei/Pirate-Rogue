@@ -9,15 +9,14 @@ for the german pirate party as replacement for their prior wordpress theme.
 
 ## Theme autor
 
-* xwolf
-* http://www.xwolf.de
+* xwolf (http://www.xwolf.de)
 
 ## Informations and download
 
 * Theme home page: http://www.pirate-rogue.de
-* Download: https://github.com/Piratenpartei/Pirate-Rogue/
-** Clone: https://github.com/Piratenpartei/Pirate-Rogue.git
-** Zip: https://github.com/Piratenpartei/Pirate-Rogue/archive/master.zip
+* Download: https://github.com/Piratenpartei/Pirate-Rogue/ 
+- Clone: https://github.com/Piratenpartei/Pirate-Rogue.git
+- Zip: https://github.com/Piratenpartei/Pirate-Rogue/archive/master.zip
 * Changelog: https://github.com/Piratenpartei/Pirate-Rogue/commits/master
 
 

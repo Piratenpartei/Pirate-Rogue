@@ -124,9 +124,10 @@ li {
                 background-repeat:no-repeat;
                 background-position:left 3px;
 		display: list-item;
-
+                
                 &:before {
                     content: "";
+                     margin: 0;
                 }
                 
 		ul li {

@@ -51,10 +51,10 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 			<div class="entry-meta cf">
 				<div class="meta-columnone">
 				    
-				    <?php if (('' == get_theme_mod( 'uku_front_hideauthor' ) ) &&  ('' == get_theme_mod( 'uku_all_hideauthor' ) )) { ?>
+				    <?php if (('' == get_theme_mod( 'pirate_rogue_front_hideauthor' ) ) &&  ('' == get_theme_mod( 'pirate_rogue_all_hideauthor' ) )) { ?>
 					<div class="author-pic">
 						<?php
-						$author_bio_avatar_size = apply_filters( 'uku_author_bio_avatar_size', 100 );
+						$author_bio_avatar_size = apply_filters( 'pirate_rogue_author_bio_avatar_size', 100 );
 						echo get_avatar( get_the_author_meta( 'user_email' ), $author_bio_avatar_size );
 						?>
 					</div><!-- end .author-pic -->
@@ -135,17 +135,17 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 				    <div class="entry-tags"><span><?php esc_html_e('Tags', 'pirate-rogue') ?></span><?php the_tags('',' &bull; ', ''); ?></div>
 				<?php endif; ?>
 			    <?php
-			    // Author bio.
-			    if ( get_the_author_meta( 'description' ) ) :
-				    get_template_part( 'template-parts/authorbox' );
-			    endif;
 
 			    $canonical = get_post_meta( get_the_ID(), 'pirate_rogue_canonical', true );
-
-			     if ($canonical) { ?>
-				    <div class="canonical-link"><span><?php echo __('Origin: ','pirate_rogue');?></span><a href="<?php echo $canonical; ?>"><?php echo $canonical; ?></a></div>
-
-			     <?php }
+			    if ($canonical) { ?>
+				<div class="canonical-link"><span><?php echo __('Origin: ','pirate_rogue');?></span><a href="<?php echo $canonical; ?>"><?php echo $canonical; ?></a></div>
+			    <?php }
+                            
+                            if (('' == get_theme_mod( 'pirate_rogue_front_hideauthor' ) ) &&  ('' == get_theme_mod( 'pirate_rogue_all_hideauthor' ) )) {
+                                if ( get_the_author_meta( 'description' ) ) {
+                                        get_template_part( 'template-parts/authorbox' );
+                                }
+                            }
 
 			    ?>
 			</footer><!-- end .entry-footer -->

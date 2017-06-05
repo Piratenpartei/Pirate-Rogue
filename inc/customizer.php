@@ -604,24 +604,24 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'priority'		     => 4,
 	) );
 
-	$wp_customize->add_setting( 'uku_front_hideauthor', array(
+	$wp_customize->add_setting( 'pirate_rogue_front_hideauthor', array(
 		'default'							     => '',
 		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
 	) );
 
-	$wp_customize->add_control( 'uku_front_hideauthor', array(
+	$wp_customize->add_control( 'pirate_rogue_front_hideauthor', array(
 		'label'			     => esc_html__( 'Hide author name on Front page', 'pirate-rogue'),
 		'section'		     => 'pirate_rogue_frontpage_general',
 		'type'			     => 'checkbox',
 		'priority'		     => 5,
 	) );
 
-        $wp_customize->add_setting( 'uku_all_hideauthor', array(
+        $wp_customize->add_setting( 'pirate_rogue_all_hideauthor', array(
 		'default'							     => '',
 		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
 	) );
 
-	$wp_customize->add_control( 'uku_all_hideauthor', array(
+	$wp_customize->add_control( 'pirate_rogue_all_hideauthor', array(
 		'label'			     => esc_html__( 'Hide author name on all pages', 'pirate-rogue'),
 		'section'		     => 'pirate_rogue_frontpage_general',
 		'type'			     => 'checkbox',

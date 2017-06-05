@@ -21,9 +21,13 @@ $blogname = get_bloginfo('name');
             <h1 class="screen-reader-text"><?php _e('More Informations','pirate-rogue'); ?></h1>
 		<?php
 		// Big Footer Feature Section
-		if ( '' !== get_theme_mod( 'pirate_rogue_footerfeature_image' )  ) : ?>
-			<?php get_template_part( 'template-parts/footer-feature' ); ?>
-		<?php endif; ?>
+                $image = get_theme_mod( 'pirate_rogue_footerfeature_image' );
+                if (!empty($image)) {
+                    $image = esc_url($image);
+                }
+		if (!empty($image) ) {
+			get_template_part( 'template-parts/footer-feature' );
+		} ?>
 
 		<div class="footer-wrap">
 			<?php // Footer Menus.

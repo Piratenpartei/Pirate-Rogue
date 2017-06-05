@@ -23,7 +23,7 @@
 	 if ( is_page() &&  !is_active_sidebar( 'sidebar-2' ) && (empty($pirate_rogue_page_sidebar)) ) {
 		 $classes[] = 'no-sidebar';
 	 }
-	 if (('' != get_theme_mod( 'uku_front_hideauthor' ) ) || ('' != get_theme_mod( 'uku_all_hideauthor' ) )) {
+	 if (('' != get_theme_mod( 'pirate_rogue_front_hideauthor' ) ) || ('' != get_theme_mod( 'pirate_rogue_all_hideauthor' ) )) {
              $classes[] = 'no-author';
          }
 	 

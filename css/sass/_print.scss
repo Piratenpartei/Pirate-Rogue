@@ -1,0 +1,36 @@
+/*-----------------------------------------------------------------------------------*/
+/* Adjustment for print
+/*-----------------------------------------------------------------------------------*/
+@media print {
+    .site-header-content,
+    .sticky-header {
+            position: absolute !important;
+            top: 0 !important;;
+            left: 0 !important;;
+            margin-top: -40px;
+            border: none !important;
+            height: auto;
+            img, a, button, nav {
+                display: none !important;;
+            }
+    }
+    h1 {
+        page-break-before: always;
+    }
+    h1, h2, h3, h4, h5 {
+        page-break-after: avoid;
+    }
+    table, figure {
+        page-break-inside: avoid;
+    }
+
+
+    a[href]::after {
+        content: " <"attr(href)">";
+        color: $color-main;
+        background-color: inherit;
+        font-style: italic;
+        size: 80%;
+    } 
+   
+}

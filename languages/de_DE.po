@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pirate Rogue v1.0.56\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-05 16:09+0000\n"
-"PO-Revision-Date: 2017-06-05 16:15+0000\n"
+"POT-Creation-Date: 2017-08-12 07:32+0000\n"
+"PO-Revision-Date: 2017-08-12 07:33+0000\n"
 "Last-Translator: xwolf <xwolf@xwolf.de>\n"
 "Language-Team: German\n"
 "Language: de-DE\n"
@@ -23,36 +23,13 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: .."
 
-#: functions.php:28
-msgid "Social Icons (in Footer)"
-msgstr "Social Media Icons im Footer"
-
-#. Name of the template
-msgid "No Sidebar Page"
-msgstr "Seite ohne Sidebar"
-
-#. Name of the template
-msgid "Full Width Page"
-msgstr "Seite mit voller Breite für den Inhalt"
+#: inc/defaults.php:8
+msgid "Page:"
+msgstr "Seite:"
 
 #. Name of the theme
 msgid "Pirate Rogue"
 msgstr ""
-
-#. Description of the theme
-msgid ""
-"Theme for pirate parties worldwide. This theme allows to chose between the "
-"mostly used color combinations (purple and orange) as main colors for "
-"designing elements. It uses several free to use pirate symbols and allows "
-"custom CSS. It was created for the german pirate party as replacement for "
-"their prior wordpress theme."
-msgstr ""
-"Theme für Piratenparteien weltweit. Das Theme erlaubt den Wechsel zwischen "
-"den von Piratenparteien genutzten Farben Orange und Purple. Es verwendet an "
-"verschiedenen Stellen das Piraten-Signet und anderen Piraten-Content für "
-"Symbole. Für eigene Modifikationen ist die Eingabe von CSS möglich.\n"
-"Pirate Rogue wurde für die Piratenpartei Deutschland als Ersatz für das "
-"Theme Piratenkleider entwickelt."
 
 #. URI of the theme
 msgid "https://github.com/Piratenpartei/Pirate-Rogue/"
@@ -77,6 +54,10 @@ msgstr "Social Icons"
 #: functions.php:27
 msgid "Social menu (in About section)"
 msgstr "Social-Media-Symbole (in der \"Über\"-Section)"
+
+#: functions.php:28
+msgid "Social Icons (in Footer)"
+msgstr "Social Media Icons im Footer"
 
 #: functions.php:29
 msgid "Footer 1"
@@ -326,35 +307,35 @@ msgstr "Folge uns"
 #: template-parts/front-section-four.php:80
 #: template-parts/content-blogroll.php:42
 #: template-parts/content-blogroll.php:43
-#: template-parts/content-blogroll.php:44 template-parts/content-single.php:77
+#: template-parts/content-blogroll.php:44 template-parts/content-single.php:78
 msgid "Comments"
 msgstr "Kommentare"
 
 #: content.php:41 template-parts/content-featured-post.php:38
 #: template-parts/content-frontpost-big.php:59
 #: template-parts/front-section-four.php:78
-#: template-parts/content-blogroll.php:42 template-parts/content-single.php:78
+#: template-parts/content-blogroll.php:42 template-parts/content-single.php:79
 msgid "0"
 msgstr "0"
 
 #: content.php:42 template-parts/content-featured-post.php:39
 #: template-parts/content-frontpost-big.php:60
 #: template-parts/front-section-four.php:79
-#: template-parts/content-blogroll.php:43 template-parts/content-single.php:78
+#: template-parts/content-blogroll.php:43 template-parts/content-single.php:79
 msgid "1"
 msgstr "1"
 
 #: content.php:43 template-parts/content-featured-post.php:40
 #: template-parts/content-frontpost-big.php:61
 #: template-parts/front-section-four.php:80
-#: template-parts/content-blogroll.php:44 template-parts/content-single.php:78
+#: template-parts/content-blogroll.php:44 template-parts/content-single.php:79
 msgid "%"
 msgstr "%"
 
 #: content.php:47 template-parts/content-featured-post.php:45
 #: template-parts/content-frontpost-big.php:65
 #: template-parts/front-section-four.php:85
-#: template-parts/content-blogroll.php:48 template-parts/content-single.php:84
+#: template-parts/content-blogroll.php:48 template-parts/content-single.php:88
 #: template-parts/content-image.php:35
 msgid "Edit Post"
 msgstr "Bearbeiten"
@@ -393,11 +374,6 @@ msgid ""
 msgstr ""
 "Es scheint, als kann hier nichts gefunden werden. Vielleicht hilft ein "
 "anderer Suchbegriff."
-
-#: template-parts/content-page.php:20 template-parts/content-single.php:121
-#: template-parts/content-image.php:118
-msgid "Pages:"
-msgstr "Seiten:"
 
 #: template-parts/content-page.php:26
 msgid "Edit Page"
@@ -483,16 +459,16 @@ msgstr ""
 "Leider konnte die gesuchte Seite oder Datei nicht gefunden werden. Wie wäre "
 "es stattdessen hiermit:"
 
-#: template-parts/content-single.php:135 template-parts/content-image.php:128
+#: template-parts/content-single.php:137 template-parts/content-image.php:128
 msgid "Tags"
 msgstr "Schlagworte"
 
-#: template-parts/content-single.php:161 template-parts/content-single.php:162
+#: template-parts/content-single.php:163 template-parts/content-single.php:164
 #: template-parts/content-image.php:134 template-parts/content-image.php:135
 msgid "Next Post"
 msgstr "Nächster Beitrag"
 
-#: template-parts/content-single.php:163 template-parts/content-single.php:164
+#: template-parts/content-single.php:165 template-parts/content-single.php:166
 #: template-parts/content-image.php:136 template-parts/content-image.php:137
 msgid "Previous Post"
 msgstr "Vorheriger Beitrag"
@@ -553,6 +529,18 @@ msgstr "Download"
 #: template-parts/content-image.php:112
 msgid "Size"
 msgstr "Größe"
+
+#: template-parts/content-image.php:118
+msgid "Pages:"
+msgstr "Seiten:"
+
+#. Name of the template
+msgid "No Sidebar Page"
+msgstr "Seite ohne Sidebar"
+
+#. Name of the template
+msgid "Full Width Page"
+msgstr "Seite mit voller Breite für den Inhalt"
 
 #: inc/helper-functions.php:333
 msgid "Remove"
@@ -1148,3 +1136,26 @@ msgstr "%s"
 #: inc/template-tags.php:503
 msgid "by "
 msgstr "von "
+
+#: inc/defaults.php:14
+msgid "Next page"
+msgstr "Nächste Seite"
+
+#: inc/defaults.php:15
+msgid "Previous page"
+msgstr "Vorherige Seite"
+
+#. Description of the theme
+msgid ""
+"Theme for pirate parties worldwide. This theme allows to chose between the "
+"mostly used color combinations (purple and orange) as main colors for "
+"designing elements. It uses several free to use pirate symbols and allows "
+"custom CSS. It was created for the german pirate party as replacement for "
+"their prior wordpress theme."
+msgstr ""
+"Theme für Piratenparteien weltweit. Das Theme erlaubt den Wechsel zwischen "
+"den von Piratenparteien genutzten Farben Orange und Purple. Es verwendet an "
+"verschiedenen Stellen das Piraten-Signet und anderen Piraten-Content für "
+"Symbole. Für eigene Modifikationen ist die Eingabe von CSS möglich.\n"
+"Pirate Rogue wurde für die Piratenpartei Deutschland als Ersatz für das "
+"Theme Piratenkleider entwickelt."

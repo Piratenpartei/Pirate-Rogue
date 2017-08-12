@@ -10,9 +10,8 @@
 /*-----------------------------------------------------------------------------------*/
 function pirate_rogue_setup() {
 
-	// Make Uku available for translation. Translations can be added to the /languages/ directory.
+	// Translations
 	load_theme_textdomain( 'pirate-rogue', get_template_directory() . '/languages' );
-
 
 	// Add default posts and comments RSS feed links to head
 	add_theme_support( 'automatic-feed-links' );
@@ -444,6 +443,10 @@ function pirate_rogue_filter_media_comment_status( $open, $post_id ) {
 }
 add_filter( 'comments_open', 'pirate_rogue_filter_media_comment_status', 10 , 2 );
 
+/*-----------------------------------------------------------------------------------*/
+/* Load defaults
+/*-----------------------------------------------------------------------------------*/
+require_once( get_template_directory() . '/inc/defaults.php' );   
 /*-----------------------------------------------------------------------------------*/
 /* Load helper functions
 /*-----------------------------------------------------------------------------------*/

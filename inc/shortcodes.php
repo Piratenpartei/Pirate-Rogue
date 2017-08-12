@@ -310,7 +310,7 @@ function pirate_rogue_shortcode_fullwidth($atts, $content = null) {
     }
     
     
-    if (!empty(scrollleft)) {
+    if (!empty($scrollleft)) {
         $addclass .= ' scrollleft';
     }
     $setstyle = '';

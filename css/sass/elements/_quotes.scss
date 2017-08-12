@@ -11,7 +11,8 @@ blockquote {
     border-left: 15px solid $color-main;
     border-right: 2px solid $color-main;
     font-style: italic;
-      
+    @include hyphens(manual);
+    
     a {
         text-decoration: none;
         cursor: pointer;

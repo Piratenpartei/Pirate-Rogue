@@ -220,7 +220,7 @@ p {
   margin-bottom: 30px;
   
   .entry-summary & {
-      hyphens: auto;
+     @include hyphens(auto);
   }
 }
 

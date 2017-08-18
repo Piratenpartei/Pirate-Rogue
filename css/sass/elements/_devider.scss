@@ -8,9 +8,9 @@ hr {
             height:56px;
             margin: 10px 0;
             color: $color-hr;
-            background-image: url("../img/trenner-04-50.png");
+            background-image: url("../img/trenner-04-50.gif");
             @if $color-hr == $color-main {
-                background-image: url("../img/trenner-01-50.png");
+                background-image: url("../img/trenner-01-50.gif");
             }
 
             background-position: center center;
@@ -18,9 +18,9 @@ hr {
 
         }
 	.menu_separator & {
-	    background-image: url("../img/trenner-01-30.png");
+	    background-image: url("../img/trenner-01-30.gif");
 	     @if $color-hr == $color-main {	 
-		background-image: url("../img/trenner-04-30.png");
+		background-image: url("../img/trenner-04-30.gif");
 	     }
 	     height: 40px;
                           

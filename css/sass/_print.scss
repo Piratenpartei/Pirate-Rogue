@@ -1,0 +1,160 @@
+/*-----------------------------------------------------------------------------------*/
+/* Adjustment for print
+/*-----------------------------------------------------------------------------------*/
+ #printhead {
+        @media print {
+            color: black;
+            content: "Print";
+        }
+}
+    
+    
+@media print {
+    .sticky-header,
+    .header-social,
+    #overlay-open,
+    #search-open,
+    .inner-offcanvas-wrap,
+    .shariff,
+    .shariff li,
+    .shariff-main,
+    .footer-menus-wrap nav,
+    .footer-search {
+        display: none !important;
+    } 
+    #masthead {
+        position: relative;
+        .site-header-content {
+                position: relative;
+                display: block;
+                border: none !important;
+                height: auto;
+                margin: 0 auto;
+
+              #site-branding {
+                  height: auto;
+                  margin: 0 auto;
+                  width: auto;
+                  border: none;
+                  text-align: center;
+                  padding: 0;
+                  position: relative;
+                  display: block;
+                  img {
+                      width: auto;
+                      max-width: inherit;
+                      height: inherit;
+                      max-height: 100px;
+                  }
+              }
+        }
+    }
+    h1 {
+        page-break-before: always;
+    }
+    h1, h2, h3, h4, h5 {
+        page-break-after: avoid;
+    }
+    header#masthead {
+        position: relative;
+        border: none;
+    }
+    .front-section:first-of-type, 
+        .page .content-wrap, 
+        .singlepost-wrap, 
+        .error404 .content-wrap {
+            padding-top: 10px;
+        }
+        
+    main {
+        position: relative;
+        display: block; 
+        
+        
+        table, figure {
+            page-break-inside: avoid;
+        }
+        p {
+            a[href]::after {
+                content: " (" attr(href) ")";
+                color: $color-main;
+                background-color: inherit;
+                font-style: italic;
+                size: 80%;
+            }
+            a[href^="#"]:after {
+                display: none;
+            }
+
+            a {
+                text-transform: inherit; 
+                word-wrap: break-word;
+                color: $color-print-links;
+            }
+        }
+       
+    }
+    #colophon {
+        background: none;
+        color: black;
+        
+        h2, h3, ul, p, li, a, td, tr, span {
+            color: black;
+             background: none;
+        }
+    }
+    .socialmedia-secondcolor #footer-social.social-nav ul li a {
+        color: black;
+        background: none;
+    }
+    #footer-social {
+        h2.socialmedia {
+            float: none;
+            display: block;
+            color: black;
+            font-weight: bold;
+        }
+        &.social-nav ul {
+            display: block; 
+        }
+        &.social-nav ul li {
+            display: list-item;
+            border-radius: initial;
+            background: none;
+            a::before {
+                width: 25px;
+            }
+            a {
+                overflow: auto;
+                color: $color-print-links;
+                width: auto;
+                text-align: left;
+                height: auto;
+                background: none;
+                border: none;
+                border-radius: initial;
+                text-transform: inherit; 
+                word-wrap: break-word;
+            }
+        
+            a[href]::after {
+                content: " (" attr(href) ")";
+                color: $color-main;
+                background-color: inherit;
+                font-style: italic;
+                size: 80%;
+            }
+            a[href^="#"]::after {
+                display: none;
+            }
+          
+            
+        }
+       
+        
+    }
+        
+   
+     
+   
+}

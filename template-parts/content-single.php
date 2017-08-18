@@ -9,6 +9,7 @@
 ?>
 
 <?php
+global $pagebreakargs;
 $introtext = get_post_meta($post->ID, 'intro', true);
 $custom_class = get_post_meta($post->ID, 'post_class', true);
 ?>
@@ -81,7 +82,8 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 				</div><!-- end .meta-columntwo -->
 
 				<div class="meta-columnthree">
-					<?php edit_post_link( esc_html__( 'Edit Post', 'pirate-rogue'), '<span class="entry-edit">', '</span>' ); ?>
+                                    <?php echo wp_link_pages($pagebreakargs);
+					 edit_post_link( esc_html__( 'Edit Post', 'pirate-rogue'), '<span class="entry-edit">', '</span>' ); ?>
 				</div><!-- end .meta-columnthree -->
 			</div><!-- end .entry-meta -->
 	</header><!-- end .entry-header -->
@@ -99,9 +101,10 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 			<div id="entry-content" class="entry-content">
 			    <?php    
 
-			     the_content(); 
+			    the_content(); 
+                           
 
-			    if ( class_exists( 'Pirate_Crew' ) && 'content' == get_theme_mod( 'pirate_rogue_crewmember-position' ) ) {
+                            if ( class_exists( 'Pirate_Crew' ) && 'content' == get_theme_mod( 'pirate_rogue_crewmember-position' ) ) {
 				$preauthor =  get_post_meta( $post->ID, 'pirate_crew_member_id', true );	
 				$style = pirate_rogue_sanitize_pirate_crew_member_style(get_theme_mod( 'pirate_rogue_crewmember-style' ));
 				$format = pirate_rogue_sanitize_pirate_crew_member_format(get_theme_mod( 'pirate_rogue_crewmember-format' ));
@@ -115,12 +118,7 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 				}
 			    }
 
-			     ?>
-			    <?php
-				    wp_link_pages( array(
-					    'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'pirate-rogue'),
-					    'after'  => '</div>',
-				    ) );
+                            
 			    ?>
 			    <?php if ( function_exists( 'sharing_display' ) ) {sharing_display( '', true );}
 				    if ( class_exists( 'Jetpack_Likes' ) ) {
@@ -130,7 +128,9 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 			</div><!-- end .entry-content -->
 
 			<footer class="entry-footer cf">
-			    <?php $tags_list = get_the_tag_list();
+			    <?php 
+                            
+                            $tags_list = get_the_tag_list();
 				if ( $tags_list ): ?>
 				    <div class="entry-tags"><span><?php esc_html_e('Tags', 'pirate-rogue') ?></span><?php the_tags('',' &bull; ', ''); ?></div>
 				<?php endif; ?>

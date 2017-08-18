@@ -6,6 +6,9 @@
  * @since Pirate Rogue 1.0
  * @version 1.0
  */
+
+global $pagebreakargs;
+
 ?>
 
     <article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?>>
@@ -14,12 +17,9 @@
 	</header><!-- end .entry-header -->
 
 	<div class="entry-content">
-		<?php the_content(); ?>
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'pirate-rogue'),
-				'after'  => '</div>',
-			) );
+		<?php 
+                    the_content(); 
+                    echo wp_link_pages($pagebreakargs);
 		?>
 	</div><!-- .entry-content -->
 	

@@ -18,6 +18,33 @@
 		headerOffset,
 		menuTop = 0,
 		resizeTimer;
+                
+        var MediaPrint = false;
+      
+	$(document).ready(function() {
+            // Sticky Share Buttons - Single Post
+            if ( window.innerWidth >= 1440 ) {
+                $(".sd-content").stick_in_parent({
+                    parent: "#singlepost-wrap",
+                    offset_top: 80
+                });
+            }
+             // Make overlay navi non-tabable, if desktop navi is shown
+            if ( window.innerWidth >= 1060 ) {
+                $('#overlay-nav a').attr("tabindex","-1");
+            }
+           
+            var pcol = $("#printhead").css("color");
+            var pcon =  $("#printhead").css("content"); 
+                  
+            if ((pcon = "Print") || (pcol = "black"))  {
+                MediaPrint = true;
+            }      
+                  
+            //Tablesorter
+            $('.sorttable').tablesorter();            
+
+	});
 
 	// Overlay (main menu + widget area) open/close
 	$('.overlay-open').on( 'click', function () {
@@ -75,10 +102,7 @@
 	$('.cart-close').on( 'click', function () {
 		$('body').removeClass('offcanvascart-show');
 	});
-	
 
-		
-		
 
 
 	// Featured Posts Slider
@@ -95,7 +119,7 @@
 				pauseOnHover  : false,
 				infinite      : true,
 				adaptiveHeight: true,
-				fade					: true,
+				fade        : true,
 				} );
 		} else {
 			$( '.featured-slider' ).slick( {
@@ -145,36 +169,37 @@
 			if( target.length ) {
 					event.preventDefault();
 					$('html, body').stop().animate({
-							scrollTop: target.offset().top
+                                            scrollTop: target.offset().top
 					}, 700 );
 			}
 	});
 
 	// Front page sticky headerimage
 	$(window).scroll(function() {
-		if($(window).scrollTop() > $(window).height()*1)
-			$('.container-all').addClass('scroll');
-		});
-
-	$(window).scroll(function() {
-		if($(window).scrollTop() < $(window).height()*1)
+       //      if (MediaPrint = false) {
+            if($(window).scrollTop() > $(window).height()*1)
+		$('.container-all').addClass('scroll');
+             if($(window).scrollTop() < $(window).height()*1)
 		$('.container-all').removeClass('scroll');
+         //   }
 	});
 
 	// Sticky Desktop Header Bar
 	$(function() {
 		var stickyheader = $('.sticky-header');
-			$(window).scroll(function() {
-				var scroll = $(window).scrollTop();
+                $(window).scroll(function() {
+             //    if (MediaPrint = false) {
+                        var scroll = $(window).scrollTop();
 
-				if (scroll >= 200) {
-					$('body').addClass('header-stick');
-					stickyheader.removeClass('hidden');
-				} else {
-					$('body').removeClass('header-stick');
-					stickyheader.addClass('hidden');
-				}
-			});
+                        if (scroll >= 200) {
+                                $('body').addClass('header-stick');
+                                stickyheader.removeClass('hidden');
+                        } else {
+                                $('body').removeClass('header-stick');
+                                stickyheader.addClass('hidden');
+                        }
+               //     }
+                });
 	});
 
 	// Sticky Last Sidebar Element
@@ -186,9 +211,6 @@
 		});
 	}
 	});
-
-
-
 	// Sticky Last Sidebar Element - Single Post
 	$(document).ready(function() {
 	if ( window.innerWidth >= 1060 ) {
@@ -199,12 +221,8 @@
 	}
 	});
 
-	// Tablesorter
-	$(document).ready(function() {
-	    $('.sorttable').tablesorter(); 
-	});
 
-// Accordions
+        // Accordions
 	
 	// Close Accordions on start, except first
 	$('.accordion-body').not(".accordion-body.open").not('.accordion-body.stayopen').hide();
@@ -264,28 +282,14 @@
 	openAnchorAccordion();
 
 
-
-
-	// Sticky Share Buttons - Single Post
-	$(document).ready(function() {
-	if ( window.innerWidth >= 1440 ) {
-	$(".sd-content").stick_in_parent({
-		parent: "#singlepost-wrap",
-		offset_top: 80
-		});
-	}
-	});
+        
 
 	// Responsive Videos.
 	$('#primary').fitVids();
 	$('#singlepost-wrap').fitVids();
 
-        // Make overlay navi non-tabable, if desktop navi is shown
-        $(document).ready(function() {
-            if ( window.innerWidth >= 1060 ) {
-                $('#overlay-nav a').attr("tabindex","-1");
-            }
-	});
+       
+
         
 	$('a').not($('#desktop-navigation .mainmenu a')).focus(function() {
 		$('.mainmenu li').removeClass('focus');

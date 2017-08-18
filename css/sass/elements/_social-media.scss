@@ -43,7 +43,7 @@
                     border-color: #ccc;
                     color: white;
 		}
-                 &[href*="diaspora.com"]:focus,
+                &[href*="diaspora.com"]:focus,
                 &[href*="diaspora.com"]:hover {
                      background-color: darken(#ccc,10%);
                 }
@@ -54,7 +54,7 @@
                     border-color: #eeeeee;
                     color: white;
 		}
-                 &[href*="delicious.com"]:focus,
+                &[href*="delicious.com"]:focus,
                 &[href*="delicious.com"]:hover {
                      background-color: darken(#eeeeee,10%);
                 }
@@ -350,7 +350,8 @@
 	    }
 	    
 	}
-    }
+        
+}
 
 
 @media screen and (min-width: $breakpoint-1060) {

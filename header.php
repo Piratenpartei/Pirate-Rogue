@@ -182,6 +182,6 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
                     </div><!-- end .overlay-desktop-content -->
             </div><!-- end .inner-offcanvas-wrap -->
     </header><!-- end #masthead -->
-
+    <div id="printhead"></div>
     <div id="overlay-wrap" class="overlay-wrap cf"></div><!-- end #overlay-wrap -->
     <main>

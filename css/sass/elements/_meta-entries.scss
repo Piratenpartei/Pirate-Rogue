@@ -107,13 +107,32 @@
 
 .single-post {
     .entry-header {
+        @include px2rem($font-size-small);
 	.entry-cats {
 	    display: block;
             text-align: right;
 	    a {
 		display: inline-block;
+                
+                
 	    }
 	}
+        
+        .page-links {
+            font-weight: normal;
+            .number {
+                color: $color-second;
+            }
+            a {
+                
+                .number {
+                   @include px2rem($font-size-small);
+                    color: $color-main;
+                }
+            }
+            
+        }
+        
     }
     .entry-cats a {
 	color: #fff;
@@ -125,6 +144,7 @@
 	     color: $color-second;
 	}
     }
+    
 }
 
 

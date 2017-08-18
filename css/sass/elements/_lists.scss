@@ -120,7 +120,7 @@ li {
                 list-style-type: none;
                 padding-left: 30px;
                 margin-left: 20px;
-                background-image:url(../img/signet-maincolor-24.png);
+                background-image:url(../img/signet-maincolor-24.gif);
                 background-repeat:no-repeat;
                 background-position:left 3px;
 		display: list-item;
@@ -150,12 +150,12 @@ li {
 	    }
             &.grau {
                 li {
-                    background-image:url(../img/signet-grau-24.png);
+                    background-image:url(../img/signet-grau-24.gif);
                 }
             }
             &.secondcolor {
                 li {
-                    background-image:url(../img/signet-secondcolor-24.png);
+                    background-image:url(../img/signet-secondcolor-24.gif);
                 }
             }
 	}

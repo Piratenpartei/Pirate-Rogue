@@ -18,15 +18,15 @@ if (!isset($thumbfallbackid)) {
 <article  <?php post_class(); ?>>
 
 	<?php if ( '' != get_the_post_thumbnail() && ! post_password_required() ) : ?>
-		<div class="entry-thumbnail fadein">
+		<div class="entry-thumbnail fadein" aria-hidden="true" role="presentation">
 			<a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><?php the_post_thumbnail('pirate-rogue-front-big'); ?></span></a>
 			<?php if ( has_post_format('video') ) : ?>
 				<span class="video-icon"><?php esc_html_e('Video', 'pirate-rogue') ?></span>
 			<?php endif; ?>
 		</div><!-- end .entry-thumbnail -->
 	<?php elseif ( ! post_password_required() && $imagesrc != '') : ?>
-		<div class="entry-thumbnail fadein">
-			<a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><img src="<?php echo $imagesrc; ?>" alt=""></span></a>
+		<div class="entry-thumbnail fadein" aria-hidden="true" role="presentation">
+			<a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><img src="<?php echo $imagesrc; ?>" alt="<?php echo get_the_title();?>"></span></a>
 			<?php if ( has_post_format('video') ) : ?>
 				<span class="video-icon"><?php esc_html_e('Video', 'pirate-rogue') ?></span>
 			<?php endif; ?>

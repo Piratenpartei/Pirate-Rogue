@@ -44,32 +44,31 @@ if (!isset($thumbfallbackid)) {
 
 				<article <?php post_class(); ?>>
 
-					<?php if ( '' !== get_the_post_thumbnail() && ! post_password_required() ) : ?>
-						<div class="entry-thumbnail fadein">
-							<a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><?php the_post_thumbnail('pirate-rogue-front-small'); ?></span></a>
-						</div><!-- end .entry-thumbnail -->
-					<?php elseif ( ! post_password_required() && $imagesrc != '') : ?>
-						<div class="entry-thumbnail fadein">
-							<a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><img src="<?php echo $imagesrc; ?>" alt=""></span></a>
-						</div><!-- end .entry-thumbnail -->	
-							
-						
+                                <?php if ( '' !== get_the_post_thumbnail() && ! post_password_required() ) : ?>
+                                        <div class="entry-thumbnail fadein" aria-hidden="true" role="presentation">
+                                                <a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><?php the_post_thumbnail('pirate-rogue-front-small'); ?></span></a>
+                                        </div><!-- end .entry-thumbnail -->
+                                <?php elseif ( ! post_password_required() && $imagesrc != '') : ?>
+                                        <div class="entry-thumbnail fadein" aria-hidden="true" role="presentation">
+                                                <a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><img src="<?php echo $imagesrc; ?>" alt="<?php echo get_the_title();?>"></span></a>
+                                        </div><!-- end .entry-thumbnail -->	
+
 				<?php endif; ?>
 
-					<header class="entry-header">
-						<div class="entry-cats">
-							<?php the_category(' '); ?>
-						</div><!-- end .entry-cats -->
-                                                <?php 
-                                                echo '<h2 class="entry-title"><a href="'.esc_url( get_permalink() ).'" rel="bookmark">';
-                                                echo get_the_title();
-                                                echo '</a><span class="screen-reader-text"> ('. get_the_date().')</span></h2>';
-                                                ?>
-					</header><!-- end .entry-header -->
+                                    <header class="entry-header">
+                                            <div class="entry-cats">
+                                                    <?php the_category(' '); ?>
+                                            </div><!-- end .entry-cats -->
+                                            <?php 
+                                            echo '<h2 class="entry-title"><a href="'.esc_url( get_permalink() ).'" rel="bookmark">';
+                                            echo get_the_title();
+                                            echo '</a><span class="screen-reader-text"> ('. get_the_date().')</span></h2>';
+                                            ?>
+                                    </header><!-- end .entry-header -->
 
-					<div class="entry-summary">
-						<?php the_excerpt(); ?>
-					</div><!-- end .entry-summary -->
+                                    <div class="entry-summary">
+                                            <?php the_excerpt(); ?>
+                                    </div><!-- end .entry-summary -->
 				</article><!-- #post-## -->
 
 			<?php endwhile; ?>

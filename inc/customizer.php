@@ -685,12 +685,12 @@ function pirate_rogue_customize_register( $wp_customize ) {
         
         
         
-	$wp_customize->add_setting( 'uku_sliderstyle', array(
+	$wp_customize->add_setting( 'pirate_rogue_sliderstyle', array(
 		'default' 		=> 'slider-fullwidth',
 		'sanitize_callback' 	=> 'pirate_rogues_sanitize_sliderstyle',
 	) );
 
-	$wp_customize->add_control( 'uku_sliderstyle', array(
+	$wp_customize->add_control( 'pirate_rogue_sliderstyle', array(
 		'label' 		=> esc_html__( 'Slider Style', 'pirate-rogue'),
 		'description'		=> esc_html__( 'Choose the slider design.', 'pirate-rogue'),
 		'section' 		=> 'pirate_rogue_slider',
@@ -1353,11 +1353,11 @@ function pirate_rogue_sanitize_sidebar_hide( $pirate_rogue_sidebar_hide ) {
 /**
  * Sanitize Featured Slider Style.
  */
-function pirate_rogue_sanitize_sliderstyle( $uku_sliderstyle ) {
-	if ( ! in_array( $uku_sliderstyle, array( 'slider-fullwidth', 'slider-boxed', 'slider-fullscreen' ) ) ) {
-		$uku_sliderstyle = 'slider-fullwidth';
+function pirate_rogue_sanitize_sliderstyle( $pirate_rogue_sliderstyle ) {
+	if ( ! in_array( $pirate_rogue_sliderstyle, array( 'slider-fullwidth', 'slider-boxed', 'slider-fullscreen' ) ) ) {
+		$pirate_rogue_sliderstyle = 'slider-fullwidth';
 	}
-	return $uku_sliderstyle;
+	return $pirate_rogue_sliderstyle;
 }
 
 /**

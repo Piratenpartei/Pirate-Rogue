@@ -16,12 +16,12 @@
 	    $imagesrc = wp_get_attachment_image_src( $image,  'pirate-rogue-featured-bottom' )[0];
 
 	    ?>
-		<div class="custom-logo-wrap">
+		<div class="custom-logo-wrap" aria-hidden="true" role="presentation">
 			<img src="<?php echo $imagesrc; ?>" alt="">
 		</div><!-- end .custom-logo-wrap -->
  
 	<?php } elseif ( has_custom_logo() && '' != get_theme_mod( 'pirate_rogue_customlogofooter' ) ) { ?>
-		<div class="custom-logo-wrap">
+		<div class="custom-logo-wrap" aria-hidden="true" role="presentation">
 			<?php the_custom_logo(); ?>
 		</div><!-- end .custom-logo-wrap -->
 	<?php } else { ?>

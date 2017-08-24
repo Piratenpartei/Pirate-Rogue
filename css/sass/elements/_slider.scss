@@ -209,6 +209,10 @@
 	padding-bottom: 0;
 	.entry-header h2.entry-title {
 	    @include px2rem($font-size-slider-title-sm); 
+            a {
+                text-shadow: 1px 2px 2px black;
+               
+            }
 	}
 	.meta-main-wrap {
 	  padding-bottom: 35px;

@@ -15,7 +15,7 @@
 	<?php endif; ?>
 
 	<div class="section-about-column-one">
-		<div class="about-img-wrap">
+		<div class="about-img-wrap" aria-hidden="true" role="presentation">
                     <?php if ( '' != get_theme_mod( 'pirate_rogue_front_section_about_image' ) ) : ?>
                             <div class="front-about-img fadein">
                                     <img src="<?php echo esc_url( get_theme_mod( 'pirate_rogue_front_section_about_image' ) ); ?>" alt="">

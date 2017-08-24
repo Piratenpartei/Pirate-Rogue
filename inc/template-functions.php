@@ -63,10 +63,10 @@
 	 if ('' != get_theme_mod( 'pirate_rogue_featuredtag' )  || '' != get_theme_mod( 'pirate_rogue_featuredcat' ) ) {
 		 $classes[] = 'slider-on';
 	 }
-	 if ('slider-boxed' == get_theme_mod( 'uku_sliderstyle' ) ) {
+	 if ('slider-boxed' == get_theme_mod( 'pirate_rogue_sliderstyle' ) ) {
 		 $classes[] = 'slider-boxed';
 	 }
-	 if ('slider-fullscreen' == get_theme_mod( 'uku_sliderstyle' ) ) {
+	 if ('slider-fullscreen' == get_theme_mod( 'pirate_rogue_sliderstyle' ) ) {
 		 $classes[] = 'slider-fullscreen';
 	 }
 	 if ('slider-fade' == get_theme_mod( 'uku_slideranimation' ) ) {

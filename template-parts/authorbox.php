@@ -24,10 +24,10 @@
 		<?php if(get_the_author_meta('user_url') ): ?>
 		<?php
 		$author_url = get_the_author_meta('user_url');
-			$to_remove = array( 'http://', 'https://' );
-			foreach ( $to_remove as $item ) {
-                            $author_url = str_replace($item, '', $author_url);
-                        }
+                $to_remove = array( 'http://', 'https://' );
+                foreach ( $to_remove as $item ) {
+                    $author_url = str_replace($item, '', $author_url);
+                }
 		echo '<a class="author-website" href=' . get_the_author_meta('user_url') .'><span class="fa fa-link"></span> '  . $author_url . ' </a>';
 		?>
 		<?php endif; ?>

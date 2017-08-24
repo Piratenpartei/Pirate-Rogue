@@ -16,10 +16,10 @@
 	$category_link = get_category_link($postcat);
 
 	$uku_section_four_query = new WP_Query( array(
-		'posts_per_page'			=> 1,
-		'post_status'					=> 'publish',
-		'tag_id' 							=> $posttag,
-		'cat' 								=> $postcat,
+		'posts_per_page'        => 1,
+		'post_status'		=> 'publish',
+		'tag_id' 		=> $posttag,
+		'cat' 			=> $postcat,
 		'ignore_sticky_posts'	=> 1,
 	) );
 	
@@ -45,9 +45,9 @@
 		<article <?php post_class('cf'); ?>>
 
 			<?php if ( '' != get_the_post_thumbnail() && ! post_password_required() ) : ?>
-				<div class="entry-thumbnail fadein"><a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><?php the_post_thumbnail('pirate-rogue-featured'); ?></span></a></div><!-- end .entry-thumbnail -->
+				<div class="entry-thumbnail fadein" aria-hidden="true" role="presentation"><a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><?php the_post_thumbnail('pirate-rogue-featured'); ?></span></a></div><!-- end .entry-thumbnail -->
 			<?php elseif ( ! post_password_required() && $imagesrc != '') : ?>
-				<div class="entry-thumbnail fadein"><a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><img src="<?php echo $imagesrc; ?>" alt=""></span></a></div><!-- end .entry-thumbnail -->
+				<div class="entry-thumbnail fadein" aria-hidden="true" role="presentation"><a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><img src="<?php echo $imagesrc; ?>" alt="<?php echo get_the_title();?>"></span></a></div><!-- end .entry-thumbnail -->
 
 			<?php endif; ?>
 

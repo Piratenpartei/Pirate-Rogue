@@ -81,7 +81,7 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
                              <?php endif; ?>
 
                             <p class="site-description"><?php bloginfo( 'description' ); ?></p>
-                            <button id="overlay-open" class="overlay-open overlay-btn"><span><?php esc_html_e( 'Menu', 'pirate-rogue'); ?></span></button>
+                            <button aria-hidden="true" id="overlay-open" class="overlay-open overlay-btn"><span><?php esc_html_e( 'Menu', 'pirate-rogue'); ?></span></button>
 
                             <?php if (has_nav_menu( 'social' ) ) : ?>
                                     <div id="header-social" class="header-social social-nav">
@@ -101,7 +101,7 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
 
 
                     <?php if ( '' == get_theme_mod( 'pirate_rogue_hidesearch' ) ) : ?>
-                    <button id="search-open" class="search-open search-btn"><span><?php esc_html_e( 'Search', 'pirate-rogue'); ?></span></button>
+                    <button aria-hidden="true" id="search-open" class="search-open search-btn"><span><?php esc_html_e( 'Search', 'pirate-rogue'); ?></span></button>
                             <div class="desktop-search">                                     
                                 <form method="get" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
                                         <label for="s" class="screen-reader-text"><span><?php esc_html_e( 'Search', 'pirate-rogue'); ?></span></label>
@@ -138,7 +138,7 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
                             </nav><!-- end #header-social-sticky -->
                     <?php endif; ?>
             </div><!-- end .sticky-header -->
-            <div class="inner-offcanvas-wrap">
+            <div class="inner-offcanvas-wrap" aria-hidden="true">
                     <div class="close-btn-wrap">
                             <button id="overlay-close" class="overlay-btn"><span><?php esc_html_e( 'Close', 'pirate-rogue'); ?></span></button>
                     </div><!-- end .close-btn-wrap -->

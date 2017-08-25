@@ -18,9 +18,9 @@ if (!isset($thumbfallbackid)) {
 <article <?php post_class(); ?>>
 
 	<?php if ( '' != get_the_post_thumbnail() && ! post_password_required() ) : ?>
-		<div class="entry-thumbnail fadein" aria-hidden="true" role="presentation"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('pirate-rogue-featured-bottom'); ?></a></div><!-- end .entry-thumbnail -->
+		<div class="entry-thumbnail fadein" aria-hidden="true" role="presentation" tabindex="-1"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('pirate-rogue-featured-bottom'); ?></a></div><!-- end .entry-thumbnail -->
 	<?php elseif ( ! post_password_required()  && $imagesrc != '')  : ?>
-		<div class="entry-thumbnail fadein" aria-hidden="true" role="presentation"><a href="<?php the_permalink(); ?>"><img src="<?php echo $imagesrc; ?>" alt="<?php echo get_the_title();?>"></a></div><!-- end .entry-thumbnail -->		
+		<div class="entry-thumbnail fadein" aria-hidden="true" role="presentation" tabindex="-1"><a href="<?php the_permalink(); ?>"><img src="<?php echo $imagesrc; ?>" alt="<?php echo get_the_title();?>"></a></div><!-- end .entry-thumbnail -->		
 	<?php endif; ?>
 
 	<div class="entry-text-wrap">

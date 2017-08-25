@@ -11,16 +11,16 @@
     <section id="big-footer-feature" class="big-footer-feature cf">
 
 	<?php 
-	$linkttitle = "";
+	$linktitle = "";
+	$linktitle = esc_html(get_theme_mod( 'pirate_rogue_footerfeature_title' ) );
+	if (!isset($linktitle) || (empty(trim($linktitle)))) {
+	    $linktitle = __('Featured','pirate-rogue');
+	}
 	
-	if ( '' != get_theme_mod( 'pirate_rogue_footerfeature_title' )) { 
-	    $linkttitle = esc_html(get_theme_mod( 'pirate_rogue_footerfeature_title' ) );
-	?>
-            <h2 class="footer-feature-title"><?php echo $linkttitle; ?></h2>
-	<?php } else { 
-	    $linkttitle = __('Featured','pirate-rogue');
-	    ?>
-         <h2 class="screen-reader-text"><?php echo $linkttitle; ?></h2>
+	if ( '' != get_theme_mod( 'pirate_rogue_footerfeature_title' )) { ?>
+            <h2 class="footer-feature-title"><?php echo $linktitle; ?></h2>
+	<?php } else {   ?>
+	    <h2 class="screen-reader-text"><?php echo $linktitle; ?></h2>
 	<?php } 
         
         $link = get_theme_mod( 'pirate_rogue_footerfeature_btn_link' );

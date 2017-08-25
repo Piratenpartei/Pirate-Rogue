@@ -20,11 +20,11 @@ if (!isset($thumbfallbackid)) {
 <article <?php post_class('cf'); ?>>
 
 	<?php if ( '' !== get_the_post_thumbnail() && ! post_password_required() ) : ?>
-		<div class="entry-thumbnail fadein" aria-hidden="true" role="presentation">
+		<div class="entry-thumbnail fadein" aria-hidden="true" role="presentation" tabindex="-1">
 			<a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><?php the_post_thumbnail('pirate-rogue-front-small'); ?></span></a>
 		</div><!-- end .entry-thumbnail -->
         <?php elseif ( ! post_password_required() &&  $imagesrc != '') : ?>
-		<div class="entry-thumbnail fadein fallback" aria-hidden="true" role="presentation">
+		<div class="entry-thumbnail fadein fallback" aria-hidden="true" role="presentation" tabindex="-1">
 			<a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><img src="<?php echo $imagesrc; ?>" alt="<?php echo get_the_title();?>"></span></a>
 		</div><!-- end .entry-thumbnail -->        
 	<?php endif; ?>

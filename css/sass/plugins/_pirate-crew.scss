@@ -1330,29 +1330,7 @@ figcaption {
 		}
 	}
 }
-@media (max-width:1024px) {
-	.picrew-grid-wrapper {
-		.picrew-grid {
-			>.picrew-grid-card {
-				width: 33.333%;
-			}
-		}
-		.grid-2-col {
-			>.picrew-grid-card {
-				width: 50%;
-			}
-		}
-	}
-}
-@media (max-width:992px) {
-	.picrew-grid-wrapper {
-		.picrew-grid {
-			>.picrew-grid-card {
-				width: 50%;
-			}
-		}
-	}
-}
+
 @media (max-width:830px) {
 	.picrew-popup-on {
 		body {

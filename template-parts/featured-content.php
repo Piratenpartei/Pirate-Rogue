@@ -7,9 +7,6 @@
  * @version 1.0
  */
 ?>
-
-                 
-   
 <?php
 	// Get a number of Front page recent posts set in the customizer
 	$featuredtag = get_theme_mod('pirate_rogue_featuredtag');
@@ -20,9 +17,7 @@
         if (!isset($featurednum)) {
             $featurednum = 3;
         }
-        
-        
-        
+  
         $args = array(
 		'posts_per_page'    => $featurednum,
 		'post_status'       => 'publish',

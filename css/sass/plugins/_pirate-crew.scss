@@ -433,12 +433,22 @@ ul.picrew-social-icons {
 		list-style: none;
 		padding: 30px 0;
 		margin: 0 -15px;
+                
+                @media (max-width:700px) {
+                    margin: 0 auto;
+                }
 		>.picrew-grid-card {
 			float: left;
 			width: 25%;
 			padding: 0 15px;
 			margin: 0 0 30px;
 			clear: none;
+                        
+                        @media (max-width:700px) {
+                           float: none;
+                           width: 100%;
+                           margin: 0;
+                        }
 		}
 		h3 {
 			margin: 0 0 3px;
@@ -1177,6 +1187,8 @@ figcaption {
 		}
 	}
 }
+
+
 .picrew-table {
 	display: table;
 	width: 100%;
@@ -1213,10 +1225,7 @@ figcaption {
 		max-width: 75px;
 	}
 	.picrew-table-cell {
-		h3 {
-			margin: 0;
-			padding: 0;
-		}
+		h3,
 		h2 {
 			margin: 0;
 			padding: 0;
@@ -1312,12 +1321,22 @@ figcaption {
     
     .cards-style.picrew-grid {
 	max-width: 300px;
+        
+        @media (max-width:700px) {
+              max-width: 100%;
+        }
     }
     
     &.aligncenter {
 	.cards-style.picrew-grid {
 	    margin: 0 auto;
 	}
+    }
+    @media (max-width:700px) {
+        width: 100%;
+        &.alignleft, &.alignright {
+            float: none;
+        }
     }
 }
 
@@ -1360,22 +1379,16 @@ figcaption {
 			overflow: visible;
 		}
 	}
+        .list-style.style-1,
 	.list-style.style-2 {
 		figure {
 			img {
 				float: none;
-				margin: 0 0 30px 0;
+				margin: 0 auto 30px;
 			}
 		}
 	}
-	.list-style.style-1 {
-		figure {
-			img {
-				float: none;
-				margin: 0 0 30px 0;
-			}
-		}
-	}
+	
 	.picrew-table {
 		display: block;
 		.picrew-table-cell {

@@ -15,7 +15,7 @@ if (!isset($thumbfallbackid)) {
 }
 ?>
 
-<article <?php post_class(); ?>>
+<article <?php post_class(); ?> itemscope itemtype="http://schema.org/NewsArticle">
 
 	<?php if ( '' != get_the_post_thumbnail() && ! post_password_required() ) : ?>
 		<div class="entry-thumbnail fadein" aria-hidden="true" role="presentation" tabindex="-1"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('pirate-rogue-featured-bottom'); ?></a></div><!-- end .entry-thumbnail -->
@@ -26,16 +26,16 @@ if (!isset($thumbfallbackid)) {
 	<div class="entry-text-wrap">
 
 	<header class="entry-header">
-		<div class="entry-cats">
+		<div class="entry-cats" itemprop="articleSection">
 			<?php the_category(' '); ?>
 		</div><!-- end .entry-cats -->
                 <?php 
-                echo '<h2 class="entry-title"><a href="'.esc_url( get_permalink() ).'" rel="bookmark">';
+                echo '<h2 class="entry-title" itemprop="headline"><a href="'.esc_url( get_permalink() ).'" rel="bookmark" itemprop="url">';
                 echo get_the_title();
                 echo '</a><span class="screen-reader-text"> ('. get_the_date().')</span></h2>';
                 ?>
 	</header><!-- end .entry-header -->
 
 	</div><!-- end .entry-text-wrap -->
-
+        <?php echo pirate_rogue_create_schema_thumbnail(); ?>
 </article><!-- #post-## -->

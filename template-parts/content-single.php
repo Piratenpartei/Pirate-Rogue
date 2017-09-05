@@ -14,7 +14,7 @@ $introtext = get_post_meta($post->ID, 'intro', true);
 $custom_class = get_post_meta($post->ID, 'post_class', true);
 ?>
     
-    <article id="post-<?php the_ID(); ?>" <?php post_class($custom_class); ?>>
+    <article id="post-<?php the_ID(); ?>" <?php post_class($custom_class); ?> itemscope itemtype="http://schema.org/NewsArticle">
 	<header class="entry-header cf">
 			<?php if ( $custom_class != 'no-thumb' 
 				&& $custom_class == 'big-thumb' 
@@ -27,7 +27,7 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 
 			<div class="title-wrap">
 				<?php if ( has_category() ) : ?>
-				<div class="entry-cats">
+				<div class="entry-cats" itemprop="articleSection">
 					<?php the_category(' '); ?>
 				</div><!-- end .entry-cats -->
 				<?php endif; // has_category() 
@@ -42,10 +42,10 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
                                 }
                                                            
                                 
-				the_title( '<h1 class="entry-title">', '</h1>' );  
+				the_title( '<h1 class="entry-title" itemprop="headline">', '</h1>' );  
                                
 				if ( get_post_meta($post->ID, 'intro', true) ) { ?>
-					<p class="intro"><?php echo $introtext; ?></p>
+					<p class="intro" itemprop="description"><?php echo $introtext; ?></p>
 				<?php } ?>
 			</div><!-- end .title-wrap -->
 
@@ -98,7 +98,7 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 	    <?php endif; ?>
 
 	    <div id="socialicons-sticky">
-			<div id="entry-content" class="entry-content">
+			<div id="entry-content" class="entry-content" itemprop="text">
 			    <?php    
 
 			    the_content(); 
@@ -166,4 +166,5 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 
 	    </div><!-- end #socialicons-sticky -->
 	</div><!-- end .content-wrap -->
+        <?php echo pirate_rogue_create_schema_thumbnail(); ?>
     </article><!-- end post -<?php the_ID(); ?> -->

@@ -466,3 +466,51 @@ function pirate_rogue_array2table($array, $table = true) {
         return $out;
     }
 }
+
+/*-----------------------------------------------------------------------------------*/
+/*  Create String for Publisher Info, used by Scema.org Microformat Data
+/*-----------------------------------------------------------------------------------*/
+function pirate_rogue_create_schema_publisher($withrahmen = true) {
+    $out = '';
+    if ($withrahmen) {
+	$out .= '<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">';  
+    }
+    $header_image = get_header_image();
+    if ($header_image) {
+	$out .= '<div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">';
+	$out .= '<meta itemprop="url" content="'.esc_url( $header_image ).'">';
+	$out .= '<meta itemprop="width" content="'.get_custom_header()->width.'">';
+	$out .= '<meta itemprop="height" content="'.get_custom_header()->height.'">';
+	$out .= '</div>';
+    }
+    $out .= '<meta itemprop="name" content="'.get_bloginfo( 'title' ).'">';
+    $out .= '<meta itemprop="url" content="'.home_url( '/' ).'">';
+    if ($withrahmen) {
+	$out .= '</div>';
+    }
+    return $out;
+}
+/*-----------------------------------------------------------------------------------*/
+/*  Create String for Thumbnail info, used by Scema.org Microformat Data
+/*-----------------------------------------------------------------------------------*/
+function pirate_rogue_create_schema_thumbnail($id = 0) {
+    $output = "";
+    if (!isset($id)) {
+        $id = get_the_ID();
+    }
+    $post_thumbnail_id = get_post_thumbnail_id( $id ); 
+    if ($post_thumbnail_id) {
+        $thumbimage = wp_get_attachment_image_src( $post_thumbnail_id);
+        $image =      wp_get_attachment_image_src( $post_thumbnail_id, 'full');
+        $imageurl = $image[0]; 	
+        $imgwidth = $image[1];
+        $imgheight = $image[2];
+        $output .= '<div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">';
+        $output .= '<meta itemprop="thumbnailUrl" content="'.esc_url($thumbimage[0]).'">';
+        $output .= '<meta itemprop="url" content="'.esc_url($imageurl).'">';
+        $output .= '<meta itemprop="width" content="'.$imgwidth.'">';
+        $output .= '<meta itemprop="height" content="'.$imgheight.'">';
+        $output .= '</div>';
+    }
+    return $output;
+}

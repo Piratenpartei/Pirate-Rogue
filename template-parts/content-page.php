@@ -11,7 +11,7 @@ global $pagebreakargs;
 
 ?>
 
-    <article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> itemscope itemtype="http://schema.org/Article">
+    <article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> itemscope itemtype="http://schema.org/WebPage">
 	<header class="entry-header">
 		<h1 class="entry-title" itemprop="headline"><?php the_title(); ?></h1>
 	</header><!-- end .entry-header -->

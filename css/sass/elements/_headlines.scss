@@ -15,13 +15,13 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 6px 0 9px;
 	@include px2rem($font-size-h1);
         color: $color-content-h1;   
-        @include hyphens(none);
+        @include hyphens(manual);
     }
     h2 {
 	@include px2rem($font-size-h2);
 	padding: 6px 0 9px;
         color: $color-content-h2; 
-        @include hyphens(none);
+        @include hyphens(manual);
     }
     h3 {
 	@include px2rem($font-size-h3);
@@ -136,6 +136,7 @@ h2 {
 .entry-header {
     h2.entry-title {
       @include px2rem($font-size-h2-entryheader);
+      @include hyphens(manual);
       color: $color-text;
       text-decoration: none;
       padding: 4px 0 8px;

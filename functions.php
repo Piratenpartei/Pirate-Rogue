@@ -99,17 +99,10 @@ add_action( 'wp_head', 'pirate_rogue_javascript_detection', 0 );
 /* Registre Scripts
 /*-----------------------------------------------------------------------------------*/
 function pirate_rogue_register_scripts() {
-    // Registre Slick
+    // Register Slick
     wp_register_script('pirate-rogue-slick', get_template_directory_uri() . '/js/slick/slick.min.js', array('jquery') ); 
 
-    // Loading viewpoint checker script
-   // wp_register_script( 'viewportchecker', get_template_directory_uri() . '/js/jquery.viewportchecker.min.js', array( 'jquery' ), '1.8.7' );
-    // Loads Scripts Sticky Sidebar Element
-   // wp_register_script( 'sticky-kit', get_template_directory_uri() . '/js/sticky-kit.min.js', array( 'jquery' ) );
-
-    // Loading FitVids responsive Video script
-   // wp_register_script( 'fitvids', get_template_directory_uri() . '/js/jquery.fitvids.min.js', array( 'jquery' ), '1.1' );
-    
+    // Misc jQuery Plugins
     wp_register_script( 'pirate-rogue-jquery-misc', get_template_directory_uri() . '/js/jquery.misc.js', array( 'jquery' ), '1.1' );
 
 }
@@ -139,16 +132,7 @@ function pirate_rogue_base_scripts() {
         if (is_home() && 
                 ( '' != get_theme_mod( 'pirate_rogue_featuredtag' )  || '' != get_theme_mod( 'pirate_rogue_featuredcat' ) )) {
              wp_enqueue_script( 'pirate-rogue-slick' );
-        }
-        // Loading viewpoint checker script
-    //    wp_enqueue_script( 'viewportchecker');
-
-        // Loads Scripts Sticky Sidebar Element
-    //    wp_enqueue_script( 'sticky-kit' );
-
-        // Loading FitVids responsive Video script
-   //     wp_enqueue_script( 'fitvids' );
-        
+        }        
          wp_enqueue_script( 'pirate-rogue-jquery-misc' );
 
 }

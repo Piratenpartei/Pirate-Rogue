@@ -626,7 +626,6 @@ function pirate_rogue_post_gallery($output, $attr) {
         fade: true,
         arrows: true,
         adaptiveHeight: true,
-        cssEase: true,
         swipe: true,
         draggable: true,
         accessibility: true,

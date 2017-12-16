@@ -436,7 +436,6 @@ function pirate_rogue_get_image_attributs($id=0) {
 /*-----------------------------------------------------------------------------------*/
 /* Returns an array as table
 /*-----------------------------------------------------------------------------------*/
-
 function pirate_rogue_array2table($array, $table = true) {
     $out = '';
     $tableHeader = '';
@@ -468,7 +467,7 @@ function pirate_rogue_array2table($array, $table = true) {
 }
 
 /*-----------------------------------------------------------------------------------*/
-/*  Create String for Publisher Info, used by Scema.org Microformat Data
+/*  Create String for Publisher Info, used by Schema.org Microformat Data
 /*-----------------------------------------------------------------------------------*/
 function pirate_rogue_create_schema_publisher($withrahmen = true) {
     $out = '';
@@ -514,3 +513,132 @@ function pirate_rogue_create_schema_thumbnail($id = 0) {
     }
     return $output;
 }
+
+/*-----------------------------------------------------------------------------------*/
+/* Change output for gallery
+/*-----------------------------------------------------------------------------------*/
+add_filter('post_gallery', 'pirate_rogue_post_gallery', 10, 2);
+function pirate_rogue_post_gallery($output, $attr) {
+    global $post;
+    global $options;
+    
+    if (isset($attr['orderby'])) {
+        $attr['orderby'] = sanitize_sql_orderby($attr['orderby']);
+        if (!$attr['orderby'])
+            unset($attr['orderby']);
+    }
+
+    extract(shortcode_atts(array(
+        'order' => 'ASC',
+        'orderby' => 'menu_order ID',
+        'id' => $post->ID,
+        'itemtag' => 'dl',
+        'icontag' => 'dt',
+        'captiontag' => 'dd',
+        'columns' => 3,
+        'size' => 'thumbnail',
+        'include' => '',
+        'exclude' => '',
+	'type' => NULL,
+	'lightbox' => FALSE,
+	'captions' => 1,
+	'columns'   => 6,
+	'link'	=> 'file'
+
+    ), $attr));
+
+    $id = intval($id);
+    if ('RAND' == $order) $orderby = 'none';
+
+    if (!empty($include)) {
+        $include = preg_replace('/[^0-9,]+/', '', $include);
+        $_attachments = get_posts(
+            array('include' => $include, 
+                'post_status' => 'inherit', 
+                'post_type' => 'attachment', 
+                'post_mime_type' => 'image', 
+                'order' => $order, 
+                'orderby' => $orderby)
+            );
+
+        $attachments = array();
+        foreach ($_attachments as $key => $val) {
+            $attachments[$val->ID] = $_attachments[$key];
+        }
+    }
+
+    if (empty($attachments)) return '';
+
+	
+    $output = '';
+    if (!isset($attr['captions'])) {
+	$attr['captions'] =1;
+    }
+     if (!isset($attr['columns'])) {
+	$attr['columns'] = 7;
+    }
+    if (!isset($attr['type'])) {
+	$attr['type'] = 'default';
+    }
+    if (!isset($attr['link'])) {
+	$attr['link'] = 'file';
+    }
+   
+    
+    wp_enqueue_script( 'pirate-rogue-slick' );
+    $rand = rand();	    
+    $output .= "<div id=\"slider-$rand\" class=\"gallery\">\n";
+    $output .= "<div class=\"slider gallery-slider\">\n";
+    foreach ($attachments as $id => $attachment) {
+	$img = wp_get_attachment_image_src($id, 'pirate-rogue-gallery');
+        $meta = get_post($id);
+        $img_full = wp_get_attachment_image_src($id, 'full');
+	$output .= "\t".'<div><img src="'.esc_url($img[0]).'" width="'.$img[1].'" height="'.$img[2].'" alt="">';
+
+        if ($meta->post_excerpt != '') {
+            $output .= '<div class="gallery-image-caption">';
+            $lightboxattr = '';
+            if($meta->post_excerpt != '') { 
+                $output .= $meta->post_excerpt; 
+                $lightboxtitle = sanitize_text_field($meta->post_excerpt);
+                if (strlen(trim($lightboxtitle))>1) {
+                    $lightboxattr = ' title="'.$lightboxtitle.'"';
+                }
+            }
+            if ($attr['link'] != 'none') {
+                if($meta->post_excerpt != '') { $output .= '<br>'; }
+                $output .= '<span class="linkorigin">(<a href="'.esc_url($img_full[0]).'" '.$lightboxattr.' class="lightbox" rel="lightbox-'.$rand.'">'.__('Vergrößern','pirate-rogue').'</a>)</span>';
+            }
+            $output .='</div>';
+        }
+        
+        
+        $output .= '</div>'."\n";
+    }
+    $output .= "</div>\n";
+    $output .= "<script type=\"text/javascript\"> jQuery(document).ready(function($) {";
+    $output .= "$('.gallery-slider').slick({
+        centerMode: true,
+        centerPadding: '60px',
+        dots: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        arrows: true,
+        adaptiveHeight: true,
+        cssEase: true,
+        swipe: true,
+        draggable: true,
+        accessibility: true,
+    });";
+    $output .= "});</script>";
+    $output .= "</div>\n";
+    
+    
+    return $output;
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/* EOF
+/*-----------------------------------------------------------------------------------*/

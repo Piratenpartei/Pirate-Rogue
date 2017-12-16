@@ -66,6 +66,7 @@ function pirate_rogue_setup() {
 	add_image_size( 'pirate-rogue-featured-big',    1440, 690, true );
 	add_image_size( 'pirate-rogue-bigthumb',        1440, 580, true );
 	add_image_size( 'pirate-rogue-front-big',       1260, 709, true );
+        add_image_size( 'pirate-rogue-gallery',          600, 600, true );
 	add_image_size( 'pirate-rogue-front-small',      800, 450, true );
 	add_image_size( 'pirate-rogue-featured-bottom',  800, 450, true );
 
@@ -100,7 +101,8 @@ add_action( 'wp_head', 'pirate_rogue_javascript_detection', 0 );
 /*-----------------------------------------------------------------------------------*/
 function pirate_rogue_register_scripts() {
     // Register Slick
-    wp_register_script('pirate-rogue-slick', get_template_directory_uri() . '/js/slick/slick.min.js', array('jquery') ); 
+   // wp_register_script('pirate-rogue-slick', get_template_directory_uri() . '/js/slick/slick.min.js', array('jquery') ); 
+     wp_register_script('pirate-rogue-slick', get_template_directory_uri() . '/js/slick/slick-1.8.1.min.js', array('jquery') ); 
 
     // Misc jQuery Plugins
     wp_register_script( 'pirate-rogue-jquery-misc', get_template_directory_uri() . '/js/jquery.misc.js', array( 'jquery' ), '1.1' );
@@ -120,10 +122,10 @@ function pirate_rogue_base_scripts() {
 	}
 
 	// Loads stylesheets.
-	wp_enqueue_style( 'pirate-rogue-style', get_stylesheet_uri(), array(), '20170818' );
+	wp_enqueue_style( 'pirate-rogue-style', get_stylesheet_uri(), array(), '20171216' );
         
         // Loads Custom JavaScript functionality
-        wp_enqueue_script( 'pirate-rogue-script', get_template_directory_uri() . '/js/functions.min.js', array( 'jquery' ), '20170824', true );
+        wp_enqueue_script( 'pirate-rogue-script', get_template_directory_uri() . '/js/functions.min.js', array( 'jquery' ), '20171216', true );
         wp_localize_script( 'pirate-rogue-script', 'screenReaderText', array(
                 'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'pirate-rogue') . '</span>',
                 'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'pirate-rogue') . '</span>',
@@ -131,7 +133,7 @@ function pirate_rogue_base_scripts() {
         
         if (is_home() && 
                 ( '' != get_theme_mod( 'pirate_rogue_featuredtag' )  || '' != get_theme_mod( 'pirate_rogue_featuredcat' ) )) {
-             wp_enqueue_script( 'pirate-rogue-slick' );
+            wp_enqueue_script( 'pirate-rogue-slick' );
         }        
          wp_enqueue_script( 'pirate-rogue-jquery-misc' );
 

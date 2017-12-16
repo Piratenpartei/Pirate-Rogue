@@ -136,6 +136,9 @@
 		} );
 	}
 
+      
+
+
 	// Fade In Animations
 	$('.fadein').viewportChecker({
 		classToAdd: 'inview', // Class to add to the elements when they are visible

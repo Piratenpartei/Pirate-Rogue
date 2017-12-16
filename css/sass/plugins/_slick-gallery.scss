@@ -52,7 +52,7 @@
         @extend .fa-3x;
         line-height: 1;
         opacity: .75;
-        color: $color-second;
+        color: $color-main;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
@@ -127,7 +127,7 @@
                 &:hover:before, 
                 &:focus:before {
                    opacity: 0.75;
-                   color: $color-second;
+                   color: $color-main;
                 }
 
           
@@ -149,7 +149,7 @@
         }
         li.slick-active button:before {
             opacity: 1;
-            color: $color-second;
+            color: $color-main;
         }
     } 
 

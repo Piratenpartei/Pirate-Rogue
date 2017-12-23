@@ -92,9 +92,16 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 		    && $custom_class != 'no-thumb' 
 		    && '' != get_the_post_thumbnail() 
 		    && ! post_password_required() ) : ?>
-		<div class="entry-thumbnail">
-			<?php the_post_thumbnail(); ?>
-		</div><!-- end .entry-thumbnail -->
+		<figure class="entry-thumbnail">
+			<?php 
+                        the_post_thumbnail();
+                        $post_thumbnail_id = get_post_thumbnail_id( $id );
+                        $imagedata =  pirate_rogue_get_image_attributs($post_thumbnail_id);
+                        if (isset($imagedata) && isset($imagedata['credits'])) {
+                            echo '<figcaption>'.$imagedata['credits'].'</figcaption>';
+                        }
+                       ?>
+		</figure><!-- end .entry-thumbnail -->
 	    <?php endif; ?>
 
 	    <div id="socialicons-sticky">

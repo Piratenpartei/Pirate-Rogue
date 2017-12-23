@@ -70,5 +70,40 @@ img#wpstats {
     text-align: right;
     margin-right: 6px;
   }
+  
+  
 }
 
+figure {
+    figcaption { 
+            margin: 0;
+            padding: 8px 2px 30px;
+            @include px2rem($font-size-small);
+            max-width: 100%;
+            
+        &.alignnone {
+            margin: 0;
+        }
+        
+        a {
+            line-height: 0;
+            display: block;
+        }  
+        
+       
+    }
+    &.entry-thumbnail {
+        figcaption {
+            text-align: right;
+            padding: 0 6px 0 0;
+        }   
+    }
+}
+
+ .single-post {
+     .entry-thumbnail {
+        @media screen and (min-width:$breakpoint-sm) {
+            padding-bottom: 30px;
+        }
+     }
+ }

@@ -476,12 +476,23 @@ function pirate_rogue_create_schema_publisher($withrahmen = true) {
     }
     $header_image = get_header_image();
     if ($header_image) {
-	$out .= '<div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">';
-	$out .= '<meta itemprop="url" content="'.esc_url( $header_image ).'">';
-	$out .= '<meta itemprop="width" content="'.get_custom_header()->width.'">';
-	$out .= '<meta itemprop="height" content="'.get_custom_header()->height.'">';
-	$out .= '</div>';
+        $src = esc_url( $header_image );
+        $width = get_custom_header()->width;
+        $height = get_custom_header()->height;
+    } else {
+        $custom_logo_id = get_theme_mod( 'custom_logo' );
+	if ( $custom_logo_id ) {
+            $image = wp_get_attachment_image_src($custom_logo_id, 'full'); 
+            if ( $image ) {
+                list($src, $width, $height) = $image;
+            }
+        }
     }
+    $out .= '<div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">';
+    $out .= '<meta itemprop="url" content="'.$src.'">';
+    $out .= '<meta itemprop="width" content="'.$width.'">';
+    $out .= '<meta itemprop="height" content="'.$height.'">';
+    $out .= '</div>';
     $out .= '<meta itemprop="name" content="'.get_bloginfo( 'title' ).'">';
     $out .= '<meta itemprop="url" content="'.home_url( '/' ).'">';
     if ($withrahmen) {
@@ -498,6 +509,14 @@ function pirate_rogue_create_schema_thumbnail($id = 0) {
         $id = get_the_ID();
     }
     $post_thumbnail_id = get_post_thumbnail_id( $id ); 
+    if ((!isset($post_thumbnail_id)) || ($post_thumbnail_id <= 0)) {
+        $thumbfallbackid = absint(get_theme_mod( 'pirate_rogue_fallback_blogroll_thumbnail' ));
+        if (isset($thumbfallbackid)) {
+           $post_thumbnail_id = $thumbfallbackid;
+        }
+    }
+  
+    
     if ($post_thumbnail_id) {
         $thumbimage = wp_get_attachment_image_src( $post_thumbnail_id);
         $image =      wp_get_attachment_image_src( $post_thumbnail_id, 'full');

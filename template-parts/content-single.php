@@ -85,6 +85,19 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
                                     <?php echo wp_link_pages($pagebreakargs);
 					 edit_post_link( esc_html__( 'Edit Post', 'pirate-rogue'), '<span class="entry-edit">', '</span>' ); ?>
 				</div><!-- end .meta-columnthree -->
+                                <meta itemprop="datePublished" content="<?php echo esc_attr( get_post_time('c',false,$post->ID) );?>">
+                                <meta itemprop="dateModified" content="<?php echo esc_attr( get_the_modified_time('c',false,$post->ID) );?>">
+                                <?php
+                                    $author = get_theme_mod( 'pirate_rogue_author' );      
+                                    $author = "zest";
+                                    if ($author) { ?>
+                                        <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                            <meta itemprop="name" content="<?php echo $author; ?>">
+                                        </div>
+                                    <?php }
+                                    echo pirate_rogue_create_schema_publisher();
+                                    ?>
+
 			</div><!-- end .entry-meta -->
 	</header><!-- end .entry-header -->
 	<div class="contentwrap">
@@ -150,7 +163,7 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
                             
                             if (('' == get_theme_mod( 'pirate_rogue_front_hideauthor' ) ) &&  ('' == get_theme_mod( 'pirate_rogue_all_hideauthor' ) )) {
                                 if ( get_the_author_meta( 'description' ) ) {
-                                        get_template_part( 'template-parts/authorbox' );
+                                    get_template_part( 'template-parts/authorbox' );
                                 }
                             }
 
@@ -173,5 +186,5 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 
 	    </div><!-- end #socialicons-sticky -->
 	</div><!-- end .content-wrap -->
-        <?php echo pirate_rogue_create_schema_thumbnail(); ?>
+        <?php echo pirate_rogue_create_schema_thumbnail(get_the_ID()); ?>
     </article><!-- end post -<?php the_ID(); ?> -->

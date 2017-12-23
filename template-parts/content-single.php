@@ -89,7 +89,6 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
                                 <meta itemprop="dateModified" content="<?php echo esc_attr( get_the_modified_time('c',false,$post->ID) );?>">
                                 <?php
                                     $author = get_theme_mod( 'pirate_rogue_author' );      
-                                    $author = "zest";
                                     if ($author) { ?>
                                         <div itemprop="author" itemscope itemtype="http://schema.org/Person">
                                             <meta itemprop="name" content="<?php echo $author; ?>">

@@ -241,6 +241,19 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'type'			    => 'text',
 		'priority'		    => 6,
 	) );
+        $wp_customize->add_setting( 'pirate_rogue_author', array(
+		'default'		    => '',
+		'sanitize_callback'	    => 'wp_kses_post',
+	) );
+
+	$wp_customize->add_control( 'pirate_rogue_author', array(
+		'label'			    => esc_html__( 'Author', 'pirate-rogue'),
+		'description'		    => esc_html__( 'Default author of posts used for structured data', 'pirate-rogue'),
+		'section'		    => 'pirate_rogue_general',
+		'type'			    => 'text',
+		'priority'		    => 7,
+	) );
+        
         
         $wp_customize->add_setting( 'pirate_rogue_google_wmt_verification_text', array(
 		'default'		    => '',
@@ -253,7 +266,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
                         . 'Example: If given: <br><code>&lt;meta name="google-site-verification" content="BBssyCpddd8" /&gt;</code><br> then insert <code>BBssyCpddd8</code> ', 'pirate-rogue'),
 		'section'		    => 'pirate_rogue_general',
 		'type'			    => 'text',
-		'priority'		    => 7,
+		'priority'		    => 8,
 	) );
         
 

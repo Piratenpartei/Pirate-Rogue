@@ -436,7 +436,6 @@ function pirate_rogue_get_image_attributs($id=0) {
 /*-----------------------------------------------------------------------------------*/
 /* Returns an array as table
 /*-----------------------------------------------------------------------------------*/
-
 function pirate_rogue_array2table($array, $table = true) {
     $out = '';
     $tableHeader = '';
@@ -468,7 +467,7 @@ function pirate_rogue_array2table($array, $table = true) {
 }
 
 /*-----------------------------------------------------------------------------------*/
-/*  Create String for Publisher Info, used by Scema.org Microformat Data
+/*  Create String for Publisher Info, used by Schema.org Microformat Data
 /*-----------------------------------------------------------------------------------*/
 function pirate_rogue_create_schema_publisher($withrahmen = true) {
     $out = '';
@@ -477,12 +476,23 @@ function pirate_rogue_create_schema_publisher($withrahmen = true) {
     }
     $header_image = get_header_image();
     if ($header_image) {
-	$out .= '<div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">';
-	$out .= '<meta itemprop="url" content="'.esc_url( $header_image ).'">';
-	$out .= '<meta itemprop="width" content="'.get_custom_header()->width.'">';
-	$out .= '<meta itemprop="height" content="'.get_custom_header()->height.'">';
-	$out .= '</div>';
+        $src = esc_url( $header_image );
+        $width = get_custom_header()->width;
+        $height = get_custom_header()->height;
+    } else {
+        $custom_logo_id = get_theme_mod( 'custom_logo' );
+	if ( $custom_logo_id ) {
+            $image = wp_get_attachment_image_src($custom_logo_id, 'full'); 
+            if ( $image ) {
+                list($src, $width, $height) = $image;
+            }
+        }
     }
+    $out .= '<div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">';
+    $out .= '<meta itemprop="url" content="'.$src.'">';
+    $out .= '<meta itemprop="width" content="'.$width.'">';
+    $out .= '<meta itemprop="height" content="'.$height.'">';
+    $out .= '</div>';
     $out .= '<meta itemprop="name" content="'.get_bloginfo( 'title' ).'">';
     $out .= '<meta itemprop="url" content="'.home_url( '/' ).'">';
     if ($withrahmen) {
@@ -499,6 +509,14 @@ function pirate_rogue_create_schema_thumbnail($id = 0) {
         $id = get_the_ID();
     }
     $post_thumbnail_id = get_post_thumbnail_id( $id ); 
+    if ((!isset($post_thumbnail_id)) || ($post_thumbnail_id <= 0)) {
+        $thumbfallbackid = absint(get_theme_mod( 'pirate_rogue_fallback_blogroll_thumbnail' ));
+        if (isset($thumbfallbackid)) {
+           $post_thumbnail_id = $thumbfallbackid;
+        }
+    }
+  
+    
     if ($post_thumbnail_id) {
         $thumbimage = wp_get_attachment_image_src( $post_thumbnail_id);
         $image =      wp_get_attachment_image_src( $post_thumbnail_id, 'full');
@@ -514,3 +532,131 @@ function pirate_rogue_create_schema_thumbnail($id = 0) {
     }
     return $output;
 }
+
+/*-----------------------------------------------------------------------------------*/
+/* Change output for gallery
+/*-----------------------------------------------------------------------------------*/
+add_filter('post_gallery', 'pirate_rogue_post_gallery', 10, 2);
+function pirate_rogue_post_gallery($output, $attr) {
+    global $post;
+    global $options;
+    
+    if (isset($attr['orderby'])) {
+        $attr['orderby'] = sanitize_sql_orderby($attr['orderby']);
+        if (!$attr['orderby'])
+            unset($attr['orderby']);
+    }
+
+    extract(shortcode_atts(array(
+        'order' => 'ASC',
+        'orderby' => 'menu_order ID',
+        'id' => $post->ID,
+        'itemtag' => 'dl',
+        'icontag' => 'dt',
+        'captiontag' => 'dd',
+        'columns' => 3,
+        'size' => 'thumbnail',
+        'include' => '',
+        'exclude' => '',
+	'type' => NULL,
+	'lightbox' => FALSE,
+	'captions' => 1,
+	'columns'   => 6,
+	'link'	=> 'file'
+
+    ), $attr));
+
+    $id = intval($id);
+    if ('RAND' == $order) $orderby = 'none';
+
+    if (!empty($include)) {
+        $include = preg_replace('/[^0-9,]+/', '', $include);
+        $_attachments = get_posts(
+            array('include' => $include, 
+                'post_status' => 'inherit', 
+                'post_type' => 'attachment', 
+                'post_mime_type' => 'image', 
+                'order' => $order, 
+                'orderby' => $orderby)
+            );
+
+        $attachments = array();
+        foreach ($_attachments as $key => $val) {
+            $attachments[$val->ID] = $_attachments[$key];
+        }
+    }
+
+    if (empty($attachments)) return '';
+
+	
+    $output = '';
+    if (!isset($attr['captions'])) {
+	$attr['captions'] =1;
+    }
+     if (!isset($attr['columns'])) {
+	$attr['columns'] = 7;
+    }
+    if (!isset($attr['type'])) {
+	$attr['type'] = 'default';
+    }
+    if (!isset($attr['link'])) {
+	$attr['link'] = 'file';
+    }
+   
+    
+    wp_enqueue_script( 'pirate-rogue-slick' );
+    $rand = rand();	    
+    $output .= "<div id=\"slider-$rand\" class=\"gallery\">\n";
+    $output .= "<div class=\"slider gallery-slider\">\n";
+    foreach ($attachments as $id => $attachment) {
+	$img = wp_get_attachment_image_src($id, 'pirate-rogue-gallery');
+        $meta = get_post($id);
+        $img_full = wp_get_attachment_image_src($id, 'full');
+	$output .= "\t".'<div><img src="'.esc_url($img[0]).'" width="'.$img[1].'" height="'.$img[2].'" alt="">';
+
+        if ($meta->post_excerpt != '') {
+            $output .= '<div class="gallery-image-caption">';
+            $lightboxattr = '';
+            if($meta->post_excerpt != '') { 
+                $output .= $meta->post_excerpt; 
+                $lightboxtitle = sanitize_text_field($meta->post_excerpt);
+                if (strlen(trim($lightboxtitle))>1) {
+                    $lightboxattr = ' title="'.$lightboxtitle.'"';
+                }
+            }
+            if ($attr['link'] != 'none') {
+                if($meta->post_excerpt != '') { $output .= '<br>'; }
+                $output .= '<span class="linkorigin">(<a href="'.esc_url($img_full[0]).'" '.$lightboxattr.' class="lightbox" rel="lightbox-'.$rand.'">'.__('Vergrößern','pirate-rogue').'</a>)</span>';
+            }
+            $output .='</div>';
+        }
+        
+        
+        $output .= '</div>'."\n";
+    }
+    $output .= "</div>\n";
+    $output .= "<script type=\"text/javascript\"> jQuery(document).ready(function($) {";
+    $output .= "$('.gallery-slider').slick({
+        centerMode: true,
+        centerPadding: '60px',
+        dots: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        arrows: true,
+        adaptiveHeight: true,
+        swipe: true,
+        draggable: true,
+        accessibility: true,
+    });";
+    $output .= "});</script>";
+    $output .= "</div>\n";
+    
+    
+    return $output;
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/* EOF
+/*-----------------------------------------------------------------------------------*/

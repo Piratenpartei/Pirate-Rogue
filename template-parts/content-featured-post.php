@@ -39,11 +39,21 @@ $thumbfallbackid = absint(get_theme_mod( 'pirate_rogue_fallback_slider' ));
 					'<span class="comment-name">' . esc_html__( 'Comments', 'pirate-rogue') .  '</span>' . esc_html__( '%', 'pirate-rogue') )
 				; ?>
 			</span><!-- end .entry-comments -->
-		<?php endif; // comments_open() ?>
-
-			<?php edit_post_link( esc_html__( 'Edit Post', 'pirate-rogue'), '<span class="entry-edit">', '</span>' ); ?>
+                    <?php 
+                    endif; // comments_open() 
+                    edit_post_link( esc_html__( 'Edit Post', 'pirate-rogue'), '<span class="entry-edit">', '</span>' ); ?>   
 		</div><!-- end .entry-meta -->
-
+                    <?php 
+                        if ( '' != get_the_post_thumbnail()) {
+                            $post_thumbnail_id = get_post_thumbnail_id();
+                        } else {
+                            $post_thumbnail_id = $thumbfallbackid;
+                        }
+                    $imagedata =  pirate_rogue_get_image_attributs($post_thumbnail_id);
+                    if (isset($imagedata) && isset($imagedata['credits'])) {
+                        echo '<div class="credits">'.$imagedata['credits'].'</div>';
+                    }  
+                    ?>
             </div><!-- end .slider-text -->
 
 	</div><!-- .meta-main-wrap -->
@@ -51,12 +61,16 @@ $thumbfallbackid = absint(get_theme_mod( 'pirate_rogue_fallback_slider' ));
 	<?php if ( 'slider-fullscreen' == get_theme_mod( 'pirate_rogue_sliderstyle' ) 
                 || 'slider-boxed' == get_theme_mod( 'pirate_rogue_sliderstyle' ) 
                 && '' != get_the_post_thumbnail() 
-                && ! post_password_required() ) : ?>
-		<div class="entry-thumbnail" role="presentation"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('pirate-rogue-featured-big'); ?></a></div><!-- end .entry-thumbnail -->
+                && ! post_password_required() ) :  ?>
+		<div class="entry-thumbnail" role="presentation">
+                    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('pirate-rogue-featured-big'); ?></a> 
+                </div><!-- end .entry-thumbnail -->
 
 	
 	<?php elseif ( '' != get_the_post_thumbnail() && ! post_password_required() ) : ?>
-		<div class="entry-thumbnail" role="presentation"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('pirate-rogue-featured'); ?></a></div><!-- end .entry-thumbnail -->
+		<div class="entry-thumbnail" role="presentation">
+                    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('pirate-rogue-featured'); ?></a>
+                </div><!-- end .entry-thumbnail -->
         <?php elseif (! post_password_required()) : 
             if ($thumbfallbackid > 0 ) {
                 if ( 'slider-fullscreen' == get_theme_mod( 'pirate_rogue_sliderstyle' ) 
@@ -65,7 +79,9 @@ $thumbfallbackid = absint(get_theme_mod( 'pirate_rogue_fallback_slider' ));
                 } else {
                      $imagesrc = wp_get_attachment_image_src( $thumbfallbackid, 'pirate-rogue-featured' )[0];
                 } ?>
-                 <div class="entry-thumbnail fallback" role="presentation"><a href="<?php the_permalink(); ?>"><img src="<?php echo $imagesrc; ?>" alt="<?php echo get_the_title();?>"></a></div><!-- end .entry-thumbnail -->                
+                 <div class="entry-thumbnail fallback" role="presentation">
+                    <a href="<?php the_permalink(); ?>"><img src="<?php echo $imagesrc; ?>" alt="<?php echo get_the_title();?>"></a>     
+                 </div><!-- end .entry-thumbnail -->                
             <?php } ?>
 	<?php endif; ?>
 

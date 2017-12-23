@@ -113,7 +113,7 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
 
             </div><!-- .site-header-content -->
 
-            <div class="sticky-header hidden">
+            <div class="sticky-header hidden" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
                     <button id="overlay-open-sticky" class="overlay-open overlay-btn"><span><?php esc_html_e( 'Menu', 'pirate-rogue'); ?></span></button>
                     <?php if ( '' == get_theme_mod( 'pirate_rogue_hidesearch' ) ) : ?>
                             <button id="search-open-sticky" class="search-open search-btn"><span><?php esc_html_e( 'Search', 'pirate-rogue'); ?></span></button>
@@ -124,7 +124,7 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
                              <?php the_custom_logo(); ?>
                      </div><!-- end .custom-logo-wrap -->
                     <?php else : ?>
-                            <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+                            <p class="site-title" itemprop="name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url"><?php bloginfo( 'name' ); ?></a></p>
                     <?php endif; ?>
 
 

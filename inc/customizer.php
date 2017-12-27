@@ -700,7 +700,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
         
 	$wp_customize->add_setting( 'pirate_rogue_sliderstyle', array(
 		'default' 		=> 'slider-fullwidth',
-		'sanitize_callback' 	=> 'pirate_rogues_sanitize_sliderstyle',
+		'sanitize_callback' 	=> 'pirate_rogue_sanitize_sliderstyle',
 	) );
 
 	$wp_customize->add_control( 'pirate_rogue_sliderstyle', array(

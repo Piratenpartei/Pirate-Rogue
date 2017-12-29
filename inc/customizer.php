@@ -1183,8 +1183,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	) );
 	
 	
-
-	    
+       if ( is_plugin_active( 'pirate-crew/pirate-crew.php' ) || is_plugin_active( 'Pirate-Crew/pirate-crew.php' ) ) {
 	    // Add Panel for Plugin Pirate Crew
 	    $wp_customize->add_section( 'plugin_pirate_crew_setting', array(
 		'priority' 	               => 8,
@@ -1264,7 +1263,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 			'list'	 => 'list',
 		),
 	    ) );
-	    
+        }    
 	
 		
 }

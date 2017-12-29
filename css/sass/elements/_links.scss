@@ -3,130 +3,30 @@ Links and colors
 */
 
 a {
-    color: $color-text;
     text-decoration: none;
-
-    &:focus,
-    &:hover {
-         color: $color-linkhover;
-    }
-  
     .entry-content &, 
     .comment-text & {
-        color: $color-content-links; 
         font-weight: bold;
-       // text-decoration: underline;
-        
-        &:focus,
-        &:hover {
-            color: $color-second;
-        }
     }
     .author-bio &,
     .textwidget & {
         text-decoration: underline;
     }
-  
 }
-
-
-
-
-.entry-header h2.entry-title {
-    color: $color-text;
-    text-decoration: none;
-    a {
-	color: $color-text;
-	text-decoration: none;
-    }
-}
-
-
-
-
-.author-bio a,
-.featured-slider button.slick-arrow:focus::after,
-.featured-slider button.slick-arrow:hover::after,
-.front-section a.all-posts-link:focus,
-#overlay-close:focus,
-.widget-area .widget ul li a:focus, 
-#sidebar-offcanvas .widget a:focus,
-.textwidget a:focus, 
-#overlay-nav a:focus,
-.author-links a:focus, 
-.single-post .post-navigation a:focus,
-.single-attachment .post-navigation a:focus,
-.single-post .hentry .entry-meta a:focus,
-.front-section a.all-posts-link:hover,
-#overlay-close:hover,
-.widget-area .widget ul li a:hover, 
-#sidebar-offcanvas .widget a:hover,
-.textwidget a:hover, 
-#overlay-nav a:hover,
-.author-links a:hover, 
-.single-post .post-navigation a:hover,
-.single-attachment .post-navigation a:hover,
-.single-post .hentry .entry-meta a:hover {
-    color: $color-content-links; 
-}
-
-
-
 
 #secondary h2.widget-title, 
 #sidebar-page h2.widget-title  {
-  color: $color-text;
   text-decoration: none;
 }
 
-#desktop-navigation ul li a:focus,
-#desktop-navigation ul li a:hover {
-     color:  $color-linkhover; // #51a8dd;
-}
-.entry-header {
-    a:focus,  
-    a:hover,
-    h2.entry-title a:focus,
-    h2.entry-title a:hover {
-      color:  $color-linkhover; // #51a8dd; 
-    }
-}
-.blog .entry-meta a:focus,
-.blog .entry-meta a:hover {
-    color: $color-content-links; // #51a8dd;
-}
-#desktop-navigation ul li.menu-item-has-children a:focus::after,
-#desktop-navigation ul li.menu-item-has-children a:hover::after {
-    border-top-color: $color-content-links; //  #51a8dd;
-}
+
 .single-post .post-navigation a:focus,
 .single-attachment .post-navigation a:focus,
 .single-post .post-navigation a:hover,
 .single-attachment .post-navigation a:hover {
-    border-bottom: 2px solid $color-content-links; //  #51a8dd;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
 }
-
-
-
-#desktop-navigation {
-    .sub-menu li a:focus, 
-    .children li a:focus, 
-    .sub-menu li a:hover, 
-    .children li a:hover {
-	background: $color-content-links; // #51a8dd;
-    }
-}
-
-.single-post .entry-header p.intro, 
-.entry-summary, 
-.front-section-title, 
-.social-front-title, 
-.widget_mc4wp_form_widget p, 
-.jetpack_subscription_widget #subscribe-text p, 
-.section-about-column-one p {
-    color: $color-text;
-}
-
 
 
 #primary #infinite-handle span:focus, 
@@ -136,59 +36,28 @@ a {
 #front-section-three a.all-posts-link:hover, 
 #offcanvas-widgets-open:hover,
 .offcanvas-widgets-show #offcanvas-widgets-open {
-    background: $color-linkhover;
-    border: 2px solid $color-linkhover;
-    color: #fff;
+    border-style: solid;
+    border-width: 2px;
 }
 
 .comments-show #comments-toggle,
 #comments-toggle:focus,
 #comments-toggle:hover {
-    border: 2px solid $color-linkhover;
-    color: #fff;
+    border-style: solid;
+    border-width: 2px;
 }
 
 
 .desktop-search input.search-field {
-  &:active, 
-  &:focus {
-	border-bottom: 1px solid $color-content-links; // #51a8dd;
-  }
-}
-
-#comments .comment-reply a, 
-#respond a#cancel-comment-reply-link {
-    color: $color-meta;
-}
-
-#comments #respond p {
-    &.comment-notes a, 
-    &.logged-in-as a {
-	  color: $color-meta;
+    &:active, 
+    &:focus {
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
     }
-}
-
-#nav-comments a {
-  color: $color-meta;
-}
-
-#comments .comment-meta {
-  color: $color-meta;
-  
-  a {
-    color: $color-meta;
-  }
-}
-
-.single-post .entry-tags a, 
-p.wp-caption-text, 
-.contact-form label span, 
-.gallery .gallery-item .gallery-caption {
-  color: $color-meta;
 }
 
 .wp-caption-text {
     a {
-        line-height: 1.6em !important;
-      }
+        line-height: 1.6em;
+    }
 }

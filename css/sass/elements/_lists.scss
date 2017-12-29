@@ -50,7 +50,6 @@ li {
 		&:before {
 		    @extend .fa;
                     @extend .fa-chevron-circle-right;
-                    color: $color-main;
                     margin-right: 10px;
                     margin-left: -24px;
                     
@@ -65,7 +64,6 @@ li {
                         &:before {
                             @extend .fa;
                             @extend .fa-chevron-circle-right;
-                            color: $color-second;
                         }
                         
                         li {

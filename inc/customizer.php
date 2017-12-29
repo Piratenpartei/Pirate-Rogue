@@ -4,7 +4,8 @@
  */
 
 function pirate_rogue_customize_register( $wp_customize ) {
-
+    global $default_colorlist;
+    
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 
@@ -1182,11 +1183,38 @@ function pirate_rogue_customize_register( $wp_customize ) {
 			'priority'						 => 5,
 	) );
 	
+        $wp_customize->add_section( 'pirate_rogue_coloroverwrite', array(
+		'priority'          => 9,
+		'theme_supports'    => '',
+		'title'             => esc_html__('Colors', 'pirate-rogue'),
+		'panel'             => 'uku_themeoptions',
+	) );
+        $wp_customize->add_setting( 'pirate_rogue_footer_background_color', array(
+		'default' 		=> '',
+		'sanitize_callback' 	=> 'pirate_rogue_sanitize_colors',
+        ) );
+
+       $wp_customize->add_control(
+            new WP_Customize_Colorlist_Radio(
+                $wp_customize,
+                'pirate_rogue_footer_background_color',
+                array(
+                    'settings' => 'pirate_rogue_footer_background_color',
+                    'label'    => esc_html__( 'Footer color', 'pirate-rogue'),
+                    'description'	=> esc_html__( 'Background color for footer region.', 'pirate-rogue'),
+                    'section'  =>  'pirate_rogue_coloroverwrite',
+                    'type'     => 'colorlist-radio', // The $type in our class
+                    'choices'  =>  $default_colorlist,
+                )
+            )
+        );
+        
+
 	
        if ( is_plugin_active( 'pirate-crew/pirate-crew.php' ) || is_plugin_active( 'Pirate-Crew/pirate-crew.php' ) ) {
 	    // Add Panel for Plugin Pirate Crew
 	    $wp_customize->add_section( 'plugin_pirate_crew_setting', array(
-		'priority' 	               => 8,
+		'priority' 	               => 9,
 		'theme_supports' 	        => '',
 		'title' 	                 => esc_html__('Pirate Crew Settings', 'pirate-rogue'),
 		'panel' 		       => 'uku_themeoptions',
@@ -1268,25 +1296,54 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		
 }
 add_action( 'customize_register', 'pirate_rogue_customize_register');
+/*-----------------------------------------------------------------------------------*/
+/* Add Custom Customizer Controls - Category Dropdown
+/*-----------------------------------------------------------------------------------*/
+if (class_exists('WP_Customize_Control')) {
+    class WP_Customize_Colorlist_Radio extends WP_Customize_Control {
+        // The type of customize control being rendered.
+        public $type = 'colorlist-radio';
 
-
-/**
- * Add Custom Customizer Controls - Category Dropdown
- */
+        // Displays the multiple select on the customize screen.
+        public function render_content() {
+            if ( empty( $this->choices ) )
+                return;
+           ?>
+                <?php if ( ! empty( $this->label ) ) : ?>
+                    <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+                <?php endif;
+                if ( ! empty( $this->description ) ) : ?>
+                    <span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
+                <?php endif; ?>
+                    <div class="colorlist-radio-group">
+                    <?php foreach ( $this->choices as $name => $value ) : ?>                        
+                        <label for="_customize-colorlist-radio_<?php echo esc_attr( $this->id ); ?>_<?php echo esc_attr( $name ); ?>" <?php if ($value=="#000") { echo 'style="color: white;"'; } ?>>
+                            <input name="_customize-colorlist-radio_<?php echo esc_attr( $this->id ); ?>" id="_customize-colorlist-radio_<?php echo esc_attr( $this->id ); ?>_<?php echo esc_attr( $name ); ?>" type="radio" value="<?php echo esc_attr( $name ); ?>" <?php $this->link(); checked( $this->value(), $name ); ?> >
+                                <span style="background-color: <?php echo esc_attr( $value ); ?>"><?php echo ucfirst(esc_attr( $name) ); ?></span>
+                            </input>
+                        </label>
+                    <?php endforeach; ?>
+                    </div>
+	<?php }
+        
+    }
+}
+/*-----------------------------------------------------------------------------------*/
+/* Add Custom Customizer Controls - Category Dropdown
+/*-----------------------------------------------------------------------------------*/
 if (class_exists('WP_Customize_Control')) {
     class WP_Customize_Category_Control extends WP_Customize_Control {
 
         public function render_content() {
             $dropdown = wp_dropdown_categories(
-                    array(
-                                    'name'              => '_customize-dropdown-categories-' . $this->id,
-                                    'echo'              => 0,
-                                    'orderby'           => 'name',
-                                    'show_option_none'  => esc_html__( '&mdash; Select &mdash;', 'pirate-rogue'),
-
-                                    'option_none_value' => '',
-                                    'selected'          => $this->value(),
-                    )
+                array(
+                    'name'              => '_customize-dropdown-categories-' . $this->id,
+                    'echo'              => 0,
+                    'orderby'           => 'name',
+                    'show_option_none'  => esc_html__( '&mdash; Select &mdash;', 'pirate-rogue'),
+                    'option_none_value' => '',
+                    'selected'          => $this->value(),
+                )
             );
 
             $dropdown = str_replace( '<select', '<select ' . $this->get_link(), $dropdown );
@@ -1299,41 +1356,47 @@ if (class_exists('WP_Customize_Control')) {
         }
     }
 }
-
-/**
- * Add Custom Customizer Controls - Tag Dropdown
- */
+/*-----------------------------------------------------------------------------------*/
+/* Add Custom Customizer Controls - Tag Dropdown
+/*-----------------------------------------------------------------------------------*/
 if (class_exists('WP_Customize_Control')) {
-		class WP_Customize_Tag_Control extends WP_Customize_Control {
+    class WP_Customize_Tag_Control extends WP_Customize_Control {
+        public function render_content() {
+            $dropdown = wp_dropdown_categories(
+                array(
+                    'name'              => '_customize-dropdown-tags-' . $this->id,
+                    'echo'              => 0,
+                    'orderby'           => 'name',
+                    'show_option_none'  => esc_html__( '&mdash; Select &mdash;', 'pirate-rogue'),
+                    'option_none_value' => '',
+                    'taxonomy'           => 'post_tag',
+                    'selected'          => $this->value(),
+                )
+            );
 
-				public function render_content() {
-						$dropdown = wp_dropdown_categories(
-								array(
-										'name'              => '_customize-dropdown-tags-' . $this->id,
-										'echo'              => 0,
-										'orderby'           => 'name',
-										'show_option_none'  => esc_html__( '&mdash; Select &mdash;', 'pirate-rogue'),
+            $dropdown = str_replace( '<select', '<select ' . $this->get_link(), $dropdown );
 
-										'option_none_value' => '',
-										'taxonomy'           => 'post_tag',
-										'selected'          => $this->value(),
-								)
-						);
-
-						$dropdown = str_replace( '<select', '<select ' . $this->get_link(), $dropdown );
-
-						printf(
-								'<label class="customize-control-select"><span class="customize-control-title">%s</span> %s</label>',
-								$this->label,
-								$dropdown
-						);
-				}
-		}
+            printf(
+                '<label class="customize-control-select"><span class="customize-control-title">%s</span> %s</label>',
+                $this->label,
+                $dropdown
+            );
+        }
+    }
 }
-
-/**
- * Sanitize Checkboxes.
- */
+/*-----------------------------------------------------------------------------------*/
+/* Sanitize Colors
+/*-----------------------------------------------------------------------------------*/
+function pirate_rogue_sanitize_colors( $color ) {
+    global $default_colorlist;
+	if ( ! in_array( $color, array_keys($default_colorlist) ) ) {
+		$color = '';
+	}
+	return $color;
+}
+/*-----------------------------------------------------------------------------------*/
+/* Sanitize Checkboxes.
+/*-----------------------------------------------------------------------------------*/
 function pirate_rogue_sanitize_checkbox( $input ) {
 	if ( 1 == $input ) {
 		return true;
@@ -1341,10 +1404,9 @@ function pirate_rogue_sanitize_checkbox( $input ) {
 		return false;
 	}
 }
-
-/**
- * Sanitize Sidebar Position.
- */
+/*-----------------------------------------------------------------------------------*/
+/*  Sanitize Sidebar Position.
+/*-----------------------------------------------------------------------------------*/
 function pirate_rogue_sanitize_sidebar( $pirate_rogue_sidebar ) {
 	if ( ! in_array( $pirate_rogue_sidebar, array( 'sidebar-right', 'sidebar-left' ) ) ) {
 		$pirate_rogue_sidebar = 'sidebar-right';
@@ -1352,9 +1414,9 @@ function pirate_rogue_sanitize_sidebar( $pirate_rogue_sidebar ) {
 	return $pirate_rogue_sidebar;
 }
 
-/**
- * Sanitize Sidebar Visibility Settings.
- */
+/*-----------------------------------------------------------------------------------*/
+/*  Sanitize Sidebar Visibility Settings.
+/*-----------------------------------------------------------------------------------*/
 function pirate_rogue_sanitize_sidebar_hide( $pirate_rogue_sidebar_hide ) {
 	if ( ! in_array( $pirate_rogue_sidebar_hide, array( 'sidebar-show', 'sidebar-no', 'sidebar-no-single', 'sidebar-no-front' ) ) ) {
 		$pirate_rogue_sidebar_hide = 'sidebar-show';

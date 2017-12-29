@@ -16,3 +16,18 @@ $pagebreakargs = array(
     'echo' => 0
     );
 
+
+// Default Colors
+$default_colorlist = array(
+    'main'      => '#ff8800',
+    'second'    => '#672082',
+    'third'     => '#698bc1',
+    'four'      => '#148f93',
+    'black'     => '#000',
+    'white'     => '#fff',
+    'grey'      => '#e7e7eb',
+    'blue'      => '#0066ff',
+    'red'       => '#d7464d',
+    'yellow'    => '#e7b547',
+    'green'     => '#85c066'
+);

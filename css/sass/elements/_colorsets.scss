@@ -5,8 +5,152 @@
 
 
 /*-----------------------------------------------------------------------------------*/
-/* Default Colors
+/* 1. Default Colors
 /*-----------------------------------------------------------------------------------*/
+
+// Suche
+.search-open {
+    color: $color-text;
+    background: $color-page-background;
+    border-color: $color-page-background;
+        
+    :focus,
+    :hover {
+        background:  $color-text;
+        color: $color-page-background;
+        border-color: $color-text;
+    }
+}
+.socialmedia-maincolor .search-open {
+    color: $color-main;
+    
+    &:focus,
+    &:hover {
+       background:  $color-second;
+        color: $color-page-background;
+        border-color: $color-second;
+    } 
+}
+.socialmedia-secondcolor .search-open {
+    color: $color-second;
+    
+    &:focus,
+    &:hover {
+        background: $color-main;
+        color: $color-page-background;
+        border-color: $color-main;
+    }
+}
+
+#footer-search {   
+    .search-field {
+        background: rgba(26, 26, 26, 0.25);;
+        border-color: rgba(255, 255, 255, 0.2);;
+        color: #fff;
+            
+        :focus,
+        :hover {
+            background: #fff;
+            color: $color-text;
+        }
+    }
+    input#submit, 
+    input[type="submit"] { 
+        background: rgba(26, 26, 26, 0.4);;
+        border-color: rgba(255, 255, 255, 0.2);;
+       
+        :focus,
+        :hover {
+            background: $color-main;
+            color: #fff;
+        }
+    }
+    input#submit:focus, 
+    input#submit:hover, 
+    input[type="submit"]:focus,
+    input[type="submit"]:hover{ 
+                background: $color-main;
+                color: #fff;
+    }
+}
+
+
+@media screen and (min-width: $breakpoint-1060) {
+     /* --- Search Desktop --- */
+  #masthead {
+	border-bottom-color: #ddd;
+  }
+  .desktop-search {
+	background: rgba(26, 26, 26, 0.75);
+	border-top-color: #ddd;
+
+        input {
+            &.search-field {
+                background: none;
+                border-bottom-color: #fff;
+                color: #fff;
+            }
+            &[type="submit"] {
+                background: $color-main;
+                color: #fff;
+                border: 2px solid $color-main;
+            }
+             &[type="submit"]:focus,
+             &[type="submit"]:hover {
+                 background: $color-main;
+             }
+        }
+    }
+  
+    .searchbar-maincolor .desktop-search {     
+        background:  rgba($color-main, 0.95);
+	
+        input {
+            &.search-field {            
+                border-bottom-color: $color-second;
+                color: #fff;
+
+                &:hover, 
+                &:focus {
+                    background: darken($color-main,20%);
+                }
+            }
+            &[type="submit"] {
+                background:  $color-second;
+                color: #fff;
+                border-color: $color-second;
+            }
+            &[type="submit"]:focus,
+            &[type="submit"]:hover {
+                background: $color-second;
+                border-color: $color-main;
+            }
+          }
+    }
+    
+    .searchbar-secondcolor .desktop-search {     
+        background: rgba($color-second, 0.95);
+        input {
+                &.search-field {            
+                    border-bottom-color: $color-main;
+                    color: #fff;
+                    
+                }
+                &[type="submit"] {
+                    background:  $color-main;
+                    color: #fff;
+                    border-color: $color-main; 
+                }
+                &[type="submit"]:focus,
+                &[type="submit"]:hover {
+                    background: $color-main;
+                    border: 2px solid $color-second;
+                }
+        }
+    }
+}
+
+// Overlay
 
 #overlay-open,
 #overlay-open-sticky {
@@ -688,7 +832,6 @@ blockquote {
 
 
 // Comments
-
 #comments-toggle {
   border-color: $color-text;
   background: none;

@@ -2,16 +2,12 @@
 /* Festgelegte Bereiche zur Suche
 /*-----------------------------------------------------------------------------------*/
 .search-open {
-    color: $color-text;
-    background: $color-page-background;
-    border: 1px solid $color-page-background;
+    border-width: 1px;
+    border-style: solid;
     border-radius: 50%;
         
     :focus,
     :hover {
-        background:  $color-text;
-        color: $color-page-background;
-        border: 1px solid $color-text;
         border-radius: 50%;
     }
     &:before {
@@ -21,26 +17,6 @@
     }
     span {
 	    @extend .screen-reader-text;
-	}
-}
-.socialmedia-maincolor .search-open {
-    color: $color-main;
-    
-    &:focus,
-    &:hover {
-       background:  $color-second;
-            color: $color-page-background;
-            border-color: $color-second;
-    } 
-}
-.socialmedia-secondcolor .search-open {
-    color: $color-second;
-    
-    &:focus,
-    &:hover {
-        background: $color-main;
-        color: $color-page-background;
-        border-color: $color-main;
     }
 }
 
@@ -48,42 +24,18 @@
     @include px2rem($font-size-smaller);
     
     .search-field {
-        background:  rgba(26, 26, 26, 0.25);;
-        border: 1px solid rgba(255, 255, 255, 0.2);;
+        border-width: 1px;
+        border-style: solid;
         padding: 5px;
-        color: #fff;
         letter-spacing: 0.5px;
         font-weight: bolder;
-            
-        :focus,
-        :hover {
-            background: #fff;
-            color: $color-text;
-        }
     }
     input#submit, 
     input[type="submit"] { 
-       background:  rgba(26, 26, 26, 0.4);;
-       border: 1px solid rgba(255, 255, 255, 0.2);;
+       border-width: 1px;
+       border-style: solid;
        padding: 5px;
-       
-            :focus,
-            :hover {
-                background: $color-main;
-                color: #fff;
-            }
     }
-    input#submit:focus, 
-    input#submit:hover, 
-    input[type="submit"]:focus,
-    input[type="submit"]:hover{ 
-
-                background: $color-main;
-                color: #fff;
-   
-    }
-    
-    
 }
 
 
@@ -91,7 +43,8 @@
      /* --- Search Desktop --- */
   #masthead {
 	position: relative;
-	border-bottom: 1px solid #ddd;
+	border-bottom-width: 1px;
+        border-bottom-style: solid;
   }
   .search-open, 
   .desktop-search {
@@ -118,12 +71,7 @@
 	    text-align: center;
 	}	
   }
-  
-  
-  
-  
-  
-  
+
   .desktop-search {
 	position: absolute;
 	top: 100%;
@@ -131,44 +79,37 @@
 	opacity: 0;
 	height: 0;
 	z-index: 10000;
-	background: rgba(26, 26, 26, 0.75);
 	text-align: center;
-	border-top: 1px solid #ddd;
+	border-top-width: 1px;
+        border-top-style: solid;
 	-webkit-transition: all .3s ease-in-out;
 	-moz-transition: all .3s ease-in-out;
 	-o-transition: all .3s ease-in-out;
 	transition: all .3s ease-in-out;
         
-        
-         input {
-                &.search-field {
-                    width: 33%;
-                    border-top: 0;
-                    border-left: 0;
-                    border-right: 0;
-                    background: none;
-                    border-bottom: 1px solid #fff;
-                    padding: 9px 0;
-                    color: #fff;
-                    letter-spacing: 0.5px;
-		    font-weight: bolder;
-                }
-                &[type="submit"] {
-                    margin-left: 10px;
-                    padding: 8px 20px;
-                    background: $color-main;;
-                    color: #fff;
-                    border: 2px solid $color-main;
-                    font-size: 15px;
-                    font-size: 0.9375rem;
-                    text-transform: uppercase;
-                    letter-spacing: 3px;
-                }
-                 &[type="submit"]:focus,
-                 &[type="submit"]:hover {
-                     background: $color-main;
-                 }
-          }
+        input {
+            &.search-field {
+                width: 33%;
+                border-top: 0;
+                border-left: 0;
+                border-right: 0;
+                border-bottom-width: 1px;
+                border-bottom-style: solid;
+                padding: 9px 0;
+                letter-spacing: 0.5px;
+                font-weight: bolder;
+            }
+            &[type="submit"] {
+                margin-left: 10px;
+                padding: 8px 20px;
+                border-width: 2px;
+                border-style: solid;
+                font-size: 15px;
+                font-size: 0.9375rem;
+                text-transform: uppercase;
+                letter-spacing: 3px;
+            }
+        }
         .searchform {
             height: 0;
             -webkit-transition: all .3s ease-in-out;
@@ -178,56 +119,25 @@
         }
     }
   
-    .searchbar-maincolor .desktop-search {     
-        background:  rgba($color-main, 0.95);
-	
+    .searchbar-maincolor .desktop-search {     	
         input {
-                &.search-field {            
-                    border-bottom: 1px solid $color-second;
-                    color: #fff;
-		 
-		    &:hover, 
-		    &:focus {
-			background: darken($color-main,20%);
-			padding-left: 10px;
-		    }
+            &.search-field {            
+                &:hover, 
+                &:focus {
+                    padding-left: 10px;
                 }
-                &[type="submit"] {
-                    background:  $color-second;;
-                    color: #fff;
-                    border: 2px solid  $color-second;
-                    font-weight: bold;
-                }
-                &[type="submit"]:focus,
-                &[type="submit"]:hover {
-                        background: $color-second;
-                        border: 2px solid $color-main;
-			font-weight: bolder;
-                }
-          }
-    }
-    
-    .searchbar-secondcolor .desktop-search {     
-        background: rgba($color-second, 0.95);
-        input {
-                &.search-field {            
-                    border-bottom: 1px solid $color-main;
-                     color: #fff;
-                    
-                }
-                &[type="submit"] {
-                    background:  $color-main;;
-                    color: #fff;
-                    border: 2px solid  $color-main;   
-                    font-weight: bold;
-                }
-                &[type="submit"]:focus,
-                &[type="submit"]:hover {
-                        background: $color-main;
-                        border: 2px solid $color-second;
-                }
+            }
+            &[type="submit"] {
+                font-weight: bold;
+            }
+            &[type="submit"]:focus,
+            &[type="submit"]:hover {
+                    font-weight: bolder;
+            }
         }
     }
+    
+
   
   
   .desktop-search-show .desktop-search {

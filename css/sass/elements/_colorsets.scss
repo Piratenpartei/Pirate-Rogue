@@ -684,3 +684,30 @@ blockquote {
       color: #fff;
     }
 }
+
+
+
+// Comments
+
+#comments-toggle {
+  border-color: $color-text;
+  background: none;
+}
+
+#comments {
+    .disclaimer {
+        a {
+            color: $color-second;
+        }
+        a:hover {
+            color: $color-main;
+        }
+    }    
+}
+
+.comments-show #comments-toggle, 
+#comments-toggle:focus,
+#comments-toggle:hover {
+   background: $color-cats-background-hover; 
+}
+

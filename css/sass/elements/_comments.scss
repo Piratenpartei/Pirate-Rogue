@@ -7,7 +7,8 @@
   display: block;
   width: 100%;
   padding: 18px 20px 18px 60px;
-  border: 2px solid $color-text;
+  border-width: 2px;
+  border-style: solid;
   background: none;
   font-weight: 600;
   text-transform: uppercase;
@@ -174,13 +175,7 @@
     .disclaimer {
         @extend .box;
         @extend .maincolor-box;
-        margin-bottom: 10px;
-        a {
-            color: $color-second;
-        }
-        a:hover {
-            color: $color-main;
-        }
+        margin-bottom: 10px; 
     }    
      #respond {
       margin: 0;
@@ -344,11 +339,6 @@ ol.commentlist {
     width: 100%;
 }
 
-.comments-show #comments-toggle, 
-#comments-toggle:focus,
-#comments-toggle:hover {
-   background: $color-cats-background-hover; 
-}
 
 .single-post {
     .entry-comments-title {

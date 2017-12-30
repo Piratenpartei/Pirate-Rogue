@@ -889,9 +889,12 @@ blockquote {
       $color:      nth($key, 2); 
     
     .main-headlinecol-#{$name} {
+        
         .entry-header h2.entry-title,
-        .entry-header h2.entry-title a,
-        main {
+        .entry-header h2.entry-title a {
+             color: $color;
+        }
+        main {     
             #secondary h2.widget-title, 
             #sidebar-page h2.widget-title,
             h1, h2, h3, h4, h5, h6 {
@@ -946,9 +949,10 @@ blockquote {
       $color:      nth($key, 2); 
     
     .main-linkcol-#{$name} {
-        &.blog .hentry .entry-cats a,
+        &.blog .hentry .entry-cats a {
+             color: $color;
+        }
         main {
-            color: $color;
             a,
             blockquote a,
             .entry-content a, 
@@ -965,7 +969,9 @@ blockquote {
       $color:      nth($key, 2); 
     
     .main-linkhovercol-#{$name} {
-        &.blog .hentry .entry-cats a:hover,
+        &.blog .hentry .entry-cats a:hover {
+             color: $color;
+        }
         main {
             a:hover,
             blockquote a:hover,

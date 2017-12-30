@@ -18,6 +18,7 @@ $pagebreakargs = array(
 
 
 // Default Colors
+// Notice: This list must match with the SASS-Colorset in css/sass/variables.scss !!!
 $default_colorlist = array(
     'main'      => '#ff8800',
     'second'    => '#672082',
@@ -26,8 +27,10 @@ $default_colorlist = array(
     'black'     => '#000',
     'white'     => '#fff',
     'grey'      => '#e7e7eb',
+    'darkgrey'  => '#1a1a1a',
     'blue'      => '#0066ff',
     'red'       => '#d7464d',
     'yellow'    => '#e7b547',
     'green'     => '#85c066'
 );
+

@@ -6,11 +6,29 @@ $color-second:			#672082;
 $color-third:			#698bc1; //
 $color-four:			#148f93;
 
+// Colorsets
+
+$customizer-colorset: (
+    ("main", #ff8800),
+    ("second", #672082),
+    ("third", #698bc1),
+    ("four", #148f93),
+    ("black", #000),
+    ("white", #fff),
+    ("grey", #e7e7eb),
+    ("darkgrey", #1a1a1a),
+    ("blue", #0066ff),
+    ("red", #d7464d),
+    ("yellow", #e7b547),
+    ("green", #85c066)
+);
+
+
 $color-page-background:		#fff;
 $color-hr:			#ccc;
 $color-content-links:		$color-main;
 $color-print-links:             #000;
-$color-text:			#2b2b2b; 
+$color-text:			#1a1a1a; // #2b2b2b; 
 $bg-grey:			#e7e7eb;
 $color-border:			$bg-grey;
 $color-special-background:	$color-page-background;

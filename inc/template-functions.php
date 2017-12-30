@@ -168,7 +168,77 @@
             $classes[] = 'front_hidecats';
         } 
 
-         
+        // Main
+        if ('' != get_theme_mod( 'pirate_rogue_main_background_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_background_color' );
+            $classname = 'main-bgcol-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_main_text_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_text_color' );
+            $classname = 'main-textcol-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_main_link_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_link_color' );
+            $classname = 'main-linkcol-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_main_linkhover_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_linkhover_color' );
+            $classname = 'main-linkhovercol-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_main_headline_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_headline_color' );
+            $classname = 'main-headlinecol-'.$val;
+            $classes[] = $classname;
+        } 
+        
+        if ('' != get_theme_mod( 'pirate_rogue_main_titleunderline_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_titleunderline_color' );
+            $classname = 'main-titleunderline-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_main_listitem_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_listitem_color' );
+            $classname = 'main-listitem-'.$val;
+            $classes[] = $classname;
+        } 
+         if ('' != get_theme_mod( 'pirate_rogue_main_quoteborder_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_quoteborder_color' );
+            $classname = 'main-quoteborder-'.$val;
+            $classes[] = $classname;
+        } 
+        
+        
+        
+        // Footer
+         if ('' != get_theme_mod( 'pirate_rogue_footer_background_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_footer_background_color' );
+            $classname = 'footer-bgcol-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_footer_text_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_footer_text_color' );
+            $classname = 'footer-textcol-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_footer_link_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_footer_link_color' );
+            $classname = 'footer-linkcol-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_footer_linkhover_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_footer_linkhover_color' );
+            $classname = 'footer-linkhovercol-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_footer_headline_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_footer_headline_color' );
+            $classname = 'footer-headlinecol-'.$val;
+            $classes[] = $classname;
+        } 
          
          
 	 // Additional body classes for WooCommerce

@@ -8,6 +8,9 @@
 /* 1. Default Colors
 /*-----------------------------------------------------------------------------------*/
 
+header {
+    background: white;
+}
 // Suche
 .search-open {
     color: $color-text;
@@ -642,7 +645,10 @@ blockquote {
     a:hover {
         color: $color-second;
     }
-
+    &.maincolor {
+        border-left-color: $color-main;
+        border-right-color: $color-main;
+    }
     &.secondcolor {
         border-left-color: $color-second;
         border-right-color: $color-second;
@@ -854,3 +860,219 @@ blockquote {
    background: $color-cats-background-hover; 
 }
 
+/*-----------------------------------------------------------------------------------*/
+/* 2.  Use Colorsets from customizer
+/*-----------------------------------------------------------------------------------*/
+
+// Main Background
+@each $key in $customizer-colorset {
+      $name:      nth($key, 1); 
+      $color:      nth($key, 2); 
+    
+    body.main-bgcol-#{$name} {
+       
+        background-color: $color;
+        .site-content header, 
+        .entry-content header,
+        blockquote,
+        &.blog .hentry .entry-cats,
+        &.blog .hentry .entry-cats a,
+        main {
+            background-color: $color;
+        }
+    }
+}
+
+// Main Headlines
+@each $key in $customizer-colorset {
+      $name:      nth($key, 1); 
+      $color:      nth($key, 2); 
+    
+    .main-headlinecol-#{$name} {
+        .entry-header h2.entry-title,
+        .entry-header h2.entry-title a,
+        main {
+            #secondary h2.widget-title, 
+            #sidebar-page h2.widget-title,
+            h1, h2, h3, h4, h5, h6 {
+                color: $color;
+            }
+        }
+    }
+}
+// Main Headline Border
+@each $key in $customizer-colorset {
+      $name:      nth($key, 1); 
+      $color:      nth($key, 2); 
+    
+    .main-titleunderline-#{$name} {
+        main {
+            .single-post .entry-header h1.entry-title, 
+            .entry-header h1.entry-title, 
+            .attachment h1.entry-title, 
+            .page h1.entry-title, 
+            h1.entry-title, 
+            .archive-header h1.archive-title, 
+            .site-content h1, 
+            .entry-content h1{
+                border-color: $color;
+            }
+        }
+    }
+}
+// Main Textcol
+@each $key in $customizer-colorset {
+      $name:      nth($key, 1); 
+      $color:      nth($key, 2); 
+    
+    .main-textcol-#{$name} {
+       .single-post .entry-header p.intro, 
+       .entry-summary, 
+       .front-section-title,
+       .social-front-title,
+       .widget_mc4wp_form_widget p,
+       .jetpack_subscription_widget #subscribe-text p, 
+       .section-about-column-one p,
+        blockquote p,
+        main {
+ 
+            color: $color;
+        }
+    }
+}
+// Main Linkcol
+@each $key in $customizer-colorset {
+      $name:      nth($key, 1); 
+      $color:      nth($key, 2); 
+    
+    .main-linkcol-#{$name} {
+        &.blog .hentry .entry-cats a,
+        main {
+            color: $color;
+            a,
+            blockquote a,
+            .entry-content a, 
+            .comment-text a {
+                 color: $color;
+            }
+        }
+    }
+}
+
+// Main Link Hover col
+@each $key in $customizer-colorset {
+      $name:      nth($key, 1); 
+      $color:      nth($key, 2); 
+    
+    .main-linkhovercol-#{$name} {
+        &.blog .hentry .entry-cats a:hover,
+        main {
+            a:hover,
+            blockquote a:hover,
+            .entry-content a:hover, 
+            .comment-text a:hover {
+                 color: $color;
+            }
+        }
+    }
+}
+
+// Main Listitem
+@each $key in $customizer-colorset {
+      $name:      nth($key, 1); 
+      $color:      nth($key, 2); 
+    
+    .main-listitem-#{$name} {
+        main {            
+            ul li {
+		&:before {          
+                    color: $color;
+                }
+            }
+        }
+    }
+}
+// Main Quoteborder
+@each $key in $customizer-colorset {
+      $name:      nth($key, 1); 
+      $color:      nth($key, 2); 
+    
+    .main-quoteborder-#{$name} {
+        blockquote {
+            border-color: $color;
+            // border-left-color: $color;
+            // border-right-color: $color;
+        }
+    }
+}
+   
+
+// Footer Background
+@each $key in $customizer-colorset {
+      $name:      nth($key, 1); 
+      $color:      nth($key, 2); 
+    
+    .footer-bgcol-#{$name} {
+        #colophon {
+           background-color: $color;
+           border-color: $color;
+        }
+    }
+}
+
+// Footer Headlines
+@each $key in $customizer-colorset {
+      $name:      nth($key, 1); 
+      $color:      nth($key, 2); 
+    
+    .footer-headlinecol-#{$name} {
+        #colophon {
+            p.title-footer,
+            .footer-menu h3.footer-menu-title,
+            #footer-social h2.socialmedia,
+            h1, h2, h3, h4, h5, h6 {
+                color: $color;
+            }
+        }
+    }
+}
+// Footer Textcol
+@each $key in $customizer-colorset {
+      $name:      nth($key, 1); 
+      $color:      nth($key, 2); 
+    
+    .footer-textcol-#{$name} {
+        #colophon,
+        #colophon p, 
+        #colophon #site-info {
+            color: $color;
+        }
+    }
+}
+// Footer Linkcol
+@each $key in $customizer-colorset {
+      $name:      nth($key, 1); 
+      $color:      nth($key, 2); 
+    
+    .footer-linkcol-#{$name} {
+        #colophon p a,
+        #colophon #site-info a,
+        #colophon .footer-menu ul a {
+            color: $color;
+        }
+    }
+}
+
+// Footer Link Hover col
+@each $key in $customizer-colorset {
+      $name:      nth($key, 1); 
+      $color:      nth($key, 2); 
+    
+    .footer-linkhovercol-#{$name} {
+        #colophon p a:hover,
+        #colophon #site-info a:hover,
+        #colophon .footer-menu ul a:hover {
+            color: $color;
+        }
+    }
+}

@@ -16,7 +16,6 @@ if (!isset($thumbfallbackid)) {
 ?>
      
 <article  <?php post_class(); ?> itemscope itemtype="http://schema.org/NewsArticle">
-
 	<?php if ( '' != get_the_post_thumbnail() && ! post_password_required() ) : ?>
 		<div class="entry-thumbnail fadein" aria-hidden="true" role="presentation" tabindex="-1">
 			<a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><?php the_post_thumbnail('pirate-rogue-front-big'); ?></span></a>
@@ -38,18 +37,18 @@ if (!isset($thumbfallbackid)) {
 			<header class="entry-header">
 				<div class="entry-cats" itemprop="articleSection">
 					<?php the_category(' '); ?>
-				</div><!-- end .entry-cats -->
+				</div>
 				<?php 
                                 echo '<h2 class="entry-title" itemprop="headline"><a href="'.esc_url( get_permalink() ).'" rel="bookmark" itemprop="url">';
                                 echo get_the_title();
                                 echo '</a><span class="screen-reader-text"> ('. get_the_date().')</span></h2>';
                                 ?>
-			</header><!-- end .entry-header -->
+			</header>
 			<div class="entry-meta">
 				<?php pirate_rogue_posted_by(); ?>
 				<span class="entry-date" aria-hidden="true">
 					<a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></a>
-				</span><!-- end .entry-date -->
+				</span>
 				<?php if ( comments_open() ) : ?>
 					<span class="entry-comments">
 						<?php comments_popup_link(
@@ -57,15 +56,15 @@ if (!isset($thumbfallbackid)) {
 							'<span class="comment-name">' . esc_html__( 'Comments', 'pirate-rogue') .  '</span>' . esc_html__( '1', 'pirate-rogue'),
 							'<span class="comment-name">' . esc_html__( 'Comments', 'pirate-rogue') .  '</span>' . esc_html__( '%', 'pirate-rogue') )
 						; ?>
-					</span><!-- end .entry-comments -->
+					</span>
 				<?php endif; // comments_open() ?>
 				<?php edit_post_link( esc_html__( 'Edit Post', 'pirate-rogue'), '<span class="entry-edit">', '</span>' ); ?>
-			</div><!-- end .entry-meta -->
+			</div>
                         <div class="entry-summary" itemprop="description">   
 					 <?php echo pirate_rogue_custom_excerpt(600); ?>
-			</div><!-- end .entry-summary -->
+			</div>
                         
-		</div><!-- end .entry-text -->
-	</div><!-- end .entry-text-wrap -->
+		</div>
+	</div>
         <?php echo pirate_rogue_create_schema_thumbnail(); ?>
-</article><!-- #post-## -->
+</article>

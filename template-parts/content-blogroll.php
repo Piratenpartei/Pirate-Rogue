@@ -57,7 +57,7 @@ if (!isset($thumbfallbackid)) {
                         </header>
 			<div class="entry-summary" itemprop="description">
 				<?php the_excerpt(); ?>
-			</div><
+			</div>
                 </div>
 	</div>
         <?php echo pirate_rogue_create_schema_thumbnail(); ?>

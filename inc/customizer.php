@@ -1174,7 +1174,70 @@ function pirate_rogue_customize_register( $wp_customize ) {
         // Section Colors
         //*********************************************************************
         
-        
+        // Header
+        $wp_customize->add_setting( 'pirate_rogue_head_background_color', array(
+		'default'           => '',
+		'sanitize_callback' => 'pirate_rogue_sanitize_colors',
+                'capability'        => 'edit_theme_options'
+        ) );
+
+       $wp_customize->add_control(
+            new WP_Customize_Colorlist_Radio(
+                $wp_customize,
+                'pirate_rogue_head_background_color',
+                array(
+                    'settings' => 'pirate_rogue_head_background_color',
+                    'label'    => esc_html__( 'Header background', 'pirate-rogue'),
+                    'description'	=> esc_html__( 'Background color for header region.', 'pirate-rogue'),
+                    'section'  => 'pirate_rogue_coloroverwrite',
+                    'type'     => 'colorlist-radio', // The $type in our class
+                    'choices'  => $default_colorlist,
+                )
+            )
+        );
+        $wp_customize->add_setting( 'pirate_rogue_head_text_color', array(
+		'default'           => '',
+		'sanitize_callback' => 'pirate_rogue_sanitize_colors',
+                'capability'        => 'edit_theme_options'
+        ) );
+
+       $wp_customize->add_control(
+            new WP_Customize_Colorlist_Radio(
+                $wp_customize,
+                'pirate_rogue_head_text_color',
+                array(
+                    'settings' => 'pirate_rogue_head_text_color',
+                    'label'    => esc_html__( 'Head text color', 'pirate-rogue'),
+                    'description'	=> esc_html__( 'Textcolor for head region, including site title and menu links.', 'pirate-rogue'),
+                    'section'  => 'pirate_rogue_coloroverwrite',
+                    'type'     => 'colorlist-radio', // The $type in our class
+                    'choices'  => $default_colorlist,
+                )
+            )
+        ); 
+       
+        $wp_customize->add_setting( 'pirate_rogue_head_linkhover_color', array(
+		'default'           => '',
+		'sanitize_callback' => 'pirate_rogue_sanitize_colors',
+                'capability'        => 'edit_theme_options'
+        ) );
+
+       $wp_customize->add_control(
+            new WP_Customize_Colorlist_Radio(
+                $wp_customize,
+                'pirate_rogue_head_linkhover_color',
+                array(
+                    'settings' => 'pirate_rogue_head_linkhover_color',
+                    'label'    => esc_html__( 'Head link hover border-color', 'pirate-rogue'),
+                    'description'	=> esc_html__( 'Link hover border-color for main menu in head.', 'pirate-rogue'),
+                    'section'  => 'pirate_rogue_coloroverwrite',
+                    'type'     => 'colorlist-radio', // The $type in our class
+                    'choices'  => $default_colorlist,
+                )
+            )
+        );
+       
+       
         // Main part
         $wp_customize->add_setting( 'pirate_rogue_main_background_color', array(
 		'default'           => '',

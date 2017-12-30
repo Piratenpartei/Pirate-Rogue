@@ -62,11 +62,11 @@ if ( ! function_exists( 'pirate_rogue_get_custom_logo' ) ) :
 	   if ( is_front_page() ) {
                $html .= '<meta itemprop="url" content="'.esc_url( home_url( '/' ) ).'">';
            }
-	} elseif ( is_customize_preview() ) {
+	// } elseif ( is_customize_preview() ) {
 	    // If no logo is set but we're in the Customizer, leave a placeholder (needed for the live preview).
-	    $html = sprintf( '<a href="%1$s" class="custom-logo-link" style="display:none;"><img class="custom-logo"/></a>',
-		esc_url( home_url( '/' ) )
-	    );
+	//    $html = sprintf( '<a href="%1$s" class="custom-logo-link" style="display:none;"><img class="custom-logo"/></a>',
+	//	esc_url( home_url( '/' ) )
+	//    );
 	}
 
 	return $html;

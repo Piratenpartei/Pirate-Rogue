@@ -141,9 +141,9 @@
          } 
 
         $logo =  pirate_rogue_get_custom_logo();
-         if ( !empty($logo)) {
-             $classes[] = 'no-header-text';
-         }
+        if ( !empty($logo) ) {
+                $classes[] = 'no-header-text';
+        }
              
 
         if ('' != get_theme_mod( 'uku_front_section_twocolumn_excerpt') ) { 
@@ -168,6 +168,26 @@
             $classes[] = 'front_hidecats';
         } 
 
+        // Head
+        if ('' != get_theme_mod( 'pirate_rogue_head_background_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_head_background_color' );
+            $classname = 'head-bgcol-'.$val;
+            $classes[] = $classname;
+        } 
+         if ('' != get_theme_mod( 'pirate_rogue_head_text_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_head_text_color' );
+            $classname = 'head-textcol-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_head_linkhover_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_head_linkhover_color' );
+            $classname = 'head-linkborder-'.$val;
+            $classes[] = $classname;
+        } 
+        
+        
+        
+        
         // Main
         if ('' != get_theme_mod( 'pirate_rogue_main_background_color' ) ) {
             $val = get_theme_mod( 'pirate_rogue_main_background_color' );
@@ -490,9 +510,7 @@ function pirate_rogue_get_image_attributs($id=0) {
 	    } elseif (!empty($result['credit'])) {
 		$result['credits'] = $precopyright.' '.$result['credit'];		
             } else {
-		if (!empty($result['description'])) {
-		    $result['credits'] = $result['description'];
-		} elseif (!empty($result['caption'])) {
+		if (!empty($result['caption'])) {
 		    $result['credits'] = $result['caption'];
 		} elseif (!empty($result['excerpt'])) {
 		    $result['credits'] = $result['excerpt'];

@@ -18,12 +18,11 @@
 	    ?>
 		<div class="custom-logo-wrap" aria-hidden="true" role="presentation">
 			<img src="<?php echo $imagesrc; ?>" alt="">
-		</div><!-- end .custom-logo-wrap -->
- 
+		</div>
 	<?php } elseif ( has_custom_logo() && '' != get_theme_mod( 'pirate_rogue_customlogofooter' ) ) { ?>
 		<div class="custom-logo-wrap" aria-hidden="true" role="presentation">
 			<?php the_custom_logo(); ?>
-		</div><!-- end .custom-logo-wrap -->
+		</div>
 	<?php } else { ?>
                 <p class="title-footer">
                 <?php if ( '' == get_theme_mod( 'pirate_rogue_footerfeature_image' )  ) : ?>
@@ -41,9 +40,8 @@
 			'items_wrap'			=> '<h3 class="footer-menu-title">'.esc_html($menu_obj->name).'</h3><ul id="%1$s" class="%2$s">%3$s</ul>',
 			'container' 			=> 'false',
 			));  ?>
-	</nav><!-- end #footer-one -->
+	</nav>
 	<?php endif; ?>
-
 	<?php if (has_nav_menu( 'footer-two' ) ) : ?>
 	<nav id="footer-menu-two" class="footer-menu">
 		<?php
@@ -54,9 +52,8 @@
 			'items_wrap'			=> '<h3 class="footer-menu-title">'.esc_html($menu_obj->name).'</h3><ul id="%1$s" class="%2$s">%3$s</ul>',
 			'container' 			=> 'false',
 			));  ?>
-	</nav><!-- end #footer-two -->
+	</nav>
 	<?php endif; ?>
-
 	<?php if (has_nav_menu( 'footer-three' ) ) : ?>
 	<nav id="footer-menu-three" class="footer-menu">
 		<?php
@@ -67,7 +64,7 @@
 			'items_wrap'			=> '<h3 class="footer-menu-title">'.esc_html($menu_obj->name).'</h3><ul id="%1$s" class="%2$s">%3$s</ul>',
 			'container' 			=> 'false',
 			));  ?>
-	</nav><!-- end #footer-three -->
+	</nav>
 	<?php endif; ?>
 
 	<?php if (has_nav_menu( 'footer-four' ) ) : ?>
@@ -80,7 +77,6 @@
 			'items_wrap'			=> '<h3 class="footer-menu-title">'.esc_html($menu_obj->name).'</h3><ul id="%1$s" class="%2$s">%3$s</ul>',
 			'container' 			=> 'false',
 			));  ?>
-	</nav><!-- end #footer-four -->
+	</nav>
 	<?php endif; ?>
-
-</div><!-- end .footer-menus-wrap -->
+</div>

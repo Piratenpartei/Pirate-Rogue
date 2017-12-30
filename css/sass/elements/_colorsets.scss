@@ -8,13 +8,13 @@
 /* 1. Default Colors
 /*-----------------------------------------------------------------------------------*/
 
-header {
+#masthead {
     background: white;
 }
 // Suche
 .search-open {
     color: $color-text;
-    background: $color-page-background;
+    background: transparent;
     border-color: $color-page-background;
         
     :focus,
@@ -782,10 +782,10 @@ blockquote {
 	    background: $color-cats-background-hover; 
 	}
     }
-    .entry-cats a:nth-child(n+2):before {
-	color: #2b2b2b;
-        background-color: white;
-    }
+ //   .entry-cats a:nth-child(n+2):before {
+//	color: #2b2b2b;
+  //      background-color: white;
+   // }
 
     .featured-slider {
 	.entry-cats a,
@@ -863,6 +863,56 @@ blockquote {
 /*-----------------------------------------------------------------------------------*/
 /* 2.  Use Colorsets from customizer
 /*-----------------------------------------------------------------------------------*/
+// Head Background
+@each $key in $customizer-colorset {
+      $name:      nth($key, 1); 
+      $color:      nth($key, 2); 
+    
+    body.head-bgcol-#{$name} {
+        #masthead {
+            background-color: $color;
+            border-bottom-color: rgba($color,0.7);
+        }
+
+    }
+}
+// Head Background
+@each $key in $customizer-colorset {
+      $name:      nth($key, 1); 
+      $color:      nth($key, 2); 
+    
+    body.head-textcol-#{$name} {
+        .search-open, 
+        #overlay-open, 
+        #overlay-open-sticky {
+            color: $color;
+        }
+        #masthead {
+            #desktop-navigation ul.menu li a,
+            p.site-title,
+            p.site-title a,
+            h1.site-title,
+            h1.site-title a, 
+            p.site-description {
+                  color: $color;
+            }
+        }
+    }
+    
+    body.head-linkborder-#{$name} {
+       #desktop-navigation ul.menu li.current-menu-ancestor a, 
+       #desktop-navigation ul.menu li.focus a, 
+       #desktop-navigation ul.menu li:focus a,
+       #desktop-navigation ul.menu li:hover a {
+                  border-bottom-color: $color;
+            }
+          
+       
+    }
+    
+   
+    
+}
 
 // Main Background
 @each $key in $customizer-colorset {
@@ -877,8 +927,14 @@ blockquote {
         blockquote,
         &.blog .hentry .entry-cats,
         &.blog .hentry .entry-cats a,
+        &.blog .featured-slider .entry-meta a,
+        &.single-post .entry-header .entry-cats a,
         main {
             background-color: $color;
+        }
+
+        &.blog .featured-content .hentry .entry-cats {
+            background-color: transparent;
         }
     }
 }
@@ -920,7 +976,9 @@ blockquote {
             .entry-content h1{
                 border-color: $color;
             }
+            
         }
+        
     }
 }
 // Main Textcol
@@ -949,6 +1007,9 @@ blockquote {
       $color:      nth($key, 2); 
     
     .main-linkcol-#{$name} {
+        &.single-post .entry-header .entry-cats a,
+        &.blog .featured-slider .entry-cats a, 
+        &.blog .featured-slider .entry-meta a,
         &.blog .hentry .entry-cats a {
              color: $color;
         }
@@ -969,6 +1030,9 @@ blockquote {
       $color:      nth($key, 2); 
     
     .main-linkhovercol-#{$name} {
+        &.single-post .entry-header .entry-cats a:hover,
+        &.blog .featured-slider .entry-cats a:hover, 
+        &.blog .featured-slider .entry-meta a:hover,
         &.blog .hentry .entry-cats a:hover {
              color: $color;
         }

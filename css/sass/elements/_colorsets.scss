@@ -869,6 +869,7 @@ blockquote {
       $color:      nth($key, 2); 
     
     body.head-bgcol-#{$name} {
+        .sticky-header,
         #masthead {
             background-color: $color;
             border-bottom-color: rgba($color,0.7);

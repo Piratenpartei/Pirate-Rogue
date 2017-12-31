@@ -881,7 +881,11 @@ blockquote {
     }
     
     body.head-textcol-#{$name} {
-       
+       .search-open, 
+        #overlay-open, 
+        #overlay-open-sticky {
+            color: $color;
+        }
         #masthead {
             #desktop-navigation ul.menu li a,
             p.site-title,
@@ -929,14 +933,13 @@ blockquote {
         .gallery .slick-dots li button:hover:before,
         .gallery .slick-dots li button:focus:before,
         
-        .search-open, 
-        #overlay-open, 
-        #overlay-open-sticky {
-            color: $color;
-        }
+        
         .desktop-search input.search-field {
             border-bottom-color: $color;
         } 
+        .comments-show #comments-toggle,
+        #comments-toggle:focus, 
+        #comments-toggle:hover,
         input[type="button"], input[type="submit"], input#submit,
         #commentform input#submit {
             border-color: $color;

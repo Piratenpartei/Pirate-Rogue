@@ -13,7 +13,7 @@ table {
     table-layout: fixed;
     /* Prevents HTML tables from becoming too wide */
     width: 100%;
-    background: $bg-grey;
+    background: #fff;
     
     &.sorttable {
 	thead {
@@ -103,12 +103,5 @@ tr.odd,
 tr:hover {
     td {
 	color: $table-td-color-hover;
-    }
-}
-
-@media screen and (min-width: $breakpoint-sm) {
-    table {
-        min-width: $breakpoint-600;
-        width: auto;
     }
 }

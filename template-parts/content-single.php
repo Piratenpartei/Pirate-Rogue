@@ -58,33 +58,24 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 						$author_bio_avatar_size = apply_filters( 'pirate_rogue_author_bio_avatar_size', 100 );
 						echo get_avatar( get_the_author_meta( 'user_email' ), $author_bio_avatar_size );
 						?>
-					</div><!-- end .author-pic -->
-                                   
-					<div class="entry-author">
-					<?php pirate_rogue_posted_by(); ?>
-					</div><!-- end .entry-author -->
+					</div>
+					<div class="entry-author"><?php pirate_rogue_posted_by(); ?></div>
                                     <?php } ?>
-					
-					
-					
-				    <div class="entry-date">
-					<a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></a>
-				    </div><!-- end .entry-date -->
-				</div><!-- end .meta-columnone -->
+				    <div class="entry-date"><a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></a></div>
+				</div>
 
 				<div class="meta-columntwo">
 					<?php if ( comments_open() ) : ?>
 					<div class="entry-comments-single">
 						<span class="entry-comments-title"><?php esc_html_e( 'Comments', 'pirate-rogue'); ?></span>
 						<span class="entry-comments"><?php comments_popup_link( esc_html__( '0', 'pirate-rogue'), esc_html__( '1', 'pirate-rogue'), esc_html__( '%', 'pirate-rogue'),'comments-link' ); ?></span>
-					</div><!-- end .entry-comments -->
+					</div>
 					<?php endif; // comments_open() ?>
-				</div><!-- end .meta-columntwo -->
-
+				</div>
 				<div class="meta-columnthree">
                                     <?php echo wp_link_pages($pagebreakargs);
 					 edit_post_link( esc_html__( 'Edit Post', 'pirate-rogue'), '<span class="entry-edit">', '</span>' ); ?>
-				</div><!-- end .meta-columnthree -->
+				</div>
                                 <meta itemprop="datePublished" content="<?php echo esc_attr( get_post_time('c',false,$post->ID) );?>">
                                 <meta itemprop="dateModified" content="<?php echo esc_attr( get_the_modified_time('c',false,$post->ID) );?>">
                                 <?php
@@ -96,9 +87,8 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
                                     <?php }
                                     echo pirate_rogue_create_schema_publisher();
                                     ?>
-
-			</div><!-- end .entry-meta -->
-	</header><!-- end .entry-header -->
+			</div>
+	</header>
 	<div class="contentwrap">
 	    <?php if ( $custom_class != 'big-thumb' 
 		    && $custom_class != 'no-thumb' 
@@ -113,16 +103,13 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
                             echo '<figcaption>'.$imagedata['credits'].'</figcaption>';
                         }
                        ?>
-		</figure><!-- end .entry-thumbnail -->
+		</figure>
 	    <?php endif; ?>
-
 	    <div id="socialicons-sticky">
 			<div id="entry-content" class="entry-content" itemprop="text">
 			    <?php    
-
 			    the_content(); 
                            
-
                             if ( class_exists( 'Pirate_Crew' ) && 'content' == get_theme_mod( 'pirate_rogue_crewmember-position' ) ) {
 				$preauthor =  get_post_meta( $post->ID, 'pirate_crew_member_id', true );	
 				$style = pirate_rogue_sanitize_pirate_crew_member_style(get_theme_mod( 'pirate_rogue_crewmember-style' ));
@@ -144,8 +131,7 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 				    $custom_likes = new Jetpack_Likes;
 				    echo $custom_likes->post_likes( '' );
 			    } ?>
-			</div><!-- end .entry-content -->
-
+			</div>
 			<footer class="entry-footer cf">
 			    <?php 
                             
@@ -165,9 +151,8 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
                                     get_template_part( 'template-parts/authorbox' );
                                 }
                             }
-
 			    ?>
-			</footer><!-- end .entry-footer -->
+			</footer>
 
 			<?php
 			// If comments are open or we have at least one comment, load up the comment template.
@@ -183,7 +168,7 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 				'<span class="screen-reader-text">' . esc_html__( 'Previous Post', 'pirate-rogue') . '</span> ',
 			) ); ?>
 
-	    </div><!-- end #socialicons-sticky -->
-	</div><!-- end .content-wrap -->
+	    </div>
+	</div>
         <?php echo pirate_rogue_create_schema_thumbnail(get_the_ID()); ?>
-    </article><!-- end post -<?php the_ID(); ?> -->
+    </article>

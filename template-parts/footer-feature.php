@@ -9,7 +9,6 @@
 ?>
 
     <section id="big-footer-feature" class="big-footer-feature cf">
-
 	<?php 
 	$linktitle = "";
 	$linktitle = esc_html(get_theme_mod( 'pirate_rogue_footerfeature_title' ) );
@@ -41,11 +40,9 @@
                     echo '</a>';
                 }
                 ?>
-            </div><!-- end .footer-feature-image -->
+            </div>
         <?php } ?>
-
 	<div class="footer-feature-textwrap">
-
 		<?php if ( '' !== get_theme_mod( 'pirate_rogue_footerfeature_text_big' ) ) : ?>
 			<p class="text-big"><?php echo wp_kses_post( get_theme_mod( 'pirate_rogue_footerfeature_text_big' ) ); ?></p>
 		<?php endif; ?>
@@ -60,6 +57,5 @@
 		if (!empty($link) && (!empty($button_text)))  {
                     echo '<a class="footer-feature-btn" href="'.$link.'">'.$button_text.'</a>';
                 } ?>
-
-	</div><!-- end .footer-feature-textwrap -->
-    </section><!-- end #big-footer-feature -->
+	</div>
+    </section>

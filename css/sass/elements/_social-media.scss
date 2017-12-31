@@ -7,7 +7,7 @@
 	@extend .fa-ul;
 	li {
 	    display: inline-block;
-	    border: 1px solid $color-page-background;
+	    border: 1px solid transparent;
 	    border-radius: 50%;
 	    a {
                 background: $color-page-background;

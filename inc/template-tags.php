@@ -354,34 +354,41 @@ function pirate_rogue_get_tag_ID($tag_name) {
  function pirate_rogue_blogroll($posttag = '', $postcat = '', $num = 4, $divclass= '') {
     $posttag = $posttag ? esc_attr( $posttag ) : '';
     
-    if (is_string($posttag)) {
-	$posttag = pirate_rogue_get_tag_ID($posttag);
-    }
     
-    $postcat = pirate_rogue_get_cat_ID($postcat);
-
-    
-    if (!isset($postcat) && !isset($posttag)) {
-        return;
+    if ((!isset($posttag)) && (!isset($postcat))) {
+	// kein wert gesetzt, also nehm ich die letzten Artikel
+	$postcat =0;
+    } else {
+	if (is_string($posttag)) {
+	    $posttag = pirate_rogue_get_tag_ID($posttag);
+	}
+	$postcat = pirate_rogue_get_cat_ID($postcat);
     }
     
     if (!is_int($num)) {
 	$num = 4;
     }
     $divclass = $divclass ? esc_attr( $divclass ) : '';
-   
-    $tag_link = get_tag_link( $posttag );
-    $category_link = get_category_link($postcat);
 
-    $pirate_rogue_blogroll_query = new WP_Query( array(
+    $parameter =  array(
         'posts_per_page'	=> $num,
-        'tag_id' 		=> $posttag,
-        'cat' 			=> $postcat,
         'post_status'		=> 'publish',
         'ignore_sticky_posts'	=> 1,
-    ) );
-
-
+    );
+    $found = 0;
+    if ((isset($posttag)) && ($posttag >= 0)) {
+	$parameter['tag_id'] = $posttag;
+	$found =1;
+    }
+    if ((isset($postcat)) && ($postcat >= 0)) {
+	$parameter['cat'] = $postcat;
+	$found =2;
+    }
+    if ($found==0) {
+	return;
+    }
+    
+    $pirate_rogue_blogroll_query = new WP_Query($parameter );
     $out = '<section class="blogroll '.$divclass.'">';
     if($pirate_rogue_blogroll_query->have_posts()) :
 	while($pirate_rogue_blogroll_query->have_posts()) : 
@@ -402,33 +409,44 @@ function pirate_rogue_get_tag_ID($tag_name) {
  function pirate_rogue_articlelist($posttag = '', $postcat = '', $num = 5, $divclass= '', $title = '') {
     $posttag = $posttag ? esc_attr( $posttag ) : '';
     
-    if (is_string($posttag)) {
-	$posttag = pirate_rogue_get_tag_ID($posttag);
-    }
-    
-    $postcat = pirate_rogue_get_cat_ID($postcat);
-
-    
-    if (!isset($postcat) && !isset($posttag)) {
-        return;
+    if ((!isset($posttag)) && (!isset($postcat))) {
+	// kein wert gesetzt, also nehm ich die letzten Artikel
+	$postcat =0;
+    } else {
+	if (is_string($posttag)) {
+	    $posttag = pirate_rogue_get_tag_ID($posttag);
+	}
+	$postcat = pirate_rogue_get_cat_ID($postcat);
     }
     
     if (!is_int($num)) {
 	$num = 5;
     }
     $divclass = $divclass ? esc_attr( $divclass ) : '';
-    $title =  esc_attr( $title );
-   
-    $tag_link = get_tag_link( $posttag );
-    $category_link = get_category_link($postcat);
 
-    $pirate_rogue_blogroll_query = new WP_Query( array(
+    $parameter =  array(
         'posts_per_page'	=> $num,
-        'tag_id' 		=> $posttag,
-        'cat' 			=> $postcat,
         'post_status'		=> 'publish',
         'ignore_sticky_posts'	=> 1,
-    ) );
+    );
+    $found = 0;
+    if ((isset($posttag)) && ($posttag >= 0)) {
+	$parameter['tag_id'] = $posttag;
+	$found =1;
+    }
+    if ((isset($postcat)) && ($postcat >= 0)) {
+	$parameter['cat'] = $postcat;
+	$found =2;
+    }
+    if ($found==0) {
+	return;
+    }
+    $pirate_rogue_blogroll_query = new WP_Query($parameter );
+    
+    
+    $divclass = $divclass ? esc_attr( $divclass ) : '';
+    $title =  esc_attr( $title );
+  
 
     $out ='';
     if (!empty($title)) {

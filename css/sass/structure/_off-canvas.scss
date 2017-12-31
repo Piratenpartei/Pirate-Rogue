@@ -28,29 +28,9 @@
 #overlay-open {
     z-index: 100;
 }
-#overlay-open,
-#overlay-open-sticky {
-    color: $color-text;
-}
+
 #overlay-close {
     z-index: 1000;
-    color: $color-text;
-}
-
-.socialmedia-maincolor {
-    #overlay-open,
-    #overlay-open-sticky,
-    #overlay-close {
-        color: $color-main;
-    }
-    
-}
-.socialmedia-secondcolor {
-    #overlay-open,
-    #overlay-open-sticky, 
-    #overlay-close {
-        color: $color-second;
-    }
 }
 
 

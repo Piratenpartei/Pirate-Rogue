@@ -13,7 +13,7 @@ table {
     table-layout: fixed;
     /* Prevents HTML tables from becoming too wide */
     width: 100%;
-    
+    background: $bg-grey;
     
     &.sorttable {
 	thead {

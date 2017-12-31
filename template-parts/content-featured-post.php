@@ -16,7 +16,6 @@ $thumbfallbackid = absint(get_theme_mod( 'pirate_rogue_fallback_slider' ));
 <article <?php post_class('cf'); ?>>
 	<div class="meta-main-wrap">
             <div class="slider-text">
-
 		<header class="entry-header">
 			<?php if ( has_category() ) : ?>
 			<div class="entry-cats">
@@ -24,8 +23,7 @@ $thumbfallbackid = absint(get_theme_mod( 'pirate_rogue_fallback_slider' ));
 			</div><!-- end .entry-cats -->
 			<?php endif; // has_category() ?>
 			<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-		</header><!-- end .entry-header -->
-
+		</header>
 		<div class="entry-meta">
 			<?php pirate_rogue_posted_by(); ?>
 			<span class="entry-date">
@@ -38,11 +36,11 @@ $thumbfallbackid = absint(get_theme_mod( 'pirate_rogue_fallback_slider' ));
 					'<span class="comment-name">' . esc_html__( 'Comments', 'pirate-rogue') .  '</span>' . esc_html__( '1', 'pirate-rogue'),
 					'<span class="comment-name">' . esc_html__( 'Comments', 'pirate-rogue') .  '</span>' . esc_html__( '%', 'pirate-rogue') )
 				; ?>
-			</span><!-- end .entry-comments -->
+			</span>
                     <?php 
                     endif; // comments_open() 
                     edit_post_link( esc_html__( 'Edit Post', 'pirate-rogue'), '<span class="entry-edit">', '</span>' ); ?>   
-		</div><!-- end .entry-meta -->
+		</div>
                     <?php 
                         if ( '' != get_the_post_thumbnail()) {
                             $post_thumbnail_id = get_post_thumbnail_id();
@@ -54,9 +52,8 @@ $thumbfallbackid = absint(get_theme_mod( 'pirate_rogue_fallback_slider' ));
                         echo '<div class="credits">'.$imagedata['credits'].'</div>';
                     }  
                     ?>
-            </div><!-- end .slider-text -->
-
-	</div><!-- .meta-main-wrap -->
+            </div>
+	</div>
 
 	<?php if ( 'slider-fullscreen' == get_theme_mod( 'pirate_rogue_sliderstyle' ) 
                 || 'slider-boxed' == get_theme_mod( 'pirate_rogue_sliderstyle' ) 
@@ -64,13 +61,12 @@ $thumbfallbackid = absint(get_theme_mod( 'pirate_rogue_fallback_slider' ));
                 && ! post_password_required() ) :  ?>
 		<div class="entry-thumbnail" role="presentation">
                     <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('pirate-rogue-featured-big'); ?></a> 
-                </div><!-- end .entry-thumbnail -->
-
+                </div>
 	
 	<?php elseif ( '' != get_the_post_thumbnail() && ! post_password_required() ) : ?>
 		<div class="entry-thumbnail" role="presentation">
                     <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('pirate-rogue-featured'); ?></a>
-                </div><!-- end .entry-thumbnail -->
+                </div>
         <?php elseif (! post_password_required()) : 
             if ($thumbfallbackid > 0 ) {
                 if ( 'slider-fullscreen' == get_theme_mod( 'pirate_rogue_sliderstyle' ) 
@@ -81,8 +77,7 @@ $thumbfallbackid = absint(get_theme_mod( 'pirate_rogue_fallback_slider' ));
                 } ?>
                  <div class="entry-thumbnail fallback" role="presentation">
                     <a href="<?php the_permalink(); ?>"><img src="<?php echo $imagesrc; ?>" alt="<?php echo get_the_title();?>"></a>     
-                 </div><!-- end .entry-thumbnail -->                
+                 </div>            
             <?php } ?>
 	<?php endif; ?>
-
-</article><!-- end post -<?php the_ID(); ?> -->
+</article>

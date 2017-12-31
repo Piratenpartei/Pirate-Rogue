@@ -19,9 +19,8 @@
     
     padding-top: 5px;
     padding-bottom: 5px;
-    border-bottom: 1px solid #ddd;
-    background: #fff;
-    z-index: 10;
+    // border-bottom: 1px solid #ddd;
+    z-index: 21;
     
     .admin-bar & {
 	top: 46px;
@@ -100,7 +99,7 @@ p.site-description {
         left: 0;
         width: 100%;
         background: #fff;
-        height: 59px;
+        min-height: 59px;
         transition: -webkit-transform .3s;
         transition: transform .3s;
         transition: transform .3s,-webkit-transform .3s;
@@ -123,33 +122,9 @@ p.site-description {
 	.hide-header-sticky & {
 	    display: none !important;
 	}
-	
-	.fixedheader-dark & {
-	     background: #1a1a1a;
-	}
-	
+
     }
 
-    .fixedheader-dark {
-      &.header-stick {
-	  #overlay-open-sticky, 
-	  #search-open-sticky, 
-	  #header-social-sticky ul li a {
-	      color: rgba(255, 255, 255, 0.5);
-	  }
-	  .sticky-header p.site-title a, 
-	  #overlay-open-sticky:focus, 
-	  #search-open-sticky:focus, 
-	  #header-social-sticky ul li a:focus,
-	  #overlay-open-sticky:hover, 
-	  #search-open-sticky:hover, 
-	  #header-social-sticky ul li a:hover {
-	      color: #fff;
-	  }
-      }
-    }
-
-    
     .header-stick {
 	.sticky-header p {
 	      display: block;

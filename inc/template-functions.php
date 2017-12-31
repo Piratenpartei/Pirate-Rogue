@@ -141,9 +141,9 @@
          } 
 
         $logo =  pirate_rogue_get_custom_logo();
-         if ( !empty($logo)) {
-             $classes[] = 'no-header-text';
-         }
+        if ( !empty($logo) ) {
+                $classes[] = 'no-header-text';
+        }
              
 
         if ('' != get_theme_mod( 'uku_front_section_twocolumn_excerpt') ) { 
@@ -168,7 +168,106 @@
             $classes[] = 'front_hidecats';
         } 
 
-         
+        if ('' != get_theme_mod( 'pirate_rogue_devider_hideimage' ) ) {
+            $classes[] = 'devider_hideimage';
+        } 
+        
+        // Head
+        if ('' != get_theme_mod( 'pirate_rogue_head_background_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_head_background_color' );
+            $classname = 'head-bgcol-'.$val;
+            $classes[] = $classname;
+        } 
+         if ('' != get_theme_mod( 'pirate_rogue_head_text_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_head_text_color' );
+            $classname = 'head-textcol-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_head_linkhover_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_head_linkhover_color' );
+            $classname = 'head-linkborder-'.$val;
+            $classes[] = $classname;
+        } 
+         if ('' != get_theme_mod( 'pirate_rogue_actionbutton_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_actionbutton_color' );
+            $classname = 'actionbutton-'.$val;
+            $classes[] = $classname;
+        } 
+        
+        
+        
+        
+        // Main
+        if ('' != get_theme_mod( 'pirate_rogue_main_background_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_background_color' );
+            $classname = 'main-bgcol-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_main_text_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_text_color' );
+            $classname = 'main-textcol-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_main_link_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_link_color' );
+            $classname = 'main-linkcol-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_main_linkhover_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_linkhover_color' );
+            $classname = 'main-linkhovercol-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_main_headline_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_headline_color' );
+            $classname = 'main-headlinecol-'.$val;
+            $classes[] = $classname;
+        } 
+        
+        if ('' != get_theme_mod( 'pirate_rogue_main_titleunderline_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_titleunderline_color' );
+            $classname = 'main-titleunderline-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_main_listitem_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_listitem_color' );
+            $classname = 'main-listitem-'.$val;
+            $classes[] = $classname;
+        } 
+         if ('' != get_theme_mod( 'pirate_rogue_main_quoteborder_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_quoteborder_color' );
+            $classname = 'main-quoteborder-'.$val;
+            $classes[] = $classname;
+        } 
+        
+        
+        
+        // Footer
+         if ('' != get_theme_mod( 'pirate_rogue_footer_background_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_footer_background_color' );
+            $classname = 'footer-bgcol-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_footer_text_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_footer_text_color' );
+            $classname = 'footer-textcol-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_footer_link_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_footer_link_color' );
+            $classname = 'footer-linkcol-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_footer_linkhover_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_footer_linkhover_color' );
+            $classname = 'footer-linkhovercol-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_footer_headline_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_footer_headline_color' );
+            $classname = 'footer-headlinecol-'.$val;
+            $classes[] = $classname;
+        } 
          
          
 	 // Additional body classes for WooCommerce
@@ -420,9 +519,7 @@ function pirate_rogue_get_image_attributs($id=0) {
 	    } elseif (!empty($result['credit'])) {
 		$result['credits'] = $precopyright.' '.$result['credit'];		
             } else {
-		if (!empty($result['description'])) {
-		    $result['credits'] = $result['description'];
-		} elseif (!empty($result['caption'])) {
+		if (!empty($result['caption'])) {
 		    $result['credits'] = $result['caption'];
 		} elseif (!empty($result['excerpt'])) {
 		    $result['credits'] = $result['excerpt'];
@@ -626,7 +723,7 @@ function pirate_rogue_post_gallery($output, $attr) {
             }
             if ($attr['link'] != 'none') {
                 if($meta->post_excerpt != '') { $output .= '<br>'; }
-                $output .= '<span class="linkorigin">(<a href="'.esc_url($img_full[0]).'" '.$lightboxattr.' class="lightbox" rel="lightbox-'.$rand.'">'.__('Vergrößern','pirate-rogue').'</a>)</span>';
+                $output .= '<span class="linkorigin">(<a href="'.esc_url($img_full[0]).'" '.$lightboxattr.' class="lightbox" rel="lightbox-'.$rand.'">'.__('Full Size','pirate-rogue').'</a>)</span>';
             }
             $output .='</div>';
         }

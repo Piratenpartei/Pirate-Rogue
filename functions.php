@@ -101,8 +101,7 @@ add_action( 'wp_head', 'pirate_rogue_javascript_detection', 0 );
 /*-----------------------------------------------------------------------------------*/
 function pirate_rogue_register_scripts() {
     // Register Slick
-   // wp_register_script('pirate-rogue-slick', get_template_directory_uri() . '/js/slick/slick.min.js', array('jquery') ); 
-     wp_register_script('pirate-rogue-slick', get_template_directory_uri() . '/js/slick/slick-1.8.1.min.js', array('jquery') ); 
+    wp_register_script('pirate-rogue-slick', get_template_directory_uri() . '/js/slick/slick-1.8.1.min.js', array('jquery') ); 
 
     // Misc jQuery Plugins
     wp_register_script( 'pirate-rogue-jquery-misc', get_template_directory_uri() . '/js/jquery.misc.js', array( 'jquery' ), '1.1' );
@@ -122,10 +121,10 @@ function pirate_rogue_base_scripts() {
 	}
 
 	// Loads stylesheets.
-	wp_enqueue_style( 'pirate-rogue-style', get_stylesheet_uri(), array(), '20171216' );
+	wp_enqueue_style( 'pirate-rogue-style', get_stylesheet_uri(), array(), '20171229' );
         
         // Loads Custom JavaScript functionality
-        wp_enqueue_script( 'pirate-rogue-script', get_template_directory_uri() . '/js/functions.min.js', array( 'jquery' ), '20171216', true );
+        wp_enqueue_script( 'pirate-rogue-script', get_template_directory_uri() . '/js/functions.min.js', array( 'jquery' ), '20171229', true );
         wp_localize_script( 'pirate-rogue-script', 'screenReaderText', array(
                 'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'pirate-rogue') . '</span>',
                 'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'pirate-rogue') . '</span>',
@@ -409,10 +408,9 @@ function pirate_rogue_admin_style() {
  
     
 	// This theme styles the visual editor to resemble the theme style.
-    add_editor_style( array( '/css/editor-style.css') );
-    
-    // wp_register_style( 'themeadminstyle', '/css/editor-style.css');
-    // wp_enqueue_style( 'themeadminstyle' );
+    // add_editor_style( array( '/css/admin.css') );
+    wp_register_style( 'themeadminstyle', get_template_directory_uri().'/css/admin.css' );	   
+    wp_enqueue_style( 'themeadminstyle' );
     wp_enqueue_media();
 }
 add_action( 'admin_enqueue_scripts', 'pirate_rogue_admin_style' );

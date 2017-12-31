@@ -9,7 +9,6 @@
 ?>
 
     <section id="front-section-about" class="front-section cf">
-
 	<?php if ( '' != get_theme_mod( 'pirate_rogue_front_section_about_title' ) ) : ?>
 		<h3 class="front-section-title"><?php echo esc_html(get_theme_mod( 'pirate_rogue_front_section_about_title' ) ); ?></h3>
 	<?php endif; ?>
@@ -25,8 +24,7 @@
                 <?php if ( '' != get_theme_mod( 'pirate_rogue_front_section_about_text' ) ) : ?>
                         <p class="section-about-text"><span><?php echo wp_kses_post( get_theme_mod( 'pirate_rogue_front_section_about_text' ) ); ?></span></p>
                 <?php endif; ?>
-	</div><!-- end .section-about-column-one -->
-
+	</div>
 	<?php if (has_nav_menu( 'social-front' )  ) : ?>
             <div class="section-about-column-two">
                 <?php if ( get_theme_mod( 'pirate_rogue_custom_followus' ) ) : ?>
@@ -41,6 +39,6 @@
                                 'depth' 					=> -1));
                                 ?>
                 </nav>
-            </div><!-- end .section-about-column-two -->
+            </div>
 	<?php endif; ?>
-    </section><!-- end #front-section-about -->
+    </section>

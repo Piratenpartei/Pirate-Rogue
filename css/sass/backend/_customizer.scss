@@ -1,0 +1,43 @@
+/*-----------------------------------------------------------------------------------*/
+/* Customizer Settings
+/*-----------------------------------------------------------------------------------*/
+
+
+.customize-control-colorlist-radio {
+// Inspired by https://jsfiddle.net/8uycrv12/    
+
+    label {
+        display: inline-block;
+        position: relative;
+        margin: 2px;
+        
+        input[type="radio"] {
+            // hide ugly default radio icon 
+            display: none;
+        }
+        input[type="radio"] + span.colorbox {
+            border-radius: 30%;
+        }
+        
+        span.colorbox {
+            background: transparent;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            border: 2px solid transparent;
+            transition: all .2s linear;
+        }
+        span.reset {
+           padding: 2px;
+        }
+    }
+
+    /* Hover-Effekt */
+    label:hover span.colorbox {
+        border: 2px solid #aaa;
+    }
+    input[type="checkbox"]:checked + span.colorbox,
+    input[type="radio"]:checked + span.colorbox {
+        border: 3px solid #000;
+    }
+}

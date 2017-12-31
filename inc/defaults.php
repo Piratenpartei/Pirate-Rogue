@@ -24,6 +24,11 @@ $default_colorlist = array(
     'second'    => '#672082',
     'third'     => '#698bc1',
     'four'      => '#148f93',
+    'uspirates' => '#B127AF',
+    'tkpirates' => '#00B5B1',
+    'chpirates' => '#F9B200',
+    'ispirates' => '#51297e',
+    
     'black'     => '#000',
     'white'     => '#fff',
     'grey'      => '#e7e7eb',

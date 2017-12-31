@@ -9,20 +9,23 @@ $color-four:			#148f93;
 // Colorsets
 
 $customizer-colorset: (
-    ("main", #ff8800),
-    ("second", #672082),
-    ("third", #698bc1),
-    ("four", #148f93),
-    ("black", #000),
-    ("white", #fff),
-    ("grey", #e7e7eb),
-    ("darkgrey", #1a1a1a),
-    ("blue", #0066ff),
-    ("red", #d7464d),
-    ("yellow", #e7b547),
-    ("green", #85c066)
+    ("main", #ff8800, "Pirates DE"),
+    ("second", #672082, "Pirates DE second CI Color"),
+    ("third", #698bc1, "Additional complementary CI Color"),
+    ("four", #148f93, "Additional Complementary CI Color"),
+    ("uspirates", #B127AF, "Pirates US/LU"),
+    ("tkpirates", #00B5B1, "Pirates TK"),
+    ("chpirates", #F9B200, "Pirates CH"),
+    ("ispirates", #51297e, "Pirates IS"),
+    ("black", #000, ""),
+    ("white", #fff, ""),
+    ("grey", #e7e7eb, ""),
+    ("darkgrey", #1a1a1a, ""),
+    ("blue", #0066ff, ""),
+    ("red", #d7464d, ""),
+    ("yellow", #e7b547, ""),
+    ("green", #85c066, "")
 );
-
 
 $color-page-background:		#fff;
 $color-hr:			#ccc;

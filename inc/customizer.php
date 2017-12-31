@@ -16,37 +16,50 @@ function pirate_rogue_customize_register( $wp_customize ) {
         'title'             => esc_html__('Theme Options', 'pirate-rogue'),
     ) );
 
-	$wp_customize->add_section( 'pirate_rogue_general', array(
-		'title'     => esc_html__( 'General', 'pirate-rogue'),
-		'priority'  => 2,
-		'panel'     => 'pirate_rogue_themeoptions',
-	) );
 
-	$wp_customize->add_section( 'pirate_rogue_header', array(
-		'title'     => esc_html__( 'Header', 'pirate-rogue'),
+        $wp_customize->add_section( 'pirate_rogue_section_images', array(
+		'title'     => esc_html__( 'Default Images', 'pirate-rogue'),
 		'priority'  => 3,
 		'panel'     => 'pirate_rogue_themeoptions',
 	) );
-
-	$wp_customize->add_section( 'pirate_rogue_entries', array(
-		'title'     => esc_html__( 'Page Settings', 'pirate-rogue'),
+       
+	$wp_customize->add_section( 'pirate_rogue_section_header', array(
+		'title'     => esc_html__( 'Header', 'pirate-rogue'),
 		'priority'  => 4,
 		'panel'     => 'pirate_rogue_themeoptions',
 	) );
-	
-	$wp_customize->add_section( 'pirate_rogue_footerfeature', array(
-		'title'     => esc_html__( 'Footer Featured Area', 'pirate-rogue'),
+        $wp_customize->add_section( 'pirate_rogue_section_sidebar', array(
+		'title'     => esc_html__( 'Sidebar', 'pirate-rogue'),
 		'priority'  => 5,
 		'panel'     => 'pirate_rogue_themeoptions',
 	) );
-
-	 $wp_customize->add_section( 'pirate_rogue_coloroverwrite', array(
+	$wp_customize->add_section( 'pirate_rogue_section_footer', array(
+		'title'     => esc_html__( 'Footer', 'pirate-rogue'),
 		'priority'  => 6,
+		'panel'     => 'pirate_rogue_themeoptions',
+	) );
+        
+        $wp_customize->add_section( 'pirate_rogue_section_metadata', array(
+		'title'     => esc_html__( 'Metadata', 'pirate-rogue'),
+		'priority'  => 7,
+		'panel'     => 'pirate_rogue_themeoptions',
+	) ); 
+        $wp_customize->add_section( 'pirate_rogue_section_comments', array(
+		'title'     => esc_html__( 'Comments', 'pirate-rogue'),
+		'priority'  => 8,
+		'panel'     => 'pirate_rogue_themeoptions',
+	) );  
+        $wp_customize->add_section( 'pirate_rogue_section_misc', array(
+		'title'     => esc_html__( 'Miscellaneous', 'pirate-rogue'),
+		'priority'  => 50,
+		'panel'     => 'pirate_rogue_themeoptions',
+	) );  
+        $wp_customize->add_section( 'pirate_rogue_section_coloroverwrite', array(
+		'priority'  => 100,
 		'title'     => esc_html__('Colors', 'pirate-rogue'),
 		'panel'     => 'pirate_rogue_themeoptions',
                 'description'	=> esc_html__( 'This will allow to change the default colors. Please notice, that the following color options use a fix list of predefined colors. To change the website to other colors, use "Custom CSS" option.', 'pirate-rogue'),
 	) );
-         
 	$wp_customize->add_section( 'pirate_rogue_customcss', array(
 		'title'     => esc_html__( 'Custom CSS', 'pirate-rogue'),
 		'priority'  => 200,
@@ -133,19 +146,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 
 	
-	// Site Title - Custom Title and Logo
-	$wp_customize->add_setting( 'pirate_rogue_hidetagline', array(
-		'default'		     => '',
-		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
-	) );
-
-	$wp_customize->add_control( 'pirate_rogue_hidetagline', array(
-		'label'			     => esc_html__( 'Hide tagline only', 'pirate-rogue'),
-		'section'		     => 'pirate_rogue_footerfeature',
-		'type'			     => 'checkbox',
-		'priority'		     => 22,
-	) );
-
+	
 
         
 	$wp_customize->add_setting( 'pirate_rogue_customlogofooter', array(
@@ -155,7 +156,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( 'pirate_rogue_customlogofooter', array(
 		'label'			     => esc_html__( 'Show custom logo in footer', 'pirate-rogue'),
-		'section'		     => 'pirate_rogue_footerfeature',
+		'section'		     => 'pirate_rogue_section_footer',
 		'type'			     => 'checkbox',
 		'priority'		     => 23,
 	) );
@@ -180,7 +181,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	) );
 
 
-	// Uku Theme Options - General
+	//  Theme Options - General
 	$wp_customize->add_setting( 'pirate_rogue_sidebar', array(
 		'default' 	        => 'sidebar-right',
 		'sanitize_callback'	=> 'pirate_rogue_sanitize_sidebar',
@@ -188,7 +189,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( 'pirate_rogue_sidebar', array(
 		'label' 	     => esc_html__( 'Sidebar Position', 'pirate-rogue'),
-		'section' 	  => 'pirate_rogue_general',
+		'section' 	  => 'pirate_rogue_section_sidebar',
 		'priority'                => 2,
 		'type' 			  => 'select',
 		'choices'     => array(
@@ -204,7 +205,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( 'pirate_rogue_sidebar_hide', array(
 		'label' 	  => esc_html__( 'Sidebar Visibility', 'pirate-rogue'),
-		'section' 	  => 'pirate_rogue_general',
+		'section' 	  => 'pirate_rogue_section_sidebar',
 		'priority' 	  => 3,
 		'type' 		 => 'select',
 		'choices' 	  => array(
@@ -225,7 +226,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'pirate_rogue_credit', array(
 		'label'			    => esc_html__( 'Footer credit text', 'pirate-rogue'),
 		'description'		    => esc_html__( 'Customize the footer credit text. (HTML is allowed)', 'pirate-rogue'),
-		'section'		    => 'pirate_rogue_general',
+		'section'		    => 'pirate_rogue_section_metadata',
 		'type'			    => 'text',
 		'priority'		    => 6,
 	) );
@@ -237,7 +238,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'pirate_rogue_author', array(
 		'label'			    => esc_html__( 'Author', 'pirate-rogue'),
 		'description'		    => esc_html__( 'Default author of posts used for structured data', 'pirate-rogue'),
-		'section'		    => 'pirate_rogue_general',
+		'section'		    => 'pirate_rogue_section_metadata',
 		'type'			    => 'text',
 		'priority'		    => 7,
 	) );
@@ -252,7 +253,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'label'			    => esc_html__( 'Google Site Verification', 'pirate-rogue'),
 		'description'		    => __( 'For verification of your website as property owner at <a target="_blank" href="https://www.google.com/webmasters/tools/home">Google Webmaster Tools</a>, use the alternative method and copy the <b>content</b>-Attribut of the given HTML-Tag. <br>Insert this string here. <br>'
                         . 'Example: If given: <br><code>&lt;meta name="google-site-verification" content="BBssyCpddd8" /&gt;</code><br> then insert <code>BBssyCpddd8</code> ', 'pirate-rogue'),
-		'section'		    => 'pirate_rogue_general',
+		'section'		    => 'pirate_rogue_section_metadata',
 		'type'			    => 'text',
 		'priority'		    => 8,
 	) );
@@ -266,7 +267,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( 'pirate_rogue_hidesearch', array(
 		'label'		     => esc_html__( 'Hide search in Header', 'pirate-rogue'),
-		'section'	     => 'pirate_rogue_header',
+		'section'	     => 'pirate_rogue_section_header',
 		'type'		     => 'checkbox',
 		'priority'	     => 1,
 	) );
@@ -284,7 +285,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'pirate_rogue_socialmedia_style', array(
 		'label'         => esc_html__( 'Social Media Icon Style', 'pirate-rogue'),
 		'description'	=> esc_html__( 'Choose the color of the social media icons (needs a items in Social media menu position). Notice: This will also chance the color of the search icon and the hamburger overlay icon.', 'pirate-rogue'),
-		'section' 	=> 'pirate_rogue_header',
+		'section' 	=> 'pirate_rogue_section_header',
 		'priority'      => 3,
 		'type' 		=> 'select',
 		'choices'   => array(
@@ -302,7 +303,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'pirate_rogue_search_overlay_backgroundcolor', array(
 		'label'         => esc_html__( 'Search Background Style', 'pirate-rogue'),
 		'description'	=> esc_html__( 'Choose the background color of the overlay search input', 'pirate-rogue'),
-		'section' 	=> 'pirate_rogue_header',
+		'section' 	=> 'pirate_rogue_section_header',
 		'priority'      => 3,
 		'type' 		=> 'select',
 		'choices'   => array(
@@ -321,21 +322,31 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'pirate_rogue_fixedheader', array(
 		'label'		     => esc_html__( 'Hide fix-positioned Header', 'pirate-rogue'),
 		'description'	     => esc_html__( '(By default the fix-positioned Header is visible on wider screens, if the browser window is scrolled.)', 'pirate-rogue'),
-		'section'	     => 'pirate_rogue_header',
+		'section'	     => 'pirate_rogue_section_header',
 		'type'		     => 'checkbox',
 		'priority'	     => 4,
 	) );
+    // Site Title - Custom Title and Logo
+	$wp_customize->add_setting( 'pirate_rogue_hidetagline', array(
+		'default'		     => '',
+		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
+	) );
 
-	
-	// pirate_rogue_entries - Settings belonging to pages and posts
-	
+	$wp_customize->add_control( 'pirate_rogue_hidetagline', array(
+		'label'			     => esc_html__( 'Hide tagline only', 'pirate-rogue'),
+		'section'		     => 'pirate_rogue_section_header',
+		'type'			     => 'checkbox',
+		'priority'		     => 22,
+	) );
+
+        	
 	$wp_customize->add_setting( 'pirate_rogue_fallback_thumbnail', array(
 		'default'		=> '',
 		'sanitize_callback'	=> 'wp_kses_post',
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'pirate_rogue_fallback_thumbnail', array(
-	    'section'     => 'pirate_rogue_entries',
+	    'section'     => 'pirate_rogue_section_images',
 	    'label'       => esc_html__( 'Upload Fallback Thumbnail image', 'pirate-rogue'),
 	    'description'	     => esc_html__( 'If thumbnail for a post is not avaible, define this thumbnail as a fallback', 'pirate-rogue'), 
 	    'flex_width'  => true, // Allow any width, making the specified value recommended. False by default.
@@ -350,7 +361,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'pirate_rogue_fallback_blogroll_thumbnail', array(
-	    'section'     => 'pirate_rogue_entries',
+	    'section'     => 'pirate_rogue_section_images',
 	    'label'       => esc_html__( 'Upload Fallback Thumbnail for blogroll', 'pirate-rogue'),
 	    'description'	     => esc_html__( 'If thumbnail for a post is not avaible, define this thumbnail as a fallback for normal blogroll', 'pirate-rogue'), 
 	    'flex_width'  => true, // Allow any width, making the specified value recommended. False by default.
@@ -366,7 +377,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'pirate_rogue_fallback_slider', array(
-	    'section'     => 'pirate_rogue_entries',
+	    'section'     => 'pirate_rogue_section_images',
 	    'label'       => esc_html__( 'Upload Fallback image for slider', 'pirate-rogue'),
 	    'description'	     => esc_html__( 'If  thumbnail for a post is not avaible, define this image for the slider', 'pirate-rogue'), 
 	    'flex_width'  => true, // Allow any width, making the specified value recommended. False by default.
@@ -385,7 +396,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'pirate_rogue_hidecomments', array(
 		'label'			    => esc_html__( 'Show Comments button on single posts', 'pirate-rogue'),
 		'description'		    => esc_html__( '(Hides comments behind a Show Comments button on single posts.)', 'pirate-rogue'),
-		'section'		    => 'pirate_rogue_entries',
+		'section'		    => 'pirate_rogue_section_comments',
 		'type'			    => 'checkbox',
 		'priority'		    => 4,
 	) );
@@ -399,7 +410,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'pirate_rogue_commentdisclaimer', array(
 		'label'			    => esc_html__( 'Comment Disclaimer', 'pirate-rogue'),
 		'description'		    => esc_html__( 'Disclaimer shown preview to comment form. (HTML is allowed)', 'pirate-rogue'),
-		'section'		    => 'pirate_rogue_entries',
+		'section'		    => 'pirate_rogue_section_comments',
 		'type'			    => 'textarea',
 		'priority'		    => 5,
 	) );
@@ -413,7 +424,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'pirate_rogue_externcomments_active', array(
 		'label'			    => esc_html__( 'Link to external board for comments', 'pirate-rogue'),
 		'description'		    => esc_html__( '(Instead of allowing comments on side, users are directed to an external website)', 'pirate-rogue'),
-		'section'		    => 'pirate_rogue_entries',
+		'section'		    => 'pirate_rogue_section_comments',
 		'type'			    => 'checkbox',
 		'priority'		    => 6,
 	) );
@@ -426,7 +437,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'pirate_rogue_externcomments_title', array(
                 'label'                     => esc_html__( 'Linktext', 'pirate-rogue'),
                 'description'               => esc_html__( 'Sets a link text for directing to external board', 'pirate-rogue'),
-                'section'		    => 'pirate_rogue_entries',
+                'section'		    => 'pirate_rogue_section_comments',
                 'type'                      => 'text',
                 'default'                   => esc_html__( 'Discuss this on our board', 'pirate-rogue'),
                 'priority'		    => 7,
@@ -439,13 +450,13 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'pirate_rogue_externcomments_url', array(
                 'label'                     => esc_html__( 'URL', 'pirate-rogue'),
                 'description'               => esc_html__( 'Enter the URL for the external board', 'pirate-rogue'),
-                'section'                   => 'pirate_rogue_entries',
+                'section'                   => 'pirate_rogue_section_comments',
                 'type'                      => 'text',
                 'priority'                  => 8,
 	) ); 
 	
         
-	// Uku Theme Options - Big Footer Feature Area
+	// Theme Options - Big Footer Feature Area
 	$wp_customize->add_setting( 'pirate_rogue_footerfeature_title', array(
 		'default' 	       => '',
 		'sanitize_callback' 	     => 'wp_kses_post',
@@ -454,7 +465,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'pirate_rogue_footerfeature_title', array(
 		'label' 	      => esc_html__( 'Title', 'pirate-rogue'),
 		'description'     => esc_html__( 'A small title text visible at the top of the area.', 'pirate-rogue'),
-		'section' 	        => 'pirate_rogue_footerfeature',
+		'section' 	        => 'pirate_rogue_section_footer',
 		'type' 		        => 'text',
 		'priority'	     => 1,
 	) );
@@ -466,7 +477,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize,'pirate_rogue_footerfeature_image', array(
                 'label'			     => esc_html__( 'Upload Featured image', 'pirate-rogue'),
-                'section'		     => 'pirate_rogue_footerfeature',
+                'section'		     => 'pirate_rogue_section_footer',
                 'priority'	     => 2,
 	) ) );
 	
@@ -481,7 +492,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( 'pirate_rogue_footerfeature_text_big', array(
 		'label' 	             => esc_html__( 'Big Text', 'pirate-rogue'),
-		'section' 		           => 'pirate_rogue_footerfeature',
+		'section' 		           => 'pirate_rogue_section_footer',
 		'type' 		               => 'textarea',
 		'description'			     => esc_html__( 'A big slogan text next to the image (HTML is allowed.)', 'pirate-rogue'),
 		'priority'			     => 3,
@@ -495,7 +506,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'pirate_rogue_footerfeature_text_small', array(
 		'label' 		    => esc_html__( 'Small Text', 'pirate-rogue'),
 		'description'		    => esc_html__( 'An additional smaller description text below the big text (HTML is allowed.)', 'pirate-rogue'),
-		'section' 		    => 'pirate_rogue_footerfeature',
+		'section' 		    => 'pirate_rogue_section_footer',
 		'type' 			    => 'textarea',
 		'priority'						     => 4,
 	) );
@@ -508,7 +519,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'pirate_rogue_footerfeature_btn_text', array(
 		'label' 		     => esc_html__( 'Button Text', 'pirate-rogue'),
 		'description'		     => esc_html__( 'If you want to add a "Call to Action" button, include the button text here.', 'pirate-rogue'),
-		'section'		     => 'pirate_rogue_footerfeature',
+		'section'		     => 'pirate_rogue_section_footer',
 		'type' 			      => 'text',
 		'priority'						     => 5,
 	) );
@@ -521,7 +532,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'pirate_rogue_footerfeature_btn_link', array(
 		'label'         => esc_html__( 'Button Link URL', 'pirate-rogue'),
 		'description'   => esc_html__( 'The URL the button should link to.', 'pirate-rogue'),
-		'section'       => 'pirate_rogue_footerfeature',
+		'section'       => 'pirate_rogue_section_footer',
 		'type'          => 'text',
 		'priority'      => 6,
 	) );
@@ -533,7 +544,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'pirate_rogue_footermenu_image', array(
-	    'section'     => 'pirate_rogue_footerfeature',
+	    'section'     => 'pirate_rogue_section_footer',
 	    'label'       => esc_html__( 'Menu Footer Image', 'pirate-rogue'),
 	    'flex_width'  => true, // Allow any width, making the specified value recommended. False by default.
 	    'flex_height' => true, // Require the resulting image to be exactly as tall as the height attribute (default).
@@ -547,21 +558,31 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'default'		     => '',
 		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
 	) );
-
 	$wp_customize->add_control( 'pirate_rogue_footer_search', array(
 		'label'		     => esc_html__( 'Show search in Footer', 'pirate-rogue'),
-		'section'	     => 'pirate_rogue_footerfeature',
+		'section'	     => 'pirate_rogue_section_footer',
 		'type'		     => 'checkbox',
 		'priority'	     => 8,
 	) );       	
 	
-	
-	// Uku Front Page - General
+	$wp_customize->add_setting( 'pirate_rogue_devider_hideimage', array(
+		'default'		     => '',
+		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
+	) );
+	$wp_customize->add_control( 'pirate_rogue_devider_hideimage', array(
+		'label'		     => esc_html__( 'Hide pirate image at devider', 'pirate-rogue'),
+		'section'	     => 'pirate_rogue_section_misc',
+		'type'		     => 'checkbox',
+		'priority'	     => 8,
+	) );
+        
+        
+        
+	// Front Page - General
 	$wp_customize->add_setting( 'uku_front_hideblog', array(
 		'default'							     => '',
 		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
 	) );
-
 	$wp_customize->add_control( 'uku_front_hideblog', array(
 		'label'				     => esc_html__( 'Hide default blog on Front page', 'pirate-rogue'),
 		'section'			     => 'pirate_rogue_frontpage_general',
@@ -683,8 +704,6 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'priority'      => 2,
 	) ) );
 
-        
-        
         
 	$wp_customize->add_setting( 'pirate_rogue_sliderstyle', array(
 		'default' 		=> 'slider-fullwidth',
@@ -1189,7 +1208,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
                     'settings' => 'pirate_rogue_head_background_color',
                     'label'    => esc_html__( 'Header background', 'pirate-rogue'),
                     'description'	=> esc_html__( 'Background color for header region.', 'pirate-rogue'),
-                    'section'  => 'pirate_rogue_coloroverwrite',
+                    'section'  => 'pirate_rogue_section_coloroverwrite',
                     'type'     => 'colorlist-radio', // The $type in our class
                     'choices'  => $default_colorlist,
                 )
@@ -1209,7 +1228,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
                     'settings' => 'pirate_rogue_head_text_color',
                     'label'    => esc_html__( 'Head text color', 'pirate-rogue'),
                     'description'	=> esc_html__( 'Textcolor for head region, including site title and menu links.', 'pirate-rogue'),
-                    'section'  => 'pirate_rogue_coloroverwrite',
+                    'section'  => 'pirate_rogue_section_coloroverwrite',
                     'type'     => 'colorlist-radio', // The $type in our class
                     'choices'  => $default_colorlist,
                 )
@@ -1230,7 +1249,27 @@ function pirate_rogue_customize_register( $wp_customize ) {
                     'settings' => 'pirate_rogue_head_linkhover_color',
                     'label'    => esc_html__( 'Head link hover border-color', 'pirate-rogue'),
                     'description'	=> esc_html__( 'Link hover border-color for main menu in head.', 'pirate-rogue'),
-                    'section'  => 'pirate_rogue_coloroverwrite',
+                    'section'  => 'pirate_rogue_section_coloroverwrite',
+                    'type'     => 'colorlist-radio', // The $type in our class
+                    'choices'  => $default_colorlist,
+                )
+            )
+        );
+       $wp_customize->add_setting( 'pirate_rogue_actionbutton_color', array(
+		'default'           => '',
+		'sanitize_callback' => 'pirate_rogue_sanitize_colors',
+                'capability'        => 'edit_theme_options'
+        ) );
+
+       $wp_customize->add_control(
+            new WP_Customize_Colorlist_Radio(
+                $wp_customize,
+                'pirate_rogue_actionbutton_color',
+                array(
+                    'settings' => 'pirate_rogue_actionbutton_color',
+                    'label'    => esc_html__( 'Action buttons', 'pirate-rogue'),
+                    'description'	=> esc_html__( 'All buttons, menu and search icons', 'pirate-rogue'),
+                    'section'  => 'pirate_rogue_section_coloroverwrite',
                     'type'     => 'colorlist-radio', // The $type in our class
                     'choices'  => $default_colorlist,
                 )
@@ -1253,7 +1292,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
                     'settings' => 'pirate_rogue_main_background_color',
                     'label'    => esc_html__( 'Main background', 'pirate-rogue'),
                     'description'	=> esc_html__( 'Background color for main region.', 'pirate-rogue'),
-                    'section'  => 'pirate_rogue_coloroverwrite',
+                    'section'  => 'pirate_rogue_section_coloroverwrite',
                     'type'     => 'colorlist-radio', // The $type in our class
                     'choices'  => $default_colorlist,
                 )
@@ -1273,7 +1312,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
                     'settings' => 'pirate_rogue_main_headline_color',
                     'label'    => esc_html__( 'Main headline color', 'pirate-rogue'),
                     'description'	=> esc_html__( 'Color for all headlines in main region.', 'pirate-rogue'),
-                    'section'  => 'pirate_rogue_coloroverwrite',
+                    'section'  => 'pirate_rogue_section_coloroverwrite',
                     'type'     => 'colorlist-radio', // The $type in our class
                     'choices'  => $default_colorlist,
                 )
@@ -1293,7 +1332,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
                     'settings' => 'pirate_rogue_main_text_color',
                     'label'    => esc_html__( 'Main text color', 'pirate-rogue'),
                     'description'	=> esc_html__( 'Textcolor for main region.', 'pirate-rogue'),
-                    'section'  => 'pirate_rogue_coloroverwrite',
+                    'section'  => 'pirate_rogue_section_coloroverwrite',
                     'type'     => 'colorlist-radio', // The $type in our class
                     'choices'  => $default_colorlist,
                 )
@@ -1313,7 +1352,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
                     'settings' => 'pirate_rogue_main_link_color',
                     'label'    => esc_html__( 'Main link color', 'pirate-rogue'),
                     'description'	=> esc_html__( 'Link color for main region.', 'pirate-rogue'),
-                    'section'  => 'pirate_rogue_coloroverwrite',
+                    'section'  => 'pirate_rogue_section_coloroverwrite',
                     'type'     => 'colorlist-radio', // The $type in our class
                     'choices'  => $default_colorlist,
                 )
@@ -1333,7 +1372,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
                     'settings' => 'pirate_rogue_main_linkhover_color',
                     'label'    => esc_html__( 'Main link hover color', 'pirate-rogue'),
                     'description'	=> esc_html__( 'Link hover color for main region.', 'pirate-rogue'),
-                    'section'  => 'pirate_rogue_coloroverwrite',
+                    'section'  => 'pirate_rogue_section_coloroverwrite',
                     'type'     => 'colorlist-radio', // The $type in our class
                     'choices'  => $default_colorlist,
                 )
@@ -1354,7 +1393,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
                     'settings' => 'pirate_rogue_main_titleunderline_color',
                     'label'    => esc_html__( 'Title underline color', 'pirate-rogue'),
                     'description'	=> esc_html__( 'Color for underline of the page title', 'pirate-rogue'),
-                    'section'  => 'pirate_rogue_coloroverwrite',
+                    'section'  => 'pirate_rogue_section_coloroverwrite',
                     'type'     => 'colorlist-radio', // The $type in our class
                     'choices'  => $default_colorlist,
                 )
@@ -1375,7 +1414,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
                     'settings' => 'pirate_rogue_main_listitem_color',
                     'label'    => esc_html__( 'Listitem color', 'pirate-rogue'),
                     'description'	=> esc_html__( 'Sets listitems of an unnumbered list to a new color.', 'pirate-rogue'),
-                    'section'  => 'pirate_rogue_coloroverwrite',
+                    'section'  => 'pirate_rogue_section_coloroverwrite',
                     'type'     => 'colorlist-radio', // The $type in our class
                     'choices'  => $default_colorlist,
                 )
@@ -1396,7 +1435,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
                     'settings' => 'pirate_rogue_main_quoteborder_color',
                     'label'    => esc_html__( 'Blockquote border color', 'pirate-rogue'),
                     'description'	=> esc_html__( 'Overwrites the default color for blockquote borders', 'pirate-rogue'),
-                    'section'  => 'pirate_rogue_coloroverwrite',
+                    'section'  => 'pirate_rogue_section_coloroverwrite',
                     'type'     => 'colorlist-radio', // The $type in our class
                     'choices'  => $default_colorlist,
                 )
@@ -1424,7 +1463,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
                     'settings' => 'pirate_rogue_footer_background_color',
                     'label'    => esc_html__( 'Footer background', 'pirate-rogue'),
                     'description'	=> esc_html__( 'Background color for footer region.', 'pirate-rogue'),
-                    'section'  => 'pirate_rogue_coloroverwrite',
+                    'section'  => 'pirate_rogue_section_coloroverwrite',
                     'type'     => 'colorlist-radio', // The $type in our class
                     'choices'  => $default_colorlist,
                 )
@@ -1444,7 +1483,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
                     'settings' => 'pirate_rogue_footer_headline_color',
                     'label'    => esc_html__( 'Footer headline color', 'pirate-rogue'),
                     'description'	=> esc_html__( 'Color for all headlines in footer region.', 'pirate-rogue'),
-                    'section'  => 'pirate_rogue_coloroverwrite',
+                    'section'  => 'pirate_rogue_section_coloroverwrite',
                     'type'     => 'colorlist-radio', // The $type in our class
                     'choices'  => $default_colorlist,
                 )
@@ -1464,7 +1503,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
                     'settings' => 'pirate_rogue_footer_text_color',
                     'label'    => esc_html__( 'Footer text color', 'pirate-rogue'),
                     'description'	=> esc_html__( 'Textcolor for footer region.', 'pirate-rogue'),
-                    'section'  => 'pirate_rogue_coloroverwrite',
+                    'section'  => 'pirate_rogue_section_coloroverwrite',
                     'type'     => 'colorlist-radio', // The $type in our class
                     'choices'  => $default_colorlist,
                 )
@@ -1484,7 +1523,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
                     'settings' => 'pirate_rogue_footer_link_color',
                     'label'    => esc_html__( 'Footer link color', 'pirate-rogue'),
                     'description'	=> esc_html__( 'Link color for footer region.', 'pirate-rogue'),
-                    'section'  => 'pirate_rogue_coloroverwrite',
+                    'section'  => 'pirate_rogue_section_coloroverwrite',
                     'type'     => 'colorlist-radio', // The $type in our class
                     'choices'  => $default_colorlist,
                 )
@@ -1504,7 +1543,7 @@ function pirate_rogue_customize_register( $wp_customize ) {
                     'settings' => 'pirate_rogue_footer_linkhover_color',
                     'label'    => esc_html__( 'Footer link hover color', 'pirate-rogue'),
                     'description'	=> esc_html__( 'Link hover color for footer region.', 'pirate-rogue'),
-                    'section'  => 'pirate_rogue_coloroverwrite',
+                    'section'  => 'pirate_rogue_section_coloroverwrite',
                     'type'     => 'colorlist-radio', // The $type in our class
                     'choices'  => $default_colorlist,
                 )

@@ -168,6 +168,10 @@
             $classes[] = 'front_hidecats';
         } 
 
+        if ('' != get_theme_mod( 'pirate_rogue_devider_hideimage' ) ) {
+            $classes[] = 'devider_hideimage';
+        } 
+        
         // Head
         if ('' != get_theme_mod( 'pirate_rogue_head_background_color' ) ) {
             $val = get_theme_mod( 'pirate_rogue_head_background_color' );
@@ -182,6 +186,11 @@
         if ('' != get_theme_mod( 'pirate_rogue_head_linkhover_color' ) ) {
             $val = get_theme_mod( 'pirate_rogue_head_linkhover_color' );
             $classname = 'head-linkborder-'.$val;
+            $classes[] = $classname;
+        } 
+         if ('' != get_theme_mod( 'pirate_rogue_actionbutton_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_actionbutton_color' );
+            $classname = 'actionbutton-'.$val;
             $classes[] = $classname;
         } 
         

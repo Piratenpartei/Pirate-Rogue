@@ -9,20 +9,20 @@
     label {
         display: inline-block;
         position: relative;
-        margin: 5px;
+        margin: 2px;
         
         input[type="radio"] {
             // hide ugly default radio icon 
             display: none;
         }
         input[type="radio"] + span.colorbox {
-            border-radius: 50%;
+            border-radius: 30%;
         }
         
         span.colorbox {
             background: transparent;
-            width: 25px;
-            height: 25px;
+            width: 20px;
+            height: 20px;
             display: inline-block;
             border: 2px solid transparent;
             transition: all .2s linear;

@@ -874,20 +874,14 @@ blockquote {
             background-color: $color;
             border-bottom-color: rgba($color,0.7);
         }
+        #site-branding {
+            background-color: $color;
+        }
 
     }
-}
-// Head Background
-@each $key in $customizer-colorset {
-      $name:      nth($key, 1); 
-      $color:      nth($key, 2); 
     
     body.head-textcol-#{$name} {
-        .search-open, 
-        #overlay-open, 
-        #overlay-open-sticky {
-            color: $color;
-        }
+       
         #masthead {
             #desktop-navigation ul.menu li a,
             p.site-title,
@@ -906,19 +900,8 @@ blockquote {
        #desktop-navigation ul.menu li:focus a,
        #desktop-navigation ul.menu li:hover a {
                   border-bottom-color: $color;
-            }
-          
-       
+            } 
     }
-    
-   
-    
-}
-
-// Main Background
-@each $key in $customizer-colorset {
-      $name:      nth($key, 1); 
-      $color:      nth($key, 2); 
     
     body.main-bgcol-#{$name} {
        
@@ -938,7 +921,33 @@ blockquote {
             background-color: transparent;
         }
     }
+    body.actionbutton-#{$name} {
+        .gallery .slick-prev:before, 
+        .gallery .slick-next:before,
+        .gallery .slick-dots li.slick-active button:before,
+        .gallery .slick-dots li.slick-active button:before,
+        .gallery .slick-dots li button:hover:before,
+        .gallery .slick-dots li button:focus:before,
+        
+        .search-open, 
+        #overlay-open, 
+        #overlay-open-sticky {
+            color: $color;
+        }
+        .desktop-search input.search-field {
+            border-bottom-color: $color;
+        } 
+        input[type="button"], input[type="submit"], input#submit,
+        #commentform input#submit {
+            border-color: $color;
+            background-color: $color;
+        }
+    }
 }
+
+
+
+
 
 // Main Headlines
 @each $key in $customizer-colorset {
@@ -982,6 +991,7 @@ blockquote {
         
     }
 }
+
 // Main Textcol
 @each $key in $customizer-colorset {
       $name:      nth($key, 1); 

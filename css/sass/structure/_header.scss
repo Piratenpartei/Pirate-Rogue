@@ -16,14 +16,31 @@
     left: 0;
     right: 0;
     display: block;
-    
     padding-top: 5px;
     padding-bottom: 5px;
-    // border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
     z-index: 21;
+    background: #fff;
     
+    @media screen and (min-width: $breakpoint-1060) {
+	position: relative;
+	width: 87.5%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 17px 0 0;
+	border-bottom: none;
+	background: none; 
+    }
     .admin-bar & {
+        position: absolute;
 	top: 46px;
+        @media screen and (min-width: 783px) {         
+            top: 32px;
+            position: fixed;
+        }
+        @media screen and (min-width: $breakpoint-1060) {
+              top: 0;
+        }
     }
 }
 
@@ -32,8 +49,6 @@
 	position: absolute;
     }
 }
-
-
 
 a.site-logo {
     display: none;
@@ -47,6 +62,21 @@ a.site-logo {
 
 p.site-description {
     display: none;
+    
+    @media screen and (min-width: $breakpoint-1060) {
+        display: block;
+	text-align: center;
+	margin: 0;
+	padding: 4px 0 0 0;
+	font-size: 12px;
+	font-size: 0.75rem;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+      
+	.hide-tagline & {
+	    display: none !important;
+	}  
+    }
 }
 
 .header-image {
@@ -78,17 +108,6 @@ p.site-description {
     }
 }
 
-
-/* Minimum width of 790 pixels (WP Admin bar changes size)
------------------------------------------------------------------------------------- */
-
-@media screen and (min-width: $breakpoint-790) {
-  .admin-bar {
-    #site-branding {
-	top: 32px;
-    }
-  }
-}
 
 
 @media screen and (min-width: $breakpoint-1060) {
@@ -160,41 +179,6 @@ p.site-description {
 	      }
 	  }
     }
-  
-    #site-branding {
-	position: relative;
-	width: 87.5%;
-	/* -- 1260px at 1440px ---*/
-	margin-left: auto;
-	margin-right: auto;
-	padding: 17px 0 0;
-	border-bottom: none;
-	background: none;
-	
-	.admin-bar & {
-	    top: 0;
-	}
 
-   }
-  
-   
-   
-    p.site-description {
-	display: block;
-	text-align: center;
-	margin: 0;
-	padding: 4px 0 0 0;
-	font-size: 12px;
-	font-size: 0.75rem;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-      
-      
-	.hide-tagline & {
-	    display: none !important;
-	}  
-    }
-    
-  
 }
 

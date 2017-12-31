@@ -93,6 +93,8 @@ li {
                 list-style-type: circle;
                 &:before {
                     content: "";
+                    margin-left: 0;
+                    margin-right: 0;
                 }
                 
                 li {
@@ -173,6 +175,8 @@ li {
 		    left: 0;
 		    content: '\2013';		
 		    padding: 0;
+                    margin-left: 0;
+                    margin-right: 0;
 		}
 		
 		ul {

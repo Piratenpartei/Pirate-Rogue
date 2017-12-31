@@ -4,7 +4,7 @@
 /*-----------------------------------------------------------------------------------*/
 
 $pagebreakargs = array(
-    'before'   => '<div class="page-links">' . esc_html__('Seite:', 'pirate-rogue'),
+    'before'   => '<div class="page-links">' . esc_html__('Page:', 'pirate-rogue'),
     'after'            => '</div>',
     'link_before'      => '<span class="number">',
     'link_after'       => '</span>',

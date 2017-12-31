@@ -723,7 +723,7 @@ function pirate_rogue_post_gallery($output, $attr) {
             }
             if ($attr['link'] != 'none') {
                 if($meta->post_excerpt != '') { $output .= '<br>'; }
-                $output .= '<span class="linkorigin">(<a href="'.esc_url($img_full[0]).'" '.$lightboxattr.' class="lightbox" rel="lightbox-'.$rand.'">'.__('Vergrößern','pirate-rogue').'</a>)</span>';
+                $output .= '<span class="linkorigin">(<a href="'.esc_url($img_full[0]).'" '.$lightboxattr.' class="lightbox" rel="lightbox-'.$rand.'">'.__('Full Size','pirate-rogue').'</a>)</span>';
             }
             $output .='</div>';
         }

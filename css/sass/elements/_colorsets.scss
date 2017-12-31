@@ -903,8 +903,19 @@ blockquote {
        #desktop-navigation ul.menu li.focus a, 
        #desktop-navigation ul.menu li:focus a,
        #desktop-navigation ul.menu li:hover a {
-                  border-bottom-color: $color;
-            } 
+            border-bottom-color: $color;
+        } 
+            
+       #desktop-navigation .sub-menu li a:focus, 
+       #desktop-navigation .children li a:focus, 
+       #desktop-navigation .sub-menu li a:hover, 
+       #desktop-navigation .children li a:hover {
+           background-color: $color;
+       }    
+       button#overlay-open:hover,
+       button#search-open:hover {
+            color: $color;
+       }     
     }
     
     body.main-bgcol-#{$name} {

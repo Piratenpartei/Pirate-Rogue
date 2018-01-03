@@ -38,10 +38,16 @@
 
 
 		&[href*="diaspora.com"] {
-		    @extend .fa-star-o;
+		//    @extend .fa-star-o;
                     background-color: #ccc;
                     border-color: #ccc;
                     color: white;
+                }
+                &[href*="diaspora.com"]:before {
+                    @include px2rem($font-size-socialmedia-icon * 2, $font-size-base , $font-size-base * 2);
+                    content: "*";
+                    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+                    font-weight: bold;    
 		}
                 &[href*="diaspora.com"]:focus,
                 &[href*="diaspora.com"]:hover {

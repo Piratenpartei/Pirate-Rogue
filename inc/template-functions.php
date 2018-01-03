@@ -268,8 +268,52 @@
             $classname = 'footer-headlinecol-'.$val;
             $classes[] = $classname;
         } 
-         
-         
+        
+        if ('' != get_theme_mod( 'pirate_rogue_main_meta_bgcol' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_meta_bgcol' );
+            $classname = 'main-meta-bgcol-'.$val;
+            $classes[] = $classname;
+        } 
+         if ('' != get_theme_mod( 'pirate_rogue_main_meta_bgcol_hover' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_meta_bgcol_hover' );
+            $classname = 'main-meta-bgcol-hover-'.$val;
+            $classes[] = $classname;
+        } 
+         if ('' != get_theme_mod( 'pirate_rogue_main_meta_textcol' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_meta_textcol' );
+            $classname = 'main-meta-textcol-'.$val;
+            $classes[] = $classname;
+        }
+        
+        if ('' != get_theme_mod( 'pirate_rogue_main_meta_textcol_hover' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_meta_textcol_hover' );
+            $classname = 'main-meta-textcol-hover-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_main_table_textcol' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_table_textcol' );
+            $classname = 'main-table-textcol-'.$val;
+            $classes[] = $classname;
+        }
+        if ('' != get_theme_mod( 'pirate_rogue_main_table_bgcol' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_table_bgcol' );
+            $classname = 'main-table-bgcol-'.$val;
+            $classes[] = $classname;
+        }
+        if ('' != get_theme_mod( 'pirate_rogue_main_table_bgcol_header' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_table_bgcol_header' );
+            $classname = 'main-table-bgcol-head-'.$val;
+            $classes[] = $classname;
+        }
+        if ('' != get_theme_mod( 'pirate_rogue_main_table_bgcol_oddrows' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_table_bgcol_oddrows' );
+            $classname = 'main-table-bgcol-odd-'.$val;
+            $classes[] = $classname;
+        }
+        
+        
+
+        
 	 // Additional body classes for WooCommerce
 	 if ( is_active_sidebar( 'sidebar-shop' )) {
 		 $classes[] = 'sidebar-shop';

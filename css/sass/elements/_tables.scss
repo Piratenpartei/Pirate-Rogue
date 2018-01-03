@@ -7,12 +7,10 @@ table {
     @include px2rem($font-size-tables);
     border-collapse: collapse;
     border-bottom-width: 1px;
-    border--bottom-style: solid; 
+    border-bottom-style: solid; 
     border-spacing: 0;
     border-width: 1px;
-    margin: 0 0 1.6em;
-    table-layout: fixed;
-    /* Prevents HTML tables from becoming too wide */
+    margin: 0 0 1.6em;   
     width: 100%;
     
     &.sorttable {
@@ -44,6 +42,7 @@ table {
             border-bottom-style: solid;	
 	}
     }
+ 
 }
 
 caption, th, td {
@@ -80,4 +79,29 @@ th.center,
 td.center {
     text-align: center;
 }
+@media screen and (max-width: $breakpoint-sm) {
+	
+	table, tr, td {
+		padding:0;
+	}
 
+	table {
+		border:none;
+	}
+
+	thead {
+		display:none;
+	}
+
+	tr {
+		float: left;
+		width: 100%;
+		margin-bottom: 2em;
+	}
+
+	td {
+		float: left;
+		width: 100%;
+		padding:1em;
+	}
+}

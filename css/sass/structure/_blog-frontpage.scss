@@ -393,7 +393,6 @@
 .site-content {
     .hentry {
         position: relative;
-        padding: 20px 0 0;
         .entry-meta, .entry-author {
             display: none;
         }
@@ -507,10 +506,7 @@
               content: ' / ';
           }
 	}
-	// .entry-date:before {
-	//  content: ' / ';
-	//  padding: 0 4px;
-	// }
+
 	.entry-edit {
 	  padding-left: 20px;
 	}
@@ -726,16 +722,8 @@
     padding-bottom: 0;
   }
   /* --- Front Page - Blog --- */
-    #primary {
-      .not-found {
-         padding: 20px 0 40px;
-      }
-    }
-    .site-content {
-       .hentry {     
-           padding: 20px 0 0;
-       }
-     }
+   
+    
     .blog-wrap:last-child .hentry { 
        padding-bottom: 40px;
     }

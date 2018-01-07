@@ -974,6 +974,9 @@ blockquote {
             border-color: $color;
             background-color: $color;
         }
+        
+        
+        
     }
 }
 
@@ -1020,15 +1023,14 @@ blockquote {
             }
             
         }
-        
     }
 }
 
-// Main Textcol
+
 @each $key in $customizer-colorset {
       $name:      nth($key, 1); 
       $color:      nth($key, 2); 
-    
+    // Main Textcol
     .main-textcol-#{$name} {
        .single-post .entry-header p.intro, 
        .entry-summary, 
@@ -1043,12 +1045,7 @@ blockquote {
             color: $color;
         }
     }
-}
-// Main Linkcol
-@each $key in $customizer-colorset {
-      $name:      nth($key, 1); 
-      $color:      nth($key, 2); 
-    
+    // Main Linkcol
     .main-linkcol-#{$name} {
         main {
             a,
@@ -1059,13 +1056,7 @@ blockquote {
             }
         }
     }
-}
-
-// Main Link Hover col
-@each $key in $customizer-colorset {
-      $name:      nth($key, 1); 
-      $color:      nth($key, 2); 
-    
+    // Main Link Hover col
     .main-linkhovercol-#{$name} {
         &.single-post .entry-header .entry-cats a:hover,
         &.blog .featured-slider .entry-cats a:hover, 
@@ -1084,42 +1075,18 @@ blockquote {
     }
 }
 
-// Main Listitem
-@each $key in $customizer-colorset {
-      $name:      nth($key, 1); 
-      $color:      nth($key, 2); 
-    
-    .main-listitem-#{$name} {
-        main {            
-            ul li {
-		&:before {          
-                    color: $color;
-                }
-            }
-        }
-    }
-}
-// Main Quoteborder
-@each $key in $customizer-colorset {
-      $name:      nth($key, 1); 
-      $color:      nth($key, 2); 
-    
-    .main-quoteborder-#{$name} {
-        blockquote {
-            border-color: $color;
-        }
-    }
-}
 // Meta Links
 @each $key in $customizer-colorset {
       $name:      nth($key, 1); 
       $color:      nth($key, 2); 
-    
+   
     .main-meta-textcol-hover-#{$name} {
         &.single-post .entry-header .entry-cats a:hover,
         &.blog .featured-slider .entry-cats a:hover, 
         &.blog .featured-slider .entry-meta a:hover,
-        &.blog .hentry .entry-cats a:hover {
+        &.blog .hentry .entry-cats a:hover,
+        .pagination .nav-links span.page-numbers:hover, 
+        .pagination .nav-links a.page-numbers:hover {
              color: $color;
         }
     }
@@ -1138,6 +1105,8 @@ blockquote {
         &.single-post .entry-cats a,
         &.single-post .entry-tags a,
         &.single-post .entry-header .page-links a,
+        .pagination .nav-links span.page-numbers, 
+        .pagination .nav-links a.page-numbers,
         &.single-post .entry-header .page-links .number {
              color: $color;
         }
@@ -1152,10 +1121,13 @@ blockquote {
         .section-three-column-one .entry-cats a, 
         #front-section-four .entry-cats a, 
         &.single-post .entry-cats a, 
+        &.single-post .entry-tags a,
         &.blog .hentry .entry-cats a,
         &.blog .featured-slider .entry-cats a,
         &.blog .featured-slider .entry-meta a,    
-        &.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-cats a {
+        &.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-cats a,
+        .pagination .nav-links span.page-numbers, 
+        .pagination .nav-links a.page-numbers {
             background: $color; 
         }
     }
@@ -1170,7 +1142,10 @@ blockquote {
         &.blog .featured-slider .entry-cats a:hover,
         &.blog .featured-slider .entry-meta a:hover,      
         &.single-post .entry-cats a:hover, 
-        &.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-cats a:hover {
+        &.single-post .entry-tags a:hover,
+        &.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-cats a:hover,
+        .pagination .nav-links span.page-numbers:hover, 
+        .pagination .nav-links a.page-numbers:hover {
             background: $color; 
         }
     }
@@ -1178,6 +1153,29 @@ blockquote {
 
 
 
+@each $key in $customizer-colorset {
+      $name:      nth($key, 1); 
+      $color:      nth($key, 2); 
+    
+    // Main Listitem
+
+    .main-listitem-#{$name} {
+        main {            
+            ul li {
+		&:before {          
+                    color: $color;
+                }
+            }
+        }
+    }
+
+    // Main Quoteborder
+    .main-quoteborder-#{$name} {
+        blockquote {
+            border-color: $color;
+        }
+    }
+}
 // Tables
 @each $key in $customizer-colorset {
       $name:      nth($key, 1); 

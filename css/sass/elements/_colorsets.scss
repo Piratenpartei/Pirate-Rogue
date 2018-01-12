@@ -1095,8 +1095,10 @@ blockquote {
     }
     .main-meta-textcol-#{$name} {
 
-        .entry-meta, .entry-cats,
-        .entry-meta a, .entry-cats a,
+        .entry-meta, 
+        .entry-cats,
+        .slider-text .entry-meta a, 
+        .slider-text .entry-cats a,
         .section-one-column-one .entry-cats a,
         .section-three-column-one .entry-cats a,
         #front-section-four .entry-cats a,

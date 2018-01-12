@@ -573,6 +573,17 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'priority'	     => 8,
 	) );
         
+        $wp_customize->add_setting( 'pirate_rogue_shadow_images', array(
+		'default'		     => '',
+		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
+	) );
+	$wp_customize->add_control( 'pirate_rogue_shadow_images', array(
+		'label'		     => esc_html__( 'Add shadow to images in content', 'pirate-rogue'),
+		'section'	     => 'pirate_rogue_section_misc',
+		'type'		     => 'checkbox',
+		'priority'	     => 8,
+	) );
+        
         
         
 	// Front Page - General

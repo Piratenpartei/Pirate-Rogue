@@ -1086,7 +1086,9 @@ blockquote {
         &.blog .featured-slider .entry-meta a:hover,
         &.blog .hentry .entry-cats a:hover,
         .pagination .nav-links span.page-numbers:hover, 
-        .pagination .nav-links a.page-numbers:hover {
+        .pagination .nav-links a.page-numbers:hover,
+        .featured-slider button.slick-arrow:focus::after, 
+        .featured-slider button.slick-arrow:hover::after {
              color: $color;
         }
     }

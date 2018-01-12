@@ -70,14 +70,14 @@ h1 {
     &.entry-title,
     .archive-header &.archive-title,
     .site-content &,
-    .entry-content & {
+    .entry-content & {       
+        text-transform: uppercase;
         border-bottom: 7px;
         border-style:  solid;
-        text-transform: uppercase;
         margin-bottom: 50px;
         display: table-cell;
         padding-bottom: 1px;
-  
+
         & + * {
           margin-top: 20px;  
         }

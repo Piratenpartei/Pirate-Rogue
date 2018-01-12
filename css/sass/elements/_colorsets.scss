@@ -1081,6 +1081,7 @@ blockquote {
       $color:      nth($key, 2); 
    
     .main-meta-textcol-hover-#{$name} {
+
         &.single-post .entry-header .entry-cats a:hover,
         &.blog .featured-slider .entry-cats a:hover, 
         &.blog .featured-slider .entry-meta a:hover,
@@ -1093,6 +1094,7 @@ blockquote {
         }
     }
     .main-meta-textcol-#{$name} {
+
         .entry-meta, .entry-cats,
         .entry-meta a, .entry-cats a,
         .section-one-column-one .entry-cats a,
@@ -1132,6 +1134,12 @@ blockquote {
         .pagination .nav-links a.page-numbers {
             background: $color; 
         }
+        .gallery .slick-prev:before, 
+        .gallery .slick-next:before,
+        .gallery .slick-dots li.slick-active button:before {
+            color: $color;
+        }
+        
     }
     .main-meta-bgcol-hover-#{$name} {
         .entry-cats a:hover,

@@ -28,19 +28,16 @@ img {
 }
 
 .widget img {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
 }
 
 .wp-caption {
-  &.alignnone {
-    margin: 0;
-  }
-  max-width: 100%;
-  a {
-    line-height: 0;
-    display: block;
-  }
+    &.alignnone {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    max-width: 100%;
 }
 
 img#wpstats {
@@ -48,55 +45,55 @@ img#wpstats {
 }
 
 .entry-content {
-  .wp-caption-text, 
-  p.wp-caption-text {
-    margin: 0;
-    padding: 8px 2px 30px;
-    @include px2rem($font-size-small);
-  }
+    .wp-caption-text, 
+    p.wp-caption-text {
+        margin: 0;
+        @include px2rem($font-size-small);
+    }
+  
+    .shadow-images & img {
+        max-width: calc(100% - 10px);
+        box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.6)
+    }
 }
 
 .type-attachment .entry-content .entry-caption p {
   margin: 0;
-  padding: 8px 2px 30px;
+  padding: 8px 10px 30px 2px;
   @include px2rem($font-size-small);
 }
 
 .entry-content {
-  .alignleft p.wp-caption-text {
-    text-align: left;
-  }
-  .alignright p.wp-caption-text {
-    text-align: right;
-    margin-right: 6px;
-  }
-  
-  
+    p.wp-caption-text {
+        text-align: right;
+        padding: 0 10px 0 0;
+    }
+    .alignleft p.wp-caption-text {
+      text-align: left;
+    }
+    .alignright p.wp-caption-text {
+      text-align: right;
+      margin-right: 6px;
+    }
 }
 
 figure {
+    margin: 10px 0 20px 0;
     figcaption { 
-            margin: 0;
-            padding: 8px 2px 30px;
-            @include px2rem($font-size-small);
-            max-width: 100%;
-            
-        &.alignnone {
-            margin: 0;
-        }
-        
-        a {
-            line-height: 0;
-            display: block;
-        }  
-        
-       
+        text-align: right;
+        padding: 0 10px 0 0;
+        margin: 0;
+        @include px2rem($font-size-small);
+        max-width: 100%;
     }
     &.entry-thumbnail {
         figcaption {
             text-align: right;
-            padding: 0 6px 0 0;
         }   
+    }
+    .shadow-images & img {
+        max-width: calc(100% - 10px);
+        box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.6);
     }
 }
 

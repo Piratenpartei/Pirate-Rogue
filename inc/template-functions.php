@@ -311,8 +311,9 @@
             $classes[] = $classname;
         }
         
-        
-
+        if ('' != get_theme_mod( 'pirate_rogue_shadow_images' ) ) { 
+            $classes[] = 'shadow-images';
+        } 
         
 	 // Additional body classes for WooCommerce
 	 if ( is_active_sidebar( 'sidebar-shop' )) {
@@ -751,28 +752,44 @@ function pirate_rogue_post_gallery($output, $attr) {
     $output .= "<div class=\"slider gallery-slider\">\n";
     foreach ($attachments as $id => $attachment) {
 	$img = wp_get_attachment_image_src($id, 'pirate-rogue-gallery');
-        $meta = get_post($id);
+        $meta = pirate_rogue_get_image_attributs($id);
+        //$meta = get_post($id);
         $img_full = wp_get_attachment_image_src($id, 'full');
 	$output .= "\t".'<div><img src="'.esc_url($img[0]).'" width="'.$img[1].'" height="'.$img[2].'" alt="">';
 
-        if ($meta->post_excerpt != '') {
-            $output .= '<div class="gallery-image-caption">';
+        $imgvar = "";
+        if (isset($meta['title'])) {
+            $imgvar =   $meta['title'];
+        }
+        if ((empty($imgvar)) && (isset($meta['excerpt']))) {
+            $imgvar = $meta['excerpt'];
+        }
+        if ((empty($imgvar)) && (isset($meta['caption']))) {
+            $imgvar = $meta['caption'];
+        }
+        if ((empty($imgvar)) && (isset($meta['copyright']))) {
+            $imgvar = $meta['copyright'];
+        }
+       
+        
+        $output .= '<div class="gallery-image-caption">';
+        if (!empty($imgvar)) {
             $lightboxattr = '';
-            if($meta->post_excerpt != '') { 
-                $output .= $meta->post_excerpt; 
-                $lightboxtitle = sanitize_text_field($meta->post_excerpt);
-                if (strlen(trim($lightboxtitle))>1) {
-                    $lightboxattr = ' title="'.$lightboxtitle.'"';
-                }
+            $output .= $imgvar; 
+            if ((isset($meta['copyright'])) && ($imgvar !== $meta['copyright'])) {
+                $output .= "<br>".$meta['copyright'];
             }
-            if ($attr['link'] != 'none') {
-                if($meta->post_excerpt != '') { $output .= '<br>'; }
-                $output .= '<span class="linkorigin">(<a href="'.esc_url($img_full[0]).'" '.$lightboxattr.' class="lightbox" rel="lightbox-'.$rand.'">'.__('Full Size','pirate-rogue').'</a>)</span>';
+        }
+        if ($attr['link'] != 'none') {
+             $lightboxtitle = sanitize_text_field($imgvar);
+            if (strlen(trim($lightboxtitle))>1) {
+                $lightboxattr = ' title="'.$lightboxtitle.'"';
             }
-            $output .='</div>';
+            if (!empty($imgvar)) { $output .= '<br>'; }
+            $output .= '<span class="linkorigin">(<a href="'.esc_url($img_full[0]).'" '.$lightboxattr.' class="lightbox" rel="lightbox-'.$rand.'">'.__('Full Size','pirate-rogue').'</a>)</span>';
         }
         
-        
+        $output .='</div>';
         $output .= '</div>'."\n";
     }
     $output .= "</div>\n";

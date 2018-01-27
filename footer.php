@@ -52,7 +52,7 @@ $blogname = get_bloginfo('name');
 					<li class="copyright"><?php printf(esc_html__('Copyright &copy; %1$s %2$s', 'pirate-rogue'), date("Y"), $blogname ); ?></li>
 					<li class="wp-credit"><?php esc_html_e('Powered by', 'pirate-rogue') ?> <a href="<?php echo esc_url(__( 'https://wordpress.org/', 'pirate-rogue') ); ?>" rel="nofollow"><?php esc_html_e( 'WordPress', 'pirate-rogue'); ?></a></li>
 					<li class="theme-author">
-					    <?php printf( esc_html__( 'Theme: %1$s by %2$s for %3$s', 'pirate-rogue'), '<a href="' . esc_url('https://github.com/Piratenpartei/Pirate-Rogue/') . '" rel="nofollow">Pirate Rogue</a>','xwolf', '<a href="' . esc_url('https://www.piratenpartei.de/') . '">Piratenpartei Deutschland</a>' ); ?>
+					    <?php printf( esc_html__( 'Theme: %1$s by %2$s', 'pirate-rogue'), '<a href="' . esc_url('https://github.com/Piratenpartei/Pirate-Rogue/') . '" rel="nofollow">Pirate Rogue</a>','xwolf' ); ?>
 					</li>
 				<?php endif; ?>
 				</ul><!-- end .credit -->

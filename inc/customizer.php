@@ -150,7 +150,6 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'default'		     => '',
 		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
 	) );
-
 	$wp_customize->add_control( 'pirate_rogue_customlogofooter', array(
 		'label'			     => esc_html__( 'Show custom logo in footer', 'pirate-rogue'),
 		'section'		     => 'pirate_rogue_section_footer',
@@ -163,7 +162,6 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'default' 		       => 'header-fullwidth',
 		'sanitize_callback' 	     => 'pirate_rogue_sanitize_headerstyle',
 	) );
-
 	$wp_customize->add_control( 'pirate_rogue_headerstyle', array(
 		'label' 		   => esc_html__( 'Header Image Style', 'pirate-rogue'),
 		'description'		    => esc_html__( 'Choose the Header image style you like to use.', 'pirate-rogue'),
@@ -183,7 +181,6 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'default' 	        => 'sidebar-right',
 		'sanitize_callback'	=> 'pirate_rogue_sanitize_sidebar',
 	) );
-
 	$wp_customize->add_control( 'pirate_rogue_sidebar', array(
 		'label' 	     => esc_html__( 'Sidebar Position', 'pirate-rogue'),
 		'section' 	  => 'pirate_rogue_section_sidebar',
@@ -199,7 +196,6 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'default' 		    => 'sidebar-show',
 		'sanitize_callback' 	     => 'pirate_rogue_sanitize_sidebar_hide',
 	) );
-
 	$wp_customize->add_control( 'pirate_rogue_sidebar_hide', array(
 		'label' 	  => esc_html__( 'Sidebar Visibility', 'pirate-rogue'),
 		'section' 	  => 'pirate_rogue_section_sidebar',
@@ -219,7 +215,6 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'default'		    => '',
 		'sanitize_callback'	    => 'wp_kses_post',
 	) );
-
 	$wp_customize->add_control( 'pirate_rogue_credit', array(
 		'label'			    => esc_html__( 'Footer credit text', 'pirate-rogue'),
 		'description'		    => esc_html__( 'Customize the footer credit text. (HTML is allowed)', 'pirate-rogue'),
@@ -227,11 +222,11 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'type'			    => 'text',
 		'priority'		    => 6,
 	) );
+        
         $wp_customize->add_setting( 'pirate_rogue_author', array(
 		'default'		    => '',
 		'sanitize_callback'	    => 'wp_kses_post',
 	) );
-
 	$wp_customize->add_control( 'pirate_rogue_author', array(
 		'label'			    => esc_html__( 'Author', 'pirate-rogue'),
 		'description'		    => esc_html__( 'Default author of posts used for structured data', 'pirate-rogue'),
@@ -245,7 +240,6 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'default'		    => '',
 		'sanitize_callback'	    => 'wp_kses_post',
 	) );
-
 	$wp_customize->add_control( 'pirate_rogue_google_wmt_verification_text', array(
 		'label'			    => esc_html__( 'Google Site Verification', 'pirate-rogue'),
 		'description'		    => __( 'For verification of your website as property owner at <a target="_blank" href="https://www.google.com/webmasters/tools/home">Google Webmaster Tools</a>, use the alternative method and copy the <b>content</b>-Attribut of the given HTML-Tag. <br>Insert this string here. <br>'
@@ -261,7 +255,6 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'default'		     => '',
 		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
 	) );
-
 	$wp_customize->add_control( 'pirate_rogue_hidesearch', array(
 		'label'		     => esc_html__( 'Hide search in Header', 'pirate-rogue'),
 		'section'	     => 'pirate_rogue_section_header',
@@ -269,16 +262,12 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'priority'	     => 1,
 	) );
 
-        
-        
-        
-        
+      
 
 	$wp_customize->add_setting( 'pirate_rogue_socialmedia_style', array(
 		'default' 	         => 'colorful',
 		'sanitize_callback'      => 'pirate_rogue_sanitize_socialmedia_style',
 	) );
-
 	$wp_customize->add_control( 'pirate_rogue_socialmedia_style', array(
 		'label'         => esc_html__( 'Social Media Icon Style', 'pirate-rogue'),
 		'description'	=> esc_html__( 'Choose the color of the social media icons (needs a items in Social media menu position). Notice: This will also chance the color of the search icon and the hamburger overlay icon.', 'pirate-rogue'),
@@ -568,6 +557,17 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	) );
 	$wp_customize->add_control( 'pirate_rogue_devider_hideimage', array(
 		'label'		     => esc_html__( 'Hide pirate image at devider', 'pirate-rogue'),
+		'section'	     => 'pirate_rogue_section_misc',
+		'type'		     => 'checkbox',
+		'priority'	     => 8,
+	) );
+        
+        $wp_customize->add_setting( 'pirate_rogue_shadow_images', array(
+		'default'		     => '',
+		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
+	) );
+	$wp_customize->add_control( 'pirate_rogue_shadow_images', array(
+		'label'		     => esc_html__( 'Add shadow to images in content', 'pirate-rogue'),
 		'section'	     => 'pirate_rogue_section_misc',
 		'type'		     => 'checkbox',
 		'priority'	     => 8,
@@ -1717,15 +1717,17 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'type' 		    => 'textarea',
 	) );
        
-	// Pirate Crew Settings
+	// Pirate Crew Settings 
         //*********************************************************************
+        include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
        if ( is_plugin_active( 'pirate-crew/pirate-crew.php' ) || is_plugin_active( 'Pirate-Crew/pirate-crew.php' ) ) {
 	    // Add Panel for Plugin Pirate Crew
 	    $wp_customize->add_section( 'plugin_pirate_crew_setting', array(
-		'priority' 	               => 9,
-		'theme_supports' 	        => '',
-		'title' 	                 => esc_html__('Pirate Crew Settings', 'pirate-rogue'),
-		'panel' 		       => 'pirate_rogue_themeoptions',
+		'priority'      => 300,
+		'theme_supports'=> '',
+		'title'         => esc_html__('Pirate Crew Settings', 'pirate-rogue'),
+		'panel'         => 'pirate_rogue_themeoptions',
 
 	    ) );
 	    
@@ -1733,7 +1735,6 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'default'		    => '',
 		'sanitize_callback'	    => 'wp_kses_post',
 	    ) );
-
 	    $wp_customize->add_control( 'pirate_rogue_crewmember-title', array(
 		    'label'		    => esc_html__( 'Title', 'pirate-rogue'),
 		    'description'	    => esc_html__( 'Sets a title above Pirate Crew Member Infopanel', 'pirate-rogue'),
@@ -1742,13 +1743,10 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		    'priority'		    => 1,
 	    ) );
 	    
-	    
-	    
 	    $wp_customize->add_setting( 'pirate_rogue_crewmember-position', array(
 		'default' 		=> 'sidebar',
 		'sanitize_callback' 	=> 'pirate_rogue_sanitize_pirate_crew_member_position',
 	    ) );
-
 	    $wp_customize->add_control( 'pirate_rogue_crewmember-position', array(
 		'label' 		=> esc_html__( 'Position', 'pirate-rogue'),
 		'description'		=> esc_html__( 'Sets the position to display the pirate crew member card.', 'pirate-rogue'),
@@ -1766,7 +1764,6 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'default' 		=> 'style3',
 		'sanitize_callback' 	=> 'pirate_rogue_sanitize_pirate_crew_member_style',
 	    ) );
-
 	    $wp_customize->add_control( 'pirate_rogue_crewmember-style', array(
 		'label' 		=> esc_html__( 'Styling', 'pirate-rogue'),
 		'description'		=> esc_html__( 'Sets the position to display the pirate crew member card.', 'pirate-rogue'),
@@ -1786,7 +1783,6 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'default' 		=> 'card',
 		'sanitize_callback' 	=> 'pirate_rogue_sanitize_pirate_crew_member_format',
 	    ) );
-
 	    $wp_customize->add_control( 'pirate_rogue_crewmember-format', array(
 		'label' 		=> esc_html__( 'Format', 'pirate-rogue'),
 		'description'		=> esc_html__( 'Sets the format to display the pirate crew member card.', 'pirate-rogue'),

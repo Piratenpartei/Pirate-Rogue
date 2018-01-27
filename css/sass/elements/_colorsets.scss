@@ -1081,18 +1081,24 @@ blockquote {
       $color:      nth($key, 2); 
    
     .main-meta-textcol-hover-#{$name} {
+
         &.single-post .entry-header .entry-cats a:hover,
         &.blog .featured-slider .entry-cats a:hover, 
         &.blog .featured-slider .entry-meta a:hover,
         &.blog .hentry .entry-cats a:hover,
         .pagination .nav-links span.page-numbers:hover, 
-        .pagination .nav-links a.page-numbers:hover {
+        .pagination .nav-links a.page-numbers:hover,
+        .featured-slider button.slick-arrow:focus::after, 
+        .featured-slider button.slick-arrow:hover::after {
              color: $color;
         }
     }
     .main-meta-textcol-#{$name} {
-        .entry-meta, .entry-cats,
-        .entry-meta a, .entry-cats a,
+
+        .entry-meta, 
+        .entry-cats,
+        .slider-text .entry-meta a, 
+        .slider-text .entry-cats a,
         .section-one-column-one .entry-cats a,
         .section-three-column-one .entry-cats a,
         #front-section-four .entry-cats a,
@@ -1130,6 +1136,12 @@ blockquote {
         .pagination .nav-links a.page-numbers {
             background: $color; 
         }
+        .gallery .slick-prev:before, 
+        .gallery .slick-next:before,
+        .gallery .slick-dots li.slick-active button:before {
+            color: $color;
+        }
+        
     }
     .main-meta-bgcol-hover-#{$name} {
         .entry-cats a:hover,

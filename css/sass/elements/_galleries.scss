@@ -25,13 +25,17 @@
 	    height: auto;
 	}
       }
-  dl, dt {
-    margin: 0;
-  }
-  br + br {
-    display: none;
-  }
-
+    dl, dt {
+      margin: 0;
+    }
+    br + br {
+      display: none;
+    }
+    
+}
+.shadow-images .entry-content .gallery img {
+    width: 100%;
+    box-shadow: 2px 0px 10px 0px rgba(0,0,0,0.8);
 }
 
 

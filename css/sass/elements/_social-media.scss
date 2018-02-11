@@ -157,9 +157,7 @@
                 &[href*="linkedin.com"]:hover {
                     background-color: darken(#0077b5,20%);
                 }
-		&[href^="mailto"] {
-		    @extend .fa-envelope-o;
-		}
+		
 		&[href*="pinterest.com"] {
 		    @extend .fa-pinterest;
                     background-color: #bd081c;
@@ -282,6 +280,21 @@
                 &[href*="youtube.com"]:focus,
                 &[href*="youtube.com"]:hover {
                     background-color: darken(#162221,20%)
+                }
+                
+                &[href^="mailto"] {
+		    @extend .fa-envelope-o;
+		}
+                // Mailinglists
+                &[href*="lists.piratenpartei.de"] {
+		    @extend .fa-envelope;
+                    background-color: #ff8800;
+                    border-color: #ff8800;
+                    color: white;
+		}
+                &[href*="lists.piratenpartei.de"]:focus,
+                &[href*="lists.piratenpartei.de"]:hover {
+                    background-color: darken(#ff8800,20%)
                 }
 	    }
 	}

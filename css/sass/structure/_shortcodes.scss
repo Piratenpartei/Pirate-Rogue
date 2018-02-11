@@ -320,15 +320,29 @@
     }
     .two-columns-one {
        margin: 0 1.5% 0 0;
-       &.last {
-	 margin: 0 1.5% 0;
+       
+        &.last {
+	 margin-right: 0;
+       }
+    }
+    .three-columns-two {
+       margin: 0 1.5% 0 0;
+        &.last {
+	 margin-right: 0;
        }
     }
     .three-columns-one {
        margin: 0 3% 0 0;
+       
+        &.last {
+	 margin-right: 0;
+       }
     }
     .four-columns-one {
        margin: 0 3.5% 0 0;
+       &.last {
+	 margin-right: 0;
+       }
     }
 }
 

@@ -101,14 +101,19 @@ p.site-description {
     }
 }
 
-.no-header-text {
-    h1.site-title,
-    p.site-title,
+.no-header-text,
+.no-header-subtitle {
     p.site-description {
 	@extend .unsichtbar;
     }
 }
-
+.no-header-text,
+.no-header-title {
+    h1.site-title,
+    p.site-title {
+	@extend .unsichtbar;
+    }
+}
 
 
 @media screen and (min-width: $breakpoint-1060) {

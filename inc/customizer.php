@@ -312,20 +312,31 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		'type'		     => 'checkbox',
 		'priority'	     => 4,
 	) );
-    // Site Title - Custom Title and Logo
-	$wp_customize->add_setting( 'pirate_rogue_hidetagline', array(
+
+        // Site Title  if Logo is active
+	$wp_customize->add_setting( 'pirate_rogue_show_titleonlogo', array(
 		'default'		     => '',
 		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
 	) );
-
-	$wp_customize->add_control( 'pirate_rogue_hidetagline', array(
-		'label'			     => esc_html__( 'Hide tagline only', 'pirate-rogue'),
+	$wp_customize->add_control( 'pirate_rogue_show_titleonlogo', array(
+		'label'			     => esc_html__( 'Show website title even if logo is present.', 'pirate-rogue'),
 		'section'		     => 'pirate_rogue_section_header',
 		'type'			     => 'checkbox',
-		'priority'		     => 22,
 	) );
+        // Site Description if Logo is active
+	$wp_customize->add_setting( 'pirate_rogue_show_labelonlogo', array(
+		'default'		     => '',
+		'sanitize_callback' 	     => 'pirate_rogue_sanitize_checkbox',
+	) );
+	$wp_customize->add_control( 'pirate_rogue_show_labelonlogo', array(
+		'label'			     => esc_html__( 'Show website subtitle even if logo is present.', 'pirate-rogue'),
+		'section'		     => 'pirate_rogue_section_header',
+		'type'			     => 'checkbox',
+	) );
+        
 
-        	
+        
+        
 	$wp_customize->add_setting( 'pirate_rogue_fallback_thumbnail', array(
 		'default'		=> '',
 		'sanitize_callback'	=> 'wp_kses_post',

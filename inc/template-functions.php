@@ -139,10 +139,16 @@
               $classes[] = 'no-sidebar';
               // No diebadr for 404 pages due to danger of loops cause of 404-files in sidebar :)
          } 
-
         $logo =  pirate_rogue_get_custom_logo();
-        if ( !empty($logo) ) {
-                $classes[] = 'no-header-text';
+        if (( !empty($logo) ) && ( has_custom_logo() )) {
+                if (!get_theme_mod('pirate_rogue_show_labelonlogo') && !get_theme_mod('pirate_rogue_show_titleonlogo')) {
+                    $classes[] = 'no-header-text';                    
+                } elseif (get_theme_mod('pirate_rogue_show_labelonlogo')) {
+                    $classes[] = 'no-header-title';
+                } elseif (get_theme_mod('pirate_rogue_show_titleonlogo')) {   
+                    $classes[] = 'no-header-subtitle';
+                }
+
         }
              
 

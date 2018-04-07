@@ -33,10 +33,10 @@
 ?>
 
 <section id="front-section-four" class="front-section cf">
-	<?php if ( '' != get_theme_mod( 'uku_front_section_four_title' ) && '' != get_theme_mod( 'uku_front_section_four_cat') ) : ?>
-		<h3 class="front-section-title"><?php echo esc_html( get_theme_mod( 'uku_front_section_four_title' ) ); ?><span><a class="all-posts-link" href="<?php echo esc_url( $category_link ); ?>"><?php esc_html_e('All posts', 'pirate-rogue') ?></a></span></h3>
-	<?php elseif ( '' != get_theme_mod( 'uku_front_section_four_title' ) && '' != get_theme_mod( 'uku_front_section_four_tag' ) ) : ?>
-		<h3 class="front-section-title"><?php echo esc_html( get_theme_mod( 'uku_front_section_four_title' ) ); ?><span><a class="all-posts-link" href="<?php echo esc_url( $tag_link ); ?>"><?php esc_html_e('All posts', 'pirate-rogue') ?></a></span></h3>
+	<?php if ( '' != get_theme_mod( 'pirate_rogue_front_section_four_title' ) && '' != get_theme_mod( 'uku_front_section_four_cat') ) : ?>
+		<h3 class="front-section-title"><?php echo esc_html( get_theme_mod( 'pirate_rogue_front_section_four_title' ) ); ?><span><a class="all-posts-link" href="<?php echo esc_url( $category_link ); ?>"><?php esc_html_e('All posts', 'pirate-rogue') ?></a></span></h3>
+	<?php elseif ( '' != get_theme_mod( 'pirate_rogue_front_section_four_title' ) && '' != get_theme_mod( 'uku_front_section_four_tag' ) ) : ?>
+		<h3 class="front-section-title"><?php echo esc_html( get_theme_mod( 'pirate_rogue_front_section_four_title' ) ); ?><span><a class="all-posts-link" href="<?php echo esc_url( $tag_link ); ?>"><?php esc_html_e('All posts', 'pirate-rogue') ?></a></span></h3>
 	<?php endif; ?>
 
 	<?php if($uku_section_four_query->have_posts()) : ?>

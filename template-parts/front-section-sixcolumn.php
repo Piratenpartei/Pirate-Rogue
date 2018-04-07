@@ -9,10 +9,10 @@
 ?>
 
 <?php
-$postnumber = get_theme_mod('uku_front_section_sixcolumn_number');
-$posttag = get_theme_mod('uku_front_section_sixcolumn_tag');
+$postnumber = get_theme_mod('pirate_rogue_front_section_sixcolumn_number');
+$posttag = get_theme_mod('pirate_rogue_front_section_sixcolumn_tag');
 $tag_link = get_tag_link( $posttag );
-$postcat = get_theme_mod('uku_front_section_sixcolumn_cat');
+$postcat = get_theme_mod('pirate_rogue_front_section_sixcolumn_cat');
 $category_link = get_category_link($postcat);
 
 $uku_section_sixcolumn_query = new WP_Query( array(
@@ -32,10 +32,10 @@ if (!isset($thumbfallbackid)) {
 
 <section id="front-section-sixcolumn" class="front-section cf">
 
-	<?php if ( '' != get_theme_mod( 'uku_front_section_sixcolumn_title' ) && '' != get_theme_mod( 'uku_front_section_sixcolumn_cat') ) : ?>
-		<h3 class="front-section-title"><?php echo esc_html( get_theme_mod( 'uku_front_section_sixcolumn_title' ) ); ?><span><a class="all-posts-link" href="<?php echo esc_url( $category_link ); ?>"><?php esc_html_e('All posts', 'pirate-rogue') ?></a></span></h3>
-	<?php elseif ( '' != get_theme_mod( 'uku_front_section_sixcolumn_title' ) && '' != get_theme_mod( 'uku_front_section_sixcolumn_tag' ) ) : ?>
-		<h3 class="front-section-title"><?php echo esc_html( get_theme_mod( 'uku_front_section_sixcolumn_title' ) ); ?><span><a class="all-posts-link" href="<?php echo esc_url( $tag_link ); ?>"><?php esc_html_e('All posts', 'pirate-rogue') ?></a></span></h3>
+	<?php if ( '' != get_theme_mod( 'pirate_rogue_front_section_sixcolumn_title' ) && '' != get_theme_mod( 'pirate_rogue_front_section_sixcolumn_cat') ) : ?>
+		<h3 class="front-section-title"><?php echo esc_html( get_theme_mod( 'pirate_rogue_front_section_sixcolumn_title' ) ); ?><span><a class="all-posts-link" href="<?php echo esc_url( $category_link ); ?>"><?php esc_html_e('All posts', 'pirate-rogue') ?></a></span></h3>
+	<?php elseif ( '' != get_theme_mod( 'pirate_rogue_front_section_sixcolumn_title' ) && '' != get_theme_mod( 'pirate_rogue_front_section_sixcolumn_tag' ) ) : ?>
+		<h3 class="front-section-title"><?php echo esc_html( get_theme_mod( 'pirate_rogue_front_section_sixcolumn_title' ) ); ?><span><a class="all-posts-link" href="<?php echo esc_url( $tag_link ); ?>"><?php esc_html_e('All posts', 'pirate-rogue') ?></a></span></h3>
 	<?php endif; ?>
 
 	<div class="section-sixcolumn-postwrap columns-wrap">

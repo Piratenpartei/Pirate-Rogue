@@ -71,8 +71,8 @@ function pirate_rogue_get_tag_ID($tag_name) {
     }  
     $title = $title ?  esc_attr( $title ) : '';
     if (empty($title)) {
-        if ( '' != get_theme_mod( 'uku_front_section_two_title' )) {
-            $title = esc_html( get_theme_mod( 'uku_front_section_two_title' ) );
+        if ( '' != get_theme_mod( 'pirate_rogue_front_section_two_title' )) {
+            $title = esc_html( get_theme_mod( 'pirate_rogue_front_section_two_title' ) );
         }
     }       
     

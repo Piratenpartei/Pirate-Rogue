@@ -161,7 +161,7 @@
         if ('' != get_theme_mod( 'uku_front_section_fourcolumn_excerpt' ) ) { 
             $classes[] = 'front_section_fourcolumn_excerpt';
         } 
-        if ('' != get_theme_mod( 'uku_front_section_sixcolumn_excerpt' ) ) {
+        if ('' != get_theme_mod( 'pirate_rogue_front_section_sixcolumn_excerpt' ) ) {
             $classes[] = 'front_section_sixcolumn_excerpt';
         } 
         if ('' != get_theme_mod( 'uku_front_hidedate' ) ) {

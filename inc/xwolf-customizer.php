@@ -64,7 +64,7 @@ function xwolf_customizer_settings( $wp_customize ) {
     $definedtypes = array(
 	"text", "checkbox", "radio", "select", "textarea", "dropdown-pages", "email", "url", "number", "hidden", "date",
 	    // defaults
-	"bool", "html", "image", "multiselect", "range", "category", "tag", "toogle-switch", "colorlist-radio"
+	"bool", "html", "image", "multiselect", "range", "category", "tag", "toggle", "toggle-switch", "colorlist-radio"
 	    // special settings
     );
   
@@ -139,7 +139,7 @@ function xwolf_customizer_settings( $wp_customize ) {
 			$section =  $tab."-elsesection";
 		    }
 		    
-		    $title = $desc = $label = $type = $notifplugin = $ifplugin = '';
+		    $default = $title = $desc = $label = $type = $notifplugin = $ifplugin = '';
 		    $optionid = esc_html($field); 
 		    		    
 		    if (isset($value['title']))
@@ -159,7 +159,10 @@ function xwolf_customizer_settings( $wp_customize ) {
 		    
 		    $type = $value['type'];
 		    if (!in_array($type, $definedtypes)) {
-			$type = 'text';
+			
+                        $value = "UNDEFINED TYP";
+                        $label = $label . "<br>". "UNDEFINED TYP: $type";
+                        $type = 'text';
 		    }
                     $plugin_break = false;
                     
@@ -188,7 +191,7 @@ function xwolf_customizer_settings( $wp_customize ) {
 				    'type' 		=> 'checkbox',
 				    
 			    ) );
-			} elseif  ($type == 'toggle-switch') {
+			} elseif  (($type == 'toggle-switch') || ($type == 'toggle')) {
 			    $wp_customize->add_setting( $optionid, array(
 					    'default' => 0,
 					    'transport' => 'refresh',
@@ -617,7 +620,29 @@ if (class_exists('WP_Customize_Control')) {
         }
     }
 }
+/*-----------------------------------------------------------------------------------*/
+/* Sanitize Checkboxes.
+/*-----------------------------------------------------------------------------------*/
+function xwolf_sanitize_customizer_bool( $input ) {
+	if ( 1 == $input ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+function xwolf_sanitize_customizer_toggle_switch( $input ) {
+	if ( true == $input ) {
+		return true;
+	} else {
+		return false;
+	}
+}
 
+function xwolf_sanitize_customizer_number( $number, $setting ) {
+  $number = absint( $number );
+
+  return ( $number ? $number : $setting->default );
+}
 /*--------------------------------------------------------------------*/
 /* EOCustomizer
 /*--------------------------------------------------------------------*/

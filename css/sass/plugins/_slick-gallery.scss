@@ -4,7 +4,7 @@
 .gallery {
 
     .slick-loading .slick-list {
-        background: #fff url('../img/ajax-loader.gif') center center no-repeat;
+        background: #fff url('./img/ajax-loader.gif') center center no-repeat;
     }
 
     /* Arrows */
@@ -145,6 +145,9 @@
                     -webkit-font-smoothing: antialiased;
                     -moz-osx-font-smoothing: grayscale;
                 }
+            }
+            &:after {
+                display: none;
             }
         }
         li.slick-active button:before {

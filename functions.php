@@ -120,11 +120,14 @@ function pirate_rogue_base_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
+        $theme_data = wp_get_theme();
+        $theme_version = $theme_data->Version;
+
 	// Loads stylesheets.
-	wp_enqueue_style( 'pirate-rogue-style', get_stylesheet_uri(), array(), '20171229' );
+	wp_enqueue_style( 'pirate-rogue-style', get_stylesheet_uri(), array(), $theme_version );
         
         // Loads Custom JavaScript functionality
-        wp_enqueue_script( 'pirate-rogue-script', get_template_directory_uri() . '/js/functions.min.js', array( 'jquery' ), '20171229', true );
+        wp_enqueue_script( 'pirate-rogue-script', get_template_directory_uri() . '/js/functions.min.js', array( 'jquery' ),  $theme_version, true );
         wp_localize_script( 'pirate-rogue-script', 'screenReaderText', array(
                 'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'pirate-rogue') . '</span>',
                 'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'pirate-rogue') . '</span>',
@@ -238,7 +241,7 @@ function pirate_rogue_customize_css() {
 	    echo '</style>'."\n";
 	}
 }
-add_action( 'wp_head', 'pirate_rogue_customize_css');
+// add_action( 'wp_head', 'pirate_rogue_customize_css');
 /*-----------------------------------------------------------------------------------*/
 /* Add Google Webmaster Tools Verification
 /*-----------------------------------------------------------------------------------*/

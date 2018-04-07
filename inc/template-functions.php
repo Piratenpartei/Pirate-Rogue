@@ -66,10 +66,16 @@
 	 if ('slider-boxed' == get_theme_mod( 'pirate_rogue_sliderstyle' ) ) {
 		 $classes[] = 'slider-boxed';
 	 }
+         if ( get_theme_mod( 'pirate_rogue_slider_autoplay' ) ) {
+		 $classes[] = 'slider-autoplay';
+	 }
+         
+         
+         
 	 if ('slider-fullscreen' == get_theme_mod( 'pirate_rogue_sliderstyle' ) ) {
 		 $classes[] = 'slider-fullscreen';
 	 }
-	 if ('slider-fade' == get_theme_mod( 'uku_slideranimation' ) ) {
+	 if ('slider-fade' == get_theme_mod( 'pirate_rogue_slideranimation' ) ) {
 		 $classes[] = 'slider-fade';
 	 }
 	 if ('header-boxed' == get_theme_mod( 'pirate_rogue_headerstyle' ) ) {
@@ -116,6 +122,10 @@
 	 if ( get_post_meta( get_the_ID(), 'slider-on', true ) ) {
 		 $classes[] = 'slider-on';
 	 }
+         
+         
+         
+         
 	 if ( get_post_meta( get_the_ID(), 'headerimg-on', true ) ) {
 		 $classes[] = 'headerimg-on';
 	 }

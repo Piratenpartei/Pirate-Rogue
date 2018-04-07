@@ -139,7 +139,8 @@ function xwolf_customizer_settings( $wp_customize ) {
 			$section =  $tab."-elsesection";
 		    }
 		    
-		    $default = $title = $desc = $label = $type = $notifplugin = $ifplugin = '';
+		    $default = $title = $desc = $label = $type = '';
+                    $notifplugin = $ifplugin = $ifclassexists = $iffunctionexists = '';
 		    $optionid = esc_html($field); 
 		    		    
 		    if (isset($value['title']))
@@ -152,6 +153,10 @@ function xwolf_customizer_settings( $wp_customize ) {
 			$notifplugin = $value['notifplugin'];
                     if (isset($value['ifplugin']))
 			$ifplugin = $value['ifplugin'];
+                    if (isset($value['ifclass']))
+			$ifclassexists = $value['ifclass'];
+                    if (isset($value['iffunction']))
+			$iffunctionexists = $value['iffunction'];
 		    if (isset($value['default'])) {
 			$default = $value['default'];   
 		    }	
@@ -160,8 +165,8 @@ function xwolf_customizer_settings( $wp_customize ) {
 		    $type = $value['type'];
 		    if (!in_array($type, $definedtypes)) {
 			
-                        $value = "UNDEFINED TYP";
-                        $label = $label . "<br>". "UNDEFINED TYP: $type";
+                        $default = "UNDEFINED TYP";
+                        $label = $label . " ( UNDEFINED TYP: $type ) ";
                         $type = 'text';
 		    }
                     $plugin_break = false;
@@ -175,6 +180,16 @@ function xwolf_customizer_settings( $wp_customize ) {
                         if ( !is_plugin_active( $ifplugin ) ) {
 			    $plugin_break = true;
 			}                        
+                    }
+                    if ($ifclassexists) {
+                        if (!class_exists($ifclassexists)) {
+			    $plugin_break = true;
+			}
+                    }
+                    if ($iffunctionexists) {
+                        if (!function_exists($iffunctionexists)) {
+			    $plugin_break = true;
+			}
                     }
 		    if ($plugin_break==false) {			
 			if ($type == 'bool') {    

@@ -732,12 +732,12 @@ function pirate_rogue_customize_register( $wp_customize ) {
 		),
 	) );
 
-	$wp_customize->add_setting( 'uku_slideranimation', array(
+	$wp_customize->add_setting( 'pirate_rogue_slideranimation', array(
 		'default' 		=> 'slider-slide',
 		'sanitize_callback' 	=> 'pirate_rogue_sanitize_slideranimation',
 	) );
 
-	$wp_customize->add_control( 'uku_slideranimation', array(
+	$wp_customize->add_control( 'pirate_rogue_slideranimation', array(
 		'label' 		=> esc_html__( 'Slider Image Animation', 'pirate-rogue'),
 		'description'		=> esc_html__( 'Choose, if you want the slider images to fade or slide from one image to the next.', 'pirate-rogue'),
 		'section' 		=> 'pirate_rogue_slider',
@@ -1974,11 +1974,11 @@ function pirate_rogue_sanitize_sliderstyle( $pirate_rogue_sliderstyle ) {
 /*-----------------------------------------------------------------------------------*/
 /* Sanitize Featured Slider image animation.
 /*-----------------------------------------------------------------------------------*/
-function pirate_rogue_sanitize_slideranimation( $uku_slideranimation ) {
-	if ( ! in_array( $uku_slideranimation, array( 'slider-slide', 'slider-fade' ) ) ) {
-		$uku_slideranimation = 'slider-slide';
+function pirate_rogue_sanitize_slideranimation( $pirate_rogue_slideranimation ) {
+	if ( ! in_array( $pirate_rogue_slideranimation, array( 'slider-slide', 'slider-fade' ) ) ) {
+		$pirate_rogue_slideranimation = 'slider-slide';
 	}
-	return $uku_slideranimation;
+	return $pirate_rogue_slideranimation;
 }
 
 /*-----------------------------------------------------------------------------------*/

@@ -256,7 +256,7 @@ $pirate_rogue_options = array(
             
             'pirate_rogue_section_metadata'  => array(
                    'type'    => 'section',
-                   'title'   =>  esc_html__( 'Metadata', 'pirate-rogue'),
+                   'title'   =>  esc_html__( 'Metadata and global settings', 'pirate-rogue'),
                 ),
           
             'pirate_rogue_author'=> array(
@@ -272,7 +272,24 @@ $pirate_rogue_options = array(
                         . 'Example: If given: <br><code>&lt;meta name="google-site-verification" content="BBssyCpddd8" /&gt;</code><br> then insert <code>BBssyCpddd8</code> ', 'pirate-rogue'),
 		     'parent'  => 'pirate_rogue_section_metadata'
             ), 
-            
+            'pirate_rogue_devider_hideimage' => array(
+                  'type'    => 'toggle-switch',
+                  'title'   => esc_html__( 'Hide pirate image at devider', 'pirate-rogue'),
+                  'default' => false,
+		  'parent'  => 'pirate_rogue_section_metadata'
+            ),
+            'pirate_rogue_shadow_images' => array(
+                  'type'    => 'toggle-switch',
+                  'title'   => esc_html__( 'Add shadow to images in content', 'pirate-rogue'),
+                  'default' => false,
+		  'parent'  => 'pirate_rogue_section_metadata'
+            ),
+            'pirate_rogue_all_hideauthor' => array(
+                  'type'    => 'toggle-switch',
+                  'title'   => esc_html__( 'Hide author name on all pages', 'pirate-rogue'),
+                  'default' => false,
+		  'parent'  => 'pirate_rogue_section_metadata'
+            ),
             
             
             'pirate_rogue_section_comments'  => array(
@@ -315,25 +332,7 @@ $pirate_rogue_options = array(
                    'type'    => 'section',
                    'title'   =>  esc_html__( 'Miscellaneous', 'pirate-rogue'),
             ),
-            'pirate_rogue_devider_hideimage' => array(
-                  'type'    => 'toggle-switch',
-                  'title'   => esc_html__( 'Hide pirate image at devider', 'pirate-rogue'),
-                  'default' => false,
-		  'parent'  => 'pirate_rogue_section_misc'
-            ),
-            'pirate_rogue_shadow_images' => array(
-                  'type'    => 'toggle-switch',
-                  'title'   => esc_html__( 'Add shadow to images in content', 'pirate-rogue'),
-                  'default' => false,
-		  'parent'  => 'pirate_rogue_section_misc'
-            ),
-            'pirate_rogue_all_hideauthor' => array(
-                  'type'    => 'toggle-switch',
-                  'title'   => esc_html__( 'Hide author name on all pages', 'pirate-rogue'),
-                  'default' => false,
-		  'parent'  => 'pirate_rogue_section_misc'
-            ),
-            
+                       
             'pirate_rogue_section_coloroverwrite'  => array(
                    'type'    => 'section',
                    'title'   =>  esc_html__( 'Colors', 'pirate-rogue'),
@@ -501,34 +500,25 @@ $pirate_rogue_options = array(
                 'parent'    => 'pirate_rogue_section_coloroverwrite'
             ),
             
-            'pirate_rogue_customcss'  => array(
-                   'type'    => 'section',
-                   'title'   =>  esc_html__( 'Custom CSS', 'pirate-rogue'),
-            ),
-             'pirate_rogue_custom_css_input'=> array(
-		'type'    => 'textarea',
-		'title'   => esc_html__( 'Custom CSS', 'pirate-rogue'),
-		'label'   => esc_html__( 'Add custom CSS here. Please consider using a child theme for bigger CSS customizations. Also remember that you will loose all custom CSS changes made here, if you change the theme.', 'pirate-rogue'),
-		'parent'  => 'pirate_rogue_customcss'
-            ), 
+            
             
             'plugin_pirate_crew_setting'  => array(
                 'type'      => 'section',
                 'title'     =>  esc_html__('Pirate Crew Settings', 'pirate-rogue'),
-                'ifplugin'  => 'pirate-crew/pirate-crew.php'
+               
             ),
             'pirate_rogue_crewmember-title'=> array(
 		'type'      => 'text',
 		'title'     => esc_html__( 'Title', 'pirate-rogue'),
 		'label'     => esc_html__( 'Sets a title above Pirate Crew Member Infopanel', 'pirate-rogue'),
 		'parent'    => 'plugin_pirate_crew_setting',
-                'ifplugin'  => 'pirate-crew/pirate-crew.php'
+                'ifclass'  => 'Pirate_Crew',
             ),
             'pirate_rogue_crewmember-position'=> array(
 		'title'     => esc_html__( 'Position', 'pirate-rogue'),
 		'label'     => esc_html__( 'Sets the position to display the pirate crew member card.', 'pirate-rogue'),
 		'parent'    => 'plugin_pirate_crew_setting',
-                'ifplugin'  => 'pirate-crew/pirate-crew.php',
+                'ifclass'  => 'Pirate_Crew',
                 'default'   => 'sidebar',
 		'type'      => 'select',
 		'liste'     => array(
@@ -540,7 +530,7 @@ $pirate_rogue_options = array(
 		'title'     => esc_html__( 'Styling', 'pirate-rogue'),
 		'label'     => esc_html__( 'Sets the styling of the pirate crew member card.', 'pirate-rogue'),
 		'parent'    => 'plugin_pirate_crew_setting',
-                'ifplugin'  => 'pirate-crew/pirate-crew.php',
+                'ifclass'  => 'Pirate_Crew',
                 'default'   => 'style3',
 		'type'      => 'select',
 		'liste'     => array(
@@ -554,7 +544,7 @@ $pirate_rogue_options = array(
 		'title'     => esc_html__( 'Format', 'pirate-rogue'),
 		'label'     => esc_html__( 'Sets the format to display the pirate crew member card.', 'pirate-rogue'),
 		'parent'    => 'plugin_pirate_crew_setting',
-                'ifplugin'  => 'pirate-crew/pirate-crew.php',
+                'ifclass'  => 'Pirate_Crew',
                 'default'   => 'card',
 		'type'      => 'select',
 		'liste'     => array(
@@ -625,35 +615,41 @@ $pirate_rogue_options = array(
             ),
             'pirate_rogue_featuredtag' => array(
 		'type'    => 'tag',
-		'title'   => esc_html__( 'Featured Slider tag', 'pirate-rogue'),
+		'title'   => esc_html__( 'Slider tag', 'pirate-rogue'),
 		'parent'  => 'pirate_rogue_slider'
             ),
             'pirate_rogue_featuredcat' => array(
 		'type'    => 'category',
-		'title'   => esc_html__( 'Featured Slider category', 'pirate-rogue'),
+		'title'   => esc_html__( 'Slider category', 'pirate-rogue'),
 		'parent'  => 'pirate_rogue_slider'
             ), 
             'pirate_rogue_sliderstyle' => array(
 		'type'    => 'select',
-		'title'   => esc_html__( 'Slider Style', 'pirate-rogue'),
+		'title'   => esc_html__( 'Style', 'pirate-rogue'),
                 'label'     => esc_html__( 'Choose the slider design.', 'pirate-rogue'),
 		'liste'   => array(
     			'slider-fullwidth'	=> esc_html__( 'fullwidth', 'pirate-rogue'),
 			'slider-boxed'		=> esc_html__( 'boxed', 'pirate-rogue'),
-			'slider-fullscreen'	=> esc_html__( 'fullscreen', 'pirate-rogue'),
+		//	'slider-fullscreen'	=> esc_html__( 'fullscreen', 'pirate-rogue'),
                 ),
 		'default' => 'slider-fullwidth',
                 'parent'  => 'pirate_rogue_slider'	    
             ),
-            'uku_slideranimation' => array(
+            'pirate_rogue_slideranimation' => array(
 		'type'      => 'select',
-		'title'     => esc_html__( 'Slider Image Animation', 'pirate-rogue'),
+		'title'     => esc_html__( 'Image Animation', 'pirate-rogue'),
                 'label'     => esc_html__( 'Choose, if you want the slider images to fade or slide from one image to the next.', 'pirate-rogue'),
 		'liste'     => array(
     			'slider-slide'	 => esc_html__( 'slide', 'pirate-rogue'),
 			'slider-fade' 	 => esc_html__( 'fade', 'pirate-rogue'),
                 ),
 		'default'   => 'slider-slide',
+                'parent'    => 'pirate_rogue_slider'	    
+            ),
+            'pirate_rogue_slider_autoplay' => array(
+		'type'      => 'toggle-switch',
+		'title'     => esc_html__( 'Autoplay', 'pirate-rogue'),
+		'default'   => 'false',
                 'parent'    => 'pirate_rogue_slider'	    
             ),
             'pirate_rogue_featured_slider_num' => array(

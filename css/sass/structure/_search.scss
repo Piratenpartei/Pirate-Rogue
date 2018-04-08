@@ -18,6 +18,10 @@
     span {
 	    @extend .screen-reader-text;
     }
+    
+    .no-js & {
+        display: none;
+    }
 }
 
 #footer-search {

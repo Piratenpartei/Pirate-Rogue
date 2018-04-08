@@ -703,7 +703,14 @@ $pirate_rogue_options = array(
 		'type'    => 'category',
 		'title'   => esc_html__( 'Section category', 'pirate-rogue'),
 		'parent'  => 'pirate_rogue_front_section_twocolumn'
-            ), 
+            ),
+            'pirate_rogue_front_section_twocolumn_number' => array(
+		'type'    => 'range',
+		'title'   => esc_html__( 'Number of posts', 'pirate-rogue'),
+                'min'     => 2,
+                'max'     => 16,
+		'parent'  => 'pirate_rogue_front_section_twocolumn'
+            ),
             
             'pirate_rogue_front_section_threecolumn'  => array(
                    'type'    => 'section',
@@ -737,26 +744,33 @@ $pirate_rogue_options = array(
 		'parent'  => 'pirate_rogue_front_section_threecolumn'
             ),
             
-            'pirate_rogue_front_section_four'  => array(
+            'pirate_rogue_front_section_fullwidth'  => array(
                    'type'    => 'section',
                    'title'   =>  esc_html__( 'Section Fullwidth', 'pirate-rogue'),
             ),
-            'pirate_rogue_front_section_four_title'=> array(
+            'pirate_rogue_front_section_fullwidth_title'=> array(
 		'type'    => 'text',
 		'title'   => esc_html__( 'Section Title (optional)', 'pirate-rogue'),
-		'parent'  => 'pirate_rogue_front_section_four'
+		'parent'  => 'pirate_rogue_front_section_fullwidth'
             ), 
-            'uku_front_section_four_tag' => array(
+            'pirate_rogue_front_section_fullwidth_tag' => array(
 		'type'    => 'tag',
 		'title'   => esc_html__( 'Section tag', 'pirate-rogue'),
-		'parent'  => 'pirate_rogue_front_section_four'
+		'parent'  => 'pirate_rogue_front_section_fullwidth'
             ),
-            'uku_front_section_four_cat' => array(
+            'pirate_rogue_front_section_fullwidth_cat' => array(
 		'type'    => 'category',
 		'title'   => esc_html__( 'Section category', 'pirate-rogue'),
-		'parent'  => 'pirate_rogue_front_section_four'
+		'parent'  => 'pirate_rogue_front_section_fullwidth'
             ),
-            
+            'pirate_rogue_front_section_fullwidth_number' => array(
+		'type'    => 'range',
+		'title'   => esc_html__( 'Number of posts', 'pirate-rogue'),
+                'min'     => 1,
+                'max'     => 3,
+                'default'   => 1,
+		'parent'  => 'pirate_rogue_front_section_fullwidth'
+            ),
             
             
             'pirate_rogue_front_section_about'  => array(
@@ -774,7 +788,8 @@ $pirate_rogue_options = array(
                     'label'         => esc_html__( 'The recommended image width for the About image is 580 pixels.', 'pirate-rogue'),
                     'flex_width'    => true, // Allow any width, making the specified value recommended. False by default.
                     'flex_height'   => true, // Require the resulting image to be exactly as tall as the height attribute (default).
-                    'width'         => 580,                    
+                    'width'         => 1440,   
+                    'height'        => 530,
                     'parent'        => 'pirate_rogue_front_section_about'
             ),
             'pirate_rogue_front_section_about_text' => array(
@@ -850,6 +865,7 @@ $pirate_rogue_options = array(
 		'title'   => esc_html__( 'Number of posts', 'pirate-rogue'),
                 'min'     => 4,
                 'max'     => 16,
+                'step'      => 2,
                 'default'   => 8,
 		'parent'  => 'pirate_rogue_front_section_fourcolumn'
             ),
@@ -883,9 +899,10 @@ $pirate_rogue_options = array(
             'pirate_rogue_front_section_sixcolumn_number' => array(
 		'type'    => 'range',
 		'title'   => esc_html__( 'Number of posts', 'pirate-rogue'),
-                'min'     => 1,
+                'min'     => 6,
                 'max'     => 24,
                 'default'   => 6,
+                'step'      => 2,
 		'parent'  => 'pirate_rogue_front_section_sixcolumn'
             ),
             'pirate_rogue_front_section_sixcolumn_excerpt'=> array(

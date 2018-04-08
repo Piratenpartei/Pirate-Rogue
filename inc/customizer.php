@@ -887,26 +887,26 @@ function pirate_rogue_customize_register( $wp_customize ) {
 	) ) );
 
 	// Uku Front Page - Sections 4 (Fullwidth)
-	$wp_customize->add_setting( 'uku_front_section_four_cat', array(
+	$wp_customize->add_setting( 'pirate_rogue_front_section_fullwidth_cat', array(
 		'default' 			           => '',
 			'sanitize_callback'	     => 'wp_kses_post',
 	) );
 
-	$wp_customize->add_control(new WP_Customize_Category_Control($wp_customize,'uku_front_section_four_cat', array(
+	$wp_customize->add_control(new WP_Customize_Category_Control($wp_customize,'pirate_rogue_front_section_fullwidth_cat', array(
 		'label' 							     => esc_html__( 'Section category', 'pirate-rogue'),
-		'settings' 						     => 'uku_front_section_four_cat',
+		'settings' 						     => 'pirate_rogue_front_section_fullwidth_cat',
 		'section' 						     => 'pirate_rogue_front_section_four',
 		'priority'						     => 1,
 	) ) );
 
-	$wp_customize->add_setting( 'uku_front_section_four_tag', array(
+	$wp_customize->add_setting( 'pirate_rogue_front_section_fullwidth_tag', array(
 		'default' 			           => '',
 		'sanitize_callback' 	     => 'wp_kses_post',
 	) );
 
-	$wp_customize->add_control(new WP_Customize_Tag_Control($wp_customize,'uku_front_section_four_tag', array(
+	$wp_customize->add_control(new WP_Customize_Tag_Control($wp_customize,'pirate_rogue_front_section_fullwidth_tag', array(
 		'label' 			             => esc_html__( 'Section tag', 'pirate-rogue'),
-		'settings' 						     => 'uku_front_section_four_tag',
+		'settings' 						     => 'pirate_rogue_front_section_fullwidth_tag',
 		'section' 						     => 'pirate_rogue_front_section_four',
 		'priority'						     => 2,
 	) ) );

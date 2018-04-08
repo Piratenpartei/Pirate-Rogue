@@ -97,7 +97,7 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 		<figure class="entry-thumbnail">
 			<?php 
                         the_post_thumbnail();
-                        $post_thumbnail_id = get_post_thumbnail_id( $id );
+                        $post_thumbnail_id = get_post_thumbnail_id( get_the_ID());
                         $imagedata =  pirate_rogue_get_image_attributs($post_thumbnail_id);
                         if (isset($imagedata) && isset($imagedata['credits'])) {
                             echo '<figcaption>'.$imagedata['credits'].'</figcaption>';

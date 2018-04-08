@@ -223,7 +223,7 @@ function xwolf_customizer_settings( $wp_customize ) {
 			    $wp_customize->add_setting( $optionid , array(
 				'default'     => $default,
 				'transport'   => 'refresh',
-				'sanitize_callback' => 'xwolf_sanitize_customizer_range'
+				'sanitize_callback' => 'xwolf_sanitize_customizer_number'
 			    ) );
 			    
 			    $min = 0;
@@ -563,7 +563,7 @@ if (class_exists('WP_Customize_Control')) {
 				    'name'              => '_customize-dropdown-categories-' . $this->id,
 				    'echo'              => 0,
 				    'show_option_none'  => __( '&mdash; Select &mdash;' ),
-				    'option_none_value' => '0',
+				    'option_none_value' => '',
 				    'selected'          => $this->value(),
 				)
 			    );

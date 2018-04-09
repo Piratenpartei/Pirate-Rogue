@@ -21,18 +21,28 @@ $blogname = get_bloginfo('name');
             <h1 class="screen-reader-text"><?php _e('More Informations','pirate-rogue'); ?></h1>
 		<?php
 		// Big Footer Feature Section
-                $image = get_theme_mod( 'pirate_rogue_footerfeature_image' );
-                if (!empty($image)) {
-                    $image = esc_url($image);
-                }
-		if (!empty($image) ) {
+                $footerfeature_image = get_theme_mod( 'pirate_rogue_footerfeature_image' );
+                $imagesrc = '';
+                 if (isset($footerfeature_image))  {
+                    if (is_int($footerfeature_image)) {
+                        $imagesrc = wp_get_attachment_image_src( $footerfeature_image, 'pirate-rogue-featured' )[0];
+                    } else {
+                       $imagesrc = esc_url( $footerfeature_image );
+                    }
+                }                
+		if ( (!empty($imagesrc)) 
+                        || ( '' !== get_theme_mod( 'pirate_rogue_footerfeature_text_big' ))
+                        || ( '' !== get_theme_mod( 'pirate_rogue_footerfeature_text_small' ))) {
 			get_template_part( 'template-parts/footer-feature' );
-		} ?>
+		} 
+                ?>
 
 		<div class="footer-wrap">
 			<?php // Footer Menus.
-			if ( has_nav_menu( 'footer-one' ) || has_nav_menu( 'footer-two' ) 
-                                || has_nav_menu( 'footer-three' ) || has_nav_menu( 'footer-four' ) ) : ?>
+			if ( has_nav_menu( 'footer-one' ) 
+                                || has_nav_menu( 'footer-two' ) 
+                                || has_nav_menu( 'footer-three' ) 
+                                || has_nav_menu( 'footer-four' ) ) : ?>
 				<?php get_template_part( 'template-parts/footermenus' ); ?>
 			<?php endif; ?>
                     

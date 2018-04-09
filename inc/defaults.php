@@ -203,7 +203,9 @@ $pirate_rogue_options = array(
             ),  
             'pirate_rogue_footerfeature_image' => array(
                 'type'    => 'image',
-                'title'   => esc_html__( 'Upload Featured image', 'pirate-rogue'),
+                'title'   => esc_html__( 'Featured image', 'pirate-rogue'),
+                'width' => 800,
+                'height'=> 450,
 		'parent'  => 'pirate_rogue_section_footer'
             ),
             'pirate_rogue_footerfeature_text_big'=> array(

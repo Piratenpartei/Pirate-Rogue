@@ -23,25 +23,34 @@
 	<?php } 
         
         $link = get_theme_mod( 'pirate_rogue_footerfeature_btn_link' );
-        $image = get_theme_mod( 'pirate_rogue_footerfeature_image' );
-        if (!empty($link)) {
-            $link = esc_url($link);
+        $footerfeature_image = get_theme_mod( 'pirate_rogue_footerfeature_image' );
+        $imagesrc = '';
+         if (isset($footerfeature_image))  {
+            if (is_int($footerfeature_image)) {
+                $imagesrc = wp_get_attachment_image_src( $footerfeature_image, 'pirate-rogue-featured' )[0];
+            } else {
+               $imagesrc = esc_url( $footerfeature_image );
+            }      
         }
-        if (!empty($image)) {
-            $image = esc_url($image);
-        }
-        if ($image) { ?>
+        ?>
             <div class="footer-feature-image fadein">
                 <?php if (!empty($link)) {
                     echo '<a href="'.$link.'">';
                 }
-                echo '<img src="'.$image.'" alt="'.$linktitle.'">';
+                if ($imagesrc) {
+                    echo '<img src="'.$imagesrc.'" alt="'.$linktitle.'">';
+                } elseif ( has_custom_logo() && '' != get_theme_mod( 'pirate_rogue_customlogofooter' ) ) {
+                    $custom_logo_id = get_theme_mod( 'custom_logo' );
+                    if ( $custom_logo_id ) {               
+                        echo wp_get_attachment_image( $custom_logo_id, 'pirate-rogue-featured', false );
+                    }
+                }
                 if (!empty($link)) {
                     echo '</a>';
                 }
                 ?>
             </div>
-        <?php } ?>
+      
 	<div class="footer-feature-textwrap">
 		<?php if ( '' !== get_theme_mod( 'pirate_rogue_footerfeature_text_big' ) ) : ?>
 			<p class="text-big"><?php echo wp_kses_post( get_theme_mod( 'pirate_rogue_footerfeature_text_big' ) ); ?></p>

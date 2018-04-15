@@ -284,16 +284,6 @@ ol.commentlist {
 }
 
 #commentform {
-  p {
-    &.comment-form-comment {
-      line-height: 0;
-    }
-    label, 
-    span, 
-    &.form-allowed-tags {
-      display: none;
-    }
-  }
   input {
     &#author, 
     &#email, 

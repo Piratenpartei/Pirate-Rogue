@@ -1,3 +1,12 @@
+
+// Thene Version
+$version:  '1.3.1';
+    // Theme Version
+    // First Digit:  Manual
+    // Second Digit: Branch Version
+    // Third Digit:  (Daily) Submit Version
+    
+$stylecomment_themeversion:	$version;
 //////////////////////////////////////////////////////////////////////////////
 // Colors
 //////////////////////////////////////////////////////////////////////////////
@@ -7,7 +16,6 @@ $color-third:			#698bc1; //
 $color-four:			#148f93;
 
 // Colorsets
-
 $customizer-colorset: (
     ("main", #ff8800, "Pirates DE"),
     ("second", #672082, "Pirates DE second CI Color"),

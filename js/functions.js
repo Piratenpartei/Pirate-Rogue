@@ -15,6 +15,7 @@
 	// Variables and DOM Caching.
 	var $body = $( 'body' ),
 		sliderFade = $body.hasClass( 'slider-fade' ),
+                sliderAutostart = $body.hasClass( 'slider-autoplay' ),
 		headerOffset,
 		menuTop = 0,
 		resizeTimer;
@@ -108,31 +109,34 @@
 	// Featured Posts Slider
 	if ( $.fn.slick ) {
 		$( document ).ready( function () {
-
-		if ( sliderFade ) {
+                    var $autostart = "false";
+                    if ( sliderAutostart ) {
+                        $autostart = "true";
+                    }
+                    if ( sliderFade ) {
 			$( '.featured-slider' ).slick( {
 				dots          : false,
 				slidesToShow  : 1,
-				autoplay      : false,
+				autoplay      : $autostart,
 				cssEase       : 'ease',
 				draggable     : true,
 				pauseOnHover  : false,
 				infinite      : true,
 				adaptiveHeight: true,
 				fade        : true,
-				} );
-		} else {
+			} );
+                    } else {
 			$( '.featured-slider' ).slick( {
 				dots          : false,
 				slidesToShow  : 1,
-				autoplay      : false,
+				autoplay      : $autostart,
 				cssEase       : 'ease',
 				draggable     : true,
 				pauseOnHover  : false,
 				infinite      : true,
 				adaptiveHeight: true,
-				} );
-			}
+			} );
+                    }
 		} );
 	}
 

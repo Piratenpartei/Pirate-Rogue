@@ -41,7 +41,7 @@ if ( '' != get_theme_mod( 'uku_front_section_threecolumn_tag' ) || '' != get_the
 
 <?php
 // Front Page Section 4 (Fullwidth)
-if ( '' != get_theme_mod( 'uku_front_section_four_tag' ) || '' != get_theme_mod( 'uku_front_section_four_cat' ) ) : ?>
+if ( '' != get_theme_mod( 'pirate_rogue_front_section_fullwidth_tag' ) || '' != get_theme_mod( 'pirate_rogue_front_section_fullwidth_cat' ) ) : ?>
 <?php get_template_part( 'template-parts/front-section-four' ); ?>
 <?php endif; ?>
 
@@ -105,7 +105,7 @@ if ( '' != get_theme_mod( 'uku_front_section_fourcolumn_tag' ) || '' != get_them
 
 <?php
 // Front Page Section 6-column
-if ( '' != get_theme_mod( 'uku_front_section_sixcolumn_tag' ) || '' != get_theme_mod( 'uku_front_section_sixcolumn_cat' ) ) : ?>
+if ( '' != get_theme_mod( 'pirate_rogue_front_section_sixcolumn_tag' ) || '' != get_theme_mod( 'pirate_rogue_front_section_sixcolumn_cat' ) ) : ?>
 <?php get_template_part( 'template-parts/front-section-sixcolumn' ); ?>
 <?php endif; ?>
 

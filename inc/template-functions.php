@@ -66,10 +66,16 @@
 	 if ('slider-boxed' == get_theme_mod( 'pirate_rogue_sliderstyle' ) ) {
 		 $classes[] = 'slider-boxed';
 	 }
+         if ( get_theme_mod( 'pirate_rogue_slider_autoplay' ) ) {
+		 $classes[] = 'slider-autoplay';
+	 }
+         
+         
+         
 	 if ('slider-fullscreen' == get_theme_mod( 'pirate_rogue_sliderstyle' ) ) {
 		 $classes[] = 'slider-fullscreen';
 	 }
-	 if ('slider-fade' == get_theme_mod( 'uku_slideranimation' ) ) {
+	 if ('slider-fade' == get_theme_mod( 'pirate_rogue_slideranimation' ) ) {
 		 $classes[] = 'slider-fade';
 	 }
 	 if ('header-boxed' == get_theme_mod( 'pirate_rogue_headerstyle' ) ) {
@@ -116,6 +122,10 @@
 	 if ( get_post_meta( get_the_ID(), 'slider-on', true ) ) {
 		 $classes[] = 'slider-on';
 	 }
+         
+         
+         
+         
 	 if ( get_post_meta( get_the_ID(), 'headerimg-on', true ) ) {
 		 $classes[] = 'headerimg-on';
 	 }
@@ -139,10 +149,16 @@
               $classes[] = 'no-sidebar';
               // No diebadr for 404 pages due to danger of loops cause of 404-files in sidebar :)
          } 
-
         $logo =  pirate_rogue_get_custom_logo();
-        if ( !empty($logo) ) {
-                $classes[] = 'no-header-text';
+        if (( !empty($logo) ) && ( has_custom_logo() )) {
+                if (!get_theme_mod('pirate_rogue_show_labelonlogo') && !get_theme_mod('pirate_rogue_show_titleonlogo')) {
+                    $classes[] = 'no-header-text';                    
+                } elseif (get_theme_mod('pirate_rogue_show_labelonlogo') && !get_theme_mod('pirate_rogue_show_titleonlogo')) {
+                    $classes[] = 'no-header-title';
+                } elseif (get_theme_mod('pirate_rogue_show_titleonlogo') && !get_theme_mod('pirate_rogue_show_labelonlogo')) {   
+                    $classes[] = 'no-header-subtitle';
+                }
+
         }
              
 
@@ -155,7 +171,7 @@
         if ('' != get_theme_mod( 'uku_front_section_fourcolumn_excerpt' ) ) { 
             $classes[] = 'front_section_fourcolumn_excerpt';
         } 
-        if ('' != get_theme_mod( 'uku_front_section_sixcolumn_excerpt' ) ) {
+        if ('' != get_theme_mod( 'pirate_rogue_front_section_sixcolumn_excerpt' ) ) {
             $classes[] = 'front_section_sixcolumn_excerpt';
         } 
         if ('' != get_theme_mod( 'uku_front_hidedate' ) ) {

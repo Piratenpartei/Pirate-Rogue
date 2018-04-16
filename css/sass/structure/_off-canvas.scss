@@ -1,19 +1,6 @@
 /*-----------------------------------------------------------------------------------*/
 /*  Off Canvas Area
 /*-----------------------------------------------------------------------------------*/
-/* --- Main Menu Buttons (Off Canvas) --- */
-.overlay-btn {
-    border: none;
-    outline: none;
-    display: block;
-    margin: 0;
-    padding: 0;
-    z-index: 9999;
-    text-align: right;
-    background: transparent;
-    line-height: 1;
-    opacity: 1;
-}
 
 /* --- Overlay Buttons: Fix-positioning --- */
 #overlay-open, 
@@ -23,6 +10,11 @@
     right: 5.3125%;
     width: 40px;
     height: 40px;
+
+    .no-js & {
+        display: none;
+    }
+
 }
 
 #overlay-open {
@@ -36,6 +28,17 @@
 
 
 .overlay-btn {
+    border: none;
+    outline: none;
+    display: block;
+    margin: 0;
+    padding: 0;
+    z-index: 9999;
+    text-align: right;
+    background: transparent;
+    line-height: 1;
+    opacity: 1;
+
   span {
     display: none;
   }

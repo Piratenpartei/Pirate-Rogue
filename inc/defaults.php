@@ -70,16 +70,7 @@ $pirate_rogue_options = array(
                 'height'      =>  576,
 		'parent'  => 'pirate_rogue_section_images'
             ),
-            'pirate_rogue_fallback_slider' => array(
-                'type'    => 'image',
-                'title'   => esc_html__( 'Upload Fallback image for slider', 'pirate-rogue'),
-                'label'   => esc_html__( 'If  thumbnail for a post is not avaible, define this image for the slider', 'pirate-rogue'), 
-                'flex_width'  => true, // Allow any width, making the specified value recommended. False by default.
-                'flex_height' => false, // Require the resulting image to be exactly as tall as the height attribute (default).
-                'width'       => 1440,
-                'height'      =>  690,
-		'parent'  => 'pirate_rogue_section_images'
-            ),
+            
 
             
             
@@ -651,7 +642,7 @@ $pirate_rogue_options = array(
             'pirate_rogue_slider_autoplay' => array(
 		'type'      => 'toggle-switch',
 		'title'     => esc_html__( 'Autoplay', 'pirate-rogue'),
-		'default'   => 'false',
+		'default'   => false,
                 'parent'    => 'pirate_rogue_slider'	    
             ),
             'pirate_rogue_featured_slider_num' => array(
@@ -663,6 +654,16 @@ $pirate_rogue_options = array(
                 'step'      => 1,
 		'default'   => 3,
                 'parent'    => 'pirate_rogue_slider'	    
+            ),
+            'pirate_rogue_fallback_slider' => array(
+                'type'    => 'image',
+                'title'   => esc_html__( 'Upload Fallback image for slider', 'pirate-rogue'),
+                'label'   => esc_html__( 'If  thumbnail for a post is not avaible, define this image for the slider', 'pirate-rogue'), 
+                'flex_width'  => true, // Allow any width, making the specified value recommended. False by default.
+                'flex_height' => false, // Require the resulting image to be exactly as tall as the height attribute (default).
+                'width'       => 1440,
+                'height'      =>  690,
+		'parent'  => 'pirate_rogue_slider'
             ),
             
             'pirate_rogue_front_section_one'  => array(

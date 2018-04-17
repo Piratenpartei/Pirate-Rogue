@@ -66,12 +66,14 @@
 	 if ('slider-boxed' == get_theme_mod( 'pirate_rogue_sliderstyle' ) ) {
 		 $classes[] = 'slider-boxed';
 	 }
-         if ( get_theme_mod( 'pirate_rogue_slider_autoplay' ) ) {
+         if (('' != get_theme_mod( 'pirate_rogue_slider_autoplay' )) && (true== get_theme_mod( 'pirate_rogue_slider_autoplay' )) ) {
 		 $classes[] = 'slider-autoplay';
-	 }
+	 } else {
+              $classes[] = 'slider-noplay';
+         }
          
          
-         
+          
 	 if ('slider-fullscreen' == get_theme_mod( 'pirate_rogue_sliderstyle' ) ) {
 		 $classes[] = 'slider-fullscreen';
 	 }

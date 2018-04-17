@@ -109,32 +109,37 @@
 	// Featured Posts Slider
 	if ( $.fn.slick ) {
 		$( document ).ready( function () {
-                    var $autostart = "false";
+                    var autostart = false;
+                    var pauseOnHovervar = false
                     if ( sliderAutostart ) {
-                        $autostart = "true";
+                        autostart = true;
+                        pauseOnHovervar = true;
                     }
+                    var autoplaySpeedval = 4000;
                     if ( sliderFade ) {
 			$( '.featured-slider' ).slick( {
 				dots          : false,
 				slidesToShow  : 1,
-				autoplay      : $autostart,
+				autoplay      : autostart,
 				cssEase       : 'ease',
 				draggable     : true,
-				pauseOnHover  : false,
+				pauseOnHover  : pauseOnHovervar,
 				infinite      : true,
 				adaptiveHeight: true,
-				fade        : true,
+				fade          : true,
+                                autoplaySpeed : autoplaySpeedval,
 			} );
                     } else {
 			$( '.featured-slider' ).slick( {
 				dots          : false,
 				slidesToShow  : 1,
-				autoplay      : $autostart,
+				autoplay      : autostart,
 				cssEase       : 'ease',
 				draggable     : true,
-				pauseOnHover  : false,
+				pauseOnHover  : pauseOnHovervar,
 				infinite      : true,
 				adaptiveHeight: true,
+                                autoplaySpeed : autoplaySpeedval,
 			} );
                     }
 		} );

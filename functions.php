@@ -141,7 +141,20 @@ function pirate_rogue_base_scripts() {
 
 }
 add_action( 'wp_enqueue_scripts', 'pirate_rogue_base_scripts' );
-
+/*-----------------------------------------------------------------------------------*/
+/* Admin Styles
+/*-----------------------------------------------------------------------------------*/
+function pirate_rogue_admin_style() {
+    $theme_data = wp_get_theme();
+    $theme_version = $theme_data->Version;
+    
+	// This theme styles the visual editor to resemble the theme style.
+    // add_editor_style( array( '/css/admin.css') );
+    wp_register_style( 'themeadminstyle', get_template_directory_uri().'/css/admin.css',array(), $theme_version );	   
+    wp_enqueue_style( 'themeadminstyle' );
+    wp_enqueue_media();
+}
+add_action( 'admin_enqueue_scripts', 'pirate_rogue_admin_style' );
 
 /*-----------------------------------------------------------------------------------*/
 /* Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
@@ -229,7 +242,7 @@ add_filter( 'user_contactmethods', 'add_twitter_contactmethod', 10, 1 );
 
 /*-----------------------------------------------------------------------------------*/
 /* Add Theme Customizer CSS
-/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------
 function pirate_rogue_customize_css() {
 	$customcss = '';
 	if ('' != get_theme_mod( 'pirate_rogue_custom_css' ) ) {
@@ -241,7 +254,9 @@ function pirate_rogue_customize_css() {
 	    echo '</style>'."\n";
 	}
 }
-// add_action( 'wp_head', 'pirate_rogue_customize_css');
+add_action( 'wp_head', 'pirate_rogue_customize_css');
+*/
+
 /*-----------------------------------------------------------------------------------*/
 /* Add Google Webmaster Tools Verification
 /*-----------------------------------------------------------------------------------*/
@@ -404,19 +419,7 @@ function pirate_rogue_admin_init() {
 add_action('admin_init', 'pirate_rogue_admin_init'); 
 
 
-/*-----------------------------------------------------------------------------------*/
-/* Admin Styles
-/*-----------------------------------------------------------------------------------*/
-function pirate_rogue_admin_style() {
- 
-    
-	// This theme styles the visual editor to resemble the theme style.
-    // add_editor_style( array( '/css/admin.css') );
-    wp_register_style( 'themeadminstyle', get_template_directory_uri().'/css/admin.css' );	   
-    wp_enqueue_style( 'themeadminstyle' );
-    wp_enqueue_media();
-}
-add_action( 'admin_enqueue_scripts', 'pirate_rogue_admin_style' );
+
 
 /*-----------------------------------------------------------------------------------*/
 /* No comments on attachments please

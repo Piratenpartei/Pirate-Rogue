@@ -589,7 +589,7 @@ if (class_exists('WP_Customize_Control')) {
 	public $type = 'range-value';
 
 	public function enqueue() {
-		wp_enqueue_script( 'xwolf-customizer', get_stylesheet_directory_uri() . '/js/xwolf-customizer.js', array( 'jquery' ), rand(), true );
+		wp_enqueue_script( 'xwolf-customizer', get_template_directory_uri() . '/js/xwolf-customizer.js', array( 'jquery' ), rand(), true );
 	}
 	public function render_content() {
 		?>

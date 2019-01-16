@@ -30,9 +30,9 @@ $blogname = get_bloginfo('name');
                        $imagesrc = esc_url( $footerfeature_image );
                     }
                 }                
-		if ( (!empty($imagesrc)) 
-                        || ( '' !== get_theme_mod( 'pirate_rogue_footerfeature_text_big' ))
-                        || ( '' !== get_theme_mod( 'pirate_rogue_footerfeature_text_small' ))) {
+		if ( $imagesrc 
+                        || get_theme_mod( 'pirate_rogue_footerfeature_text_big' )
+                        || get_theme_mod( 'pirate_rogue_footerfeature_text_small' ) ) {
 			get_template_part( 'template-parts/footer-feature' );
 		} 
                 ?>

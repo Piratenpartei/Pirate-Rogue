@@ -85,7 +85,7 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
 
                             <?php if (has_nav_menu( 'social' ) ) : ?>
                                     <div id="header-social" class="header-social social-nav">
-                                        <h2 class="screen-reader-text"><?php _e('Social Media Plattformen','pirate-rogue'); ?></h2>
+                                        <h2 class="screen-reader-text"><?php _e('Social Media Platforms','pirate-rogue'); ?></h2>
                                     <?php wp_nav_menu( array(
                                             'theme_location'	=> 'social',
                                             'container' 	=> 'false',
@@ -162,7 +162,7 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
 
                             <?php if (has_nav_menu( 'social' ) ) : ?>
                                     <div id="mobile-social" class="social-nav" role="navigation">
-                                        <h2 class="screen-reader-text"><?php _e('Social Media Plattformen','pirate-rogue'); ?></h2>
+                                        <h2 class="screen-reader-text"><?php _e('Social Media Platforms','pirate-rogue'); ?></h2>
                                     <?php wp_nav_menu( array(
                                             'theme_location'	=> 'social',
                                             'container' 		=> 'false',

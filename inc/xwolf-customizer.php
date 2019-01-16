@@ -70,20 +70,20 @@ function xwolf_customizer_settings( $wp_customize ) {
   
     
     foreach($xwolf_customizer_setoptions as $tab => $value) {        
-	$tabtitel = $value['tabtitle'];    
+	$tabtitel = __($value['tabtitle'], 'pirate-rogue');
 	
 	$desc = '';
 	$capability = 'edit_theme_options';
 	if (isset($value['capability'])) 
 	    $capability = $value['capability'];
 	if (isset($value['desc']))
-	    $desc = esc_html($value['desc']);
+	    $desc = __($value['desc'], 'pirate-rogue');
 	
 	$num = $num +1;
 	$wp_customize->add_panel( $tab, array(
 		'priority'	=> $num,
 	        'capability'	=> $capability,
-		'title'		=> esc_html($tabtitel),
+		'title'		=> $tabtitel,
 		'description'	=> $desc,
 	) );
 	if (isset($xwolf_customizer_setoptions[$tab]['fields'])) {
@@ -104,9 +104,9 @@ function xwolf_customizer_settings( $wp_customize ) {
 		    if (isset($value['priority'])) 
 			$thisprio = $value['priority'];
 		    if (isset($value['title']))
-			$title = esc_html($value['title']);
+			$title = __($value['title'], 'pirate-rogue');
 		    if (isset($value['desc']))
-			$desc = esc_html($value['desc']);
+			$desc = __($value['desc'], 'pirate-rogue');
 
 		    
 		    $sectionid = esc_html($field);
@@ -124,7 +124,7 @@ function xwolf_customizer_settings( $wp_customize ) {
 	    $sectionprio = $sectionprio +1; 
 	    $sectionid = $tab."-elsesection";
 	    $wp_customize->add_section( $sectionid , array(
-			'title'		=> __('Misc'),
+			'title'		=> __('Miscellaneous'),
 			'panel' 	=> $tab,
 			'priority'	=> $sectionprio,
 		    ) ); 
@@ -144,11 +144,11 @@ function xwolf_customizer_settings( $wp_customize ) {
 		    $optionid = esc_html($field); 
 		    		    
 		    if (isset($value['title']))
-			$title = esc_html($value['title']);
+			$title = __($value['title'], 'pirate-rogue');
 		    if (isset($value['desc']))
-			$desc = $value['desc'];
+			$desc = __($value['desc'], 'pirate-rogue');
 		    if (isset($value['label']))
-			$label = $value['label'];
+			$label = __($value['label'], 'pirate-rogue');
 		    if (isset($value['notifplugin']))
 			$notifplugin = $value['notifplugin'];
                     if (isset($value['ifplugin']))
@@ -293,7 +293,7 @@ function xwolf_customizer_settings( $wp_customize ) {
 				    'section'		=> $section,
 				    'settings'		=> $optionid,
 				    'type' 		=> 'select',
-				    'choices'		=>  $value['liste']
+				    'choices'		=> array_map(function($item) { return __($item, 'pirate-rogue'); }, $value['liste'])
 				    
 			    ) );
 			} elseif ($type == 'multiselect')  {
@@ -307,7 +307,7 @@ function xwolf_customizer_settings( $wp_customize ) {
 				    'section'		=> $section,
 				    'settings'		=> $optionid,
 				    'type' 		=> 'multiple-select',
-				    'choices'		=>  $value['liste']
+				    'choices'		=> array_map(function($item) { return __($item, 'pirate-rogue'); }, $value['liste'])
 				    
 			    ) ) );
                         } elseif ($type == 'colorlist-radio')  {
@@ -321,7 +321,7 @@ function xwolf_customizer_settings( $wp_customize ) {
 				    'section'		=> $section,
 				    'settings'		=> $optionid,
 				    'type' 		=> 'colorlist-radio',
-				    'choices'		=>  $value['liste']
+				    'choices'		=> array_map(function($item) { return __($item, 'pirate-rogue'); }, $value['liste'])
 
 			    ) ) );    
 

@@ -532,9 +532,6 @@ function pirate_rogue_get_tag_ID($tag_name) {
 if ( ! function_exists( 'pirate_rogue_custom_excerpt' ) ) :
     function pirate_rogue_custom_excerpt($length = 400){
             $excerpt = get_the_content();
-               if (!isset($excerpt)) {
-                  $excerpt = __( 'No content', 'piratenkleider' );
-                }
 
           if ($length <=0) {
                 $length = 100;
@@ -546,7 +543,7 @@ if ( ! function_exists( 'pirate_rogue_custom_excerpt' ) ) :
 
 
           if (mb_strlen($excerpt)<5) {
-              $excerpt = '<!-- '.__( 'No entry for this post', 'piratenkleider' ).' -->';
+              $excerpt = '<!-- '.__( 'No entry for this post', 'pirate-rogue' ).' -->';
           }
 
           $needcontinue =0;

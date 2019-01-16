@@ -112,8 +112,8 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
                            
                             if ( class_exists( 'Pirate_Crew' ) && 'content' == get_theme_mod( 'pirate_rogue_crewmember-position' ) ) {
 				$preauthor =  get_post_meta( $post->ID, 'pirate_crew_member_id', true );	
-				$style = pirate_rogue_sanitize_pirate_crew_member_style(get_theme_mod( 'pirate_rogue_crewmember-style' ));
-				$format = pirate_rogue_sanitize_pirate_crew_member_format(get_theme_mod( 'pirate_rogue_crewmember-format' ));
+				$style = get_theme_mod( 'pirate_rogue_crewmember-style' );
+				$format = get_theme_mod( 'pirate_rogue_crewmember-format' );
 				$title = get_theme_mod( 'pirate_rogue_crewmember-title' );
 
 				if ($preauthor) {		
@@ -143,7 +143,7 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 
 			    $canonical = get_post_meta( get_the_ID(), 'pirate_rogue_canonical', true );
 			    if ($canonical) { ?>
-				<div class="canonical-link"><span><?php echo __('Origin: ','pirate_rogue');?></span><a href="<?php echo $canonical; ?>"><?php echo $canonical; ?></a></div>
+				<div class="canonical-link"><span><?php echo __('Origin: ','pirate-rogue');?></span><a href="<?php echo $canonical; ?>"><?php echo $canonical; ?></a></div>
 			    <?php }
                             
                             if (('' == get_theme_mod( 'pirate_rogue_front_hideauthor' ) ) &&  ('' == get_theme_mod( 'pirate_rogue_all_hideauthor' ) )) {

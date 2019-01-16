@@ -332,6 +332,10 @@
         if ('' != get_theme_mod( 'pirate_rogue_shadow_images' ) ) { 
             $classes[] = 'shadow-images';
         } 
+        if (get_theme_mod( 'pirate_rogue_h1noupper' ) ) { 
+            $classes[] = 'h1noupper';
+        } 
+        
         
 	 // Additional body classes for WooCommerce
 	 if ( is_active_sidebar( 'sidebar-shop' )) {

@@ -93,6 +93,12 @@ h1 {
         display: table-cell;
         width: 100%;
     }
+    
+    .h1noupper &,
+    .h1noupper .entry-header &.entry-title,
+    .h1noupper.page &.entry-title {
+        text-transform: none;
+    }
 }
 
 .entry-header {

@@ -21,9 +21,9 @@ function pirate_rogue_setup() {
 
 	// This theme uses wp_nav_menu().
 	register_nav_menus( array (
-		'primary'	=> esc_html__( 'Main menu', 'pirate-rogue'),
+		'primary'	=> esc_html__( 'Main Menu', 'pirate-rogue'),
 		'social' 	=> esc_html__( 'Social Icons', 'pirate-rogue'),
-		'social-front' 	=> esc_html__( 'Social menu (in About section)', 'pirate-rogue'),
+		'social-front' 	=> esc_html__( 'Social Icons (in About section)', 'pirate-rogue'),
                 'social-footer' => esc_html__( 'Social Icons (in Footer)', 'pirate-rogue'),
 		'footer-one' 	=> esc_html__( 'Footer 1', 'pirate-rogue'),
 		'footer-two' 	=> esc_html__( 'Footer 2', 'pirate-rogue'),
@@ -129,8 +129,8 @@ function pirate_rogue_base_scripts() {
         // Loads Custom JavaScript functionality
         wp_enqueue_script( 'pirate-rogue-script', get_template_directory_uri() . '/js/functions.min.js', array( 'jquery' ),  $theme_version, true );
         wp_localize_script( 'pirate-rogue-script', 'screenReaderText', array(
-                'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'pirate-rogue') . '</span>',
-                'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'pirate-rogue') . '</span>',
+                'expand'   => '<span class="screen-reader-text">' . esc_html__( 'Expand Child Menu', 'pirate-rogue') . '</span>',
+                'collapse' => '<span class="screen-reader-text">' . esc_html__( 'Collapse Child Menu', 'pirate-rogue') . '</span>',
         ) );
         
         if (is_home() && 
@@ -398,7 +398,7 @@ function pirate_rogue_widgets_init() {
 	register_sidebar( array (
 		'name'          => esc_html__( 'Big Footer Instagram Widget Area', 'pirate-rogue'),
 		'id'            => 'sidebar-instagram',
-		'description'   => esc_html__( 'Widget area to show the WP Instagram Widget in a big one-column footer area .', 'pirate-rogue'),
+		'description'   => esc_html__( 'Widget area to show fotos from Instagram in a big one-column footer area.', 'pirate-rogue'),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => "</section>",
 		'before_title'  => '<h2 class="widget-title">',

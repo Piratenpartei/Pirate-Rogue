@@ -112,8 +112,8 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
                            
                             if ( class_exists( 'Pirate_Crew' ) && 'content' == get_theme_mod( 'pirate_rogue_crewmember-position' ) ) {
 				$preauthor =  get_post_meta( $post->ID, 'pirate_crew_member_id', true );	
-				$style = pirate_rogue_sanitize_pirate_crew_member_style(get_theme_mod( 'pirate_rogue_crewmember-style' ));
-				$format = pirate_rogue_sanitize_pirate_crew_member_format(get_theme_mod( 'pirate_rogue_crewmember-format' ));
+				$style = get_theme_mod( 'pirate_rogue_crewmember-style' );
+				$format = get_theme_mod( 'pirate_rogue_crewmember-format' );
 				$title = get_theme_mod( 'pirate_rogue_crewmember-title' );
 
 				if ($preauthor) {		

@@ -630,9 +630,9 @@ function pirate_rogue_array2table($array, $table = true) {
 /*  Create String for Publisher Info, used by Schema.org Microformat Data
 /*-----------------------------------------------------------------------------------*/
 function pirate_rogue_create_schema_publisher($withrahmen = true) {
-    $out = '';
+    $out = $src = $width = $height = '';
     if ($withrahmen) {
-	$out .= '<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">';  
+        $out .= '<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">';  
     }
     $header_image = get_header_image();
     if ($header_image) {
@@ -641,22 +641,24 @@ function pirate_rogue_create_schema_publisher($withrahmen = true) {
         $height = get_custom_header()->height;
     } else {
         $custom_logo_id = get_theme_mod( 'custom_logo' );
-	if ( $custom_logo_id ) {
+        if ( $custom_logo_id ) {
             $image = wp_get_attachment_image_src($custom_logo_id, 'full'); 
             if ( $image ) {
                 list($src, $width, $height) = $image;
             }
         }
     }
-    $out .= '<div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">';
-    $out .= '<meta itemprop="url" content="'.$src.'">';
-    $out .= '<meta itemprop="width" content="'.$width.'">';
-    $out .= '<meta itemprop="height" content="'.$height.'">';
-    $out .= '</div>';
+    if ($src) {
+        $out .= '<div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">';
+        $out .= '<meta itemprop="url" content="'.$src.'">';
+        $out .= '<meta itemprop="width" content="'.$width.'">';
+        $out .= '<meta itemprop="height" content="'.$height.'">';
+        $out .= '</div>';
+    }
     $out .= '<meta itemprop="name" content="'.get_bloginfo( 'title' ).'">';
     $out .= '<meta itemprop="url" content="'.home_url( '/' ).'">';
     if ($withrahmen) {
-	$out .= '</div>';
+        $out .= '</div>';
     }
     return $out;
 }

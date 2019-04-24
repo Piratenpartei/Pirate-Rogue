@@ -449,7 +449,6 @@ require get_template_directory() . '/inc/custom-fields.php';
 /*-----------------------------------------------------------------------------------*/
 /* Customizer changes to uku
 /*-----------------------------------------------------------------------------------*/
-// require get_template_directory() . '/inc/customizer.php';
  require get_template_directory() . '/inc/xwolf-customizer.php';
 
 /*-----------------------------------------------------------------------------------*/

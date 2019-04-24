@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pirate Rogue\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-21 18:59+0100\n"
-"PO-Revision-Date: 2018-12-21 19:19+0100\n"
+"POT-Creation-Date: 2019-04-23 12:23+0200\n"
+"PO-Revision-Date: 2019-04-23 12:23+0200\n"
 "Last-Translator: xwolf <xwolf@xwolf.de>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.1\n"
 "X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
 "__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
 "_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
@@ -94,12 +94,12 @@ msgstr "E-Mail"
 msgid "Website"
 msgstr "Webseite"
 
-#: ../comments.php:82 ../inc/defaults.php:318
+#: ../comments.php:82 ../inc/defaults.php:323
 msgid "Discuss this on our board"
 msgstr "Diskutiere dies in unserem Forum"
 
 #: ../content.php:40 ../content.php:41 ../content.php:42
-#: ../inc/defaults.php:292 ../template-parts/content-blogroll.php:39
+#: ../inc/defaults.php:297 ../template-parts/content-blogroll.php:39
 #: ../template-parts/content-blogroll.php:40
 #: ../template-parts/content-blogroll.php:41
 #: ../template-parts/content-featured-post.php:35
@@ -278,7 +278,7 @@ msgstr ""
 msgid "Skiplinks"
 msgstr "Skip-Navigation"
 
-#: ../header.php:61 ../inc/custom-fields.php:74 ../inc/defaults.php:521
+#: ../header.php:61 ../inc/custom-fields.php:74 ../inc/defaults.php:526
 msgid "Content"
 msgstr "Inhalt"
 
@@ -317,7 +317,7 @@ msgstr "Schließen"
 msgid "Attributes"
 msgstr "Eigenschaften"
 
-#: ../inc/custom-fields.php:49 ../inc/defaults.php:153 ../inc/defaults.php:520
+#: ../inc/custom-fields.php:49 ../inc/defaults.php:153 ../inc/defaults.php:525
 msgid "Sidebar"
 msgstr "Sidebar"
 
@@ -402,11 +402,11 @@ msgstr "Stil des Header-Bildes"
 msgid "Choose the style you like to use for the header image."
 msgstr "Wähle aus, welchen Stil du für das Header-Bild nutzen möchtest."
 
-#: ../inc/defaults.php:86 ../inc/defaults.php:625
+#: ../inc/defaults.php:86 ../inc/defaults.php:630
 msgid "Fullwidth"
 msgstr "Volle Breite"
 
-#: ../inc/defaults.php:87 ../inc/defaults.php:626
+#: ../inc/defaults.php:87 ../inc/defaults.php:631
 msgid "Boxed"
 msgstr "Mit Rand (boxed)"
 
@@ -528,7 +528,7 @@ msgstr "Keine Sidebar auf Beitragsseiten"
 msgid "Hide sidebar on front page"
 msgstr "Keine Sidebar auf der Startseite"
 
-#: ../inc/defaults.php:187 ../inc/defaults.php:507
+#: ../inc/defaults.php:187 ../inc/defaults.php:512
 #: ../inc/helper-functions.php:385 ../template-parts/content-image.php:82
 msgid "Title"
 msgstr "Titel"
@@ -644,15 +644,19 @@ msgstr "Kein Piratensignet in Trennern"
 msgid "Add Shadow To Images"
 msgstr "Bilder schattieren"
 
-#: ../inc/defaults.php:284 ../inc/defaults.php:587
+#: ../inc/defaults.php:284 ../inc/defaults.php:592
 msgid "Hide Author Names"
 msgstr "Autorennamen verbergen"
 
-#: ../inc/defaults.php:296
+#: ../inc/defaults.php:290
+msgid "Normal style for first headline"
+msgstr "Normaler Stil für 1. Überschrift"
+
+#: ../inc/defaults.php:301
 msgid "Show Comments Button"
 msgstr "Kommentar-Button anzeigen"
 
-#: ../inc/defaults.php:297
+#: ../inc/defaults.php:302
 msgid ""
 "This will hide comments below single posts. There will be a button to show "
 "the comments."
@@ -660,20 +664,20 @@ msgstr ""
 "Dies verbirgt Kommentare unter Einzelbeiträgen. Es wird ein Button zum "
 "Einblenden der Kommentare angezeigt."
 
-#: ../inc/defaults.php:303
+#: ../inc/defaults.php:308
 msgid "Comment Disclaimer"
 msgstr "Kommentar-Hinweis"
 
-#: ../inc/defaults.php:304
+#: ../inc/defaults.php:309
 msgid "Disclaimer is shown above the comment form (HTML is allowed)."
 msgstr ""
 "Der Hinweistext wird vor der Kommentareingabe angezeigt (HTML ist erlaubt)."
 
-#: ../inc/defaults.php:309
+#: ../inc/defaults.php:314
 msgid "Link To External Board"
 msgstr "Link zu einer externen Diskussionsplattform"
 
-#: ../inc/defaults.php:310
+#: ../inc/defaults.php:315
 msgid ""
 "Show a link to an external discussion board which vistors can use instead of "
 "regular comments."
@@ -681,31 +685,31 @@ msgstr ""
 "Zeigt einen Link zu einer Diskussionsplattform an, die Benutzer anstelle der "
 "regulären Kommentare verwenden können."
 
-#: ../inc/defaults.php:316
+#: ../inc/defaults.php:321
 msgid "Link Text"
 msgstr "Linktext"
 
-#: ../inc/defaults.php:317
+#: ../inc/defaults.php:322
 msgid "Enter the text for the link to the external board."
 msgstr "Gib den Text für den Link zur externen Diskussionsplattform ein."
 
-#: ../inc/defaults.php:323 ../inc/helper-functions.php:390
+#: ../inc/defaults.php:328 ../inc/helper-functions.php:390
 msgid "URL"
 msgstr "URL"
 
-#: ../inc/defaults.php:324
+#: ../inc/defaults.php:329
 msgid "Enter the URL of the external board."
 msgstr "Gib die URL für die externe Diskussionsplattform ein."
 
-#: ../inc/defaults.php:330 ../inc/xwolf-customizer.php:127
+#: ../inc/defaults.php:335 ../inc/xwolf-customizer.php:127
 msgid "Miscellaneous"
 msgstr "Sonstiges"
 
-#: ../inc/defaults.php:335
+#: ../inc/defaults.php:340
 msgid "Colors"
 msgstr "Farben"
 
-#: ../inc/defaults.php:336
+#: ../inc/defaults.php:341
 msgid ""
 "This will allow to change the default colors. Please notice, that the "
 "following color options use a fix list of predefined colors. To change the "
@@ -717,15 +721,15 @@ msgstr ""
 "von Piratenparteien weltweit und weiteren Sekundärfarben aus der CD der "
 "Piratenpartei Deutschland."
 
-#: ../inc/defaults.php:340
+#: ../inc/defaults.php:345
 msgid "Header Background"
 msgstr "Hintergrund des Headers"
 
-#: ../inc/defaults.php:346
+#: ../inc/defaults.php:351
 msgid "Header Texts"
 msgstr "Texte im Header"
 
-#: ../inc/defaults.php:347
+#: ../inc/defaults.php:352
 msgid ""
 "This applies to site title and menu links in header, plus the search icon "
 "and the hamburger overlay icon."
@@ -733,11 +737,11 @@ msgstr ""
 "Dies betrifft den Titel der Website und Menülinks im Header, und auch die "
 "Symbole für die Suche und das Hamburger-Menü."
 
-#: ../inc/defaults.php:353
+#: ../inc/defaults.php:358
 msgid "Header Links (Hovered)"
 msgstr "Links im Header (Hover)"
 
-#: ../inc/defaults.php:354
+#: ../inc/defaults.php:359
 msgid ""
 "This applies to underlining of menu links in header, plus the search icon "
 "and the hamburger overlay icon."
@@ -745,186 +749,186 @@ msgstr ""
 "Dies betrifft die Unterstreichung der Menülinks im Header, und auch die "
 "Symbole für die Suche und das Hamburger-Menü."
 
-#: ../inc/defaults.php:360
+#: ../inc/defaults.php:365
 msgid "Action Buttons"
 msgstr "Buttons"
 
-#: ../inc/defaults.php:366
+#: ../inc/defaults.php:371
 msgid "Main Background"
 msgstr "Hintergrund des Inhaltsbereichs"
 
-#: ../inc/defaults.php:372
+#: ../inc/defaults.php:377
 msgid "Main Headlines"
 msgstr "Überschriften im Inhaltsbereich"
 
-#: ../inc/defaults.php:373
+#: ../inc/defaults.php:378
 msgid "This applies to all headlines in main region."
 msgstr "Dies betrifft alle Überschriften im Inhaltsbereich."
 
-#: ../inc/defaults.php:379
+#: ../inc/defaults.php:384
 msgid "Main Texts"
 msgstr "Texte im Inhaltsbereich"
 
-#: ../inc/defaults.php:385
+#: ../inc/defaults.php:390
 msgid "Main Links"
 msgstr "Links im Inhaltsbereich"
 
-#: ../inc/defaults.php:391
+#: ../inc/defaults.php:396
 msgid "Main Links (Hovered)"
 msgstr "Links im Inhaltsbereich (Hover)"
 
-#: ../inc/defaults.php:397
+#: ../inc/defaults.php:402
 msgid "Title Underline"
 msgstr "Titel-Unterstrich"
 
-#: ../inc/defaults.php:398
+#: ../inc/defaults.php:403
 msgid "This applies to underlining of the page title."
 msgstr "Dies betrifft die Unterstreichung des Seitentitels."
 
-#: ../inc/defaults.php:404
+#: ../inc/defaults.php:409
 msgid "List Items"
 msgstr "Listeneinträge"
 
-#: ../inc/defaults.php:405
+#: ../inc/defaults.php:410
 msgid "This applies to bullets of unordered lists."
 msgstr "Dies betrifft die Aufzählungspunkte bei ungeordneten Listen."
 
-#: ../inc/defaults.php:411
+#: ../inc/defaults.php:416
 msgid "Blockquote Borders"
 msgstr "Rahmen von Blockzitaten"
 
-#: ../inc/defaults.php:417
+#: ../inc/defaults.php:422
 msgid "Meta Links Backgrounds"
 msgstr "Hintergrund von Meta-Links"
 
-#: ../inc/defaults.php:418 ../inc/defaults.php:425 ../inc/defaults.php:432
-#: ../inc/defaults.php:439
+#: ../inc/defaults.php:423 ../inc/defaults.php:430 ../inc/defaults.php:437
+#: ../inc/defaults.php:444
 msgid "This applies to meta links (e.g. tags and categories)."
 msgstr "Dies betrifft Meta-Links (z. B. Schlagwörter und Kategorien)."
 
-#: ../inc/defaults.php:424
+#: ../inc/defaults.php:429
 msgid "Meta Links Backgrounds (Hovered)"
 msgstr "Hintergrund von Meta-Links (Hover)"
 
-#: ../inc/defaults.php:431
+#: ../inc/defaults.php:436
 msgid "Meta Links"
 msgstr "Meta-Links"
 
-#: ../inc/defaults.php:438
+#: ../inc/defaults.php:443
 msgid "Meta Links (Hovered)"
 msgstr "Meta-Links (Hover)"
 
-#: ../inc/defaults.php:445
+#: ../inc/defaults.php:450
 msgid "Tables"
 msgstr "Tabellen"
 
-#: ../inc/defaults.php:451
+#: ../inc/defaults.php:456
 msgid "Table Backgrounds"
 msgstr "Hintergründe von Tabellen"
 
-#: ../inc/defaults.php:457
+#: ../inc/defaults.php:462
 msgid "Table Header Backgrounds"
 msgstr "Hintergrund von Tabellenköpfen"
 
-#: ../inc/defaults.php:463
+#: ../inc/defaults.php:468
 msgid "Table Backgrounds (Odd Rows)"
 msgstr "Hintergrund von Tabellen (Ungerade Reihen)"
 
-#: ../inc/defaults.php:469
+#: ../inc/defaults.php:474
 msgid "Footer Background"
 msgstr "Hintergrundfarbe des Footers"
 
-#: ../inc/defaults.php:475
+#: ../inc/defaults.php:480
 msgid "Footer Headlines"
 msgstr "Überschriften im Footer"
 
-#: ../inc/defaults.php:481
+#: ../inc/defaults.php:486
 msgid "Footer Texts"
 msgstr "Text im Footer"
 
-#: ../inc/defaults.php:487
+#: ../inc/defaults.php:492
 msgid "Footer Links"
 msgstr "Links im Footer"
 
-#: ../inc/defaults.php:493
+#: ../inc/defaults.php:498
 msgid "Footer Links (Hovered)"
 msgstr "Links im Footer (Hover)"
 
-#: ../inc/defaults.php:502
+#: ../inc/defaults.php:507
 msgid "Pirate Crew Settings"
 msgstr "Piraten-Crew-Einstellungen"
 
-#: ../inc/defaults.php:508
+#: ../inc/defaults.php:513
 msgid "Set a title to show above pirate crew member info panel."
 msgstr "Gib einen Titel zur Anzeige über dem Piraten-Crew-Mitglied an."
 
-#: ../inc/defaults.php:513
+#: ../inc/defaults.php:518
 msgid "Position"
 msgstr "Position"
 
-#: ../inc/defaults.php:514
+#: ../inc/defaults.php:519
 msgid "Set the position to show the pirate crew member card."
 msgstr "Wähle die Position zur Anzeige des Piraten-Crew-Mitglieds aus."
 
-#: ../inc/defaults.php:525 ../inc/defaults.php:622
+#: ../inc/defaults.php:530 ../inc/defaults.php:627
 msgid "Style"
 msgstr "Stil"
 
-#: ../inc/defaults.php:526
+#: ../inc/defaults.php:531
 msgid "Set the style of the pirate crew member card."
 msgstr "Wähle den Stil zur Anzeige des Piraten-Crew-Mitglieds aus."
 
-#: ../inc/defaults.php:532 ../inc/defaults.php:533 ../inc/defaults.php:534
-#: ../inc/defaults.php:535
+#: ../inc/defaults.php:537 ../inc/defaults.php:538 ../inc/defaults.php:539
+#: ../inc/defaults.php:540
 #, php-format
 msgid "Style %d"
 msgstr "Stil %d"
 
-#: ../inc/defaults.php:539
+#: ../inc/defaults.php:544
 msgid "Format"
 msgstr "Format"
 
-#: ../inc/defaults.php:540
+#: ../inc/defaults.php:545
 msgid "Set the format to show the pirate crew member card."
 msgstr "Wähle das Format zur Anzeige des Piraten-Crew-Mitglieds aus."
 
-#: ../inc/defaults.php:546
+#: ../inc/defaults.php:551
 msgid "Card"
 msgstr "Karte"
 
-#: ../inc/defaults.php:547
+#: ../inc/defaults.php:552
 msgid "List"
 msgstr "Liste"
 
-#: ../inc/defaults.php:554
+#: ../inc/defaults.php:559
 msgid "Blog Front Page"
 msgstr "Blog-Startseite"
 
-#: ../inc/defaults.php:559
+#: ../inc/defaults.php:564
 msgid "General"
 msgstr "Allgemein"
 
-#: ../inc/defaults.php:563
+#: ../inc/defaults.php:568
 msgid "Hide Default Blog"
 msgstr "Standard-Blog verbergen"
 
-#: ../inc/defaults.php:569
+#: ../inc/defaults.php:574
 msgid "Hide Date"
 msgstr "Datum verbergen"
 
-#: ../inc/defaults.php:575
+#: ../inc/defaults.php:580
 msgid "Hide Comments"
 msgstr "Kommentare verbergen"
 
-#: ../inc/defaults.php:581
+#: ../inc/defaults.php:586
 msgid "Hide Categories"
 msgstr "Kategorien verbergen"
 
-#: ../inc/defaults.php:593
+#: ../inc/defaults.php:598
 msgid "Latest Posts Title"
 msgstr "Titel für neueste Beiträge"
 
-#: ../inc/defaults.php:594
+#: ../inc/defaults.php:599
 msgid ""
 "Customize the \"Latest Posts\" title text above the blog content on your "
 "blog front page."
@@ -932,11 +936,11 @@ msgstr ""
 "Passe den Titel \"Neueste Beiträge\" an, der über dem Blog-Inhalt auf der "
 "Blog-Startseite steht."
 
-#: ../inc/defaults.php:599
+#: ../inc/defaults.php:604
 msgid "Follow Us Text"
 msgstr "Text \"Folge uns\""
 
-#: ../inc/defaults.php:600
+#: ../inc/defaults.php:605
 msgid ""
 "Customize the \"Follow us\" text in your About section and footer social "
 "menus."
@@ -944,27 +948,27 @@ msgstr ""
 "Passe den Text \"Folge uns\" an, der sich im Startseitenbereich \"Über\" und "
 "im Social-Menü des Footers befindet."
 
-#: ../inc/defaults.php:608
+#: ../inc/defaults.php:613
 msgid "Featured Posts Slider"
 msgstr "Slider mit hervorgehobenen Beiträgen"
 
-#: ../inc/defaults.php:612
+#: ../inc/defaults.php:617
 msgid "Slider tag"
 msgstr "Schlagwort für den Slider"
 
-#: ../inc/defaults.php:617
+#: ../inc/defaults.php:622
 msgid "Slider category"
 msgstr "Kategorie für den Slider"
 
-#: ../inc/defaults.php:623
+#: ../inc/defaults.php:628
 msgid "Choose the slider design."
 msgstr "Wähle den Slider-Stil."
 
-#: ../inc/defaults.php:634
+#: ../inc/defaults.php:639
 msgid "Image Animation"
 msgstr "Bild-Animation"
 
-#: ../inc/defaults.php:635
+#: ../inc/defaults.php:640
 msgid ""
 "Choose, if you want the slider images to fade or slide from one image to the "
 "next."
@@ -972,23 +976,23 @@ msgstr ""
 "Wähle, ob die Slider-Bilder von einem Bild zum nächsten überblenden oder "
 "sliden sollen."
 
-#: ../inc/defaults.php:637
+#: ../inc/defaults.php:642
 msgid "Slide"
 msgstr "Slide"
 
-#: ../inc/defaults.php:638
+#: ../inc/defaults.php:643
 msgid "Fade"
 msgstr "Überblenden"
 
-#: ../inc/defaults.php:645
+#: ../inc/defaults.php:650
 msgid "Autoplay"
 msgstr "Autoplay"
 
-#: ../inc/defaults.php:651
+#: ../inc/defaults.php:656
 msgid "Number of Slides"
 msgstr "Anzahl der Slides"
 
-#: ../inc/defaults.php:652
+#: ../inc/defaults.php:657
 msgid ""
 "How many slides of feature posts are displayed. Notice: the more slides are "
 "loaded, the worse the performance of the page will be."
@@ -996,97 +1000,97 @@ msgstr ""
 "Definiere, wie viele Slides maximal angezeigt werden sollen. Hinweis: Um so "
 "mehr Slides vorgehalten werden, um so langsamer lädt die Seite."
 
-#: ../inc/defaults.php:661
+#: ../inc/defaults.php:666
 msgid "Fallback Thumbnail For Slider"
 msgstr "Ersatzbild für Thumbnails im Slider"
 
-#: ../inc/defaults.php:662
+#: ../inc/defaults.php:667
 msgid "If thumbnail for a post is not avaible, use this image for the slider."
 msgstr ""
 "Wenn kein Artikelbild vorhanden ist, verwende dieses Bild als Ersatz für den "
 "Slider."
 
-#: ../inc/defaults.php:672
+#: ../inc/defaults.php:677
 msgid "Section Featured Top"
 msgstr "Bereich Hervorgehoben Oben"
-
-#: ../inc/defaults.php:676 ../inc/defaults.php:698 ../inc/defaults.php:725
-#: ../inc/defaults.php:757 ../inc/defaults.php:813 ../inc/defaults.php:834
-#: ../inc/defaults.php:854 ../inc/defaults.php:890
-msgid "Section Title (optional)"
-msgstr "Titel des Bereichs (optional)"
 
 #: ../inc/defaults.php:681 ../inc/defaults.php:703 ../inc/defaults.php:730
 #: ../inc/defaults.php:762 ../inc/defaults.php:818 ../inc/defaults.php:839
 #: ../inc/defaults.php:859 ../inc/defaults.php:895
-msgid "Section Tag"
-msgstr "Schlagwort für den Bereich"
+msgid "Section Title (optional)"
+msgstr "Titel des Bereichs (optional)"
 
 #: ../inc/defaults.php:686 ../inc/defaults.php:708 ../inc/defaults.php:735
 #: ../inc/defaults.php:767 ../inc/defaults.php:823 ../inc/defaults.php:844
 #: ../inc/defaults.php:864 ../inc/defaults.php:900
+msgid "Section Tag"
+msgstr "Schlagwort für den Bereich"
+
+#: ../inc/defaults.php:691 ../inc/defaults.php:713 ../inc/defaults.php:740
+#: ../inc/defaults.php:772 ../inc/defaults.php:828 ../inc/defaults.php:849
+#: ../inc/defaults.php:869 ../inc/defaults.php:905
 msgid "Section Category"
 msgstr "Kategorie für den Bereich"
 
-#: ../inc/defaults.php:694
+#: ../inc/defaults.php:699
 msgid "Section 2-Columns"
 msgstr "Bereich 2-Spaltig"
 
-#: ../inc/defaults.php:713 ../inc/defaults.php:740 ../inc/defaults.php:772
-#: ../inc/defaults.php:869 ../inc/defaults.php:905
+#: ../inc/defaults.php:718 ../inc/defaults.php:745 ../inc/defaults.php:777
+#: ../inc/defaults.php:874 ../inc/defaults.php:910
 msgid "Number of Posts"
 msgstr "Anzahl der Beiträge"
 
-#: ../inc/defaults.php:721
+#: ../inc/defaults.php:726
 msgid "Section 3-Columns"
 msgstr "Bereich 3-Spaltig"
 
-#: ../inc/defaults.php:747 ../inc/defaults.php:878 ../inc/defaults.php:914
+#: ../inc/defaults.php:752 ../inc/defaults.php:883 ../inc/defaults.php:919
 msgid "Show Post Excerpts"
 msgstr "Auszüge von Beiträgen anzeigen"
 
-#: ../inc/defaults.php:753
+#: ../inc/defaults.php:758
 msgid "Section Fullwidth"
 msgstr "Bereich Volle Breite"
 
-#: ../inc/defaults.php:782
+#: ../inc/defaults.php:787
 msgid "Section About"
 msgstr "Bereich Über"
 
-#: ../inc/defaults.php:786
+#: ../inc/defaults.php:791
 msgid "Section Title"
 msgstr "Titel des Bereichs"
 
-#: ../inc/defaults.php:791
+#: ../inc/defaults.php:796
 msgid "About Image"
 msgstr "Bild \"Über\""
 
-#: ../inc/defaults.php:792
+#: ../inc/defaults.php:797
 msgid "The recommended image width for the About image is 580 pixels."
 msgstr ""
 "Die empfohlene Breite des Bildes im Bereich \"Über\" liegt bei 580 Pixel."
 
-#: ../inc/defaults.php:801
+#: ../inc/defaults.php:806
 msgid "About Text (required)"
 msgstr "Text \"Über\" (Pflichtfeld)"
 
-#: ../inc/defaults.php:802
+#: ../inc/defaults.php:807
 msgid "HTML is allowed."
 msgstr "HTML ist erlaubt."
 
-#: ../inc/defaults.php:809
+#: ../inc/defaults.php:814
 msgid "Section Featured Bottom"
 msgstr "Bereich Hervorgehoben Unten"
 
-#: ../inc/defaults.php:830
+#: ../inc/defaults.php:835
 msgid "Section on Background"
 msgstr "Bereich auf Hintergrund"
 
-#: ../inc/defaults.php:850
+#: ../inc/defaults.php:855
 msgid "Section 4-Columns"
 msgstr "Bereich 4-Spaltig"
 
-#: ../inc/defaults.php:886
+#: ../inc/defaults.php:891
 msgid "Section 6-Columns"
 msgstr "Bereich 6-Spaltig"
 
@@ -1170,7 +1174,7 @@ msgid "Invalid call to pirate_rogue_form_link() - name or label is missing."
 msgstr ""
 "Ungültiger Aufruf von pirate_rogue_form_link() - Name oder Label fehlt."
 
-#: ../inc/template-functions.php:809
+#: ../inc/template-functions.php:813
 msgid "Full Size"
 msgstr "Vergrößern"
 
@@ -1285,7 +1289,7 @@ msgstr "Yo Ho Ho"
 
 #: ../template-parts/content-404-videos.php:70
 msgid ""
-"We are sorry, that we could not serve what you we are looking for. But how "
+"We are sorry, that we could not serve what you are looking for. But how "
 "about this:"
 msgstr ""
 "Leider konnte die gesuchte Seite oder Datei nicht gefunden werden. Wie wäre "

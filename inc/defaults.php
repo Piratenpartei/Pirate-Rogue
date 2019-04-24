@@ -287,7 +287,7 @@ $pirate_rogue_options = array(
             ),
             'pirate_rogue_h1noupper' => array(
                   'type'    => 'toggle-switch',
-                  'title'   => esc_html__( 'Normal text style for first Headline', 'pirate-rogue'),                  
+                  'title'   => esc_html__( 'Normal style for first headline', 'pirate-rogue'),                  
                   'default' => false,
 		  'parent'  => 'pirate_rogue_section_metadata'
             ),

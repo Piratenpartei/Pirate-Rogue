@@ -659,7 +659,7 @@ function pirate_rogue_create_schema_publisher($withrahmen = true) {
         $out .= '<meta itemprop="height" content="'.$height.'">';
         $out .= '</div>';
     }
-    $out .= '<meta itemprop="name" content="'.get_bloginfo( 'title' ).'">';
+    $out .= '<meta itemprop="name" content="'.get_bloginfo( 'name' ).'">';
     $out .= '<meta itemprop="url" content="'.home_url( '/' ).'">';
     if ($withrahmen) {
         $out .= '</div>';

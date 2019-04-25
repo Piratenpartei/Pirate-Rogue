@@ -19,7 +19,7 @@ if (!isset($thumbfallbackid)) {
 
 <article <?php post_class('cf'); ?> itemscope itemtype="http://schema.org/NewsArticle">
 	<?php if ( '' !== get_the_post_thumbnail() && ! post_password_required() ) : ?>
-		<div class="entry-thumbnail fadein" aria-hidden="true" role="presentation" tabindex="-1" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+		<div class="entry-thumbnail fadein" aria-hidden="true" role="presentation" tabindex="-1">
 			<a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><?php the_post_thumbnail('pirate-rogue-front-small'); ?></span></a>
 		</div>
         <?php elseif ( ! post_password_required() &&  $imagesrc != '') : ?>

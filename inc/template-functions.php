@@ -671,17 +671,16 @@ function pirate_rogue_create_schema_publisher($withrahmen = true) {
 /*-----------------------------------------------------------------------------------*/
 function pirate_rogue_create_schema_thumbnail($id = 0) {
     $output = "";
-    if (!isset($id)) {
+    if (!$id) {
         $id = get_the_ID();
     }
     $post_thumbnail_id = get_post_thumbnail_id( $id ); 
-    if ((!isset($post_thumbnail_id)) || ($post_thumbnail_id <= 0)) {
-        $thumbfallbackid = absint(get_theme_mod( 'pirate_rogue_fallback_blogroll_thumbnail' ));
-        if (isset($thumbfallbackid)) {
+    if (!$post_thumbnail_id) {
+        $thumbfallbackid = get_theme_mod( 'pirate_rogue_fallback_blogroll_thumbnail' );
+        if ($thumbfallbackid) {
            $post_thumbnail_id = $thumbfallbackid;
         }
     }
-  
     
     if ($post_thumbnail_id) {
         $thumbimage = wp_get_attachment_image_src( $post_thumbnail_id);

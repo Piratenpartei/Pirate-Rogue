@@ -70,7 +70,11 @@ $uku_section_fourcolumn_query = new WP_Query( array(
 					<div class="entry-summary" itemprop="description">
 						<?php the_excerpt(); ?>
 					</div><!-- end .entry-summary -->
-                                        <?php echo pirate_rogue_create_schema_thumbnail(); ?>
+                                    <?php 
+                                        echo pirate_rogue_create_schema_thumbnail(); 
+                                        echo pirate_rogue_create_schema_postmeta();
+                                        echo pirate_rogue_create_schema_publisher();
+                                    ?>
 				</article><!-- #post-## -->
 
 			<?php endwhile; ?>

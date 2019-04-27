@@ -368,148 +368,137 @@
  /* Add a special walker for the main menu, allowing us, to add some stuff :)
  /*-----------------------------------------------------------------------------------*/
  class Pirate_Rogue_Menu_Walker extends Walker_Nav_Menu {
-      public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
-           if ( '-' === $item->title ) {
-                $item_output = '<li class="menu_separator"><hr>';
-           } else {     
-                global $wp_query;
-                $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+    public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
+        if ( '-' === $item->title ) {
+            $item_output = '<li class="menu_separator"><hr>';
+        } else {
+            $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+            
+            $class_names = $attributes = '';
+            
+            $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+            $ariapopup = '';
+            $rellink = '';
+            if (!empty($item->url)) {
+                $rellink = pirate_rogue_make_link_relative($item->url);
+                if (substr($rellink,0,4) == 'http') {
+                // absoluter Link auf externe Seite
+                $classes[] = 'external';
+                } elseif ($rellink == '/') {
+                // Link auf Startseite
+                $classes[] = 'homelink';
+                }                 
+            }
+            
+            if (in_array('has_children', $classes)) {
+                $ariapopup = ' aria-haspopup="true"';
+            }
+            $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
+            $class_names = ' class="'. esc_attr( $class_names ) . '"';
+            
+            $output .= $indent . '<li' . $class_names .$ariapopup.'>';
+            
+            $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+            $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+            $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+            $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+            $description  = ! empty( $item->description ) ? '<span>'.esc_attr( $item->description ).'</span>' : '';
 
-                $class_names = $value = $attributes = '';
-
-                $classes = empty( $item->classes ) ? array() : (array) $item->classes;
-                $ariapopup = '';
-                $rellink = '';
-		if (!empty($item->url)) {		
-		    $rellink = pirate_rogue_make_link_relative($item->url);
-		    if (substr($rellink,0,4) == 'http') {
-			// absoluter Link auf externe Seite
-			$classes[] = 'external';
-		    } elseif ($rellink == '/') {
-			// Link auf Startseite
-			$classes[] = 'homelink';
-		    }                 
-		}
+            if($depth != 0) {
+                $description = "";
+            }
+            $item_output = '';
+            if (!empty($attributes)) {
+                if (!empty($args->before))
+                    $item_output .= $args->before;
+                $item_output .= '<a'. $attributes .'>';
                 
-                if (in_array('has_children', $classes)) {
-                    $ariapopup = ' aria-haspopup="true"';
-                }
-                $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
-                $class_names = ' class="'. esc_attr( $class_names ) . '"';
-
+                if (!empty($args->link_before)) 
+                    $item_output .= $args->link_before;
                 
-		               
-                
-                $output .= $indent . '<li ' . $value . $class_names .$ariapopup.'>';
-                
-                
-                $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
-                $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
-                $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
-                $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
-                $description  = ! empty( $item->description ) ? '<span>'.esc_attr( $item->description ).'</span>' : '';
-
-                if($depth != 0) {
-                          $description = "";
-                }
-		$item_output = '';
-		if (!empty($args->before))
-		    $item_output .= $args->before;
-                 $item_output .= '<a'. $attributes .'>';
-                 
-		if (!empty($args->link_before)) 
-		    $item_output .= $args->link_before;
-		
-		$item_output .=apply_filters( 'the_title', $item->title, $item->ID );
+                $item_output .= apply_filters( 'the_title', $item->title, $item->ID );
                 $item_output .= $description;
                 
-		if (!empty($args->link_after)) 
-		    $item_output .= $args->link_after;                
+                if (!empty($args->link_after)) 
+                    $item_output .= $args->link_after;
                 
-		$item_output .= '</a>';
-		
-		 if (!empty($args->after))
-		    $item_output .= $args->after;
-           }
-           $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
-            
-       }
-        public function display_element($el, &$children, $max_depth, $depth = 0, $args = array(), &$output){
-        $id = $this->db_fields['id'];
-        if(isset($children[$el->$id]))
-            $el->classes[] = 'has_children';
-
-        parent::display_element($el, $children, $max_depth, $depth, $args, $output);
+                $item_output .= '</a>';
+                
+                if (!empty($args->after))
+                    $item_output .= $args->after;
+            }
+        }
+        $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+    }
+    public function display_element($el, &$children, $max_depth, $depth = 0, $args = array(), &$output){
+    $id = $this->db_fields['id'];
+    if(isset($children[$el->$id]))
+        $el->classes[] = 'has_children';
+    
+    parent::display_element($el, $children, $max_depth, $depth, $args, $output);
     }
 }
  /*-----------------------------------------------------------------------------------*/
  /* Add a special walker for the main menu, allowing us, to add some stuff :)
  /*-----------------------------------------------------------------------------------*/
  class Pirate_Rogue_OverlayMenu_Walker extends Walker_Nav_Menu {
-      public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
-           if ( '-' === $item->title ) {
-                $item_output = '<li class="menu_separator">';
-           } else {     
-                global $wp_query;
-                $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
-
-                $class_names = $value = $attributes = '';
-
-                $classes = empty( $item->classes ) ? array() : (array) $item->classes;
-                $ariapopup = '';
-                if (in_array('has_children', $classes)) {
-                    $ariapopup = ' aria-haspopup="true"';
-                }
-                $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
-                $class_names = ' class="'. esc_attr( $class_names ) . '"';
-
-                
-                
-                
-                $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
-                $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
-                $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
-                $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
-                $description  = ! empty( $item->description ) ? '<span>'.esc_attr( $item->description ).'</span>' : '';
-
-                if($depth != 0) {
-                          $description = "";
-                }
-		$item_output = '';
-		if (!empty($attributes)) {
-
-		    if (!empty($args->before))
-			$item_output .= $args->before;
-		     $item_output .= '<a'. $attributes .'>';
-
-		    if (!empty($args->link_before)) 
-			$item_output .= $args->link_before;
-
-		    $item_output .=apply_filters( 'the_title', $item->title, $item->ID );
-		    $item_output .= $description;
-
-		    if (!empty($args->link_after)) 
-			$item_output .= $args->link_after;                
-
-		    $item_output .= '</a>';
-
-		     if (!empty($args->after))
-			$item_output .= $args->after;
-                     
-                     
-                    $output .= $indent . '<li ' . $value . $class_names .$ariapopup.'>';
-		}
-           }
-           $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+    public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
+        if ( '-' === $item->title ) {
+            $item_output = '<li class="menu_separator">';
+        } else {
+            $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
             
-       }
-        public function display_element($el, &$children, $max_depth, $depth = 0, $args = array(), &$output){
-	    $id = $this->db_fields['id'];
-	    if(isset($children[$el->$id]))
-		$el->classes[] = 'has_children';
+            $class_names = $attributes = '';
+            
+            $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+            $ariapopup = '';
+            if (in_array('has_children', $classes)) {
+                $ariapopup = ' aria-haspopup="true"';
+            }
+            $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
+            $class_names = ' class="'. esc_attr( $class_names ) . '"';
+            
+            $output .= $indent . '<li' . $class_names .$ariapopup.'>';
+            
+            $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+            $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+            $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+            $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+            $description  = ! empty( $item->description ) ? '<span>'.esc_attr( $item->description ).'</span>' : '';
 
-	    parent::display_element($el, $children, $max_depth, $depth, $args, $output);
-	}
+            if($depth != 0) {
+                $description = "";
+            }
+            $item_output = '';
+            if (!empty($attributes)) {
+                if (!empty($args->before))
+                    $item_output .= $args->before;
+                $item_output .= '<a'. $attributes .'>';
+                
+                if (!empty($args->link_before)) 
+                    $item_output .= $args->link_before;
+                
+                $item_output .= apply_filters( 'the_title', $item->title, $item->ID );
+                $item_output .= $description;
+                
+                if (!empty($args->link_after)) 
+                    $item_output .= $args->link_after;
+                
+                $item_output .= '</a>';
+                
+                if (!empty($args->after))
+                    $item_output .= $args->after;
+            }
+        }
+        $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+    }
+    public function display_element($el, &$children, $max_depth, $depth = 0, $args = array(), &$output){
+    $id = $this->db_fields['id'];
+    if(isset($children[$el->$id]))
+        $el->classes[] = 'has_children';
+    
+    parent::display_element($el, $children, $max_depth, $depth, $args, $output);
+    }
 }
 /*-----------------------------------------------------------------------------------*/
 /* Get Image Meta Data
@@ -659,7 +648,7 @@ function pirate_rogue_create_schema_publisher($withrahmen = true) {
         $out .= '<meta itemprop="height" content="'.$height.'">';
         $out .= '</div>';
     }
-    $out .= '<meta itemprop="name" content="'.get_bloginfo( 'title' ).'">';
+    $out .= '<meta itemprop="name" content="'.get_bloginfo( 'name' ).'">';
     $out .= '<meta itemprop="url" content="'.home_url( '/' ).'">';
     if ($withrahmen) {
         $out .= '</div>';
@@ -671,17 +660,16 @@ function pirate_rogue_create_schema_publisher($withrahmen = true) {
 /*-----------------------------------------------------------------------------------*/
 function pirate_rogue_create_schema_thumbnail($id = 0) {
     $output = "";
-    if (!isset($id)) {
+    if (!$id) {
         $id = get_the_ID();
     }
     $post_thumbnail_id = get_post_thumbnail_id( $id ); 
-    if ((!isset($post_thumbnail_id)) || ($post_thumbnail_id <= 0)) {
-        $thumbfallbackid = absint(get_theme_mod( 'pirate_rogue_fallback_blogroll_thumbnail' ));
-        if (isset($thumbfallbackid)) {
+    if (!$post_thumbnail_id) {
+        $thumbfallbackid = get_theme_mod( 'pirate_rogue_fallback_blogroll_thumbnail' );
+        if ($thumbfallbackid) {
            $post_thumbnail_id = $thumbfallbackid;
         }
     }
-  
     
     if ($post_thumbnail_id) {
         $thumbimage = wp_get_attachment_image_src( $post_thumbnail_id);
@@ -696,6 +684,29 @@ function pirate_rogue_create_schema_thumbnail($id = 0) {
         $output .= '<meta itemprop="height" content="'.$imgheight.'">';
         $output .= '</div>';
     }
+    return $output;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*  Create String for Thumbnail info, used by Scema.org Microformat Data
+/*-----------------------------------------------------------------------------------*/
+function pirate_rogue_create_schema_postmeta($id = 0) {
+    $output = "";
+    if (!$id) {
+        $id = get_the_ID();
+    }
+    $output .= '<meta itemprop="datePublished" content="'.esc_attr( get_post_time('c', false, $id) ).'">';
+    $output .= '<meta itemprop="dateModified" content="'.esc_attr( get_the_modified_time('c', false, $id) ).'">';
+    
+    $author = get_theme_mod( 'pirate_rogue_author' );
+    if (!$author) {
+        $author_id = get_post_field('post_author', $id);
+        $author = get_the_author_meta( 'display_name' , $author_id ); 
+    }
+    $output .= '<div itemprop="author" itemscope itemtype="http://schema.org/Person">';
+    $output .= '<meta itemprop="name" content="'.$author.'">';
+    $output .= '</div>';
+    
     return $output;
 }
 

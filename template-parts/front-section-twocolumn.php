@@ -62,7 +62,11 @@ $thumbfallbackid = absint(get_theme_mod( 'pirate_rogue_fallback_thumbnail' ));
                             <div class="entry-summary" itemprop="description">
                                     <?php the_excerpt(); ?>
                             </div><!-- end .entry-summary -->
-                            <?php echo pirate_rogue_create_schema_thumbnail(); ?>
+                            <?php 
+                                echo pirate_rogue_create_schema_thumbnail(); 
+                                echo pirate_rogue_create_schema_postmeta();
+                                echo pirate_rogue_create_schema_publisher();
+                            ?>
 			</article><!-- #post-## -->
 
 		<?php endwhile; ?>

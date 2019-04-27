@@ -30,5 +30,9 @@ if (!isset($thumbfallbackid)) {
                 echo '</a><span class="screen-reader-text"> ('. get_the_date().')</span></h2>';
                 ?>
 	</header>
-        <?php echo pirate_rogue_create_schema_thumbnail(); ?>
+    <?php 
+        echo pirate_rogue_create_schema_thumbnail(); 
+        echo pirate_rogue_create_schema_postmeta();
+        echo pirate_rogue_create_schema_publisher();
+    ?>
 </article>

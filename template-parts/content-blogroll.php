@@ -60,5 +60,9 @@ if (!isset($thumbfallbackid)) {
 			</div>
                 </div>
 	</div>
-        <?php echo pirate_rogue_create_schema_thumbnail(); ?>
+    <?php 
+        echo pirate_rogue_create_schema_thumbnail(); 
+        echo pirate_rogue_create_schema_postmeta();
+        echo pirate_rogue_create_schema_publisher();
+    ?>
 </article>

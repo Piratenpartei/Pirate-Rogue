@@ -76,17 +76,6 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
                                     <?php echo wp_link_pages($pagebreakargs);
 					 edit_post_link( esc_html__( 'Edit Post', 'pirate-rogue'), '<span class="entry-edit">', '</span>' ); ?>
 				</div>
-                                <meta itemprop="datePublished" content="<?php echo esc_attr( get_post_time('c',false,$post->ID) );?>">
-                                <meta itemprop="dateModified" content="<?php echo esc_attr( get_the_modified_time('c',false,$post->ID) );?>">
-                                <?php
-                                    $author = get_theme_mod( 'pirate_rogue_author' );      
-                                    if ($author) { ?>
-                                        <div itemprop="author" itemscope itemtype="http://schema.org/Person">
-                                            <meta itemprop="name" content="<?php echo $author; ?>">
-                                        </div>
-                                    <?php }
-                                    echo pirate_rogue_create_schema_publisher();
-                                    ?>
 			</div>
 	</header>
 	<div class="contentwrap">
@@ -170,5 +159,9 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 
 	    </div>
 	</div>
-        <?php echo pirate_rogue_create_schema_thumbnail(get_the_ID()); ?>
+    <?php 
+        echo pirate_rogue_create_schema_thumbnail(); 
+        echo pirate_rogue_create_schema_postmeta();
+        echo pirate_rogue_create_schema_publisher();
+    ?>
     </article>

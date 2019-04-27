@@ -688,6 +688,29 @@ function pirate_rogue_create_schema_thumbnail($id = 0) {
 }
 
 /*-----------------------------------------------------------------------------------*/
+/*  Create String for Thumbnail info, used by Scema.org Microformat Data
+/*-----------------------------------------------------------------------------------*/
+function pirate_rogue_create_schema_postmeta($id = 0) {
+    $output = "";
+    if (!$id) {
+        $id = get_the_ID();
+    }
+    $output .= '<meta itemprop="datePublished" content="'.esc_attr( get_post_time('c', false, $id) ).'">';
+    $output .= '<meta itemprop="dateModified" content="'.esc_attr( get_the_modified_time('c', false, $id) ).'">';
+    
+    $author = get_theme_mod( 'pirate_rogue_author' );
+    if (!$author) {
+        $author_id = get_post_field('post_author', $id);
+        $author = get_the_author_meta( 'display_name' , $author_id ); 
+    }
+    $output .= '<div itemprop="author" itemscope itemtype="http://schema.org/Person">';
+    $output .= '<meta itemprop="name" content="'.$author.'">';
+    $output .= '</div>';
+    
+    return $output;
+}
+
+/*-----------------------------------------------------------------------------------*/
 /* Change output for gallery
 /*-----------------------------------------------------------------------------------*/
 add_filter('post_gallery', 'pirate_rogue_post_gallery', 10, 2);

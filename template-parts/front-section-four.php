@@ -65,6 +65,7 @@
                                                 echo '</a><span class="screen-reader-text"> ('. get_the_date().')</span></h2>';
                                                 ?>
 					</header>
+					<meta itemprop="description" content="<?php echo get_the_excerpt(); ?>">
 					<div class="entry-meta">
 						<?php pirate_rogue_posted_by(); ?>
 						<span class="entry-date" aria-hidden="true">

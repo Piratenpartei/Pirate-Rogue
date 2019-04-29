@@ -32,6 +32,7 @@ if (!isset($thumbfallbackid)) {
                 echo '</a><span class="screen-reader-text"> ('. get_the_date().')</span></h2>';
                     ?>
             </header>
+            <meta itemprop="description" content="<?php echo get_the_excerpt(); ?>">
 	</div>
     <?php 
         echo pirate_rogue_create_schema_thumbnail(); 

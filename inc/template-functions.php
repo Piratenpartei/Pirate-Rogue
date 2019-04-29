@@ -643,20 +643,20 @@ function pirate_rogue_create_schema_publisher($withrahmen = true) {
     }
     if ($src) {
         $out .= '<div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">';
-        $out .= '<meta itemprop="url" content="'.$src.'">';
+        $out .= '<link itemprop="contentUrl url" href="'.$src.'">';
         $out .= '<meta itemprop="width" content="'.$width.'">';
         $out .= '<meta itemprop="height" content="'.$height.'">';
         $out .= '</div>';
     }
     $out .= '<meta itemprop="name" content="'.get_bloginfo( 'name' ).'">';
-    $out .= '<meta itemprop="url" content="'.home_url( '/' ).'">';
+    $out .= '<link itemprop="url" href="'.home_url( '/' ).'">';
     if ($withrahmen) {
         $out .= '</div>';
     }
     return $out;
 }
 /*-----------------------------------------------------------------------------------*/
-/*  Create String for Thumbnail info, used by Scema.org Microformat Data
+/*  Create String for Thumbnail info, used by Schema.org Microformat Data
 /*-----------------------------------------------------------------------------------*/
 function pirate_rogue_create_schema_thumbnail($id = 0) {
     $output = "";
@@ -678,8 +678,8 @@ function pirate_rogue_create_schema_thumbnail($id = 0) {
         $imgwidth = $image[1];
         $imgheight = $image[2];
         $output .= '<div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">';
-        $output .= '<meta itemprop="thumbnailUrl" content="'.esc_url($thumbimage[0]).'">';
-        $output .= '<meta itemprop="url" content="'.esc_url($imageurl).'">';
+        $output .= '<link itemprop="thumbnailUrl" href="'.esc_url($thumbimage[0]).'">';
+        $output .= '<link itemprop="contentUrl url" href="'.esc_url($imageurl).'">';
         $output .= '<meta itemprop="width" content="'.$imgwidth.'">';
         $output .= '<meta itemprop="height" content="'.$imgheight.'">';
         $output .= '</div>';
@@ -688,7 +688,7 @@ function pirate_rogue_create_schema_thumbnail($id = 0) {
 }
 
 /*-----------------------------------------------------------------------------------*/
-/*  Create String for Thumbnail info, used by Scema.org Microformat Data
+/*  Create String for info about post date and author, used by Schema.org Microformat Data
 /*-----------------------------------------------------------------------------------*/
 function pirate_rogue_create_schema_postmeta($id = 0) {
     $output = "";

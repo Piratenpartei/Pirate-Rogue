@@ -518,7 +518,7 @@ function pirate_rogue_get_tag_ID($tag_name) {
        $byline = sprintf(
        /* translators: used to show post author name */
        esc_html_x( '%s', 'post author', 'pirate-rogue'),
-       '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html__( 'by ', 'pirate-rogue') . esc_html( get_the_author() ) . '</a></span>'
+       '<span class="author vcard"><a class="url" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html__( 'by ', 'pirate-rogue') . '<span class="fn n">' . esc_html( get_the_author() ) . '</span></a></span>'
        );
 
        echo '<span class="entry-author"> ' . $byline . '</span>';

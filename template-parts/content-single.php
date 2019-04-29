@@ -46,6 +46,8 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
                                
 				if ( get_post_meta($post->ID, 'intro', true) ) { ?>
 					<p class="intro" itemprop="description"><?php echo $introtext; ?></p>
+				<?php } else { ?>
+					<meta itemprop="description" content="<?php echo get_the_excerpt(); ?>">
 				<?php } ?>
 			</div><!-- end .title-wrap -->
 

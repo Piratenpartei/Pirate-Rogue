@@ -71,7 +71,7 @@ function pirate_rogue_setup() {
 	add_image_size( 'pirate-rogue-featured-bottom',  800, 450, true );
 
 }
-add_action( 'after_setup_theme', 'pirate_rogue_setup' );
+add_action( 'init', 'pirate_rogue_setup' );
 
 /*-----------------------------------------------------------------------------------*/
 /* Sets up the content width value based on the theme's design.

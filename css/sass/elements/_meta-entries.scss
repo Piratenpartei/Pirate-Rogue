@@ -73,15 +73,6 @@
 		display: inline-block;
 	    }
 	}
-        
-        .page-links {
-            font-weight: normal;
-            a {
-                .number {
-                   @include px2rem($font-size-small);
-                }
-            }
-        }  
     }
 
     .entry-tags {

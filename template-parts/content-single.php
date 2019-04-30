@@ -10,6 +10,7 @@
 
 <?php
 global $pagebreakargs;
+ 
 $introtext = get_post_meta($post->ID, 'intro', true);
 $custom_class = get_post_meta($post->ID, 'post_class', true);
 ?>
@@ -75,8 +76,8 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 					<?php endif; // comments_open() ?>
 				</div>
 				<div class="meta-columnthree">
-                                    <?php echo wp_link_pages($pagebreakargs);
-					 edit_post_link( esc_html__( 'Edit Post', 'pirate-rogue'), '<span class="entry-edit">', '</span>' ); ?>
+                                    <?php
+                                    edit_post_link( esc_html__( 'Edit Post', 'pirate-rogue'), '<span class="entry-edit">', '</span>' ); ?>
 				</div>
 			</div>
 	</header>
@@ -100,6 +101,8 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 			<div id="entry-content" class="entry-content" itemprop="text">
 			    <?php    
 			    the_content(); 
+                            echo wp_link_pages($pagebreakargs);
+                           
                            
                             if ( class_exists( 'Pirate_Crew' ) && 'content' == get_theme_mod( 'pirate_rogue_crewmember-position' ) ) {
 				$preauthor =  get_post_meta( $post->ID, 'pirate_crew_member_id', true );	

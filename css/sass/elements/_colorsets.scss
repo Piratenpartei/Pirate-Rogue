@@ -460,7 +460,7 @@ a {
 
 
 
-
+.post-page-numbers a,
 .author-bio a,
 .featured-slider button.slick-arrow:focus::after,
 .featured-slider button.slick-arrow:hover::after,
@@ -1111,6 +1111,7 @@ blockquote {
         &.single-post .entry-cats a,
         &.single-post .entry-tags a,
         &.single-post .entry-header .page-links a,
+        .post-page-numbers.current,    
         .pagination .nav-links span.page-numbers, 
         .pagination .nav-links a.page-numbers,
         &.single-post .entry-header .page-links .number {
@@ -1132,6 +1133,7 @@ blockquote {
         &.blog .featured-slider .entry-cats a,
         &.blog .featured-slider .entry-meta a,    
         &.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-cats a,
+        .post-page-numbers.current,    
         .pagination .nav-links span.page-numbers, 
         .pagination .nav-links a.page-numbers {
             background: $color; 

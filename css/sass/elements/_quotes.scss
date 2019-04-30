@@ -3,38 +3,27 @@
 /*-----------------------------------------------------------------------------------*/
 blockquote {
     display:block;
-    background: #fff;
     padding: 20px 20px 20px 45px;
     margin: 10px 20px 30px;
     position: relative;
     font-family: $font-family-quotation;
-    border-left: 15px solid $color-main;
-    border-right: 2px solid $color-main;
+    border-left-style: solid;
+    border-left-width: 15px;
+    border-right-style: solid;
+    border-right-width: 2px;
     font-style: italic;
-      
+    @include hyphens(manual);
+    
     a {
         text-decoration: none;
         cursor: pointer;
         padding: 0 3px;
     }
-    a:focus,
-    a:hover {
-            color: $color-second;
-    }
+
     em{
         font-style: italic;
     }
-    &.secondcolor {
-         border-left: 15px solid $color-second;
-         border-right: 2px solid $color-second;
-         a {
-             color: $color-second;   
-         }
-         a:focus,
-         a:hover {
-            color: $color-main;
-         }
-    }
+
     p {
         position: relative;
         font-weight: 600;
@@ -61,8 +50,6 @@ blockquote {
             font-family: Georgia, serif;
             font-size: 70px;
             font-weight: bold;
-            color: $color-main; //lighten($color-text,50%); 
-
             position: absolute;
             left: 10px;
             top: 0px;
@@ -71,12 +58,32 @@ blockquote {
             // Reset to make sure
             content: "";
         }
-        &.secondcolor::before {
-             color: $color-second;
-        }
     }
     
-    
+    &.smallborder {
+        border-left-width: 2px;
+        border-right-width: 2px;
+    }
+    &.boxborder {
+        border-top-width: 2px;
+        border-bottom-width: 2px;
+        border-top-style: solid;
+        border-bottom-style: solid;
+    }
+    &.small {
+        border-left-width: 2px;
+        border-right-width: 2px;       
+        font-style: normal;
+        padding: 10px 10px 10px 25px;
+        p {
+            font-weight: normal;
+            @include px2rem($font-size-base);  	
+        }
+        cite {
+            @include px2rem($font-size-base);
+        }
+        
+    }
     &.borderless {
         border: none;
     }
@@ -127,7 +134,7 @@ blockquote
 
 
 @media screen and (min-width: $breakpoint-sm) {
-    .entry-content blockquote {
+    .entry-content blockquote:not(.small) {
 	p {
 	    @include px2rem($font-size-blockquote-sm);  	    
 	} 

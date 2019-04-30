@@ -9,11 +9,11 @@
 
 get_header(); ?>
 
-	<div id="page-start" class="cf">
+    <div id="page-start" class="cf">
 
 <?php
 // Featured Slider
-if ( '' != get_theme_mod( 'uku_featuredtag' ) ) : ?>
+if ( '' != get_theme_mod( 'pirate_rogue_featuredtag' ) || '' != get_theme_mod( 'pirate_rogue_featuredcat' ) )  : ?>
 <div class="featured-content cf">
 	<?php
 	// Front Page Featured Post Slider
@@ -29,7 +29,7 @@ if ( '' != get_theme_mod( 'uku_front_section_one_tag' ) || '' != get_theme_mod( 
 
 <?php
 // Front Page Section 2-column
-if ( '' != get_theme_mod( 'uku_front_section_twocolumn_tag' ) || '' != get_theme_mod( 'uku_front_section_twocolumn_cat' ) ) : ?>
+if ( '' != get_theme_mod( 'pirate_rogue_front_section_twocolumn_tag' ) || '' != get_theme_mod( 'pirate_rogue_front_section_twocolumn_cat' ) ) : ?>
 <?php get_template_part( 'template-parts/front-section-twocolumn' ); ?>
 <?php endif; ?>
 
@@ -41,7 +41,7 @@ if ( '' != get_theme_mod( 'uku_front_section_threecolumn_tag' ) || '' != get_the
 
 <?php
 // Front Page Section 4 (Fullwidth)
-if ( '' != get_theme_mod( 'uku_front_section_four_tag' ) || '' != get_theme_mod( 'uku_front_section_four_cat' ) ) : ?>
+if ( '' != get_theme_mod( 'pirate_rogue_front_section_fullwidth_tag' ) || '' != get_theme_mod( 'pirate_rogue_front_section_fullwidth_cat' ) ) : ?>
 <?php get_template_part( 'template-parts/front-section-four' ); ?>
 <?php endif; ?>
 
@@ -52,8 +52,8 @@ if ( '' == get_theme_mod( 'uku_front_hideblog' ) ) : ?>
 
 	<div id="primary" class="site-content cf" role="main">
 
-		<?php if ( get_theme_mod( 'uku_custom_latestposts' ) ) : ?>
-			<h3 class="blog-title"><?php echo esc_html( get_theme_mod( 'uku_custom_latestposts' ) ); ?></h3>
+		<?php if ( get_theme_mod( 'pirate_rogue_custom_latestposts' ) ) : ?>
+			<h3 class="blog-title"><?php echo esc_html( get_theme_mod( 'pirate_rogue_custom_latestposts' ) ); ?></h3>
 		<?php else : ?>
 			<h3 class="blog-title"><?php esc_html_e('Latest Posts', 'pirate-rogue') ?></h3>
 		<?php endif; ?>
@@ -72,22 +72,22 @@ if ( '' == get_theme_mod( 'uku_front_hideblog' ) ) : ?>
 			'<span class="screen-reader-text">' . esc_html__( 'Newer Posts', 'pirate-rogue') . '</span> ',
 			'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'pirate-rogue') . ' </span>',
 			) ); ?>
-		</div><!-- end #primary -->
+	</div><!-- end #primary -->
 
-		<?php get_sidebar(); ?>
+	<?php get_sidebar(); ?>
 
 	</div><!-- end .blog-wrap -->
 <?php endif; ?>
 
 <?php
 // Front Page Section 2 (Featured Bottom)
-if ( '' != get_theme_mod( 'uku_front_section_two_tag' ) || '' != get_theme_mod( 'uku_front_section_two_cat' ) ) : ?>
+if ( '' != get_theme_mod( 'pirate_rogue_front_section_two_tag' ) || '' != get_theme_mod( 'pirate_rogue_front_section_two_cat' ) ) : ?>
 <?php get_template_part( 'template-parts/front-section-two' ); ?>
 <?php endif; ?>
 
 <?php
 // Front Page Section About
-if ( '' != get_theme_mod( 'uku_front_section_about_text' ) ) : ?>
+if ( '' != get_theme_mod( 'pirate_rogue_front_section_about_text' ) ) : ?>
 <?php get_template_part( 'template-parts/front-section-about' ); ?>
 <?php endif; ?>
 
@@ -105,10 +105,10 @@ if ( '' != get_theme_mod( 'uku_front_section_fourcolumn_tag' ) || '' != get_them
 
 <?php
 // Front Page Section 6-column
-if ( '' != get_theme_mod( 'uku_front_section_sixcolumn_tag' ) || '' != get_theme_mod( 'uku_front_section_sixcolumn_cat' ) ) : ?>
+if ( '' != get_theme_mod( 'pirate_rogue_front_section_sixcolumn_tag' ) || '' != get_theme_mod( 'pirate_rogue_front_section_sixcolumn_cat' ) ) : ?>
 <?php get_template_part( 'template-parts/front-section-sixcolumn' ); ?>
 <?php endif; ?>
 
-</div><!-- end #page-start -->
+    </div><!-- end #page-start -->
 
 <?php get_footer(); ?>

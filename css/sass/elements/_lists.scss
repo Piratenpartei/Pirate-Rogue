@@ -41,23 +41,71 @@ li {
     ul {
         padding-left: 50px;
 	
-	li {
-	    display: list-item;
-	    padding: 0;
-	    list-style-type: circle;
-	    
-	    li {
-		 list-style-type: square;
-		 
-		 li {
-		     list-style-type: disc ; 
-		 }
-	    }
+	 li {
+		position: relative;
+		padding: 0 0 0 24px;
+		list-style-position: outside;
+		list-style-type: none;
+		
+		&:before {
+		    @extend .fa;
+                    @extend .fa-chevron-circle-right;
+                    margin-right: 10px;
+                    margin-left: -24px;
+                    
+		}
+		
+		ul {
+		    padding-left: 50px;
+
+		    li {
+			padding-left: 24px;
+                        
+                        &:before {
+                            @extend .fa;
+                            @extend .fa-chevron-circle-right;
+                        }
+                        
+                        li {
+                            display: list-item;
+                            list-style-type: circle;
+                            padding-left: 0px;
+                            &:before {
+                                content: "";
+                                margin-right: 0;
+                                margin-left: 0;
+                            }
+                        }
+		    } 
+		}
+		ol li:before {
+		    display: none;
+		}
 	}
+            
         ul {
             padding-left: 50px; 
         }
-        
+        &.default {
+            li {
+                display: list-item;
+                padding: 0;
+                list-style-type: circle;
+                &:before {
+                    content: "";
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+                
+                li {
+                     list-style-type: square;
+
+                     li {
+                         list-style-type: disc ; 
+                     }
+                }
+            }
+        }
         &.nolist {
             li {
                 @include no-list;
@@ -69,20 +117,50 @@ li {
 	
 	&.sign {
 	    li {
-		list-style-image: url(../img/sign-20.gif);
-		list-style-position: inline;
+                list-style-type: none;
+                padding-left: 30px;
+                margin-left: 20px;
+                background-image:url(../img/signet-maincolor-24.gif);
+                background-repeat:no-repeat;
+                background-position:left 3px;
 		display: list-item;
-		padding: 0;
+                
+                &:before {
+                    content: "";
+                     margin: 0;
+                }
+                
 		ul li {
+                    background-image: none;
 		    list-style-type:  circle; 
 		    list-style-image: none;
-		
+                    padding: 0;
+                    margin: 0;
+                    
 		    ul li {
 			 list-style-type: square; 
+                       
 		    }
 		}
-	    }	
+                ol li {
+                    background-image: none;
+                    padding: 0;
+                    margin: 0;
+                }
+	    }
+            &.grau {
+                li {
+                    background-image:url(../img/signet-grau-24.gif);
+                }
+            }
+            &.secondcolor {
+                li {
+                    background-image:url(../img/signet-secondcolor-24.gif);
+                }
+            }
 	}
+        
+        
 	&.line {
 	    li {
 		position: relative;
@@ -97,6 +175,8 @@ li {
 		    left: 0;
 		    content: '\2013';		
 		    padding: 0;
+                    margin-left: 0;
+                    margin-right: 0;
 		}
 		
 		ul {
@@ -111,6 +191,16 @@ li {
 		}
 	    }
 	}
+        &.textlist {
+            @extend .nolist;
+            margin-left: 0;
+            padding-left: 0;
+            
+            li {
+                padding-left: 0;
+                display: inline;
+            }
+        }
     }
     ol {
         padding-left: 70px;

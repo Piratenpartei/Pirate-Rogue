@@ -18,7 +18,7 @@ if (! is_active_sidebar( 'sidebar-2' ) && (empty($pirate_rogue_page_sidebar)) ) 
 
 ?>
 
-<aside id="sidebar-page" class="sidebar-page widget-area" role="complementary">
+<aside id="sidebar-page" class="sidebar-page widget-area">
     <?php 
 	if (!empty($pirate_rogue_page_sidebar)) { ?>
 	    <div class="widget textwidget">

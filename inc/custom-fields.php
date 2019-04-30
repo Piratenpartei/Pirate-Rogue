@@ -71,7 +71,7 @@ function pirate_rogue_do_metabox_page_sidebar( $object, $box ) {
 	    return;
 	}
 	$pirate_rogue_page_sidebar  = get_post_meta( $object->ID, 'pirate_rogue_page_sidebar', true );
-	pirate_rogue_form_wpeditor('pirate_rogue_page_sidebar', $pirate_rogue_page_sidebar, __('Content','pirate_rogue'), __('Optional entries for the sidebar','pirate-rogue'), false);
+	pirate_rogue_form_wpeditor('pirate_rogue_page_sidebar', $pirate_rogue_page_sidebar, __('Content','pirate-rogue'), __('Optional entries for the sidebar','pirate-rogue'), false);
 }
 /*-----------------------------------------------------------------------------------*/
 /* Save the meta box page sidebar data
@@ -110,10 +110,10 @@ function pirate_rogue_do_metabox_attributes( $object, $box ) {
         if ((empty($untertitel)) && (isset($piratenkleider_untertitel))) {
             $untertitel = $piratenkleider_untertitel;
         }
-	pirate_rogue_form_text('pirate_rogue_metabox_untertitel', $untertitel, __('Sub-Titel','pirate_rogue'),  __('Enter a text for a subtitle here, which belongs to the main title of the entry. Do not use more as 120 Chars.','pirate-rogue'));
+	pirate_rogue_form_text('pirate_rogue_metabox_untertitel', $untertitel, __('Subtitle','pirate-rogue'),  __('Enter a text for a subtitle here, which belongs to the main title of the entry. Do not use more than 120 characters.','pirate-rogue'));
         
         $canonical  = get_post_meta( $object->ID, 'pirate_rogue_canonical', true );
-        pirate_rogue_form_url('pirate_rogue_metabox_canonical', $canonical, __('URL (Originaladresse)','pirate_rogue'), __('Enter the URL of the original posts address (e.g. another blog or website, were this text was mirrored from)','pirate-rogue'));
+        pirate_rogue_form_url('pirate_rogue_metabox_canonical', $canonical, __('URL (original address)','pirate-rogue'), __('Enter the URL of the original post where the text has been taken from. This could be another blog or website.','pirate-rogue'));
  }
 /*-----------------------------------------------------------------------------------*/
 /* Save the meta box's post/page metadata.

@@ -51,20 +51,18 @@ if ( ! function_exists( 'pirate_rogue_get_custom_logo' ) ) :
             if (!empty($linktitle)) {
                 $html .= ' title="'.$linktitle.'"';
             }
-	    $html .= ' itemprop="url">';
+	    $html .= '>';
 	    $html .=  wp_get_attachment_image( $custom_logo_id, 'full', false, array(
-		    'class'    => $imgclass,
-		    'itemprop' => 'logo',
+		    'class'    => $imgclass
 		) );
 
 	  
             $html .= '</a>';
-	   
-	} elseif ( is_customize_preview() ) {
+	 } elseif ( is_customize_preview() ) {
 	    // If no logo is set but we're in the Customizer, leave a placeholder (needed for the live preview).
 	    $html = sprintf( '<a href="%1$s" class="custom-logo-link" style="display:none;"><img class="custom-logo"/></a>',
 		esc_url( home_url( '/' ) )
-	    );
+            );
 	}
 
 	return $html;

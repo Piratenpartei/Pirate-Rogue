@@ -2,24 +2,28 @@
 /**
  * The template for the Front Page Post Section Four
  *
- * @package Uku
- * @since Uku 1.0
- * @version 1.0.5
+ * @package Pirate Rogue
+ * @since Pirate Rogue 1.0
+ * @version 1.0
  */
 ?>
 
 <?php
-	$posttag = get_theme_mod('uku_front_section_four_tag');
+    $postnumber = get_theme_mod('pirate_rogue_front_section_fullwidth_number');
+    if (!isset($postnumber)) {
+        $postnumber = 1;
+    }
+	$posttag = get_theme_mod('pirate_rogue_front_section_fullwidth_tag');
 	$tag_link = get_tag_link( $posttag );
 
-	$postcat = get_theme_mod('uku_front_section_four_cat');
+	$postcat = get_theme_mod('pirate_rogue_front_section_fullwidth_cat');
 	$category_link = get_category_link($postcat);
 
 	$uku_section_four_query = new WP_Query( array(
-		'posts_per_page'			=> 1,
-		'post_status'					=> 'publish',
-		'tag_id' 							=> $posttag,
-		'cat' 								=> $postcat,
+		'posts_per_page'        => $postnumber,
+		'post_status'		=> 'publish',
+		'tag_id' 		=> $posttag,
+		'cat' 			=> $postcat,
 		'ignore_sticky_posts'	=> 1,
 	) );
 	
@@ -27,48 +31,46 @@
 	if (!isset($thumbfallbackid)) {
 	    $thumbfallbackid =0;
 	} else {
-	    $imagesrc = wp_get_attachment_image_src( $thumbfallbackid, 'uku-featured' )[0];
+	    $imagesrc = wp_get_attachment_image_src( $thumbfallbackid, 'pirate-rogue-featured' )[0];
 	}
 	
 ?>
 
 <section id="front-section-four" class="front-section cf">
-
-	<?php if ( '' != get_theme_mod( 'uku_front_section_four_title' ) && '' != get_theme_mod( 'uku_front_section_four_cat') ) : ?>
-		<h3 class="front-section-title"><?php echo esc_html( get_theme_mod( 'uku_front_section_four_title' ) ); ?><span><a class="all-posts-link" href="<?php echo esc_url( $category_link ); ?>"><?php esc_html_e('All posts', 'pirate-rogue') ?></a></span></h3>
-	<?php elseif ( '' != get_theme_mod( 'uku_front_section_four_title' ) && '' != get_theme_mod( 'uku_front_section_four_tag' ) ) : ?>
-		<h3 class="front-section-title"><?php echo esc_html( get_theme_mod( 'uku_front_section_four_title' ) ); ?><span><a class="all-posts-link" href="<?php echo esc_url( $tag_link ); ?>"><?php esc_html_e('All posts', 'pirate-rogue') ?></a></span></h3>
+	<?php if ( '' != get_theme_mod( 'pirate_rogue_front_section_fullwidth_title' ) && '' != get_theme_mod( 'pirate_rogue_front_section_fullwidth_cat') ) : ?>
+		<h3 class="front-section-title"><?php echo esc_html( get_theme_mod( 'pirate_rogue_front_section_fullwidth_title' ) ); ?><span><a class="all-posts-link" href="<?php echo esc_url( $category_link ); ?>"><?php esc_html_e('All posts', 'pirate-rogue') ?></a></span></h3>
+	<?php elseif ( '' != get_theme_mod( 'pirate_rogue_front_section_fullwidth_title' ) && '' != get_theme_mod( 'pirate_rogue_front_section_fullwidth_tag' ) ) : ?>
+		<h3 class="front-section-title"><?php echo esc_html( get_theme_mod( 'pirate_rogue_front_section_fullwidth_title' ) ); ?><span><a class="all-posts-link" href="<?php echo esc_url( $tag_link ); ?>"><?php esc_html_e('All posts', 'pirate-rogue') ?></a></span></h3>
 	<?php endif; ?>
 
 	<?php if($uku_section_four_query->have_posts()) : ?>
 		<?php while($uku_section_four_query->have_posts()) : $uku_section_four_query->the_post() ?>
-
-		<article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?>>
+		<article <?php post_class('cf'); ?> itemscope itemtype="http://schema.org/NewsArticle">
 
 			<?php if ( '' != get_the_post_thumbnail() && ! post_password_required() ) : ?>
-				<div class="entry-thumbnail fadein"><a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><?php the_post_thumbnail('uku-featured'); ?></span></a></div><!-- end .entry-thumbnail -->
+				<div class="entry-thumbnail fadein" aria-hidden="true" role="presentation" tabindex="-1"><a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><?php the_post_thumbnail('pirate-rogue-featured'); ?></span></a></div><!-- end .entry-thumbnail -->
 			<?php elseif ( ! post_password_required() && $imagesrc != '') : ?>
-				<div class="entry-thumbnail fadein"><a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><img src="<?php echo $imagesrc; ?>"></span></a></div><!-- end .entry-thumbnail -->
+				<div class="entry-thumbnail fadein" aria-hidden="true" role="presentation" tabindex="-1"><a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><img src="<?php echo $imagesrc; ?>" alt="<?php echo get_the_title();?>"></span></a></div><!-- end .entry-thumbnail -->
 
 			<?php endif; ?>
-
 			<div class="meta-main-wrap">
-
 				<div class="entry-main">
 					<header class="entry-header">
 						<?php if ( has_category() ) : ?>
-						<div class="entry-cats">
-							<?php the_category(' '); ?>
-						</div><!-- end .entry-cats -->
-						<?php endif; // has_category() ?>
-						<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-					</header><!-- end .entry-header -->
-
+						<div class="entry-cats" itemprop="articleSection"><?php the_category(' '); ?></div>
+						<?php endif; // has_category() 
+                                                
+                                                echo '<h2 class="entry-title" itemprop="headline"><a href="'.esc_url( get_permalink() ).'" rel="bookmark" itemprop="url">';
+                                                echo get_the_title();
+                                                echo '</a><span class="screen-reader-text"> ('. get_the_date().')</span></h2>';
+                                                ?>
+					</header>
+					<meta itemprop="description" content="<?php echo get_the_excerpt(); ?>">
 					<div class="entry-meta">
-						<?php uku_posted_by(); ?>
-						<span class="entry-date">
+						<?php pirate_rogue_posted_by(); ?>
+						<span class="entry-date" aria-hidden="true">
 							<a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></a>
-						</span><!-- end .entry-date -->
+						</span>
 						<?php if ( comments_open() ) : ?>
 						<span class="entry-comments">
 							<?php comments_popup_link(
@@ -76,19 +78,21 @@
 								'<span class="comment-name">' . esc_html__( 'Comments', 'pirate-rogue') .  '</span>' . esc_html__( '1', 'pirate-rogue'),
 								'<span class="comment-name">' . esc_html__( 'Comments', 'pirate-rogue') .  '</span>' . esc_html__( '%', 'pirate-rogue') )
 							; ?>
-						</span><!-- end .entry-comments -->
-					<?php endif; // comments_open() ?>
-
+						</span>
+                                                <?php endif; // comments_open() ?>
 						<?php edit_post_link( esc_html__( 'Edit Post', 'pirate-rogue'), '<span class="entry-edit">', '</span>' ); ?>
-					</div><!-- end .entry-meta -->
-				</div><!-- .entry-main -->
-			</div><!-- .meta-main-wrap -->
-		</article><!-- end post -<?php the_ID(); ?> -->
+					</div>
+				</div>
+			</div>
+            <?php 
+                echo pirate_rogue_create_schema_thumbnail(); 
+                echo pirate_rogue_create_schema_postmeta();
+                echo pirate_rogue_create_schema_publisher();
+            ?>
+		</article>
 
 		<?php endwhile; ?>
 
 	<?php endif; // have_posts() ?>
-
 	<?php wp_reset_postdata(); ?>
-
-</section><!-- end #front-section-four -->
+</section>

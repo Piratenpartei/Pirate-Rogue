@@ -8,9 +8,9 @@ hr {
             height:56px;
             margin: 10px 0;
             color: $color-hr;
-            background-image: url("../img/trenner-04-50.png");
+            background-image: url("./img/trenner-04-50.png");
             @if $color-hr == $color-main {
-                background-image: url("../img/trenner-01-50.png");
+                background-image: url("./img/trenner-01-50.png");
             }
 
             background-position: center center;
@@ -18,9 +18,9 @@ hr {
 
         }
 	.menu_separator & {
-	    background-image: url("../img/trenner-01-30.png");
+	    background-image: url("./img/trenner-01-30.png");
 	     @if $color-hr == $color-main {	 
-		background-image: url("../img/trenner-04-30.png");
+		background-image: url("./img/trenner-04-30.png");
 	     }
 	     height: 40px;
                           
@@ -29,7 +29,12 @@ hr {
 	.site-content & {
 	    clear: both;
 	}
-	
+        .devider_hideimage & {
+            background-image: none;
+            border: 1px;
+            height: 1px;
+            background:  $color-hr;
+        }
 	
 }
 #overlay-nav .menu_separator hr {

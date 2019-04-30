@@ -67,7 +67,7 @@ $useentry = $videolist[array_rand($videolist, 1)];
 
 ?>
 <p>
-    <?php esc_html_e( 'We are sorry, that we could not serve, what you we are looking for. But how about this:', 'pirate-rogue'); ?>
+    <?php esc_html_e( 'We are sorry, that we could not serve what you are looking for. But how about this:', 'pirate-rogue'); ?>
 </p>
 <h3><?php echo $useentry['title']; ?></h3>
     

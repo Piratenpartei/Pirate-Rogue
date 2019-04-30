@@ -10,6 +10,30 @@ function pirate_rogue_load_template_part($template_name, $part_name=null) {
     return $var;
 }
 /*-----------------------------------------------------------------------------------*/
+/* Get cat id by name or slug
+/*-----------------------------------------------------------------------------------*/
+function pirate_rogue_get_cat_ID($string) {
+    if (empty($string)) {
+        return 0;
+    }
+    $string= esc_attr( $string );
+    if (is_string($string)) {
+	$thisid = get_cat_ID($string);
+        if ($thisid==0) {
+            $idObj = get_category_by_slug( $string );
+            if (false==$idObj) {
+                return 0;
+            }
+            $thisid = $idObj->term_id;
+        }
+        return $thisid;
+    } elseif(is_numeric($string)) {
+        return $string;
+    }
+    
+}
+
+/*-----------------------------------------------------------------------------------*/
 /* Get tag id
 /*-----------------------------------------------------------------------------------*/
 function pirate_rogue_get_tag_ID($tag_name) {
@@ -33,27 +57,22 @@ function pirate_rogue_get_tag_ID($tag_name) {
     
     
     if ($posttag=='') {
-        $posttag = get_theme_mod('uku_front_section_two_tag');
+        $posttag = get_theme_mod('pirate_rogue_front_section_two_tag');
     } elseif ($posttag == '-') {
         $posttag = 0;
     }
-    $postcat = $postcat ? esc_attr( $postcat ) : '';
-    
-    if (is_string($postcat)) {
-	$postcat = get_cat_ID($postcat);
-    }
-    if ($postcat=='') {
-        $postcat = get_theme_mod('uku_front_section_two_cat');
-    } elseif ($postcat == '-') {
-        $postcat = 0;
+    $postcat = pirate_rogue_get_cat_ID($postcat);
+   
+    if ($postcat==0) {
+        $postcat = get_theme_mod('pirate_rogue_front_section_two_cat');
     }
     if (!isset($postcat) && !isset($posttag)) {
         return;
     }  
     $title = $title ?  esc_attr( $title ) : '';
     if (empty($title)) {
-        if ( '' != get_theme_mod( 'uku_front_section_two_title' )) {
-            $title = esc_html( get_theme_mod( 'uku_front_section_two_title' ) );
+        if ( '' != get_theme_mod( 'pirate_rogue_front_section_two_title' )) {
+            $title = esc_html( get_theme_mod( 'pirate_rogue_front_section_two_title' ) );
         }
     }       
     
@@ -89,9 +108,9 @@ function pirate_rogue_get_tag_ID($tag_name) {
         $out = '<section id="'.$htmlid.'" class="cf '.$divclass.'">';
         if (!empty($title)) {
             if (!empty($postcat)) {
-                $out .= '<h3 class="front-section-title">'.esc_html( $title ).'<span><a class="all-posts-link" href="'.esc_url( $category_link ).'">'.__('All posts', 'uku').'</a></span></h3>'."\n";
+                $out .= '<h3 class="front-section-title">'.esc_html( $title ).'<span><a class="all-posts-link" href="'.esc_url( $category_link ).'">'.__('All posts', 'pirate-rogue').'</a></span></h3>'."\n";
             } else {
-                $out .= '<h3 class="front-section-title">'.esc_html( $title ).'<span><a class="all-posts-link" href="'.esc_url( $tag_link ).'">'.__('All posts', 'uku').'</a></span></h3>'."\n";                
+                $out .= '<h3 class="front-section-title">'.esc_html( $title ).'<span><a class="all-posts-link" href="'.esc_url( $tag_link ).'">'.__('All posts', 'pirate-rogue').'</a></span></h3>'."\n";                
             }
         }
        
@@ -138,15 +157,11 @@ function pirate_rogue_get_tag_ID($tag_name) {
     } elseif ($posttag == '-') {
         $posttag = 0;
     }
-    $postcat = $postcat ? esc_attr( $postcat ) : '';
-    
-    if (is_string($postcat)) {
-	$postcat = get_cat_ID($postcat);
-    }
-    if ($postcat=='') {
+    $postcat = pirate_rogue_get_cat_ID($postcat);
+  
+
+    if ($postcat==0) {
         $postcat = get_theme_mod('uku_front_section_one_cat');
-    } elseif ($postcat == '-') {
-        $postcat = 0;
     }
     if (!isset($postcat) && !isset($posttag)) {
         return;
@@ -190,9 +205,9 @@ function pirate_rogue_get_tag_ID($tag_name) {
         $out = '<section id="'.$htmlid.'" class="cf '.$divclass.'">';
         if (!empty($title)) {
             if (!empty($postcat)) {
-                $out .= '<h3 class="front-section-title">'.esc_html( $title ).'<span><a class="all-posts-link" href="'.esc_url( $category_link ).'">'.__('All posts', 'uku').'</a></span></h3>'."\n";
+                $out .= '<h3 class="front-section-title">'.esc_html( $title ).'<span><a class="all-posts-link" href="'.esc_url( $category_link ).'">'.__('All posts', 'pirate-rogue').'</a></span></h3>'."\n";
             } else {
-                $out .= '<h3 class="front-section-title">'.esc_html( $title ).'<span><a class="all-posts-link" href="'.esc_url( $tag_link ).'">'.__('All posts', 'uku').'</a></span></h3>'."\n";                
+                $out .= '<h3 class="front-section-title">'.esc_html( $title ).'<span><a class="all-posts-link" href="'.esc_url( $tag_link ).'">'.__('All posts', 'pirate-rogue').'</a></span></h3>'."\n";                
             }
         }
        
@@ -235,27 +250,21 @@ function pirate_rogue_get_tag_ID($tag_name) {
     
     
     if ($posttag=='') {
-        $posttag = get_theme_mod('uku_front_section_twocolumn_tag');
+        $posttag = get_theme_mod('pirate_rogue_front_section_twocolumn_tag');
     } elseif ($posttag == '-') {
         $posttag = 0;
     }
-    $postcat = $postcat ? esc_attr( $postcat ) : '';
-    
-    if (is_string($postcat)) {
-	$postcat = get_cat_ID($postcat);
-    }
-    if ($postcat=='') {
-        $postcat = get_theme_mod('uku_front_section_twocolumn_cat');
-    } elseif ($postcat == '-') {
-        $postcat = 0;
+    $postcat = pirate_rogue_get_cat_ID($postcat);
+    if ($postcat==0) {
+        $postcat = get_theme_mod('pirate_rogue_front_section_twocolumn_cat');
     }
     if (!isset($postcat) && !isset($posttag)) {
         return;
     }  
     $title = $title ?  esc_attr( $title ) : '';
     if (empty($title)) {
-        if ( '' != get_theme_mod( 'uku_front_section_twocolumn_title' )) {
-            $title = esc_html( get_theme_mod( 'uku_front_section_twocolumn_title' ) );
+        if ( '' != get_theme_mod( 'pirate_rogue_front_section_twocolumn_title' )) {
+            $title = esc_html( get_theme_mod( 'pirate_rogue_front_section_twocolumn_title' ) );
         }
     }       
     
@@ -280,15 +289,15 @@ function pirate_rogue_get_tag_ID($tag_name) {
 	if (!isset($thumbfallbackid)) {
 	    $thumbfallbackid =0;
 	} else {
-	    $imagesrc = wp_get_attachment_image_src( $thumbfallbackid, 'uku-front-big' )[0];
+	    $imagesrc = wp_get_attachment_image_src( $thumbfallbackid, 'pirate-rogue-front-big' )[0];
 	}
 		
         $out = '<section id="front-section-twocolumn" class="cf columns-wrap '.$divclass.'">';
         if (!empty($title)) {
             if (!empty($postcat)) {
-                $out .= '<h3 class="front-section-title">'.esc_html( $title ).'<span><a class="all-posts-link" href="'.esc_url( $category_link ).'">'.__('All posts', 'uku').'</a></span></h3>'."\n";
+                $out .= '<h3 class="front-section-title">'.esc_html( $title ).'<span><a class="all-posts-link" href="'.esc_url( $category_link ).'">'.__('All posts', 'pirate-rogue').'</a></span></h3>'."\n";
             } else {
-                $out .= '<h3 class="front-section-title">'.esc_html( $title ).'<span><a class="all-posts-link" href="'.esc_url( $tag_link ).'">'.__('All posts', 'uku').'</a></span></h3>'."\n";                
+                $out .= '<h3 class="front-section-title">'.esc_html( $title ).'<span><a class="all-posts-link" href="'.esc_url( $tag_link ).'">'.__('All posts', 'pirate-rogue').'</a></span></h3>'."\n";                
             }
         }
        
@@ -299,7 +308,7 @@ function pirate_rogue_get_tag_ID($tag_name) {
 			$out .= '<article class="'. join( ' ', get_post_class() ) .'">';
 
 			 if ( '' != get_the_post_thumbnail() && ! post_password_required() ) : 
-                            $out .= '<div class="entry-thumbnail fadein"><a href="'.get_permalink().'"><span class="thumb-wrap">'.get_the_post_thumbnail('uku-front-big').'</span></a></div><!-- end .entry-thumbnail -->'."\n";
+                            $out .= '<div class="entry-thumbnail fadein"><a href="'.get_permalink().'"><span class="thumb-wrap">'.get_the_post_thumbnail('pirate-rogue-front-big').'</span></a></div><!-- end .entry-thumbnail -->'."\n";
 			 elseif ( ! post_password_required() && $imagesrc != '') :
                             $out .= '<div class="entry-thumbnail fadein"><a href="'.get_permalink().'"><span class="thumb-wrap"><img src="'.$imagesrc.'"></span></a></div><!-- end .entry-thumbnail -->'."\n";
 			 endif;
@@ -317,8 +326,11 @@ function pirate_rogue_get_tag_ID($tag_name) {
                                         
                                         
 					$out .= '</div><!-- end .entry-cats -->'."\n";
-                                        $out .= '<h2 class="entry-title"><a href="'.esc_url( get_permalink() ).'" rel="bookmark">';       
-					$out .= get_the_title().'</a></h2>';
+                                        $out .= '<h2 class="entry-title"><a href="'.esc_url( get_permalink() ).'" rel="bookmark">';
+                                        $out .= get_the_title();
+                                        $out .= '</a><span class="screen-reader-text"> ('. get_the_date().')</span></h2>';
+
+                                        
 				$out .= '</header><!-- end .entry-header -->'."\n";
 
 				$out .= '<div class="entry-summary">'."\n";
@@ -342,37 +354,41 @@ function pirate_rogue_get_tag_ID($tag_name) {
  function pirate_rogue_blogroll($posttag = '', $postcat = '', $num = 4, $divclass= '') {
     $posttag = $posttag ? esc_attr( $posttag ) : '';
     
-    if (is_string($posttag)) {
-	$posttag = pirate_rogue_get_tag_ID($posttag);
-    }
     
-    $postcat = $postcat ? esc_attr( $postcat ) : '';
-    
-    if (is_string($postcat)) {
-	$postcat = get_cat_ID($postcat);
-    }
-    
-    if (!isset($postcat) && !isset($posttag)) {
-        return;
+    if ((!isset($posttag)) && (!isset($postcat))) {
+	// kein wert gesetzt, also nehm ich die letzten Artikel
+	$postcat =0;
+    } else {
+	if (is_string($posttag)) {
+	    $posttag = pirate_rogue_get_tag_ID($posttag);
+	}
+	$postcat = pirate_rogue_get_cat_ID($postcat);
     }
     
     if (!is_int($num)) {
 	$num = 4;
     }
     $divclass = $divclass ? esc_attr( $divclass ) : '';
-   
-    $tag_link = get_tag_link( $posttag );
-    $category_link = get_category_link($postcat);
 
-    $pirate_rogue_blogroll_query = new WP_Query( array(
+    $parameter =  array(
         'posts_per_page'	=> $num,
-        'tag_id' 		=> $posttag,
-        'cat' 			=> $postcat,
         'post_status'		=> 'publish',
         'ignore_sticky_posts'	=> 1,
-    ) );
-
-
+    );
+    $found = 0;
+    if ((isset($posttag)) && ($posttag >= 0)) {
+	$parameter['tag_id'] = $posttag;
+	$found =1;
+    }
+    if ((isset($postcat)) && ($postcat >= 0)) {
+	$parameter['cat'] = $postcat;
+	$found =2;
+    }
+    if ($found==0) {
+	return;
+    }
+    
+    $pirate_rogue_blogroll_query = new WP_Query($parameter );
     $out = '<section class="blogroll '.$divclass.'">';
     if($pirate_rogue_blogroll_query->have_posts()) :
 	while($pirate_rogue_blogroll_query->have_posts()) : 
@@ -393,36 +409,44 @@ function pirate_rogue_get_tag_ID($tag_name) {
  function pirate_rogue_articlelist($posttag = '', $postcat = '', $num = 5, $divclass= '', $title = '') {
     $posttag = $posttag ? esc_attr( $posttag ) : '';
     
-    if (is_string($posttag)) {
-	$posttag = pirate_rogue_get_tag_ID($posttag);
-    }
-    
-    $postcat = $postcat ? esc_attr( $postcat ) : '';
-    
-    if (is_string($postcat)) {
-	$postcat = get_cat_ID($postcat);
-    }
-    
-    if (!isset($postcat) && !isset($posttag)) {
-        return;
+    if ((!isset($posttag)) && (!isset($postcat))) {
+	// kein wert gesetzt, also nehm ich die letzten Artikel
+	$postcat =0;
+    } else {
+	if (is_string($posttag)) {
+	    $posttag = pirate_rogue_get_tag_ID($posttag);
+	}
+	$postcat = pirate_rogue_get_cat_ID($postcat);
     }
     
     if (!is_int($num)) {
 	$num = 5;
     }
     $divclass = $divclass ? esc_attr( $divclass ) : '';
-    $title =  esc_attr( $title );
-   
-    $tag_link = get_tag_link( $posttag );
-    $category_link = get_category_link($postcat);
 
-    $pirate_rogue_blogroll_query = new WP_Query( array(
+    $parameter =  array(
         'posts_per_page'	=> $num,
-        'tag_id' 		=> $posttag,
-        'cat' 			=> $postcat,
         'post_status'		=> 'publish',
         'ignore_sticky_posts'	=> 1,
-    ) );
+    );
+    $found = 0;
+    if ((isset($posttag)) && ($posttag >= 0)) {
+	$parameter['tag_id'] = $posttag;
+	$found =1;
+    }
+    if ((isset($postcat)) && ($postcat >= 0)) {
+	$parameter['cat'] = $postcat;
+	$found =2;
+    }
+    if ($found==0) {
+	return;
+    }
+    $pirate_rogue_blogroll_query = new WP_Query($parameter );
+    
+    
+    $divclass = $divclass ? esc_attr( $divclass ) : '';
+    $title =  esc_attr( $title );
+  
 
     $out ='';
     if (!empty($title)) {
@@ -453,8 +477,8 @@ function pirate_rogue_get_tag_ID($tag_name) {
  /*-----------------------------------------------------------------------------------*/
  /* Prints HTML with meta information for the current post-date/time and author.
  /*-----------------------------------------------------------------------------------*/
- if ( ! function_exists( 'uku_posted_on' ) ) :
- function uku_posted_on() {
+ if ( ! function_exists( 'pirate_rogue_posted_on' ) ) :
+ function pirate_rogue_posted_on() {
  	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 
  	$time_string = sprintf( $time_string,
@@ -472,7 +496,7 @@ function pirate_rogue_get_tag_ID($tag_name) {
  		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
  	);
         
-        if (('' != get_theme_mod( 'uku_front_hideauthor' ) ) || ('' != get_theme_mod( 'uku_all_hideauthor' ) )) {
+        if (('' != get_theme_mod( 'pirate_rogue_front_hideauthor' ) ) || ('' != get_theme_mod( 'pirate_rogue_all_hideauthor' ) )) {
                 /* Do not show author information */
         } else {
            echo '<div class="entry-author"> ' . $byline . '</div>';
@@ -486,15 +510,15 @@ function pirate_rogue_get_tag_ID($tag_name) {
  /*-----------------------------------------------------------------------------------*/
  /* Prints Post Author Information
  /*-----------------------------------------------------------------------------------*/
- if ( ! function_exists( 'uku_posted_by' ) ) :
-    function uku_posted_by() {
-	if (('' != get_theme_mod( 'uku_front_hideauthor' ) ) || ('' != get_theme_mod( 'uku_all_hideauthor' ) )) {
+ if ( ! function_exists( 'pirate_rogue_posted_by' ) ) :
+    function pirate_rogue_posted_by() {
+	if (('' != get_theme_mod( 'pirate_rogue_front_hideauthor' ) ) || ('' != get_theme_mod( 'pirate_rogue_all_hideauthor' ) )) {
 	    return;
 	}
        $byline = sprintf(
        /* translators: used to show post author name */
        esc_html_x( '%s', 'post author', 'pirate-rogue'),
-       '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html__( 'by ', 'pirate-rogue') . esc_html( get_the_author() ) . '</a></span>'
+       '<span class="author vcard"><a class="url" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html__( 'by ', 'pirate-rogue') . '<span class="fn n">' . esc_html( get_the_author() ) . '</span></a></span>'
        );
 
        echo '<span class="entry-author"> ' . $byline . '</span>';
@@ -502,7 +526,39 @@ function pirate_rogue_get_tag_ID($tag_name) {
    }
  endif;
  
+ /*-----------------------------------------------------------------------------------*/
+ /* Get special excerpt by content
+ /*-----------------------------------------------------------------------------------*/
+if ( ! function_exists( 'pirate_rogue_custom_excerpt' ) ) :
+    function pirate_rogue_custom_excerpt($length = 400){
+            $excerpt = get_the_content();
 
+          if ($length <=0) {
+                $length = 100;
+           }
+
+          $excerpt = preg_replace('/\s+(https?:\/\/www\.youtube[\/a-z0-9\.\-\?&;=_]+)/i','',$excerpt);
+          $excerpt = strip_shortcodes($excerpt);
+          $excerpt = strip_tags($excerpt, '<br>,<br />,<b>,</b>,<strong>,</strong>,<em>,</em>'); 
+
+
+          if (mb_strlen($excerpt)<5) {
+              $excerpt = '<!-- '.__( 'No entry for this post', 'pirate-rogue' ).' -->';
+          }
+
+          $needcontinue =0;
+          if (mb_strlen($excerpt) >  $length) {
+            $the_str = mb_substr($excerpt, 0, $length);
+            $the_str .= "...";
+            $needcontinue = 1;
+          }  else {
+              $the_str = $excerpt;
+          }
+          $the_str = '<p>'.$the_str.'</p>';
+          return $the_str;
+    }
+endif;
+ 
  /*-----------------------------------------------------------------------------------*/
  /* The end of this file as you know it
  /*-----------------------------------------------------------------------------------*/

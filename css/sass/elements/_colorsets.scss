@@ -1,0 +1,1272 @@
+/*-----------------------------------------------------------------------------------*/
+/* Colorsets: Allows to reset default colors for regions, headlines and others
+/*-----------------------------------------------------------------------------------*/
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/* 1. Default Colors
+/*-----------------------------------------------------------------------------------*/
+
+#masthead {
+    background: white;
+}
+// Suche
+.search-open {
+    color: $color-text;
+    background: transparent;
+    border-color: $color-page-background;
+        
+    :focus,
+    :hover {
+        background:  $color-text;
+        color: $color-page-background;
+        border-color: $color-text;
+    }
+}
+.socialmedia-maincolor .search-open {
+    color: $color-main;
+    
+    &:focus,
+    &:hover {
+       background:  $color-second;
+        color: $color-page-background;
+        border-color: $color-second;
+    } 
+}
+.socialmedia-secondcolor .search-open {
+    color: $color-second;
+    
+    &:focus,
+    &:hover {
+        background: $color-main;
+        color: $color-page-background;
+        border-color: $color-main;
+    }
+}
+
+#footer-search {   
+    .search-field {
+        background: rgba(26, 26, 26, 0.25);;
+        border-color: rgba(255, 255, 255, 0.2);;
+        color: #fff;
+            
+        :focus,
+        :hover {
+            background: #fff;
+            color: $color-text;
+        }
+    }
+    input#submit, 
+    input[type="submit"] { 
+        background: rgba(26, 26, 26, 0.4);;
+        border-color: rgba(255, 255, 255, 0.2);;
+       
+        :focus,
+        :hover {
+            background: $color-main;
+            color: #fff;
+        }
+    }
+    input#submit:focus, 
+    input#submit:hover, 
+    input[type="submit"]:focus,
+    input[type="submit"]:hover{ 
+                background: $color-main;
+                color: #fff;
+    }
+}
+
+
+@media screen and (min-width: $breakpoint-1060) {
+     /* --- Search Desktop --- */
+  #masthead {
+	border-bottom-color: #ddd;
+  }
+  .desktop-search {
+	background: rgba(26, 26, 26, 0.75);
+	border-top-color: #ddd;
+
+        input {
+            &.search-field {
+                background: none;
+                border-bottom-color: #fff;
+                color: #fff;
+            }
+            &[type="submit"] {
+                background: $color-main;
+                color: #fff;
+                border: 2px solid $color-main;
+            }
+             &[type="submit"]:focus,
+             &[type="submit"]:hover {
+                 background: $color-main;
+             }
+        }
+    }
+  
+    .searchbar-maincolor .desktop-search {     
+        background:  rgba($color-main, 0.95);
+	
+        input {
+            &.search-field {            
+                border-bottom-color: $color-second;
+                color: #fff;
+
+                &:hover, 
+                &:focus {
+                    background: darken($color-main,20%);
+                }
+            }
+            &[type="submit"] {
+                background:  $color-second;
+                color: #fff;
+                border-color: $color-second;
+            }
+            &[type="submit"]:focus,
+            &[type="submit"]:hover {
+                background: $color-second;
+                border-color: $color-main;
+            }
+          }
+    }
+    
+    .searchbar-secondcolor .desktop-search {     
+        background: rgba($color-second, 0.95);
+        input {
+                &.search-field {            
+                    border-bottom-color: $color-main;
+                    color: #fff;
+                    
+                }
+                &[type="submit"] {
+                    background:  $color-main;
+                    color: #fff;
+                    border-color: $color-main; 
+                }
+                &[type="submit"]:focus,
+                &[type="submit"]:hover {
+                    background: $color-main;
+                    border: 2px solid $color-second;
+                }
+        }
+    }
+}
+
+// Overlay
+
+#overlay-open,
+#overlay-open-sticky {
+    color: $color-text;
+}
+#overlay-close {
+    color: $color-text;
+}
+
+.socialmedia-maincolor {
+    #overlay-open,
+    #overlay-open-sticky,
+    #overlay-close {
+        color: $color-main;
+    }
+    
+}
+.socialmedia-secondcolor {
+    #overlay-open,
+    #overlay-open-sticky, 
+    #overlay-close {
+        color: $color-second;
+    }
+}
+
+
+/* --- Links + Colors --- */
+
+.single-post .entry-header p.intro, 
+.entry-summary, 
+.front-section-title, 
+.social-front-title, 
+.widget_mc4wp_form_widget p, 
+.jetpack_subscription_widget #subscribe-text p, 
+.section-about-column-one p {
+  color: $color-text;
+}
+
+
+.footer-feature-btn:focus, 
+#comments-toggle:focus, 
+.footer-feature-btn:hover, 
+.comments-show #comments-toggle, 
+#comments-toggle:hover {
+  background: #0c6ca6;
+}
+
+#primary #infinite-handle span:focus, 
+#front-section-three a.all-posts-link:focus, 
+#offcanvas-widgets-open:focus,
+#primary #infinite-handle span:hover, 
+#front-section-three a.all-posts-link:hover, 
+#offcanvas-widgets-open:hover,
+.offcanvas-widgets-show #offcanvas-widgets-open {
+  background: #0c6ca6;
+}
+
+.comments-show #comments-toggle,
+#comments-toggle:focus,
+#comments-toggle:hover {
+  border-color: #0c6ca6;
+  color: #fff;
+}
+
+#primary #infinite-handle span:focus, 
+#front-section-three a.all-posts-link:focus, 
+.footer-feature-btn:focus, 
+#offcanvas-widgets-open:focus,
+#primary #infinite-handle span:hover, 
+#front-section-three a.all-posts-link:hover, 
+.footer-feature-btn:hover, 
+#offcanvas-widgets-open:hover, 
+.offcanvas-widgets-show #offcanvas-widgets-open {
+  border-color: #0c6ca6;
+  color: #fff;
+}
+
+
+#comments .comment-reply a, 
+#respond a#cancel-comment-reply-link {
+  color: $color-meta;
+}
+
+#comments #respond p {
+  &.comment-notes a, 
+  &.logged-in-as a {
+    color: $color-meta;
+  }
+}
+
+#nav-comments a {
+  color: $color-meta;;
+}
+
+#comments .comment-meta {
+  color: $color-meta;
+  a {
+    color: $color-meta;
+  }
+}
+
+p.wp-caption-text, 
+.contact-form label span, 
+.gallery .gallery-item .gallery-caption {
+  color: $color-meta;
+}
+
+
+.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1), 
+.featured-slider {
+    .entry-header h2.entry-title a {
+      color: #fff;
+    }
+}
+
+
+
+#front-section-four {
+  .entry-header h2.entry-title a {
+    color: #fff;
+  }
+}
+
+
+
+.big-thumb .entry-header {
+  h1.entry-title, p.intro {
+    color: #fff;
+  }
+}
+
+#primary #infinite-handle span:hover button {
+  color: #fff;
+}
+
+.blog {
+  &.headerfont-light {
+    h1.site-title a, 
+    #overlay-open, 
+    #site-branding .site-title a, 
+    #overlay-open, p.site-description {
+      color: #fff;
+    }
+  }
+}
+
+
+
+pre {
+  background: #f4f4f4;
+  color: #444;
+}
+
+abbr, acronym {
+  border-bottom-color: $color-text;
+}
+
+mark, ins {
+  color: $color-mark;
+  background: $color-mark-background;
+}
+
+
+
+
+
+// Headlines
+#section-fullwidth,
+.site-content,
+.entry-content {
+    h1 {
+        color: $color-content-h1;   
+    }
+    h2 {
+        color: $color-content-h2; 
+    }
+    h3 {
+        color: $color-content-h3; 
+    }
+    h4 {
+        color: $color-content-h4; 
+    }
+    h5 {
+        color: $color-content-h5; 
+    }
+    h6 {
+        color: $color-content-h6; 
+    }
+}
+h2, h3 {
+    #sidebar-page & {
+        color: $color-text;
+    }
+   
+}
+
+
+h1 {
+    .single-post .entry-header &.entry-title,
+    .entry-header &.entry-title,
+    .attachment &.entry-title,
+    .page &.entry-title,
+    &.entry-title,
+    .archive-header &.archive-title,
+    .site-content &,
+    .entry-content & {
+        border-color: $color-main;
+    }
+
+}
+
+
+
+#secondary h2.widget-title, 
+#sidebar-page h2.widget-title {
+    color: $color-text;
+}
+
+
+h2 {
+    #footer-social &.socialmedia {
+        color: rgba(255, 255, 255, 0.5);
+    }
+}
+
+.entry-header {
+    h2.entry-title {
+      color: $color-text;
+      a {
+	  color: $color-text;
+      }
+    }
+}
+
+
+
+.widget {
+  h2.widget-title {
+    border-top-color: #1a1a1a;
+    color: $color-text;
+  }
+}
+
+
+.featured-slider .entry-header h2.entry-title a {
+  color: #fff;
+}
+
+
+
+h3 {    
+    .all-posts-link {
+        color: $color-text;
+    }
+    
+    #footer-social &.socialmedia {
+        color: rgba(255, 255, 255, 0.5);
+    }
+}
+
+.footer-menu h3.footer-menu-title {
+    color: $color-footer-menu-title;
+}
+
+
+// Misc Classes
+.color-second {
+    color: $color-second;
+}
+.color-main {
+    color: $color-main;
+}
+.color-third {
+    color: $color-third;
+}
+.color-four {
+    color: $color-four;
+}
+
+
+
+/*
+Links and colors
+*/
+
+a {
+    color: $color-text;
+    &:focus,
+    &:hover {
+         color: $color-linkhover;
+    }
+  
+    .entry-content &, 
+    .comment-text & {
+        color: $color-content-links; 
+        &:focus,
+        &:hover {
+            color: $color-second;
+        }
+    }
+}
+
+
+
+
+
+
+.author-bio a,
+.featured-slider button.slick-arrow:focus::after,
+.featured-slider button.slick-arrow:hover::after,
+.front-section a.all-posts-link:focus,
+#overlay-close:focus,
+.widget-area .widget ul li a:focus, 
+#sidebar-offcanvas .widget a:focus,
+.textwidget a:focus, 
+#overlay-nav a:focus,
+.author-links a:focus, 
+.single-post .post-navigation a:focus,
+.single-attachment .post-navigation a:focus,
+.single-post .hentry .entry-meta a:focus,
+.front-section a.all-posts-link:hover,
+#overlay-close:hover,
+.widget-area .widget ul li a:hover, 
+#sidebar-offcanvas .widget a:hover,
+.textwidget a:hover, 
+#overlay-nav a:hover,
+.author-links a:hover, 
+.single-post .post-navigation a:hover,
+.single-attachment .post-navigation a:hover,
+.single-post .hentry .entry-meta a:hover {
+    color: $color-content-links; 
+}
+
+#secondary h2.widget-title, 
+#sidebar-page h2.widget-title  {
+  color: $color-text;
+}
+
+#desktop-navigation ul li a:focus,
+#desktop-navigation ul li a:hover {
+     color:  $color-linkhover; // #51a8dd;
+}
+.entry-header {
+    a:focus,  
+    a:hover,
+    h2.entry-title a:focus,
+    h2.entry-title a:hover {
+      color:  $color-linkhover; // #51a8dd; 
+    }
+}
+.blog .entry-meta a:focus,
+.blog .entry-meta a:hover {
+    color: $color-content-links; // #51a8dd;
+}
+#desktop-navigation ul li.menu-item-has-children a:focus::after,
+#desktop-navigation ul li.menu-item-has-children a:hover::after {
+    border-top-color: $color-content-links; //  #51a8dd;
+}
+.single-post .post-navigation a:focus,
+.single-attachment .post-navigation a:focus,
+.single-post .post-navigation a:hover,
+.single-attachment .post-navigation a:hover {
+    border-bottom-color: $color-content-links;
+}
+
+
+
+#desktop-navigation {
+    .sub-menu li a:focus, 
+    .children li a:focus, 
+    .sub-menu li a:hover, 
+    .children li a:hover {
+	background: $color-content-links; // #51a8dd;
+    }
+}
+
+.single-post .entry-header p.intro, 
+.entry-summary, 
+.front-section-title, 
+.social-front-title, 
+.widget_mc4wp_form_widget p, 
+.jetpack_subscription_widget #subscribe-text p, 
+.section-about-column-one p {
+    color: $color-text;
+}
+
+
+
+#primary #infinite-handle span:focus, 
+#front-section-three a.all-posts-link:focus, 
+#offcanvas-widgets-open:focus,
+#primary #infinite-handle span:hover, 
+#front-section-three a.all-posts-link:hover, 
+#offcanvas-widgets-open:hover,
+.offcanvas-widgets-show #offcanvas-widgets-open {
+    background: $color-linkhover;
+    border-color: $color-linkhover;
+    color: #fff;
+}
+
+.comments-show #comments-toggle,
+#comments-toggle:focus,
+#comments-toggle:hover {
+    border-color: $color-linkhover;
+    color: #fff;
+}
+
+
+.desktop-search input.search-field {
+  &:active, 
+  &:focus {
+	border-bottom-color: $color-content-links; 
+  }
+}
+
+#comments .comment-reply a, 
+#respond a#cancel-comment-reply-link {
+    color: $color-meta;
+}
+
+#comments #respond p {
+    &.comment-notes a, 
+    &.logged-in-as a {
+	  color: $color-meta;
+    }
+}
+
+#nav-comments a {
+  color: $color-meta;
+}
+
+#comments .comment-meta {
+  color: $color-meta;
+  
+  a {
+    color: $color-meta;
+  }
+}
+
+.single-post .entry-tags a, 
+p.wp-caption-text, 
+.contact-form label span, 
+.gallery .gallery-item .gallery-caption {
+  color: $color-meta;
+}
+
+// Tables
+table {
+    border-bottom-color: $table-border; 
+    background: #fff;
+    &.sorttable {
+	thead {
+	    background: $table-head-sortable;
+	    tr {
+		th.headerSortUp,
+		th.headerSortDown {
+		    background: $table-head-sortable-active;
+		}
+	    }	    
+	}
+    }
+    thead {
+	th {
+	    border-bottom-color: $table-border;	
+	}
+    }
+    &.long, 
+    &.border {
+	td {
+	    border-bottom-color: $table-border;	
+	}
+    }
+    &.long {	
+	tr:nth-child(odd) td {
+		background: $table-tr-odd;
+	}
+    }
+}
+th {
+    a {
+        color: $color-text;
+    }
+}
+td {
+    color: $table-td-color;
+}
+
+
+//  Lists
+.entry-content {
+    ul {
+	 li {
+		&:before {
+                    color: $color-main;
+		}
+		ul {
+		    li {
+                        &:before {
+                            color: $color-second;
+                        }
+		    } 
+		}	
+	}
+    }
+}
+
+.fontawesome-icon-list {
+    a {
+	i {
+	    color: $color-text;
+	}
+    }
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*  Blockquotes and cites
+/*-----------------------------------------------------------------------------------*/
+blockquote {
+    background: #fff;
+    border-left-color: $color-main;
+    border-right-color: $color-main;
+
+    a:focus,
+    a:hover {
+        color: $color-second;
+    }
+    &.maincolor {
+        border-left-color: $color-main;
+        border-right-color: $color-main;
+    }
+    &.secondcolor {
+        border-left-color: $color-second;
+        border-right-color: $color-second;
+        a {
+             color: $color-second;   
+        }
+        a:focus,
+        a:hover {
+            color: $color-main;
+        }
+    }
+    &.boxborder {
+        border-top-color: $color-main;
+        border-bottom-color: $color-main;
+    }
+    &.boxborder.secondcolor {
+        border-top-color: $color-second;
+        border-bottom-color: $color-second;
+    }
+    &.quotesign {
+        &::before {
+            color: $color-main; 
+        }
+        &.secondcolor::before {
+             color: $color-second;
+        }
+    }
+}
+
+
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/* Display of meta elements, like tags, categories, timestampts and so on
+/*-----------------------------------------------------------------------------------*/
+.entry-meta, 
+.entry-cats {
+    color: $color-text;
+
+    a {
+	color: $color-text;
+    }
+}
+
+.entry-cats {
+    a {
+	color: $color-cats;
+	background: $color-cats-background; 
+	
+	&:hover {
+	    color: $color-cats-hover;
+	    background: $color-cats-background-hover; 
+	}
+    }
+}
+
+
+.section-one-column-one .entry-cats a, 
+.section-three-column-one .entry-cats a,
+.featured-slider .entry-cats a, 
+.single-post .entry-cats a {
+    color: #fff;
+}
+#front-section-four {
+  .entry-cats a, 
+  .entry-meta {
+    color: #fff;
+    a {
+      color: #fff;
+    }
+  }
+}
+
+
+.search-results .entry-cats a:nth-child(n+2):before, 
+.archive .entry-cats a:nth-child(n+2):before {
+  color: #2b2b2b;
+  background-color: white;
+}
+
+
+
+.single-post {
+    .entry-header {
+        .page-links {
+            .number {
+                color: $color-second;
+            }
+            a {
+                .number {
+                    color: $color-main;
+                }
+            }
+            
+        }
+        
+    }
+    .entry-tags {         
+	a {
+	     color: $color-second;
+	}
+    }
+}
+
+
+.blog {
+    .hentry .entry-cats a {
+	color: $color-cats-background; 
+	background-color: white;
+	&:focus,
+	&:hover {
+	    color: $color-cats-hover;
+	    background: $color-cats-background-hover; 
+	}
+    }
+ //   .entry-cats a:nth-child(n+2):before {
+//	color: #2b2b2b;
+  //      background-color: white;
+   // }
+
+    .featured-slider {
+	.entry-cats a,
+	.entry-meta a {
+	    color: $color-cats;
+	    background: $color-cats-background; 
+	    
+	    &:focus,
+	    &:hover {
+		color: $color-cats-hover;
+		background: $color-cats-background-hover; 
+	    }
+	}
+    }
+
+}
+
+.featured-slider .entry-cats a, 
+.section-one-column-one .entry-cats a, 
+.section-three-column-one .entry-cats a, 
+#front-section-four .entry-cats a, 
+.single-post .entry-cats a, 
+.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-cats a {
+    background: $color-cats-background; 
+    color: #fff;
+  
+    &:focus,
+    &:hover {
+        background: $color-cats-background-hover; 
+        color: #fff;
+    }
+}
+
+
+
+
+.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1), 
+.featured-slider {
+    .entry-meta {
+      color: #fff;
+      a {
+	color: #fff;
+      }
+    }
+    .entry-cats a {
+      color: #fff;
+    }
+}
+
+
+
+// Comments
+#comments-toggle {
+  border-color: $color-text;
+  background: none;
+}
+
+#comments {
+    .disclaimer {
+        a {
+            color: $color-second;
+        }
+        a:hover {
+            color: $color-main;
+        }
+    }    
+}
+
+.comments-show #comments-toggle, 
+#comments-toggle:focus,
+#comments-toggle:hover {
+   background: $color-cats-background-hover; 
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* 2.  Use Colorsets from customizer
+/*-----------------------------------------------------------------------------------*/
+// Head Background
+@each $key in $customizer-colorset {
+      $name:      nth($key, 1); 
+      $color:      nth($key, 2); 
+    
+    body.head-bgcol-#{$name} {
+        .sticky-header,
+        #masthead {
+            background-color: $color;
+            border-bottom-color: rgba($color,0.7);
+        }
+        #site-branding {
+            background-color: $color;
+        }
+
+    }
+    
+    body.head-textcol-#{$name} {
+       .search-open, 
+        #overlay-open, 
+        #overlay-open-sticky {
+            color: $color;
+        }
+        #masthead {
+            #desktop-navigation ul.menu li a,
+            p.site-title,
+            p.site-title a,
+            h1.site-title,
+            h1.site-title a, 
+            p.site-description {
+                  color: $color;
+            }
+        }
+    }
+    
+    body.head-linkborder-#{$name} {
+       #desktop-navigation ul.menu li.current-menu-ancestor a, 
+       #desktop-navigation ul.menu li.focus a, 
+       #desktop-navigation ul.menu li:focus a,
+       #desktop-navigation ul.menu li:hover a {
+            border-bottom-color: $color;
+        } 
+            
+       #desktop-navigation .sub-menu li a:focus, 
+       #desktop-navigation .children li a:focus, 
+       #desktop-navigation .sub-menu li a:hover, 
+       #desktop-navigation .children li a:hover {
+           background-color: $color;
+       }    
+       button#overlay-open:hover,
+       button#search-open:hover {
+            color: $color;
+       }     
+    }
+    
+    body.main-bgcol-#{$name} {
+       
+        background-color: $color;
+        .site-content header, 
+        .entry-content header,
+        blockquote,
+        &.blog .hentry .entry-cats,
+        &.blog .hentry .entry-cats a,
+        &.blog .featured-slider .entry-meta a,
+        &.single-post .entry-header .entry-cats a,
+        main {
+            background-color: $color;
+        }
+
+        &.blog .featured-content .hentry .entry-cats {
+            background-color: transparent;
+        }
+    }
+    body.actionbutton-#{$name} {
+        .gallery .slick-prev:before, 
+        .gallery .slick-next:before,
+        .gallery .slick-dots li.slick-active button:before,
+        .gallery .slick-dots li.slick-active button:before,
+        .gallery .slick-dots li button:hover:before,
+        .gallery .slick-dots li button:focus:before,
+        
+        
+        .desktop-search input.search-field {
+            border-bottom-color: $color;
+        } 
+        .comments-show #comments-toggle,
+        #comments-toggle:focus, 
+        #comments-toggle:hover,
+        input[type="button"], input[type="submit"], input#submit,
+        #commentform input#submit {
+            border-color: $color;
+            background-color: $color;
+        }
+        
+        
+        
+    }
+}
+
+
+
+
+
+// Main Headlines
+@each $key in $customizer-colorset {
+      $name:      nth($key, 1); 
+      $color:      nth($key, 2); 
+    
+    .main-headlinecol-#{$name} {
+        
+        .entry-header h2.entry-title,
+        .entry-header h2.entry-title a {
+             color: $color;
+        }
+        main {     
+            #secondary h2.widget-title, 
+            #sidebar-page h2.widget-title,
+            h1, h2, h3, h4, h5, h6 {
+                color: $color;
+            }
+        }
+    }
+}
+// Main Headline Border
+@each $key in $customizer-colorset {
+      $name:      nth($key, 1); 
+      $color:      nth($key, 2); 
+    
+    .main-titleunderline-#{$name} {
+        main {
+            .single-post .entry-header h1.entry-title, 
+            .entry-header h1.entry-title, 
+            .attachment h1.entry-title, 
+            .page h1.entry-title, 
+            h1.entry-title, 
+            .archive-header h1.archive-title, 
+            .site-content h1, 
+            .entry-content h1{
+                border-color: $color;
+            }
+            
+        }
+    }
+}
+
+
+@each $key in $customizer-colorset {
+      $name:      nth($key, 1); 
+      $color:      nth($key, 2); 
+    // Main Textcol
+    .main-textcol-#{$name} {
+       .single-post .entry-header p.intro, 
+       .entry-summary, 
+       .front-section-title,
+       .social-front-title,
+       .widget_mc4wp_form_widget p,
+       .jetpack_subscription_widget #subscribe-text p, 
+       .section-about-column-one p,
+        blockquote p,
+        main {
+ 
+            color: $color;
+        }
+    }
+    // Main Linkcol
+    .main-linkcol-#{$name} {
+        main {
+            a,
+            blockquote a,
+            .entry-content a, 
+            .comment-text a {
+                 color: $color;
+            }
+        }
+    }
+    // Main Link Hover col
+    .main-linkhovercol-#{$name} {
+        &.single-post .entry-header .entry-cats a:hover,
+        &.blog .featured-slider .entry-cats a:hover, 
+        &.blog .featured-slider .entry-meta a:hover,
+        &.blog .hentry .entry-cats a:hover {
+             color: $color;
+        }
+        main {
+            a:hover,
+            blockquote a:hover,
+            .entry-content a:hover, 
+            .comment-text a:hover {
+                 color: $color;
+            }
+        }
+    }
+}
+
+// Meta Links
+@each $key in $customizer-colorset {
+      $name:      nth($key, 1); 
+      $color:      nth($key, 2); 
+   
+    .main-meta-textcol-hover-#{$name} {
+
+        &.single-post .entry-header .entry-cats a:hover,
+        &.blog .featured-slider .entry-cats a:hover, 
+        &.blog .featured-slider .entry-meta a:hover,
+        &.blog .hentry .entry-cats a:hover,
+        .pagination .nav-links span.page-numbers:hover, 
+        .pagination .nav-links a.page-numbers:hover,
+        .featured-slider button.slick-arrow:focus::after, 
+        .featured-slider button.slick-arrow:hover::after {
+             color: $color;
+        }
+    }
+    .main-meta-textcol-#{$name} {
+
+        .entry-meta, 
+        .entry-cats,
+        .slider-text .entry-meta a, 
+        .slider-text .entry-cats a,
+        .section-one-column-one .entry-cats a,
+        .section-three-column-one .entry-cats a,
+        #front-section-four .entry-cats a,
+        #front-section-four .entry-meta a,
+        .featured-slider .entry-cats a, 
+        &.single-post .entry-header .entry-cats a,
+        &.blog .featured-slider .entry-cats a, 
+        &.blog .featured-slider .entry-meta a,
+        &.blog .hentry .entry-cats a,
+        &.single-post .entry-cats a,
+        &.single-post .entry-tags a,
+        &.single-post .entry-header .page-links a,
+        .pagination .nav-links span.page-numbers, 
+        .pagination .nav-links a.page-numbers,
+        &.single-post .entry-header .page-links .number {
+             color: $color;
+        }
+    }
+
+    
+    .main-meta-bgcol-#{$name} {
+        .entry-cats a,
+        .featured-slider .entry-cats a, 
+        .featured-slider .entry-meta a, 
+        .section-one-column-one .entry-cats a, 
+        .section-three-column-one .entry-cats a, 
+        #front-section-four .entry-cats a, 
+        &.single-post .entry-cats a, 
+        &.single-post .entry-tags a,
+        &.blog .hentry .entry-cats a,
+        &.blog .featured-slider .entry-cats a,
+        &.blog .featured-slider .entry-meta a,    
+        &.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-cats a,
+        .pagination .nav-links span.page-numbers, 
+        .pagination .nav-links a.page-numbers {
+            background: $color; 
+        }
+        .gallery .slick-prev:before, 
+        .gallery .slick-next:before,
+        .gallery .slick-dots li.slick-active button:before {
+            color: $color;
+        }
+        
+    }
+    .main-meta-bgcol-hover-#{$name} {
+        .entry-cats a:hover,
+        .featured-slider .entry-cats a:hover, 
+        .featured-slider .entry-meta a:hover, 
+        .section-one-column-one .entry-cats a:hover, 
+        .section-three-column-one .entry-cats a:hover, 
+        #front-section-four .entry-cats a:hover, 
+        &.blog .hentry .entry-cats a:hover,
+        &.blog .featured-slider .entry-cats a:hover,
+        &.blog .featured-slider .entry-meta a:hover,      
+        &.single-post .entry-cats a:hover, 
+        &.single-post .entry-tags a:hover,
+        &.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-cats a:hover,
+        .pagination .nav-links span.page-numbers:hover, 
+        .pagination .nav-links a.page-numbers:hover {
+            background: $color; 
+        }
+    }
+}
+
+
+
+@each $key in $customizer-colorset {
+      $name:      nth($key, 1); 
+      $color:      nth($key, 2); 
+    
+    // Main Listitem
+
+    .main-listitem-#{$name} {
+        main {            
+            ul li {
+		&:before {          
+                    color: $color;
+                }
+            }
+        }
+    }
+
+    // Main Quoteborder
+    .main-quoteborder-#{$name} {
+        blockquote {
+            border-color: $color;
+        }
+    }
+}
+// Tables
+@each $key in $customizer-colorset {
+      $name:      nth($key, 1); 
+      $color:      nth($key, 2); 
+    
+    .main-table-textcol-#{$name} {
+        table, tr, th, td {
+            color: $color;
+        }
+    }
+    .main-table-bgcol-#{$name} {
+        table {
+            background-color: $color;
+        }
+    }
+    .main-table-bgcol-head-#{$name} {
+        table thead, th {
+            background-color: $color;
+        }
+    }
+    .main-table-bgcol-odd-#{$name} {
+        
+        tr td {
+           background-color: transparent;
+        }
+        table.long tr:nth-child(odd) td,
+        tr:nth-child(odd) td {
+		background-color: $color;
+        }
+    }
+}
+
+// Footer 
+@each $key in $customizer-colorset {
+      $name:      nth($key, 1); 
+      $color:      nth($key, 2); 
+    
+      //  Background
+    .footer-bgcol-#{$name} {
+        #colophon {
+           background-color: $color;
+           border-color: $color;
+        }
+    }
+    //  Headlines
+    .footer-headlinecol-#{$name} {
+        #colophon {
+            p.title-footer,
+            .footer-menu h3.footer-menu-title,
+            #footer-social h2.socialmedia,
+            h1, h2, h3, h4, h5, h6 {
+                color: $color;
+            }
+        }
+    }
+    //  Textcol
+    .footer-textcol-#{$name} {
+        #colophon,
+        #colophon p, 
+        #colophon #site-info {
+            color: $color;
+        }
+    }
+    //  Linkcol
+    .footer-linkcol-#{$name} {
+        #colophon p a,
+        #colophon #site-info a,
+        #colophon .footer-menu ul a {
+            color: $color;
+        }
+    }
+    //  Link Hover col
+    .footer-linkhovercol-#{$name} {
+        #colophon p a:hover,
+        #colophon #site-info a:hover,
+        #colophon .footer-menu ul a:hover {
+            color: $color;
+        }
+    }
+}
+
+

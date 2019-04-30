@@ -1,13 +1,10 @@
-/* 
-*    Ueberschriften
-*/
+/*-----------------------------------------------------------------------------------*/
+/* Headlines
+/*-----------------------------------------------------------------------------------*/
 
 
 h1, h2, h3, h4, h5, h6 {
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;
+    @include hyphens(auto);
     font-familiy: $font-family-headlines;
 }
 
@@ -17,10 +14,12 @@ h1, h2, h3, h4, h5, h6 {
     h1 {
 	padding: 6px 0 9px;
 	@include px2rem($font-size-h1);
+        @include hyphens(manual);
     }
     h2 {
 	@include px2rem($font-size-h2);
 	padding: 6px 0 9px;
+        @include hyphens(manual);
     }
     h3 {
 	@include px2rem($font-size-h3);
@@ -41,14 +40,7 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 3px 0;
     }
 }
-h2, h3 {
-    color: $color-main;
-    
-    #sidebar-page & {
-        color: $color-text;
-    }
-   
-}
+
 
 
 
@@ -78,15 +70,14 @@ h1 {
     &.entry-title,
     .archive-header &.archive-title,
     .site-content &,
-    .entry-content & {
-        border-bottom: 7px;
-        border-color: $color-main;
-        border-style:  solid;
+    .entry-content & {       
         text-transform: uppercase;
+        border-bottom: 7px;
+        border-style:  solid;
         margin-bottom: 50px;
         display: table-cell;
         padding-bottom: 1px;
-  
+
         & + * {
           margin-top: 20px;  
         }
@@ -102,6 +93,12 @@ h1 {
         display: table-cell;
         width: 100%;
     }
+    
+    .h1noupper &,
+    .h1noupper .entry-header &.entry-title,
+    .h1noupper.page &.entry-title {
+        text-transform: none;
+    }
 }
 
 .entry-header {
@@ -114,22 +111,31 @@ h1 {
 #secondary h2.widget-title, 
 #sidebar-page h2.widget-title {
     @include px2rem($font-size-h2-widget);
-    color: $color-text;
     text-decoration: none;
+}
+
+
+h2 {
+    #footer-social &.socialmedia {
+        @include px2rem($font-size-small);
+        hypens: auto;
+        display: inline-block;
+        float: left;
+        padding: 8px 15px 0px 0px;
+    }
 }
 
 .entry-header {
     h2.entry-title {
-      @include px2rem($font-size-h2-entryheader);
-      color: $color-text;
-      text-decoration: none;
-      padding: 4px 0 8px;
-      display: block;
+        @include px2rem($font-size-h2-entryheader);
+        @include hyphens(manual);
+        text-decoration: none;
+        padding: 4px 0 8px;
+        display: block;
 	margin: 0;
-      a {
-	  color: $color-text;
-	  text-decoration: none;
-      }
+        a {
+            text-decoration: none;
+        }
     }
 }
 
@@ -138,18 +144,14 @@ h1 {
     display: block;
     margin: 0;
     padding: 15px 0 24px;
-    border-top: 1px solid #1a1a1a;
-    color: $color-text;
+    border-top-width: 1px;
+    border-top-style: solid;
   }
 }
 
 .widget_mc4wp_form_widget h2.widget-title, 
 .jetpack_subscription_widget h2.widget-title {
    @include px2rem($font-size-headersmall);
-}
-
-.featured-slider .entry-header h2.entry-title a {
-  color: #fff !important;
 }
 
 
@@ -165,13 +167,16 @@ h3 {
 	letter-spacing: 1.5px;
     }
     
-    .all-posts-link {
-        color: $color-text;
+    #footer-social &.socialmedia {
+        @include px2rem($font-size-small);
+        hypens: auto;
+        display: inline-block;
+        float: left;
+        padding: 8px 15px 0px 0px;
     }
 }
 
 .footer-menu h3.footer-menu-title {
-    font-weight: normal;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -208,6 +213,7 @@ h3 {
 .jetpack_subscription_widget #subscribe-text p, 
 #front-section-three h3.front-section-title, 
 .recommended-posts-wrap #jp-relatedposts h3.jp-relatedposts-headline, 
+#big-footer-feature h2.footer-feature-title,
 #big-footer-feature h3.footer-feature-title {
     @include px2rem($font-size-entrytitle);
 }
@@ -219,7 +225,7 @@ h3 {
     }
 }
 
-.home.page .entry-header {
+.home.page .entry-header h1 {
   @extend .screen-reader-text;
 }
 

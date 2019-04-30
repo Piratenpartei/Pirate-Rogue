@@ -15,9 +15,37 @@
 	// Variables and DOM Caching.
 	var $body = $( 'body' ),
 		sliderFade = $body.hasClass( 'slider-fade' ),
+                sliderAutostart = $body.hasClass( 'slider-autoplay' ),
 		headerOffset,
 		menuTop = 0,
 		resizeTimer;
+                
+        var MediaPrint = false;
+      
+	$(document).ready(function() {
+            // Sticky Share Buttons - Single Post
+            if ( window.innerWidth >= 1440 ) {
+                $(".sd-content").stick_in_parent({
+                    parent: "#singlepost-wrap",
+                    offset_top: 80
+                });
+            }
+             // Make overlay navi non-tabable, if desktop navi is shown
+            if ( window.innerWidth >= 1060 ) {
+                $('#overlay-nav a').attr("tabindex","-1");
+            }
+           
+            var pcol = $("#printhead").css("color");
+            var pcon =  $("#printhead").css("content"); 
+                  
+            if ((pcon = "Print") || (pcol = "black"))  {
+                MediaPrint = true;
+            }      
+                  
+            //Tablesorter
+            $('.sorttable').tablesorter();            
+
+	});
 
 	// Overlay (main menu + widget area) open/close
 	$('.overlay-open').on( 'click', function () {
@@ -53,12 +81,20 @@
 	// Desktio Search open/close
 	$('.search-open').on( 'click', function () {
 		$('body').toggleClass('desktop-search-show');
+                var searchInput = $('.desktop-search input#s');
+                searchInput.focus();
 	});
-
+        
+        $('.desktop-search').focusout(function() {
+		$('body').removeClass('desktop-search-show');
+	});
+        
 	$('.search-close').on( 'click', function () {
 		$('body').removeClass('desktop-search-show');
 	});
-
+        
+        
+        
 	// Off Canvas Cart open/close
 	$('.cart-offcanvas-open').on( 'click', function () {
 		$('body').toggleClass('offcanvascart-show');
@@ -67,54 +103,57 @@
 	$('.cart-close').on( 'click', function () {
 		$('body').removeClass('offcanvascart-show');
 	});
-	
 
-		
-		
 
 
 	// Featured Posts Slider
 	if ( $.fn.slick ) {
 		$( document ).ready( function () {
-
-		if ( sliderFade ) {
+                    var autostart = false;
+                    var pauseOnHovervar = false
+                    if ( sliderAutostart ) {
+                        autostart = true;
+                        pauseOnHovervar = true;
+                    }
+                    var autoplaySpeedval = 4000;
+                    if ( sliderFade ) {
 			$( '.featured-slider' ).slick( {
 				dots          : false,
 				slidesToShow  : 1,
-				autoplay      : false,
+				autoplay      : autostart,
 				cssEase       : 'ease',
 				draggable     : true,
-				pauseOnHover  : false,
+				pauseOnHover  : pauseOnHovervar,
 				infinite      : true,
 				adaptiveHeight: true,
-				fade					: true,
-				} );
-		} else {
+				fade          : true,
+                                autoplaySpeed : autoplaySpeedval,
+			} );
+                    } else {
 			$( '.featured-slider' ).slick( {
 				dots          : false,
 				slidesToShow  : 1,
-				autoplay      : false,
+				autoplay      : autostart,
 				cssEase       : 'ease',
 				draggable     : true,
-				pauseOnHover  : false,
+				pauseOnHover  : pauseOnHovervar,
 				infinite      : true,
 				adaptiveHeight: true,
-				} );
-			}
+                                autoplaySpeed : autoplaySpeedval,
+			} );
+                    }
 		} );
 	}
 
-	// Fade In Animations (Uku Neo, Standard)
+      
+
+
+	// Fade In Animations
 	$('.fadein').viewportChecker({
 		classToAdd: 'inview', // Class to add to the elements when they are visible
 		removeClassAfterAnimation: false
 	});
 
-	// Fade + SlideIn In Animations (Uku Serif)
-	$('.type-product').viewportChecker({
-		classToAdd: 'inview', // Class to add to the elements when they are visible
-		removeClassAfterAnimation: false // Remove added classes after animation has finished
-	});
 
 	$('.product-category').viewportChecker({
 		classToAdd: 'inview', // Class to add to the elements when they are visible
@@ -142,36 +181,37 @@
 			if( target.length ) {
 					event.preventDefault();
 					$('html, body').stop().animate({
-							scrollTop: target.offset().top
+                                            scrollTop: target.offset().top
 					}, 700 );
 			}
 	});
 
 	// Front page sticky headerimage
 	$(window).scroll(function() {
-		if($(window).scrollTop() > $(window).height()*1)
-			$('.container-all').addClass('scroll');
-		});
-
-	$(window).scroll(function() {
-		if($(window).scrollTop() < $(window).height()*1)
+       //      if (MediaPrint = false) {
+            if($(window).scrollTop() > $(window).height()*1)
+		$('.container-all').addClass('scroll');
+             if($(window).scrollTop() < $(window).height()*1)
 		$('.container-all').removeClass('scroll');
+         //   }
 	});
 
 	// Sticky Desktop Header Bar
 	$(function() {
 		var stickyheader = $('.sticky-header');
-			$(window).scroll(function() {
-				var scroll = $(window).scrollTop();
+                $(window).scroll(function() {
+             //    if (MediaPrint = false) {
+                        var scroll = $(window).scrollTop();
 
-				if (scroll >= 200) {
-					$('body').addClass('header-stick');
-					stickyheader.removeClass('hidden');
-				} else {
-					$('body').removeClass('header-stick');
-					stickyheader.addClass('hidden');
-				}
-			});
+                        if (scroll >= 200) {
+                                $('body').addClass('header-stick');
+                                stickyheader.removeClass('hidden');
+                        } else {
+                                $('body').removeClass('header-stick');
+                                stickyheader.addClass('hidden');
+                        }
+               //     }
+                });
 	});
 
 	// Sticky Last Sidebar Element
@@ -183,9 +223,6 @@
 		});
 	}
 	});
-
-
-
 	// Sticky Last Sidebar Element - Single Post
 	$(document).ready(function() {
 	if ( window.innerWidth >= 1060 ) {
@@ -196,12 +233,8 @@
 	}
 	});
 
-	// Tablesorter
-	$(document).ready(function() {
-	    $('.sorttable').tablesorter(); 
-	});
 
-// Accordions
+        // Accordions
 	
 	// Close Accordions on start, except first
 	$('.accordion-body').not(".accordion-body.open").not('.accordion-body.stayopen').hide();
@@ -261,25 +294,15 @@
 	openAnchorAccordion();
 
 
-
-
-	// Sticky Share Buttons - Single Post
-	$(document).ready(function() {
-	if ( window.innerWidth >= 1440 ) {
-	$(".sd-content").stick_in_parent({
-		parent: "#singlepost-wrap",
-		offset_top: 80
-		});
-	}
-	});
+        
 
 	// Responsive Videos.
 	$('#primary').fitVids();
 	$('#singlepost-wrap').fitVids();
 
+       
 
-	$('#overlay-nav a').attr("tabindex","-1");
-
+        
 	$('a').not($('#desktop-navigation .mainmenu a')).focus(function() {
 		$('.mainmenu li').removeClass('focus');
 	});
@@ -296,14 +319,16 @@
 	    $(this).next( '.children, .sub-menu' ).toggleClass( 'toggled-on' );
 	});
 
+
 	// Add dropdown toggle that display child menu items.
-	$( '.menu-item-has-children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false">' + screenReaderText.expand + '</button>' );
+
+	$( '#overlay-nav .menu-item-has-children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false">' + screenReaderText.expand + '</button>' );
 
 	// Toggle buttons and submenu items with active children menu items.
-	$( '.current-menu-ancestor > button' ).addClass( 'toggle-on' );
-	$( '.current-menu-ancestor > .sub-menu' ).addClass( 'toggled-on' );
+	$( '#overlay-nav .current-menu-ancestor > button' ).addClass( 'toggle-on' );
+	$( '#overlay-nav .current-menu-ancestor > .sub-menu' ).addClass( 'toggled-on' );
 
-	$( '.dropdown-toggle' ).click( function( e ) {
+	$( '#overlay-nav .dropdown-toggle' ).click( function( e ) {
 		var _this = $( this );
 		e.preventDefault();
 		_this.toggleClass( 'toggle-on' );
@@ -311,7 +336,7 @@
 		_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
 		_this.html( _this.html() === screenReaderText.expand ? screenReaderText.collapse : screenReaderText.expand );
 	} );
-
+    
 
 
 	secondary = $( '#secondary' );

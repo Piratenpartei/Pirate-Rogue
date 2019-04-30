@@ -1,11 +1,11 @@
 <?php
 /**
-* The template for the Front Page Post Section 4 Columns
-*
-* @package Uku
-* @since Uku 1.0
-* @version 1.0.5
-*/
+ * The template for the Front Page Post Section 4 Columns
+ *
+ * @package Pirate Rogue
+ * @since Pirate Rogue 1.0
+ * @version 1.0
+ */
 ?>
 
 <?php
@@ -17,18 +17,18 @@ $postcat = get_theme_mod('uku_front_section_fourcolumn_cat');
 $category_link = get_category_link($postcat);
 
 $uku_section_fourcolumn_query = new WP_Query( array(
-	'posts_per_page'			=> $postnumber,
-	'tag_id' 							=> $posttag,
-	'cat' 								=> $postcat,
-	'post_status'					=> 'publish',
-	'ignore_sticky_posts' => 1,
+	'posts_per_page'        => $postnumber,
+	'tag_id'                => $posttag,
+	'cat'                   => $postcat,
+	'post_status'		=> 'publish',
+	'ignore_sticky_posts'   => 1,
 ) );
 	
 	$thumbfallbackid = absint(get_theme_mod( 'pirate_rogue_fallback_thumbnail' ));
 	if (!isset($thumbfallbackid)) {
 	    $thumbfallbackid =0;
 	} else {
-	    $imagesrc = wp_get_attachment_image_src( $thumbfallbackid, 'uku-front-small' )[0];
+	    $imagesrc = wp_get_attachment_image_src( $thumbfallbackid, 'pirate-rogue-front-small' )[0];
 	}
 ?>
 
@@ -44,28 +44,37 @@ $uku_section_fourcolumn_query = new WP_Query( array(
 		<?php if($uku_section_fourcolumn_query->have_posts()) : ?>
 			<?php while($uku_section_fourcolumn_query->have_posts()) : $uku_section_fourcolumn_query->the_post() ?>
 
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<article <?php post_class(); ?> itemscope itemtype="http://schema.org/NewsArticle">
 
-						<?php if ( '' !== get_the_post_thumbnail() && ! post_password_required() ) : ?>
-							<div class="entry-thumbnail fadein">
-								<a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><?php the_post_thumbnail('uku-front-small'); ?></span></a>
+					<?php if ( '' !== get_the_post_thumbnail() && ! post_password_required() ) : ?>
+							<div class="entry-thumbnail fadein" aria-hidden="true" role="presentation" tabindex="-1">
+								<a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><?php the_post_thumbnail('pirate-rogue-front-small'); ?></span></a>
 							</div><!-- end .entry-thumbnail -->
 					<?php elseif ( ! post_password_required() && $imagesrc != '') : ?>
-							<div class="entry-thumbnail fadein">
-								<a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><img src="<?php echo $imagesrc; ?>"></span></a>
+							<div class="entry-thumbnail fadein" aria-hidden="true" role="presentation" tabindex="-1">
+								<a href="<?php the_permalink(); ?>"><span class="thumb-wrap"><img src="<?php echo $imagesrc; ?>" alt="<?php echo get_the_title();?>"></span></a>
 							</div><!-- end .entry-thumbnail -->
 					<?php endif; ?>
 
 					<header class="entry-header">
-						<div class="entry-cats">
+						<div class="entry-cats" itemprop="articleSection">
 							<?php the_category(' '); ?>
 						</div><!-- end .entry-cats -->
-						<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+                                                <?php 
+                                                echo '<h2 class="entry-title" itemprop="headline"><a href="'.esc_url( get_permalink() ).'" rel="bookmark" itemprop="url">';
+                                                echo get_the_title();
+                                                echo '</a><span class="screen-reader-text"> ('. get_the_date().')</span></h2>';
+                                                ?>               
 					</header><!-- end .entry-header -->
 
-					<div class="entry-summary">
+					<div class="entry-summary" itemprop="description">
 						<?php the_excerpt(); ?>
 					</div><!-- end .entry-summary -->
+                                    <?php 
+                                        echo pirate_rogue_create_schema_thumbnail(); 
+                                        echo pirate_rogue_create_schema_postmeta();
+                                        echo pirate_rogue_create_schema_publisher();
+                                    ?>
 				</article><!-- #post-## -->
 
 			<?php endwhile; ?>

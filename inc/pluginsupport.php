@@ -23,6 +23,16 @@ add_filter(
     }
 );
 
+/*-----------------------------------------------------------------------------------*/
+/* Plugin TinyMCE: Button für Seitenumbruch ergänzen
+/*-----------------------------------------------------------------------------------*/
+add_filter( 'mce_buttons', 'kb_add_next_page_button', 1, 2 );
+function kb_add_next_page_button( $buttons, $id ) {
+  if ( 'content' === $id ) {
+    array_splice( $buttons, 13, 0, 'wp_page' );
+  }
+  return $buttons;
+}
 
 
 

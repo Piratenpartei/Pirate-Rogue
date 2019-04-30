@@ -310,7 +310,7 @@ function pirate_rogue_shortcode_fullwidth($atts, $content = null) {
     }
     
     
-    if (!empty(scrollleft)) {
+    if (!empty($scrollleft)) {
         $addclass .= ' scrollleft';
     }
     $setstyle = '';
@@ -506,21 +506,19 @@ add_shortcode( 'secondcolor_box', 'pirate_rogue_shortcode_secondcolor_box' );
 /*-----------------------------------------------------------------------------------*/
 function pirate_rogue_button( $atts, $content = null ) {
     extract(shortcode_atts(array(
-    'link'	=> '#',
-    'target' => '',
-    'color'	=> '',
-    'size'	=> '',
-	 'form'	=> '',
-	 'font'	=> '',
+        'link'      => '#',
+        'target'    => '',
+        'color'     => '',
+        'size'      => '',
+        'class'     => ''
     ), $atts));
 
+    $class = $class ? ' ' . esc_attr( $class ) : '';
     $color = ($color) ? ' '.$color. '-btn' : '';
     $size = ($size) ? ' '.$size. '-btn' : '';
-    $form = ($form) ? ' '.$form. '-btn' : '';
-    $font = ($font) ? ' '.$font. '-btn' : '';
     $target = ($target == 'blank') ? ' target="_blank"' : '';
 
-    $out = '<a' .$target. ' class="standard-btn' .$color.$size.$form.$font. '" href="' .$link. '"><span>' .do_shortcode($content). '</span></a>';
+    $out = '<a' .$target. ' class="standard-btn' .$color.$size.$class. '" href="' .$link. '"><span>' .do_shortcode($content). '</span></a>';
 
     return $out;
 }

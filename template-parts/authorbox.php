@@ -8,10 +8,10 @@
  */
 ?>
 
-<div class="authorbox cf">
+    <div class="authorbox cf">
 	<div class="author-pic">
 		<?php
-		$author_bio_avatar_size = apply_filters( 'uku_author_bio_avatar_size', 180 );
+		$author_bio_avatar_size = apply_filters( 'pirate_rogue_author_bio_avatar_size', 180 );
 		echo get_avatar( get_the_author_meta( 'user_email' ), $author_bio_avatar_size );
 		?>
 	</div><!-- .author-pic -->
@@ -24,19 +24,17 @@
 		<?php if(get_the_author_meta('user_url') ): ?>
 		<?php
 		$author_url = get_the_author_meta('user_url');
-			$to_remove = array( 'http://', 'https://' );
-			foreach ( $to_remove as $item ) {
-			$author_url = str_replace($item, '', $author_url);
-		}
-		echo '<a class="author-website" href=' . get_the_author_meta('user_url') .'> '  . $author_url . ' </a>';
+                $to_remove = array( 'http://', 'https://' );
+                foreach ( $to_remove as $item ) {
+                    $author_url = str_replace($item, '', $author_url);
+                }
+		echo '<a class="author-website" href=' . get_the_author_meta('user_url') .'><span class="fa fa-link"></span> '  . $author_url . ' </a>';
 		?>
 		<?php endif; ?>
-	
-		
 		<?php if(get_the_author_meta('twitter') ): ?>
-			<a class="author-twitter" href="https://www.twitter.com/<?php echo get_the_author_meta('twitter'); ?>"><?php echo get_the_author_meta('twitter'); ?></a>
+			<a class="author-twitter" href="https://www.twitter.com/<?php echo get_the_author_meta('twitter'); ?>"><span class="fa fa-twitter"></span><?php echo get_the_author_meta('twitter'); ?></a>
 		<?php endif; ?>
 
 
 	</div><!-- end .author-links -->
-</div><!-- end .authorbox -->
+    </div><!-- end .authorbox -->

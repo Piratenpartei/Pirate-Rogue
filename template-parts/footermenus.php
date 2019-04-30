@@ -2,85 +2,87 @@
 /**
  * The template for the footer menus
  *
- * @subpackage Uku
- * @since Uku 1.0
-  * @version 1.0.1
+ * @package Pirate Rogue
+ * @since Pirate Rogue 1.0
+ * @version 1.0
  */
 ?>
 
 <div class="footer-menus-wrap cf">
-
+    <h2 class="screen-reader-text"><?php _e('Navigation','pirate-rogue'); ?></h2>
         <?php if ( '' != get_theme_mod( 'pirate_rogue_footermenu_image' ) ) {  
 	
-	    $image = absint(get_theme_mod( 'pirate_rogue_footermenu_image' ));
-	    $imagesrc = wp_get_attachment_image_src( $image,  'uku-featured-bottom' )[0];
+            $footerfeature_image = get_theme_mod( 'pirate_rogue_footermenu_image' );
+            $imagesrc = '';
+         if (isset($footerfeature_image))  {
+            if (is_int($footerfeature_image)) {
+                $imagesrc = wp_get_attachment_image_src( $footerfeature_image, 'pirate-rogue-featured' )[0];
+            } else {
+               $imagesrc = esc_url( $footerfeature_image );
+            }      
+        }
+            
+	 //   $image = absint(get_theme_mod( 'pirate_rogue_footermenu_image' ));  
+	//    $imagesrc = wp_get_attachment_image_src( $image,  'pirate-rogue-featured-bottom' )[0];
 
 	    ?>
-		<div class="custom-logo-wrap">
-			<img src="<?php echo $imagesrc; ?>">
-		</div><!-- end .custom-logo-wrap -->
- 
-	<?php } elseif ( has_custom_logo() && '' != get_theme_mod( 'pirate_rogue_customlogofooter' ) ) { ?>
-		<div class="custom-logo-wrap">
-			<?php the_custom_logo(); ?>
-		</div><!-- end .custom-logo-wrap -->
+		<div class="custom-logo-wrap" aria-hidden="true" role="presentation">
+			<img src="<?php echo $imagesrc; ?>" alt="">
+		</div>
 	<?php } else { ?>
                 <p class="title-footer">
-                <?php if ( '' == get_theme_mod( 'uku_footerfeature_image' )  ) : ?>
+                <?php if ( '' == get_theme_mod( 'pirate_rogue_footermenu_image' )  ) : ?>
 			<?php bloginfo( 'name' ); ?>
 		<?php endif; ?>
                 </p>    
         <?php }        
 	if (has_nav_menu( 'footer-one' ) ) : ?>
-	<nav id="footer-menu-one" class="footer-menu" role="navigation">
+	<nav id="footer-menu-one" class="footer-menu">
 		<?php
 			$location = 'footer-one';
-			$menu_obj = uku_get_menu_by_location($location );
+			$menu_obj = pirate_rogue_get_menu_by_location($location );
 			wp_nav_menu( array(
 			'theme_location'	=> 'footer-one',
 			'items_wrap'			=> '<h3 class="footer-menu-title">'.esc_html($menu_obj->name).'</h3><ul id="%1$s" class="%2$s">%3$s</ul>',
 			'container' 			=> 'false',
 			));  ?>
-	</nav><!-- end #footer-one -->
+	</nav>
 	<?php endif; ?>
-
 	<?php if (has_nav_menu( 'footer-two' ) ) : ?>
-	<nav id="footer-menu-two" class="footer-menu" role="navigation">
+	<nav id="footer-menu-two" class="footer-menu">
 		<?php
 			$location = 'footer-two';
-			$menu_obj = uku_get_menu_by_location($location );
+			$menu_obj = pirate_rogue_get_menu_by_location($location );
 			wp_nav_menu( array(
 			'theme_location'	=> 'footer-two',
 			'items_wrap'			=> '<h3 class="footer-menu-title">'.esc_html($menu_obj->name).'</h3><ul id="%1$s" class="%2$s">%3$s</ul>',
 			'container' 			=> 'false',
 			));  ?>
-	</nav><!-- end #footer-two -->
+	</nav>
 	<?php endif; ?>
-
 	<?php if (has_nav_menu( 'footer-three' ) ) : ?>
-	<nav id="footer-menu-three" class="footer-menu" role="navigation">
+	<nav id="footer-menu-three" class="footer-menu">
 		<?php
 			$location = 'footer-three';
-			$menu_obj = uku_get_menu_by_location($location );
+			$menu_obj = pirate_rogue_get_menu_by_location($location );
 			wp_nav_menu( array(
 			'theme_location'	=> 'footer-three',
 			'items_wrap'			=> '<h3 class="footer-menu-title">'.esc_html($menu_obj->name).'</h3><ul id="%1$s" class="%2$s">%3$s</ul>',
 			'container' 			=> 'false',
 			));  ?>
-	</nav><!-- end #footer-three -->
+	</nav>
 	<?php endif; ?>
 
 	<?php if (has_nav_menu( 'footer-four' ) ) : ?>
-	<nav id="footer-menu-four" class="footer-menu" role="navigation">
+	<nav id="footer-menu-four" class="footer-menu">
 		<?php
 			$location = 'footer-four';
-			$menu_obj = uku_get_menu_by_location($location );
+			$menu_obj = pirate_rogue_get_menu_by_location($location );
 			wp_nav_menu( array(
 			'theme_location'	=> 'footer-four',
 			'items_wrap'			=> '<h3 class="footer-menu-title">'.esc_html($menu_obj->name).'</h3><ul id="%1$s" class="%2$s">%3$s</ul>',
 			'container' 			=> 'false',
 			));  ?>
-	</nav><!-- end #footer-four -->
+	</nav>
 	<?php endif; ?>
-
-</div><!-- end .footer-menus-wrap -->
+</div>

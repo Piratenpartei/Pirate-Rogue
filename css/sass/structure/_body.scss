@@ -11,7 +11,7 @@ html {
 body {
   font-family: $font-family-base;
   display: block;
-  color: #1a1a1a;
+  color: $color-text;
   background: #ffffff;
   font-size: 16px;
   font-size: 1rem;
@@ -92,13 +92,14 @@ html.overlay-show {
   overflow: hidden;
 }
 
-
+/*
 .front-section:first-of-type, 
 .page .content-wrap, 
 .singlepost-wrap,
 .error404 .content-wrap {
   padding-top: 60px;
 }
+*/
 
 .headerimg-on .front-section:first-of-type {
   padding-top: 0;
@@ -124,18 +125,6 @@ html.overlay-show {
     .blog .entry-comments {display: none !important;}
 }
 
-@media screen and (min-width: $breakpoint-sm) {
-    /* --- General --- */
-    .page .content-wrap, 
-    .front-section:first-of-type, 
-    .page.has-thumb .blog-wrap, 
-    .search .blog-wrap, 
-    .archive .blog-wrap, 
-    .singlepost-wrap,
-    .error404 .content-wrap {
-	  padding-top: 60px;
-    }
-}
 
 @media screen and (min-width: $breakpoint-1024) {
     .page .content-wrap, 

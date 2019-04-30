@@ -146,6 +146,14 @@
         li {
             a {
               color: $color-main-menu;  
+              
+            }
+            .external {
+                a::after {
+                    margin-left: 5px;
+                    @extend .fa;
+                    content: $fa-var-external-link-square;
+                }
             }
         }
         li.current-menu-ancestor,
@@ -262,14 +270,14 @@
 		    li.focus > ul, 
 		    li:focus > ul,  
 		    li:hover > ul {
-			top: 20px;
+			top: 15px;
 			left: 215px;
 
 			li > ul.focus,
 			li.focus > ul, 
 			li:focus > ul,  
 			li:hover > ul {
-			    top: 20px;
+			    top: 15px;
 			    left: 75px;
 			}
 		    }
@@ -279,12 +287,13 @@
 		&.sub-menu, 
 		&.children {
 		      position: absolute;
-		      top: 59px;
-		     
+		      margin: 18px 0 0 0;
+		     // top: 59px;
+                     
 		      min-width: 230px;
                       max-width: 300px;
-		      margin: 0;
-		      padding: 5px 0;
+		//      margin: 0;
+		      padding: 0;
 		      text-align: left;
 		      color: #fff;
 		      background: #1a1a1a;

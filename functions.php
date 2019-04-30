@@ -5,15 +5,13 @@
  */
 /*-----------------------------------------------------------------------------------*/
 
-
 /*-----------------------------------------------------------------------------------*/
 /* Sets up theme defaults and registers support for various WordPress features.
 /*-----------------------------------------------------------------------------------*/
 function pirate_rogue_setup() {
 
-	// Make Uku available for translation. Translations can be added to the /languages/ directory.
+	// Translations
 	load_theme_textdomain( 'pirate-rogue', get_template_directory() . '/languages' );
-
 
 	// Add default posts and comments RSS feed links to head
 	add_theme_support( 'automatic-feed-links' );
@@ -23,9 +21,10 @@ function pirate_rogue_setup() {
 
 	// This theme uses wp_nav_menu().
 	register_nav_menus( array (
-		'primary'	=> esc_html__( 'Main menu', 'pirate-rogue'),
+		'primary'	=> esc_html__( 'Main Menu', 'pirate-rogue'),
 		'social' 	=> esc_html__( 'Social Icons', 'pirate-rogue'),
-		'social-front' 	=> esc_html__( 'Social menu (in About section, Standard and Neo only.)', 'pirate-rogue'),
+		'social-front' 	=> esc_html__( 'Social Icons (in About section)', 'pirate-rogue'),
+                'social-footer' => esc_html__( 'Social Icons (in Footer)', 'pirate-rogue'),
 		'footer-one' 	=> esc_html__( 'Footer 1', 'pirate-rogue'),
 		'footer-two' 	=> esc_html__( 'Footer 2', 'pirate-rogue'),
 		'footer-three' 	=> esc_html__( 'Footer 3', 'pirate-rogue'),
@@ -62,13 +61,14 @@ function pirate_rogue_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	//  Adding several sizes for Post Thumbnails
-	add_image_size( 'uku-standard-blog', 1024, 576, true );
-	add_image_size( 'uku-featured', 1440, 530, true );
-	add_image_size( 'uku-featured-big', 1440, 690, true );
-	add_image_size( 'uku-bigthumb', 1440, 580, true );
-	add_image_size( 'uku-front-big', 1260, 709, true );
-	add_image_size( 'uku-front-small', 800, 450, true );
-	add_image_size( 'uku-featured-bottom', 800, 450, true );
+	add_image_size( 'pirate-rogue-standard-blog',   1024, 576, true );
+	add_image_size( 'pirate-rogue-featured',        1440, 530, true );
+	add_image_size( 'pirate-rogue-featured-big',    1440, 690, true );
+	add_image_size( 'pirate-rogue-bigthumb',        1440, 580, true );
+	add_image_size( 'pirate-rogue-front-big',       1260, 709, true );
+        add_image_size( 'pirate-rogue-gallery',          600, 600, true );
+	add_image_size( 'pirate-rogue-front-small',      800, 450, true );
+	add_image_size( 'pirate-rogue-featured-bottom',  800, 450, true );
 
 }
 add_action( 'after_setup_theme', 'pirate_rogue_setup' );
@@ -100,17 +100,10 @@ add_action( 'wp_head', 'pirate_rogue_javascript_detection', 0 );
 /* Registre Scripts
 /*-----------------------------------------------------------------------------------*/
 function pirate_rogue_register_scripts() {
-    // Registre Slick
-    wp_register_script('pirate-rogue-slick', get_template_directory_uri() . '/js/slick/slick.min.js', array('jquery') ); 
+    // Register Slick
+    wp_register_script('pirate-rogue-slick', get_template_directory_uri() . '/js/slick/slick-1.8.1.min.js', array('jquery') ); 
 
-    // Loading viewpoint checker script
-   // wp_register_script( 'viewportchecker', get_template_directory_uri() . '/js/jquery.viewportchecker.min.js', array( 'jquery' ), '1.8.7' );
-    // Loads Scripts Sticky Sidebar Element
-   // wp_register_script( 'sticky-kit', get_template_directory_uri() . '/js/sticky-kit.min.js', array( 'jquery' ) );
-
-    // Loading FitVids responsive Video script
-   // wp_register_script( 'fitvids', get_template_directory_uri() . '/js/jquery.fitvids.min.js', array( 'jquery' ), '1.1' );
-    
+    // Misc jQuery Plugins
     wp_register_script( 'pirate-rogue-jquery-misc', get_template_directory_uri() . '/js/jquery.misc.js', array( 'jquery' ), '1.1' );
 
 }
@@ -127,42 +120,50 @@ function pirate_rogue_base_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
+        $theme_data = wp_get_theme();
+        $theme_version = $theme_data->Version;
+
 	// Loads stylesheets.
-	wp_enqueue_style( 'pirate-rogue-style', get_stylesheet_uri(), array(), '20170505' );
+	wp_enqueue_style( 'pirate-rogue-style', get_stylesheet_uri(), array(), $theme_version );
         
-        // Loads Custom Uku JavaScript functionality
-        wp_enqueue_script( 'pirate-rogue-script', get_template_directory_uri() . '/js/functions.min.js', array( 'jquery' ), '20170505', true );
+        // Loads Custom JavaScript functionality
+        wp_enqueue_script( 'pirate-rogue-script', get_template_directory_uri() . '/js/functions.min.js', array( 'jquery' ),  $theme_version, true );
         wp_localize_script( 'pirate-rogue-script', 'screenReaderText', array(
-                'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'pirate-rogue') . '</span>',
-                'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'pirate-rogue') . '</span>',
+                'expand'   => '<span class="screen-reader-text">' . esc_html__( 'Expand Child Menu', 'pirate-rogue') . '</span>',
+                'collapse' => '<span class="screen-reader-text">' . esc_html__( 'Collapse Child Menu', 'pirate-rogue') . '</span>',
         ) );
         
-        if (is_home() && ( '' != get_theme_mod( 'uku_featuredtag' ) )) {
-             wp_enqueue_script( 'pirate-rogue-slick' );
-        }
-        // Loading viewpoint checker script
-    //    wp_enqueue_script( 'viewportchecker');
-
-        // Loads Scripts Sticky Sidebar Element
-    //    wp_enqueue_script( 'sticky-kit' );
-
-        // Loading FitVids responsive Video script
-   //     wp_enqueue_script( 'fitvids' );
-        
+        if (is_home() && 
+                ( '' != get_theme_mod( 'pirate_rogue_featuredtag' )  || '' != get_theme_mod( 'pirate_rogue_featuredcat' ) )) {
+            wp_enqueue_script( 'pirate-rogue-slick' );
+        }        
          wp_enqueue_script( 'pirate-rogue-jquery-misc' );
 
 }
 add_action( 'wp_enqueue_scripts', 'pirate_rogue_base_scripts' );
-
+/*-----------------------------------------------------------------------------------*/
+/* Admin Styles
+/*-----------------------------------------------------------------------------------*/
+function pirate_rogue_admin_style() {
+    $theme_data = wp_get_theme();
+    $theme_version = $theme_data->Version;
+    
+	// This theme styles the visual editor to resemble the theme style.
+    // add_editor_style( array( '/css/admin.css') );
+    wp_register_style( 'themeadminstyle', get_template_directory_uri().'/css/admin.css',array(), $theme_version );	   
+    wp_enqueue_style( 'themeadminstyle' );
+    wp_enqueue_media();
+}
+add_action( 'admin_enqueue_scripts', 'pirate_rogue_admin_style' );
 
 /*-----------------------------------------------------------------------------------*/
 /* Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
 /*-----------------------------------------------------------------------------------*/
-function uku_page_menu_args( $args ) {
+function pirate_rogue_page_menu_args( $args ) {
 	$args['show_home'] = true;
 	return $args;
 }
-add_filter( 'wp_page_menu_args', 'uku_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'pirate_rogue_page_menu_args' );
 
 /*-----------------------------------------------------------------------------------*/
 /* Sets the authordata global when viewing an author archive.
@@ -179,7 +180,7 @@ add_action( 'wp', 'pirate_rogue_setup_author' );
 /*-----------------------------------------------------------------------------------*/
 /* Add title to custom menu
 /*-----------------------------------------------------------------------------------*/
-function uku_get_menu_by_location( $location ) {
+function pirate_rogue_get_menu_by_location( $location ) {
 		if( empty($location) ) return false;
 
 		$locations = get_nav_menu_locations();
@@ -201,16 +202,16 @@ add_filter( 'excerpt_length', 'pirate_rogue_custom_excerpt_length', 999 );
 /*-----------------------------------------------------------------------------------*/
 /* Replace "[...]" with custom read more in excerpts.
 /*-----------------------------------------------------------------------------------*/
-function uku_excerpt_more( $more ) {
+function pirate_rogue_excerpt_more( $more ) {
 	global $post;
 	return '&hellip;';
 }
-add_filter( 'excerpt_more', 'uku_excerpt_more' );
+add_filter( 'excerpt_more', 'pirate_rogue_excerpt_more' );
 
 /*-----------------------------------------------------------------------------------*/
 /* Featured Slider Function
 /*-----------------------------------------------------------------------------------*/
-function uku_has_featured_posts( $minimum = 1 ) {
+function pirate_rogue_has_featured_posts( $minimum = 1 ) {
 		if ( is_paged() )
 				return false;
 
@@ -241,7 +242,7 @@ add_filter( 'user_contactmethods', 'add_twitter_contactmethod', 10, 1 );
 
 /*-----------------------------------------------------------------------------------*/
 /* Add Theme Customizer CSS
-/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------
 function pirate_rogue_customize_css() {
 	$customcss = '';
 	if ('' != get_theme_mod( 'pirate_rogue_custom_css' ) ) {
@@ -254,6 +255,8 @@ function pirate_rogue_customize_css() {
 	}
 }
 add_action( 'wp_head', 'pirate_rogue_customize_css');
+*/
+
 /*-----------------------------------------------------------------------------------*/
 /* Add Google Webmaster Tools Verification
 /*-----------------------------------------------------------------------------------*/
@@ -289,12 +292,12 @@ add_action( 'wp_head', 'pirate_rogue_add_canonical');
 /*-----------------------------------------------------------------------------------*/
 add_filter('use_default_gallery_style', '__return_false');
 
-if ( ! function_exists( 'uku_comment' ) ) :
+if ( ! function_exists( 'pirate_rogue_comment' ) ) :
 
 /*-----------------------------------------------------------------------------------*/
-/* Comments template uku_comment
+/* Comments template pirate_rogue_comment
 /*-----------------------------------------------------------------------------------*/
-function uku_comment( $comment, $args, $depth ) {
+function pirate_rogue_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case '' :
@@ -395,7 +398,7 @@ function pirate_rogue_widgets_init() {
 	register_sidebar( array (
 		'name'          => esc_html__( 'Big Footer Instagram Widget Area', 'pirate-rogue'),
 		'id'            => 'sidebar-instagram',
-		'description'   => esc_html__( 'Widget area to show the WP Instagram Widget in a big one-column footer area .', 'pirate-rogue'),
+		'description'   => esc_html__( 'Widget area to show fotos from Instagram in a big one-column footer area.', 'pirate-rogue'),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => "</section>",
 		'before_title'  => '<h2 class="widget-title">',
@@ -416,20 +419,7 @@ function pirate_rogue_admin_init() {
 add_action('admin_init', 'pirate_rogue_admin_init'); 
 
 
-/*-----------------------------------------------------------------------------------*/
-/* Admin Styles
-/*-----------------------------------------------------------------------------------*/
-function pirate_rogue_admin_style() {
- 
-    
-	// This theme styles the visual editor to resemble the theme style.
-    add_editor_style( array( '/css/editor-style.css') );
-    
-    // wp_register_style( 'themeadminstyle', '/css/editor-style.css');
-    // wp_enqueue_style( 'themeadminstyle' );
-    wp_enqueue_media();
-}
-add_action( 'admin_enqueue_scripts', 'pirate_rogue_admin_style' );
+
 
 /*-----------------------------------------------------------------------------------*/
 /* No comments on attachments please
@@ -444,6 +434,10 @@ function pirate_rogue_filter_media_comment_status( $open, $post_id ) {
 add_filter( 'comments_open', 'pirate_rogue_filter_media_comment_status', 10 , 2 );
 
 /*-----------------------------------------------------------------------------------*/
+/* Load defaults
+/*-----------------------------------------------------------------------------------*/
+require_once( get_template_directory() . '/inc/defaults.php' );   
+/*-----------------------------------------------------------------------------------*/
 /* Load helper functions
 /*-----------------------------------------------------------------------------------*/
 require_once( get_template_directory() . '/inc/helper-functions.php' );   
@@ -455,7 +449,7 @@ require get_template_directory() . '/inc/custom-fields.php';
 /*-----------------------------------------------------------------------------------*/
 /* Customizer changes to uku
 /*-----------------------------------------------------------------------------------*/
-require get_template_directory() . '/inc/customizer.php';
+ require get_template_directory() . '/inc/xwolf-customizer.php';
 
 /*-----------------------------------------------------------------------------------*/
 /* Additional features to allow styling of the templates.

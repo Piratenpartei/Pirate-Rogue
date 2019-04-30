@@ -13,12 +13,12 @@ if ( ! is_active_sidebar( 'sidebar-offcanvas' ) ) {
 ?>
 
 <div id="offcanvas-wrap">
-<a href="#offcanvas-wrap" id="offcanvas-widgets-open"><span><?php esc_html_e( 'Info', 'pirate-rogue'); ?></span></a>
-<aside id="sidebar-offcanvas" class="sidebar-offcanvas cf" role="complementary">
-	<?php if ( is_active_sidebar( 'sidebar-offcanvas' ) ) : ?>
-		<div class="widget-area">
-			<?php dynamic_sidebar( 'sidebar-offcanvas' ); ?>
-		</div><!-- .widget-area -->
-	<?php endif; ?>
-</aside><!-- end .sidebar-offcanvas -->
+    <a href="#offcanvas-wrap" id="offcanvas-widgets-open"><span><?php esc_html_e( 'Info', 'pirate-rogue'); ?></span></a>
+    <aside id="sidebar-offcanvas" class="sidebar-offcanvas cf">
+            <?php if ( is_active_sidebar( 'sidebar-offcanvas' ) ) : ?>
+                    <div class="widget-area">
+                            <?php dynamic_sidebar( 'sidebar-offcanvas' ); ?>
+                    </div><!-- .widget-area -->
+            <?php endif; ?>
+    </aside><!-- end .sidebar-offcanvas -->
 </div><!-- end .offcanvas-wrap -->

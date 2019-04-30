@@ -37,7 +37,7 @@ if ( post_password_required() ) {
 	<?php if ( have_comments() ) : ?>
 		<ol class="commentlist">
 			<?php
-				wp_list_comments( array( 'callback' => 'uku_comment' ) );
+				wp_list_comments( array( 'callback' => 'pirate_rogue_comment' ) );
 			?>
 		</ol><!-- end .comment-list -->
 
@@ -78,8 +78,8 @@ if ( post_password_required() ) {
 
 	</div><!-- end .comments-content -->
     <?php } else {
-        $url = get_theme_mod( 'pirate_rogue_externcomments_url' );
-        $title = get_theme_mod( 'pirate_rogue_externcomments_title' );
+        $url = get_theme_mod( 'pirate_rogue_externcomments_url', 'https://forum.piratenpartei.de' );
+        $title = get_theme_mod( 'pirate_rogue_externcomments_title', esc_html__( 'Discuss this on our board', 'pirate-rogue') );
         echo '<div class="externcomments"><a class="standard-btn maincolor-btn" href="'.$url.'"><span>'.$title.'</span></a></div>';
        
     }   ?> 

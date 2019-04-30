@@ -1,37 +1,38 @@
-/*
-* CSS Font File Dejaweb
+/*-----------------------------------------------------------------------------------*/
+/* Font File Dejaweb
 *    DejaWeb 
 *    by AnatoleType
-*/
+/*-----------------------------------------------------------------------------------*/
+
 
 @font-face {
     font-family: 'DejaWeb';
-    src: url('../fonts/dejaweb/DejaWeb-Bold.ttf');
-    src: url('../fonts/dejaweb/DejaWeb-Bold.ttf') format('truetype');
+    src: url('./fonts/dejaweb/DejaWeb-Bold.ttf');
+    src: url('./fonts/dejaweb/DejaWeb-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }	
 
 @font-face {
     font-family: 'DejaWeb';
-    src: url('../fonts/dejaweb/DejaWeb-BoldItalic.ttf');
-    src: url('../fonts/dejaweb/DejaWeb-BoldItalic.ttf') format('truetype');
+    src: url('./fonts/dejaweb/DejaWeb-BoldItalic.ttf');
+    src: url('./fonts/dejaweb/DejaWeb-BoldItalic.ttf') format('truetype');
     font-weight: bold;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'DejaWeb';
-    src: url('../fonts/dejaweb/DejaWeb-Italic.ttf');
-    src: url('../fonts/dejaweb/DejaWeb-Italic.ttf') format('truetype');
+    src: url('./fonts/dejaweb/DejaWeb-Italic.ttf');
+    src: url('./fonts/dejaweb/DejaWeb-Italic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'DejaWeb';
-    src: url('../fonts/dejaweb/DejaWeb.ttf');
-    src: url('../fonts/dejaweb/DejaWeb.ttf') format('truetype');
+    src: url('./fonts/dejaweb/DejaWeb.ttf');
+    src: url('./fonts/dejaweb/DejaWeb.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }

@@ -1,63 +1,63 @@
 <?php
 /**
-* The template for the Front Page Post Section Two
-*
-* @package Uku
-* @since Uku 1.0
-* @version 1.0.5
-*/
+ * The template for the Front Page Post Section Two
+ *
+ * @package Pirate Rogue
+ * @since Pirate Rogue 1.0
+ * @version 1.0
+ */
 ?>
 
 <?php
-$posttag = get_theme_mod('uku_front_section_two_tag');
+$posttag = get_theme_mod('pirate_rogue_front_section_two_tag');
 $tag_link = get_tag_link( $posttag );
 
-$postcat = get_theme_mod('uku_front_section_two_cat');
+$postcat = get_theme_mod('pirate_rogue_front_section_two_cat');
 $category_link = get_category_link($postcat);
 
-$uku_section_two_first_query = new WP_Query( array(
-	'posts_per_page'				=> 1,
-	'post_status'						=> 'publish',
-	'tag_id' 								=> $posttag,
-	'cat' 									=> $postcat,
+$pirate_rogue_section_two_first_query = new WP_Query( array(
+	'posts_per_page'                => 1,
+	'post_status'                   => 'publish',
+	'tag_id'                        => $posttag,
+	'cat'                           => $postcat,
 	'ignore_sticky_posts'		=> 1,
 ) );
 
 
 	$args = array(
-		'posts_per_page' 			=> 8,
-		'offset' 							=> 1,
-		'post_status'	 				=> 'publish',
-		'tag_id' 							=> $posttag,
-		'cat' 								=> $postcat,
+		'posts_per_page'        => 8,
+		'offset'                => 1,
+		'post_status'           => 'publish',
+		'tag_id'                => $posttag,
+		'cat'                   => $postcat,
 		'ignore_sticky_posts'	=> 1,
 	);
 
-$uku_section_two_second_query = new WP_Query( $args );
+$pirate_rogue_section_two_second_query = new WP_Query( $args );
 ?>
 
 <section id="front-section-two" class="front-section cf">
 
-	<?php if ( '' != get_theme_mod( 'uku_front_section_two_title' ) && '' != get_theme_mod( 'uku_front_section_two_cat') ) : ?>
-		<h3 class="front-section-title"><?php echo esc_html( get_theme_mod( 'uku_front_section_two_title' ) ); ?><span><a class="all-posts-link" href="<?php echo esc_url( $category_link ); ?>"><?php esc_html_e('All posts', 'pirate-rogue') ?></a></span></h3>
-	<?php elseif ( '' != get_theme_mod( 'uku_front_section_two_title' ) && '' != get_theme_mod( 'uku_front_section_two_tag' ) ) : ?>
-		<h3 class="front-section-title"><?php echo esc_html( get_theme_mod( 'uku_front_section_two_title' ) ); ?><span><a class="all-posts-link" href="<?php echo esc_url( $tag_link ); ?>"><?php esc_html_e('All posts', 'pirate-rogue') ?></a></span></h3>
+	<?php if ( '' != get_theme_mod( 'pirate_rogue_front_section_two_title' ) && '' != get_theme_mod( 'pirate_rogue_front_section_two_cat') ) : ?>
+		<h3 class="front-section-title"><?php echo esc_html( get_theme_mod( 'pirate_rogue_front_section_two_title' ) ); ?><span><a class="all-posts-link" href="<?php echo esc_url( $category_link ); ?>"><?php esc_html_e('All posts', 'pirate-rogue') ?></a></span></h3>
+	<?php elseif ( '' != get_theme_mod( 'pirate_rogue_front_section_two_title' ) && '' != get_theme_mod( 'pirate_rogue_front_section_two_tag' ) ) : ?>
+		<h3 class="front-section-title"><?php echo esc_html( get_theme_mod( 'pirate_rogue_front_section_two_title' ) ); ?><span><a class="all-posts-link" href="<?php echo esc_url( $tag_link ); ?>"><?php esc_html_e('All posts', 'pirate-rogue') ?></a></span></h3>
 	<?php endif; ?>
 
 	<div class="section-two-column-one">
-		<?php if($uku_section_two_first_query->have_posts()) : ?>
-			<?php while($uku_section_two_first_query->have_posts()) : $uku_section_two_first_query->the_post() ?>
-				<?php get_template_part('template-parts/content-frontpost-big' ); ?>
-			
-			<?php endwhile; ?>
+		<?php if($pirate_rogue_section_two_first_query->have_posts()) {
+			 while($pirate_rogue_section_two_first_query->have_posts()) { 
+                            $pirate_rogue_section_two_first_query->the_post();
+                            get_template_part('template-parts/content-frontpost-big' ); 
+                         } 
 
-		<?php endif; // have_posts() ?>
+                 } // have_posts() ?>
 
 	</div><!-- end .section-two-column-one -->
 
 	<div class="section-two-column-two columns-wrap">
-		<?php if($uku_section_two_second_query->have_posts()) : ?>
-			<?php while($uku_section_two_second_query->have_posts()) : $uku_section_two_second_query->the_post() ?>
+		<?php if($pirate_rogue_section_two_second_query->have_posts()) : ?>
+			<?php while($pirate_rogue_section_two_second_query->have_posts()) : $pirate_rogue_section_two_second_query->the_post() ?>
 
 
 			    <?php get_template_part('template-parts/content-frontpost-small' ); ?>

@@ -7,7 +7,7 @@
 	@extend .fa-ul;
 	li {
 	    display: inline-block;
-	    border: 1px solid $color-page-background;
+	    border: 1px solid transparent;
 	    border-radius: 50%;
 	    a {
                 background: $color-page-background;
@@ -38,12 +38,18 @@
 
 
 		&[href*="diaspora.com"] {
-		    @extend .fa-star-o;
+		//    @extend .fa-star-o;
                     background-color: #ccc;
                     border-color: #ccc;
                     color: white;
+                }
+                &[href*="diaspora.com"]:before {
+                    @include px2rem($font-size-socialmedia-icon * 2, $font-size-base , $font-size-base * 2);
+                    content: "*";
+                    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+                    font-weight: bold;    
 		}
-                 &[href*="diaspora.com"]:focus,
+                &[href*="diaspora.com"]:focus,
                 &[href*="diaspora.com"]:hover {
                      background-color: darken(#ccc,10%);
                 }
@@ -54,7 +60,7 @@
                     border-color: #eeeeee;
                     color: white;
 		}
-                 &[href*="delicious.com"]:focus,
+                &[href*="delicious.com"]:focus,
                 &[href*="delicious.com"]:hover {
                      background-color: darken(#eeeeee,10%);
                 }
@@ -151,9 +157,7 @@
                 &[href*="linkedin.com"]:hover {
                     background-color: darken(#0077b5,20%);
                 }
-		&[href^="mailto"] {
-		    @extend .fa-envelope-o;
-		}
+		
 		&[href*="pinterest.com"] {
 		    @extend .fa-pinterest;
                     background-color: #bd081c;
@@ -277,6 +281,21 @@
                 &[href*="youtube.com"]:hover {
                     background-color: darken(#162221,20%)
                 }
+                
+                &[href^="mailto"] {
+		    @extend .fa-envelope-o;
+		}
+                // Mailinglists
+                &[href*="lists.piratenpartei.de"] {
+		    @extend .fa-envelope;
+                    background-color: #ff8800;
+                    border-color: #ff8800;
+                    color: white;
+		}
+                &[href*="lists.piratenpartei.de"]:focus,
+                &[href*="lists.piratenpartei.de"]:hover {
+                    background-color: darken(#ff8800,20%)
+                }
 	    }
 	}
     }    
@@ -350,7 +369,8 @@
 	    }
 	    
 	}
-    }
+        
+}
 
 
 @media screen and (min-width: $breakpoint-1060) {
@@ -364,11 +384,12 @@
 	}
 
         #header-social-sticky {
-		top: 0;
+		top: 7px;
 		right: 20px;
+		
+		.header-stick & {
+		    z-index: 9999;
+		}
 	}
-        .header-stick #header-social-sticky {
-		top: 0;
-		z-index: 9999;
-	}
+
 }

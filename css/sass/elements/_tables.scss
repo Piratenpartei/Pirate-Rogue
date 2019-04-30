@@ -3,28 +3,19 @@
 /*-----------------------------------------------------------------------------------*/
 
 table {
-  line-height: 2;
-  @include px2rem($font-size-tables);
-   border-collapse: collapse;
-   border-bottom: 1px solid $table-border; 
+    line-height: 2;
+    @include px2rem($font-size-tables);
+    border-collapse: collapse;
+    border-bottom-width: 1px;
+    border-bottom-style: solid; 
     border-spacing: 0;
     border-width: 1px;
-    margin: 0 0 1.6em;
-    table-layout: fixed;
-    /* Prevents HTML tables from becoming too wide */
+    margin: 0 0 1.6em;   
     width: 100%;
-    
     
     &.sorttable {
 	thead {
-	    cursor: pointer;
-	    background: $table-head-sortable;
-	    tr {
-		th.headerSortUp,
-		th.headerSortDown {
-		    background: $table-head-sortable-active;
-		}
-	    }	    
+	    cursor: pointer;	    
 	}
     }
     
@@ -40,21 +31,18 @@ table {
     }
     thead {
 	th {
-	    border-bottom: 2px solid $table-border;	
+	    border-bottom-width: 2px;
+             border-bottom-style: solid;	
 	}
     }
     &.long, 
     &.border {
 	td {
-	    border-bottom: 1px solid $table-border;	
+	    border-bottom-width: 1px;
+            border-bottom-style: solid;	
 	}
     }
-    &.long {	
-	tr:nth-child(odd) td {
-		background: $table-tr-odd;
-	}
-    }
-   
+ 
 }
 
 caption, th, td {
@@ -77,16 +65,9 @@ caption {
 
 th {
     font-weight: bold;
-    a {
-        color: $color-text;
-    }
 }
 th, td {
     padding: 0.4em;
-}
-td {
-    color: $table-td-color;
-    
 }
     
 th.right,
@@ -98,17 +79,29 @@ th.center,
 td.center {
     text-align: center;
 }
+@media screen and (max-width: $breakpoint-sm) {
+	
+	table, tr, td {
+		padding:0;
+	}
 
-tr.odd,
-tr:hover {
-    td {
-	color: $table-td-color-hover;
-    }
-}
+	table {
+		border:none;
+	}
 
-@media screen and (min-width: $breakpoint-sm) {
-    table {
-        min-width: $breakpoint-600;
-        width: auto;
-    }
+	thead {
+		display:none;
+	}
+
+	tr {
+		float: left;
+		width: 100%;
+		margin-bottom: 2em;
+	}
+
+	td {
+		float: left;
+		width: 100%;
+		padding:1em;
+	}
 }

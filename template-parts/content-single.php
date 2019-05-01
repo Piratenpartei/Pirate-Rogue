@@ -9,7 +9,19 @@
 ?>
 
 <?php
-global $pagebreakargs;
+$singepagebreakargs = array(
+    'before'            => '<div class="pagebreak-links">',
+    'after'             => '</div>',
+    'link_before'       => '',
+    'link_after'        => '',
+    'next_or_number'    => 'next',
+    'separator'         => ' ',
+    'nextpagelink'      => '<span class="next">'.__( 'Next page',  'pirate-rogue' ).'</span>',
+    'previouspagelink'  => '<span class="prev">'.__( 'Previous page',  'pirate-rogue' ).'</span>',
+    'pagelink'          => '%',
+    'echo'              => 0
+);
+
  
 $introtext = get_post_meta($post->ID, 'intro', true);
 $custom_class = get_post_meta($post->ID, 'post_class', true);
@@ -100,9 +112,12 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 	    <div id="socialicons-sticky">
 			<div id="entry-content" class="entry-content" itemprop="text">
 			    <?php    
-			    the_content(); 
-                            echo wp_link_pages($pagebreakargs);
-                           
+			    the_content();
+                            
+                            $pagenav =  wp_link_pages($singepagebreakargs);      
+                            if ((isset($pagenav)) && (strlen($pagenav)>10)) {
+                                echo $pagenav; 
+                            }
                            
                             if ( class_exists( 'Pirate_Crew' ) && 'content' == get_theme_mod( 'pirate_rogue_crewmember-position' ) ) {
 				$preauthor =  get_post_meta( $post->ID, 'pirate_crew_member_id', true );	

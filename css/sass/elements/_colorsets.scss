@@ -44,6 +44,20 @@
         border-color: $color-main;
     }
 }
+.blog .entry-cats a:nth-child(n+2):before {
+     color: $color-text;
+      background: $color-page-background;
+}
+
+.pagebreak-links a {
+ //   color: $color-cats;
+    background: $color-cats-background; 
+	
+	&:hover {
+//	    color: $color-cats-hover;
+	    background: $color-cats-background-hover; 
+	}
+}
 
 #footer-search {   
     .search-field {
@@ -720,6 +734,7 @@ blockquote {
 /*-----------------------------------------------------------------------------------*/
 /* Display of meta elements, like tags, categories, timestampts and so on
 /*-----------------------------------------------------------------------------------*/
+.pagebreak-links,
 .entry-meta, 
 .entry-cats {
     color: $color-text;
@@ -728,7 +743,7 @@ blockquote {
 	color: $color-text;
     }
 }
-
+.pagebreak-links,
 .entry-cats {
     a {
 	color: $color-cats;
@@ -745,11 +760,13 @@ blockquote {
 .section-one-column-one .entry-cats a, 
 .section-three-column-one .entry-cats a,
 .featured-slider .entry-cats a, 
+.pagebreak-links a,
 .single-post .entry-cats a {
     color: #fff;
 }
 #front-section-four {
   .entry-cats a, 
+  .pagebreak-links,
   .entry-meta {
     color: #fff;
     a {
@@ -826,6 +843,7 @@ blockquote {
 .section-three-column-one .entry-cats a, 
 #front-section-four .entry-cats a, 
 .single-post .entry-cats a, 
+.pagebreak-links a,
 .blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-cats a {
     background: $color-cats-background; 
     color: #fff;
@@ -848,6 +866,7 @@ blockquote {
 	color: #fff;
       }
     }
+    .pagebreak-links a,
     .entry-cats a {
       color: #fff;
     }
@@ -1058,6 +1077,7 @@ blockquote {
     }
     // Main Link Hover col
     .main-linkhovercol-#{$name} {
+       
         &.single-post .entry-header .entry-cats a:hover,
         &.blog .featured-slider .entry-cats a:hover, 
         &.blog .featured-slider .entry-meta a:hover,
@@ -1072,8 +1092,11 @@ blockquote {
                  color: $color;
             }
         }
+        
+
     }
 }
+
 
 // Meta Links
 @each $key in $customizer-colorset {
@@ -1086,6 +1109,9 @@ blockquote {
         &.blog .featured-slider .entry-cats a:hover, 
         &.blog .featured-slider .entry-meta a:hover,
         &.blog .hentry .entry-cats a:hover,
+        
+        main .entry-content .pagebreak-links a:hover,
+        
         .pagination .nav-links span.page-numbers:hover, 
         .pagination .nav-links a.page-numbers:hover,
         .featured-slider button.slick-arrow:focus::after, 
@@ -1112,6 +1138,7 @@ blockquote {
         &.single-post .entry-tags a,
         &.single-post .entry-header .page-links a,
         .post-page-numbers.current,    
+         main .entry-content .pagebreak-links a,
         .pagination .nav-links span.page-numbers, 
         .pagination .nav-links a.page-numbers,
         &.single-post .entry-header .page-links .number {
@@ -1132,8 +1159,9 @@ blockquote {
         &.blog .hentry .entry-cats a,
         &.blog .featured-slider .entry-cats a,
         &.blog .featured-slider .entry-meta a,    
-        &.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-cats a,
+        &.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-cats a,        
         .post-page-numbers.current,    
+        .pagebreak-links a,
         .pagination .nav-links span.page-numbers, 
         .pagination .nav-links a.page-numbers {
             background: $color; 
@@ -1143,6 +1171,7 @@ blockquote {
         .gallery .slick-dots li.slick-active button:before {
             color: $color;
         }
+
         
     }
     .main-meta-bgcol-hover-#{$name} {
@@ -1158,6 +1187,7 @@ blockquote {
         &.single-post .entry-cats a:hover, 
         &.single-post .entry-tags a:hover,
         &.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-cats a:hover,
+        .pagebreak-links a:hover,
         .pagination .nav-links span.page-numbers:hover, 
         .pagination .nav-links a.page-numbers:hover {
             background: $color; 

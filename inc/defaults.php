@@ -4,17 +4,17 @@
 /*-----------------------------------------------------------------------------------*/
 
 $pagebreakargs = array(
-    'before'   => '<div class="page-links">' . __('Page:', 'pirate-rogue'),
-    'after'            => '</div>',
-    'link_before'      => '<span class="number">',
-    'link_after'       => '</span>',
-    'next_or_number'   => 'number',
-    'separator'        => ' ',
-    'nextpagelink'     => __( 'Next page',  'pirate-rogue' ),
-    'previouspagelink' => __( 'Previous page',  'pirate-rogue' ),
-    'pagelink'         => '%',
-    'echo' => 0
-    );
+    'before'            => '<div class="page-links"><span class="pagination-title">' . __("Seite:", 'pirate-rogue'). '</span>',
+    'after'             => '</div>',
+    'link_before'       => '<span class="number">',
+    'link_after'        => '</span>',
+    'next_or_number'    => 'number',
+    'separator'         => ' ',
+    'nextpagelink'      => __( 'Next page',  'pirate-rogue' ),
+    'previouspagelink'  => __( 'Previous page',  'pirate-rogue' ),
+    'pagelink'          => '%',
+    'echo'              => 0
+);
 
 
 // Default Colors

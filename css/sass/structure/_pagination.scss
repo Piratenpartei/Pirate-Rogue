@@ -129,9 +129,18 @@
             display: block;
             margin: 20px 0;
             
-            .nav-next, .nav-previous {
-                display: inline-block;
+            .nav-next, 
+            .nav-previous {
+                display: inline;
             }
+            
+            .nav-next {
+                text-align: right;
+                @media screen and (min-width:$breakpoint-sm) {
+                    text-align: left;
+                }
+            } 
+           
     }
         
     .pagebreak-links {
@@ -145,13 +154,28 @@
         a {
             padding: 5px;
             margin-right: 5px;
+            margin-top: 5px;
+             
+            
+            width: 100%;
+            display: block;
+            @media screen and (min-width:$breakpoint-sm) {
+                width: inherit;
+                display: inline;             
+            }
         }
         .next,
         .prev {
             padding: 2px 4px;
            
         }
-
+        .next {
+            text-align: right;
+            @media screen and (min-width:$breakpoint-sm) {
+                text-align: left;
+            }
+        } 
+        
         .next:after {
            margin-left: 5px;
            @extend .fa;

@@ -17,7 +17,22 @@ img {
       padding: 5px;
       border: 1px solid #ededee;
     }
-
+    &.shadow {
+        max-width: calc(100% - 10px);
+        box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.6); 
+    }
+    &.noshadow {
+        max-width: inherit;
+        box-shadow: none;
+    }
+    
+    &.rounded {
+        border-radius: 50%;
+    }
+    &.roundedges {
+        border-radius: 10px;
+    }
+    
     &.alignleft, 
     &.alignright {
       margin-top: 8px;
@@ -53,8 +68,12 @@ img#wpstats {
   
     .shadow-images & img {
         max-width: calc(100% - 10px);
-        box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.6)
+        box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.6);       
     }
+     .shadow-images & img.noshadow {
+         max-width: inherit;
+         box-shadow: none;
+     }
 }
 
 .type-attachment .entry-content .entry-caption p {

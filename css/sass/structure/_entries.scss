@@ -346,9 +346,6 @@ article {
 	    padding-bottom: 60px;
 	}
 	
-	.post-navigation {
-	    padding-top: 75px;
-	}
     }
   
     .big-thumb {
@@ -424,8 +421,7 @@ article {
 	}
 	.entry-content, 
 	.entry-footer, 
-	#comments, 
-	.post-navigation {
+	#comments {
 	    margin-left: auto;
 	    margin-right: auto;
 	    width: 80%;
@@ -487,8 +483,7 @@ article {
 	    }
 	    .entry-content, 
 	    .entry-footer, 
-	    #comments, 
-	    .post-navigation {
+	    #comments {
 		width: 70%;
 		margin-left: 100px;
 		margin-right: auto;

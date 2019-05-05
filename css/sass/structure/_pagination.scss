@@ -10,7 +10,6 @@
   @include px2rem( $font-size-smaller);
 
   font-weight: 600;
-  text-transform: uppercase;
   letter-spacing: 1px;
   color: $color-text;
   margin-bottom: 25px;
@@ -60,56 +59,32 @@
   }
 }
 
-.single-post {
-  .navigation {
-    clear: both;
-    text-align: center;
-  }
-  .post-navigation {
-    overflow: hidden;
-    clear: both;
-    padding-top: 60px;
-  }
+.single-attachment {
+     .post-navigation {
+        overflow: hidden;
+        clear: both;
+        padding-top: 60px;
+      }
+      .nav-previous {
+        float: left;
+      }
+      .nav-next {
+        float: right;
+      }
+      .post-navigation a {
+        position: relative;
+        display: block;
+        @include px2rem( $font-size-smaller);
+        line-height: 1.15;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        border-bottom: 2px solid $color-text;
+      }
 }
 
-.single-attachment .post-navigation {
-  overflow: hidden;
-  clear: both;
-  padding-top: 60px;
-}
 
-.single-post .post-navigation .nav-previous, 
-.pagination .prev,
-.single-attachment .nav-previous {
-  float: left;
-}
 
-.single-post .post-navigation .nav-next, 
-.pagination .next, 
-.single-attachment .nav-next {
-  float: right;
-}
-
-.single-post .post-navigation a, 
-.single-attachment .post-navigation a {
-  position: relative;
-  display: block;
-  @include px2rem( $font-size-smaller);
-  line-height: 1.15;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  border-bottom: 2px solid $color-text;
-}
-
-.single-post .post-navigation {
-  .nav-previous a {
-    text-align: left;
-  }
-  .nav-next a {
-    text-align: right;
-  }
-}
 
 #nav-comments {
   padding: 10px 0;
@@ -120,8 +95,72 @@
   }
 }
 
-@media screen and (min-width: $breakpoint-sm) {
-    .pagination {
-	letter-spacing: 3px;
-    } 
+
+.page-links {
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-top: 20px;
+    
+    .post-page-numbers {
+        padding: 4px;
+        text-decoration: none;
+
+        &.current {
+             color: $color-second;
+        }
+        
+        a {
+                .number {
+                   @include px2rem($font-size-small);
+                }
+        }
+        
+        a:hover {
+            background-color: #ddd;
+        } 
+    }
+}
+
+
+.single-post {
+    .post-navigation {
+            clear: both;
+            display: block;
+            margin: 20px 0;
+            
+            .nav-next, .nav-previous {
+                display: inline-block;
+            }
+    }
+        
+    .pagebreak-links {
+           margin: 10px 0;
+    }
+     
+     
+    .post-navigation,
+    .pagebreak-links {
+     
+        a {
+            padding: 5px;
+            margin-right: 5px;
+        }
+        .next,
+        .prev {
+            padding: 2px 4px;
+           
+        }
+
+        .next:after {
+           margin-left: 5px;
+           @extend .fa;
+           content:  $fa-var-chevron-circle-right;;
+        }
+         .prev:before {
+             margin-right: 5px;
+            @extend .fa;
+            @extend .fa-chevron-circle-left;
+        }
+    }
 }

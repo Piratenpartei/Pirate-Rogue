@@ -170,12 +170,12 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 			endif;
 			?>
 
-			<?php the_post_navigation( array (
-				'next_text' => '<span class="meta-nav">' . esc_html__( 'Next Post', 'pirate-rogue') . '</span> ' .
-				'<span class="screen-reader-text">' . esc_html__( 'Next Post', 'pirate-rogue') . '</span> ',
-				'prev_text' => '<span class="meta-nav">' . esc_html__( 'Previous Post', 'pirate-rogue') . '</span> ' .
-				'<span class="screen-reader-text">' . esc_html__( 'Previous Post', 'pirate-rogue') . '</span> ',
-			) ); ?>
+			<?php
+                        echo get_the_post_navigation( array(
+                            'next_text' => '<span class="next">'.esc_html__( 'Next Post', 'pirate-rogue').'</span>',
+                            'prev_text' => '<span class="prev">'.esc_html__( 'Previous Post', 'pirate-rogue').'</span>',
+                        ) );
+                        ?>
 
 	    </div>
 	</div>

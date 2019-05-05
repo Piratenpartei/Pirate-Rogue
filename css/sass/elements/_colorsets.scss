@@ -44,6 +44,7 @@
         border-color: $color-main;
     }
 }
+.blogroll .entry-cats a:nth-child(n+2):before,
 .blog .entry-cats a:nth-child(n+2):before {
      color: $color-text;
       background: $color-page-background;
@@ -245,29 +246,58 @@
   color: #fff;
 }
 
-
-#comments .comment-reply a, 
-#respond a#cancel-comment-reply-link {
-  color: $color-meta;
+//
+// Comments
+//
+#comments {
+    #respond a#cancel-comment-reply-link,
+    .comment-reply a {
+        color: $color-meta;
+    }
+    #respond {
+         p {
+            &.comment-notes a, 
+            &.logged-in-as a {
+              color: $color-meta;
+            }
+        }
+    }
+    .comment-meta {
+        color: $color-meta;
+        a {
+          color: $color-meta;
+        }
+    } 
+    .disclaimer {
+        a {
+            color: $color-second;
+        }
+        a:hover {
+            color: $color-main;
+        }
+    }   
 }
 
-#comments #respond p {
-  &.comment-notes a, 
-  &.logged-in-as a {
-    color: $color-meta;
-  }
-}
 
 #nav-comments a {
   color: $color-meta;;
 }
 
-#comments .comment-meta {
-  color: $color-meta;
-  a {
-    color: $color-meta;
-  }
+
+#comments-toggle {
+  border-color: $color-text;
+  background: none;
 }
+
+
+.comments-show #comments-toggle,
+#comments-toggle:focus,
+#comments-toggle:hover {
+    border-color: $color-linkhover;
+    color: #fff;
+}
+
+
 
 p.wp-caption-text, 
 .contact-form label span, 
@@ -283,15 +313,11 @@ p.wp-caption-text,
     }
 }
 
-
-
 #front-section-four {
   .entry-header h2.entry-title a {
     color: #fff;
   }
 }
-
-
 
 .big-thumb .entry-header {
   h1.entry-title, p.intro {
@@ -315,7 +341,6 @@ p.wp-caption-text,
 }
 
 
-
 pre {
   background: #f4f4f4;
   color: #444;
@@ -329,9 +354,6 @@ mark, ins {
   color: $color-mark;
   background: $color-mark-background;
 }
-
-
-
 
 
 // Headlines
@@ -485,7 +507,6 @@ a {
 .textwidget a:focus, 
 #overlay-nav a:focus,
 .author-links a:focus, 
-.single-post .post-navigation a:focus,
 .single-attachment .post-navigation a:focus,
 .single-post .hentry .entry-meta a:focus,
 .front-section a.all-posts-link:hover,
@@ -495,7 +516,6 @@ a {
 .textwidget a:hover, 
 #overlay-nav a:hover,
 .author-links a:hover, 
-.single-post .post-navigation a:hover,
 .single-attachment .post-navigation a:hover,
 .single-post .hentry .entry-meta a:hover {
     color: $color-content-links; 
@@ -526,14 +546,10 @@ a {
 #desktop-navigation ul li.menu-item-has-children a:hover::after {
     border-top-color: $color-content-links; //  #51a8dd;
 }
-.single-post .post-navigation a:focus,
 .single-attachment .post-navigation a:focus,
-.single-post .post-navigation a:hover,
 .single-attachment .post-navigation a:hover {
     border-bottom-color: $color-content-links;
 }
-
-
 
 #desktop-navigation {
     .sub-menu li a:focus, 
@@ -568,12 +584,6 @@ a {
     color: #fff;
 }
 
-.comments-show #comments-toggle,
-#comments-toggle:focus,
-#comments-toggle:hover {
-    border-color: $color-linkhover;
-    color: #fff;
-}
 
 
 .desktop-search input.search-field {
@@ -583,29 +593,6 @@ a {
   }
 }
 
-#comments .comment-reply a, 
-#respond a#cancel-comment-reply-link {
-    color: $color-meta;
-}
-
-#comments #respond p {
-    &.comment-notes a, 
-    &.logged-in-as a {
-	  color: $color-meta;
-    }
-}
-
-#nav-comments a {
-  color: $color-meta;
-}
-
-#comments .comment-meta {
-  color: $color-meta;
-  
-  a {
-    color: $color-meta;
-  }
-}
 
 .single-post .entry-tags a, 
 p.wp-caption-text, 
@@ -728,12 +715,10 @@ blockquote {
 }
 
 
-
-
-
 /*-----------------------------------------------------------------------------------*/
 /* Display of meta elements, like tags, categories, timestampts and so on
 /*-----------------------------------------------------------------------------------*/
+.post-navigation,
 .pagebreak-links,
 .entry-meta, 
 .entry-cats {
@@ -743,6 +728,8 @@ blockquote {
 	color: $color-text;
     }
 }
+
+.post-navigation,
 .pagebreak-links,
 .entry-cats {
     a {
@@ -761,12 +748,15 @@ blockquote {
 .section-three-column-one .entry-cats a,
 .featured-slider .entry-cats a, 
 .pagebreak-links a,
+.post-navigation a,
 .single-post .entry-cats a {
     color: #fff;
 }
+
 #front-section-four {
   .entry-cats a, 
   .pagebreak-links,
+  .post-navigation,
   .entry-meta {
     color: #fff;
     a {
@@ -817,10 +807,6 @@ blockquote {
 	    background: $color-cats-background-hover; 
 	}
     }
- //   .entry-cats a:nth-child(n+2):before {
-//	color: #2b2b2b;
-  //      background-color: white;
-   // }
 
     .featured-slider {
 	.entry-cats a,
@@ -843,6 +829,7 @@ blockquote {
 .section-three-column-one .entry-cats a, 
 #front-section-four .entry-cats a, 
 .single-post .entry-cats a, 
+.post-navigation a,
 .pagebreak-links a,
 .blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-cats a {
     background: $color-cats-background; 
@@ -866,6 +853,7 @@ blockquote {
 	color: #fff;
       }
     }
+    .post-navigation a,
     .pagebreak-links a,
     .entry-cats a {
       color: #fff;
@@ -873,29 +861,6 @@ blockquote {
 }
 
 
-
-// Comments
-#comments-toggle {
-  border-color: $color-text;
-  background: none;
-}
-
-#comments {
-    .disclaimer {
-        a {
-            color: $color-second;
-        }
-        a:hover {
-            color: $color-main;
-        }
-    }    
-}
-
-.comments-show #comments-toggle, 
-#comments-toggle:focus,
-#comments-toggle:hover {
-   background: $color-cats-background-hover; 
-}
 
 /*-----------------------------------------------------------------------------------*/
 /* 2.  Use Colorsets from customizer
@@ -1000,9 +965,6 @@ blockquote {
 }
 
 
-
-
-
 // Main Headlines
 @each $key in $customizer-colorset {
       $name:      nth($key, 1); 
@@ -1092,8 +1054,6 @@ blockquote {
                  color: $color;
             }
         }
-        
-
     }
 }
 
@@ -1111,7 +1071,7 @@ blockquote {
         &.blog .hentry .entry-cats a:hover,
         
         main .entry-content .pagebreak-links a:hover,
-        
+        .post-navigation .nav-links a:hover,
         .pagination .nav-links span.page-numbers:hover, 
         .pagination .nav-links a.page-numbers:hover,
         .featured-slider button.slick-arrow:focus::after, 
@@ -1139,6 +1099,7 @@ blockquote {
         &.single-post .entry-header .page-links a,
         .post-page-numbers.current,    
          main .entry-content .pagebreak-links a,
+        .post-navigation .nav-links a,
         .pagination .nav-links span.page-numbers, 
         .pagination .nav-links a.page-numbers,
         &.single-post .entry-header .page-links .number {
@@ -1161,6 +1122,7 @@ blockquote {
         &.blog .featured-slider .entry-meta a,    
         &.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-cats a,        
         .post-page-numbers.current,    
+        .post-navigation .nav-links a,
         .pagebreak-links a,
         .pagination .nav-links span.page-numbers, 
         .pagination .nav-links a.page-numbers {
@@ -1187,6 +1149,7 @@ blockquote {
         &.single-post .entry-cats a:hover, 
         &.single-post .entry-tags a:hover,
         &.blog #primary .hentry.has-post-thumbnail:nth-child(4n+1) .entry-cats a:hover,
+        .post-navigation .nav-links a:hover,
         .pagebreak-links a:hover,
         .pagination .nav-links span.page-numbers:hover, 
         .pagination .nav-links a.page-numbers:hover {
@@ -1300,5 +1263,6 @@ blockquote {
         }
     }
 }
+
 
 

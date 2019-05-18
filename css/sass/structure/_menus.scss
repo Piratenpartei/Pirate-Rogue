@@ -179,46 +179,6 @@
 }
 
 
-/* --- Skiplinks --- */
-#skiplinks{
-    position: relative;
-    left: 0;
-    width: 100%;
-    margin-left: 0;
-    text-align: center;
-    list-style: outside none;
-    
-    ul {
-	margin: 0;
-    }
-    li  { 
-        list-style-type: none;
-    }
-    a{
-	position: absolute;
-	left: -99999px;
-	top: 150px;
-    }
-    a:focus, 
-    a:active{  
-        @include px2rem($font-size-base);
-	position: relative;
-	display: block;
-	z-index:9999;
-	height: auto;
-	margin: 0 auto;
-	text-align: center;
-	text-decoration: none;
-        color: #fff;
-	background: $color-second;
-	left: 0;
-	top: 0;
-    }
-}
-
-
-
-
 @media screen and (min-width: $breakpoint-1024) {
     #desktop-navigation {
 	display: block;
@@ -268,7 +228,7 @@
 		    li:focus > ul,  
 		    li:hover > ul {
 			top: 15px;
-			left: 215px;
+			left: 75px;
 
 			li > ul.focus,
 			li.focus > ul, 
@@ -316,7 +276,42 @@
 	}
       }
   }
-  
-  
-  
 
+
+
+/* --- Skiplinks --- */
+#skiplinks{
+    position: relative;
+    left: 0;
+    width: 100%;
+    margin-left: 0;
+    text-align: center;
+    list-style: outside none;
+    
+    ul {
+	margin: 0;
+    }
+    li  { 
+        list-style-type: none;
+    }
+    a{
+	position: absolute;
+	left: -99999px;
+	top: 150px;
+    }
+    a:focus, 
+    a:active{  
+        @include px2rem($font-size-base);
+	position: relative;
+	display: block;
+	z-index:9999;
+	height: auto;
+	margin: 0 auto;
+	text-align: center;
+	text-decoration: none;
+        color: #fff;
+	background: $color-second;
+	left: 0;
+	top: 0;
+    }
+}

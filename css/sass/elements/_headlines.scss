@@ -52,10 +52,12 @@ h1, h2, h3, h4, h5, h6,
     font-weight: 600;
 }
 
+p.site-title,
 h1.site-title {
     font-weight: bold;
-    padding-right: 55px;
-    @include px2rem($font-size-h1-sitetitle);
+    padding-right: 25px;
+    @include px2rem($font-size-base-sm);
+    
 }
 
 
@@ -230,10 +232,16 @@ h3 {
 
 
 @media screen and (min-width: $breakpoint-sm) {
+    p.site-title,
+    h1.site-title {
+	padding-top: 5px;    
+    }
+    
+    
     .single-post .entry-header h1.entry-title, 
     .single-attachment .entry-header h1.entry-title, 
     .attachment h1.entry-title,
-    .page h1.entry-title {
+    h1.entry-title {
 	@include px2rem($font-size-h1-sitetitle-sm);     
     }
 

@@ -209,10 +209,7 @@
 
 
 .footer-feature-btn:focus, 
-#comments-toggle:focus, 
-.footer-feature-btn:hover, 
-.comments-show #comments-toggle, 
-#comments-toggle:hover {
+.footer-feature-btn:hover {
   background: #0c6ca6;
 }
 
@@ -226,12 +223,7 @@
   background: #0c6ca6;
 }
 
-.comments-show #comments-toggle,
-#comments-toggle:focus,
-#comments-toggle:hover {
-  border-color: #0c6ca6;
-  color: #fff;
-}
+
 
 #primary #infinite-handle span:focus, 
 #front-section-three a.all-posts-link:focus, 
@@ -249,6 +241,9 @@
 //
 // Comments
 //
+
+
+
 #comments {
     #respond a#cancel-comment-reply-link,
     .comment-reply a {
@@ -293,8 +288,9 @@
 .comments-show #comments-toggle,
 #comments-toggle:focus,
 #comments-toggle:hover {
-    border-color: $color-linkhover;
+    border-color:  $color-main;
     color: #fff;
+    background: $color-main;
 }
 
 

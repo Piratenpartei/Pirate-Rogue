@@ -22,6 +22,9 @@
     z-index: 21;
     background: #fff;
     
+   @media screen and (min-width: $breakpoint-sm) {
+        min-height: 46px;
+    }
     @media screen and (min-width: $breakpoint-1060) {
 	position: relative;
 	width: 87.5%;

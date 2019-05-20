@@ -4,9 +4,12 @@
 
 main {
     position: relative;
-    top: 59px;
+    top: 35px;
     
     @media screen and (min-width: 1024px) {
-              top: 0;
+              top: -14px;
+    }
+    @media screen and (min-width: $breakpoint-1060) {
+              top: 0px;
     }
 }

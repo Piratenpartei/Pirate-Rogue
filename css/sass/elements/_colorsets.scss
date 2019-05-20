@@ -494,8 +494,6 @@ a {
 
 .post-page-numbers a,
 .author-bio a,
-.featured-slider button.slick-arrow:focus::after,
-.featured-slider button.slick-arrow:hover::after,
 .front-section a.all-posts-link:focus,
 #overlay-close:focus,
 .widget-area .widget ul li a:focus, 
@@ -1069,9 +1067,7 @@ blockquote {
         main .entry-content .pagebreak-links a:hover,
         .post-navigation .nav-links a:hover,
         .pagination .nav-links span.page-numbers:hover, 
-        .pagination .nav-links a.page-numbers:hover,
-        .featured-slider button.slick-arrow:focus::after, 
-        .featured-slider button.slick-arrow:hover::after {
+        .pagination .nav-links a.page-numbers:hover {
              color: $color;
         }
     }

@@ -60,7 +60,7 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 				if ( get_post_meta($post->ID, 'intro', true) ) { ?>
 					<p class="intro" itemprop="description"><?php echo $introtext; ?></p>
 				<?php } else { ?>
-					<meta itemprop="description" content="<?php echo get_the_excerpt(); ?>">
+					<meta itemprop="description" content="<?php echo wp_strip_all_tags(get_the_excerpt(), true); ?>">
 				<?php } ?>
 			</div><!-- end .title-wrap -->
 

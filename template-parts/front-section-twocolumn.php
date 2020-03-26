@@ -23,11 +23,10 @@ $uku_section_twocolumn_query = new WP_Query( array(
 	'ignore_sticky_posts'   => 1,
 ) );
 $thumbfallbackid = absint(get_theme_mod( 'pirate_rogue_fallback_thumbnail' ));
-	if (!isset($thumbfallbackid)) {
-	    $thumbfallbackid =0;
-	} else {
-	    $imagesrc = wp_get_attachment_image_src( $thumbfallbackid, 'pirate-rogue-front-big' )[0];
-	}
+$imagesrc = wp_get_attachment_image_src( $thumbfallbackid, 'pirate-rogue-front-big' );
+if ($imagesrc) {
+    $imagesrc = $imagesrc[0];
+}
 ?>
 
 <section id="front-section-twocolumn" class="front-section columns-wrap cf">

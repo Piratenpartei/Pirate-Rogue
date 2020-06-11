@@ -8,10 +8,9 @@
  */
 
 $thumbfallbackid = absint(get_theme_mod( 'pirate_rogue_fallback_thumbnail' ));
-if (!isset($thumbfallbackid)) {
-    $thumbfallbackid =0;
-} else {
-    $imagesrc = wp_get_attachment_image_src( $thumbfallbackid, 'pirate-rogue-front-big' )[0];
+$imagesrc = wp_get_attachment_image_src( $thumbfallbackid, 'pirate-rogue-front-big' );
+if ($imagesrc) {
+    $imagesrc = $imagesrc[0];
 }
 ?>
 
@@ -32,7 +31,7 @@ if (!isset($thumbfallbackid)) {
                 echo '</a><span class="screen-reader-text"> ('. get_the_date().')</span></h2>';
                     ?>
             </header>
-            <meta itemprop="description" content="<?php echo get_the_excerpt(); ?>">
+            <meta itemprop="description" content="<?php echo wp_strip_all_tags(get_the_excerpt(), true); ?>">
 	</div>
     <?php 
         echo pirate_rogue_create_schema_thumbnail(); 

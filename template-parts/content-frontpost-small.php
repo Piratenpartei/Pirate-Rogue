@@ -9,10 +9,9 @@
  */
 
 $thumbfallbackid = absint(get_theme_mod( 'pirate_rogue_fallback_thumbnail' ));
-if (!isset($thumbfallbackid)) {
-    $thumbfallbackid =0;
-} else {
-    $imagesrc = wp_get_attachment_image_src( $thumbfallbackid, 'pirate-rogue-front-small' )[0];
+$imagesrc = wp_get_attachment_image_src( $thumbfallbackid, 'pirate-rogue-front-small' );
+if ($imagesrc) {
+    $imagesrc = $imagesrc[0];
 }
 ?>
 <article <?php post_class(); ?> itemscope itemtype="http://schema.org/NewsArticle">
@@ -30,7 +29,7 @@ if (!isset($thumbfallbackid)) {
                 echo '</a><span class="screen-reader-text"> ('. get_the_date().')</span></h2>';
                 ?>
 	</header>
-	<meta itemprop="description" content="<?php echo get_the_excerpt(); ?>">
+	<meta itemprop="description" content="<?php echo wp_strip_all_tags(get_the_excerpt(), true); ?>">
     <?php 
         echo pirate_rogue_create_schema_thumbnail(); 
         echo pirate_rogue_create_schema_postmeta();

@@ -9,8 +9,8 @@ blockquote {
     font-family: $font-family-quotation;
     border-left-style: solid;
     border-left-width: 15px;
-    border-right-style: solid;
-    border-right-width: 2px;
+  //  border-right-style: solid;
+  //  border-right-width: 2px;
     font-style: italic;
     @include hyphens(manual);
     
@@ -28,6 +28,9 @@ blockquote {
         position: relative;
         font-weight: 600;
         @include px2rem($font-size-blockquote);  	
+    }
+    ul, ol {
+        padding-left: 0;
     }
     cite {
         display: block;
@@ -81,8 +84,7 @@ blockquote {
         }
         cite {
             @include px2rem($font-size-base);
-        }
-        
+        }    
     }
     &.borderless {
         border: none;
@@ -110,13 +112,9 @@ blockquote {
             // Reset to make sure
             content: "";
         }
-       
-       
     }
 }
-
-blockquote
-    
+ 
 #comments blockquote {
     border-left: none;
     border-right: none;

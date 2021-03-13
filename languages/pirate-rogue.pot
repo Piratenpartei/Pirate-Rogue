@@ -1,0 +1,1159 @@
+# Copyright (C) 2021 Pirate-Rogue
+# This file is distributed under the same license as the Pirate-Rogue package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Pirate-Rogue\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: [object Object]\n"
+"Report-Msgid-Bugs-To: https://github.com/Piratenpartei/Pirate-Rogue/issues\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: 404.php:31
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:33
+msgid "It looks like nothing was found at this location. Maybe try another search term?"
+msgstr ""
+
+#: archive.php:37, index.php:69, search.php:30
+msgid "Older"
+msgstr ""
+
+#: archive.php:38, index.php:70, search.php:31
+msgid "Older Posts"
+msgstr ""
+
+#: archive.php:39, index.php:71, search.php:32
+msgid "Newer"
+msgstr ""
+
+#: archive.php:40, index.php:72, search.php:33
+msgid "Newer Posts"
+msgstr ""
+
+#: archive.php:41, index.php:73, search.php:34
+msgid "Page"
+msgstr ""
+
+#: comments.php:82, inc/defaults.php:322
+msgid "Discuss this on our board"
+msgstr ""
+
+#: comments.php:27
+msgctxt "comments title"
+msgid "1 comment on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:22
+msgid "1 Comment"
+msgid_plural "%1$s Comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:46
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:47
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:55
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:68, comments.php:68
+msgid "Name"
+msgstr ""
+
+#: comments.php:69, comments.php:69
+msgid "Email"
+msgstr ""
+
+#: comments.php:70, comments.php:70
+msgid "Website"
+msgstr ""
+
+#: content.php:40, content.php:41, content.php:42, inc/defaults.php:296, template-parts/content-blogroll.php:39, template-parts/content-blogroll.php:40, template-parts/content-blogroll.php:41, template-parts/content-featured-post.php:35, template-parts/content-featured-post.php:36, template-parts/content-featured-post.php:37, template-parts/content-frontpost-big.php:55, template-parts/content-frontpost-big.php:56, template-parts/content-frontpost-big.php:57, template-parts/content-single.php:85, template-parts/front-section-four.php:77, template-parts/front-section-four.php:78, template-parts/front-section-four.php:79
+msgid "Comments"
+msgstr ""
+
+#: content.php:40, template-parts/content-blogroll.php:39, template-parts/content-featured-post.php:35, template-parts/content-frontpost-big.php:55, template-parts/content-single.php:86, template-parts/front-section-four.php:77
+msgid "0"
+msgstr ""
+
+#: content.php:41, template-parts/content-blogroll.php:40, template-parts/content-featured-post.php:36, template-parts/content-frontpost-big.php:56, template-parts/content-single.php:86, template-parts/front-section-four.php:78
+msgid "1"
+msgstr ""
+
+#: content.php:42, template-parts/content-blogroll.php:41, template-parts/content-featured-post.php:37, template-parts/content-frontpost-big.php:57, template-parts/content-single.php:86, template-parts/front-section-four.php:79
+msgid "%"
+msgstr ""
+
+#: content.php:46, template-parts/content-blogroll.php:45, template-parts/content-featured-post.php:42, template-parts/content-frontpost-big.php:61, template-parts/content-image.php:35, template-parts/content-single.php:92, template-parts/front-section-four.php:83
+msgid "Edit Post"
+msgstr ""
+
+#: footer.php:21
+msgid "More Informations"
+msgstr ""
+
+#: footer.php:62
+msgid "Copyright &copy; %1$s %2$s"
+msgstr ""
+
+#: footer.php:63
+msgid "Powered by"
+msgstr ""
+
+#: footer.php:63
+msgid "https://wordpress.org/"
+msgstr ""
+
+#: footer.php:63
+msgid "WordPress"
+msgstr ""
+
+#: footer.php:65
+msgid "Theme: %1$s by %2$s"
+msgstr ""
+
+#: footer.php:76, template-parts/front-section-about.php:43
+msgid "Follow us"
+msgstr ""
+
+#: functions.php:24, header.php:63
+msgid "Main Menu"
+msgstr ""
+
+#: functions.php:25
+msgid "Social Icons"
+msgstr ""
+
+#: functions.php:26
+msgid "Social Icons (in About section)"
+msgstr ""
+
+#: functions.php:27
+msgid "Social Icons (in Footer)"
+msgstr ""
+
+#: functions.php:28
+msgid "Footer 1"
+msgstr ""
+
+#: functions.php:29
+msgid "Footer 2"
+msgstr ""
+
+#: functions.php:30
+msgid "Footer 3"
+msgstr ""
+
+#: functions.php:31
+msgid "Footer 4"
+msgstr ""
+
+#: functions.php:132
+msgid "Expand Child Menu"
+msgstr ""
+
+#: functions.php:133
+msgid "Collapse Child Menu"
+msgstr ""
+
+#. translators: 1: date
+#: functions.php:322
+msgid "%1$s"
+msgstr ""
+
+#: functions.php:326
+msgid " Edit"
+msgstr ""
+
+#: functions.php:333
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:337
+msgid "Reply"
+msgstr ""
+
+#: functions.php:348
+msgid "Pingback:"
+msgstr ""
+
+#: functions.php:369
+msgid "Blog Sidebar"
+msgstr ""
+
+#: functions.php:371
+msgid "Widgets appear in the default sidebar."
+msgstr ""
+
+#: functions.php:379
+msgid "Page Sidebar"
+msgstr ""
+
+#: functions.php:381
+msgid "Widgets appear in the sidebar on pages."
+msgstr ""
+
+#: functions.php:389
+msgid "Off Canvas Widget Area"
+msgstr ""
+
+#: functions.php:391
+msgid "Widgets appear in the off canvas area."
+msgstr ""
+
+#: functions.php:399
+msgid "Big Footer Instagram Widget Area"
+msgstr ""
+
+#: functions.php:401
+msgid "Widget area to show fotos from Instagram in a big one-column footer area."
+msgstr ""
+
+#: header.php:60
+msgid "Skiplinks"
+msgstr ""
+
+#: header.php:62, inc/custom-fields.php:74, inc/defaults.php:525
+msgid "Content"
+msgstr ""
+
+#: header.php:64, header.php:106, header.php:109, header.php:121, searchform.php:12
+msgid "Search"
+msgstr ""
+
+#: header.php:65, inc/defaults.php:182
+msgid "Footer"
+msgstr ""
+
+#: header.php:86, header.php:119
+msgid "Menu"
+msgstr ""
+
+#: header.php:90, header.php:167
+msgid "Social Media Platforms"
+msgstr ""
+
+#: header.php:110, searchform.php:13
+msgctxt "placeholder"
+msgid "Search..."
+msgstr ""
+
+#: header.php:111, searchform.php:14
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
+#: header.php:145
+msgid "Close"
+msgstr ""
+
+#: inc/custom-fields.php:37
+msgid "Attributes"
+msgstr ""
+
+#: inc/custom-fields.php:49, inc/defaults.php:153, inc/defaults.php:524
+msgid "Sidebar"
+msgstr ""
+
+#: inc/custom-fields.php:74
+msgid "Optional entries for the sidebar"
+msgstr ""
+
+#: inc/custom-fields.php:113
+msgid "Subtitle"
+msgstr ""
+
+#: inc/custom-fields.php:113
+msgid "Enter a text for a subtitle here, which belongs to the main title of the entry. Do not use more than 120 characters."
+msgstr ""
+
+#: inc/custom-fields.php:116
+msgid "URL (original address)"
+msgstr ""
+
+#: inc/custom-fields.php:116
+msgid "Enter the URL of the original post where the text has been taken from. This could be another blog or website."
+msgstr ""
+
+#: inc/defaults.php:7
+msgid "Seite:"
+msgstr ""
+
+#: inc/defaults.php:13, template-parts/content-single.php:19
+msgid "Next page"
+msgstr ""
+
+#: inc/defaults.php:14, template-parts/content-single.php:20
+msgid "Previous page"
+msgstr ""
+
+#: inc/defaults.php:47
+msgid "Theme Options"
+msgstr ""
+
+#: inc/defaults.php:51
+msgid "Default Images"
+msgstr ""
+
+#: inc/defaults.php:55
+msgid "Fallback Thumbnail"
+msgstr ""
+
+#: inc/defaults.php:56
+msgid "If thumbnail for a post is not available, use this thumbnail as a fallback."
+msgstr ""
+
+#: inc/defaults.php:65
+msgid "Fallback Thumbnail For Blogroll"
+msgstr ""
+
+#: inc/defaults.php:66
+msgid "If thumbnail for a post is not available, use this thumbnail as a fallback for normal blogroll."
+msgstr ""
+
+#: inc/defaults.php:79
+msgid "Header"
+msgstr ""
+
+#: inc/defaults.php:83
+msgid "Header Image Style"
+msgstr ""
+
+#: inc/defaults.php:84
+msgid "Choose the style you like to use for the header image."
+msgstr ""
+
+#: inc/defaults.php:86, inc/defaults.php:629
+msgid "Fullwidth"
+msgstr ""
+
+#: inc/defaults.php:87, inc/defaults.php:630
+msgid "Boxed"
+msgstr ""
+
+#: inc/defaults.php:88
+msgid "Fullscreen"
+msgstr ""
+
+#: inc/defaults.php:96
+msgid "Hide Search in Header"
+msgstr ""
+
+#: inc/defaults.php:102
+msgid "Search Background Style"
+msgstr ""
+
+#: inc/defaults.php:103
+msgid "Choose the background color of the overlay search input."
+msgstr ""
+
+#: inc/defaults.php:105
+msgid "Dark grey"
+msgstr ""
+
+#: inc/defaults.php:106
+msgid "Main color"
+msgstr ""
+
+#: inc/defaults.php:107
+msgid "Second color"
+msgstr ""
+
+#: inc/defaults.php:117
+msgid "Social Media Icon Style"
+msgstr ""
+
+#: inc/defaults.php:118
+msgid "Choose the color of the social media icons (needs items added to menu in a Social Icons position). Notice: this will also change the color of the search icon and the hamburger overlay icon."
+msgstr ""
+
+#: inc/defaults.php:120
+msgid "Colorful Social Media Icons"
+msgstr ""
+
+#: inc/defaults.php:121
+msgid "Use main color"
+msgstr ""
+
+#: inc/defaults.php:122
+msgid "Use second color"
+msgstr ""
+
+#: inc/defaults.php:130
+msgid "No Fix-Positioned Header"
+msgstr ""
+
+#: inc/defaults.php:131
+msgid "By default, the fix-positioned header is visible on wider screens, if the browser window is scrolled."
+msgstr ""
+
+#: inc/defaults.php:137
+msgid "Always Show Title"
+msgstr ""
+
+#: inc/defaults.php:138
+msgid "By default, the site title is hidden if logo is present."
+msgstr ""
+
+#: inc/defaults.php:144
+msgid "Always Show Tagline"
+msgstr ""
+
+#: inc/defaults.php:145
+msgid "By default, the site tagline is hidden if logo is present."
+msgstr ""
+
+#: inc/defaults.php:157
+msgid "Sidebar Position"
+msgstr ""
+
+#: inc/defaults.php:159
+msgid "Right"
+msgstr ""
+
+#: inc/defaults.php:160
+msgid "Left"
+msgstr ""
+
+#: inc/defaults.php:168
+msgid "Sidebar Visibility"
+msgstr ""
+
+#: inc/defaults.php:170
+msgid "Show sidebar"
+msgstr ""
+
+#: inc/defaults.php:171
+msgid "Hide sidebar"
+msgstr ""
+
+#: inc/defaults.php:172
+msgid "Hide sidebar on single posts"
+msgstr ""
+
+#: inc/defaults.php:173
+msgid "Hide sidebar on front page"
+msgstr ""
+
+#: inc/defaults.php:187, inc/defaults.php:511, inc/helper-functions.php:385, template-parts/content-image.php:82
+msgid "Title"
+msgstr ""
+
+#: inc/defaults.php:188
+msgid "This is a small title text visible at the top of the area."
+msgstr ""
+
+#: inc/defaults.php:193
+msgid "Show Custom Logo"
+msgstr ""
+
+#: inc/defaults.php:199
+msgid "Featured Image"
+msgstr ""
+
+#: inc/defaults.php:206
+msgid "Big Text"
+msgstr ""
+
+#: inc/defaults.php:207
+msgid "This big slogan text is shown next to the image (HTML is allowed)."
+msgstr ""
+
+#: inc/defaults.php:212
+msgid "Small Text"
+msgstr ""
+
+#: inc/defaults.php:213
+msgid "This is an additional smaller description text shown below the big text (HTML is allowed)."
+msgstr ""
+
+#: inc/defaults.php:218
+msgid "Button Text"
+msgstr ""
+
+#: inc/defaults.php:219
+msgid "If you want to add a \"Call to Action\" button, include the button text here."
+msgstr ""
+
+#: inc/defaults.php:224
+msgid "Button Link URL"
+msgstr ""
+
+#: inc/defaults.php:225
+msgid "Enter the URL the button should link to."
+msgstr ""
+
+#: inc/defaults.php:230
+msgid "Menu Footer Image"
+msgstr ""
+
+#: inc/defaults.php:239
+msgid "Show Search"
+msgstr ""
+
+#: inc/defaults.php:245
+msgid "Credit Text"
+msgstr ""
+
+#: inc/defaults.php:246
+msgid "Customize the footer credit text (HTML is allowed)."
+msgstr ""
+
+#: inc/defaults.php:254
+msgid "Metadata and Global Settings"
+msgstr ""
+
+#: inc/defaults.php:259
+msgid "Author"
+msgstr ""
+
+#: inc/defaults.php:260
+msgid "This is the default author of posts used for structured data."
+msgstr ""
+
+#: inc/defaults.php:265
+msgid "Google Site Verification"
+msgstr ""
+
+#: inc/defaults.php:266
+msgid "For verification of your website as property owner at <a target=\"_blank\" href=\"https://search.google.com/search-console\">Google Search Console</a>, use the alternative method and copy the value of the attribute <b>content</b> of the given HTML tag. Insert this string here.<br>Example: if given <code>&lt;meta name=\"google-site-verification\" content=\"BBssyCpddd8\" /&gt;</code> then insert <code>BBssyCpddd8</code>."
+msgstr ""
+
+#: inc/defaults.php:271
+msgid "Hide Pirate Image On Dividers"
+msgstr ""
+
+#: inc/defaults.php:277
+msgid "Add Shadow To Images"
+msgstr ""
+
+#: inc/defaults.php:283, inc/defaults.php:591
+msgid "Hide Author Names"
+msgstr ""
+
+#: inc/defaults.php:289
+msgid "Normal style for first headline"
+msgstr ""
+
+#: inc/defaults.php:300
+msgid "Show Comments Button"
+msgstr ""
+
+#: inc/defaults.php:301
+msgid "This will hide comments below single posts. There will be a button to show the comments."
+msgstr ""
+
+#: inc/defaults.php:307
+msgid "Comment Disclaimer"
+msgstr ""
+
+#: inc/defaults.php:308
+msgid "Disclaimer is shown above the comment form (HTML is allowed)."
+msgstr ""
+
+#: inc/defaults.php:313
+msgid "Link To External Board"
+msgstr ""
+
+#: inc/defaults.php:314
+msgid "Show a link to an external discussion board which vistors can use instead of regular comments."
+msgstr ""
+
+#: inc/defaults.php:320
+msgid "Link Text"
+msgstr ""
+
+#: inc/defaults.php:321
+msgid "Enter the text for the link to the external board."
+msgstr ""
+
+#: inc/defaults.php:327, inc/helper-functions.php:390
+msgid "URL"
+msgstr ""
+
+#: inc/defaults.php:328
+msgid "Enter the URL of the external board."
+msgstr ""
+
+#: inc/defaults.php:334, inc/xwolf-customizer.php:127
+msgid "Miscellaneous"
+msgstr ""
+
+#: inc/defaults.php:339
+msgid "Colors"
+msgstr ""
+
+#: inc/defaults.php:340
+msgid "This will allow to change the default colors. Please notice, that the following color options use a fix list of predefined colors. To change the website to other colors, use \"Custom CSS\" option."
+msgstr ""
+
+#: inc/defaults.php:344
+msgid "Header Background"
+msgstr ""
+
+#: inc/defaults.php:350
+msgid "Header Texts"
+msgstr ""
+
+#: inc/defaults.php:351
+msgid "This applies to site title and menu links in header, plus the search icon and the hamburger overlay icon."
+msgstr ""
+
+#: inc/defaults.php:357
+msgid "Header Links (Hovered)"
+msgstr ""
+
+#: inc/defaults.php:358
+msgid "This applies to underlining of menu links in header, plus the search icon and the hamburger overlay icon."
+msgstr ""
+
+#: inc/defaults.php:364
+msgid "Action Buttons"
+msgstr ""
+
+#: inc/defaults.php:370
+msgid "Main Background"
+msgstr ""
+
+#: inc/defaults.php:376
+msgid "Main Headlines"
+msgstr ""
+
+#: inc/defaults.php:377
+msgid "This applies to all headlines in main region."
+msgstr ""
+
+#: inc/defaults.php:383
+msgid "Main Texts"
+msgstr ""
+
+#: inc/defaults.php:389
+msgid "Main Links"
+msgstr ""
+
+#: inc/defaults.php:395
+msgid "Main Links (Hovered)"
+msgstr ""
+
+#: inc/defaults.php:401
+msgid "Title Underline"
+msgstr ""
+
+#: inc/defaults.php:402
+msgid "This applies to underlining of the page title."
+msgstr ""
+
+#: inc/defaults.php:408
+msgid "List Items"
+msgstr ""
+
+#: inc/defaults.php:409
+msgid "This applies to bullets of unordered lists."
+msgstr ""
+
+#: inc/defaults.php:415
+msgid "Blockquote Borders"
+msgstr ""
+
+#: inc/defaults.php:421
+msgid "Meta Links Backgrounds"
+msgstr ""
+
+#: inc/defaults.php:422, inc/defaults.php:429, inc/defaults.php:436, inc/defaults.php:443
+msgid "This applies to meta links (e.g. tags and categories)."
+msgstr ""
+
+#: inc/defaults.php:428
+msgid "Meta Links Backgrounds (Hovered)"
+msgstr ""
+
+#: inc/defaults.php:435
+msgid "Meta Links"
+msgstr ""
+
+#: inc/defaults.php:442
+msgid "Meta Links (Hovered)"
+msgstr ""
+
+#: inc/defaults.php:449
+msgid "Tables"
+msgstr ""
+
+#: inc/defaults.php:455
+msgid "Table Backgrounds"
+msgstr ""
+
+#: inc/defaults.php:461
+msgid "Table Header Backgrounds"
+msgstr ""
+
+#: inc/defaults.php:467
+msgid "Table Backgrounds (Odd Rows)"
+msgstr ""
+
+#: inc/defaults.php:473
+msgid "Footer Background"
+msgstr ""
+
+#: inc/defaults.php:479
+msgid "Footer Headlines"
+msgstr ""
+
+#: inc/defaults.php:485
+msgid "Footer Texts"
+msgstr ""
+
+#: inc/defaults.php:491
+msgid "Footer Links"
+msgstr ""
+
+#: inc/defaults.php:497
+msgid "Footer Links (Hovered)"
+msgstr ""
+
+#: inc/defaults.php:506
+msgid "Pirate Crew Settings"
+msgstr ""
+
+#: inc/defaults.php:512
+msgid "Set a title to show above pirate crew member info panel."
+msgstr ""
+
+#: inc/defaults.php:517
+msgid "Position"
+msgstr ""
+
+#: inc/defaults.php:518
+msgid "Set the position to show the pirate crew member card."
+msgstr ""
+
+#: inc/defaults.php:529, inc/defaults.php:626
+msgid "Style"
+msgstr ""
+
+#: inc/defaults.php:530
+msgid "Set the style of the pirate crew member card."
+msgstr ""
+
+#: inc/defaults.php:536, inc/defaults.php:537, inc/defaults.php:538, inc/defaults.php:539
+msgid "Style %d"
+msgstr ""
+
+#: inc/defaults.php:543
+msgid "Format"
+msgstr ""
+
+#: inc/defaults.php:544
+msgid "Set the format to show the pirate crew member card."
+msgstr ""
+
+#: inc/defaults.php:550
+msgid "Card"
+msgstr ""
+
+#: inc/defaults.php:551
+msgid "List"
+msgstr ""
+
+#: inc/defaults.php:558
+msgid "Blog Front Page"
+msgstr ""
+
+#: inc/defaults.php:563
+msgid "General"
+msgstr ""
+
+#: inc/defaults.php:567
+msgid "Hide Default Blog"
+msgstr ""
+
+#: inc/defaults.php:573
+msgid "Hide Date"
+msgstr ""
+
+#: inc/defaults.php:579
+msgid "Hide Comments"
+msgstr ""
+
+#: inc/defaults.php:585
+msgid "Hide Categories"
+msgstr ""
+
+#: inc/defaults.php:597
+msgid "Latest Posts Title"
+msgstr ""
+
+#: inc/defaults.php:598
+msgid "Customize the \"Latest Posts\" title text above the blog content on your blog front page."
+msgstr ""
+
+#: inc/defaults.php:603
+msgid "Follow Us Text"
+msgstr ""
+
+#: inc/defaults.php:604
+msgid "Customize the \"Follow us\" text in your About section and footer social menus."
+msgstr ""
+
+#: inc/defaults.php:612
+msgid "Featured Posts Slider"
+msgstr ""
+
+#: inc/defaults.php:616
+msgid "Slider tag"
+msgstr ""
+
+#: inc/defaults.php:621
+msgid "Slider category"
+msgstr ""
+
+#: inc/defaults.php:627
+msgid "Choose the slider design."
+msgstr ""
+
+#: inc/defaults.php:638
+msgid "Image Animation"
+msgstr ""
+
+#: inc/defaults.php:639
+msgid "Choose, if you want the slider images to fade or slide from one image to the next."
+msgstr ""
+
+#: inc/defaults.php:641
+msgid "Slide"
+msgstr ""
+
+#: inc/defaults.php:642
+msgid "Fade"
+msgstr ""
+
+#: inc/defaults.php:649
+msgid "Autoplay"
+msgstr ""
+
+#: inc/defaults.php:655
+msgid "Number of Slides"
+msgstr ""
+
+#: inc/defaults.php:656
+msgid "How many slides of feature posts are displayed. Notice: the more slides are loaded, the worse the performance of the page will be."
+msgstr ""
+
+#: inc/defaults.php:665
+msgid "Fallback Thumbnail For Slider"
+msgstr ""
+
+#: inc/defaults.php:666
+msgid "If thumbnail for a post is not avaible, use this image for the slider."
+msgstr ""
+
+#: inc/defaults.php:676
+msgid "Section Featured Top"
+msgstr ""
+
+#: inc/defaults.php:680, inc/defaults.php:702, inc/defaults.php:729, inc/defaults.php:761, inc/defaults.php:817, inc/defaults.php:838, inc/defaults.php:858, inc/defaults.php:894
+msgid "Section Title (optional)"
+msgstr ""
+
+#: inc/defaults.php:685, inc/defaults.php:707, inc/defaults.php:734, inc/defaults.php:766, inc/defaults.php:822, inc/defaults.php:843, inc/defaults.php:863, inc/defaults.php:899
+msgid "Section Tag"
+msgstr ""
+
+#: inc/defaults.php:690, inc/defaults.php:712, inc/defaults.php:739, inc/defaults.php:771, inc/defaults.php:827, inc/defaults.php:848, inc/defaults.php:868, inc/defaults.php:904
+msgid "Section Category"
+msgstr ""
+
+#: inc/defaults.php:698
+msgid "Section 2-Columns"
+msgstr ""
+
+#: inc/defaults.php:717, inc/defaults.php:744, inc/defaults.php:776, inc/defaults.php:873, inc/defaults.php:909
+msgid "Number of Posts"
+msgstr ""
+
+#: inc/defaults.php:725
+msgid "Section 3-Columns"
+msgstr ""
+
+#: inc/defaults.php:751, inc/defaults.php:882, inc/defaults.php:918
+msgid "Show Post Excerpts"
+msgstr ""
+
+#: inc/defaults.php:757
+msgid "Section Fullwidth"
+msgstr ""
+
+#: inc/defaults.php:786
+msgid "Section About"
+msgstr ""
+
+#: inc/defaults.php:790
+msgid "Section Title"
+msgstr ""
+
+#: inc/defaults.php:795
+msgid "About Image"
+msgstr ""
+
+#: inc/defaults.php:796
+msgid "The recommended image width for the About image is 580 pixels."
+msgstr ""
+
+#: inc/defaults.php:805
+msgid "About Text (required)"
+msgstr ""
+
+#: inc/defaults.php:806
+msgid "HTML is allowed."
+msgstr ""
+
+#: inc/defaults.php:813
+msgid "Section Featured Bottom"
+msgstr ""
+
+#: inc/defaults.php:834
+msgid "Section on Background"
+msgstr ""
+
+#: inc/defaults.php:854
+msgid "Section 4-Columns"
+msgstr ""
+
+#: inc/defaults.php:890
+msgid "Section 6-Columns"
+msgstr ""
+
+#: inc/helper-functions.php:227, inc/helper-functions.php:268
+msgid "No selection"
+msgstr ""
+
+#: inc/helper-functions.php:332
+msgid "Select image"
+msgstr ""
+
+#: inc/helper-functions.php:333
+msgid "Remove"
+msgstr ""
+
+#: inc/helper-functions.php:351
+msgid "No image selected."
+msgstr ""
+
+#: inc/helper-functions.php:394
+msgid "Select link"
+msgstr ""
+
+#: inc/template-functions.php:824
+msgid "Full Size"
+msgstr ""
+
+#: inc/template-tags.php:113, inc/template-tags.php:111, inc/template-tags.php:210, inc/template-tags.php:208, inc/template-tags.php:300, inc/template-tags.php:298, template-parts/front-section-four.php:43, template-parts/front-section-four.php:41, template-parts/front-section-fourcolumn.php:40, template-parts/front-section-fourcolumn.php:38, template-parts/front-section-one.php:44, template-parts/front-section-one.php:42, template-parts/front-section-sixcolumn.php:38, template-parts/front-section-sixcolumn.php:36, template-parts/front-section-three.php:42, template-parts/front-section-three.php:40, template-parts/front-section-threecolumn.php:39, template-parts/front-section-threecolumn.php:37, template-parts/front-section-two.php:44, template-parts/front-section-two.php:42, template-parts/front-section-twocolumn.php:38, template-parts/front-section-twocolumn.php:36
+msgid "All posts"
+msgstr ""
+
+#: inc/template-tags.php:490
+msgctxt "post date"
+msgid "%s"
+msgstr ""
+
+#. translators: used to show post author name
+#: inc/template-tags.php:495, inc/template-tags.php:520
+msgctxt "post author"
+msgid "%s"
+msgstr ""
+
+#: inc/template-tags.php:521
+msgid "by "
+msgstr ""
+
+#: inc/template-tags.php:546
+msgid "No entry for this post"
+msgstr ""
+
+#: inc/xwolf-customizer.php:542
+msgid "Reset"
+msgstr ""
+
+#: inc/xwolf-customizer.php:573, inc/xwolf-customizer.php:629
+msgid "&mdash; Select &mdash;"
+msgstr ""
+
+#: index.php:58
+msgid "Latest Posts"
+msgstr ""
+
+#: search.php:19
+msgid "Search Results for: %s"
+msgstr ""
+
+#: sidebar-offcanvas.php:16
+msgid "Info"
+msgstr ""
+
+#: template-parts/authorbox.php:19
+msgid "About"
+msgstr ""
+
+#: template-parts/content-404-marque.php:10
+msgid "File not found"
+msgstr ""
+
+#: template-parts/content-404-marque.php:11, template-parts/content-404-marque.php:17, template-parts/content-404-marque.php:20
+msgid "404"
+msgstr ""
+
+#: template-parts/content-404-marque.php:12
+msgid "Lost"
+msgstr ""
+
+#: template-parts/content-404-marque.php:13
+msgid "These are not the droids you are looking for"
+msgstr ""
+
+#: template-parts/content-404-marque.php:14
+msgid "Not here anymore"
+msgstr ""
+
+#: template-parts/content-404-marque.php:15
+msgid "Arrrgh!"
+msgstr ""
+
+#: template-parts/content-404-marque.php:16
+msgid "Arr!"
+msgstr ""
+
+#: template-parts/content-404-marque.php:18
+msgid "Versenk mich doch!"
+msgstr ""
+
+#: template-parts/content-404-marque.php:19
+msgid "Beim Klabautermann! "
+msgstr ""
+
+#: template-parts/content-404-marque.php:21
+msgid "Yo-ho-ho"
+msgstr ""
+
+#: template-parts/content-404-videos.php:70
+msgid "We are sorry, that we could not serve what you are looking for. But how about this:"
+msgstr ""
+
+#: template-parts/content-frontpost-big.php:30, template-parts/content-frontpost-big.php:23
+msgid "Video"
+msgstr ""
+
+#: template-parts/content-image.php:56
+msgid "Only visible to website members:"
+msgstr ""
+
+#: template-parts/content-image.php:57
+msgid "Image Attributs"
+msgstr ""
+
+#: template-parts/content-image.php:61
+msgid "Meta"
+msgstr ""
+
+#: template-parts/content-image.php:71
+msgid "No meta data found"
+msgstr ""
+
+#: template-parts/content-image.php:68
+msgid "Image Sizes"
+msgstr ""
+
+#: template-parts/content-image.php:74
+msgid "Public information:"
+msgstr ""
+
+#: template-parts/content-image.php:78
+msgid "Image Informations"
+msgstr ""
+
+#: template-parts/content-image.php:87
+msgid "Caption"
+msgstr ""
+
+#: template-parts/content-image.php:93
+msgid "Excerpt"
+msgstr ""
+
+#: template-parts/content-image.php:99
+msgid "Description"
+msgstr ""
+
+#: template-parts/content-image.php:105
+msgid "Copyright"
+msgstr ""
+
+#: template-parts/content-image.php:111
+msgid "Download"
+msgstr ""
+
+#: template-parts/content-image.php:112
+msgid "Size"
+msgstr ""
+
+#: template-parts/content-image.php:118
+msgid "Pages:"
+msgstr ""
+
+#: template-parts/content-image.php:128, template-parts/content-single.php:149
+msgid "Tags"
+msgstr ""
+
+#: template-parts/content-image.php:134, template-parts/content-image.php:135, template-parts/content-single.php:175
+msgid "Next Post"
+msgstr ""
+
+#: template-parts/content-image.php:136, template-parts/content-image.php:137, template-parts/content-single.php:176
+msgid "Previous Post"
+msgstr ""
+
+#: template-parts/content-none.php:13
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:24
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: template-parts/content-none.php:21
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:19
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-page.php:21
+msgid "Edit Page"
+msgstr ""
+
+#: template-parts/content-single.php:155
+msgid "Origin: "
+msgstr ""
+
+#: template-parts/footer-feature.php:16
+msgid "Featured"
+msgstr ""
+
+#: template-parts/footermenus.php:12
+msgid "Navigation"
+msgstr ""

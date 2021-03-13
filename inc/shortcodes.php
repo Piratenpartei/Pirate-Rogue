@@ -615,7 +615,7 @@ function pirate_rogue_shortcode_section_featured_3to1( $atts, $content = null ) 
     $out = pirate_rogue_section_featured_3to1($tag, $cat, $title, $num, $id, 'shortcode-section');
 	
     if (empty($out)) {
-	echo '<p class="box red-box">'.__("No result for category \"$cat\", Tag \"$tag\"",'uku').'</p>';	
+	echo '<p class="box red-box">'.__("No result for category \"$cat\", Tag \"$tag\"",'pirate-rogue').'</p>';	
     }
     return $out;
 }
@@ -643,7 +643,7 @@ function pirate_rogue_shortcode_section_featured_1to3( $atts, $content = null ) 
     $out = pirate_rogue_section_featured_1to3($tag, $cat, $title, $num, $id, 'shortcode-section');
 	
     if (empty($out)) {
-	echo '<p class="box red-box">'.__("No result for category \"$cat\", Tag \"$tag\"",'uku').'</p>';	
+	echo '<p class="box red-box">'.__("No result for category \"$cat\", Tag \"$tag\"",'pirate-rogue').'</p>';	
     }
     return $out;
 }
@@ -670,7 +670,7 @@ function pirate_rogue_shortcode_section_twocolumn( $atts, $content = null ) {
     $out = pirate_rogue_section_twocolumn($tag, $cat, $title, $num, 'shortcode-section');
 	
     if (empty($out)) {
-	echo '<p class="box red-box">'.__("No result for category \"$cat\", Tag \"$tag\"",'uku').'</p>';	
+	echo '<p class="box red-box">'.__("No result for category \"$cat\", Tag \"$tag\"",'pirate-rogue').'</p>';	
     }
     return $out;
 }
@@ -693,7 +693,7 @@ function pirate_rogue_shortcode_blogroll( $atts, $content = null ) {
     $out = pirate_rogue_blogroll($tag, $cat, $num);
 	
     if (empty($out)) {
-	echo '<p class="box red-box">'.__("No result for category \"$cat\", Tag \"$tag\"",'uku').'</p>';	
+	echo '<p class="box red-box">'.__("No result for category \"$cat\", Tag \"$tag\"",'pirate-rogue').'</p>';	
     }
     return $out;
 }
@@ -718,7 +718,7 @@ function pirate_rogue_shortcode_articlelist( $atts, $content = null ) {
     $out = pirate_rogue_articlelist($tag, $cat, $num,$class, $title);
 	
     if (empty($out)) {
-	echo '<p class="box red-box">'.__("No result for category \"$cat\", Tag \"$tag\"",'uku').'</p>';	
+	echo '<p class="box red-box">'.__("No result for category \"$cat\", Tag \"$tag\"",'pirate-rogue').'</p>';	
     }
     return $out;
 }

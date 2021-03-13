@@ -1,0 +1,76 @@
+{
+  "name": "Pirate-Rogue",
+  "textdomain": "pirate-rogue",
+  "version": "1.4.9",
+  "keywords": [
+    "WordPress",
+    "Theme",
+    "Piratenpartei"
+  ],
+  "compatibility": {
+    "wprequires": "5.0",
+    "wptestedup": "5.7",
+    "phprequires": "7.3"
+  },
+  "author": {
+        "name": "xwolf",
+        "url":  "https://xwolf.de"
+  },
+  "description": "Theme for pirate parties worldwide. This theme allows to chose between the mostly used color combinations (purple and orange) as main colors for designing elements. It uses several free to use pirate symbols and allows custom CSS. It was created for the german pirate party as replacement for their prior wordpress theme.",
+  "license": "GPL-3.0-or-later",
+  "licenseurl": "http://www.gnu.org/licenses/gpl-3.0.html",
+  "tags": "three-columns, two-columns, one-column, right-sidebar, featured-images",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Piratenpartei/Pirate-Rogue.git",
+    "issues": "https://github.com/Piratenpartei/Pirate-Rogue/issues",
+    "clone": "git+https://github.com/Piratenpartei/Pirate-Rogue.git"
+  },
+  "browserslist": [
+    "last 3 years",
+    "ie 11"
+  ],
+  "contributors": [],
+  "dependencies": {
+    "postcss": "^8.2.4"
+  },
+  "main": "index.php",
+  "maincss": "style.css",
+  "scripts": {
+    "start": "gulp",
+    "dev": "gulp dev",
+    "build": "gulp build",
+    "pot": "gulp pot"
+  },
+  "source": {
+    "js": "./js/",
+    "sass": "./src/sass/"
+  },
+  "jsdir": "./js/",
+  "cssdir": "./css/",
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/register": "^7.12.10",
+    "autoprefixer": "^10.2.3",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-bump": "^3.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-dart-sass": "^1.0.2",
+    "gulp-header": "^2.0.9",
+    "gulp-postcss": "^9.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-touch-cmd": "0.0.1",
+    "gulp-w3c-css": "^2.0.0",
+    "gulp-wp-pot": "^2.5.0",
+    "map-stream": "0.0.7",
+    "semver": "^7.3.4"
+  },
+  "bugs": {
+    "url": "https://github.com/Piratenpartei/Pirate-Rogue/issues"
+  },
+  "homepage": "https://github.com/Piratenpartei/Pirate-Rogue#readme"
+}

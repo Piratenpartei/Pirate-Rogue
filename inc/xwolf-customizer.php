@@ -124,7 +124,7 @@ function xwolf_customizer_settings( $wp_customize ) {
 	    $sectionprio = $sectionprio +1; 
 	    $sectionid = $tab."-elsesection";
 	    $wp_customize->add_section( $sectionid , array(
-			'title'		=> __('Miscellaneous'),
+			'title'		=> __('Miscellaneous','pirate-rogue'),
 			'panel' 	=> $tab,
 			'priority'	=> $sectionprio,
 		    ) ); 
@@ -144,11 +144,11 @@ function xwolf_customizer_settings( $wp_customize ) {
 		    $optionid = esc_html($field); 
 		    		    
 		    if (isset($value['title']))
-			$title = __($value['title'], 'pirate-rogue');
+			$title = $value['title'];
 		    if (isset($value['desc']))
-			$desc = __($value['desc'], 'pirate-rogue');
+			$desc = $value['desc'];
 		    if (isset($value['label']))
-			$label = __($value['label'], 'pirate-rogue');
+			$label = $value['label'];
 		    if (isset($value['notifplugin']))
 			$notifplugin = $value['notifplugin'];
                     if (isset($value['ifplugin']))
@@ -260,6 +260,7 @@ function xwolf_customizer_settings( $wp_customize ) {
 			    $wp_customize->add_setting( $optionid , array(
 				'default'     => $default,
 				'transport'   => 'refresh',
+                                'sanitize_callback' => 'sanitize_text_field'	
 			    ) );
 			     $wp_customize->add_control( new WP_Customize_Category_Control( $wp_customize, $optionid, array(
 				    'label'             => $title,
@@ -273,6 +274,7 @@ function xwolf_customizer_settings( $wp_customize ) {
 			    $wp_customize->add_setting( $optionid , array(
 				'default'     => $default,
 				'transport'   => 'refresh',
+                                'sanitize_callback' => 'sanitize_text_field'	
 			    ) );
 			     $wp_customize->add_control( new WP_Customize_Tag_Control( $wp_customize, $optionid, array(
 				    'label'             => $title,
@@ -286,6 +288,7 @@ function xwolf_customizer_settings( $wp_customize ) {
 			    $wp_customize->add_setting( $optionid , array(
 				'default'     => $default,
 				'transport'   => 'refresh',
+                                'sanitize_callback' => 'sanitize_text_field'	
 			    ) );
 			     $wp_customize->add_control( $optionid, array(
 				    'label'             => $title,
@@ -300,6 +303,7 @@ function xwolf_customizer_settings( $wp_customize ) {
 			    $wp_customize->add_setting( $optionid , array(
 				'default'     => $default,
 				'transport'   => 'refresh',
+                                'sanitize_callback' => 'sanitize_text_field'	
 			    ) );
 			    $wp_customize->add_control(  new WP_Customize_Control_Multiple_Select( $wp_customize, $optionid, array(
 				    'label'             => $title,
@@ -314,6 +318,7 @@ function xwolf_customizer_settings( $wp_customize ) {
 			    $wp_customize->add_setting( $optionid , array(
 				'default'     => $default,
 				'transport'   => 'refresh',
+                                'sanitize_callback' => 'sanitize_text_field'	
 			    ) );
 			    $wp_customize->add_control(  new WP_Customize_Colorlist_Radio( $wp_customize, $optionid, array(
 				    'label'             => $title,
@@ -329,6 +334,7 @@ function xwolf_customizer_settings( $wp_customize ) {
 			    $wp_customize->add_setting( $optionid , array(
 				'default'     => $default,
 				'transport'   => 'refresh',
+                                'sanitize_callback' => 'sanitize_text_field'	
 			    ) );
 			     $wp_customize->add_control( $optionid, array(
 				    'label'             => $title,
@@ -363,6 +369,7 @@ function xwolf_customizer_settings( $wp_customize ) {
 			    $wp_customize->add_setting( $optionid , array(
 				'default'     => $default,
 				'transport'   => 'refresh',
+                                'sanitize_callback' => 'sanitize_text_field'	
 			    ) );
 			   
 			    
@@ -410,6 +417,7 @@ function xwolf_customizer_settings( $wp_customize ) {
 			     $wp_customize->add_setting( $optionid , array(
 				'default'     => $default,
 				'transport'   => 'refresh',
+                                'sanitize_callback' => 'sanitize_text_field'	
 			    ) );
 			    $wp_customize->add_control( $optionid, array(
 				    'label'             => $title,
@@ -562,7 +570,7 @@ if (class_exists('WP_Customize_Control')) {
 				array(
 				    'name'              => '_customize-dropdown-categories-' . $this->id,
 				    'echo'              => 0,
-				    'show_option_none'  => __( '&mdash; Select &mdash;' ),
+				    'show_option_none'  => __( '&mdash; Select &mdash;','pirate-rogue' ),
 				    'option_none_value' => '',
 				    'selected'          => $this->value(),
 				)
@@ -618,7 +626,7 @@ if (class_exists('WP_Customize_Control')) {
                     'name'              => '_customize-dropdown-tags-' . $this->id,
                     'echo'              => 0,
                     'orderby'           => 'name',
-                    'show_option_none'  => esc_html__( '&mdash; Select &mdash;'),
+                    'show_option_none'  => esc_html__( '&mdash; Select &mdash;','pirate-rogue'),
                     'option_none_value' => '',
                     'taxonomy'           => 'post_tag',
                     'selected'          => $this->value(),

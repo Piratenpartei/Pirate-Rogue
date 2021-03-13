@@ -55,6 +55,7 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
 </head>
 
 <body <?php body_class(); ?>>
+    <?php wp_body_open(); ?>
     <div class="container-all">
         <nav id="skiplinks" aria-label="<?php _e('Skiplinks', 'pirate-rogue'); ?>">
             <ul>

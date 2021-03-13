@@ -61,7 +61,7 @@ p.site-title {
 #overlay-nav ul ul li a, 
 #footer-social span {
    @include px2rem($font-size-small);
-   hypens: auto;
+   hyphens: auto;
 }
 
 .widget_rss ul li {

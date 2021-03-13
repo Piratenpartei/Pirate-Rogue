@@ -1,2 +1,4 @@
 /img/Browse.plb
 /Browse.plb
+node_modules
+/package-lock.json

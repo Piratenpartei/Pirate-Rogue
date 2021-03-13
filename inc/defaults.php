@@ -263,8 +263,7 @@ $pirate_rogue_options = array(
              'pirate_rogue_google_wmt_verification_text'=> array(
 		    'type'    => 'text',
 		    'title'   => __( 'Google Site Verification', 'pirate-rogue'),
-		    'label'   =>  __( 'For verification of your website as property owner at <a target="_blank" href="https://search.google.com/search-console">Google Search Console</a>, use the alternative method and copy the value of the attribute <b>content</b> of the given HTML tag. Insert this string here.<br>'
-                        . 'Example: if given <code>&lt;meta name="google-site-verification" content="BBssyCpddd8" /&gt;</code> then insert <code>BBssyCpddd8</code>.', 'pirate-rogue'),
+		    'label'   =>  __( 'For verification of your website as property owner at <a target="_blank" href="https://search.google.com/search-console">Google Search Console</a>, use the alternative method and copy the value of the attribute <b>content</b> of the given HTML tag. Insert this string here.<br>Example: if given <code>&lt;meta name="google-site-verification" content="BBssyCpddd8" /&gt;</code> then insert <code>BBssyCpddd8</code>.', 'pirate-rogue'),
 		     'parent'  => 'pirate_rogue_section_metadata'
             ), 
             'pirate_rogue_devider_hideimage' => array(
@@ -299,7 +298,7 @@ $pirate_rogue_options = array(
             'pirate_rogue_hidecomments' => array(
                   'type'    => 'toggle-switch',
                   'title'   => __( 'Show Comments Button', 'pirate-rogue'),
-				  'label'   => __( 'This will hide comments below single posts. There will be a button to show the comments.', 'pirate-rogue'),
+		  'label'   => __( 'This will hide comments below single posts. There will be a button to show the comments.', 'pirate-rogue'),
                   'default' => false,
 		  'parent'  => 'pirate_rogue_section_comments'
             ),
@@ -312,7 +311,7 @@ $pirate_rogue_options = array(
             'pirate_rogue_externcomments_active' => array(
                   'type'    => 'toggle-switch',
                   'title'   => __( 'Link To External Board', 'pirate-rogue'),
-				  'label'   => __( 'Show a link to an external discussion board which vistors can use instead of regular comments.', 'pirate-rogue'),
+		  'label'   => __( 'Show a link to an external discussion board which vistors can use instead of regular comments.', 'pirate-rogue'),
                   'default' => false,
 		  'parent'  => 'pirate_rogue_section_comments'
             ),

@@ -10,10 +10,9 @@
 ?>
 <?php 
 $thumbfallbackid = absint(get_theme_mod( 'pirate_rogue_fallback_blogroll_thumbnail' ));
-if (!isset($thumbfallbackid)) {
-    $thumbfallbackid =0;
-} else {
-    $imagesrc = wp_get_attachment_image_src( $thumbfallbackid, 'pirate-rogue-standard-blog' )[0];
+$imagesrc = wp_get_attachment_image_src( $thumbfallbackid, 'pirate-rogue-standard-blog' );
+if ($imagesrc) {
+    $imagesrc = $imagesrc[0];
 }
 ?>
     <article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?>>

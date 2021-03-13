@@ -241,6 +241,7 @@ h3 {
     .single-post .entry-header h1.entry-title, 
     .single-attachment .entry-header h1.entry-title, 
     .attachment h1.entry-title,
+    .page h1.entry-title,
     h1.entry-title {
 	@include px2rem($font-size-h1-sitetitle-sm);     
     }

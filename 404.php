@@ -21,8 +21,6 @@ get_header(); ?>
             <div id="primary" class="site-content cf" role="main">
                 <article id="post-0" class="page no-results not-found cf">
 
-                    
-
                     <div class="entry-content">
                         <div class="two-columns-one">
                             <header class="entry-header">

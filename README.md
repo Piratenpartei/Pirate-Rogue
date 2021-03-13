@@ -52,3 +52,9 @@ To make it work, you habe to install npm on your computer and make a
 If you need to, you could add a css watcher or add also the the gulp script to
 merge all js files. 
 
+If you chance something in the code, please perform a version update.
+Make a `gulp dev` as long you are working in your own repo. Once you commit it to
+the main repo, please do a `gulp build` . This will update the version number in
+an automatic way.
+
+

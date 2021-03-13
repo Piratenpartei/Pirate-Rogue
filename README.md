@@ -26,3 +26,29 @@ for the german pirate party as replacement for their prior wordpress theme.
 * Underlying frameworks: Bootstrap, AwesomeFont, jQuery
 
 
+## How To chance CSS and other things
+
+Notice for developers:
+
+Since 1.4.9 i moved the SASS-Code into /src/sass and added a gulpfile for 
+- building CSS files 
+    run with: `gulp dev` for an unminified dev version and 
+    `gulp build` for the minified version for the productive website
+- performing a css validation test
+    `gulp dev`   will report the css validation; Or use
+    `gulp validatecss`
+- update version numbers
+    - `gulp dev` or  `gulp devversion`  will update the version number to a 
+      subpatch dev level number
+    - `gulp dev` or  `gulp upversionpatch`  will update the version number to a 
+      patch level number
+-  upate the pot file
+    `gulp pot`   will update the language index 
+
+To make it work, you habe to install npm on your computer and make a 
+   `npm install -save-dev`
+    into the working directory of your theme files.
+
+If you need to, you could add a css watcher or add also the the gulp script to
+merge all js files. 
+

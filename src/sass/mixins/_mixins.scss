@@ -1,73 +1,43 @@
 /*
 Mixins  for borders and gradients
 */
+@use "sass:math";
 
 @mixin box-shadow($shadow) {
-    -webkit-box-shadow: $shadow;
-    -moz-box-shadow: $shadow;
     box-shadow: $shadow;
 }
 
 @mixin border-radius($radius) {
-	-webkit-border-radius: $radius;
-	-moz-border-radius: $radius;
 	border-radius: $radius;
 }
 
 @mixin linear-gradient($fromColor, $toColor) {
     background-color: $fromColor; /* Fallback Color */
-    background-image: -webkit-gradient(linear, left, right, from($fromColor), to($toColor)); /* Saf4+, Chrome */
-    background-image: -webkit-linear-gradient(left, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
-    background-image: -moz-linear-gradient(left, $fromColor, $toColor); /* FF3.6 */
-    background-image: -ms-linear-gradient(left, $fromColor, $toColor); /* IE10 */
-    background-image: -o-linear-gradient(left, $fromColor, $toColor); /* Opera 11.10+ */
     background-image: linear-gradient(left, $fromColor, $toColor);
 }
 @mixin linear-gradient-fromtop($fromColor, $toColor) {
     background-color: $fromColor; /* Fallback Color */
-    background-image: -webkit-gradient(linear, top, bottom, from($fromColor), to($toColor)); /* Saf4+, Chrome */
-    background-image: -webkit-linear-gradient(top, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
-    background-image: -moz-linear-gradient(top, $fromColor, $toColor); /* FF3.6 */
-    background-image: -ms-linear-gradient(top, $fromColor, $toColor); /* IE10 */
-    background-image: -o-linear-gradient(top, $fromColor, $toColor); /* Opera 11.10+ */
     background-image: linear-gradient(top, $fromColor, $toColor);
 }
 
 
 @mixin radial-gradient($color2, $color1) {
 	background: $color2;
-	background: -moz-radial-gradient(center, ellipse cover, $color1 0%, $color2 100%);
-	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,$color1), color-stop(100%,$color2));
-	background: -webkit-radial-gradient(center, ellipse cover, $color1 0%,$color2 100%);
-	background: -o-radial-gradient(center, ellipse cover, $color1 0%,$color2 100%);
-	background: -ms-radial-gradient(center, ellipse cover, $color1 0%,$color2 100%);
 	background: radial-gradient(ellipse at center, $color1 0%,$color2 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=1 );
 }
 
 @mixin radial-gradient-image($color2, $color1, $image) {
 	background: $image, $color2;
-	background: $image, -moz-radial-gradient(center, ellipse cover, $color1 0%, $color2 100%);
-	background: $image, -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,$color1), color-stop(100%,$color2));
-	background: $image, -webkit-radial-gradient(center, ellipse cover, $color1 0%,$color2 100%);
-	background: $image, -o-radial-gradient(center, ellipse cover, $color1 0%,$color2 100%);
-	background: $image, -ms-radial-gradient(center, ellipse cover, $color1 0%,$color2 100%);
 	background: $image, radial-gradient(ellipse at center, $color1 0%,$color2 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=1 );
 }
 
 @mixin transition($duration, $params) {
-	-webkit-transition: $duration $params;
-	-moz-transition: $duration $params;
-	-ms-transition: $duration $params;
 	transition: $duration $params;
 }
 
 @mixin hyphens($value) {
-	-moz-hyphens: $value;
-	-o-hyphens: $value;
-	-webkit-hyphens: $value;
-	-ms-hyphens: $value;
 	hyphens: $value;
 }
 
@@ -110,7 +80,7 @@ Mixins  for borders and gradients
 
 
 
-@mixin line-height($sizeValue: 14) {
+@mixin line-height($sizeValue: $font-size-gridbase) {
     line-height: floor(($sizeValue * $line-height-base)); 
 }
 
@@ -128,14 +98,14 @@ Mixins  for borders and gradients
 }
 
 
-@function px2rem($font-size, $base-font-size: 16) {
-	@return $font-size / $base-font-size + rem;
+
+@function px2rem($font-size, $base-font-size: $font-size-gridbase) {
+    @return math.div($font-size, $base-font-size) + rem;
 }
 
-@mixin px2rem($font-size, $base-font-size: 16, $line: $font-size * 1.4) {
-  font-size: $font-size + px; // für den IE8
-  line-height: ($line) + px;
-  font-size: px2rem($font-size, $base-font-size);
-  line-height: ($line / $base-font-size) + rem;
+@mixin px2rem($font-size, $base-font-size: $font-size-gridbase, $line: $font-size * 1.5) {
+    // font-size: $font-size + px; // für den IE8
+    // line-height: ($line) + px;
+    font-size: math.div(floor(math.div($font-size, $base-font-size) * 1000), 1000) + rem;
+    line-height: math.div(ceil(math.div($line, $base-font-size) * 1000), 1000) + rem;
 }
-

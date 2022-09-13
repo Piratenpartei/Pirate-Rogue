@@ -14,6 +14,10 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<?php 
+$display_pirate_rogue_meta_commentheader = get_theme_mod('pirate_rogue_meta_commentheader');
+
+if ($display_pirate_rogue_meta_commentheader) { ?>
 <!--
 
 __________ .__                  __            __________                  __                                                                                             
@@ -49,6 +53,7 @@ _/  |_ |  |__    ____    ____   _____   |  | __  _  _______   ___.__.  ______ \_
 
 
 -->
+<?php } ?>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php wp_head(); ?>

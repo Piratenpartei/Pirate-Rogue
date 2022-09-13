@@ -7,6 +7,9 @@ a {
     .entry-content &, 
     .comment-text & {
         font-weight: bold;
+        word-break: break-word;
+        hyphens: none;
+
     }
     .author-bio &,
     .textwidget & {

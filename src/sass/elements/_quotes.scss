@@ -9,8 +9,6 @@ blockquote {
     font-family: $font-family-quotation;
     border-left-style: solid;
     border-left-width: 15px;
-  //  border-right-style: solid;
-  //  border-right-width: 2px;
     font-style: italic;
     @include hyphens(manual);
     

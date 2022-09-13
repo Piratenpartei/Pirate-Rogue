@@ -1,7 +1,7 @@
 {
   "name": "Pirate-Rogue",
   "textdomain": "pirate-rogue",
-  "version": "1.4.9",
+  "version": "1.4.10-2",
   "keywords": [
     "WordPress",
     "Theme",
@@ -13,8 +13,8 @@
     "phprequires": "7.3"
   },
   "author": {
-        "name": "xwolf",
-        "url":  "https://xwolf.de"
+    "name": "xwolf",
+    "url": "https://xwolf.de"
   },
   "description": "Theme for pirate parties worldwide. This theme allows to chose between the mostly used color combinations (purple and orange) as main colors for designing elements. It uses several free to use pirate symbols and allows custom CSS. It was created for the german pirate party as replacement for their prior wordpress theme.",
   "license": "GPL-3.0-or-later",
@@ -32,6 +32,7 @@
   ],
   "contributors": [],
   "dependencies": {
+    "npm-check-updates": "^16.1.2",
     "postcss": "^8.2.4"
   },
   "main": "index.php",
@@ -62,7 +63,7 @@
     "gulp-header": "^2.0.9",
     "gulp-postcss": "^9.0.0",
     "gulp-rename": "^2.0.0",
-    "gulp-sass": "^4.1.0",
+    "gulp-sass": "^5.1.0",
     "gulp-touch-cmd": "0.0.1",
     "gulp-w3c-css": "^2.0.0",
     "gulp-wp-pot": "^2.5.0",

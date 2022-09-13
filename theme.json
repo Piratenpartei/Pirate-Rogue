@@ -1,0 +1,65 @@
+{
+  "version": 2,
+  "settings": {
+        "color": {
+          "custom": true,
+          "customDuotone": false,
+          "defaultDuotone": false,
+          "customGradient": false,
+          "defaultGradients": false
+        },
+        
+        "typography": {
+          "fontSize": "16px",
+          "lineHeight": "1.5",
+          "fontFamily": "'Roboto', sans-serif;",
+          "dropCap": false,
+          "fontSizes": [
+            {
+              "slug": "small",
+              "size": "0.875rem",
+              "name": "Small"
+            },
+            {
+              "slug": "medium",
+              "size": "1rem",
+              "name": "medium"
+            },
+            {
+              "slug": "large",
+              "size": "1.25rem",
+              "name": "large"
+            },
+            {
+              "slug": "larger",
+              "size": "1.5rem",
+              "name": "larger"
+            }
+          ]
+      },
+       "custom": {},
+        "layout": {
+            "contentSize": "650px",
+            "wideSize": "1000px"
+        },
+        "spacing": {
+            "margin": false,
+            "padding": false,
+            "blockGap": null,
+            "units": [
+                "%",
+                "px",
+                "em",
+                "rem",
+                "vh",
+                "vw"
+            ]
+        },
+	"border": {
+	    "color": false,
+	    "radius": false,
+	    "style": false,
+	    "width": false
+	  }
+    }
+}

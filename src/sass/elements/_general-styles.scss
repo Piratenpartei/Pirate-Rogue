@@ -15,6 +15,11 @@ p.text-big, .widget_mc4wp_form_widget p,
 }
 
 .entry-content p {
+    hypens: normal;
+
+    
+    
+    
     &.pull-left, 
     &.pull-right {
 	  @include px2rem($font-size-bigtext); 

@@ -477,6 +477,11 @@ require get_template_directory() . '/inc/pluginsupport.php';
 /*-----------------------------------------------------------------------------------*/
 require get_template_directory() . '/inc/jetpack.php';
 
+/*-----------------------------------------------------------------------------------*/
+/*  Block Editor handling
+/*-----------------------------------------------------------------------------------*/
+
+require_once( get_template_directory() . '/inc/gutenberg.php');
 
 /*-----------------------------------------------------------------------------------*/
 /* This is the end of the code as we know it

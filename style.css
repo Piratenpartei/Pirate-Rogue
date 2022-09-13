@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*!
 Theme Name: Pirate-Rogue
-Version: 1.4.10-2
+Version: 1.4.10-3
 Requires at least: 5.0
 Tested up to: 5.7
 Requires PHP: 7.3
@@ -8130,10 +8130,9 @@ p {
   margin-bottom: 30px;
 }
 .entry-summary p {
-  -o-hyphens: auto;
   -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
 }
 
 .entry-content p:last-child,
@@ -8279,10 +8278,9 @@ p.text-small {
 /* Headlines
 /*-----------------------------------------------------------------------------------*/
 h1, h2, h3, h4, h5, h6 {
-  -o-hyphens: auto;
   -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
   font-family: "roboto", sans-serif;
 }
 
@@ -8292,10 +8290,9 @@ h1, h2, h3, h4, h5, h6 {
   padding: 6px 0 9px;
   font-size: 1.25rem;
   line-height: 1.875rem;
-  -o-hyphens: manual;
   -webkit-hyphens: manual;
-  -ms-hyphens: manual;
-  hyphens: manual;
+      -ms-hyphens: manual;
+          hyphens: manual;
 }
 #section-fullwidth h2,
 .site-content h2,
@@ -8303,10 +8300,9 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.125rem;
   line-height: 1.688rem;
   padding: 6px 0 9px;
-  -o-hyphens: manual;
   -webkit-hyphens: manual;
-  -ms-hyphens: manual;
-  hyphens: manual;
+      -ms-hyphens: manual;
+          hyphens: manual;
 }
 #section-fullwidth h3,
 .site-content h3,
@@ -8400,10 +8396,9 @@ h1.site-title {
 .entry-header h2.entry-title {
   font-size: 1rem;
   line-height: 1.5rem;
-  -o-hyphens: manual;
   -webkit-hyphens: manual;
-  -ms-hyphens: manual;
-  hyphens: manual;
+      -ms-hyphens: manual;
+          hyphens: manual;
   text-decoration: none;
   padding: 4px 0 8px;
   display: block;
@@ -9003,10 +8998,9 @@ blockquote {
   border-left-style: solid;
   border-left-width: 15px;
   font-style: italic;
-  -o-hyphens: manual;
   -webkit-hyphens: manual;
-  -ms-hyphens: manual;
-  hyphens: manual;
+      -ms-hyphens: manual;
+          hyphens: manual;
 }
 blockquote a {
   text-decoration: none;

@@ -148,6 +148,15 @@ $pirate_rogue_options = array(
             ),
             
             
+            'pirate_rogue_meta_commentheader' => array(
+                  'type'    => 'toggle-switch',
+                  'title'   => __( 'Display Meta Comment in Header', 'pirate-rogue'),
+				  'label'   => __( 'Display a HTML comment of the theme in header part.', 'pirate-rogue'),
+                  'default' => true,
+		  'parent'  => 'pirate_rogue_section_header'
+            ),
+            
+            
             'pirate_rogue_section_sidebar'  => array(
                    'type'    => 'section',
                    'title'   =>  __( 'Sidebar', 'pirate-rogue'),
@@ -263,7 +272,7 @@ $pirate_rogue_options = array(
              'pirate_rogue_google_wmt_verification_text'=> array(
 		    'type'    => 'text',
 		    'title'   => __( 'Google Site Verification', 'pirate-rogue'),
-		    'label'   =>  __( 'For verification of your website as property owner at <a target="_blank" href="https://search.google.com/search-console">Google Search Console</a>, use the alternative method and copy the value of the attribute <b>content</b> of the given HTML tag. Insert this string here.<br>Example: if given <code>&lt;meta name="google-site-verification" content="BBssyCpddd8" /&gt;</code> then insert <code>BBssyCpddd8</code>.', 'pirate-rogue'),
+		    'label'   => __( 'For verification of your website as property owner at Google Search Console, use the alternative method and copy the value of the attribute <b>content</b> of the given HTML tag.', 'pirate-rogue'),
 		     'parent'  => 'pirate_rogue_section_metadata'
             ), 
             'pirate_rogue_devider_hideimage' => array(

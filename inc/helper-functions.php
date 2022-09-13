@@ -207,7 +207,7 @@ if ( ! function_exists( 'pirate_rogue_form_onoff' ) ) :
 endif;    
     
 if ( ! function_exists( 'pirate_rogue_form_select' ) ) :
-    function pirate_rogue_form_select($name= '', $liste = array(), $prevalue, $labeltext = '',  $howtotext = '', $showempty=1, $emptytext = '' ) {
+    function pirate_rogue_form_select($name= '', $liste = array(), $prevalue = '', $labeltext = '',  $howtotext = '', $showempty=1, $emptytext = '' ) {
 	$name = pirate_rogue_san( $name );
 	$labeltext = pirate_rogue_san( $labeltext );
 	$emptytext = pirate_rogue_san( $emptytext );

@@ -430,13 +430,7 @@
         }
         $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
     }
-    public function display_element($el, &$children, $max_depth, $depth = 0, $args = array(), &$output){
-    $id = $this->db_fields['id'];
-    if(isset($children[$el->$id]))
-        $el->classes[] = 'has_children';
-    
-    parent::display_element($el, $children, $max_depth, $depth, $args, $output);
-    }
+
 }
  /*-----------------------------------------------------------------------------------*/
  /* Add a special walker for the main menu, allowing us, to add some stuff :)
@@ -492,13 +486,7 @@
         }
         $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
     }
-    public function display_element($el, &$children, $max_depth, $depth = 0, $args = array(), &$output){
-    $id = $this->db_fields['id'];
-    if(isset($children[$el->$id]))
-        $el->classes[] = 'has_children';
-    
-    parent::display_element($el, $children, $max_depth, $depth, $args, $output);
-    }
+   
 }
 /*-----------------------------------------------------------------------------------*/
 /* Get Image Meta Data

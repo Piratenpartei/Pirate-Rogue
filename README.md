@@ -13,7 +13,6 @@ for the german pirate party as replacement for their prior wordpress theme.
 
 ## Informations and download
 
-* Theme home page: http://www.pirate-rogue.de
 * Download: https://github.com/Piratenpartei/Pirate-Rogue/ 
 - Clone: https://github.com/Piratenpartei/Pirate-Rogue.git
 - Zip: https://github.com/Piratenpartei/Pirate-Rogue/archive/master.zip

@@ -26,10 +26,10 @@
         $footerfeature_image = get_theme_mod( 'pirate_rogue_footerfeature_image' );
         $imagesrc = '';
          if (isset($footerfeature_image))  {
-            if (is_int($footerfeature_image)) {
-                $imagesrc = wp_get_attachment_image_src( $footerfeature_image, 'pirate-rogue-featured' )[0];
+            if (intval($footerfeature_image)==$footerfeature_image) {
+                $imagesrc = wp_get_attachment_image_src( intval($footerfeature_image), 'pirate-rogue-featured' )[0];
             } else {
-               $imagesrc = esc_url( $footerfeature_image );
+                $imagesrc = esc_url( $footerfeature_image );
             }      
         }
         ?>
